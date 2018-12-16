@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.array)
@@ -64,7 +64,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.array)
@@ -97,7 +97,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim);
         };
         "hunittests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.array)

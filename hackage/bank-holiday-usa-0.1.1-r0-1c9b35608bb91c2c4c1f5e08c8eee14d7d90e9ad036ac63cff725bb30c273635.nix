@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
         ];
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bank-holiday-usa)
             (hsPkgs.time)

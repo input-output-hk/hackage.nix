@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-sophia)
           (hsPkgs.bytestring)
@@ -33,7 +33,7 @@
       };
       tests = {
         "main-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sophia)
             (hsPkgs.bindings-sophia)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "main-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sophia)
             (hsPkgs.bindings-sophia)

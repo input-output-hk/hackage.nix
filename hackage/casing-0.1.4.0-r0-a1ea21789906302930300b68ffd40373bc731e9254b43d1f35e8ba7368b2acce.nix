@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.split)
         ];
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.casing)
             (hsPkgs.tasty)

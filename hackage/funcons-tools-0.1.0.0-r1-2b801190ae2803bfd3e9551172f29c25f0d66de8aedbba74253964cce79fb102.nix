@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "runfct" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.containers)

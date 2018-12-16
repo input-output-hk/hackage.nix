@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.base)
           (hsPkgs.filepath)
         ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.directory)) ++ pkgs.lib.optional (system.isLinux) (hsPkgs.unix)) ++ pkgs.lib.optionals (system.isFreebsd) [

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.semigroups)
@@ -42,7 +42,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.JsonGrammar)
             (hsPkgs.base)
             (hsPkgs.aeson)

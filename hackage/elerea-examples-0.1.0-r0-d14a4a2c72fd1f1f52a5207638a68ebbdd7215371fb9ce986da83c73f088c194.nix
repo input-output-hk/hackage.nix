@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elerea-breakout" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elerea)
             (hsPkgs.OpenGL)
@@ -34,7 +34,7 @@
           ];
         };
         "elerea-chase" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elerea)
             (hsPkgs.OpenGL)

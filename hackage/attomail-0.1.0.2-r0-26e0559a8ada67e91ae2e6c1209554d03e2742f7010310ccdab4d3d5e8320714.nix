@@ -26,7 +26,7 @@
     components = {
       exes = {
         "attomail" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
@@ -49,7 +49,7 @@
       };
       tests = {
         "attomail-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)

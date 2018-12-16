@@ -33,7 +33,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((([
+        depends = (((((([
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.profunctors)
@@ -42,7 +42,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.binary)

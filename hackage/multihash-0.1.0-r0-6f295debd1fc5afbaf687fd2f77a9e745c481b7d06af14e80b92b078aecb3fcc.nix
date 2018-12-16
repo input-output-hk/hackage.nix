@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.base58-bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "multihash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base64-bytestring)
             (hsPkgs.base58-bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.primitive)
@@ -33,7 +33,7 @@
       };
       tests = {
         "props" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.primitive)

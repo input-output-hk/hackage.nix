@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base-noprelude)
           (hsPkgs.ansi-terminal)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "play-colog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base-noprelude)
             (hsPkgs.co-log)
             (hsPkgs.relude)
@@ -50,7 +50,7 @@
           ];
         };
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base-noprelude)
             (hsPkgs.co-log)
             (hsPkgs.text)

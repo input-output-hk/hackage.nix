@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       exes = {
         "MkUnicodeData" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

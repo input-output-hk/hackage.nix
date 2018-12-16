@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((((([
+        depends = ((((((([
           (hsPkgs.base)
           (hsPkgs.constraints)
         ] ++ pkgs.lib.optional (flags.aeson) (hsPkgs.aeson)) ++ pkgs.lib.optional (flags.binary) (hsPkgs.binary)) ++ pkgs.lib.optional (flags.cereal) (hsPkgs.cereal)) ++ pkgs.lib.optional (flags.deepseq) (hsPkgs.deepseq)) ++ pkgs.lib.optional (flags.hashable) (hsPkgs.hashable)) ++ pkgs.lib.optional (flags.serialise) (hsPkgs.serialise)) ++ pkgs.lib.optional (flags.store && !(compiler.isGhcjs && true)) (hsPkgs.store)) ++ pkgs.lib.optionals (flags.xmlbf) [
@@ -44,7 +44,7 @@
       };
       tests = {
         "test" = {
-          depends  = ((((((([
+          depends = ((((((([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.constraints)

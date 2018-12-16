@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -35,7 +35,7 @@
       };
       tests = {
         "data-diverse-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-diverse)
             (hsPkgs.hspec)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "data-diverse-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-diverse)
             (hsPkgs.criterion)

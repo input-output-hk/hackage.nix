@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.shakespeare)
           (hsPkgs.template-haskell)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.shakespeare-js)
             (hsPkgs.shakespeare)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.peano)
           (hsPkgs.base)
           (hsPkgs.natural-induction)

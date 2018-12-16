@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -34,7 +34,7 @@
       };
       tests = {
         "som-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.containers)

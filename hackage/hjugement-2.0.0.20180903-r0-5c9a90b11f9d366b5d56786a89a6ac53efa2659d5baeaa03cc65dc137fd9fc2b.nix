@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.hashable)
@@ -34,7 +34,7 @@
       };
       tests = {
         "hjugement-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hjugement)
             (hsPkgs.base)
             (hsPkgs.containers)

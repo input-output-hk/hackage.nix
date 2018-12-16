@@ -33,7 +33,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.base)
           (hsPkgs.persistent)
           (hsPkgs.persistent-template)
@@ -104,7 +104,7 @@
       };
       exes = {
         "persistent-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.persistent-test)
             (hsPkgs.persistent)

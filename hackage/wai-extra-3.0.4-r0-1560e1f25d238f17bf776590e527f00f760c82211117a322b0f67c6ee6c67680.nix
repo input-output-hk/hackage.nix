@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.wai)
@@ -55,7 +55,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-extra)
             (hsPkgs.wai)

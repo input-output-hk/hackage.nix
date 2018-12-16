@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yesod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.text)

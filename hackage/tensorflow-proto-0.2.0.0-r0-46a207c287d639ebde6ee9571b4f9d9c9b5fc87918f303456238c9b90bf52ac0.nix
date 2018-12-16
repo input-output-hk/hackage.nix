@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.proto-lens)
           (hsPkgs.proto-lens-protoc)
           (hsPkgs.proto-lens-protobuf-types)

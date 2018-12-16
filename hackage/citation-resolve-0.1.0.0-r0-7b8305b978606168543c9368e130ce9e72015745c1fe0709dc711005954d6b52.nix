@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.citeproc-hs)
@@ -43,7 +43,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -52,7 +52,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary-search)
             (hsPkgs.hspec)

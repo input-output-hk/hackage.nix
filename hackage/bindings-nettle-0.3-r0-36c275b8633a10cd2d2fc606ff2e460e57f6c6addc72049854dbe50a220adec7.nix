@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
@@ -38,7 +38,7 @@
       };
       tests = {
         "cast5" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bindings-nettle)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.groups)
           (hsPkgs.semigroups)
@@ -34,7 +34,7 @@
       };
       benchmarks = {
         "semi-direct-product" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.monoid-extras)

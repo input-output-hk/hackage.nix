@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
@@ -53,13 +53,13 @@
       };
       exes = {
         "cabal2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal2nix)
           ];
         };
         "hackage2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.aeson)
@@ -82,7 +82,7 @@
       };
       tests = {
         "regression-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.cabal2nix)

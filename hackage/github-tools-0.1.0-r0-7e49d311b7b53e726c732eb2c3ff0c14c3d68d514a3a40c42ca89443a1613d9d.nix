@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pull-status" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)
@@ -44,7 +44,7 @@
           ];
         };
         "changelog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

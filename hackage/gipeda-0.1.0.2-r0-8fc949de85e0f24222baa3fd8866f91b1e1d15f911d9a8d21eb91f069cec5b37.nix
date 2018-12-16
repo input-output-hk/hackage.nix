@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gipeda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

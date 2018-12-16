@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.curl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "test-http-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.curl)

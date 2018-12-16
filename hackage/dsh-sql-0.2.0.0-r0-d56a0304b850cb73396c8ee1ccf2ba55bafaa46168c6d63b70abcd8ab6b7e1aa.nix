@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.DSH)
           (hsPkgs.random)
           (hsPkgs.process)
@@ -50,7 +50,7 @@
       };
       tests = {
         "sqltests" = {
-          depends  = [
+          depends = [
             (hsPkgs.DSH)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-odbc)

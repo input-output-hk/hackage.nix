@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.primitive)
@@ -35,7 +35,7 @@
       };
       exes = {
         "blockhash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blockhash)
             (hsPkgs.JuicyPixels)
@@ -46,7 +46,7 @@
       };
       tests = {
         "blockhash-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blockhash)
           ];

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       exes = {
         "pstemmer-test-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pstemmer)
             (hsPkgs.text)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "regex-posix-unittest" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex-base)
             (hsPkgs.base)
             (hsPkgs.regex-posix)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hw-bits)
           (hsPkgs.hw-int)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hw-rankselect-base-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hw-bits)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.hw-bits)

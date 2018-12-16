@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.applicative-extras)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       exes = {
         "hmm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)
@@ -71,7 +71,7 @@
       };
       tests = {
         "module-management-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)

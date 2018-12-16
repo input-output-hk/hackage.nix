@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.vector)
@@ -40,7 +40,7 @@
       };
       exes = {
         "phono-learner-hw" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.maxent-learner-hw)
             (hsPkgs.optparse-applicative)

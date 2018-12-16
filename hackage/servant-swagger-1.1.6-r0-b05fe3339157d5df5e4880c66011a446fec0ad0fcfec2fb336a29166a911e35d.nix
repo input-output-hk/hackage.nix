@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -54,7 +54,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.aeson)

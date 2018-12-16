@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal-ide-backend)
           (hsPkgs.Glob)
@@ -61,7 +61,7 @@
       };
       exes = {
         "wai-devel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-devel)
           ];
@@ -69,7 +69,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.stm)

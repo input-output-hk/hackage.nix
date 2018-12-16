@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.data-default-class)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test-kvc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.contravariant)
             (hsPkgs.pipes-key-value-csv)

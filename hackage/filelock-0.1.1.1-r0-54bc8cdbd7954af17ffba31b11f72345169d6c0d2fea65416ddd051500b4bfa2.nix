@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
@@ -33,7 +33,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.filelock)
             (hsPkgs.process)
             (hsPkgs.async)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "forml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.parsec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gopher-proxy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai)
             (hsPkgs.warp)

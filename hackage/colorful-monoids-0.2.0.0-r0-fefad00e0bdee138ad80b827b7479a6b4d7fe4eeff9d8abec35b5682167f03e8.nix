@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.colorful-monoids)
           ];

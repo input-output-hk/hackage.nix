@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hgettext" = {
-          depends  = [
+          depends = [
             (hsPkgs.hgettext)
             (hsPkgs.base)
             (hsPkgs.Cabal)

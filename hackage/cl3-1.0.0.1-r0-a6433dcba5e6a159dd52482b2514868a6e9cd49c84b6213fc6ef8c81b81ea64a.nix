@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
         ];
       };
       tests = {
         "test-cl3" = {
-          depends  = [
+          depends = [
             (hsPkgs.cl3)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -41,7 +41,7 @@
       };
       benchmarks = {
         "bench-cl3-nbody" = {
-          depends  = [
+          depends = [
             (hsPkgs.cl3)
             (hsPkgs.base)
             (hsPkgs.criterion)

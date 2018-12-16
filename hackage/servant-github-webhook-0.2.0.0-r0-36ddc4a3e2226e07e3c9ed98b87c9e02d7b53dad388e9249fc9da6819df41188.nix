@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "multikey" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
           ];
         };
         "singlekey" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

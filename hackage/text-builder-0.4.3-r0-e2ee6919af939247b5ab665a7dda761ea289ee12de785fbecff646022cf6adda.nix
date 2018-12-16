@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.semigroups)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.text-builder)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -48,14 +48,14 @@
       };
       benchmarks = {
         "text-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.text-builder)
             (hsPkgs.criterion)
             (hsPkgs.rerebase)
           ];
         };
         "char-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.text-builder)
             (hsPkgs.criterion)
             (hsPkgs.rerebase)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."csfml-window")
           (pkgs."csfml-system")

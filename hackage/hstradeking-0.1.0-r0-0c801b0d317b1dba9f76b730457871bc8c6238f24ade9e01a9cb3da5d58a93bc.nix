@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hoauth)
           (hsPkgs.text)
@@ -49,7 +49,7 @@
       };
       exes = {
         "tradeking" = {
-          depends  = [
+          depends = [
             (hsPkgs.hstradeking)
             (hsPkgs.base)
             (hsPkgs.conduit)

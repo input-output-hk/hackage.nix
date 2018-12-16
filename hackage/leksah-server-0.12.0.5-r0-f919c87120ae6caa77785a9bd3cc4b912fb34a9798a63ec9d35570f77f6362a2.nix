@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -73,7 +73,7 @@
       };
       exes = {
         "leksah-server" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -116,7 +116,7 @@
           libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
         "leksahecho" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.deepseq)

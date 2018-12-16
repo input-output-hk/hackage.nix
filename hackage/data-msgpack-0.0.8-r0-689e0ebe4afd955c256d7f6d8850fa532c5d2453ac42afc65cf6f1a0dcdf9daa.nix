@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.binary)
@@ -42,7 +42,7 @@
       };
       exes = {
         "msgpack-parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.groom)
@@ -52,7 +52,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)

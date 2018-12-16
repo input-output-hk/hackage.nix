@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haddocset" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.optparse-applicative)

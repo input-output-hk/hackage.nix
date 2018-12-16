@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.interpolate)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hpc-threshold" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hpc-threshold)
           ];
@@ -42,7 +42,7 @@
       };
       tests = {
         "hpc-threshold-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hpc-threshold)
           ];

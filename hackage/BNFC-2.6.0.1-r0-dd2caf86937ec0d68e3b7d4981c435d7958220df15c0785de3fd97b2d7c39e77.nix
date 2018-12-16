@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "bnfc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.directory)

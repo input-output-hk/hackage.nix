@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "streaming-osm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "streaming-osm-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.bytestring)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "data-extend-generic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-extend-generic)
             (hsPkgs.hspec)

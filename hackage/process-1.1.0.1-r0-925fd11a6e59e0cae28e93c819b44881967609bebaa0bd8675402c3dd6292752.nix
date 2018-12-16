@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.directory)
           (hsPkgs.filepath)
         ] ++ pkgs.lib.optionals (!(compiler.isNhc98 && true)) (if system.isWindows

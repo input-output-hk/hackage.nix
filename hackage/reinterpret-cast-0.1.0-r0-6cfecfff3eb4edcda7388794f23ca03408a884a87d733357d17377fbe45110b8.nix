@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
         ];
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reinterpret-cast)
             (hsPkgs.data-binary-ieee754)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reinterpret-cast)
             (hsPkgs.criterion)

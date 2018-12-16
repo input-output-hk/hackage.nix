@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -36,7 +36,7 @@
       };
       exes = {
         "nvidia-device-query" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cuda)
             (hsPkgs.pretty)

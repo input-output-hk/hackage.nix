@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hw-bits)
           (hsPkgs.hw-int)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hw-eliasfano-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hw-bits)

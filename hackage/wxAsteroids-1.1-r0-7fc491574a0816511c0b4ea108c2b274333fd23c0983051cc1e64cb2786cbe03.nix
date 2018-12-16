@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wxAsteroids" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.random)

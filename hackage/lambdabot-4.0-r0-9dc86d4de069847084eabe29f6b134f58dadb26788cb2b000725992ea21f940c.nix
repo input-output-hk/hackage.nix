@@ -26,7 +26,7 @@
     components = {
       exes = {
         "BotPP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -40,7 +40,7 @@
           ];
         };
         "lambdabot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -54,7 +54,7 @@
           ];
         };
         "hoogle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -68,7 +68,7 @@
           ];
         };
         "djinn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -82,7 +82,7 @@
           ];
         };
         "unlambda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -96,7 +96,7 @@
           ];
         };
         "runplugs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)

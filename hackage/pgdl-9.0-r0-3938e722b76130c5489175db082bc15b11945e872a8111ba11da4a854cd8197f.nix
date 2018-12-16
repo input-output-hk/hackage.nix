@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pgdl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagsoup)
             (hsPkgs.directory-listing-webpage-parser)

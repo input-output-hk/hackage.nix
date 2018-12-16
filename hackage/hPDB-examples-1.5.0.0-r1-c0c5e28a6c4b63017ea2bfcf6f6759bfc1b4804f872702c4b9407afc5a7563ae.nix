@@ -26,7 +26,7 @@
     components = {
       exes = {
         "PDB2Fasta" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
           ];
         };
         "ShiftToCenter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
@@ -64,7 +64,7 @@
           ];
         };
         "CleanPDB" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -83,7 +83,7 @@
           ];
         };
         "SplitModels" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
@@ -102,7 +102,7 @@
           ];
         };
         "CanonicalAxes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -121,7 +121,7 @@
           ];
         };
         "PrintEvents" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -140,7 +140,7 @@
           ];
         };
         "PrintStructureObject" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -159,7 +159,7 @@
           ];
         };
         "Rg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
@@ -178,7 +178,7 @@
           ];
         };
         "StericClashCheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -198,7 +198,7 @@
           ];
         };
         "Viewer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
@@ -221,7 +221,7 @@
       };
       tests = {
         "ParserPerformance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.ghc-prim)

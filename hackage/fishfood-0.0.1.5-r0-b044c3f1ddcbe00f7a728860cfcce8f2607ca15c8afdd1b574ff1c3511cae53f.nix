@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "fishfood" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.fishfood)
@@ -48,7 +48,7 @@
       };
       tests = {
         "quickCheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

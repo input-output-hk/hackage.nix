@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskus-system-build" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.yaml)

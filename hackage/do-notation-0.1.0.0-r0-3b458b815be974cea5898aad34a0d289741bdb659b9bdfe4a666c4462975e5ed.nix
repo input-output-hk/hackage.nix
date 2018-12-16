@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.indexed)
         ];
       };
       tests = {
         "do-syntax-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.do-notation)
             (hsPkgs.indexed)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.url)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       exes = {
         "bdo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.url)
             (hsPkgs.text)

@@ -35,7 +35,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((((((([
+        depends = (((((((((([
           (hsPkgs.base)
           (hsPkgs.data-default-class)
         ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.0" && compiler.version.lt "7.2")) (hsPkgs.generic-deriving)) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) (hsPkgs.ghc-prim)) ++ pkgs.lib.optional (flags.comonad) (hsPkgs.comonad)) ++ pkgs.lib.optional (flags.containers) (hsPkgs.containers)) ++ pkgs.lib.optional (flags.kan-extensions) (hsPkgs.kan-extensions)) ++ pkgs.lib.optional (flags.semigroupoids) (hsPkgs.semigroupoids)) ++ pkgs.lib.optional (flags.semigroups) (hsPkgs.semigroups)) ++ pkgs.lib.optional (flags.stm) (hsPkgs.stm)) ++ pkgs.lib.optional (flags.tagged) (hsPkgs.tagged)) ++ pkgs.lib.optionals (flags.transformers) [

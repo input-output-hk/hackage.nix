@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
         ];
       };
       tests = {
         "digits-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.digits)
             (hsPkgs.QuickCheck)

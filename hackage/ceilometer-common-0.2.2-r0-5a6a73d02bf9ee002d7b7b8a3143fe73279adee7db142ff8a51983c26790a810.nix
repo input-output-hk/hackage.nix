@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bimap)
           (hsPkgs.binary)
@@ -42,7 +42,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.bimap)

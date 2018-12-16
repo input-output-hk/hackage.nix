@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       exes = {
         "yaml2json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yaml)
             (hsPkgs.bytestring)
@@ -60,7 +60,7 @@
           ];
         };
         "json2yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yaml)
             (hsPkgs.bytestring)
@@ -68,7 +68,7 @@
           ];
         };
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.raw-strings-qq)
@@ -79,7 +79,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.QuickCheck)
@@ -48,7 +48,7 @@
       };
       exes = {
         "cognimeta-utils" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.mtl)

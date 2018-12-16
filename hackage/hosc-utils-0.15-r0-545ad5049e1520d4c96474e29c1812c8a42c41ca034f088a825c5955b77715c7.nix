@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hosc-json-cat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hosc)
@@ -38,7 +38,7 @@
           ];
         };
         "hosc-json-cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cgi)
@@ -52,7 +52,7 @@
           ];
         };
         "hosc-json-console" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.haskeline)
@@ -65,7 +65,7 @@
           ];
         };
         "hosc-json-nrt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hosc)
@@ -78,7 +78,7 @@
           ];
         };
         "hosc-json-ws" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hosc)

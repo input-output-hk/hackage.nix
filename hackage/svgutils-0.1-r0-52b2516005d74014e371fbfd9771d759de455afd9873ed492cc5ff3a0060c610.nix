@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
         ];
       };
       exes = {
         "SVGtile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xml)
             (hsPkgs.filepath)

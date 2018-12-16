@@ -25,12 +25,12 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."jack") ];
       };
       exes = {
         "amplify" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [ (pkgs."jack") ];
         };
       };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.arithmoi)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-pell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.arithmoi)
             (hsPkgs.containers)

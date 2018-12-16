@@ -26,7 +26,7 @@
     components = {
       exes = {
         "infinity" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.plugins)
             (hsPkgs.ghc)

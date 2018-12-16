@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.exceptions)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-lmonad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.exceptions)

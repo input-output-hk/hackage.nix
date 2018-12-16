@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.directory)
@@ -37,7 +37,7 @@
       };
       tests = {
         "fsnotify-conduit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.conduit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.directory)
@@ -34,7 +34,7 @@
       };
       exes = {
         "autoexporter" = {
-          depends  = [
+          depends = [
             (hsPkgs.autoexporter)
             (hsPkgs.base)
           ];

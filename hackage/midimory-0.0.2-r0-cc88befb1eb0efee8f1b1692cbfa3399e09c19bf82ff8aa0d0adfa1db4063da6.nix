@@ -26,7 +26,7 @@
     components = {
       exes = {
         "midimory" = {
-          depends  = [
+          depends = [
             (hsPkgs.wx)
             (hsPkgs.wxcore)
             (hsPkgs.alsa-seq)
@@ -41,7 +41,7 @@
           ];
         };
         "midimory-reactive" = {
-          depends  = pkgs.lib.optionals (flags.reactive) [
+          depends = pkgs.lib.optionals (flags.reactive) [
             (hsPkgs.reactive-banana-wx)
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
         ];
       };
       exes = {
         "uuagd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

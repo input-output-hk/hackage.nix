@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghcjs-dom-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
           ];

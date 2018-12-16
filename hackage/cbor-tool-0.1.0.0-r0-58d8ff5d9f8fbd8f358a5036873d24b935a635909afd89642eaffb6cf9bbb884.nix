@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cbor-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.aeson)

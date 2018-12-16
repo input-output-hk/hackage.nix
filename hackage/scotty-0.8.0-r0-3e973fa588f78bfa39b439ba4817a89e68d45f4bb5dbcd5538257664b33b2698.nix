@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
@@ -45,7 +45,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.http-types)

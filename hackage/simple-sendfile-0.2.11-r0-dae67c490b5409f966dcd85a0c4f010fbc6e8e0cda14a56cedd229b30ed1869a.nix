@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)

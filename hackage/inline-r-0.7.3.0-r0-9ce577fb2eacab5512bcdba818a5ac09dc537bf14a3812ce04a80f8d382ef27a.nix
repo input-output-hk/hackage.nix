@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.inline-r)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -77,7 +77,7 @@
           ];
         };
         "test-qq" = {
-          depends  = [
+          depends = [
             (hsPkgs.inline-r)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -88,7 +88,7 @@
           ];
         };
         "test-shootout" = {
-          depends  = [
+          depends = [
             (hsPkgs.inline-r)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -102,7 +102,7 @@
       };
       benchmarks = {
         "bench-qq" = {
-          depends  = [
+          depends = [
             (hsPkgs.inline-r)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -112,7 +112,7 @@
           ];
         };
         "bench-hexp" = {
-          depends  = [
+          depends = [
             (hsPkgs.inline-r)
             (hsPkgs.base)
             (hsPkgs.criterion)

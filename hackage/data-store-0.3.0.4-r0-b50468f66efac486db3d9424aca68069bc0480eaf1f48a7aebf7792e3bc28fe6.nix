@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.lens)
@@ -38,7 +38,7 @@
       };
       tests = {
         "data-store-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.lens)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "data-store-benchmark-01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.lens)

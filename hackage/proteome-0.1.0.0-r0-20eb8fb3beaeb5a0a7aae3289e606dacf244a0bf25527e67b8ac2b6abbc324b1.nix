@@ -26,7 +26,7 @@
     components = {
       exes = {
         "proteome" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nvim-hs)
           ];

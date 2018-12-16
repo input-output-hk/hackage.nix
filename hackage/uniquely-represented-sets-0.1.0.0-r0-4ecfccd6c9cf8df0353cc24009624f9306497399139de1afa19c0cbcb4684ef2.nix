@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "uniquely-represented-sets-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.checkers)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.random)

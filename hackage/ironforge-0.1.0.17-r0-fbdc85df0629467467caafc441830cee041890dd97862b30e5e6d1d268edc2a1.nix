@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.chatty)
           (hsPkgs.antisplice)
@@ -35,7 +35,7 @@
       };
       exes = {
         "ironforge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chatty)
             (hsPkgs.antisplice)

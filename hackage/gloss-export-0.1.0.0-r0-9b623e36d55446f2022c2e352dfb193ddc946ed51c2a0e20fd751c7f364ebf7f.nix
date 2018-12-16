@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gloss-rendering)
           (hsPkgs.GLFW-b)
@@ -37,7 +37,7 @@
       };
       exes = {
         "gloss-export-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.gloss-export)
@@ -46,7 +46,7 @@
       };
       tests = {
         "gloss-export-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss-export)
           ];

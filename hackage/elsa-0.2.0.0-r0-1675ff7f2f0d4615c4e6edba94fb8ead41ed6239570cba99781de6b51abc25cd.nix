@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.mtl)
@@ -40,7 +40,7 @@
       };
       exes = {
         "elsa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.elsa)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

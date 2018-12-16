@@ -32,11 +32,11 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (flags.vty) (hsPkgs.vty);
+        depends = pkgs.lib.optional (flags.vty) (hsPkgs.vty);
       };
       exes = {
         "yi" = {
-          depends  = (((((([
+          depends = (((((([
             (hsPkgs.Cabal)
             (hsPkgs.array)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.OpenGL)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       exes = {
         "opengl-dlp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)

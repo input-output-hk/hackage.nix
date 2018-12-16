@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -84,7 +84,7 @@
       };
       exes = {
         "lambdabot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdabot)
           ];

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.dimensions)
@@ -35,7 +35,7 @@
       };
       tests = {
         "et-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -46,14 +46,14 @@
       };
       benchmarks = {
         "et-bench-misc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.easytensor)
             (hsPkgs.dimensions)
           ];
         };
         "et-bench-spfolds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.easytensor)
             (hsPkgs.dimensions)

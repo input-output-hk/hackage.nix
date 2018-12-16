@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Decimal)
           (hsPkgs.HUnit)
           (hsPkgs.ansi-terminal)
@@ -62,7 +62,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.Glob)
             (hsPkgs.HUnit)
@@ -100,7 +100,7 @@
           ];
         };
         "hunittests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
             (hsPkgs.ansi-terminal)

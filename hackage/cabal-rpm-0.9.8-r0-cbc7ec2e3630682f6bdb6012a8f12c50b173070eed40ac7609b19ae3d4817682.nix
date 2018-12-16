@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cblrpm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.hmatrix)
@@ -35,7 +35,7 @@
       };
       tests = {
         "metric-tests:" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.metric)

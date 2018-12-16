@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.haskell-lexer)
@@ -34,7 +34,7 @@
       };
       exes = {
         "ppsh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.haskell-lexer)

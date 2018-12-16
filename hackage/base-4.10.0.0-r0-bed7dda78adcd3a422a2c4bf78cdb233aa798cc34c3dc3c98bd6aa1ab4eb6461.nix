@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.rts)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (!(flags.integer-gmp && !flags.integer-simple || !flags.integer-gmp && flags.integer-simple)) (hsPkgs.invalid-cabal-flag-settings)) ++ pkgs.lib.optional (flags.integer-simple) (hsPkgs.integer-simple)) ++ pkgs.lib.optional (flags.integer-gmp) (hsPkgs.integer-gmp);

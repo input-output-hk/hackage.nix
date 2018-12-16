@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sproxy-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.blaze-html)

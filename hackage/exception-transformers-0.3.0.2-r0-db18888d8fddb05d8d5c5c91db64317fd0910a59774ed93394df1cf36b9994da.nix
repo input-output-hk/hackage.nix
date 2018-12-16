@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.transformers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.exception-transformers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.vector)
@@ -41,7 +41,7 @@
       };
       tests = {
         "graphite-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graphite)
             (hsPkgs.hspec)

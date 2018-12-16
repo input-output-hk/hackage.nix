@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.silently)
           (hsPkgs.ansi-terminal)
@@ -37,7 +37,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.silently)
             (hsPkgs.ansi-terminal)
@@ -50,20 +50,20 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
           ];
         };
         "example-non-monadic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)

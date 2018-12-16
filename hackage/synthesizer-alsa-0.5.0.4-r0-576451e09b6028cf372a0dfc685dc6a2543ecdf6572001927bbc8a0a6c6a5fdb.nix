@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.synthesizer-midi)
           (hsPkgs.synthesizer-dimensional)
           (hsPkgs.synthesizer-core)

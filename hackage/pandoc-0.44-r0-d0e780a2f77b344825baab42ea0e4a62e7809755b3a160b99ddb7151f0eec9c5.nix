@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.xhtml)
@@ -36,7 +36,7 @@
       };
       exes = {
         "pandoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.xhtml)

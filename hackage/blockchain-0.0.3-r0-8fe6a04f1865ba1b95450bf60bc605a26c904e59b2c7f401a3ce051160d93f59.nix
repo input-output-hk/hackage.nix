@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.byteable)
@@ -44,7 +44,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.byteable)

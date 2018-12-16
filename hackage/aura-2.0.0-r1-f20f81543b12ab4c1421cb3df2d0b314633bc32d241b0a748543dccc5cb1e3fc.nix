@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.algebraic-graphs)
@@ -69,7 +69,7 @@
       };
       exes = {
         "aura" = {
-          depends  = [
+          depends = [
             (hsPkgs.aura)
             (hsPkgs.base)
             (hsPkgs.base-prelude)
@@ -96,7 +96,7 @@
       };
       tests = {
         "aura-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aura)
             (hsPkgs.base)
             (hsPkgs.base-prelude)

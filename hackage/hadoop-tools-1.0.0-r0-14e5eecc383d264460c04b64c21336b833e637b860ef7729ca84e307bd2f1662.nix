@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.boxes)
@@ -52,7 +52,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.bytestring)

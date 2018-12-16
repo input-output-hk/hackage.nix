@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network-transport)
           (hsPkgs.data-accessor)
@@ -36,7 +36,7 @@
       };
       tests = {
         "TestTCP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport-tests)
             (hsPkgs.network)

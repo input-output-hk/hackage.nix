@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.lifted-base)
@@ -44,7 +44,7 @@
       };
       exes = {
         "sdl2-gfx-example" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)

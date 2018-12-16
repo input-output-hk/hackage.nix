@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bifunctors)
@@ -41,7 +41,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cassava)
@@ -66,7 +66,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.bytestring)

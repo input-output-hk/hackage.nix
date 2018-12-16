@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.haskell-src)
           (hsPkgs.haskell-src-exts)

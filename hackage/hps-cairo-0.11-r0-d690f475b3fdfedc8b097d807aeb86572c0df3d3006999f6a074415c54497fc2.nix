@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cairo)
           (hsPkgs.gtk)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hps-cairo-animation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cairo)
             (hsPkgs.gtk)
@@ -44,7 +44,7 @@
           ];
         };
         "hps-cairo-screen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cairo)
             (hsPkgs.hps)

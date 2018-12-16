@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.text)
@@ -43,7 +43,7 @@
       };
       exes = {
         "haskintex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskintex)
           ];

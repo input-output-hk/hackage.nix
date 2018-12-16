@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       tests = {
         "symantic-document-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.symantic-document)
             (hsPkgs.base)
             (hsPkgs.containers)

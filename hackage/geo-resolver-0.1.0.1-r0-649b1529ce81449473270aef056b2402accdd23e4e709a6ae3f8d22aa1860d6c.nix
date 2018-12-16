@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.http-conduit)
@@ -38,7 +38,7 @@
       };
       tests = {
         "GeoResolver-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

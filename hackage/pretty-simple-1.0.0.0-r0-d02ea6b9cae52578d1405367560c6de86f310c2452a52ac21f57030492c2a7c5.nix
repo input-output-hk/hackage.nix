@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.lens)
@@ -41,7 +41,7 @@
       };
       exes = {
         "pretty-simple-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty-simple)
           ];
@@ -49,7 +49,7 @@
       };
       tests = {
         "pretty-simple-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "pretty-simple-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.pretty-simple)

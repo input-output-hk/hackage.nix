@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.HUnit)
@@ -35,7 +35,7 @@
       };
       exes = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.HUnit)

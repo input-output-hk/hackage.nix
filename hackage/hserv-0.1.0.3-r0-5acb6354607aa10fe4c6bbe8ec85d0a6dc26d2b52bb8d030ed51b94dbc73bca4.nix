@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hserv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-app-static)
             (hsPkgs.warp)

@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.MissingH)
@@ -52,7 +52,7 @@
       };
       exes = {
         "fix-generator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.MissingH)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.zlib)
@@ -53,7 +53,7 @@
       };
       exes = {
         "Zip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.bytestring)
@@ -63,7 +63,7 @@
       };
       tests = {
         "test-zip-archive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.bytestring)

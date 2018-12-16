@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -39,7 +39,7 @@
       };
       exes = {
         "roundtrip" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.2" && flags.roundtrip) [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.2" && flags.roundtrip) [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -54,7 +54,7 @@
           ];
         };
         "static" = {
-          depends  = pkgs.lib.optionals (flags.roundtrip) [
+          depends = pkgs.lib.optionals (flags.roundtrip) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -64,7 +64,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.containers)

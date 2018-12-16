@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.classy-prelude)
           (hsPkgs.wreq)
@@ -49,7 +49,7 @@
       };
       exes = {
         "marvin-pp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-prelude)
             (hsPkgs.mustache)
@@ -59,7 +59,7 @@
           ];
         };
         "marvin-init" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-prelude)
             (hsPkgs.mustache)

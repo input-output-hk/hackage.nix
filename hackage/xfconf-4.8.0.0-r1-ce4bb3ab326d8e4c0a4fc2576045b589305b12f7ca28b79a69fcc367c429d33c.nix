@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.glib)
         ] ++ pkgs.lib.optionals (flags.buildtests) [

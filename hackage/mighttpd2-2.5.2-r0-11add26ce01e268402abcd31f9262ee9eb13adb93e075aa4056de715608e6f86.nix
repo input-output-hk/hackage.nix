@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mighty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
@@ -51,12 +51,12 @@
           ];
         };
         "mkindex" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)

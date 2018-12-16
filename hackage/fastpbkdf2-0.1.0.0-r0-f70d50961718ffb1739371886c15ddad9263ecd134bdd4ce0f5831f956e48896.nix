@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -38,7 +38,7 @@
       };
       tests = {
         "fastpbkdf2-hs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
             (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "fastpbkdf2-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

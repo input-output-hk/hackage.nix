@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.tuple)
@@ -35,7 +35,7 @@
       };
       exes = {
         "MCFoldDP" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
       };
     };

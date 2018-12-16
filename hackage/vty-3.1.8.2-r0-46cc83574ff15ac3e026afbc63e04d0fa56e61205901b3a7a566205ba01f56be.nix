@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.extensible-exceptions)
           (hsPkgs.bytestring)
           (hsPkgs.containers)

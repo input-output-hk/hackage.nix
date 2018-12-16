@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wembley" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)

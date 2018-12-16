@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jsonxlsx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xlsx)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.mtl)
@@ -46,7 +46,7 @@
       };
       exes = {
         "twfy-api-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.twfy-api-client)
             (hsPkgs.http-client)
@@ -66,7 +66,7 @@
       };
       tests = {
         "twfy-api-client-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.twfy-api-client)
           ];

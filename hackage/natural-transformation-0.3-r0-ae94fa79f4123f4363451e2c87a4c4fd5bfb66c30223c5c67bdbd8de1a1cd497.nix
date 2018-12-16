@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "natural-transformation-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.natural-transformation)

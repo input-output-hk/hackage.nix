@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod)
           (hsPkgs.yesod-form)
@@ -36,7 +36,7 @@
       };
       exes = {
         "sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
             (hsPkgs.yesod-form)

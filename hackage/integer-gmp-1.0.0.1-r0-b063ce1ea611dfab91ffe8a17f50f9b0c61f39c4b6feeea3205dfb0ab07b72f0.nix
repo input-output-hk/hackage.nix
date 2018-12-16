@@ -25,9 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
-          (hsPkgs.ghc-prim)
-        ];
+        depends = [ (hsPkgs.ghc-prim) ];
       };
     };
   }

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.containers)
@@ -52,7 +52,7 @@
       };
       exes = {
         "put-metric" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)
@@ -62,7 +62,7 @@
           ];
         };
         "run-inst" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)

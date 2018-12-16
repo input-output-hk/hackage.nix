@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.NoTrace)
           (hsPkgs.attoparsec)
@@ -34,7 +34,7 @@
       };
       tests = {
         "add-env-config-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.NoTrace)
             (hsPkgs.attoparsec)

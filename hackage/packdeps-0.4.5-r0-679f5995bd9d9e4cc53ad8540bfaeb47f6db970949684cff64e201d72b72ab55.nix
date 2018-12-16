@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tar)
           (hsPkgs.split)
@@ -40,7 +40,7 @@
       };
       exes = {
         "packdeps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.optparse-applicative)

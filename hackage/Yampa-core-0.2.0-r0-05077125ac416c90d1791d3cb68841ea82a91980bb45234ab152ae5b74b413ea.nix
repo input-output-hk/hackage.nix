@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.vector-space)
@@ -38,13 +38,13 @@
       };
       exes = {
         "YampaElevator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Yampa-core)
           ];
         };
         "YampaTailgatingDetector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Yampa-core)
           ];
@@ -52,13 +52,13 @@
       };
       tests = {
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "testAFRP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Yampa-core)
           ];

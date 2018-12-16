@@ -28,14 +28,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.ed25519)
             (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "bench1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

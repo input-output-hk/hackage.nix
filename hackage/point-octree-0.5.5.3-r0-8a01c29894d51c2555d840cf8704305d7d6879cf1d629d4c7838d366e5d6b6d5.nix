@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.AC-Vector)
           (hsPkgs.QuickCheck)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test_Octree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.AC-Vector)
@@ -41,7 +41,7 @@
           ];
         };
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AC-Vector)
             (hsPkgs.QuickCheck)
@@ -49,7 +49,7 @@
           ];
         };
         "readme-BB" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AC-Vector)
             (hsPkgs.QuickCheck)

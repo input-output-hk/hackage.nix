@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.chunked-data)
           (hsPkgs.conduit)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.conduit-combinators)
             (hsPkgs.base)
             (hsPkgs.hspec)

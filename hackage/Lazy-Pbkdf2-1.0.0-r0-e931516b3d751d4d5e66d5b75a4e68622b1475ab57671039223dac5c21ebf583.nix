@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.SHA)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "Known-answer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SHA)
             (hsPkgs.bytestring)

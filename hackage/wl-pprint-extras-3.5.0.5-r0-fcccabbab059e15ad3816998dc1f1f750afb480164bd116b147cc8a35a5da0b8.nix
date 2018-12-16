@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.nats)
@@ -37,7 +37,7 @@
       };
       tests = {
         "wl-pprint-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wl-pprint-extras)
             (hsPkgs.HUnit)

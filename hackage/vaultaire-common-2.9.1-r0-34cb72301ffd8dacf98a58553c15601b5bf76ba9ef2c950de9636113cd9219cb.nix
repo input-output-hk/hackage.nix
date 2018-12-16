@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.QuickCheck)
@@ -49,7 +49,7 @@
       };
       tests = {
         "wire-formats-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.containers)
@@ -63,7 +63,7 @@
           ];
         };
         "instance-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.vaultaire-common)

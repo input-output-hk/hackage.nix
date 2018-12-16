@@ -26,7 +26,7 @@
     components = {
       exes = {
         "setdown" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

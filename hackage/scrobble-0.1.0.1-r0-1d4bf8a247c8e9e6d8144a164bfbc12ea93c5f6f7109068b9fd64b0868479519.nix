@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.url)
@@ -35,7 +35,7 @@
       };
       exes = {
         "scrobble-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.url)

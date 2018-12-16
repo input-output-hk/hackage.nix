@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.threads)
           (hsPkgs.SafeSemaphore)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-io-threads" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.io-throttle)
           ];

@@ -33,7 +33,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.binary)
@@ -60,7 +60,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.time)
@@ -70,7 +70,7 @@
           ];
         };
         "hdbc" = {
-          depends  = pkgs.lib.optionals (flags.hdbc) [
+          depends = pkgs.lib.optionals (flags.hdbc) [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.time)

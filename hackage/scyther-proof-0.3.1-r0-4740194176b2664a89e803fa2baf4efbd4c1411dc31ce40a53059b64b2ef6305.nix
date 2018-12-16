@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -47,7 +47,7 @@
       };
       exes = {
         "scyther-proof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)

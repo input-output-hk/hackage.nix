@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ];
       };
       exes = {
         "easytensor-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.easytensor)
             (hsPkgs.ghc-prim)
@@ -43,7 +43,7 @@
       };
       tests = {
         "easytensor-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.easytensor)
           ];

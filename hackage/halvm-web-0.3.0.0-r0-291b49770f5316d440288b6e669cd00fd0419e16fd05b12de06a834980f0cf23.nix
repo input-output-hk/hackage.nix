@@ -26,7 +26,7 @@
     components = {
       exes = {
         "halvm-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)

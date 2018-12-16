@@ -26,7 +26,7 @@
     components = {
       exes = {
         "LambdaCalculator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)

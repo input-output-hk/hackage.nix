@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       foreignlibs = {
         "hexchat-haskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.ghc-prim)

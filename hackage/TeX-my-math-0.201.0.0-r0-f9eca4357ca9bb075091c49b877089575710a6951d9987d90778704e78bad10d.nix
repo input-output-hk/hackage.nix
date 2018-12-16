@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HaTeX)
           (hsPkgs.vector-space)
@@ -41,7 +41,7 @@
       };
       tests = {
         "makeSnippets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.haskell-src-meta)

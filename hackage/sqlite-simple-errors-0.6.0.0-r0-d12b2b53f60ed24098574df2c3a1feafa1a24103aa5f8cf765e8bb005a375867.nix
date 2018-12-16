@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sqlite-simple)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       tests = {
         "sqlite-simple-errors-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sqlite-simple-errors)
             (hsPkgs.sqlite-simple)

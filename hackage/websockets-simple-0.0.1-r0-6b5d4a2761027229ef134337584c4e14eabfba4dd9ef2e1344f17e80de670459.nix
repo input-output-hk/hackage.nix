@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -39,7 +39,7 @@
       };
       tests = {
         "websockets-simple-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.websockets-simple)
           ];

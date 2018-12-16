@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.bytestring)
@@ -64,7 +64,7 @@
       };
       exes = {
         "hgeometry-viewer" = {
-          depends  = pkgs.lib.optionals (flags.interactive) [
+          depends = pkgs.lib.optionals (flags.interactive) [
             (hsPkgs.base)
             (hsPkgs.hgeometry)
             (hsPkgs.lens)
@@ -94,7 +94,7 @@
           ];
         };
         "hgeometry-examples" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.hgeometry)
             (hsPkgs.lens)
@@ -114,13 +114,13 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
@@ -144,7 +144,7 @@
           ];
         };
         "bapc_examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.array)
@@ -158,7 +158,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.fixed-vector)

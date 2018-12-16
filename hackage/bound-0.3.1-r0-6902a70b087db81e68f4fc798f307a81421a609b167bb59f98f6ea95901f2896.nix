@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.prelude-extras)
@@ -34,7 +34,7 @@
       };
       tests = {
         "Simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prelude-extras)
             (hsPkgs.transformers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.HUnit)
         ] ++ (if flags.small_base

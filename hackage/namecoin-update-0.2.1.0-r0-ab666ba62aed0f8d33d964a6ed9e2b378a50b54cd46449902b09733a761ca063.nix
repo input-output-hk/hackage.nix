@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.wreq)
@@ -36,7 +36,7 @@
       };
       exes = {
         "namecoin-update" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.namecoin-update)

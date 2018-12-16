@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Factor" = {
-          depends  = [
+          depends = [
             (hsPkgs.satchmo)
             (hsPkgs.satchmo-backends)
             (hsPkgs.process)
@@ -36,7 +36,7 @@
           ];
         };
         "HC" = {
-          depends  = [
+          depends = [
             (hsPkgs.satchmo)
             (hsPkgs.satchmo-backends)
             (hsPkgs.process)
@@ -46,7 +46,7 @@
           ];
         };
         "VC" = {
-          depends  = [
+          depends = [
             (hsPkgs.satchmo)
             (hsPkgs.satchmo-backends)
             (hsPkgs.process)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.atomic-primops)
           (hsPkgs.primitive)
@@ -38,7 +38,7 @@
       };
       exes = {
         "dev-example" = {
-          depends  = pkgs.lib.optionals (!(!flags.dev)) [
+          depends = pkgs.lib.optionals (!(!flags.dev)) [
             (hsPkgs.base)
             (hsPkgs.unagi-bloomfilter)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "tests" = {
-          depends  = pkgs.lib.optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = pkgs.lib.optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.unagi-bloomfilter)

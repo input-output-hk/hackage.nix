@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.directory)
@@ -40,7 +40,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "hcl-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.directory)

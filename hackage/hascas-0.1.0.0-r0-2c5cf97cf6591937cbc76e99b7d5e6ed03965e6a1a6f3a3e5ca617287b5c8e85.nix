@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -40,7 +40,7 @@
       };
       tests = {
         "hascas-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hascas)
             (hsPkgs.bytestring)

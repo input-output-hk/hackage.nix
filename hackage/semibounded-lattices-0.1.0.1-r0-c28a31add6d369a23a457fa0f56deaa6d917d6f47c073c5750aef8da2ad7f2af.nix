@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lattices)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "semibounded-lattices-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semibounded-lattices)
           ];

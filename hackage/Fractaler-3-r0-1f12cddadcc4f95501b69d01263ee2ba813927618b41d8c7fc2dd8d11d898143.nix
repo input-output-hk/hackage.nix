@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Fractaler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.random)

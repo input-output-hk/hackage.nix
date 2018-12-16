@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.foldl)
@@ -36,7 +36,7 @@
       };
       tests = {
         "resample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sampling)
           ];
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "bench-sampling" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.sampling)

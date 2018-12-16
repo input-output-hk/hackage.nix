@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.html)
           (hsPkgs.cgi)
           (hsPkgs.utility-ht)
@@ -44,7 +44,7 @@
       };
       exes = {
         "board-games" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.httpd-shed)
             (hsPkgs.network-uri)
             (hsPkgs.html)
@@ -60,7 +60,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.utility-ht)
             (hsPkgs.transformers)

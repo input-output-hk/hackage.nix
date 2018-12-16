@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.katip)
           (hsPkgs.hsyslog)
@@ -37,7 +37,7 @@
       };
       tests = {
         "katip-syslog-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.katip-syslog)
           ];

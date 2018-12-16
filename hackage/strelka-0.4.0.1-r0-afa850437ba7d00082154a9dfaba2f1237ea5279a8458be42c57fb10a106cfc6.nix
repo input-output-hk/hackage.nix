@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base64-bytestring)
           (hsPkgs.attoparsec)
           (hsPkgs.http-media)

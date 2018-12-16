@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       exes = {
         "test-tagsoup" = {
-          depends  = pkgs.lib.optionals (flags.testprog) [
+          depends = pkgs.lib.optionals (flags.testprog) [
             (hsPkgs.QuickCheck)
             (hsPkgs.deepseq)
             (hsPkgs.time)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "hedis-benchmark" = {
-          depends  = pkgs.lib.optionals (flags.benchmark) [
+          depends = pkgs.lib.optionals (flags.benchmark) [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.hedis)
@@ -50,7 +50,7 @@
           ];
         };
         "hedis-test" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hedis)

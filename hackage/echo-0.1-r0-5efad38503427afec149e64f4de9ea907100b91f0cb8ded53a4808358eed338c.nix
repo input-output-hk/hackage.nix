@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
         ] ++ pkgs.lib.optionals (system.isWindows) [
@@ -37,7 +37,7 @@
       };
       exes = {
         "password" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.echo)
           ];

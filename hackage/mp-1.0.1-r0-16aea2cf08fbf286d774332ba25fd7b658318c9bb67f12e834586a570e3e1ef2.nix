@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-gi-base)
             (hsPkgs.haskell-gi-overloading)

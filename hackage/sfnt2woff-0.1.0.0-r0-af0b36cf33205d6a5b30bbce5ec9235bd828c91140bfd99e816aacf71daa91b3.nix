@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -36,7 +36,7 @@
       };
       exes = {
         "sfnt2woff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
@@ -48,7 +48,7 @@
       };
       tests = {
         "sfnt2woff-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sfnt2woff)
           ];

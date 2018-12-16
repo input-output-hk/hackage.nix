@@ -26,7 +26,7 @@
     components = {
       exes = {
         "animascii" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal-game)
             (hsPkgs.fsnotify)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.ansi-terminal-game)

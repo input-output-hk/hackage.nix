@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.process)
@@ -35,7 +35,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.ViennaRNAParser)

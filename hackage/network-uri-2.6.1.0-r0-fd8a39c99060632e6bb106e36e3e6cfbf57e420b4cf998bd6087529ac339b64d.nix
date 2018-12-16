@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.parsec)
@@ -33,7 +33,7 @@
       };
       tests = {
         "uri" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.network-uri)

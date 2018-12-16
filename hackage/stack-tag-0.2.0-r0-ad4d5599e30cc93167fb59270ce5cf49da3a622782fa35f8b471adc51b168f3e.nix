@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "stack-tag" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.containers)

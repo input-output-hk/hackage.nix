@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.composition)
@@ -33,7 +33,7 @@
       };
       tests = {
         "quadtree-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.composition)

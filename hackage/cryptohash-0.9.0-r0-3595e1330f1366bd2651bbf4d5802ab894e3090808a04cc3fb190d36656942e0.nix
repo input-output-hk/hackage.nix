@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.ghc-prim)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-kat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "bench-hashes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
@@ -59,7 +59,7 @@
           ];
         };
         "bench-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

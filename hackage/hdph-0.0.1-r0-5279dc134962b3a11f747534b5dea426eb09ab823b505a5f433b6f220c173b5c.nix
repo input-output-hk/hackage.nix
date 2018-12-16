@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.template-haskell)
           (hsPkgs.base)
           (hsPkgs.cereal)
@@ -45,7 +45,7 @@
       };
       exes = {
         "hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.template-haskell)
             (hsPkgs.base)
             (hsPkgs.cereal)
@@ -64,7 +64,7 @@
           ];
         };
         "fib" = {
-          depends  = [
+          depends = [
             (hsPkgs.template-haskell)
             (hsPkgs.base)
             (hsPkgs.cereal)
@@ -83,7 +83,7 @@
           ];
         };
         "sumeuler" = {
-          depends  = [
+          depends = [
             (hsPkgs.template-haskell)
             (hsPkgs.base)
             (hsPkgs.cereal)
@@ -102,7 +102,7 @@
           ];
         };
         "nbody" = {
-          depends  = [
+          depends = [
             (hsPkgs.template-haskell)
             (hsPkgs.base)
             (hsPkgs.cereal)

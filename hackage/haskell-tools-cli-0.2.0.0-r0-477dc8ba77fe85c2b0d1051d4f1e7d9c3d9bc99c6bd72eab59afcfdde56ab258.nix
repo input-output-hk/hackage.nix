@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ht-refact" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

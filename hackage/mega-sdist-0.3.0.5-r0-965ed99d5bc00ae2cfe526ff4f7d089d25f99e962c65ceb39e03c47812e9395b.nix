@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mega-sdist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.classy-prelude-conduit)

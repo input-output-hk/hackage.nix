@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HDBC)
           (hsPkgs.HTTP)
           (hsPkgs.aeson)

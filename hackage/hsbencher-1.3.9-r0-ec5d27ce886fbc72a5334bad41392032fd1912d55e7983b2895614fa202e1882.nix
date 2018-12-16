@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.process)
@@ -47,7 +47,7 @@
       };
       tests = {
         "test1" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.process)
@@ -66,7 +66,7 @@
           ] ++ pkgs.lib.optional (flags.hydra) (hsPkgs.hydra-print)) ++ pkgs.lib.optional (flags.fusion) (hsPkgs.handa-gdata);
         };
         "test2" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.process)

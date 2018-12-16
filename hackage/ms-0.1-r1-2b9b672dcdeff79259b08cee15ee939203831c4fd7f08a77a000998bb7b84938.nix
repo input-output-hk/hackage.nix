@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.contravariant)
           (hsPkgs.edit-distance)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -47,7 +47,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

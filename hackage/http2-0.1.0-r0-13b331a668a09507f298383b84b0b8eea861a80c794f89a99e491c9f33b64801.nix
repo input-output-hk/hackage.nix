@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.blaze-builder)
@@ -35,13 +35,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.http2)
@@ -49,7 +49,7 @@
           ];
         };
         "hpack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sdl2)
           (hsPkgs.cairo)
@@ -37,7 +37,7 @@
       };
       exes = {
         "sdl2-cairo-test" = {
-          depends  = pkgs.lib.optionals (flags.builddemo) [
+          depends = pkgs.lib.optionals (flags.builddemo) [
             (hsPkgs.base)
             (hsPkgs.sdl2)
             (hsPkgs.cairo)

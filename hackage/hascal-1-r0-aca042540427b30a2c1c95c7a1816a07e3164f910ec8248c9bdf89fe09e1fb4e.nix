@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.numbers)
         ];
       };
       exes = {
         "hascal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.numbers)
           ];

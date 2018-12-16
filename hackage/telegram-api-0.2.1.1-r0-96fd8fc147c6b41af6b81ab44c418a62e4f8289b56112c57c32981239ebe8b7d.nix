@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.servant)
@@ -36,7 +36,7 @@
       };
       tests = {
         "telegram-api-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.hspec)

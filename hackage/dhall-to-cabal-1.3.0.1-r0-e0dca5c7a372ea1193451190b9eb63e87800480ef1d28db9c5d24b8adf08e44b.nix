@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "dhall-to-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.dhall)
@@ -56,7 +56,7 @@
           ];
         };
         "cabal-to-dhall" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall)
             (hsPkgs.bytestring)
@@ -67,7 +67,7 @@
           ];
         };
         "dhall-to-cabal-meta" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.dhall)
@@ -80,7 +80,7 @@
       };
       tests = {
         "golden-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.Diff)

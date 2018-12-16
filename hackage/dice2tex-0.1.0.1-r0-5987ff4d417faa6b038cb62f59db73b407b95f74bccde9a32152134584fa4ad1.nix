@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dice2tex" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

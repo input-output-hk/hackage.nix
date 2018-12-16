@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "kanji" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -53,7 +53,7 @@
       };
       tests = {
         "kanji-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit-approx)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -67,7 +67,7 @@
       };
       benchmarks = {
         "kanji-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)

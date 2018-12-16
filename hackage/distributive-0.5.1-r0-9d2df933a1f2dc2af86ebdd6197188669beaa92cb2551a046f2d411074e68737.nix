@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.transformers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basic-prelude)
           (hsPkgs.deepseq)
@@ -36,7 +36,7 @@
       };
       exes = {
         "shake-shakers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakers)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.utf8-env)
           (hsPkgs.utf8-string)
@@ -38,7 +38,7 @@
       };
       exes = {
         "idlppr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.utf8-env)
             (hsPkgs.utf8-string)
@@ -50,7 +50,7 @@
           ];
         };
         "idltestlex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.utf8-env)
             (hsPkgs.utf8-string)

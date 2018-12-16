@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nested-routes)
             (hsPkgs.attoparsec)
@@ -82,7 +82,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nested-routes)
             (hsPkgs.attoparsec)

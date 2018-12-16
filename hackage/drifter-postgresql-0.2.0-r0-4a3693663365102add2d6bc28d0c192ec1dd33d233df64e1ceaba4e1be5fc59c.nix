@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.postgresql-simple)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.drifter)
             (hsPkgs.postgresql-simple)

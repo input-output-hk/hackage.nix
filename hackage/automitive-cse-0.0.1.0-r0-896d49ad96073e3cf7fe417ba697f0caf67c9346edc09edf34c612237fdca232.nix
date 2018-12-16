@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -35,7 +35,7 @@
       };
       tests = {
         "exTrue" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickcheck-simple)
             (hsPkgs.automitive-cse)

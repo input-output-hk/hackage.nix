@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "hasmin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.containers)
@@ -58,7 +58,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.hspec)
@@ -70,7 +70,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.doctest-discover)
@@ -81,7 +81,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.directory)

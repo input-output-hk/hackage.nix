@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.mtl)
         ] ++ (if flags.arrowsubclassescategory
           then [

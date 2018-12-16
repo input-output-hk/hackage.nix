@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pointfree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

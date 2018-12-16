@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.array)
@@ -35,7 +35,7 @@
       };
       exes = {
         "flite-pure" = {
-          depends  = pkgs.lib.optionals (flags.pure) [
+          depends = pkgs.lib.optionals (flags.pure) [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.array)
@@ -43,7 +43,7 @@
           ];
         };
         "flite" = {
-          depends  = pkgs.lib.optionals (!flags.pure) [
+          depends = pkgs.lib.optionals (!flags.pure) [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.array)

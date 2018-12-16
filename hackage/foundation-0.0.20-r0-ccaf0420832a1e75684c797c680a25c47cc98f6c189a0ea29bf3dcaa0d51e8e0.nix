@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basement)
           (hsPkgs.ghc-prim)
@@ -40,21 +40,21 @@
       };
       tests = {
         "check-foundation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basement)
             (hsPkgs.foundation)
           ];
         };
         "foundation-link" = {
-          depends  = pkgs.lib.optionals (flags.linktest) [
+          depends = pkgs.lib.optionals (flags.linktest) [
             (hsPkgs.base)
             (hsPkgs.foundation)
             (hsPkgs.template-haskell)
           ];
         };
         "doctest" = {
-          depends  = pkgs.lib.optionals (!flags.minimal-deps) (pkgs.lib.optionals (flags.doctest) [
+          depends = pkgs.lib.optionals (!flags.minimal-deps) (pkgs.lib.optionals (flags.doctest) [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ]);
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = pkgs.lib.optionals (!(flags.minimal-deps || compiler.isGhc && compiler.version.lt "7.10")) ([
+          depends = pkgs.lib.optionals (!(flags.minimal-deps || compiler.isGhc && compiler.version.lt "7.10")) ([
             (hsPkgs.base)
             (hsPkgs.gauge)
             (hsPkgs.basement)

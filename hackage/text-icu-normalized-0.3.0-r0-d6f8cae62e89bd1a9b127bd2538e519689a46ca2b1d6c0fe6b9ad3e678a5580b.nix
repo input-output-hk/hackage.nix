@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-normalizations" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

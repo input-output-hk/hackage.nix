@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HStringTemplate)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-text-string-templates" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.MissingH)

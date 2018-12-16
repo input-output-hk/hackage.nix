@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod-core)
           (hsPkgs.process)
@@ -37,7 +37,7 @@
       };
       tests = {
         "yesod-content-pdf-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-content-pdf)
           ];

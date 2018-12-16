@@ -30,14 +30,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
         ];
       };
       exes = {
         "bnfc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.directory)
@@ -51,7 +51,7 @@
       };
       tests = {
         "system-tests-haskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -62,7 +62,7 @@
           ];
         };
         "system-tests-java" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -73,7 +73,7 @@
           ];
         };
         "system-tests-c" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -84,7 +84,7 @@
           ];
         };
         "system-tests-cpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -95,7 +95,7 @@
           ];
         };
         "system-tests-cpp-no-stl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -106,7 +106,7 @@
           ];
         };
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.directory)

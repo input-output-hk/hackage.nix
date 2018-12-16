@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -39,7 +39,7 @@
       };
       exes = {
         "postmark-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.postmark)
             (hsPkgs.text)

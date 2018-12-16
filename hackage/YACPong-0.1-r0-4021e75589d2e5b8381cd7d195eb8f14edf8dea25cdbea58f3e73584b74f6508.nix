@@ -26,7 +26,7 @@
     components = {
       exes = {
         "YACPong" = {
-          depends  = [
+          depends = [
             (hsPkgs.SDL)
             (hsPkgs.SDL-image)
             (hsPkgs.SDL-mixer)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.exceptions)
           (hsPkgs.utf8-string)
@@ -50,7 +50,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

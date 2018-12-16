@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hdevtools" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.directory)

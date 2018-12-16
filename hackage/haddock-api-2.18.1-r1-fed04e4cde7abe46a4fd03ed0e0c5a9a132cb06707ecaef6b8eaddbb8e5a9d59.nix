@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.ghc)
@@ -44,7 +44,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

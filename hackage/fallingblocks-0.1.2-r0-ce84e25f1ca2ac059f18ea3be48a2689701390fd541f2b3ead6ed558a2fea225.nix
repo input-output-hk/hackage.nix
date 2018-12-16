@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fallingblocks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.haskell98)

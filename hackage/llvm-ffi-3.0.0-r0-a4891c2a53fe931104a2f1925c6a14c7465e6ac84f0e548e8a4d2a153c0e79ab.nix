@@ -28,14 +28,14 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         pkgconfig = [
           (pkgconfPkgs.llvm)
         ];
       };
       exes = {
         "llvm-diff-ffi" = {
-          depends  = pkgs.lib.optionals (flags.buildtools) [
+          depends = pkgs.lib.optionals (flags.buildtools) [
             (hsPkgs.utility-ht)
             (hsPkgs.regex-posix)
             (hsPkgs.containers)
@@ -43,7 +43,7 @@
           ];
         };
         "llvm-function-mangler" = {
-          depends  = pkgs.lib.optionals (flags.buildtools) [
+          depends = pkgs.lib.optionals (flags.buildtools) [
             (hsPkgs.utility-ht)
             (hsPkgs.regex-posix)
             (hsPkgs.containers)
@@ -51,7 +51,7 @@
           ];
         };
         "llvm-intrinsic-mangler" = {
-          depends  = pkgs.lib.optionals (flags.buildtools) [
+          depends = pkgs.lib.optionals (flags.buildtools) [
             (hsPkgs.bytestring)
             (hsPkgs.base)
           ];

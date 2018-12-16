@@ -26,7 +26,7 @@
     components = {
       exes = {
         "midi-music-box" = {
-          depends  = [
+          depends = [
             (hsPkgs.diagrams-postscript)
             (hsPkgs.diagrams-lib)
             (hsPkgs.midi)

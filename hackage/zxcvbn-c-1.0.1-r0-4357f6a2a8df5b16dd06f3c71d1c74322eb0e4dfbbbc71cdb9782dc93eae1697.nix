@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = pkgs.lib.optional (flags.use-shared-lib) (pkgs."zxcvbn");
       };
     };

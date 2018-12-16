@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.random)
@@ -40,7 +40,7 @@
       };
       exes = {
         "perf-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hscuid)
           ] ++ [ (hsPkgs.criterion) ];
@@ -48,7 +48,7 @@
       };
       tests = {
         "hscuid-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)

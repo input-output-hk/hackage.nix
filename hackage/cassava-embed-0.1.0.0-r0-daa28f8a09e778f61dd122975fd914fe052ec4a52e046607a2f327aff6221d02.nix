@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cassava)
           (hsPkgs.template-haskell)
@@ -37,7 +37,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cassava)
             (hsPkgs.template-haskell)

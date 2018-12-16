@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       exes = {
         "changelogged" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.changelogged)
@@ -55,7 +55,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Glob)
             (hsPkgs.QuickCheck)
             (hsPkgs.ansi-terminal)

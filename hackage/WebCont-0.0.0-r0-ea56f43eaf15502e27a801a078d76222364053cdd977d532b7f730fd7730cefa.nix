@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.happstack-server)
           (hsPkgs.happstack-state)
           (hsPkgs.happstack-util)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.comonad)
@@ -40,7 +40,7 @@
       };
       tests = {
         "bifunctors-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.hspec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ScratchFs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HFuse)
             (hsPkgs.hsyslog)

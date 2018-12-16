@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.atomic-primops)
           (hsPkgs.containers)
@@ -50,20 +50,20 @@
       };
       exes = {
         "loops" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.streamly)
             (hsPkgs.base)
           ];
         };
         "nested-loops" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.random)
           ];
         };
         "parallel-loops" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.random)
@@ -72,7 +72,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -82,7 +82,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.streamly)
             (hsPkgs.atomic-primops)
             (hsPkgs.base)

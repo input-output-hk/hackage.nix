@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = (([
           (pkgs."stdc++")
         ] ++ pkgs.lib.optionals (flags.alsa) [

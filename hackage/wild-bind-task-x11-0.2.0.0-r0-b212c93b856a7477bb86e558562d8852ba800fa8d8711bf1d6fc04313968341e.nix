@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wild-bind)
           (hsPkgs.wild-bind-x11)
@@ -36,7 +36,7 @@
       };
       tests = {
         "import-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wild-bind-task-x11)
           ];

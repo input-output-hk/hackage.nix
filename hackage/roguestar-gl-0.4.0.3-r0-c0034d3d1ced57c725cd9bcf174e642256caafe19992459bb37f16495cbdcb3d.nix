@@ -26,7 +26,7 @@
     components = {
       exes = {
         "roguestar-gl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rsagl)
             (hsPkgs.containers)
@@ -44,7 +44,7 @@
           ];
         };
         "roguestar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rsagl)
             (hsPkgs.containers)

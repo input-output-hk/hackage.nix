@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "cabal-plan" = {
-          depends  = pkgs.lib.optionals (flags.exe) [
+          depends = pkgs.lib.optionals (flags.exe) [
             (hsPkgs.cabal-plan)
             (hsPkgs.base)
             (hsPkgs.text)

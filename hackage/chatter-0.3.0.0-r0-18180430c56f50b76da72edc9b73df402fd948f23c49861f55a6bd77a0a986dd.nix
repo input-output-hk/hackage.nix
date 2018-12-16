@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.containers)
@@ -55,7 +55,7 @@
       };
       exes = {
         "tag" = {
-          depends  = [
+          depends = [
             (hsPkgs.chatter)
             (hsPkgs.filepath)
             (hsPkgs.text)
@@ -65,7 +65,7 @@
           ];
         };
         "train" = {
-          depends  = [
+          depends = [
             (hsPkgs.chatter)
             (hsPkgs.filepath)
             (hsPkgs.text)
@@ -76,7 +76,7 @@
           ];
         };
         "eval" = {
-          depends  = [
+          depends = [
             (hsPkgs.chatter)
             (hsPkgs.filepath)
             (hsPkgs.text)
@@ -89,7 +89,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.chatter)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -110,7 +110,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.chatter)
             (hsPkgs.criterion)
             (hsPkgs.filepath)

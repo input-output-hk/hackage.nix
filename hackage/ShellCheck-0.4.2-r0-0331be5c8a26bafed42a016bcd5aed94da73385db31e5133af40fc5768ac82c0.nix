@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -38,7 +38,7 @@
       };
       exes = {
         "shellcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.ShellCheck)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -53,7 +53,7 @@
       };
       tests = {
         "test-shellcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.ShellCheck)
             (hsPkgs.base)
             (hsPkgs.containers)

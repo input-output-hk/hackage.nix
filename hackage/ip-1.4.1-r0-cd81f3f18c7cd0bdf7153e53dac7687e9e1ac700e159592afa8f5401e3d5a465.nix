@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ip)
             (hsPkgs.test-framework)
@@ -54,7 +54,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ip)
             (hsPkgs.hspec)
@@ -62,7 +62,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ip)
             (hsPkgs.doctest)
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ip)
             (hsPkgs.criterion)

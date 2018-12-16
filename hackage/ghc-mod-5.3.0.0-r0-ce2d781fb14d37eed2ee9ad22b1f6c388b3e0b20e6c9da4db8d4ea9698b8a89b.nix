@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -61,7 +61,7 @@
       };
       exes = {
         "ghc-mod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.directory)
@@ -75,7 +75,7 @@
           ];
         };
         "ghc-modi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -87,13 +87,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
           ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.executable-path);
         };

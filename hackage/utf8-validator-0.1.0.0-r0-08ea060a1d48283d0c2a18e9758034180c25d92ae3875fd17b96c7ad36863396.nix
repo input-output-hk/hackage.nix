@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       tests = {
         "utf8-validator-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tasty)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "utf8-validator-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.utf8-validator)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "buildbox-results" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buildbox)
             (hsPkgs.parseargs)

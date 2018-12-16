@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mono-traversable)
           (hsPkgs.random-shuffle)
@@ -33,7 +33,7 @@
       };
       tests = {
         "pure-shuffle-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.hspec)

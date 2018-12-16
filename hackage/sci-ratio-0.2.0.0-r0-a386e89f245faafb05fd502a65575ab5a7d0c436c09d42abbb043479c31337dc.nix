@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
         ];
       };
       tests = {
         "main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sci-ratio)
           ];

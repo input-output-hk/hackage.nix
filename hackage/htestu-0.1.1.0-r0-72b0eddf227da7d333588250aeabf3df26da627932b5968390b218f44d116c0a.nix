@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
         ];
@@ -37,7 +37,7 @@
       };
       exes = {
         "runTestu" = {
-          depends  = if flags.testknownrngs
+          depends = if flags.testknownrngs
             then [
               (hsPkgs.base)
               (hsPkgs.htestu)

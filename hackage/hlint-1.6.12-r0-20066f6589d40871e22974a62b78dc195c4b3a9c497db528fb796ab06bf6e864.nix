@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.filepath)

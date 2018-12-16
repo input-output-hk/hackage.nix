@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.time)
@@ -37,7 +37,7 @@
       };
       exes = {
         "btrfs-defrag" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.btrfs)
             (hsPkgs.unix)
@@ -45,13 +45,13 @@
           ];
         };
         "btrfs-clone-range" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.btrfs)
           ];
         };
         "btrfs-list-subvols" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.btrfs)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       exes = {
         "hocus-pocus" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.magic-wormhole)
@@ -59,7 +59,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

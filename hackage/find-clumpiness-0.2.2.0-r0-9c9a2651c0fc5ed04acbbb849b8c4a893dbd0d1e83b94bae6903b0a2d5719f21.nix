@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.clumpiness)
           (hsPkgs.BiobaseNewick)
@@ -43,7 +43,7 @@
       };
       exes = {
         "find-clumpiness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.find-clumpiness)
             (hsPkgs.BiobaseNewick)

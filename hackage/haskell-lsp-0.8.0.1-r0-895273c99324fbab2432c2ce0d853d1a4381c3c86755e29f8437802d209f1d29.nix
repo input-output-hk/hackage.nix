@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       exes = {
         "lsp-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -76,7 +76,7 @@
       };
       tests = {
         "haskell-lsp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

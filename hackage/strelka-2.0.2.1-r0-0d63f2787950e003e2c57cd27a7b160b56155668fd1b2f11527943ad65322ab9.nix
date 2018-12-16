@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.strelka-core)
           (hsPkgs.base64-bytestring)
           (hsPkgs.attoparsec)

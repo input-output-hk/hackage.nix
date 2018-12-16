@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.groups)
           (hsPkgs.semigroups)
@@ -54,7 +54,7 @@
       };
       exes = {
         "lgtkdemo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.lens)

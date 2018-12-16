@@ -28,14 +28,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.composition-prelude)
         ] ++ pkgs.lib.optional (!flags.no-integer-gmp) (hsPkgs.gmpint);
       };
       tests = {
         "fast-arithmetic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-arithmetic)
             (hsPkgs.hspec)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "fast-arithmetic-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-arithmetic)
             (hsPkgs.criterion)

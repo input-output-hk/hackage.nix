@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HTTP)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -54,7 +54,7 @@
       };
       exes = {
         "hgdata" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTTP)
             (hsPkgs.base)
             (hsPkgs.base64-bytestring)

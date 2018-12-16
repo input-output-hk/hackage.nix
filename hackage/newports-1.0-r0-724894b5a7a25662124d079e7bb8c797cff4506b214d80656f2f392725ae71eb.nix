@@ -26,7 +26,7 @@
     components = {
       exes = {
         "newports" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

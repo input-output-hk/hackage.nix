@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.lens)
@@ -54,7 +54,7 @@
       };
       exes = {
         "atsfmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-format)
           ];
@@ -62,7 +62,7 @@
       };
       tests = {
         "ats-format-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-format)
             (hsPkgs.hspec)
@@ -77,7 +77,7 @@
       };
       benchmarks = {
         "ats-format-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-format)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.parsec)
@@ -36,19 +36,19 @@
       };
       exes = {
         "SimpleFlag" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsoptions)
           ];
         };
         "ComplexFlag" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsoptions)
           ];
         };
         "DependentDefaultsDemo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsoptions)
           ];
@@ -56,7 +56,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsoptions)
             (hsPkgs.containers)

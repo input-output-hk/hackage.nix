@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.unordered-containers)
@@ -40,13 +40,13 @@
       };
       exes = {
         "barrier-data-generator" = {
-          depends  = pkgs.lib.optionals (flags.generator) [
+          depends = pkgs.lib.optionals (flags.generator) [
             (hsPkgs.base)
             (hsPkgs.freetype2)
           ];
         };
         "barrier-example" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.lens-family-core)
@@ -54,7 +54,7 @@
           ];
         };
         "barrier-test-result-generator" = {
-          depends  = pkgs.lib.optionals (flags.test-results) [
+          depends = pkgs.lib.optionals (flags.test-results) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.lens-family-core)
@@ -64,7 +64,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.lens-family-core)

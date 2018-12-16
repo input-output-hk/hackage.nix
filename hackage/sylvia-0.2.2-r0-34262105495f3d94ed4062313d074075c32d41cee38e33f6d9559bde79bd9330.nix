@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sylvia" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad-transformers)
             (hsPkgs.data-default)
@@ -43,7 +43,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.void)
             (hsPkgs.parsec)

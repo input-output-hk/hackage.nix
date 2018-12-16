@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -52,7 +52,7 @@
       };
       exes = {
         "pier" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.directory)

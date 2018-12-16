@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sgrep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio)
             (hsPkgs.regex-compat)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cef3-raw)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);

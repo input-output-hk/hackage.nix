@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.http-types)
           (hsPkgs.http-client)
           (hsPkgs.bytestring-tree-builder)

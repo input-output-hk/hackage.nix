@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
@@ -60,19 +60,19 @@
       };
       tests = {
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec_main" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.lens)

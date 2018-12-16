@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.mtl)
@@ -60,7 +60,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedgehog)
             (hsPkgs.text)
@@ -74,7 +74,7 @@
           ];
         };
         "waarg-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.sandi)
@@ -55,7 +55,7 @@
       };
       exes = {
         "otp-auth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.binary)
@@ -69,7 +69,7 @@
       };
       tests = {
         "otp-authenticator-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.otp-authenticator)
           ];

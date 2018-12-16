@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elm-repl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bytestring-trie)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)

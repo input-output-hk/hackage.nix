@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.synthesizer-core)
           (hsPkgs.transformers)
           (hsPkgs.event-list)
@@ -46,7 +46,7 @@
       exes = {
         "rain" = {};
         "demonstration" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.explicit-exception)
             (hsPkgs.old-time)
           ];

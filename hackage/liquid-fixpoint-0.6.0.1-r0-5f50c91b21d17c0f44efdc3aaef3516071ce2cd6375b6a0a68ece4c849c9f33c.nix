@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.async)
@@ -64,7 +64,7 @@
       };
       exes = {
         "fixpoint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.liquid-fixpoint)
           ];
@@ -72,7 +72,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -84,7 +84,7 @@
           ];
         };
         "testparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

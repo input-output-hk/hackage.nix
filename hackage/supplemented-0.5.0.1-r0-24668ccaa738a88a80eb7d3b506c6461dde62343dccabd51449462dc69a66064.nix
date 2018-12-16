@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.supplemented)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

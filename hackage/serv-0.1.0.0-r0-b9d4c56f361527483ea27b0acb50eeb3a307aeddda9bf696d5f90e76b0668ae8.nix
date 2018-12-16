@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       exes = {
         "test-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.serv)
             (hsPkgs.wai)
@@ -54,7 +54,7 @@
       };
       tests = {
         "serv-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.serv)
             (hsPkgs.HUnit)

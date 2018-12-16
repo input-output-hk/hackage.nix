@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-sort" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.fgl)
             (hsPkgs.directory)

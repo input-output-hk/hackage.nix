@@ -26,7 +26,7 @@
     components = {
       exes = {
         "up" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.directory)

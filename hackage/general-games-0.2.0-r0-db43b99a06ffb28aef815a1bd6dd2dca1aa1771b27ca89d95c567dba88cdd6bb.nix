@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "general-games-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.general-games)
             (hsPkgs.HUnit)

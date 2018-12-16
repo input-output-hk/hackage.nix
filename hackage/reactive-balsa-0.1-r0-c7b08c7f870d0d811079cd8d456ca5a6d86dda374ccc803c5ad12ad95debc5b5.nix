@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.reactive-banana)
           (hsPkgs.midi-alsa)
           (hsPkgs.midi)

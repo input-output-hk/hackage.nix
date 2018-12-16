@@ -26,7 +26,7 @@
     components = {
       exes = {
         "catnplus" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.directory)

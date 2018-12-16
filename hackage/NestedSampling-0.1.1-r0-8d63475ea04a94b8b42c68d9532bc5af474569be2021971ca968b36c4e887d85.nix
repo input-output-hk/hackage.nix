@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
         ];
       };
       exes = {
         "lighthouse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.vector)

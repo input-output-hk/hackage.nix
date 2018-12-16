@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.mtl)
           (hsPkgs.base)
@@ -38,7 +38,7 @@
       };
       exes = {
         "ChasingBottomsTestSuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.mtl)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.json)
           (hsPkgs.authenticate-oauth)
@@ -35,7 +35,7 @@
       };
       tests = {
         "twitter-library" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "hakyll-contrib-csv-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.bytestring)

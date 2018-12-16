@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -41,7 +41,7 @@
       };
       tests = {
         "graphql-api-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.doctest)
@@ -51,7 +51,7 @@
           ];
         };
         "graphql-api-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.criterion)

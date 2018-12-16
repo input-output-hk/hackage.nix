@@ -26,7 +26,7 @@
     components = {
       exes = {
         "defend" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.peakachu)
             (hsPkgs.GLUT)

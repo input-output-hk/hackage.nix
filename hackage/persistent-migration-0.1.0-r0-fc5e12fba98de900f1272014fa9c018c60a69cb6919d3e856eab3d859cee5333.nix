@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.fgl)
@@ -38,7 +38,7 @@
       };
       tests = {
         "persistent-migration-integration" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
           ];
         };
         "persistent-migration-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)

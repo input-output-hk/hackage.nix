@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rss2irc" = {
-          depends  = [
+          depends = [
             (hsPkgs.feed)
             (hsPkgs.tagsoup)
             (hsPkgs.strict-concurrency)

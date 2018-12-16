@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
         ];
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec-permutation)
             (hsPkgs.base)
             (hsPkgs.parsec)

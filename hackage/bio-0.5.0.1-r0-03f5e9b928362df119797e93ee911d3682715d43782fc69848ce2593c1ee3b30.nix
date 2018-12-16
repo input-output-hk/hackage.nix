@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.tagsoup)
@@ -43,7 +43,7 @@
       };
       exes = {
         "qc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.containers)
@@ -53,19 +53,19 @@
           ];
         };
         "flx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
         };
         "fastout" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "frecover" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "frename" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];

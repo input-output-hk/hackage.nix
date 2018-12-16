@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
         ] ++ (if flags.five
           then [ (hsPkgs.transformers) ]
@@ -52,7 +52,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deriving-compat)
             (hsPkgs.hspec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "zoom-cache-sndfile" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.data-default)

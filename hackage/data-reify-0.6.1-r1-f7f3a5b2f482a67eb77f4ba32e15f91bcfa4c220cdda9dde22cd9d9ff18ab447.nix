@@ -25,50 +25,50 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       exes = {
         "data-reify-test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-reify)
           ];
         };
         "data-reify-test2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-reify)
           ];
         };
         "data-reify-test3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-reify)
           ];
         };
         "data-reify-test4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-reify)
           ];
         };
         "data-reify-test5" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-reify)
           ];
         };
         "data-reify-test6" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-reify)
           ];
         };
         "data-reify-test7" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-reify)
           ];

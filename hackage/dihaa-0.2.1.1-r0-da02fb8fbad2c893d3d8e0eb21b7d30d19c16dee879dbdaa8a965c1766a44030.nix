@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dihaa" = {
-          depends  = [
+          depends = [
             (hsPkgs.FontyFruity)
             (hsPkgs.JuicyPixels)
             (hsPkgs.Rasterific)

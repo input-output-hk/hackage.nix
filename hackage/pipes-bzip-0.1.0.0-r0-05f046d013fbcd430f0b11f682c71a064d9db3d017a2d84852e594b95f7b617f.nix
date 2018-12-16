@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pipes)
           (hsPkgs.bzlib)
@@ -35,7 +35,7 @@
       };
       tests = {
         "pipes-bzip-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-bzip)
           ];

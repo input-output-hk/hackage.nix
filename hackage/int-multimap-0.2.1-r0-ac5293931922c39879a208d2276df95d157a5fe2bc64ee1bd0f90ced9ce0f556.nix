@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.containers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.int-multimap)
             (hsPkgs.base)
             (hsPkgs.hashable)

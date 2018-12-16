@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

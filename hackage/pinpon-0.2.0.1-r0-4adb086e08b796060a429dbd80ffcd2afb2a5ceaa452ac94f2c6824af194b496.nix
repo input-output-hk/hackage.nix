@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.amazonka)
@@ -66,7 +66,7 @@
       };
       exes = {
         "pinpon" = {
-          depends  = pkgs.lib.optionals (!(!flags.pinpon-executable)) [
+          depends = pkgs.lib.optionals (!(!flags.pinpon-executable)) [
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-sns)
             (hsPkgs.base)
@@ -85,7 +85,7 @@
           ];
         };
         "pinpon-gpio" = {
-          depends  = pkgs.lib.optionals (!(!flags.pinpon-gpio-executable)) [
+          depends = pkgs.lib.optionals (!(!flags.pinpon-gpio-executable)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)
@@ -108,7 +108,7 @@
           ];
         };
         "pinpon-ring" = {
-          depends  = pkgs.lib.optionals (!(!flags.pinpon-ring-executable)) [
+          depends = pkgs.lib.optionals (!(!flags.pinpon-ring-executable)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)
@@ -130,21 +130,21 @@
       };
       tests = {
         "doctest" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.protolude)
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
             (hsPkgs.protolude)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.base)

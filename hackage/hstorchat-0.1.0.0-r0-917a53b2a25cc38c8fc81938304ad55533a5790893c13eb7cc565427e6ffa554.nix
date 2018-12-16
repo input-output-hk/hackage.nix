@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.socks)
@@ -42,7 +42,7 @@
       };
       exes = {
         "hstorchat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.hstorchat)
@@ -55,7 +55,7 @@
       };
       tests = {
         "hstorchat-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hstorchat)
             (hsPkgs.test-framework)

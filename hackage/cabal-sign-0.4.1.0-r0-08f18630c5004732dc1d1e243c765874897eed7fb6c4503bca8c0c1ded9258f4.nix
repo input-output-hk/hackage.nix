@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-sign" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.zlib)
             (hsPkgs.tar)

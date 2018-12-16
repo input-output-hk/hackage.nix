@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -51,7 +51,7 @@
       };
       tests = {
         "sanity" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

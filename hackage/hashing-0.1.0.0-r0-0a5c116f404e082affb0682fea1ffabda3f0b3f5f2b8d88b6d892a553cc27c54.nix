@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hashing-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       tests = {
         "hashing-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
             (hsPkgs.base)

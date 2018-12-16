@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoobuddy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

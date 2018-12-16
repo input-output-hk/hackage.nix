@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -39,7 +39,7 @@
       };
       tests = {
         "basics-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory-layout)
             (hsPkgs.HUnit)
@@ -48,7 +48,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory-layout)
             (hsPkgs.doctest)

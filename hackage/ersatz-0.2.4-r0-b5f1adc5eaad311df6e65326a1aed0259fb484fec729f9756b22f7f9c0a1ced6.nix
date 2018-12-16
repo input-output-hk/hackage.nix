@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
@@ -44,7 +44,7 @@
       };
       exes = {
         "ersatz-regexp-grid" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.ersatz)
@@ -55,7 +55,7 @@
           ];
         };
         "ersatz-sudoku" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.ersatz)
@@ -66,7 +66,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -82,7 +82,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

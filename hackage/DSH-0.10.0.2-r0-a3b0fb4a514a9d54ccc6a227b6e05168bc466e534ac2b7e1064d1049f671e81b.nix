@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.containers)
@@ -51,7 +51,7 @@
       };
       exes = {
         "vldot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.pretty)
@@ -68,7 +68,7 @@
       };
       tests = {
         "Flattening_TA" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)

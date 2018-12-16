@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.directory)
@@ -39,7 +39,7 @@
       };
       exes = {
         "dotenv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.dotenv)
@@ -54,7 +54,7 @@
       };
       tests = {
         "dotenv-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.dotenv)

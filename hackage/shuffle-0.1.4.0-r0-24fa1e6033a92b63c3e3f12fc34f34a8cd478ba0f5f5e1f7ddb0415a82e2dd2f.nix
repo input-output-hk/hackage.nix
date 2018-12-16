@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -46,7 +46,7 @@
       };
       exes = {
         "shuffle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shuffle)
           ];

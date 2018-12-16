@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.random)
@@ -41,7 +41,7 @@
       };
       tests = {
         "HPDF-Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTF)
             (hsPkgs.HPDF)

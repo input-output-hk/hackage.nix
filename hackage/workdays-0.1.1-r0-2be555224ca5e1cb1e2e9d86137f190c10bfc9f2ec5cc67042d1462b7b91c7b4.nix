@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.time)
@@ -33,7 +33,7 @@
       };
       tests = {
         "specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workdays)
             (hsPkgs.containers)
@@ -41,7 +41,7 @@
           ];
         };
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

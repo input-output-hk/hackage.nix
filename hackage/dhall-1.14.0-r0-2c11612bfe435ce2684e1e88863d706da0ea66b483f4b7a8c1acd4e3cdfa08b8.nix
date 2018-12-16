@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       exes = {
         "dhall" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.dhall)
@@ -67,7 +67,7 @@
           ];
         };
         "dhall-repl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.dhall)
@@ -80,7 +80,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.transformers);
         };
         "dhall-format" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.dhall)
@@ -92,7 +92,7 @@
           ];
         };
         "dhall-hash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall)
             (hsPkgs.optparse-applicative)
@@ -103,7 +103,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.dhall)
@@ -116,7 +116,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

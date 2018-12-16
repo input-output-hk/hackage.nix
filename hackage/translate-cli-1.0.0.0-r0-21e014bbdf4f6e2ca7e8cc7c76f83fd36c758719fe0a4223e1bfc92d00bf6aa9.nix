@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wreq)
           (hsPkgs.lens)
@@ -36,7 +36,7 @@
       };
       exes = {
         "translate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.translate-cli)
             (hsPkgs.turtle)
@@ -46,7 +46,7 @@
       };
       tests = {
         "translate-cli-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.translate-cli)
             (hsPkgs.HUnit)

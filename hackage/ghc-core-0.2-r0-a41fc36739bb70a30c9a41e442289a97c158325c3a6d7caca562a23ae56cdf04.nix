@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.pcre-light)

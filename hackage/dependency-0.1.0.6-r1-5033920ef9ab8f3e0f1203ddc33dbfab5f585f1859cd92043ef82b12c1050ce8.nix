@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       tests = {
         "dependency-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dependency)
             (hsPkgs.hspec)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "dependency-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dependency)
             (hsPkgs.containers)

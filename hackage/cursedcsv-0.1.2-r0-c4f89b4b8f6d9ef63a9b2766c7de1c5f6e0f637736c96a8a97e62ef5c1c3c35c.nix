@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cursedcsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parseargs)
             (hsPkgs.natural-sort)

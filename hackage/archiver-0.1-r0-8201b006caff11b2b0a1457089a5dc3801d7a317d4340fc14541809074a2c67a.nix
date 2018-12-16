@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.HTTP)
@@ -35,7 +35,7 @@
       };
       exes = {
         "archiver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hinotify)

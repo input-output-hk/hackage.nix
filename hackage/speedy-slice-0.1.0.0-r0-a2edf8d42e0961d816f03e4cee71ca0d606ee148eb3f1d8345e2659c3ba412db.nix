@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.lens)
@@ -38,14 +38,14 @@
       };
       tests = {
         "rosenbrock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-probability)
             (hsPkgs.speedy-slice)
           ];
         };
         "bnn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mwc-probability)

@@ -29,7 +29,7 @@
     components = {
       exes = {
         "schedule-planner" = {
-          depends  = if !flags.noscraper
+          depends = if !flags.noscraper
             then [
               (hsPkgs.base)
               (hsPkgs.containers)

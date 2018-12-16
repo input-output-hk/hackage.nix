@@ -26,7 +26,7 @@
     components = {
       exes = {
         "intero" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       tests = {
         "intero-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.temporary)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "make-travis-yml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-ci)
           ];
@@ -45,7 +45,7 @@
       };
       tests = {
         "golden" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell-ci)
             (hsPkgs.base)
             (hsPkgs.bytestring)

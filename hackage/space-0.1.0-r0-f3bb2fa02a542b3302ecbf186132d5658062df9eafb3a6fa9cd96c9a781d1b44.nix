@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       tests = {
         "space-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.space)
           ];

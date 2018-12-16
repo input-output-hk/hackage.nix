@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wrecker)
           (hsPkgs.optparse-applicative)
@@ -43,7 +43,7 @@
       };
       exes = {
         "inspector-wrecker-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.inspector-wrecker)
           ];
@@ -51,7 +51,7 @@
       };
       tests = {
         "inspector-wrecker-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.inspector-wrecker)
           ];

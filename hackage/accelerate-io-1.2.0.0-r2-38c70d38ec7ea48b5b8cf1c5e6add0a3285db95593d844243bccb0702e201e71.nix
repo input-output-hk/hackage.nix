@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.accelerate)
           (hsPkgs.array)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-io" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)

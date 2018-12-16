@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe-exceptions)
           (hsPkgs.streaming)
@@ -35,7 +35,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.streaming-base64)
             (hsPkgs.streaming-bytestring)

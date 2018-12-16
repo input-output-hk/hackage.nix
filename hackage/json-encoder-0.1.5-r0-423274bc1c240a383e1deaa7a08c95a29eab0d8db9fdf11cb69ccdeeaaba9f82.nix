@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.text)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-tree-builder)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Decimal)
           (hsPkgs.time)
@@ -37,7 +37,7 @@
       };
       exes = {
         "parse-tsp-pdf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.time)
@@ -48,7 +48,7 @@
           ];
         };
         "parse-tsp-text" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.time)
@@ -59,7 +59,7 @@
           ];
         };
         "test-tsp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.time)
@@ -70,7 +70,7 @@
           ] ++ pkgs.lib.optional (!(!flags.test)) (hsPkgs.QuickCheck);
         };
         "gen-tsp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.time)

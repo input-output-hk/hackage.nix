@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.th-expand-syns)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-beam-th" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.beam-th)
             (hsPkgs.beam)
@@ -48,7 +48,7 @@
           ];
         };
         "doctest-beam-th" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.doctest-discover)

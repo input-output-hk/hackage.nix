@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
           (hsPkgs.semigroups)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.midi)
             (hsPkgs.explicit-exception)
             (hsPkgs.event-list)

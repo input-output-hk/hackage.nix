@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.filepath)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-raw" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
           ];
         };
         "test-cooked" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.zlib)

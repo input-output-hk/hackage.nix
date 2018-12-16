@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.blaze-builder)
@@ -47,7 +47,7 @@
       };
       exes = {
         "example-production" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.shakespeare)
@@ -58,7 +58,7 @@
           ];
         };
         "example-dev" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.shakespeare)
@@ -71,7 +71,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hamlet)

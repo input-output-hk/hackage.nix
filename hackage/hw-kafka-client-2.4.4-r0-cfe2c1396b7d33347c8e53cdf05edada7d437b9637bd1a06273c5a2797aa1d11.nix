@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "kafka-client-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       tests = {
         "integration-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.bytestring)
@@ -65,7 +65,7 @@
           ];
         };
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.bytestring)

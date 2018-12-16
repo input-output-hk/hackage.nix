@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.data-default)
@@ -36,7 +36,7 @@
       };
       exes = {
         "mystem-test-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mystem)
             (hsPkgs.text)

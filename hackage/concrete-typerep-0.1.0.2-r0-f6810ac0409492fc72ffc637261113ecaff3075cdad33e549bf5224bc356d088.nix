@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.binary)
           (hsPkgs.hashable)
         ] ++ (if flags.new-typerep
@@ -39,7 +39,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.concrete-typerep)

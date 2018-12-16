@@ -26,7 +26,7 @@
     components = {
       exes = {
         "keysafe" = {
-          depends  = [
+          depends = [
             (hsPkgs.secret-sharing)
             (hsPkgs.argon2)
             (hsPkgs.raaz)

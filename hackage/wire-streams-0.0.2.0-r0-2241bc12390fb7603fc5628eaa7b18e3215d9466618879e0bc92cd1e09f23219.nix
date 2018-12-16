@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -35,7 +35,7 @@
       };
       tests = {
         "encode-decode-cereal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
@@ -47,7 +47,7 @@
           ];
         };
         "encode-decode-binary" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
@@ -61,7 +61,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wire-streams)
             (hsPkgs.criterion)

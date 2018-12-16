@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cryptonite)
           (hsPkgs.yu-utils)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yu-utils)
             (hsPkgs.random)
@@ -43,7 +43,7 @@
           ];
         };
         "test-auth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yu-auth)
             (hsPkgs.yu-utils)

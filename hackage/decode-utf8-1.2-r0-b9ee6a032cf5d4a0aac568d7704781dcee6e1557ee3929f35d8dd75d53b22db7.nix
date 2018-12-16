@@ -26,7 +26,7 @@
     components = {
       exes = {
         "decode-utf8" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opentheory-unicode)
             (hsPkgs.api-opentheory-unicode)

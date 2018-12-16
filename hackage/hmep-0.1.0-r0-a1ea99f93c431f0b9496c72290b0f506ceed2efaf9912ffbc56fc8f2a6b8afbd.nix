@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mwc-random)
           (hsPkgs.primitive)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hmep-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.probable)
             (hsPkgs.statistics)
@@ -47,7 +47,7 @@
       };
       tests = {
         "hmep-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.vector)

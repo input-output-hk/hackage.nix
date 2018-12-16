@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.parsec)
@@ -38,7 +38,7 @@
       };
       exes = {
         "twirec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-wire)
             (hsPkgs.text)
@@ -51,7 +51,7 @@
       };
       tests = {
         "typed-wire-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.typed-wire)

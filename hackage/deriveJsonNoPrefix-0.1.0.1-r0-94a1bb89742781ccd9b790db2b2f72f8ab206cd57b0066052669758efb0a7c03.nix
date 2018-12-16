@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.template-haskell)
@@ -33,7 +33,7 @@
       };
       tests = {
         "deriveJsonNoPrefix-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.deriveJsonNoPrefix)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "eddie" = {
-          depends  = [
+          depends = [
             (hsPkgs.hint)
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)

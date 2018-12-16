@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flow2dot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.parsec)

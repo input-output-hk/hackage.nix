@@ -26,7 +26,7 @@
     components = {
       exes = {
         "afv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)

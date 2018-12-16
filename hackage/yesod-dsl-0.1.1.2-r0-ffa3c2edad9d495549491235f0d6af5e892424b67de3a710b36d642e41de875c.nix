@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yesod-dsl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakespeare-text)
             (hsPkgs.text)

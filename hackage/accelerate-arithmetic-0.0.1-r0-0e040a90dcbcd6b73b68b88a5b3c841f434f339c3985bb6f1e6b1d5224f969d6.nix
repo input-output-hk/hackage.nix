@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.accelerate-utility)
           (hsPkgs.accelerate)
           (hsPkgs.utility-ht)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate-arithmetic)
             (hsPkgs.accelerate)
             (hsPkgs.QuickCheck)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "newton-inverse" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate-arithmetic)
             (hsPkgs.accelerate-utility)
             (hsPkgs.accelerate-cuda)

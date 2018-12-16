@@ -26,7 +26,7 @@
     components = {
       exes = {
         "create-lapack-ffi-single" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.explicit-exception)
             (hsPkgs.transformers)
@@ -36,7 +36,7 @@
           ];
         };
         "create-lapack-ffi" = {
-          depends  = [
+          depends = [
             (hsPkgs.cassava)
             (hsPkgs.optparse-applicative)
             (hsPkgs.parsec)
@@ -53,7 +53,7 @@
           ];
         };
         "create-lapack-csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.containers)
             (hsPkgs.utility-ht)

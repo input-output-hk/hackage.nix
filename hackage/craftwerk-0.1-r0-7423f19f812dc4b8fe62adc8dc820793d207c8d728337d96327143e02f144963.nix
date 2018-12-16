@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.vector-space)
@@ -37,25 +37,25 @@
       };
       exes = {
         "example1" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.craftwerk)
           ];
         };
         "example2" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.craftwerk)
           ];
         };
         "example3" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.craftwerk)
           ];
         };
         "test-craftwerk" = {
-          depends  = pkgs.lib.optionals (!(!flags.tests)) [
+          depends = pkgs.lib.optionals (!(!flags.tests)) [
             (hsPkgs.base)
             (hsPkgs.craftwerk)
             (hsPkgs.test-framework)

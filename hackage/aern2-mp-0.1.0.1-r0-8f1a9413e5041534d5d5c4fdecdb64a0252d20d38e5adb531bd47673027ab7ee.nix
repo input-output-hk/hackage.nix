@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.integer-logarithms)
           (hsPkgs.convertible)
@@ -52,7 +52,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aern2-mp)
             (hsPkgs.hspec)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       sublibs = {
         "topograph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.base-orphans)
@@ -52,7 +52,7 @@
       };
       exes = {
         "cabal-plan" = {
-          depends  = pkgs.lib.optionals (flags.exe) ([
+          depends = pkgs.lib.optionals (flags.exe) ([
             (hsPkgs.cabal-plan)
             (hsPkgs.topograph)
             (hsPkgs.base)

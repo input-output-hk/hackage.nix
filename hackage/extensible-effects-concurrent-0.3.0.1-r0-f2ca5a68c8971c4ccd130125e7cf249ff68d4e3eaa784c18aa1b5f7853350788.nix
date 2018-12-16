@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -47,7 +47,7 @@
       };
       tests = {
         "extensible-effects-concurrent-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extensible-effects-concurrent)
             (hsPkgs.extensible-effects)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "stackage-sandbox" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)

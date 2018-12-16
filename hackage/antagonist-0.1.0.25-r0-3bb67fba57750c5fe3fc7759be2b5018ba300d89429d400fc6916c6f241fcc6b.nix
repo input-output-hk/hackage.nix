@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod)
           (hsPkgs.antisplice)
@@ -41,7 +41,7 @@
       };
       exes = {
         "ironforge-yesod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
             (hsPkgs.antisplice)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-binary-conduit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-assertions)

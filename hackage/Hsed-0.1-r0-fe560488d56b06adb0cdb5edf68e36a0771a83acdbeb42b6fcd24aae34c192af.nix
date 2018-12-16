@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Hsed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.cmdargs)

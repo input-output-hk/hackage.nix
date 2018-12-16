@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.enumerate)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "example-enumerate-function" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enumerate-function)
           ];
@@ -45,14 +45,14 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enumerate-function)
             (hsPkgs.doctest)
           ];
         };
         "unittest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enumerate-function)
             (hsPkgs.hspec)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "command" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enumerate-function)
             (hsPkgs.criterion)

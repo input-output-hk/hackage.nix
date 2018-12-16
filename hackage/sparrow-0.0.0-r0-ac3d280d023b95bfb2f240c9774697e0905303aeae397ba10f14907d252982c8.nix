@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-attoparsec)
           (hsPkgs.async)
@@ -66,7 +66,7 @@
       };
       tests = {
         "sparrow-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-attoparsec)
             (hsPkgs.async)

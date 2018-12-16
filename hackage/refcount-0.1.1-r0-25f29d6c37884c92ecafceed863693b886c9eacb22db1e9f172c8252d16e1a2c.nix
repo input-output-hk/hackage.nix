@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hashable)
             (hsPkgs.refcount)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "amrun" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.deepseq)

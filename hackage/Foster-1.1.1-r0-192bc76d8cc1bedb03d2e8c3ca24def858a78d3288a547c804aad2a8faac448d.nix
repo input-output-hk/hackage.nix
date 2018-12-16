@@ -26,7 +26,7 @@
     components = {
       exes = {
         "foster" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       benchmarks = {
         "foster-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.containers)

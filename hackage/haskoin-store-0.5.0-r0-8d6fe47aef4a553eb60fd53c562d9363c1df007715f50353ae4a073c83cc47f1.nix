@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       exes = {
         "haskoin-store" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -82,7 +82,7 @@
       };
       tests = {
         "haskoin-store-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.haskoin-core)

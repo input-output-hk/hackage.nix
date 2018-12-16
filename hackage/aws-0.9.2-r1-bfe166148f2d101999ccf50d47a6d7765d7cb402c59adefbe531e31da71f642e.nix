@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
@@ -61,7 +61,7 @@
       };
       exes = {
         "GetObject" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
@@ -70,14 +70,14 @@
           ];
         };
         "SimpleDb" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.text)
           ];
         };
         "Sqs" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.text)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Haggressive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Haggressive)
             (hsPkgs.Cabal)
@@ -47,7 +47,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Haggressive)
             (hsPkgs.HUnit)

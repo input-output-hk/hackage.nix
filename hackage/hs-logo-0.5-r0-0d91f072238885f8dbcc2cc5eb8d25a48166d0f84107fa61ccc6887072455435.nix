@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hs-logo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)
@@ -43,7 +43,7 @@
       };
       tests = {
         "turtle-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)

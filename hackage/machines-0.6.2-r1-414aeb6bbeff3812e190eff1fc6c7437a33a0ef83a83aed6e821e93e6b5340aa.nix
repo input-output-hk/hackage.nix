@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.adjunctions)
           (hsPkgs.base)
           (hsPkgs.comonad)
@@ -43,7 +43,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.conduit-combinators)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
@@ -57,7 +57,7 @@
       };
       exes = {
         "simple" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.transformers-base)
             (hsPkgs.transformers)
@@ -75,7 +75,7 @@
           ];
         };
         "userstream" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers-base)
@@ -100,7 +100,7 @@
           ];
         };
         "oauth_callback" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers-base)
@@ -118,7 +118,7 @@
           ];
         };
         "oauth_pin" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers-base)
@@ -137,13 +137,13 @@
       };
       tests = {
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

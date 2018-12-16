@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
           (hsPkgs.Chart)
@@ -49,7 +49,7 @@
       };
       exes = {
         "hgis" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgis)
           ];
@@ -57,7 +57,7 @@
       };
       tests = {
         "hgis-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgis)
             (hsPkgs.hspec)

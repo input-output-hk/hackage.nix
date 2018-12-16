@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.primitive)
@@ -40,7 +40,7 @@
       };
       exes = {
         "getdata" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.http-client)
@@ -48,7 +48,7 @@
           ];
         };
         "plot" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
@@ -66,7 +66,7 @@
           ];
         };
         "plot2" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
@@ -84,7 +84,7 @@
           ];
         };
         "demo" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.list-t)
             (hsPkgs.lens-family-core)
@@ -99,7 +99,7 @@
           ];
         };
         "tutorial" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
@@ -112,7 +112,7 @@
           ];
         };
         "benchdemo" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
@@ -121,7 +121,7 @@
           ];
         };
         "missing" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.vinyl)
@@ -130,7 +130,7 @@
       };
       benchmarks = {
         "insurance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.Frames)

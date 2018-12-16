@@ -42,7 +42,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((((([
+        depends = (((((((([
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.regex-compat-tdfa)
@@ -106,7 +106,7 @@
       };
       exes = {
         "darcs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.darcs)
             (hsPkgs.filepath)
@@ -116,7 +116,7 @@
       };
       tests = {
         "darcs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.darcs)
             (hsPkgs.array)
@@ -140,7 +140,7 @@
           ] ++ [ (hsPkgs.text) ];
         };
         "hashed-storage-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

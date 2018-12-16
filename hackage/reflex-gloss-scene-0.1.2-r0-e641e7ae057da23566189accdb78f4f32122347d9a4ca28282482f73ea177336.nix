@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gloss)
           (hsPkgs.gloss-rendering)
@@ -48,7 +48,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.reflex)
@@ -63,7 +63,7 @@
           ];
         };
         "collections" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.reflex)
@@ -78,7 +78,7 @@
           ];
         };
         "frpzoo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.reflex)
@@ -93,7 +93,7 @@
           ];
         };
         "counter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.reflex)

@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (pkgs.lib.optional (flags.syb-with-class) (hsPkgs.syb-with-class) ++ pkgs.lib.optionals (flags.quasi-quotation) [
+        depends = (pkgs.lib.optional (flags.syb-with-class) (hsPkgs.syb-with-class) ++ pkgs.lib.optionals (flags.quasi-quotation) [
           (hsPkgs.template-haskell)
           (hsPkgs.mtl)
         ]) ++ (if flags.smaller-base

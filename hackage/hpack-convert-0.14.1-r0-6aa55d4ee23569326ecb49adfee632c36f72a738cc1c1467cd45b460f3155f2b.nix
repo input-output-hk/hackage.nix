@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.Cabal)
@@ -45,7 +45,7 @@
       };
       exes = {
         "hpack-convert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.Cabal)
@@ -67,7 +67,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.Cabal)

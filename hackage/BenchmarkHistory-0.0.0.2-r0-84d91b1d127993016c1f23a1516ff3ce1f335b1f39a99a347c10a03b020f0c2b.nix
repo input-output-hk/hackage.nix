@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cassava)
@@ -38,7 +38,7 @@
       };
       exes = {
         "BenchmarkHistogram" = {
-          depends  = pkgs.lib.optionals (flags.exe) [
+          depends = pkgs.lib.optionals (flags.exe) [
             (hsPkgs.base)
             (hsPkgs.BenchmarkHistory)
             (hsPkgs.Chart)

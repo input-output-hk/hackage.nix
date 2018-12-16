@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Nomyx" = {
-          depends  = [
+          depends = [
             (hsPkgs.Nomyx-Language)
             (hsPkgs.DebugTraceHelpers)
             (hsPkgs.MissingH)

@@ -28,14 +28,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       exes = {
         "image2term" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.friday)
@@ -44,7 +44,7 @@
           ];
         };
         "senoid" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.AC-Angle)
@@ -53,7 +53,7 @@
       };
       tests = {
         "spec" = {
-          depends  = pkgs.lib.optionals (!flags.no-tests) [
+          depends = pkgs.lib.optionals (!flags.no-tests) [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

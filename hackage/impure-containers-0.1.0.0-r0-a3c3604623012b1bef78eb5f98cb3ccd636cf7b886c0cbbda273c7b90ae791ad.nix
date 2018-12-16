@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.primitive)
@@ -38,7 +38,7 @@
       };
       tests = {
         "impure-containers-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.impure-containers)
             (hsPkgs.containers)

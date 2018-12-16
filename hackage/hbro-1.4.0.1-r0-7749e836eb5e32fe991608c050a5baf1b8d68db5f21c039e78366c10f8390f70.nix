@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.classy-prelude)
@@ -68,7 +68,7 @@
       };
       exes = {
         "hbro" = {
-          depends  = [
+          depends = [
             (hsPkgs.hbro)
             (hsPkgs.base)
           ];

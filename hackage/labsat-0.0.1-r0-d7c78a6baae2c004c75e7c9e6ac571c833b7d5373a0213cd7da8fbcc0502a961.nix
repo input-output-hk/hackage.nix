@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "labsat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.labsat)
             (hsPkgs.optparse-generic)
@@ -51,7 +51,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.bytestring)

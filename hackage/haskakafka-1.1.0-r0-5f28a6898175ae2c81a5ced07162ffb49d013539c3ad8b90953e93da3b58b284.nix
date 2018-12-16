@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -39,14 +39,14 @@
       };
       exes = {
         "simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskakafka)
             (hsPkgs.bytestring)
           ];
         };
         "basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskakafka)
             (hsPkgs.bytestring)
@@ -57,7 +57,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

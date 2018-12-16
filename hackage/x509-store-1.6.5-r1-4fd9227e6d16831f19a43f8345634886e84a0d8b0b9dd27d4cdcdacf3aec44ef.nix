@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-x509-store" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tasty)

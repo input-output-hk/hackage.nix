@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambdaLit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdaBase)
             (hsPkgs.network)

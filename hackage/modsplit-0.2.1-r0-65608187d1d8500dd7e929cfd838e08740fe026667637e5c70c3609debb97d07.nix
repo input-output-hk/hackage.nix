@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       exes = {
         "modsplit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.mtl)

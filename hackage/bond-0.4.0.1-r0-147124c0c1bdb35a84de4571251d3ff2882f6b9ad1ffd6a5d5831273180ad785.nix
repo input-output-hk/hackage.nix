@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "gbc" = {
-          depends  = [
+          depends = [
             (hsPkgs.bond)
             (hsPkgs.aeson)
             (hsPkgs.async)
@@ -55,7 +55,7 @@
       };
       tests = {
         "gbc-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.bond)
             (hsPkgs.aeson)
             (hsPkgs.base)

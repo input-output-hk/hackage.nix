@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod)
           (hsPkgs.yesod-core)
@@ -80,7 +80,7 @@
       };
       exes = {
         "hledger-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.hledger-web)
             (hsPkgs.hledger)
             (hsPkgs.hledger-lib)
@@ -123,7 +123,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hledger-web)
             (hsPkgs.yesod-test)

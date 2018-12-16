@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.comonad)
@@ -54,13 +54,13 @@
       };
       tests = {
         "templates" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
           ];
         };
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.QuickCheck)
@@ -68,7 +68,7 @@
           ];
         };
         "hunit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -80,7 +80,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -90,7 +90,7 @@
       };
       benchmarks = {
         "plated" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad)
             (hsPkgs.criterion)
@@ -101,7 +101,7 @@
           ] ++ pkgs.lib.optional (flags.benchmark-uniplate) (hsPkgs.uniplate);
         };
         "alongside" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad)
             (hsPkgs.comonads-fd)
@@ -113,7 +113,7 @@
           ];
         };
         "unsafe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad)
             (hsPkgs.comonads-fd)

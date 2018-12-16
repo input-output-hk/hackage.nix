@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -51,13 +51,13 @@
       };
       exes = {
         "example_echobot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.slack-api)
           ];
         };
         "example_counterbot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.slack-api)
             (hsPkgs.text)
@@ -68,7 +68,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.slack-api)
             (hsPkgs.base)
           ];

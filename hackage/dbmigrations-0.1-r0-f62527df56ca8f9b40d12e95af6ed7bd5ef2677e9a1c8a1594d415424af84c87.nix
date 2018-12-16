@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HDBC)
           (hsPkgs.time)
@@ -44,7 +44,7 @@
       };
       exes = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HDBC-postgresql)
             (hsPkgs.HUnit)
             (hsPkgs.process)
@@ -52,9 +52,7 @@
         };
         "moo" = {};
         "store-manager" = {
-          depends  = [
-            (hsPkgs.hscurses)
-          ];
+          depends = [ (hsPkgs.hscurses) ];
         };
       };
     };

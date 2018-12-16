@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.template-haskell)
@@ -33,7 +33,7 @@
       };
       tests = {
         "lookup-tables-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lookup-tables)
             (hsPkgs.tasty)

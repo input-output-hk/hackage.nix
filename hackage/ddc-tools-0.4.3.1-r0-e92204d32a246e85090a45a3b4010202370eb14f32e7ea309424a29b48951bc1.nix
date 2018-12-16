@@ -26,13 +26,13 @@
     components = {
       exes = {
         "ddc-check" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ddc-core)
           ];
         };
         "ddc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.containers)
@@ -52,7 +52,7 @@
           ];
         };
         "ddci-core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.containers)
@@ -72,7 +72,7 @@
           ];
         };
         "ddci-tetra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

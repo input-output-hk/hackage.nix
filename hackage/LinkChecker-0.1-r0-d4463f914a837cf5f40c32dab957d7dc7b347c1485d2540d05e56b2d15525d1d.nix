@@ -26,7 +26,7 @@
     components = {
       exes = {
         "linkchecker" = {
-          depends  = [
+          depends = [
             (hsPkgs.tagsoup)
             (hsPkgs.containers)
             (hsPkgs.HTTP)

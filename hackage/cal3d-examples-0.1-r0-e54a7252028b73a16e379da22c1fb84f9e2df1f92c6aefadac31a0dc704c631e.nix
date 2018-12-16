@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cally-dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.SDL)
@@ -35,7 +35,7 @@
           ];
         };
         "cally-gl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.SDL)

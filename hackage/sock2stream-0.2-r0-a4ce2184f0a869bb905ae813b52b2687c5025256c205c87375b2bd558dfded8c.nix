@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sock2stream" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.directory)

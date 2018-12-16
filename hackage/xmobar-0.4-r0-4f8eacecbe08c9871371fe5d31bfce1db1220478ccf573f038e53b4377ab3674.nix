@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xmobar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.mtl)
@@ -35,7 +35,7 @@
           ];
         };
         "xmb-cpu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.mtl)
@@ -44,7 +44,7 @@
           ];
         };
         "xmb-mem" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.mtl)
@@ -53,7 +53,7 @@
           ];
         };
         "xmb-swap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.mtl)
@@ -62,7 +62,7 @@
           ];
         };
         "xmb-net" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.mtl)
@@ -71,7 +71,7 @@
           ];
         };
         "xmb-weather" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.mtl)
@@ -80,7 +80,7 @@
           ];
         };
         "xmb-batt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.mtl)

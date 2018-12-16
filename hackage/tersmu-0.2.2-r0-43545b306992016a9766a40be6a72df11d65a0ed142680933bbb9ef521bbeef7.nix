@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.process)
@@ -37,7 +37,7 @@
       };
       exes = {
         "tersmu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.process)
@@ -48,7 +48,7 @@
           ];
         };
         "tersmuBot" = {
-          depends  = pkgs.lib.optionals (flags.ircbot) [
+          depends = pkgs.lib.optionals (flags.ircbot) [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.process)

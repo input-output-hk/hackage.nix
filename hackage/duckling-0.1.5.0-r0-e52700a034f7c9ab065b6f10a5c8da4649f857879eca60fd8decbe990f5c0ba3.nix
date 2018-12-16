@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.attoparsec)
@@ -47,7 +47,7 @@
       };
       exes = {
         "duckling-regen-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.duckling)
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
@@ -56,7 +56,7 @@
           ];
         };
         "duckling-example-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.duckling)
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -75,7 +75,7 @@
           ];
         };
         "custom-dimension-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.duckling)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -88,7 +88,7 @@
           ];
         };
         "duckling-request-sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.duckling)
             (hsPkgs.base)
             (hsPkgs.dependent-sum)
@@ -103,7 +103,7 @@
           ];
         };
         "duckling-expensive" = {
-          depends  = [
+          depends = [
             (hsPkgs.duckling)
             (hsPkgs.base)
             (hsPkgs.dependent-sum)
@@ -120,7 +120,7 @@
       };
       tests = {
         "duckling-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.duckling)
             (hsPkgs.base)
             (hsPkgs.aeson)

@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc-prim)
           (hsPkgs.tag-bits)
           (hsPkgs.transformers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "test-speculation" = {
-          depends  = pkgs.lib.optionals (!(!flags.tests)) ([
+          depends = pkgs.lib.optionals (!(!flags.tests)) ([
             (hsPkgs.ghc-prim)
             (hsPkgs.tag-bits)
             (hsPkgs.stm)
@@ -54,7 +54,7 @@
           ] ++ [ (hsPkgs.base) ]);
         };
         "benchmark-speculation" = {
-          depends  = pkgs.lib.optionals (!(!flags.benchmarks)) ([
+          depends = pkgs.lib.optionals (!(!flags.benchmarks)) ([
             (hsPkgs.ghc-prim)
             (hsPkgs.transformers)
             (hsPkgs.tag-bits)

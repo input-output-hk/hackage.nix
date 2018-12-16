@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Spock-core)
           (hsPkgs.base)
           (hsPkgs.digestive-functors)

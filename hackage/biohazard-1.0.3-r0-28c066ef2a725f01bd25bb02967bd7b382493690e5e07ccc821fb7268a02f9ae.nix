@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.attoparsec)
           (hsPkgs.base)

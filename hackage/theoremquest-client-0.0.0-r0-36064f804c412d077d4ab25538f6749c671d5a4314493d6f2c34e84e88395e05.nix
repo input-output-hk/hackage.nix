@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.HTTP)

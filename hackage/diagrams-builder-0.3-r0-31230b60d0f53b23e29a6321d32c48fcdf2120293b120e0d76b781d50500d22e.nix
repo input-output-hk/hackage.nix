@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams-lib)
           (hsPkgs.hint)
@@ -44,7 +44,7 @@
       };
       exes = {
         "diagrams-builder-cairo" = {
-          depends  = pkgs.lib.optionals (flags.cairo) [
+          depends = pkgs.lib.optionals (flags.cairo) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -55,7 +55,7 @@
           ];
         };
         "diagrams-builder-svg" = {
-          depends  = pkgs.lib.optionals (flags.svg) [
+          depends = pkgs.lib.optionals (flags.svg) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -68,7 +68,7 @@
           ];
         };
         "diagrams-builder-ps" = {
-          depends  = pkgs.lib.optionals (flags.ps) [
+          depends = pkgs.lib.optionals (flags.ps) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

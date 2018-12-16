@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cassava)
@@ -37,7 +37,7 @@
       };
       tests = {
         "roundtrip" = {
-          depends  = [
+          depends = [
             (hsPkgs.streaming-cassava)
             (hsPkgs.base)
             (hsPkgs.hspec)

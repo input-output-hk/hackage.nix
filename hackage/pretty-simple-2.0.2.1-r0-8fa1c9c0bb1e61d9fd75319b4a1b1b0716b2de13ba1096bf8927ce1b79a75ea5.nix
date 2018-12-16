@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.containers)
@@ -40,20 +40,20 @@
       };
       exes = {
         "pretty-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty-simple)
             (hsPkgs.text)
           ];
         };
         "pretty-simple-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty-simple)
           ];
         };
         "pretty-simple-json-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -64,7 +64,7 @@
       };
       tests = {
         "pretty-simple-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -73,7 +73,7 @@
       };
       benchmarks = {
         "pretty-simple-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.pretty-simple)

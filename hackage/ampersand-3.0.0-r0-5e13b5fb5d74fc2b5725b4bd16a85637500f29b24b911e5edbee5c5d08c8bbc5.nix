@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.graphviz)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       exes = {
         "ampersand" = {
-          depends  = [
+          depends = [
             (hsPkgs.ampersand)
             (hsPkgs.graphviz)
             (hsPkgs.filepath)

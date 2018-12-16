@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

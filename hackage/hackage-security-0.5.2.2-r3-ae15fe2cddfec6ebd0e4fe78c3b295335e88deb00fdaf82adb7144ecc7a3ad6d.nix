@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
           (hsPkgs.base64-bytestring)
@@ -70,7 +70,7 @@
       };
       tests = {
         "TestSuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

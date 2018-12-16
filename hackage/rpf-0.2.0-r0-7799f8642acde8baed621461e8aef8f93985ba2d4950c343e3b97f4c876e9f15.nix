@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rpf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.accelerate-arithmetic)
           (hsPkgs.accelerate-utility)
           (hsPkgs.accelerate)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate-fourier)
             (hsPkgs.accelerate-arithmetic)
             (hsPkgs.accelerate-utility)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.accelerate-fourier)
             (hsPkgs.accelerate-arithmetic)

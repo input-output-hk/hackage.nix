@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.rts)
           (hsPkgs.ghc-prim)
         ] ++ (if flags.integer-simple

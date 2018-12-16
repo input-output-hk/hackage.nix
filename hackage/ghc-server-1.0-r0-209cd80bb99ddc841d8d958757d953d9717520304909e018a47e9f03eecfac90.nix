@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
+        depends = pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
           (hsPkgs.ghc)
           (hsPkgs.base)
           (hsPkgs.text)
@@ -44,7 +44,7 @@
       };
       exes = {
         "ghc-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-server)
             (hsPkgs.network)

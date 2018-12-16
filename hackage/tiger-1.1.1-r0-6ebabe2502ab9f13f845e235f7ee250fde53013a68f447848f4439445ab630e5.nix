@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tiger" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.array)

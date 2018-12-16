@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "tmr-params" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
           ];
         };
         "tmr-firmware" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mercury-api)
@@ -59,7 +59,7 @@
           ];
         };
         "tmr-read" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.bytestring)
@@ -69,7 +69,7 @@
           ];
         };
         "tmr-write" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.bytestring)
@@ -79,7 +79,7 @@
           ];
         };
         "tmr-lock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mercury-api)
@@ -88,7 +88,7 @@
           ];
         };
         "tmr-gpio" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mercury-api)
@@ -99,7 +99,7 @@
       };
       tests = {
         "replay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
@@ -109,7 +109,7 @@
           ];
         };
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)
@@ -118,7 +118,7 @@
           ];
         };
         "param-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mercury-api)

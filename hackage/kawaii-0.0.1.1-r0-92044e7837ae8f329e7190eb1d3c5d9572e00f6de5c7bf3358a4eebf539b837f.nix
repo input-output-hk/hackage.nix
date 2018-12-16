@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe)
           (hsPkgs.text)
@@ -48,7 +48,7 @@
       };
       tests = {
         "wai-static-extra-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.safe)
             (hsPkgs.text)

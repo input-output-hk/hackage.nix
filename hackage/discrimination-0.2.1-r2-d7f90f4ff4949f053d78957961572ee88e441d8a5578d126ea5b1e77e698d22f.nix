@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "wordmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)

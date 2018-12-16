@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.pipes)
@@ -34,7 +34,7 @@
       };
       exes = {
         "pipes-lzma-unxz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes)
             (hsPkgs.pipes-bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "pipes-lzma-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.pipes)

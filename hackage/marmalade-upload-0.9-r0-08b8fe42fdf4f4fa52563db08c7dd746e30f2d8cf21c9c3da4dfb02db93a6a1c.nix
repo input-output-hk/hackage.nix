@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "marmalade-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
@@ -56,7 +56,7 @@
       };
       tests = {
         "marmalade" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.exceptions)

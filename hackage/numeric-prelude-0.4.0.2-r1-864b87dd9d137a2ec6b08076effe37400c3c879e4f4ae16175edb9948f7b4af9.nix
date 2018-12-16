@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.QuickCheck)
           (hsPkgs.storable-record)
@@ -40,13 +40,13 @@
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.numeric-prelude)
             (hsPkgs.base)
           ];
         };
         "testsuite" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.HUnit)
             (hsPkgs.numeric-prelude)
             (hsPkgs.QuickCheck)
@@ -56,7 +56,7 @@
           ];
         };
         "test-gaussian" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.gnuplot)
             (hsPkgs.HTam)
             (hsPkgs.numeric-prelude)

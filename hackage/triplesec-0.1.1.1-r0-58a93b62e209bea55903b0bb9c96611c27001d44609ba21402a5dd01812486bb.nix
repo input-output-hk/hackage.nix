@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cryptonite)
           (hsPkgs.memory)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-triplesec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -47,7 +47,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.triplesec)
             (hsPkgs.doctest)

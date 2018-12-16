@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-ses)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       tests = {
         "aws-ses-easy-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.aws-ses-easy)
             (hsPkgs.base)
             (hsPkgs.tasty)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "aws-ses-easy-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.aws-ses-easy)
             (hsPkgs.base)
             (hsPkgs.criterion)

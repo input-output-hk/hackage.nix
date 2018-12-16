@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc)
           (hsPkgs.directory)
@@ -35,7 +35,7 @@
       };
       exes = {
         "mdcat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc)
             (hsPkgs.directory)

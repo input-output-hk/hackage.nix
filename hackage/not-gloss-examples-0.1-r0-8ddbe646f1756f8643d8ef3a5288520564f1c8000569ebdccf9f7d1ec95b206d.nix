@@ -26,21 +26,21 @@
     components = {
       exes = {
         "not-gloss-display" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
           ];
         };
         "not-gloss-animate" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
           ];
         };
         "not-gloss-simulate" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)

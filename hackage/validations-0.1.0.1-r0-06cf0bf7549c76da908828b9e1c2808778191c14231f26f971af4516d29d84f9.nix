@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.digestive-functors)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       tests = {
         "digestive-functors-validations-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

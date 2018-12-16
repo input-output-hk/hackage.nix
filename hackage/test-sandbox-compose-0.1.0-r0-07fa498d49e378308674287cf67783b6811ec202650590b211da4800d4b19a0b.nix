@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.containers)
@@ -51,7 +51,7 @@
       };
       exes = {
         "test-sandbox-compose" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-sandbox-compose)
             (hsPkgs.optparse-applicative)
@@ -80,7 +80,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.shakespeare)

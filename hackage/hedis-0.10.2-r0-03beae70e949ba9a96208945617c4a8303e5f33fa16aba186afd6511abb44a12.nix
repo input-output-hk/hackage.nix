@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.scanner)
           (hsPkgs.async)
           (hsPkgs.base)
@@ -48,7 +48,7 @@
       };
       tests = {
         "hedis-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hedis)
@@ -64,7 +64,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "hedis-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.hedis)

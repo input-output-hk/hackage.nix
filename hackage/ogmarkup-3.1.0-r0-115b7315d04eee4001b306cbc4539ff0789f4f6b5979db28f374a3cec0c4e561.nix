@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.megaparsec)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       tests = {
         "ogmadown-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hspec-megaparsec)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "ogmarkup-bench" = {
-          depends  = pkgs.lib.optionals (flags.bench) [
+          depends = pkgs.lib.optionals (flags.bench) [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.ogmarkup)

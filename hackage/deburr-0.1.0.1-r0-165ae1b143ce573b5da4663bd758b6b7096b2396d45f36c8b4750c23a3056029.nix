@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "deburr-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deburr)
             (hsPkgs.hspec)

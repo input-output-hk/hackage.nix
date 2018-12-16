@@ -31,7 +31,7 @@
     components = {
       exes = {
         "alms" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

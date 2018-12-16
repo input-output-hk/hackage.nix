@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.servant)
           (hsPkgs.lens)
@@ -33,7 +33,7 @@
       };
       exes = {
         "counter" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -48,7 +48,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-jquery)
             (hsPkgs.servant)

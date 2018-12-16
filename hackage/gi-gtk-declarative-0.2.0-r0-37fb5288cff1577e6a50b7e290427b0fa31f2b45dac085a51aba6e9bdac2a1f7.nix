@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gi-gobject)
           (hsPkgs.gi-gtk)
@@ -40,7 +40,7 @@
       };
       benchmarks = {
         "gi-gtk-declarative-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.gi-glib)

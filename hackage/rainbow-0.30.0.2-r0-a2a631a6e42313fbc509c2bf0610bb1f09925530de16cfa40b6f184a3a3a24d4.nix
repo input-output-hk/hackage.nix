@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.lens-simple)
@@ -35,7 +35,7 @@
       };
       tests = {
         "colorTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
           ];
         };
         "rainbow-instances" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
           ];
         };
         "test256color" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -65,7 +65,7 @@
           ];
         };
         "test8color" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)

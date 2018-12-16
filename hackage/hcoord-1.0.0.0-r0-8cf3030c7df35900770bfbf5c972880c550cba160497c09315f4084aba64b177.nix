@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.regex-pcre)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hcoord-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hcoord)
           ];
@@ -41,7 +41,7 @@
       };
       tests = {
         "hcoord-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.hcoord)

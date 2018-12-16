@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.recursion-schemes)
           (hsPkgs.free)
@@ -35,7 +35,7 @@
       };
       tests = {
         "continued-fractions-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.continued-fraction)
             (hsPkgs.hspec)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "continued-fractions-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.continued-fraction)
             (hsPkgs.criterion)

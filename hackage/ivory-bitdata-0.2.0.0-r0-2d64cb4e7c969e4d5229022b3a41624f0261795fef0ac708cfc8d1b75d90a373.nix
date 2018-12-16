@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ivory)
           (hsPkgs.ivory-backend-c)
@@ -36,7 +36,7 @@
       };
       exes = {
         "ivory-bitdata-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ivory-bitdata)
             (hsPkgs.ivory)

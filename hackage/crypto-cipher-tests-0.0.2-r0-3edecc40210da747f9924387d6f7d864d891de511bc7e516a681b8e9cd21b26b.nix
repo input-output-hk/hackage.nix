@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.mtl)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-crypto-cipher-dummy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.byteable)

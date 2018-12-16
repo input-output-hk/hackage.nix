@@ -26,7 +26,7 @@
     components = {
       exes = {
         "modify-fasta" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

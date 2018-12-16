@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bookkeeping)
           (hsPkgs.mono-traversable)
@@ -35,13 +35,13 @@
       };
       tests = {
         "ochintin-daicho-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ochintin-daicho)
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)

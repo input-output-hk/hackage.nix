@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
           (hsPkgs.template-haskell)
@@ -67,7 +67,7 @@
       };
       tests = {
         "main" = {
-          depends  = [
+          depends = [
             (hsPkgs.bindings-GLFW)
             (hsPkgs.HUnit)
             (hsPkgs.base)

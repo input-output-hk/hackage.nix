@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "prop-compiled" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.deepseq)
@@ -43,7 +43,7 @@
           ];
         };
         "test-builder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.deepseq)
@@ -57,7 +57,7 @@
       };
       benchmarks = {
         "bench-builder-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.ghc-prim)
@@ -65,7 +65,7 @@
           ];
         };
         "bench-builder-boundscheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.ghc-prim)

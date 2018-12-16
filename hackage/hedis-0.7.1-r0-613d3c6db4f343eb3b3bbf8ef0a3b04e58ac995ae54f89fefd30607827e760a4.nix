@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.BoundedChan)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       tests = {
         "hedis-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hedis)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "hedis-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.hedis)

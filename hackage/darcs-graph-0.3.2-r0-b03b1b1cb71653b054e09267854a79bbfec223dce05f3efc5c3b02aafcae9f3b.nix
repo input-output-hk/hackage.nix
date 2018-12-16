@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcs-graph" = {
-          depends  = if flags.small_base
+          depends = if flags.small_base
             then [
               (hsPkgs.base)
               (hsPkgs.process)

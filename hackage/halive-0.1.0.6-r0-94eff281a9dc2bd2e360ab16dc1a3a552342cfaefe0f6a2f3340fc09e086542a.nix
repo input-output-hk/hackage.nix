@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foreign-store)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       exes = {
         "halive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)

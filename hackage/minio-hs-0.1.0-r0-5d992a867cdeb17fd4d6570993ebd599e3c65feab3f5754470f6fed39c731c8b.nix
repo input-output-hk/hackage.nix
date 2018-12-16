@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.async)
@@ -57,7 +57,7 @@
       };
       tests = {
         "minio-hs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.minio-hs)
             (hsPkgs.protolude)

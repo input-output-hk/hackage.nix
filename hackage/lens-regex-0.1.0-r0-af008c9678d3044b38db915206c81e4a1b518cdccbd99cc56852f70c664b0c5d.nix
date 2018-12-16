@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.lens)
@@ -37,7 +37,7 @@
       };
       exes = {
         "sample" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.lens-regex)
@@ -47,7 +47,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

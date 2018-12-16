@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
@@ -66,14 +66,14 @@
       };
       exes = {
         "ZFS" = {
-          depends  = [
+          depends = [
             (hsPkgs.liblawless)
           ];
         };
       };
       tests = {
         "test-liblawless" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)

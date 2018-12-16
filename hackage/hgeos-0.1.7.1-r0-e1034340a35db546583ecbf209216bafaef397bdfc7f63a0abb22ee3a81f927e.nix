@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
@@ -33,7 +33,7 @@
       };
       tests = {
         "hgeos-app" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.base)
             (hsPkgs.hgeos)

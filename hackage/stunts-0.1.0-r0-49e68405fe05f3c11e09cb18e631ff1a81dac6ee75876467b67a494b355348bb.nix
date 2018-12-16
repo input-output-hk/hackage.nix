@@ -29,7 +29,7 @@
     components = {
       exes = {
         "stunts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.random)

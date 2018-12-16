@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.array)
           (hsPkgs.async)
@@ -58,7 +58,7 @@
       };
       exes = {
         "afroengineer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -70,7 +70,7 @@
           ];
         };
         "bam-fixpair" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.biohazard)
@@ -80,7 +80,7 @@
           ];
         };
         "bam-meld" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -88,7 +88,7 @@
           ];
         };
         "bam-resample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -96,7 +96,7 @@
           ];
         };
         "bam-rewrap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -104,7 +104,7 @@
           ];
         };
         "bam-rmdup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -116,21 +116,21 @@
           ];
         };
         "bam-trim" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
           ];
         };
         "count-coverage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.iteratee)
           ];
         };
         "dmg-est" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.biohazard)
@@ -139,7 +139,7 @@
           ];
         };
         "fastq2bam" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -149,7 +149,7 @@
           ];
         };
         "glf-consensus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -159,7 +159,7 @@
           ];
         };
         "gt-call" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -170,7 +170,7 @@
           ];
         };
         "jivebunny" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.biohazard)
@@ -188,7 +188,7 @@
           ];
         };
         "mt-anno" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.biohazard)
@@ -196,7 +196,7 @@
           ];
         };
         "mt-ccheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.biohazard)
@@ -205,7 +205,7 @@
           ];
         };
         "wiggle-coverage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
           ];

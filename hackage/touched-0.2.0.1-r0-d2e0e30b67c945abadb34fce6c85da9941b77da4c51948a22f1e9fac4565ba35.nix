@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.process)
@@ -34,7 +34,7 @@
       };
       exes = {
         "touched" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.touched)
             (hsPkgs.cmdargs)

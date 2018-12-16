@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sexp-show" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty-show)
           ];

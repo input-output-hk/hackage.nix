@@ -26,7 +26,7 @@
     components = {
       exes = {
         "NearContextAlgebra" = {
-          depends  = [
+          depends = [
             (hsPkgs.ContextAlgebra)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

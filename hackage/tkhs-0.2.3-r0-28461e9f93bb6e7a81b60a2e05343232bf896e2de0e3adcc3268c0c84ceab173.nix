@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tkhs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vty)
@@ -36,7 +36,7 @@
           ];
         };
         "test" = {
-          depends  = pkgs.lib.optionals (!(!flags.test)) [
+          depends = pkgs.lib.optionals (!(!flags.test)) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.network)
           (hsPkgs.parsec)
           (hsPkgs.base)
@@ -52,7 +52,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.network)
             (hsPkgs.parsec)
             (hsPkgs.base)

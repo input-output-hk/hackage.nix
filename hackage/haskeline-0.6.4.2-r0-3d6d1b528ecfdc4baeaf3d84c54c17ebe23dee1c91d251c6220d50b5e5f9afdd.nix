@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.filepath)
           (hsPkgs.mtl)
           (hsPkgs.utf8-string)

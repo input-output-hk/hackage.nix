@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.GroteTrap)
             (hsPkgs.base)
             (hsPkgs.parsec)

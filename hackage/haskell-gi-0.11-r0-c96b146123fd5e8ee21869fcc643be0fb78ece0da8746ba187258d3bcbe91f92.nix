@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskell-gi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amqp)
           (hsPkgs.base)
@@ -37,7 +37,7 @@
       };
       exes = {
         "musicbrainz-emailer" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amqp)
             (hsPkgs.base)
@@ -58,7 +58,7 @@
           ];
         };
         "enqueue-mail" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amqp)
             (hsPkgs.base)
@@ -73,7 +73,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amqp)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hs-logo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

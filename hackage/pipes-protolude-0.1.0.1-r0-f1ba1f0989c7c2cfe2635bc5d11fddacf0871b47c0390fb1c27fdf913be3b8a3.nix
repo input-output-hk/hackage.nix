@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text-show)
           (hsPkgs.deepseq)
@@ -46,7 +46,7 @@
       };
       exes = {
         "pipes-protolude-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-protolude)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "pipes-protolude-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-protolude)
           ];

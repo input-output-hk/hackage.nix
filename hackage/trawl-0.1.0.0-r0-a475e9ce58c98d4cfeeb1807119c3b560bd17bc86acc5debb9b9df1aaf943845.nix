@@ -26,7 +26,7 @@
     components = {
       exes = {
         "trawl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

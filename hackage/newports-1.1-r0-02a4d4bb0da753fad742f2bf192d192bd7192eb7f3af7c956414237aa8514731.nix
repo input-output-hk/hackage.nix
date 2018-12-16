@@ -26,7 +26,7 @@
     components = {
       exes = {
         "newports" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-time)
             (hsPkgs.directory)

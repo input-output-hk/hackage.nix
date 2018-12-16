@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -35,7 +35,7 @@
       };
       tests = {
         "cppfilt-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cppfilt)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "cppfilt-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cppfilt)

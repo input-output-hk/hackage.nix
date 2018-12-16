@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.binary)
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
@@ -42,10 +42,10 @@
       };
       exes = {
         "dbus" = {
-          depends  = pkgs.lib.optional (flags.executable) (hsPkgs.network);
+          depends = pkgs.lib.optional (flags.executable) (hsPkgs.network);
         };
         "Tests" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

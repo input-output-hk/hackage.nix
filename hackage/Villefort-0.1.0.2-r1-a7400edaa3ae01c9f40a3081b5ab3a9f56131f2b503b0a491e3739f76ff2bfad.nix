@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HDBC)
           (hsPkgs.HDBC-sqlite3)
@@ -37,7 +37,7 @@
       };
       exes = {
         "Villefort" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Villefort)
             (hsPkgs.scotty)
@@ -51,7 +51,7 @@
       };
       tests = {
         "Villefort-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Villefort)
           ];

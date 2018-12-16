@@ -26,7 +26,7 @@
     components = {
       exes = {
         "crunghc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

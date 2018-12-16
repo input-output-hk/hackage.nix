@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.OneTuple)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -62,7 +62,7 @@
       };
       tests = {
         "live" = {
-          depends  = [
+          depends = [
             (hsPkgs.OneTuple)
             (hsPkgs.aeson)
             (hsPkgs.async)
@@ -103,7 +103,7 @@
           ];
         };
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.OneTuple)
             (hsPkgs.aeson)
             (hsPkgs.async)

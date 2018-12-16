@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.references)
           (hsPkgs.ghc)
@@ -38,7 +38,7 @@
       };
       exes = {
         "ht-debug" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-tools-debug)
           ];

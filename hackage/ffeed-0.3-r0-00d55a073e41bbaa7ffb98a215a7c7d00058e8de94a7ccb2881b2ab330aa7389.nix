@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HTTP)
           (hsPkgs.network)
@@ -35,16 +35,16 @@
       };
       exes = {
         "main" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "showPublic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
           ];
         };
         "tweetStream" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
           ];

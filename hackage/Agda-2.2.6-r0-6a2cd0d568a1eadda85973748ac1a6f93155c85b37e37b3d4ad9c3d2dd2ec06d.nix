@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.QuickCheck)
           (hsPkgs.haskell-src)
@@ -55,7 +55,7 @@
       };
       exes = {
         "agda-mode" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.process)
           ] ++ (if flags.use-locale

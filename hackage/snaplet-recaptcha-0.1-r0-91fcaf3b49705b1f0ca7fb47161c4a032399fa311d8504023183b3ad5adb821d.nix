@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-lens)
           (hsPkgs.data-lens-template)
@@ -40,7 +40,7 @@
       };
       exes = {
         "recaptcha-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-lens)
             (hsPkgs.data-lens-template)

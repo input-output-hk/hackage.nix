@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
           (hsPkgs.amazonka-dynamodb)
@@ -39,7 +39,7 @@
       };
       tests = {
         "antiope-dynamodb-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-core)
             (hsPkgs.amazonka-dynamodb)

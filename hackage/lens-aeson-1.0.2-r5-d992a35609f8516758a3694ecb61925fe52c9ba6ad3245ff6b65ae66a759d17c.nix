@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.text)
@@ -41,7 +41,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.generic-deriving)

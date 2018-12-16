@@ -26,7 +26,7 @@
     components = {
       exes = {
         "kit" = {
-          depends  = [
+          depends = [
             (hsPkgs.process)
             (hsPkgs.network)
             (hsPkgs.mtl)

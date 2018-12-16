@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "parse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.either)
@@ -57,7 +57,7 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.either)
             (hsPkgs.directory)

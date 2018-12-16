@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.composite-base)
           (hsPkgs.insert-ordered-containers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "composite-swagger-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.composite-aeson)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.derive)
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.options)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test_unix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.options)
@@ -49,7 +49,7 @@
           ];
         };
         "test_core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.options)

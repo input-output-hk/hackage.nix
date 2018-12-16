@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.storablevector)
           (hsPkgs.stream-fusion)
           (hsPkgs.utility-ht)
@@ -36,7 +36,7 @@
       };
       exes = {
         "speedtest" = {
-          depends  = [
+          depends = [
             (hsPkgs.stream-fusion)
             (hsPkgs.old-time)
             (hsPkgs.binary)

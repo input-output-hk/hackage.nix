@@ -41,7 +41,7 @@
     components = {
       exes = {
         "accelerate-nofib" = {
-          depends  = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.nofib)) [
+          depends = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.nofib)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)
             (hsPkgs.base)
@@ -59,7 +59,7 @@
           libs = [ (pkgs."stdc++") ];
         };
         "accelerate-smvm" = {
-          depends  = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.smvm)) [
+          depends = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.smvm)) [
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.attoparsec)
@@ -74,7 +74,7 @@
           ];
         };
         "accelerate-crystal" = {
-          depends  = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.crystal)) [
+          depends = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.crystal)) [
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -83,7 +83,7 @@
           ];
         };
         "accelerate-canny" = {
-          depends  = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.canny)) [
+          depends = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.canny)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)
             (hsPkgs.base)
@@ -95,7 +95,7 @@
           ];
         };
         "accelerate-mandelbrot" = {
-          depends  = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.mandelbrot)) [
+          depends = ((pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.mandelbrot)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-fft)
             (hsPkgs.accelerate-io)
@@ -107,7 +107,7 @@
           ];
         };
         "accelerate-fluid" = {
-          depends  = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.fluid)) [
+          depends = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.fluid)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)
             (hsPkgs.base)
@@ -118,7 +118,7 @@
           ];
         };
         "accelerate-nbody" = {
-          depends  = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.nbody)) [
+          depends = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.nbody)) [
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -128,7 +128,7 @@
           ];
         };
         "accelerate-smoothlife" = {
-          depends  = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.smoothlife)) [
+          depends = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.smoothlife)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-fft)
             (hsPkgs.accelerate-io)
@@ -141,7 +141,7 @@
           ];
         };
         "accelerate-hashcat" = {
-          depends  = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.hashcat)) [
+          depends = (pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!flags.hashcat)) [
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -153,7 +153,7 @@
           ];
         };
         "accelerate-fft" = {
-          depends  = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.fft)) [
+          depends = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.fft)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)
             (hsPkgs.accelerate-fft)

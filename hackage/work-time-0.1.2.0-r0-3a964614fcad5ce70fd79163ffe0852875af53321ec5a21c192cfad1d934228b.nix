@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.megaparsec)
@@ -34,7 +34,7 @@
       };
       exes = {
         "work-time" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.work-time)
             (hsPkgs.text)

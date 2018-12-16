@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "pinch-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)

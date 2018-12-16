@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
           (hsPkgs.containers)
@@ -54,7 +54,7 @@
       };
       exes = {
         "haste-boot" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -72,7 +72,7 @@
           ];
         };
         "hastec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.ghc)
@@ -93,7 +93,7 @@
           ];
         };
         "haste-pkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)
@@ -111,7 +111,7 @@
           ];
         };
         "haste-cat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shellmate)
             (hsPkgs.ghc-paths)

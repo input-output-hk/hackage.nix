@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.zlib)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "SelectSigs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.zlib)
             (hsPkgs.bytestring)

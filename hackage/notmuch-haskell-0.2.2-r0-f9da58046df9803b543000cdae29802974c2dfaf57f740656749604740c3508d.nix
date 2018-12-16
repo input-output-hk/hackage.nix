@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.time)
@@ -44,7 +44,7 @@
       };
       exes = {
         "notmuch-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.old-locale)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.csv)
           (hsPkgs.diagrams)
@@ -34,7 +34,7 @@
       };
       exes = {
         "barchart" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.csv)

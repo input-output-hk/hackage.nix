@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
           (hsPkgs.postgresql-libpq)
@@ -37,7 +37,7 @@
       };
       tests = {
         "positron-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.positron)
           ];

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
         ];
       };
       tests = {
         "barbies-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.barbies)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

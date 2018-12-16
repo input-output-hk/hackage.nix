@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-diverse)
           (hsPkgs.tagged)
@@ -37,7 +37,7 @@
       };
       tests = {
         "data-diverse-lens-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-diverse)
             (hsPkgs.data-diverse-lens)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fquery" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.parsec)

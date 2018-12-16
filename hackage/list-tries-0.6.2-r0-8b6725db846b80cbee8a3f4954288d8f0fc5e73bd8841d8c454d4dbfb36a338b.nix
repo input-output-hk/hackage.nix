@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.dlist)
@@ -34,7 +34,7 @@
       };
       tests = {
         "list-tries-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.list-tries)
             (hsPkgs.base)
             (hsPkgs.binary)

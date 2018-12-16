@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
@@ -51,7 +51,7 @@
       };
       exes = {
         "ht-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-tools-demo)
           ];
@@ -59,7 +59,7 @@
       };
       tests = {
         "haskell-tools-demo-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.tasty)

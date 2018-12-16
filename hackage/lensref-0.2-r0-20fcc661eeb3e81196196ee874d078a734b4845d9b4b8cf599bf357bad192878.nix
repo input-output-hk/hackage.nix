@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lensref)
           ];

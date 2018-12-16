@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.fortytwo)
           (hsPkgs.directory)
@@ -45,7 +45,7 @@
       };
       exes = {
         "rob" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.base)
@@ -55,7 +55,7 @@
       };
       tests = {
         "rob-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.rob)

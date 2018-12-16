@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskarrowPrecompiler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.her-lexer)

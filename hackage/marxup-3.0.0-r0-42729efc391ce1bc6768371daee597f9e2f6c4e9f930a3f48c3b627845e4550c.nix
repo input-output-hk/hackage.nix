@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.labeled-tree)
@@ -45,7 +45,7 @@
       };
       exes = {
         "marxup3" = {
-          depends  = [
+          depends = [
             (hsPkgs.configurator)
             (hsPkgs.base)
             (hsPkgs.pretty)

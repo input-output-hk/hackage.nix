@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.potoki-core)
           (hsPkgs.base)
           (hsPkgs.base-prelude)

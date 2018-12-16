@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -44,7 +44,7 @@
       };
       exes = {
         "hup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
@@ -59,7 +59,7 @@
       };
       tests = {
         "hup-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
@@ -81,7 +81,7 @@
           ];
         };
         "hup-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hup)
             (hsPkgs.doctest)

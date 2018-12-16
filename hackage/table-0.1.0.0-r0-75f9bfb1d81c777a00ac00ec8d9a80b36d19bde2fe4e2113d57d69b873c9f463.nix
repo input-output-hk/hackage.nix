@@ -26,7 +26,7 @@
     components = {
       exes = {
         "table" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.split)

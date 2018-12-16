@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ide-format" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.parsec)
@@ -35,7 +35,7 @@
           ];
         };
         "tasty-integrate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers)
@@ -59,7 +59,7 @@
       };
       tests = {
         "suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.stm)

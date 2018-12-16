@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -48,7 +48,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -65,7 +65,7 @@
           ];
         };
         "tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.postgresql-simple)
             (hsPkgs.profunctors)

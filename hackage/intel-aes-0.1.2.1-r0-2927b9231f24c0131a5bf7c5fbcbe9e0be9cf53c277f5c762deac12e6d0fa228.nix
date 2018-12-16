@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.DRBG)
@@ -42,7 +42,7 @@
       };
       exes = {
         "benchmark-intel-aes-rng" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.rdtsc)

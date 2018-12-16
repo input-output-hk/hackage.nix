@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-transient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
           ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
             (hsPkgs.base)

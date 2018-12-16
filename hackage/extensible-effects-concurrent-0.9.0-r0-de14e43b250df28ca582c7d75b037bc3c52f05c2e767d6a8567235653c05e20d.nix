@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.data-default)
@@ -51,7 +51,7 @@
       };
       exes = {
         "extensible-effects-concurrent-example-1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.extensible-effects-concurrent)
@@ -60,7 +60,7 @@
           ];
         };
         "extensible-effects-concurrent-example-2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.extensible-effects-concurrent)
@@ -71,7 +71,7 @@
       };
       tests = {
         "extensible-effects-concurrent-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.extensible-effects-concurrent)

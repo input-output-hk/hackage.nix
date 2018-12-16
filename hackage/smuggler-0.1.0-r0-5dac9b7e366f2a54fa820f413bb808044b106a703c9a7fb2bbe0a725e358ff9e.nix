@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "play-smuggler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smuggler)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "smuggler-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "nat-sized-numbers-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nat-sized-numbers)
             (hsPkgs.QuickCheck)

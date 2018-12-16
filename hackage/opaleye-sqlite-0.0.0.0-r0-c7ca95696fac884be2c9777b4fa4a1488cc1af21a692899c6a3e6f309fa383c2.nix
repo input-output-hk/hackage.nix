@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
           (hsPkgs.case-insensitive)
@@ -47,7 +47,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.contravariant)
@@ -60,7 +60,7 @@
           ];
         };
         "tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.profunctors)
             (hsPkgs.product-profunctors)

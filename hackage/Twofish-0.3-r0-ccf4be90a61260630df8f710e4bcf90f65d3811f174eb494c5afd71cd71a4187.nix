@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -39,7 +39,7 @@
       };
       tests = {
         "Standard-Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.binary)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Diff)
           (hsPkgs.HUnit)
           (hsPkgs.QuickCheck)
@@ -54,7 +54,7 @@
       };
       exes = {
         "htfpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -69,7 +69,7 @@
       };
       tests = {
         "MiscTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.HUnit)
             (hsPkgs.base)
@@ -78,7 +78,7 @@
           ];
         };
         "TestHTF" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -96,7 +96,7 @@
           ];
         };
         "TestThreadPools" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.base)
             (hsPkgs.mtl)

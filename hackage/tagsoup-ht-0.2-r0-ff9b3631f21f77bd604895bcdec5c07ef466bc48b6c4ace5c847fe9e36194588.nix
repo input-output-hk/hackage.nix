@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.tagsoup)
@@ -34,7 +34,7 @@
       };
       exes = {
         "tagsouptest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.tagsoup)
@@ -42,7 +42,7 @@
           ];
         };
         "validate-tagsoup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.tagsoup)

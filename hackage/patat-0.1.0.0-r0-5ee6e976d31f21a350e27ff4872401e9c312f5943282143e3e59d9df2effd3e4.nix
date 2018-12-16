@@ -26,7 +26,7 @@
     components = {
       exes = {
         "patat" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)

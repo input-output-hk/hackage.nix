@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.plugins)
           (hsPkgs.template-haskell)
@@ -36,7 +36,7 @@
       };
       tests = {
         "regression" = {
-          depends  = [
+          depends = [
             (hsPkgs.plugins-multistage)
             (hsPkgs.base)
             (hsPkgs.tasty)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "needforspeed" = {
-          depends  = [
+          depends = [
             (hsPkgs.plugins-multistage)
             (hsPkgs.base)
             (hsPkgs.deepseq)

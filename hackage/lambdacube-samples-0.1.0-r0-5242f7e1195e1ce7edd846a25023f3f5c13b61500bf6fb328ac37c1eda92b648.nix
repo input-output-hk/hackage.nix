@@ -28,7 +28,7 @@
     components = {
       exes = {
         "lambdacube-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
           ];
         };
         "lambdacube-shadowmapping" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
@@ -59,7 +59,7 @@
           ];
         };
         "lambdacube-cubemap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
@@ -74,7 +74,7 @@
           ];
         };
         "lambdacube-convolutionfilter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
@@ -89,7 +89,7 @@
           ];
         };
         "lambdacube-bulletexample" = {
-          depends  = pkgs.lib.optionals (flags.bulletinstalled) [
+          depends = pkgs.lib.optionals (flags.bulletinstalled) [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)

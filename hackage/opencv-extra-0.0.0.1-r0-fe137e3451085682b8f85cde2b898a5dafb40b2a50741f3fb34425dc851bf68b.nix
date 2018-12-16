@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       tests = {
         "doc-images-opencv-extra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

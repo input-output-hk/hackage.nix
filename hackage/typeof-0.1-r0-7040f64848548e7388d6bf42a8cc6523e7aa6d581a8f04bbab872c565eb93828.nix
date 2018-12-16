@@ -26,7 +26,7 @@
     components = {
       exes = {
         "typeof" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

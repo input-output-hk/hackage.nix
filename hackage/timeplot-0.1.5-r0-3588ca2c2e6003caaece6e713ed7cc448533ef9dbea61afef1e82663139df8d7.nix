@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tplot" = {
-          depends  = [
+          depends = [
             (hsPkgs.Chart)
             (hsPkgs.cairo)
             (hsPkgs.bytestring)

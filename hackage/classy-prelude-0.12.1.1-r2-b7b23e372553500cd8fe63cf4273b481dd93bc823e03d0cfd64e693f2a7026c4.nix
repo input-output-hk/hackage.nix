@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basic-prelude)
           (hsPkgs.transformers)
@@ -55,7 +55,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.classy-prelude)
             (hsPkgs.base)
             (hsPkgs.hspec)

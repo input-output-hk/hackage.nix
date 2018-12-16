@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.type-hint)
           (hsPkgs.hashable)
@@ -42,7 +42,7 @@
       };
       exes = {
         "hs-network-dns-examples-resolver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-textual)
             (hsPkgs.data-serializer)

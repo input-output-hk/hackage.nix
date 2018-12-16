@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-rfc1751" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

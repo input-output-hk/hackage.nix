@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.filepath)
@@ -42,7 +42,7 @@
       };
       exes = {
         "Tests" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
           ];
         };
         "vhd" = {
-          depends  = pkgs.lib.optional (flags.executable) (hsPkgs.base);
+          depends = pkgs.lib.optional (flags.executable) (hsPkgs.base);
         };
       };
     };

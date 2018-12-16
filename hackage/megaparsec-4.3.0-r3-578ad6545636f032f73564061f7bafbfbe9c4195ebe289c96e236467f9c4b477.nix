@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "old-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.megaparsec)
             (hsPkgs.HUnit)
@@ -44,7 +44,7 @@
           ];
         };
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.megaparsec)
             (hsPkgs.mtl)
@@ -57,7 +57,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.megaparsec)
             (hsPkgs.criterion)

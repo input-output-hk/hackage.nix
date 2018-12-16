@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-debian" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.Cabal)

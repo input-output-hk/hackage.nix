@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.free)
           (hsPkgs.kan-extensions)
@@ -37,7 +37,7 @@
       };
       tests = {
         "extensible-effects-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

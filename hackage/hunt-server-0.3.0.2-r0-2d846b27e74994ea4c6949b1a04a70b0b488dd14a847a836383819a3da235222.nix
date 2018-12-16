@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hunt-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

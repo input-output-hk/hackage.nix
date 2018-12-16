@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-uninstall" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.MonadRandom)
           (hsPkgs.random)
@@ -33,7 +33,7 @@
       };
       exes = {
         "elocrypt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elocrypt)
             (hsPkgs.random)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elocrypt)
             (hsPkgs.MonadRandom)
@@ -54,7 +54,7 @@
           ];
         };
         "ui-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elocrypt)
             (hsPkgs.proctest)

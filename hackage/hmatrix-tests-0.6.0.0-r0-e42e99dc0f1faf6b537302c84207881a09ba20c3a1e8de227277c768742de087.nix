@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.QuickCheck)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hmatrix-base-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix-tests)
             (hsPkgs.QuickCheck)
@@ -46,7 +46,7 @@
           ];
         };
         "hmatrix-gsl-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix-tests)
             (hsPkgs.QuickCheck)
@@ -57,7 +57,7 @@
       };
       benchmarks = {
         "hmatrix-base-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix-tests)
             (hsPkgs.QuickCheck)

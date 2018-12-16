@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       tests = {
         "word-wrap-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.word-wrap)
             (hsPkgs.hspec)

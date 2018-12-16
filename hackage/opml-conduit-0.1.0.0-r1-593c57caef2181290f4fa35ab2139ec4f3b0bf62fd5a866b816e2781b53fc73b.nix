@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.case-insensitive)
           (hsPkgs.conduit)
@@ -48,7 +48,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.conduit-combinators)

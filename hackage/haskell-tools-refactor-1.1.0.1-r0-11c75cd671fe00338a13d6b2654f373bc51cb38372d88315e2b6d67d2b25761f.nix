@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.mtl)
@@ -48,7 +48,7 @@
       };
       tests = {
         "haskell-tools-builtin-refactorings-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

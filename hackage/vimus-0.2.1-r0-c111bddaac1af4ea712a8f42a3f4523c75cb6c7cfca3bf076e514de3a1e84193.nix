@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.utf8-string)
@@ -50,7 +50,7 @@
       };
       exes = {
         "vimus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vimus)
           ];
@@ -58,7 +58,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vimus)
             (hsPkgs.data-default)

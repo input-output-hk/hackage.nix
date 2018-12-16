@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.numeric-prelude)
           (hsPkgs.QuickCheck)
@@ -33,7 +33,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.numeric-prelude)

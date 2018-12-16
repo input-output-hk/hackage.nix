@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-tls" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.atomic-primops)
             (hsPkgs.thread-local-storage)
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "bench-haskell-tls" = {
-          depends  = [
+          depends = [
             (hsPkgs.thread-local-storage)
             (hsPkgs.base)
             (hsPkgs.criterion)

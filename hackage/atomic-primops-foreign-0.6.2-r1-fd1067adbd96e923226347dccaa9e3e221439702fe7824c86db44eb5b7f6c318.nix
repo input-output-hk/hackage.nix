@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bits-atomic)
           (hsPkgs.base)
         ];
       };
       tests = {
         "test-atomic-primops-foreign" = {
-          depends  = [
+          depends = [
             (hsPkgs.bits-atomic)
             (hsPkgs.base)
             (hsPkgs.time)

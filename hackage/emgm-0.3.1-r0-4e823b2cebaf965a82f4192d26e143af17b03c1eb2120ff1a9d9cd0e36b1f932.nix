@@ -29,14 +29,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       exes = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
           ] ++ pkgs.lib.optionals (flags.test) [

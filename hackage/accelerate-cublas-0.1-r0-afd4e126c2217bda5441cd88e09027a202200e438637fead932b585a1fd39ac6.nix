@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.accelerate-arithmetic)
           (hsPkgs.accelerate-utility)
           (hsPkgs.accelerate-cuda)
@@ -42,7 +42,7 @@
       };
       exes = {
         "accelerate-cublas-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate-cublas)
             (hsPkgs.accelerate-cuda)
             (hsPkgs.accelerate-arithmetic)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "newton-inverse" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate-cublas)
             (hsPkgs.accelerate-arithmetic)
             (hsPkgs.accelerate-utility)

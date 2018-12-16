@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hfiar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.mtl)

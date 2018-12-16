@@ -26,7 +26,7 @@
     components = {
       exes = {
         "marge-schedule" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xturtle)
             (hsPkgs.time)
@@ -35,7 +35,7 @@
           ];
         };
         "show-progress" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xturtle)
             (hsPkgs.time)

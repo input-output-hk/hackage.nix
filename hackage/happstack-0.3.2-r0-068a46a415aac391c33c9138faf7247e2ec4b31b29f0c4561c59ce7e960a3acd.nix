@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.happstack-data)
@@ -54,13 +54,13 @@
       };
       exes = {
         "happstack" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.filepath)
           ];
         };
         "happstack-tests" = {
-          depends  = [ (hsPkgs.HUnit) ];
+          depends = [ (hsPkgs.HUnit) ];
         };
       };
     };

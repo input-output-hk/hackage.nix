@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
@@ -40,7 +40,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

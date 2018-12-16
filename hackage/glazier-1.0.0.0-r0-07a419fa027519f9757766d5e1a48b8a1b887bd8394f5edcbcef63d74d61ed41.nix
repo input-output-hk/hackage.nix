@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.alternators)
           (hsPkgs.data-diverse)
@@ -40,7 +40,7 @@
       };
       tests = {
         "glazier-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alternators)
             (hsPkgs.glazier)

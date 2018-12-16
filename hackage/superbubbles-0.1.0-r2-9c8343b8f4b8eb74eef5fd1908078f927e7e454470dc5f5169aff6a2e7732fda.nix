@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       tests = {
         "superbubbles-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.superbubbles)
             (hsPkgs.hspec)

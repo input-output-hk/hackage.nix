@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sloane" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
             (hsPkgs.attoparsec)

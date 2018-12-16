@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pipes)
           (hsPkgs.attoparsec)
@@ -43,7 +43,7 @@
       };
       exes = {
         "warc-export" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warc)
             (hsPkgs.filepath)

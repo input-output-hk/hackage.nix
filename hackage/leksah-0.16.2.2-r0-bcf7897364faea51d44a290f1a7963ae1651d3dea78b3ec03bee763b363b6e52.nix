@@ -35,7 +35,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((((((([
+        depends = ((((((((([
           (hsPkgs.base-compat)
           (hsPkgs.haskell-gi-base)
           (hsPkgs.gi-glib)
@@ -124,7 +124,7 @@
       };
       exes = {
         "leksah" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.leksah)
             (hsPkgs.base)
             (hsPkgs.gi-gtk-hs)

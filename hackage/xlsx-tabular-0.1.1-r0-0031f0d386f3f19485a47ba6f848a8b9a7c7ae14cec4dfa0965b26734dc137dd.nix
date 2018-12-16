@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "xlsx-tabular-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xlsx-tabular)
           ];

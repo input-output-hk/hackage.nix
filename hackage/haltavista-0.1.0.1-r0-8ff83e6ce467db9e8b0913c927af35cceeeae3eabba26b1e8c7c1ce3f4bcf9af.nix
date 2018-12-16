@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haltavista" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hint)
             (hsPkgs.process)

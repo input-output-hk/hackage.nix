@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       exes = {
         "yaml2yeast" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       tests = {
         "yaml2yeast-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

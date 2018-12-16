@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
         ];
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "wai-middleware-caching-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-middleware-caching)
           ];

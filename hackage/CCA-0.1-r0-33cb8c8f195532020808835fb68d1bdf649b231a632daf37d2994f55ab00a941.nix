@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
@@ -36,7 +36,7 @@
       };
       exes = {
         "ccap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)

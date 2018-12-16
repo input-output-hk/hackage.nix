@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.http-conduit)
@@ -37,7 +37,7 @@
       };
       tests = {
         "gitlab-api-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gitlab-api)
             (hsPkgs.hspec)

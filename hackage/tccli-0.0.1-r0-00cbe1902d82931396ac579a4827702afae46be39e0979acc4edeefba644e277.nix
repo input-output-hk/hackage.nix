@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tchcli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tokyocabinet-haskell)
             (hsPkgs.bytestring)

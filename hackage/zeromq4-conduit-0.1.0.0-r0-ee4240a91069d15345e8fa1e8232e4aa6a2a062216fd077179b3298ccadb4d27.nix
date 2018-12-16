@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lifted-base)
           (hsPkgs.mtl)
@@ -41,7 +41,7 @@
       };
       tests = {
         "zeromq4-conduit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.zeromq4-conduit)
           ];

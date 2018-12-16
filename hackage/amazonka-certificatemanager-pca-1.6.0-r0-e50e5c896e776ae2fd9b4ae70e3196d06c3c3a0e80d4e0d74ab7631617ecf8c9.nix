@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka-core)
           (hsPkgs.base)
         ];
       };
       tests = {
         "amazonka-certificatemanager-pca-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka-core)
             (hsPkgs.amazonka-test)
             (hsPkgs.amazonka-certificatemanager-pca)

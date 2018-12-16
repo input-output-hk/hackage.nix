@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.guarded-allocation)
           (hsPkgs.QuickCheck)
           (hsPkgs.transformers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "comfort-array-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.comfort-array)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

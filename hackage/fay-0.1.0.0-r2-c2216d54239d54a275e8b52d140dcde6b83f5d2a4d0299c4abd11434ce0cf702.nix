@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.language-javascript)
@@ -43,7 +43,7 @@
       };
       exes = {
         "fay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.language-javascript)
@@ -52,7 +52,7 @@
           ];
         };
         "fay-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.language-javascript)
@@ -65,7 +65,7 @@
           ];
         };
         "fay-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.language-javascript)

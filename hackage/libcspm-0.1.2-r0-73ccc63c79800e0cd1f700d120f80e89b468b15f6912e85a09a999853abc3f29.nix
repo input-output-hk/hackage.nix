@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.filepath)
@@ -39,7 +39,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libcspm)
             (hsPkgs.filepath)

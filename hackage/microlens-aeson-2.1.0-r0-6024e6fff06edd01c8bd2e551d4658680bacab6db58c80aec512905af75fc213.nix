@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

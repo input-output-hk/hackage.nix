@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.HTTP)
@@ -33,7 +33,7 @@
       };
       exes = {
         "pg-harness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.ini)

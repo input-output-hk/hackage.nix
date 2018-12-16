@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.text)
@@ -41,7 +41,7 @@
       };
       tests = {
         "reroute-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reroute)
             (hsPkgs.transformers)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "reroute-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.text)

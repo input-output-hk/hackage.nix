@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sync-mht" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.directory)
@@ -53,7 +53,7 @@
       };
       tests = {
         "main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.directory)

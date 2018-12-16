@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsCMCompare" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.array)

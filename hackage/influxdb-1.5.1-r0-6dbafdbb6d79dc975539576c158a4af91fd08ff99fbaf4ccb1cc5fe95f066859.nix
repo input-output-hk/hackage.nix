@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -47,7 +47,7 @@
       };
       exes = {
         "influx-random-points" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -64,7 +64,7 @@
           ];
         };
         "influx-write-udp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.influxdb)
@@ -76,7 +76,7 @@
       };
       tests = {
         "test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-client)
             (hsPkgs.HUnit)
@@ -91,7 +91,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)

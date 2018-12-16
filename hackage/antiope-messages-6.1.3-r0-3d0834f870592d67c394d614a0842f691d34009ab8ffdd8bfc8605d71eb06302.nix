@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
@@ -44,7 +44,7 @@
       };
       tests = {
         "antiope-messages-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-core)

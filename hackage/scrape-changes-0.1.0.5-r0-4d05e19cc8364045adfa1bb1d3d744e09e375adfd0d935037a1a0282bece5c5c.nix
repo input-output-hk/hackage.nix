@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.validation)
           (hsPkgs.lens)
@@ -49,7 +49,7 @@
       };
       tests = {
         "scrapechanges-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

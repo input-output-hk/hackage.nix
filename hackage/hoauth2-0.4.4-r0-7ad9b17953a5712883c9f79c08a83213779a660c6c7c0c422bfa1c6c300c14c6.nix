@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.text)
@@ -41,7 +41,7 @@
       };
       exes = {
         "test-weibo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -51,7 +51,7 @@
           ];
         };
         "test-google" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -62,7 +62,7 @@
           ];
         };
         "test-github" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -73,7 +73,7 @@
           ];
         };
         "test-douban" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -84,7 +84,7 @@
           ];
         };
         "test-fb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)

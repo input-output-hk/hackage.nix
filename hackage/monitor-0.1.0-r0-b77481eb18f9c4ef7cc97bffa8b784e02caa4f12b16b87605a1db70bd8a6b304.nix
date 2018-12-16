@@ -26,7 +26,7 @@
     components = {
       exes = {
         "monitor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hinotify)
             (hsPkgs.process)

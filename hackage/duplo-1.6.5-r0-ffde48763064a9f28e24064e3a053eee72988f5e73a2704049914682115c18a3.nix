@@ -26,7 +26,7 @@
     components = {
       exes = {
         "duplo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MissingH)
             (hsPkgs.aeson)

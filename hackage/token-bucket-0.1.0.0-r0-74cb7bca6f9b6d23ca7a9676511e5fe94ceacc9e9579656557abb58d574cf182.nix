@@ -25,13 +25,13 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (!flags.use-cbits) (hsPkgs.time);
       };
       tests = {
         "test-tb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.token-bucket)

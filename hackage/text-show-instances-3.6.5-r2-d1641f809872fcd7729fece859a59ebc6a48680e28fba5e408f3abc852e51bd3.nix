@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base-compat-batteries)
           (hsPkgs.bifunctors)
           (hsPkgs.binary)
@@ -75,7 +75,7 @@
       };
       tests = {
         "spec" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base-compat-batteries)
             (hsPkgs.bifunctors)
             (hsPkgs.binary)

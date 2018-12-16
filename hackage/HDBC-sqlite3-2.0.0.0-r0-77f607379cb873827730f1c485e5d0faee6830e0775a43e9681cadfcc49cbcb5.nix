@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.HDBC)
           (hsPkgs.utf8-string)
@@ -42,7 +42,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.testpack)

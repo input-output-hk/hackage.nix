@@ -26,7 +26,7 @@
     components = {
       exes = {
         "vision" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xmms2-client)
             (hsPkgs.xmms2-client-glib)

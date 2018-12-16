@@ -45,7 +45,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.accelerate)
           (hsPkgs.ansi-wl-pprint)
@@ -75,7 +75,7 @@
       };
       exes = {
         "accelerate-nofib" = {
-          depends  = pkgs.lib.optionals (!(!flags.nofib)) [
+          depends = pkgs.lib.optionals (!(!flags.nofib)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -96,7 +96,7 @@
           libs = [ (pkgs."stdc++") ];
         };
         "accelerate-smvm" = {
-          depends  = pkgs.lib.optionals (!(!flags.smvm)) [
+          depends = pkgs.lib.optionals (!(!flags.smvm)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -110,7 +110,7 @@
           ];
         };
         "accelerate-crystal" = {
-          depends  = pkgs.lib.optionals (!(!flags.crystal)) [
+          depends = pkgs.lib.optionals (!(!flags.crystal)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -120,7 +120,7 @@
           ];
         };
         "accelerate-tunnel" = {
-          depends  = pkgs.lib.optionals (!(!flags.tunnel)) [
+          depends = pkgs.lib.optionals (!(!flags.tunnel)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -131,7 +131,7 @@
           ];
         };
         "accelerate-canny" = {
-          depends  = pkgs.lib.optionals (!(!flags.canny)) [
+          depends = pkgs.lib.optionals (!(!flags.canny)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -144,7 +144,7 @@
           ];
         };
         "accelerate-mandelbrot" = {
-          depends  = pkgs.lib.optionals (!(!flags.mandelbrot)) [
+          depends = pkgs.lib.optionals (!(!flags.mandelbrot)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -156,7 +156,7 @@
           ];
         };
         "accelerate-fluid" = {
-          depends  = pkgs.lib.optionals (!(!flags.fluid)) [
+          depends = pkgs.lib.optionals (!(!flags.fluid)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -169,7 +169,7 @@
           ];
         };
         "accelerate-nbody" = {
-          depends  = pkgs.lib.optionals (!(!flags.nbody)) [
+          depends = pkgs.lib.optionals (!(!flags.nbody)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -181,7 +181,7 @@
           ];
         };
         "accelerate-smoothlife" = {
-          depends  = pkgs.lib.optionals (!(!flags.smoothlife)) [
+          depends = pkgs.lib.optionals (!(!flags.smoothlife)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -194,7 +194,7 @@
           ];
         };
         "accelerate-hashcat" = {
-          depends  = pkgs.lib.optionals (!(!flags.hashcat)) [
+          depends = pkgs.lib.optionals (!(!flags.hashcat)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -207,7 +207,7 @@
           ];
         };
         "accelerate-fft" = {
-          depends  = pkgs.lib.optionals (!(!flags.fft)) [
+          depends = pkgs.lib.optionals (!(!flags.fft)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -219,7 +219,7 @@
           ];
         };
         "accelerate-pagerank" = {
-          depends  = pkgs.lib.optionals (!(!flags.pagerank)) [
+          depends = pkgs.lib.optionals (!(!flags.pagerank)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -233,7 +233,7 @@
           ];
         };
         "accelerate-ray" = {
-          depends  = pkgs.lib.optionals (!(!flags.ray)) [
+          depends = pkgs.lib.optionals (!(!flags.ray)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
@@ -247,7 +247,7 @@
           ];
         };
         "accelerate-kmeans" = {
-          depends  = pkgs.lib.optionals (!(!flags.kmeans)) [
+          depends = pkgs.lib.optionals (!(!flags.kmeans)) [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)

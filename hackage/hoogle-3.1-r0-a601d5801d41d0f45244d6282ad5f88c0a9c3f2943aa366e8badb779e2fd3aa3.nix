@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoogle" = {
-          depends  = if flags.splitbase
+          depends = if flags.splitbase
             then [
               (hsPkgs.base)
               (hsPkgs.directory)

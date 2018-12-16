@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
           (hsPkgs.cgi)
@@ -34,7 +34,7 @@
       };
       exes = {
         "testcloud" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.webcloud)

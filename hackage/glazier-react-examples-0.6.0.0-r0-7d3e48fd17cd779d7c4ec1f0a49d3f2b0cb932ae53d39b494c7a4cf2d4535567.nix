@@ -26,7 +26,7 @@
     components = {
       exes = {
         "glazier-react-todo" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.disposable)

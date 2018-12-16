@@ -26,7 +26,7 @@
     components = {
       exes = {
         "khph" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

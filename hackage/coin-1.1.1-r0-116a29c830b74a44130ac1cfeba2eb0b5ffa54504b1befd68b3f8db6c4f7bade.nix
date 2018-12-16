@@ -26,7 +26,7 @@
     components = {
       exes = {
         "coin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glib)
             (hsPkgs.gtk3)

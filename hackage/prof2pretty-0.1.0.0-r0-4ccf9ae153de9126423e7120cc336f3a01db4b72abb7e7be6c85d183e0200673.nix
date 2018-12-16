@@ -26,7 +26,7 @@
     components = {
       exes = {
         "prof2pretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)
@@ -35,7 +35,7 @@
           ];
         };
         "sccpragmabomb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.uniplate)

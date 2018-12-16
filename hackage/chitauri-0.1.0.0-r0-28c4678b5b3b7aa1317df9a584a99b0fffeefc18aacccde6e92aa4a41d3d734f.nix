@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.generic-trie)
@@ -34,7 +34,7 @@
       };
       exes = {
         "chitauri" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chitauri)
             (hsPkgs.either-unwrap)
@@ -46,7 +46,7 @@
       };
       tests = {
         "chitauri-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chitauri)
           ];

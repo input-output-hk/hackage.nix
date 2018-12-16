@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.array)
@@ -39,7 +39,7 @@
       };
       exes = {
         "llvm-disasm" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.base)
             (hsPkgs.pretty)
@@ -56,7 +56,7 @@
       };
       tests = {
         "disasm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

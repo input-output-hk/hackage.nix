@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
         ];
       };
       tests = {
         "test-ansigraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansigraph)
             (hsPkgs.hspec)

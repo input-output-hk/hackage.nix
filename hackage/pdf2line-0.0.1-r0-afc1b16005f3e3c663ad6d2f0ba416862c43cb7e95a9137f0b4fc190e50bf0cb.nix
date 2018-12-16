@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pdf2line" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
@@ -37,7 +37,7 @@
           ];
         };
         "pdfdump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)

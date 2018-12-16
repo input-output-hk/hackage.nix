@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
@@ -77,7 +77,7 @@
       };
       exes = {
         "wreck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.markdown-unlit)
@@ -88,7 +88,7 @@
           ];
         };
         "example-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.scotty)
@@ -104,7 +104,7 @@
           ];
         };
         "example-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.wreq)
@@ -117,7 +117,7 @@
           ];
         };
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.scotty)
@@ -140,7 +140,7 @@
       };
       tests = {
         "wrecker-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.hspec)

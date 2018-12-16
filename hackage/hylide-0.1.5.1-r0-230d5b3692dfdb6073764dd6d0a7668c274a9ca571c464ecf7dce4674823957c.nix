@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hylogen)
           (hsPkgs.base)
           (hsPkgs.vector-space)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hylide" = {
-          depends  = [
+          depends = [
             (hsPkgs.hylogen)
             (hsPkgs.base)
             (hsPkgs.bytestring)

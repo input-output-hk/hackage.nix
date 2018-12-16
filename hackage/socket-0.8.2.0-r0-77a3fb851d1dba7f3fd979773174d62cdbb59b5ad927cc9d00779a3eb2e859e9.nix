@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
@@ -39,7 +39,7 @@
       };
       tests = {
         "default" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
@@ -51,7 +51,7 @@
           ];
         };
         "threaded" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

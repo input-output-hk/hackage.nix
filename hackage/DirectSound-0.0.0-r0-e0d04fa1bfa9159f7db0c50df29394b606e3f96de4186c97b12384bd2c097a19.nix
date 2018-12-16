@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Win32)
         ] ++ [ (hsPkgs.base) ];
         libs = [ (pkgs."dsound") ];

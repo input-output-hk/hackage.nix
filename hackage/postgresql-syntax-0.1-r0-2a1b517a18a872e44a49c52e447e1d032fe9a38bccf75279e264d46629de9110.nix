@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.text)
           (hsPkgs.bytestring)
           (hsPkgs.base-prelude)
@@ -35,7 +35,7 @@
       };
       tests = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-syntax)
             (hsPkgs.rerebase)
           ];

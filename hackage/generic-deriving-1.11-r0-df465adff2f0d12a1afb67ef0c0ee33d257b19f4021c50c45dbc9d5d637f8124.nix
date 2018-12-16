@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)
           (hsPkgs.template-haskell)

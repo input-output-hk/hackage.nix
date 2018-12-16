@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "HelloFS" = {
-          depends  = pkgs.lib.optionals (flags.developer) [
+          depends = pkgs.lib.optionals (flags.developer) [
             (hsPkgs.base)
             (hsPkgs.HFuse)
             (hsPkgs.unix)

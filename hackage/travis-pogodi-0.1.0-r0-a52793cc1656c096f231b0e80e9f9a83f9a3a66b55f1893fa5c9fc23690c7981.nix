@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
           (hsPkgs.process)
@@ -33,7 +33,7 @@
       };
       exes = {
         "travis-pogodi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.travis-pogodi)
           ];

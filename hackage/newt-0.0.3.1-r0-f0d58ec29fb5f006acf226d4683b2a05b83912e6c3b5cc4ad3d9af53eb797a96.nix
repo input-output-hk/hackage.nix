@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filemanip)
           (hsPkgs.mtl)
@@ -44,7 +44,7 @@
       };
       exes = {
         "newt" = {
-          depends  = [
+          depends = [
             (hsPkgs.newt)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -52,7 +52,7 @@
           ] ++ [ (hsPkgs.containers) ];
         };
         "test-newt" = {
-          depends  = [
+          depends = [
             (hsPkgs.newt)
             (hsPkgs.base)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.classy-prelude)
           (hsPkgs.colour)
@@ -53,7 +53,7 @@
       };
       exes = {
         "termonad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.termonad)
           ];
@@ -61,7 +61,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
@@ -69,7 +69,7 @@
           ];
         };
         "termonad-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedgehog)
             (hsPkgs.lens)

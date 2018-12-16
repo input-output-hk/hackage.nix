@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.heap)
         ];
       };
       tests = {
         "median-stream-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.median-stream)
             (hsPkgs.QuickCheck)
@@ -41,7 +41,7 @@
       };
       benchmarks = {
         "median-stream-bench-optimized" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.median-stream)
@@ -49,7 +49,7 @@
           ];
         };
         "median-stream-bench-non-optimized" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.median-stream)

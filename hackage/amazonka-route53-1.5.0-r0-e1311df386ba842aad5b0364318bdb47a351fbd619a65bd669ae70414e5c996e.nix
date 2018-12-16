@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka-core)
           (hsPkgs.base)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       tests = {
         "amazonka-route53-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka-core)
             (hsPkgs.amazonka-test)
             (hsPkgs.amazonka-route53)

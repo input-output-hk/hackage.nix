@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.transformers)
@@ -41,27 +41,27 @@
       };
       exes = {
         "version" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
           ];
         };
         "dot-propagator" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
           ];
         };
         "control" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
           ];
         };
         "configuration" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
@@ -69,42 +69,42 @@
           ];
         };
         "theory-atoms" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
           ];
         };
         "symbolic-atoms" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
           ];
         };
         "ast" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
           ];
         };
         "backend" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
           ];
         };
         "model" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
           ];
         };
         "solve-async" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
@@ -113,7 +113,7 @@
           ];
         };
         "statistics" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)
@@ -122,7 +122,7 @@
           ];
         };
         "propagator" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.clingo)
             (hsPkgs.text)

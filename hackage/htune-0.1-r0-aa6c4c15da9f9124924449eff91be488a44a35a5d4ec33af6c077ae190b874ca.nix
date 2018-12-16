@@ -26,7 +26,7 @@
     components = {
       exes = {
         "htune" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.carray)
             (hsPkgs.fft)

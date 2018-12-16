@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.transformers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "hunit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.coordinate)
             (hsPkgs.HUnit)

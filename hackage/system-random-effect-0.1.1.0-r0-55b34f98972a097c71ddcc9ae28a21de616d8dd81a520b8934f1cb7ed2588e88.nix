@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.extensible-effects)
           (hsPkgs.mersenne-random-pure64)
@@ -36,7 +36,7 @@
       };
       tests = {
         "extensible-effects-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

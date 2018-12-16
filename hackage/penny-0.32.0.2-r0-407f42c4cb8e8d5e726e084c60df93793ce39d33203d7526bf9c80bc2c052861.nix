@@ -35,7 +35,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -60,7 +60,7 @@
       };
       exes = {
         "penny-gibberish" = {
-          depends  = pkgs.lib.optionals (flags.build-gibberish) [
+          depends = pkgs.lib.optionals (flags.build-gibberish) [
             (hsPkgs.penny)
             (hsPkgs.base)
             (hsPkgs.multiarg)
@@ -74,31 +74,31 @@
           ];
         };
         "penny" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
           ];
         };
         "penny-selloff" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
           ];
         };
         "penny-diff" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
           ];
         };
         "penny-reprint" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
           ];
         };
         "penny-reconcile" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
           ];
@@ -106,7 +106,7 @@
       };
       tests = {
         "penny-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
             (hsPkgs.multiarg)

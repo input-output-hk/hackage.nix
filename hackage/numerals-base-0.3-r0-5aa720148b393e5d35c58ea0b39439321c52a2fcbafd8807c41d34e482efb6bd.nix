@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-numerals" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.containers)

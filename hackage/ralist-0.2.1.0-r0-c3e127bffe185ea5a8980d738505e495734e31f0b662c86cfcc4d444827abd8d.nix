@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs.fail)
@@ -34,7 +34,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hspec)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hspec)) [
             (hsPkgs.base)
             (hsPkgs.ralist)
             (hsPkgs.hspec)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "benchmarking" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ralist)
             (hsPkgs.criterion)

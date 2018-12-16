@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-arbitrary)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring-arbitrary)
             (hsPkgs.QuickCheck)

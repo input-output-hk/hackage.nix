@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optionals (flags.aeson) [
@@ -40,7 +40,7 @@
       };
       exes = {
         "play-o-clock" = {
-          depends  = [
+          depends = [
             (hsPkgs.o-clock)
             (hsPkgs.base)
           ];
@@ -48,7 +48,7 @@
       };
       tests = {
         "o-clock-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.o-clock)
             (hsPkgs.hedgehog)
@@ -59,7 +59,7 @@
           ];
         };
         "o-clock-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -69,7 +69,7 @@
           ];
         };
         "readme-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.o-clock)
             (hsPkgs.markdown-unlit)
@@ -81,7 +81,7 @@
       };
       benchmarks = {
         "o-clock-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.o-clock)
             (hsPkgs.gauge)

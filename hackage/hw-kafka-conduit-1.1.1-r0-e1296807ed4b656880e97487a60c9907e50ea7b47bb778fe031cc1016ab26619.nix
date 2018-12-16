@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "kafka-conduit-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
       };
       tests = {
         "kafka-client-conduit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hw-kafka-conduit)
             (hsPkgs.bifunctors)

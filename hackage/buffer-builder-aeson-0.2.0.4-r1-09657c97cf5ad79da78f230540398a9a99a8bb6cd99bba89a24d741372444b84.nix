@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.integer-gmp)
@@ -38,7 +38,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buffer-builder-aeson)
             (hsPkgs.buffer-builder)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "json-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buffer-builder)
             (hsPkgs.buffer-builder-aeson)

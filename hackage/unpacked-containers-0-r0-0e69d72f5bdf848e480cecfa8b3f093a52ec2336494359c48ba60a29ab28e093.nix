@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.deepseq)
@@ -34,19 +34,19 @@
       };
       sublibs = {
         "utils" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.ghc-prim)
           ];
         };
         "example" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
       exes = {
         "unpacked-set-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unpacked-containers)
             (hsPkgs.example)

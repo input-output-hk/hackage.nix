@@ -26,7 +26,7 @@
     components = {
       exes = {
         "BigPixel" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bmp)

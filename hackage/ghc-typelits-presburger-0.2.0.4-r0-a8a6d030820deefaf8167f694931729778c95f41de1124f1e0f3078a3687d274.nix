@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-tcplugins-extra)
@@ -38,7 +38,7 @@
       };
       exes = {
         "simple-arith" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-typelits-presburger)
             (hsPkgs.equational-reasoning)

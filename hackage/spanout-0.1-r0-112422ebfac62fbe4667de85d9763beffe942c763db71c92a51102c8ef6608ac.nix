@@ -26,7 +26,7 @@
     components = {
       exes = {
         "spanout" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)

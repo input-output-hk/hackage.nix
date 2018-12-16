@@ -26,7 +26,7 @@
     components = {
       exes = {
         "codemonitor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.regex-posix)

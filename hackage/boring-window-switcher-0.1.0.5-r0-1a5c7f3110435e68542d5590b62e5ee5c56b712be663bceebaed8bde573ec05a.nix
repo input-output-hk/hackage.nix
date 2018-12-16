@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.X11)
           (hsPkgs.transformers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "boring-window-switcher" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boring-window-switcher)
           ];
@@ -44,7 +44,7 @@
       };
       tests = {
         "author-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boring-window-switcher)
             (hsPkgs.hspec)

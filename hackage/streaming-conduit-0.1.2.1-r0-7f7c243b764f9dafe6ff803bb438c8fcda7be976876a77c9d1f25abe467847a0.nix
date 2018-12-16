@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
@@ -36,7 +36,7 @@
       };
       tests = {
         "conversions" = {
-          depends  = [
+          depends = [
             (hsPkgs.streaming-conduit)
             (hsPkgs.base)
             (hsPkgs.conduit)

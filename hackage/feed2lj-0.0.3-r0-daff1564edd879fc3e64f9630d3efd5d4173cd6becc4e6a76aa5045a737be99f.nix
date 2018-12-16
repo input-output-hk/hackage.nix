@@ -26,7 +26,7 @@
     components = {
       exes = {
         "feed2lj" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.old-locale)

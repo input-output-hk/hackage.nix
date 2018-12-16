@@ -29,7 +29,7 @@
     components = {
       exes = {
         "cabal" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.filepath)

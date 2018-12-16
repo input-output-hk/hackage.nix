@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.conduit)
@@ -42,7 +42,7 @@
       };
       exes = {
         "shake-wolf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakers)
           ];

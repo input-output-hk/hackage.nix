@@ -26,7 +26,7 @@
     components = {
       exes = {
         "x509-util" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.x509)

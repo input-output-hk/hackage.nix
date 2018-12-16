@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.messagepack)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "NeksClient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.messagepack)
             (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
           ];
         };
         "NeksServer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.messagepack)
             (hsPkgs.bytestring)

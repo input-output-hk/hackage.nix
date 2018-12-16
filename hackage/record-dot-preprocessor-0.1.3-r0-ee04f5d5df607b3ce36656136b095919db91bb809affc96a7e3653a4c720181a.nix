@@ -26,7 +26,7 @@
     components = {
       exes = {
         "record-dot-preprocessor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.extra)

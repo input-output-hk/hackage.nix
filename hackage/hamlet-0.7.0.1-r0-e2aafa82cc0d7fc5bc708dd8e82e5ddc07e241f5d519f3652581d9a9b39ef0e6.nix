@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
@@ -38,7 +38,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)
@@ -46,7 +46,7 @@
           ];
         };
         "hamlet6to7" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ];
         };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.AERN-Real)
           (hsPkgs.AERN-Real)
           (hsPkgs.base)

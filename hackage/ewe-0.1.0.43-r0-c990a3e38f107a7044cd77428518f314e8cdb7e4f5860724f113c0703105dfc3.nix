@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ewe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.mtl)

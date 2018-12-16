@@ -26,7 +26,7 @@
     components = {
       exes = {
         "itcli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

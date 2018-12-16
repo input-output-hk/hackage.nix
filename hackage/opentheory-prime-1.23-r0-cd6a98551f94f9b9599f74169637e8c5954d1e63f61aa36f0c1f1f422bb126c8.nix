@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.QuickCheck)
@@ -35,7 +35,7 @@
       };
       exes = {
         "opentheory-prime-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.QuickCheck)

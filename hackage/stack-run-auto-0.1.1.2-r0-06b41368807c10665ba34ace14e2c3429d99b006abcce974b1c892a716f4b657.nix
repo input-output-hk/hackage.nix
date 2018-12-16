@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.process)
@@ -42,7 +42,7 @@
       };
       exes = {
         "module-package" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.process)
@@ -59,7 +59,7 @@
           ];
         };
         "stack-run-auto" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.process)
@@ -78,7 +78,7 @@
       };
       tests = {
         "stack-run-auto-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.process)

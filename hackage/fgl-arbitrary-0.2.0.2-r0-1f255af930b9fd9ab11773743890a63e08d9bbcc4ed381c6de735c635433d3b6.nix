@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.fgl)
           (hsPkgs.QuickCheck)
@@ -33,7 +33,7 @@
       };
       tests = {
         "fgl-arbitrary-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.fgl-arbitrary)
             (hsPkgs.fgl)
             (hsPkgs.base)

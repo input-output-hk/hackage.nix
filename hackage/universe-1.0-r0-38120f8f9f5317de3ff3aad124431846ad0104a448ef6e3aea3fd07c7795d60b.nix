@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.universe-instances-base)
           (hsPkgs.universe-instances-extended)
           (hsPkgs.universe-reverse-instances)

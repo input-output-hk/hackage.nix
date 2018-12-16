@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.atomic-primops)
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
@@ -41,21 +41,21 @@
       };
       exes = {
         "MoveStringSTM" = {
-          depends  = pkgs.lib.optionals (!(!flags.unstable)) [
+          depends = pkgs.lib.optionals (!(!flags.unstable)) [
             (hsPkgs.base)
             (hsPkgs.rcu)
             (hsPkgs.transformers)
           ];
         };
         "MoveStringQSBR" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rcu)
             (hsPkgs.transformers)
           ];
         };
         "MoveStringGC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rcu)
             (hsPkgs.transformers)
@@ -64,7 +64,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.parallel)
@@ -72,7 +72,7 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -80,7 +80,7 @@
       };
       benchmarks = {
         "IncCounterExperiment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.ghc-prim)
@@ -90,7 +90,7 @@
           ];
         };
         "TimeSynchronizeQSBR" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -103,7 +103,7 @@
           ];
         };
         "TimeSynchronizeGC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -116,7 +116,7 @@
           ];
         };
         "TimeSynchronizeQSBRUnbound" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -129,7 +129,7 @@
           ];
         };
         "TimeSynchronizeGCUnbound" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -142,7 +142,7 @@
           ];
         };
         "TimeSynchronizeQSBRSingleThread" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -155,7 +155,7 @@
           ];
         };
         "TimeSynchronizeGCSingleThread" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -168,7 +168,7 @@
           ];
         };
         "TimeSynchronizeQSBRPinned" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -181,7 +181,7 @@
           ];
         };
         "TimeSynchronizeGCPinned" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -194,7 +194,7 @@
           ];
         };
         "TimeSynchronizeQSBRnoGC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -207,7 +207,7 @@
           ];
         };
         "TimeSynchronizeGCnoGC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -220,7 +220,7 @@
           ];
         };
         "TimeSynchronizeQSBRnoGCPinned" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -233,7 +233,7 @@
           ];
         };
         "TimeSynchronizeGCnoGCPinned" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)

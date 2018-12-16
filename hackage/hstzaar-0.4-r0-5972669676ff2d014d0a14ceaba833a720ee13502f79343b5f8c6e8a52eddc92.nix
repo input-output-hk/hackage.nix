@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hstzaar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.containers)

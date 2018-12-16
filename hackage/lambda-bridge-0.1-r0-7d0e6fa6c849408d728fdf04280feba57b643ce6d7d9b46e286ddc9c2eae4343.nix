@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "haskell-test1" = {
-          depends  = pkgs.lib.optional (flags.example) (hsPkgs.base);
+          depends = pkgs.lib.optional (flags.example) (hsPkgs.base);
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.pretty)
@@ -43,7 +43,7 @@
       };
       exes = {
         "jmacro" = {
-          depends  = [
+          depends = [
             (hsPkgs.parseargs)
           ];
         };

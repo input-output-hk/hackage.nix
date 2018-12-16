@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.directory)
@@ -42,7 +42,7 @@
       };
       exes = {
         "shake" = {
-          depends  = [ (hsPkgs.random) ];
+          depends = [ (hsPkgs.random) ];
         };
       };
     };

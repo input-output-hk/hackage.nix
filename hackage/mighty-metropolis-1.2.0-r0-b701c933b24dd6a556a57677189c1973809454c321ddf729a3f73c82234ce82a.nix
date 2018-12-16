@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.kan-extensions)
           (hsPkgs.pipes)
@@ -37,14 +37,14 @@
       };
       tests = {
         "rosenbrock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mighty-metropolis)
             (hsPkgs.mwc-probability)
           ];
         };
         "bnn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mighty-metropolis)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.base64-bytestring)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.openpgp-asciiarmor)
             (hsPkgs.base)
             (hsPkgs.bytestring)

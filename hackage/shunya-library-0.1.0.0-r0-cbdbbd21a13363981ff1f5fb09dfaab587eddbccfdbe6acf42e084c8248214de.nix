@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "shunya-library-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shunya-library)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "shunya-library-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shunya-library)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "chat-server" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.concurrent-state)
             (hsPkgs.network)

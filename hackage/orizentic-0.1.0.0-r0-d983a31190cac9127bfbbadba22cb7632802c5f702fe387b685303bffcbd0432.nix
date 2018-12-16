@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "orizentic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.orizentic)
             (hsPkgs.aeson)
@@ -55,7 +55,7 @@
       };
       tests = {
         "orizentic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.orizentic)
             (hsPkgs.hspec)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.ghc)
@@ -36,7 +36,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sai-shape-syb)
             (hsPkgs.syb)

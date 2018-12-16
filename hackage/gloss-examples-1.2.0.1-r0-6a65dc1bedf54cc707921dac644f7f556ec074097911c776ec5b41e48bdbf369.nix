@@ -26,45 +26,45 @@
     components = {
       exes = {
         "gloss-easy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-clock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-eden" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.random)
           ];
         };
         "gloss-flake" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-lifespan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.random)
           ];
         };
         "gloss-styrene" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.containers)
@@ -72,38 +72,38 @@
           ];
         };
         "gloss-tree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-zen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-machina" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-conway" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.vector)
           ];
         };
         "gloss-occlusion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-visibility" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];

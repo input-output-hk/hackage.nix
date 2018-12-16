@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scrabble-bot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.binary)

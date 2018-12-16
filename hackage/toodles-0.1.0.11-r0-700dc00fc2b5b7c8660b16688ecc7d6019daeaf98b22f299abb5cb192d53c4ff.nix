@@ -26,7 +26,7 @@
     components = {
       exes = {
         "toodles" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.aeson)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "falling-turnip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.vector)

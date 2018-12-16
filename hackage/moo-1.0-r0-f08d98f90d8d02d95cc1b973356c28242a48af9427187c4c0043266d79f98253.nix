@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-mersenne-random)
           (hsPkgs.mersenne-random-pure64)
@@ -39,7 +39,7 @@
       };
       tests = {
         "moo-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.moo)
             (hsPkgs.base)
             (hsPkgs.HUnit)

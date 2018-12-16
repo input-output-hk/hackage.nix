@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.synthesizer-core)
           (hsPkgs.transformers)
           (hsPkgs.event-list)
@@ -45,7 +45,7 @@
       };
       exes = {
         "rain" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.synthesizer-dimensional)
             (hsPkgs.synthesizer-core)
             (hsPkgs.numeric-prelude)
@@ -56,7 +56,7 @@
           ];
         };
         "demonstration" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.explicit-exception)
             (hsPkgs.old-time)
             (hsPkgs.synthesizer-dimensional)
@@ -74,7 +74,7 @@
           ];
         };
         "traumzauberbaum" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.synthesizer-dimensional)
             (hsPkgs.synthesizer-core)
             (hsPkgs.numeric-prelude)

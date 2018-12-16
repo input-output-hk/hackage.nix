@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.twitter-conduit)
           (hsPkgs.twitter-types-lens)
@@ -43,7 +43,7 @@
       };
       exes = {
         "mur" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.murmur)
             (hsPkgs.twitter-conduit)
@@ -55,7 +55,7 @@
       };
       tests = {
         "murmur-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.murmur)
           ];

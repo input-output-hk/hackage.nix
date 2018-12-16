@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "grid-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grid)
             (hsPkgs.containers)

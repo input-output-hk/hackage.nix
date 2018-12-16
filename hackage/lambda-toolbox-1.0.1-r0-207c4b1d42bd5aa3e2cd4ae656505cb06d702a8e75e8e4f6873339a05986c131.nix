@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambda-toolbox" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

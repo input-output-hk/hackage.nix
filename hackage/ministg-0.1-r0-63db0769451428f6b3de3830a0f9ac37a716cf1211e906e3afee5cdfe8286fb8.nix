@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ministg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monads-tf)
             (hsPkgs.transformers)

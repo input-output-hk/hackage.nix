@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.blaze-builder)
@@ -46,7 +46,7 @@
       };
       exes = {
         "bugzilla" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bugzilla)
             (hsPkgs.containers)

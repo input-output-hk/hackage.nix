@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "greencard" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.containers)

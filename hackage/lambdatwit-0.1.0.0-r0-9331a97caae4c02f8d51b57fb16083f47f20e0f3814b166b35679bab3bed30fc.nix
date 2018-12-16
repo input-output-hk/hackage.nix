@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambdatwit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.acid-state)
             (hsPkgs.authenticate-oauth)
@@ -56,7 +56,7 @@
           ];
         };
         "oauth_pin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers-base)

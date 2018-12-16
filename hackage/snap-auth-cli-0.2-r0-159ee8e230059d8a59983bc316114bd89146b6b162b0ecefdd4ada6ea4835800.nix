@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snap-auth-cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)

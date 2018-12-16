@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackage-diff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.haskell-src-exts)

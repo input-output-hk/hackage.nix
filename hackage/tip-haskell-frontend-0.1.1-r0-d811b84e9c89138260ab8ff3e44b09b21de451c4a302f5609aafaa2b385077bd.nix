@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
@@ -43,7 +43,7 @@
       };
       exes = {
         "tip-ghc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tip-haskell-frontend)
             (hsPkgs.tip-lib)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "styleFromMeta" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc)
             (hsPkgs.pandoc-types)

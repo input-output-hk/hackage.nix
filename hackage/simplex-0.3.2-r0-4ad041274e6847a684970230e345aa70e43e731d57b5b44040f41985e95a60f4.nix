@@ -26,7 +26,7 @@
     components = {
       exes = {
         "simplex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai-app-static)
           (hsPkgs.wai)
@@ -41,7 +41,7 @@
       };
       exes = {
         "wai-make-assets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-app-static)
             (hsPkgs.wai)
@@ -59,7 +59,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-app-static)
             (hsPkgs.wai)

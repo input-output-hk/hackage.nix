@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka-core)
           (hsPkgs.base)
           (hsPkgs.conduit)

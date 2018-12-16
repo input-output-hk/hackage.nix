@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.base16-bytestring)
@@ -49,7 +49,7 @@
       };
       tests = {
         "compiling-ok" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.second-transfer)
             (hsPkgs.conduit)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hobbes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.system-filepath)

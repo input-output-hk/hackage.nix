@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.spoon)
@@ -33,7 +33,7 @@
       };
       tests = {
         "prim-spoon-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.spoon)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "prim-spoon-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.ghc-prim)

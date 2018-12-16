@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hnop" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

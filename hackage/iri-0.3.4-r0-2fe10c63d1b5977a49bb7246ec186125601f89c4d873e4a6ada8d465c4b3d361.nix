@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.th-lift-instances)
           (hsPkgs.th-lift)
           (hsPkgs.template-haskell)
@@ -51,7 +51,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.iri)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

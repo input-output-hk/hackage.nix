@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flowsim" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -39,7 +39,7 @@
           ];
         };
         "hplc" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -47,7 +47,7 @@
           ];
         };
         "clonesim" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -57,27 +57,27 @@
           ];
         };
         "kitsim" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.cmdargs)
           ];
         };
         "mutator" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.cmdargs)
           ];
         };
         "duplicator" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
           ];
         };
         "gelfilter" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
           ];

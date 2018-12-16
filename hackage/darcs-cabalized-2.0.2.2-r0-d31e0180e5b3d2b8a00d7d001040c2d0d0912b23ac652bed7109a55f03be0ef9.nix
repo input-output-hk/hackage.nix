@@ -29,7 +29,7 @@
     components = {
       exes = {
         "darcs" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)
             (hsPkgs.parsec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.base)
@@ -54,7 +54,7 @@
       };
       exes = {
         "cachix-gen-swagger" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka)
             (hsPkgs.base)
@@ -85,7 +85,7 @@
       };
       tests = {
         "cachix-api-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.split)
@@ -38,7 +38,7 @@
       };
       exes = {
         "rospkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.rospkg)
@@ -47,7 +47,7 @@
       };
       tests = {
         "rospkg-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rospkg)
           ];

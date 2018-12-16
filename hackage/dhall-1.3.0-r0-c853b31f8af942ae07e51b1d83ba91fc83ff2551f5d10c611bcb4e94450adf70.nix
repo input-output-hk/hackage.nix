@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       exes = {
         "dhall" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall)
             (hsPkgs.optparse-generic)
@@ -59,7 +59,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall)
             (hsPkgs.neat-interpolation)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.dns)
@@ -43,7 +43,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.dns)

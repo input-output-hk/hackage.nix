@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -40,7 +40,7 @@
       };
       exes = {
         "webex-teams-api-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       tests = {
         "webex-teams-api-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.attoparsec)

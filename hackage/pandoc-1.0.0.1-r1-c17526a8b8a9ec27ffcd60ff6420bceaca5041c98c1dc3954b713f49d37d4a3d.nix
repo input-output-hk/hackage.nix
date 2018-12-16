@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.pretty)
           (hsPkgs.containers)
@@ -50,7 +50,7 @@
       };
       exes = {
         "pandoc" = {
-          depends  = pkgs.lib.optional (flags.citeproc) (hsPkgs.citeproc-hs);
+          depends = pkgs.lib.optional (flags.citeproc) (hsPkgs.citeproc-hs);
         };
       };
     };

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "astrds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -34,7 +34,7 @@
       };
       exes = {
         "example1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.commander)
             (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       tests = {
         "commander-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.commander)
           ];

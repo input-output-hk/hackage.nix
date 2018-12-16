@@ -26,42 +26,42 @@
     components = {
       exes = {
         "lesson01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson03" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson04" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson05" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson06" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
@@ -69,28 +69,28 @@
           ];
         };
         "lesson07" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson08" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson09" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson10" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
@@ -98,14 +98,14 @@
           ];
         };
         "lesson11" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
         };
         "lesson12" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)

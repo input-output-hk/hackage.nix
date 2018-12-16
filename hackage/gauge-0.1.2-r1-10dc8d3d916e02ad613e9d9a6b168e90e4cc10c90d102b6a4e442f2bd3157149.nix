@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basement)
           (hsPkgs.foundation)
@@ -39,7 +39,7 @@
       };
       tests = {
         "sanity" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
           ];
         };
         "cleanup" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -65,7 +65,7 @@
       };
       benchmarks = {
         "self" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gauge)
           ];

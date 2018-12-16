@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "msgpack-aeson-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.msgpack)
             (hsPkgs.aeson)

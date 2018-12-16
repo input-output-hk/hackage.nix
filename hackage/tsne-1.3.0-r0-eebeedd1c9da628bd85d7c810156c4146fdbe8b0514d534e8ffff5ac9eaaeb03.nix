@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default)
           (hsPkgs.deepseq)
@@ -35,7 +35,7 @@
       };
       exes = {
         "haskell_tsne_example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.pipes)
@@ -43,7 +43,7 @@
           ];
         };
         "haskell_tsne_timing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.pipes)
@@ -54,7 +54,7 @@
       };
       tests = {
         "tSNE-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.data-default)

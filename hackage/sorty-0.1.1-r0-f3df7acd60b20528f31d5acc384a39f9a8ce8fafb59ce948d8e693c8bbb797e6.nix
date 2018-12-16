@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sorty" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.base)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Spock)
           (hsPkgs.async)
@@ -45,7 +45,7 @@
       };
       exes = {
         "scalp-webhooks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scalp-webhooks)
             (hsPkgs.Spock)
@@ -67,7 +67,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.lens)

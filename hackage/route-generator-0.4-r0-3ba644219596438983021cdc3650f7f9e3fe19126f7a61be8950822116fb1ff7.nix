@@ -26,7 +26,7 @@
     components = {
       exes = {
         "routeGenerator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)

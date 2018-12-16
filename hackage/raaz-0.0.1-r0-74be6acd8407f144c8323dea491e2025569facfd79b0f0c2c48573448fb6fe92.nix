@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
@@ -36,7 +36,7 @@
       };
       exes = {
         "checksum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.raaz)
           ];
@@ -44,7 +44,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "blaze-vs-write" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MonadRandom)
           (hsPkgs.aeson)
           (hsPkgs.base)

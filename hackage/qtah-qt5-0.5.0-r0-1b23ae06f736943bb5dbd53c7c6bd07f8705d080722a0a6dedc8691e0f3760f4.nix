@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-qtah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hoppy-runtime)
             (hsPkgs.HUnit)

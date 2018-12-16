@@ -26,7 +26,7 @@
     components = {
       exes = {
         "roguestar-engine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)

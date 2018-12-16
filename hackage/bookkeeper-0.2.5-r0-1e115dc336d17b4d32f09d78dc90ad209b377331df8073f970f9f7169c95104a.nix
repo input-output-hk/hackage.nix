@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.type-level-sets)
@@ -33,7 +33,7 @@
       };
       exes = {
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bookkeeper)
             (hsPkgs.data-default-class)
@@ -44,7 +44,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.Glob)
             (hsPkgs.base)
             (hsPkgs.data-default-class)
@@ -54,7 +54,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bookkeeper)
@@ -66,7 +66,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bookkeeper)
             (hsPkgs.criterion)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-mod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

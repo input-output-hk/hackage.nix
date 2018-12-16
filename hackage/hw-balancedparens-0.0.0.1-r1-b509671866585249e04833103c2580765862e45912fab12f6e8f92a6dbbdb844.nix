@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hw-bits)
           (hsPkgs.hw-excess)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hw-balancedparens-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hw-balancedparens)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "hw-balancedparens-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hw-bits)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.conduit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.base16-bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "web3-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.memory)
             (hsPkgs.text)

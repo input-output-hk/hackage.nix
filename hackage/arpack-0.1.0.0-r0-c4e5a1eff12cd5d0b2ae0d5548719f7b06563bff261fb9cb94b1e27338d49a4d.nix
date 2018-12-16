@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.concurrent-extra)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.arpack)
             (hsPkgs.base)
             (hsPkgs.hmatrix)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ncurses)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.gross)
             (hsPkgs.base)
             (hsPkgs.ncurses)

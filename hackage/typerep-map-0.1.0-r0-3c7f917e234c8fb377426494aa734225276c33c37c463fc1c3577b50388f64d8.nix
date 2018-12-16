@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)
@@ -34,7 +34,7 @@
       };
       sublibs = {
         "typerep-extra-impls" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.vector)
@@ -43,7 +43,7 @@
       };
       tests = {
         "typerep-map-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-typelits-knownnat)
             (hsPkgs.hedgehog)
@@ -61,7 +61,7 @@
       };
       benchmarks = {
         "typerep-map-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

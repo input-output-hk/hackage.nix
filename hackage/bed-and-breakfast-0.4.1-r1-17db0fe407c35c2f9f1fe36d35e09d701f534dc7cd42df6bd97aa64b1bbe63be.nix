@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.array)
@@ -35,7 +35,7 @@
       };
       tests = {
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bed-and-breakfast)
             (hsPkgs.QuickCheck)

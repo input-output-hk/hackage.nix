@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.asn1-encoding)
           (hsPkgs.asn1-types)
@@ -44,7 +44,7 @@
       };
       exes = {
         "aws-cloudfront-signed-cookies" = {
-          depends  = [
+          depends = [
             (hsPkgs.aws-cloudfront-signed-cookies)
             (hsPkgs.base)
           ];

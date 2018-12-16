@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-hourglass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "bench-hourglass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

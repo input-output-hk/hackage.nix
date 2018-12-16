@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "generic-storable-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.hspec)

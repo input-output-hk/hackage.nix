@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.gelatin)
@@ -46,7 +46,7 @@
       };
       exes = {
         "gelatin-gl-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gelatin)
             (hsPkgs.gelatin-gl)

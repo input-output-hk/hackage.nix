@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.deepseq)
@@ -35,13 +35,13 @@
       };
       exes = {
         "check-c" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tokstyle)
           ];
         };
         "check-cimple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tokstyle)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "varan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mtl)

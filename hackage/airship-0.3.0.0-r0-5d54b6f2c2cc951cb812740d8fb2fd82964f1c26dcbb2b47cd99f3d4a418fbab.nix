@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -58,7 +58,7 @@
       };
       exes = {
         "airship-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.airship)
             (hsPkgs.blaze-builder)
@@ -75,7 +75,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.airship)
             (hsPkgs.text)

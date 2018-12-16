@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.logging-effect)
           (hsPkgs.wl-pprint-text)
@@ -34,7 +34,7 @@
       };
       exes = {
         "log-file" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.wl-pprint-text)
@@ -42,7 +42,7 @@
           ];
         };
         "log-file-and-severity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.wl-pprint-text)

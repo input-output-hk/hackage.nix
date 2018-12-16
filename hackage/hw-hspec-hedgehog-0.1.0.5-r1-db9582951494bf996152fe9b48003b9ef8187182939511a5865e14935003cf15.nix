@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.base)
           (hsPkgs.call-stack)
@@ -36,7 +36,7 @@
       };
       tests = {
         "hw-hspec-hedgehog-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedgehog)
             (hsPkgs.hspec)

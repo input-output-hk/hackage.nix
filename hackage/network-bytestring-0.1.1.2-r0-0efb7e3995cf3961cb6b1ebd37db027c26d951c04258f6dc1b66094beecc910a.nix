@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.network)
         ] ++ (if flags.split-base

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.filepath)
@@ -38,7 +38,7 @@
       };
       exes = {
         "mkstrict" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src)
             (hsPkgs.directory)

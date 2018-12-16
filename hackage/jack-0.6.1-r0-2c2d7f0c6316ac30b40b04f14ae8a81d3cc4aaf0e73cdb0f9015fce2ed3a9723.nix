@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.midi)
           (hsPkgs.bytestring)
           (hsPkgs.explicit-exception)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "hssh-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
       };
       tests = {
         "hssh-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)

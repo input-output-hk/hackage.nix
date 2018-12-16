@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
@@ -43,7 +43,7 @@
       };
       tests = {
         "specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monarch)
             (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monarch)
             (hsPkgs.tokyotyrant-haskell)

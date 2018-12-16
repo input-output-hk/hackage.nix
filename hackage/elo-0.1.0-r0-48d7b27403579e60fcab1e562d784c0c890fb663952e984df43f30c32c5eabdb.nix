@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "elo-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elo)
             (hsPkgs.tasty)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.persistent)
@@ -37,7 +37,7 @@
       };
       tests = {
         "persistent-template-classy-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.persistent)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.text)
@@ -44,13 +44,13 @@
       };
       exes = {
         "hi3status" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hi3status)
           ];
         };
         "hi3status-ctl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbus)
             (hsPkgs.process)

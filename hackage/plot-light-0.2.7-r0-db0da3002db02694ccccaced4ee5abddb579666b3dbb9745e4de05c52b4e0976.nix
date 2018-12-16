@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.time)
@@ -39,7 +39,7 @@
       };
       exes = {
         "scatter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plot-light)
             (hsPkgs.attoparsec)
@@ -50,7 +50,7 @@
           ];
         };
         "timeseries" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plot-light)
             (hsPkgs.attoparsec)
@@ -63,7 +63,7 @@
           ];
         };
         "heatmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plot-light)
             (hsPkgs.attoparsec)
@@ -79,7 +79,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plot-light)
             (hsPkgs.hspec)

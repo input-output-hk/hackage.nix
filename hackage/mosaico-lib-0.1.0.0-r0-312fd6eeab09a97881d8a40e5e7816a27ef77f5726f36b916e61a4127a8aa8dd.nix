@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.JuicyPixels)
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)

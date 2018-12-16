@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "mios" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.containers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "brians-brain" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parallel)
             (hsPkgs.SDL)

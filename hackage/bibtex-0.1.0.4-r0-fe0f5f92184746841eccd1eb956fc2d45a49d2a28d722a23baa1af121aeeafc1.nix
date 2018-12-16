@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.latex)
           (hsPkgs.parsec)
           (hsPkgs.utility-ht)
@@ -42,7 +42,7 @@
       exes = {
         "publication-overview" = {};
         "hackage-bibtex" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.old-time)
             (hsPkgs.Cabal)
             (hsPkgs.tar)

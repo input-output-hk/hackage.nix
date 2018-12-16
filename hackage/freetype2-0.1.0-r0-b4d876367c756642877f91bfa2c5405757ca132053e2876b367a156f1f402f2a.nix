@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];
       };
       exes = {
         "freetype-example1" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.freetype2)
             (hsPkgs.array)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pdf-toolbox-viewer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)

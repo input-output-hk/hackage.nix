@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tagged)
           (hsPkgs.template-haskell)
@@ -33,7 +33,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.indices)
             (hsPkgs.QuickCheck)
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "Ranges" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.indices)
             (hsPkgs.criterion)

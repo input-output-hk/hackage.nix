@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.transformers-base)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-lifted-base" = {
-          depends  = [
+          depends = [
             (hsPkgs.lifted-base)
             (hsPkgs.base)
             (hsPkgs.transformers)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "bench-lifted-base" = {
-          depends  = [
+          depends = [
             (hsPkgs.lifted-base)
             (hsPkgs.base)
             (hsPkgs.transformers)

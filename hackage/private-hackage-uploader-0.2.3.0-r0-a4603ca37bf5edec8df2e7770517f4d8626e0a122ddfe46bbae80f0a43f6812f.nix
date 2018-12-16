@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.optparse-applicative)
@@ -37,7 +37,7 @@
       };
       exes = {
         "private-hackage-uploader" = {
-          depends  = pkgs.lib.optionals (!flags.library-only) [
+          depends = pkgs.lib.optionals (!flags.library-only) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.shelly)

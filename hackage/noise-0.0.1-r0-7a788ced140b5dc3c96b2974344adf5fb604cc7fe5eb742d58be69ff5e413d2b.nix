@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-markup)
           (hsPkgs.blaze-svg)
@@ -38,7 +38,7 @@
       };
       exes = {
         "noise" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.noise)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

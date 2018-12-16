@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.network-transport)
@@ -47,7 +47,7 @@
       };
       exes = {
         "bench-dp-latency" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport-zeromq)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
           ];
         };
         "bench-dp-throughput" = {
-          depends  = pkgs.lib.optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-zeromq)
@@ -65,7 +65,7 @@
           ];
         };
         "bench-dp-channels" = {
-          depends  = pkgs.lib.optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-zeromq)
@@ -76,7 +76,7 @@
       };
       tests = {
         "test-zeromq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-zeromq)
@@ -85,7 +85,7 @@
           ];
         };
         "test-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-zeromq)
@@ -93,7 +93,7 @@
           ];
         };
         "test-ch-core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport-zeromq)
             (hsPkgs.distributed-process-tests)
@@ -107,7 +107,7 @@
           ];
         };
         "test-ch-closure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport-zeromq)
             (hsPkgs.distributed-process-tests)
@@ -121,7 +121,7 @@
           ];
         };
         "test-ch-stat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport-zeromq)
             (hsPkgs.distributed-process-tests)

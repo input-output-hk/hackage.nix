@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.integer-gmp)
           (hsPkgs.semigroups)

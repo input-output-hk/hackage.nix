@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.euler)
             (hsPkgs.hspec)
@@ -38,20 +38,20 @@
           ];
         };
         "hpc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.xml)
           ];
         };
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "haddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.regex-posix)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.euler)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aws)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -60,7 +60,7 @@
       };
       exes = {
         "hackage-mirror" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hackage-mirror)
             (hsPkgs.monad-logger)

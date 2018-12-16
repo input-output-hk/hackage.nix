@@ -36,7 +36,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((((([
+        depends = (((((((([
           (hsPkgs.Cabal)
           (hsPkgs.Diff)
           (hsPkgs.array)
@@ -109,7 +109,7 @@
       };
       exes = {
         "parserTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -118,7 +118,7 @@
           ] ++ pkgs.lib.optional (!flags.dochack) (hsPkgs.yi);
         };
         "yi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
           ] ++ pkgs.lib.optional (!flags.dochack) (hsPkgs.yi);
           build-tools = [

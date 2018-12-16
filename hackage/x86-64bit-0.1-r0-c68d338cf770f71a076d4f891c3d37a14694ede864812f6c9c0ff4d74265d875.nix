@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monads-tf)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       exes = {
         "x86-64-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.x86-64bit)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       exes = {
         "collision" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
             (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "keccak-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
             (hsPkgs.bytestring)
@@ -63,7 +63,7 @@
       };
       benchmarks = {
         "self" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cryptonite)

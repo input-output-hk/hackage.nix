@@ -26,7 +26,7 @@
     components = {
       exes = {
         "recursive-line-count" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.gtk)

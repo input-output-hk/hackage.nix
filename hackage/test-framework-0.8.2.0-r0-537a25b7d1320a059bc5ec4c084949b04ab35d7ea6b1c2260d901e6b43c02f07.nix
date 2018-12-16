@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.ansi-wl-pprint)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-framework-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-parsers" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.modelicaparser)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -43,7 +43,7 @@
           ];
         };
         "test-real-code" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.modelicaparser)
             (hsPkgs.base)
             (hsPkgs.containers)

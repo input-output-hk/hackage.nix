@@ -26,7 +26,7 @@
     components = {
       exes = {
         "on-demand-ssh-tunnel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)

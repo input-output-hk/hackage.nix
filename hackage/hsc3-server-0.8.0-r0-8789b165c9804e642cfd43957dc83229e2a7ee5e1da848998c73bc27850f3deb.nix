@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bitset)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       exes = {
         "hsc3-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -57,7 +57,7 @@
           ];
         };
         "hsc3-sine-grains" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -70,7 +70,7 @@
       };
       tests = {
         "hsc3-server-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.failure)
             (hsPkgs.hsc3-server)

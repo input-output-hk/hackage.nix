@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yamlkeysdiff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parsec)

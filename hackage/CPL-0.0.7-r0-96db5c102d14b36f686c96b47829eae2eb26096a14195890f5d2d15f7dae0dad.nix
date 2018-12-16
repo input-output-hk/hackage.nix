@@ -29,7 +29,7 @@
     components = {
       exes = {
         "cpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)

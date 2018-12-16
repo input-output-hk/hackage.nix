@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.pretty)
         ] ++ (if flags.small-base
           then [

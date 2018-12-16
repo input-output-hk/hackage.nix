@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gmndl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.gtk)

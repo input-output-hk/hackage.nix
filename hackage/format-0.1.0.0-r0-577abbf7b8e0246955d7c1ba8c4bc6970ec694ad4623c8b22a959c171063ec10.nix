@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell2010)
           (hsPkgs.parsec)
         ];
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell2010)
             (hsPkgs.parsec)
             (hsPkgs.QuickCheck)

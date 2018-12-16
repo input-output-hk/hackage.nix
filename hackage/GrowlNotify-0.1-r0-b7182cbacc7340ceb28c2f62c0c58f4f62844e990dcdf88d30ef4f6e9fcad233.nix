@@ -26,7 +26,7 @@
     components = {
       exes = {
         "growlnotify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.haskell98)

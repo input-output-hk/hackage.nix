@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.time)
@@ -42,7 +42,7 @@
       };
       tests = {
         "formatting-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.formatting)
             (hsPkgs.hspec)

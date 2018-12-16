@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.mcmc-synthesis)
@@ -41,7 +41,7 @@
       };
       exes = {
         "mcmc-demo" = {
-          depends  = pkgs.lib.optionals (flags.synthesis) [
+          depends = pkgs.lib.optionals (flags.synthesis) [
             (hsPkgs.array-forth)
             (hsPkgs.base)
             (hsPkgs.mcmc-synthesis)
@@ -50,7 +50,7 @@
           ];
         };
         "array-forth" = {
-          depends  = [
+          depends = [
             (hsPkgs.array-forth)
             (hsPkgs.base)
             (hsPkgs.split)
@@ -58,7 +58,7 @@
           ];
         };
         "chart" = {
-          depends  = pkgs.lib.optionals (flags.chart) [
+          depends = pkgs.lib.optionals (flags.chart) [
             (hsPkgs.array-forth)
             (hsPkgs.base)
             (hsPkgs.Chart)
@@ -70,7 +70,7 @@
       };
       tests = {
         "test-array-forth" = {
-          depends  = [
+          depends = [
             (hsPkgs.array-forth)
             (hsPkgs.base)
             (hsPkgs.HUnit)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "revdectime" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-time)
           ];

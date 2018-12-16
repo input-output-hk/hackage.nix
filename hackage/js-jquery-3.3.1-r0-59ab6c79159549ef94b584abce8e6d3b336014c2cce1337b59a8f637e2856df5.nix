@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "js-jquery-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.js-jquery)
             (hsPkgs.HTTP)

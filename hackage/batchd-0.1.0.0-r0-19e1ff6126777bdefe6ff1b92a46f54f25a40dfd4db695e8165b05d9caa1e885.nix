@@ -26,7 +26,7 @@
     components = {
       exes = {
         "batchd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.persistent)
             (hsPkgs.persistent-sqlite)
@@ -70,7 +70,7 @@
           ];
         };
         "batchd-admin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.persistent)
             (hsPkgs.persistent-sqlite)
@@ -112,7 +112,7 @@
           ];
         };
         "batch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.mtl)

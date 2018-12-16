@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.bytestring)
@@ -33,7 +33,7 @@
       };
       exes = {
         "linear-socket-hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -41,7 +41,7 @@
       };
       tests = {
         "linear-socket-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.linear-socket)

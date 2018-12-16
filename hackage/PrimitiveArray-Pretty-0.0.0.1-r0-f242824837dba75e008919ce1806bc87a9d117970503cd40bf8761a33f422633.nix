@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams)
           (hsPkgs.diagrams-lib)
@@ -37,7 +37,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PrimitiveArray-Pretty)
             (hsPkgs.QuickCheck)

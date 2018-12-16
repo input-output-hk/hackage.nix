@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -37,7 +37,7 @@
       };
       exes = {
         "test_sha" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
@@ -45,7 +45,7 @@
           ] ++ pkgs.lib.optional (!(!flags.test)) (hsPkgs.QuickCheck);
         };
         "sha1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
@@ -53,7 +53,7 @@
           ] ++ pkgs.lib.optional (!(!flags.exe)) (hsPkgs.directory);
         };
         "sha384" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)

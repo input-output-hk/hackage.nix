@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.crockford)
           (hsPkgs.time)
@@ -37,7 +37,7 @@
       };
       exes = {
         "ulid-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ulid)
             (hsPkgs.crypto-api)
@@ -46,7 +46,7 @@
       };
       tests = {
         "ulid-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.ulid)

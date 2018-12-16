@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "CMCompare" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
       };
     };

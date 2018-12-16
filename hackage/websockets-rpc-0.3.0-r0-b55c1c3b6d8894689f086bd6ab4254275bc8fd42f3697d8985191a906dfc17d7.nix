@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -49,7 +49,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.websockets-rpc)
             (hsPkgs.aeson)
@@ -62,7 +62,7 @@
           ];
         };
         "example-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.websockets-rpc)
             (hsPkgs.aeson)
@@ -77,7 +77,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.websockets-rpc)
             (hsPkgs.aeson)

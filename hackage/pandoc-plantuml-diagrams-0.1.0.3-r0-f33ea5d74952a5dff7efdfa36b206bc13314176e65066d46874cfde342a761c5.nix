@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc-types)
           (hsPkgs.SHA)
@@ -37,7 +37,7 @@
       };
       exes = {
         "pandoc-plantuml-diagrams" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-plantuml-diagrams)
             (hsPkgs.pandoc-types)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test-pandoc-crossref" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.hspec-discover)
             (hsPkgs.base)

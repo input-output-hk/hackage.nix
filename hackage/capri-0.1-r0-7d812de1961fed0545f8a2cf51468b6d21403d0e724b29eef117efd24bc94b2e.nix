@@ -26,7 +26,7 @@
     components = {
       exes = {
         "capri" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.process)

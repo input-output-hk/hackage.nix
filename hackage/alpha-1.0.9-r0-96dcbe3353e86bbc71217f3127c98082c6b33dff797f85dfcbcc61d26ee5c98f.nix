@@ -26,7 +26,7 @@
     components = {
       exes = {
         "alpha" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.containers)

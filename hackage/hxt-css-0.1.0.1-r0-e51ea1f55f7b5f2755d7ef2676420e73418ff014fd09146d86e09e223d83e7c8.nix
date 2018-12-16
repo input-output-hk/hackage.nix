@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt)
           (hsPkgs.parsec)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hxt-css" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.hxt-css)
             (hsPkgs.hxt)

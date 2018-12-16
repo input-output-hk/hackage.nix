@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.utf8-string)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       exes = {
         "hasktags" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -49,7 +49,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.utf8-string)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.GLUT)
@@ -33,7 +33,7 @@
       };
       exes = {
         "MoeExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.GLUT)

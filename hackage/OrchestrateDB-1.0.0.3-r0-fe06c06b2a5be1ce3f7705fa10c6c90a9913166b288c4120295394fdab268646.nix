@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HTTP)
           (hsPkgs.http-conduit)
@@ -37,7 +37,7 @@
       };
       tests = {
         "tests-example1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.http-conduit)
@@ -49,7 +49,7 @@
           ];
         };
         "test-sherlock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.http-conduit)

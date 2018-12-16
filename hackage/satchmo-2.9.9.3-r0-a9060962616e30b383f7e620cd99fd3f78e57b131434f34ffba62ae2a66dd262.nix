@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.process)
           (hsPkgs.containers)
@@ -44,42 +44,42 @@
       };
       tests = {
         "PP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)
           ];
         };
         "Ramsey" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)
           ];
         };
         "Spaceship" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)
           ];
         };
         "Oscillator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)
           ];
         };
         "Moore" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)
           ];
         };
         "Sudoku" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)

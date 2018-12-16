@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.megaparsec)
@@ -35,7 +35,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.hspec)

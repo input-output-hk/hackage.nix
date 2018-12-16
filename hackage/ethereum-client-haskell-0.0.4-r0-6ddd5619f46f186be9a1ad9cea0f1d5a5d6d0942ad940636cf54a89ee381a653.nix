@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ethereumH" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
             (hsPkgs.binary)
@@ -54,7 +54,7 @@
           ];
         };
         "queryEth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.cmdargs)
@@ -83,7 +83,7 @@
       };
       tests = {
         "test-ethereumH" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

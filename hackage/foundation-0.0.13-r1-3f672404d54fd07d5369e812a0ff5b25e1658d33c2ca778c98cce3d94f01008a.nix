@@ -31,14 +31,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
       };
       tests = {
         "test-foundation" = {
-          depends  = pkgs.lib.optionals (!flags.minimal-deps) [
+          depends = pkgs.lib.optionals (!flags.minimal-deps) [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -49,13 +49,13 @@
           ];
         };
         "check-foundation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foundation)
           ];
         };
         "doctest" = {
-          depends  = pkgs.lib.optionals (!flags.minimal-deps) (pkgs.lib.optionals (flags.doctest) [
+          depends = pkgs.lib.optionals (!flags.minimal-deps) (pkgs.lib.optionals (flags.doctest) [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ]);
@@ -63,7 +63,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = pkgs.lib.optionals (!(flags.minimal-deps || compiler.isGhc && compiler.version.lt "7.10")) ([
+          depends = pkgs.lib.optionals (!(flags.minimal-deps || compiler.isGhc && compiler.version.lt "7.10")) ([
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.foundation)

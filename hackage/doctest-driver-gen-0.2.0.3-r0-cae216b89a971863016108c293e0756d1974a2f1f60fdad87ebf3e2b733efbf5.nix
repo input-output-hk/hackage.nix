@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.doctest)
         ];
       };
       exes = {
         "doctest-driver-gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest-driver-gen)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "doctest-driver-gen-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.doctest-driver-gen)

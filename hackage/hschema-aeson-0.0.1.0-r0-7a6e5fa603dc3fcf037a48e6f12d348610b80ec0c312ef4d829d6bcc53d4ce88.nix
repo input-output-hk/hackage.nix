@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -50,7 +50,7 @@
       };
       tests = {
         "hschema-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.base)

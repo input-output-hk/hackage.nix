@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -37,47 +37,47 @@
       };
       exes = {
         "Canonicalise" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.pretty)
           ];
         };
         "CanonicaliseLazy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.pretty)
           ];
         };
         "Xtract" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.pretty)
           ];
         };
         "Validate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
           ];
         };
         "MkOneOf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
           ];
         };
         "DtdToHaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.pretty)
           ];
         };
         "XsdToHaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.pretty)
@@ -86,7 +86,7 @@
           ];
         };
         "FpMLToHaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.pretty)

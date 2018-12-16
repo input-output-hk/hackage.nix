@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.binary)
@@ -38,7 +38,7 @@
       };
       exes = {
         "tart" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)

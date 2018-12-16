@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -47,7 +47,7 @@
       };
       tests = {
         "purescript-iso-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.async)

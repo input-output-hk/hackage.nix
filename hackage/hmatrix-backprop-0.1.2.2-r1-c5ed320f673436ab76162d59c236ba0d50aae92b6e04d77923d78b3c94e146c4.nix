@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.backprop)
           (hsPkgs.base)
           (hsPkgs.ghc-typelits-knownnat)
@@ -39,7 +39,7 @@
       };
       tests = {
         "hmatrix-backprop-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.backprop)
             (hsPkgs.base)
             (hsPkgs.finite-typelits)

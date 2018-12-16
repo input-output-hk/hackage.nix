@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -41,7 +41,7 @@
       };
       exes = {
         "apigw-lambda-dynamodb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -55,7 +55,7 @@
           ];
         };
         "apigw-lambda-s3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -69,7 +69,7 @@
           ];
         };
         "auto-scaling-group" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -83,7 +83,7 @@
           ];
         };
         "ec2-with-eip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -97,7 +97,7 @@
           ];
         };
         "rds-master-replica" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -111,7 +111,7 @@
           ];
         };
         "s3-copy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -125,7 +125,7 @@
           ];
         };
         "simple-lambda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -141,7 +141,7 @@
       };
       tests = {
         "style" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -157,7 +157,7 @@
           ];
         };
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)

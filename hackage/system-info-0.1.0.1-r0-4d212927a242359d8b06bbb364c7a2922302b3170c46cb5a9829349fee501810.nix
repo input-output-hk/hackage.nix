@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (system.isLinux) (hsPkgs.base) ++ pkgs.lib.optionals (system.isWindows) [
+        depends = pkgs.lib.optional (system.isLinux) (hsPkgs.base) ++ pkgs.lib.optionals (system.isWindows) [
           (hsPkgs.base)
           (hsPkgs.Win32)
         ];
       };
       tests = {
         "system-info-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.system-info)
           ];

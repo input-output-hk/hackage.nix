@@ -26,28 +26,28 @@
     components = {
       exes = {
         "asteroids-space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.HGL)
           ];
         };
         "asteroids-aufgabe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.HGL)
           ];
         };
         "asteroids-basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.HGL)
           ];
         };
         "asteroids-haskelly" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.HGL)

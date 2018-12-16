@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
       };
       benchmarks = {
         "bench-speed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
@@ -69,7 +69,7 @@
           ];
         };
         "bench-memory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.megaparsec)

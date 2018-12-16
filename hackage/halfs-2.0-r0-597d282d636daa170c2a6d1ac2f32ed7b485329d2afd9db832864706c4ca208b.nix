@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -43,7 +43,7 @@
       };
       exes = {
         "halfs-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -60,7 +60,7 @@
           ];
         };
         "halfs" = {
-          depends  = [
+          depends = [
             (hsPkgs.HFuse)
             (hsPkgs.array)
             (hsPkgs.base)

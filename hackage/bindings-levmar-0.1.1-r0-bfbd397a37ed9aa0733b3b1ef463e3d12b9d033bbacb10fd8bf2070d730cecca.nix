@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = pkgs.lib.optionals (flags.mkl) (if system.isX86_64
           then [
             (pkgs."mkl_lapack")

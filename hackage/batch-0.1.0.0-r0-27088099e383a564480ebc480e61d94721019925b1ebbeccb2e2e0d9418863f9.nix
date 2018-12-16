@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.lifted-async)
@@ -39,7 +39,7 @@
       };
       tests = {
         "batch-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.batch)
             (hsPkgs.hspec)

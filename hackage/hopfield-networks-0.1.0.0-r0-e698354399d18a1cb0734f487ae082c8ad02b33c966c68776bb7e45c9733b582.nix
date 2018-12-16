@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.matrix)
@@ -35,7 +35,7 @@
       };
       exes = {
         "hopfield_demonstration" = {
-          depends  = [
+          depends = [
             (hsPkgs.hopfield-networks)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -48,7 +48,7 @@
       };
       tests = {
         "hopfield_test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hopfield-networks)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

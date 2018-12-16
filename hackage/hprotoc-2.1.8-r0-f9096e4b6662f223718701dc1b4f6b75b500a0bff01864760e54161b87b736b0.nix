@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.protocol-buffers)
           (hsPkgs.protocol-buffers-descriptor)
           (hsPkgs.base)
@@ -46,7 +46,7 @@
       };
       exes = {
         "hprotoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.protocol-buffers)
             (hsPkgs.protocol-buffers-descriptor)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.distributive)
@@ -43,7 +43,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -53,7 +53,7 @@
           ];
         };
         "UnitTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

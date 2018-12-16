@@ -26,7 +26,7 @@
     components = {
       exes = {
         "arion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fsnotify)
             (hsPkgs.filemanip)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.fsnotify)

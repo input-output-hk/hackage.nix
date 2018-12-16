@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.random)
@@ -37,7 +37,7 @@
       };
       exes = {
         "PiExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mtl)
@@ -47,7 +47,7 @@
           ];
         };
         "IntegralExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mtl)
@@ -57,7 +57,7 @@
           ];
         };
         "TransportExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mtl)

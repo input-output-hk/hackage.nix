@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foldl)
           (hsPkgs.mwc-random)
@@ -35,7 +35,7 @@
       };
       exes = {
         "sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.algo-s)
             (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       tests = {
         "algo-s-specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.algo-s)
             (hsPkgs.errors)
@@ -61,7 +61,7 @@
       };
       benchmarks = {
         "algo-s-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.algo-s)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
@@ -34,7 +34,7 @@
       };
       exes = {
         "tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.verdict)
             (hsPkgs.text)
@@ -44,7 +44,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.verdict)
             (hsPkgs.hspec)

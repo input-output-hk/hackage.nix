@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.containers-in-base
+        depends = if flags.containers-in-base
           then [
             (hsPkgs.base)
             (hsPkgs.binary)

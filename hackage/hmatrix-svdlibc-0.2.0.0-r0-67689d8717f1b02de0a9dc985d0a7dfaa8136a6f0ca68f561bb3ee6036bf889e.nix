@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
         ];
       };
       exes = {
         "svdlibc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix)
           ];

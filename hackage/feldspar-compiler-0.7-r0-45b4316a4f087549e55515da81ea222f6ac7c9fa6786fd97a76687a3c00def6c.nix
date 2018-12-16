@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.ghc-paths)
@@ -48,7 +48,7 @@
       };
       tests = {
         "regression" = {
-          depends  = [
+          depends = [
             (hsPkgs.feldspar-language)
             (hsPkgs.feldspar-compiler)
             (hsPkgs.mtl)
@@ -63,7 +63,7 @@
           ];
         };
         "callconv" = {
-          depends  = [
+          depends = [
             (hsPkgs.feldspar-language)
             (hsPkgs.feldspar-compiler)
             (hsPkgs.base)
@@ -75,7 +75,7 @@
       };
       benchmarks = {
         "crc" = {
-          depends  = [
+          depends = [
             (hsPkgs.feldspar-language)
             (hsPkgs.feldspar-compiler)
             (hsPkgs.data-default)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.small_base
+        depends = if flags.small_base
           then [
             (hsPkgs.base)
             (hsPkgs.array)

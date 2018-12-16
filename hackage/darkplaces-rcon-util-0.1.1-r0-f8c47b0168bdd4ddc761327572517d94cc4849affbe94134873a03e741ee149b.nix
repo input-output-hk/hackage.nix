@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       exes = {
         "drcon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
@@ -68,7 +68,7 @@
       };
       tests = {
         "rcon-util-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.darkplaces-rcon-util)

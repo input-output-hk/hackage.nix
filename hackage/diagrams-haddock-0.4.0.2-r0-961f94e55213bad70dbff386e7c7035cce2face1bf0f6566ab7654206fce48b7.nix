@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.directory)
@@ -52,7 +52,7 @@
       };
       exes = {
         "diagrams-haddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -65,7 +65,7 @@
       };
       tests = {
         "diagrams-haddock-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.QuickCheck)

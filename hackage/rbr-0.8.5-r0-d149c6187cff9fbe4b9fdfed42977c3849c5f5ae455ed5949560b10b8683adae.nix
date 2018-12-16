@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rbr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -34,7 +34,7 @@
           ];
         };
         "mct" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
           ];
         };

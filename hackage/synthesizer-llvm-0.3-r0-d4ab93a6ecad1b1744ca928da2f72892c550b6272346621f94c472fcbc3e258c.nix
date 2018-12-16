@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.llvm-extra)
           (hsPkgs.llvm)
           (hsPkgs.type-level)
@@ -62,7 +62,7 @@
         "synthi-llvm-example" = {};
         "synthi-llvm-server" = {};
         "synthi-llvm-test" = {
-          depends  = pkgs.lib.optional (flags.buildtests) (hsPkgs.QuickCheck);
+          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs.QuickCheck);
         };
       };
     };

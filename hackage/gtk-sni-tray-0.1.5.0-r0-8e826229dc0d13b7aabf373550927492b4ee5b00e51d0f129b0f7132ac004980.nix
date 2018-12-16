@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cairo)
@@ -56,7 +56,7 @@
       };
       exes = {
         "gtk-sni-tray-standalone" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbus)
             (hsPkgs.dbus-hslogger)

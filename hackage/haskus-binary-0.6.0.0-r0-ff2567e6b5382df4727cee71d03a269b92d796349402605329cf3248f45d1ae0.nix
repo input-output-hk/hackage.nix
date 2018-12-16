@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskus-utils)
           (hsPkgs.cereal)
@@ -35,7 +35,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskus-binary)
             (hsPkgs.haskus-utils)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "bench-BitReverse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskus-binary)
             (hsPkgs.criterion)

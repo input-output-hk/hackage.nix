@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       exes = {
         "sakuraio-platform-demo-http-client-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
           ];
         };
         "sakuraio-platform-demo-wai-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
           ];
         };
         "sakuraio-platform-demo-websockets-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.bytestring)
@@ -78,7 +78,7 @@
       };
       tests = {
         "sakuraio-platform-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.bytestring)

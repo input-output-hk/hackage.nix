@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.ghc-prim)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-miniutter" = {
-          depends  = [
+          depends = [
             (hsPkgs.miniutter)
             (hsPkgs.base)
             (hsPkgs.text)

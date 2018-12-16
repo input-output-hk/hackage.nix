@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sscan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.directory)

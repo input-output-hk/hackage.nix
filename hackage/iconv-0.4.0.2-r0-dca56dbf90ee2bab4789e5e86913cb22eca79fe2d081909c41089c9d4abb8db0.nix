@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.bytestring_in_base
+        depends = if flags.bytestring_in_base
           then [ (hsPkgs.base) ]
           else [
             (hsPkgs.base)

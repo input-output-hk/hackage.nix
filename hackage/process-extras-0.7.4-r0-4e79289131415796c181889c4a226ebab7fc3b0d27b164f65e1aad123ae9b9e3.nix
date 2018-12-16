@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default)
           (hsPkgs.ListLike)
@@ -39,7 +39,7 @@
       };
       tests = {
         "process-extras-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.process-extras)

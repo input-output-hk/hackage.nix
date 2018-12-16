@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.pcap)

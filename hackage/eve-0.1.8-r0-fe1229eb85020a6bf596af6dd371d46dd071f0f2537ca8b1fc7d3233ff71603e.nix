@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.lens)
@@ -36,7 +36,7 @@
       };
       tests = {
         "eve-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eve)
             (hsPkgs.hspec)

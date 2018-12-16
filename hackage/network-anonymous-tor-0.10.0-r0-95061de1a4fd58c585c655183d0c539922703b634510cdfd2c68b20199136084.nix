@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.network)
@@ -42,7 +42,7 @@
       };
       exes = {
         "tor-relay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.exceptions)
             (hsPkgs.network)
@@ -54,7 +54,7 @@
       };
       tests = {
         "test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.exceptions)
             (hsPkgs.transformers)

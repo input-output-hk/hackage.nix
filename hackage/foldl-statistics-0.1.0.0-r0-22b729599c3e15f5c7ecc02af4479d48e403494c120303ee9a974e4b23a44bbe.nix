@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foldl)
           (hsPkgs.math-functions)
@@ -34,7 +34,7 @@
       };
       tests = {
         "foldl-statistics-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foldl-statistics)
             (hsPkgs.foldl)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "bench-folds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foldl-statistics)
             (hsPkgs.criterion)

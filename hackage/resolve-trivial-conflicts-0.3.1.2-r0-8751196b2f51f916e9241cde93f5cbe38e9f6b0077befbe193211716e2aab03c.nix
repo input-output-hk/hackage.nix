@@ -26,7 +26,7 @@
     components = {
       exes = {
         "resolve-trivial-conflicts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.mtl)

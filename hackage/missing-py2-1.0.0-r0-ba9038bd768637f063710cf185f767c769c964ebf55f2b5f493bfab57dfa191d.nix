@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.MissingH)
           (hsPkgs.anydbm)
@@ -33,7 +33,7 @@
       };
       tests = {
         "originalunittests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.anydbm)

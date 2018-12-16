@@ -26,7 +26,7 @@
     components = {
       exes = {
         "varan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mtl)
@@ -37,14 +37,14 @@
           ];
         };
         "vextr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
           ];
         };
         "sparks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)

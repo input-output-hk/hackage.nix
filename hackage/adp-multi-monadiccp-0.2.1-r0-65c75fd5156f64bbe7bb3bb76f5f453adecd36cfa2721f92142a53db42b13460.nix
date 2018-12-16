@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.adp-multi)
@@ -36,7 +36,7 @@
       };
       exes = {
         "adp-multi-monadiccp-benchmarks" = {
-          depends  = pkgs.lib.optionals (!(!flags.buildbenchmark)) [
+          depends = pkgs.lib.optionals (!(!flags.buildbenchmark)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.adp-multi)
@@ -52,7 +52,7 @@
       };
       tests = {
         "Test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.adp-multi)

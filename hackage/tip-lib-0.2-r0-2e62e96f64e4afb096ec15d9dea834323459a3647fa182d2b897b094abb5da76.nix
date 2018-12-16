@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.geniplate-mirror)
           (hsPkgs.genifunctors)
@@ -44,7 +44,7 @@
       };
       exes = {
         "tip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tip-lib)
             (hsPkgs.pretty)

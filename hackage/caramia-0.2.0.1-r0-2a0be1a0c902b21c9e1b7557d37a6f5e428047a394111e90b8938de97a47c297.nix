@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       tests = {
         "smoke-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.caramia)
             (hsPkgs.sdl2)
@@ -47,7 +47,7 @@
           ];
         };
         "memory-info" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.caramia)
             (hsPkgs.sdl2)

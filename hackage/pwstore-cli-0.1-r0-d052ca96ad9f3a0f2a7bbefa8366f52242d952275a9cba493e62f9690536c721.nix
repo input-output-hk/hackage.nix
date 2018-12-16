@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pwstore" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "guihaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.proplang)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-sort" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.fgl)
             (hsPkgs.directory)
@@ -38,7 +38,7 @@
           ];
         };
         "ghc-pkg-dep" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.process)
             (hsPkgs.containers)

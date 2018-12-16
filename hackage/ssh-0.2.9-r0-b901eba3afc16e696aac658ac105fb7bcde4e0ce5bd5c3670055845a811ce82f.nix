@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.asn1-data)
           (hsPkgs.base)
           (hsPkgs.base64-string)

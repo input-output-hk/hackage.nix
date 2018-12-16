@@ -25,12 +25,12 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."OIS") ];
       };
       exes = {
         "OISConsole" = {
-          depends  = [
+          depends = [
             (hsPkgs.hois)
             (hsPkgs.base)
             (hsPkgs.X11)

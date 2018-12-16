@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.hourglass)
@@ -33,13 +33,13 @@
       };
       tests = {
         "experiment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chronologique)
           ];
         };
         "check" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hourglass)

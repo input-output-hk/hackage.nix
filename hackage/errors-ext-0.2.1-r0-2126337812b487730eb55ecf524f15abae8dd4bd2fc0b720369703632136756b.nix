@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.errors)
           (hsPkgs.exceptions)
@@ -34,7 +34,7 @@
       };
       tests = {
         "errors-ext-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.errors-ext)

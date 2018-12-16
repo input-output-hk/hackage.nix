@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.attoparsec)
@@ -43,7 +43,7 @@
       };
       exes = {
         "gtf-to-bed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
@@ -62,7 +62,7 @@
           ];
         };
         "bed-to-gtf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
@@ -81,7 +81,7 @@
           ];
         };
         "gtf-introns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
@@ -99,7 +99,7 @@
           ];
         };
         "bed-subregion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
@@ -122,7 +122,7 @@
           ];
         };
         "genome-to-trx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
@@ -141,7 +141,7 @@
       };
       tests = {
         "test-gtf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
@@ -155,7 +155,7 @@
           ];
         };
         "test-bed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
@@ -173,7 +173,7 @@
           ];
         };
         "test-subregions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)

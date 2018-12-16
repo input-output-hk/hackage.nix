@@ -26,7 +26,7 @@
     components = {
       exes = {
         "datapacker" = {
-          depends  = [
+          depends = [
             (hsPkgs.unix)
             (hsPkgs.MissingH)
             (hsPkgs.mtl)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "split-record" = {
-          depends  = [
+          depends = [
             (hsPkgs.synthesizer-core)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)

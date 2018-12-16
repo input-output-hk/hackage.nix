@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ (if compiler.isGhc && compiler.version.lt "6.12"
@@ -39,7 +39,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.th-lift)

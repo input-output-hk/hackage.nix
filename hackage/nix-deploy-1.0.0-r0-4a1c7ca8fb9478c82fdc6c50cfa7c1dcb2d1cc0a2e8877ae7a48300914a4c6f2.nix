@@ -26,7 +26,7 @@
     components = {
       exes = {
         "nix-deploy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-generic)
             (hsPkgs.optparse-applicative)

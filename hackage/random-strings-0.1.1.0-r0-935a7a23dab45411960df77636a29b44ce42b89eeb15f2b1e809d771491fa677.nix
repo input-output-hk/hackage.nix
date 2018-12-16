@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
         ];
       };
       exes = {
         "readme-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random-strings)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-basics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random-strings)
             (hsPkgs.QuickCheck)
@@ -48,7 +48,7 @@
           ];
         };
         "test-randomness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random-strings)
             (hsPkgs.QuickCheck)

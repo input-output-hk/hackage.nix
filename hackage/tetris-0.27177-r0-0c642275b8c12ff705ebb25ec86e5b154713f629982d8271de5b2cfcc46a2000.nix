@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tetris" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.random)

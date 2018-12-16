@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.unordered-containers)
@@ -42,7 +42,7 @@
       };
       tests = {
         "unit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.json-tracer)
             (hsPkgs.hspec)
@@ -53,7 +53,7 @@
           ];
         };
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.json-tracer)
             (hsPkgs.microlens)

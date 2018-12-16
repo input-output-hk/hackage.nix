@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "constrained-dynamic-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.constrained-dynamic)
             (hsPkgs.tasty)

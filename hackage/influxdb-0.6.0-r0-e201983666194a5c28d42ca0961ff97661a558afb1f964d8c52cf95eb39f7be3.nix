@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -57,7 +57,7 @@
       };
       exes = {
         "influx-random-points" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.http-client)
@@ -71,7 +71,7 @@
       };
       tests = {
         "test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-client)
             (hsPkgs.HUnit)

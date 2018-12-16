@@ -29,7 +29,7 @@
     components = {
       exes = {
         "mandulia" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

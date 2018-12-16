@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.dimensional)
@@ -42,7 +42,7 @@
       };
       exes = {
         "obd-terminal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.obd)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
           ];
         };
         "obd-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.obd)
             (hsPkgs.lens)
@@ -63,7 +63,7 @@
       };
       tests = {
         "obd-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.obd)
           ];

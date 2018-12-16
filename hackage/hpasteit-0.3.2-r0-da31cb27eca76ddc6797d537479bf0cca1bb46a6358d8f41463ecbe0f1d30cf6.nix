@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpasteit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.lifted-base)

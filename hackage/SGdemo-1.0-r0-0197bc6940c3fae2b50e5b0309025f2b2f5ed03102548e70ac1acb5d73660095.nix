@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sgdemo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SG)
             (hsPkgs.OpenGL)

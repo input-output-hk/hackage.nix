@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((([
+        depends = (((((([
           (hsPkgs.array)
           (hsPkgs.async)
           (hsPkgs.base)
@@ -76,13 +76,13 @@
       };
       exes = {
         "agda" = {
-          depends  = [
+          depends = [
             (hsPkgs.Agda)
             (hsPkgs.base)
           ];
         };
         "agda-mode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

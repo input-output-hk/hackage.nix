@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.accelerate)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       tests = {
         "test-llvm-native" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-fft)
@@ -63,7 +63,7 @@
           ];
         };
         "test-llvm-ptx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-fft)

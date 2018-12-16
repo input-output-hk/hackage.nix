@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hpack-encode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -55,7 +55,7 @@
           ];
         };
         "hpack-debug" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.array)
@@ -71,7 +71,7 @@
           ];
         };
         "hpack-stat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -89,7 +89,7 @@
           ];
         };
         "frame-encode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -103,13 +103,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -124,7 +124,7 @@
           ];
         };
         "hpack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -144,7 +144,7 @@
           ];
         };
         "frame" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.aeson)
@@ -162,7 +162,7 @@
       };
       benchmarks = {
         "priority" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.case-insensitive)
@@ -177,7 +177,7 @@
           ];
         };
         "header-compression" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

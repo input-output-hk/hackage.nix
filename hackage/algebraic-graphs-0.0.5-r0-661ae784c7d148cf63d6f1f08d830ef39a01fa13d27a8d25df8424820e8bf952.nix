@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-alga" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebraic-graphs)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "benchmark-alga" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebraic-graphs)
             (hsPkgs.base)
             (hsPkgs.containers)

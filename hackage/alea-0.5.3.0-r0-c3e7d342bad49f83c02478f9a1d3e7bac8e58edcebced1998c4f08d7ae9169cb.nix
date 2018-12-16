@@ -26,7 +26,7 @@
     components = {
       exes = {
         "alea" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.text)

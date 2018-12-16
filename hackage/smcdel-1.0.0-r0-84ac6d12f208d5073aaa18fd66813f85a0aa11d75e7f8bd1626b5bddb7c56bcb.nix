@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       exes = {
         "smcdel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.directory)
@@ -57,7 +57,7 @@
           ];
         };
         "smcdel-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.file-embed)
             (hsPkgs.scotty)
@@ -75,7 +75,7 @@
       };
       tests = {
         "translations" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
@@ -83,7 +83,7 @@
           ];
         };
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
@@ -91,7 +91,7 @@
           ];
         };
         "nonS5" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hspec)
@@ -102,14 +102,14 @@
       };
       benchmarks = {
         "bench-diningcrypto" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smcdel)
             (hsPkgs.time)
           ];
         };
         "bench-sumandproduct" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.smcdel)
@@ -117,7 +117,7 @@
           ];
         };
         "bench-muddychildren" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.smcdel)

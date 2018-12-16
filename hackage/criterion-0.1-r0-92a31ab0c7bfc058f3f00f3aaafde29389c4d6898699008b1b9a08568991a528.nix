@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Chart)
           (hsPkgs.base)
           (hsPkgs.bytestring)

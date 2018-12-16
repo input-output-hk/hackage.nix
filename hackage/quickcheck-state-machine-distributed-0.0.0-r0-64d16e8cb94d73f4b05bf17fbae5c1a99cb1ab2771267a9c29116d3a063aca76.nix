@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -40,7 +40,7 @@
       };
       tests = {
         "quickcheck-state-machine-distributed-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)

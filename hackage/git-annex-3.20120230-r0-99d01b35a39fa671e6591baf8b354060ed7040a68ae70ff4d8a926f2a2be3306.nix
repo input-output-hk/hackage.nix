@@ -26,7 +26,7 @@
     components = {
       exes = {
         "git-annex" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.hslogger)
             (hsPkgs.directory)
@@ -57,7 +57,7 @@
         };
         "git-annex-shell" = {};
         "git-union-merge" = {
-          depends  = [ (hsPkgs.text) ];
+          depends = [ (hsPkgs.text) ];
         };
       };
     };

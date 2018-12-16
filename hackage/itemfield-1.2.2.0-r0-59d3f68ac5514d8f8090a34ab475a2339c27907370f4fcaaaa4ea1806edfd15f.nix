@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.vty)
           (hsPkgs.text)
           (hsPkgs.microlens)
@@ -40,7 +40,7 @@
       };
       exes = {
         "bookcase" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.vty)
             (hsPkgs.text)
             (hsPkgs.microlens)
@@ -52,7 +52,7 @@
           ];
         };
         "workreport" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.vty)
             (hsPkgs.text)
             (hsPkgs.microlens)
@@ -70,7 +70,7 @@
       };
       tests = {
         "test_itemfield" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
@@ -86,7 +86,7 @@
           ];
         };
         "test_layout" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

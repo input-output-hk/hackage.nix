@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.containers)
@@ -33,14 +33,14 @@
       };
       benchmarks = {
         "Sudoku" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.minisat-solver)
           ];
         };
         "Woodblocks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.easyrender)
             (hsPkgs.containers)

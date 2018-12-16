@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -33,7 +33,7 @@
       };
       exes = {
         "LambdaDB-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.LambdaDB)
           ];
@@ -41,7 +41,7 @@
       };
       tests = {
         "LambdaDB-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.LambdaDB)

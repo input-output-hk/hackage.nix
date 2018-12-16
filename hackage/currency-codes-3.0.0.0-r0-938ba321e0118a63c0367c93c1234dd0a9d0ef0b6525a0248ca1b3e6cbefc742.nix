@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bson)
@@ -37,7 +37,7 @@
       };
       tests = {
         "currency-codes-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.currency-codes)
             (hsPkgs.QuickCheck)

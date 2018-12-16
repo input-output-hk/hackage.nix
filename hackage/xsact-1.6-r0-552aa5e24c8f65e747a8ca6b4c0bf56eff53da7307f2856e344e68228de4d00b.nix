@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.random)
@@ -37,7 +37,7 @@
       };
       exes = {
         "xsact" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ];

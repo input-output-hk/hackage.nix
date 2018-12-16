@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2ebuild" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.Cabal)

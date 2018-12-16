@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.fail)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.uri-bytestring)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uri-bytestring)
             (hsPkgs.criterion)

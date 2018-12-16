@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.time)
@@ -44,7 +44,7 @@
       };
       exes = {
         "helics-example" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.helics)
             (hsPkgs.bytestring)

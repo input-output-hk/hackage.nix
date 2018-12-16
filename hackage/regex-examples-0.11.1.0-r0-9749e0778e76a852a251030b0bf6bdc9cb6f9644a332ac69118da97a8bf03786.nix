@@ -26,7 +26,7 @@
     components = {
       exes = {
         "re-gen-cabals" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -41,7 +41,7 @@
           ];
         };
         "re-gen-modules" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -55,7 +55,7 @@
           ];
         };
         "re-include" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -66,7 +66,7 @@
           ];
         };
         "re-nginx-log-processor" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.regex-with-pcre)
             (hsPkgs.array)
@@ -86,7 +86,7 @@
           ];
         };
         "re-prep" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -99,7 +99,7 @@
           ];
         };
         "re-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.regex-with-pcre)
             (hsPkgs.array)
@@ -124,7 +124,7 @@
           ];
         };
         "re-tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -154,7 +154,7 @@
       };
       tests = {
         "re-gen-cabals-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -169,7 +169,7 @@
           ];
         };
         "re-gen-modules-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -183,7 +183,7 @@
           ];
         };
         "re-include-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -194,7 +194,7 @@
           ];
         };
         "re-nginx-log-processor-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.regex-with-pcre)
             (hsPkgs.array)
@@ -214,7 +214,7 @@
           ];
         };
         "re-prep-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -227,7 +227,7 @@
           ];
         };
         "re-tests-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.regex-with-pcre)
             (hsPkgs.array)
@@ -252,7 +252,7 @@
           ];
         };
         "re-tutorial-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -280,7 +280,7 @@
           ];
         };
         "re-tutorial-os-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.base)

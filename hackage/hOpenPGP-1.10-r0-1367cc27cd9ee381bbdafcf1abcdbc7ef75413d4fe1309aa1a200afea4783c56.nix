@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
@@ -65,7 +65,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hOpenPGP)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.attoparsec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gtc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HTTP)
@@ -36,7 +36,7 @@
           ];
         };
         "gtg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HTTP)

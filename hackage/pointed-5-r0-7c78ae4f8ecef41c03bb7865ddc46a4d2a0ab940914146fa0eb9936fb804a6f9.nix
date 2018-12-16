@@ -35,7 +35,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((((([
+        depends = (((((((([
           (hsPkgs.base)
           (hsPkgs.data-default-class)
         ] ++ pkgs.lib.optional (flags.comonad) (hsPkgs.comonad)) ++ pkgs.lib.optional (flags.containers) (hsPkgs.containers)) ++ pkgs.lib.optional (flags.kan-extensions) (hsPkgs.kan-extensions)) ++ pkgs.lib.optional (flags.semigroupoids) (hsPkgs.semigroupoids)) ++ pkgs.lib.optional (flags.semigroups) (hsPkgs.semigroups)) ++ pkgs.lib.optional (flags.stm) (hsPkgs.stm)) ++ pkgs.lib.optional (flags.tagged) (hsPkgs.tagged)) ++ pkgs.lib.optionals (flags.transformers) [

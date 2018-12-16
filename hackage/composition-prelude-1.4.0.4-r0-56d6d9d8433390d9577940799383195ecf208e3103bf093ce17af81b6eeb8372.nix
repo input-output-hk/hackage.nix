@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs)
         ];

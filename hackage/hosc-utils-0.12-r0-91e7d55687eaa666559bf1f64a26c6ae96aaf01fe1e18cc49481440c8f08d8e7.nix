@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hosc-utils-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hosc)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hosc-utils-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hosc)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

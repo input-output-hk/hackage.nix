@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pretty)
           (hsPkgs.hsparql)
@@ -36,7 +36,7 @@
       };
       exes = {
         "Solarman" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pretty)

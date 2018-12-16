@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.logict)
         ];
       };
       exes = {
         "stream-monad-benchmarks" = {
-          depends  = pkgs.lib.optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs.base)
             (hsPkgs.logict)
             (hsPkgs.criterion)

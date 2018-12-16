@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
@@ -39,7 +39,7 @@
       };
       tests = {
         "snap-predicates-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.monads-tf)

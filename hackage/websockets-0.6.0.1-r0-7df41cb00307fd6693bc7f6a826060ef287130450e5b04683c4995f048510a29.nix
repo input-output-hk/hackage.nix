@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-enumerator)
           (hsPkgs.base)
@@ -48,7 +48,7 @@
       };
       tests = {
         "websockets-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

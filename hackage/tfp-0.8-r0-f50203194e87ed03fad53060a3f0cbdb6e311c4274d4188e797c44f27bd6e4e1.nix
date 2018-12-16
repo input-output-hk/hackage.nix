@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "tfp-test" = {
-          depends  = pkgs.lib.optionals (flags.build-test) [
+          depends = pkgs.lib.optionals (flags.build-test) [
             (hsPkgs.tfp)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

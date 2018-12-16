@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.old-locale)
@@ -35,14 +35,14 @@
       exes = {
         "hach-client" = {};
         "hach-nclient" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.vty-ui)
             (hsPkgs.text)
           ];
         };
         "hach-server" = {
-          depends  = [ (hsPkgs.time) ];
+          depends = [ (hsPkgs.time) ];
         };
       };
     };

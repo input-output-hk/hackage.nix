@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cairo)
           (hsPkgs.gtk)
           (hsPkgs.MonadCatchIO-transformers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "scope-cairo" = {
-          depends  = [
+          depends = [
             (hsPkgs.cairo)
             (hsPkgs.gtk)
             (hsPkgs.MonadCatchIO-transformers)

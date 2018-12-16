@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.haskell-src-exts)
@@ -44,7 +44,7 @@
       };
       exes = {
         "fay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.haskell-src-exts)
@@ -54,7 +54,7 @@
           ];
         };
         "fay-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.haskell-src-exts)
@@ -67,7 +67,7 @@
           ];
         };
         "fay-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.haskell-src-exts)

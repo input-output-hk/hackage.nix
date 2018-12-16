@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -34,13 +34,13 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pathwalk)
           ];
         };
         "stoprecursing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pathwalk)
           ];

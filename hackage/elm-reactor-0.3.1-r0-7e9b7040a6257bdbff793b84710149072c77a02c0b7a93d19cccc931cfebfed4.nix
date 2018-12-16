@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elm-reactor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.blaze-markup)

@@ -28,13 +28,13 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
         ] ++ [ (hsPkgs.base) ];
       };
       exes = {
         "wcwidth-tools" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.setlocale)

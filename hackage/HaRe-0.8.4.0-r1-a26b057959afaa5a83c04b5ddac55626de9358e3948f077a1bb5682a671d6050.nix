@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Strafunski-StrategyLib)
           (hsPkgs.cabal-helper)
@@ -45,7 +45,7 @@
       };
       exes = {
         "ghc-hare" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-mod)
             (hsPkgs.gitrev)
@@ -59,7 +59,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Diff)
             (hsPkgs.HUnit)

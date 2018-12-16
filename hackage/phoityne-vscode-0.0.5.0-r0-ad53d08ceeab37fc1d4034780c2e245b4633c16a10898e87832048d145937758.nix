@@ -26,7 +26,7 @@
     components = {
       exes = {
         "phoityne-vscode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.Cabal)
@@ -56,7 +56,7 @@
       };
       tests = {
         "phoityne-vscode-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.hspec)

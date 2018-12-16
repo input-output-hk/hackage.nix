@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bytes)
@@ -38,7 +38,7 @@
       };
       tests = {
         "haskell-multiaddr-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-multiaddr)
             (hsPkgs.hspec)

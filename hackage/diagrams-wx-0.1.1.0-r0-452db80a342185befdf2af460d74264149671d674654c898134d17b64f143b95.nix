@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cairo)
           (hsPkgs.diagrams-cairo)
@@ -38,7 +38,7 @@
       };
       exes = {
         "diagrams-wx-demo" = {
-          depends  = pkgs.lib.optionals (flags.buildexample) [
+          depends = pkgs.lib.optionals (flags.buildexample) [
             (hsPkgs.base)
             (hsPkgs.diagrams-wx)
             (hsPkgs.cairo)

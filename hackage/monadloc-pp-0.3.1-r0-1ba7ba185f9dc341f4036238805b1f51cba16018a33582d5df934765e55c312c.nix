@@ -26,7 +26,7 @@
     components = {
       exes = {
         "MonadLoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.syb)

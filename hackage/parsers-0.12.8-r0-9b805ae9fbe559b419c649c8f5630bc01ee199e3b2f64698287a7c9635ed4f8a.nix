@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.charset)
@@ -42,7 +42,7 @@
       };
       tests = {
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.bytestring)

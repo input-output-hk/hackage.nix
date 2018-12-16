@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.conduit-extra)
@@ -36,7 +36,7 @@
       };
       tests = {
         "cpio-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)

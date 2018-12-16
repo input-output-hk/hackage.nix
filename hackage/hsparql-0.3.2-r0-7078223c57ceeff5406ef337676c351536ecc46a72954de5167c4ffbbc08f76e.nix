@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HTTP)
           (hsPkgs.mtl)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-hsparql" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsparql)
             (hsPkgs.rdf4h)
             (hsPkgs.base)

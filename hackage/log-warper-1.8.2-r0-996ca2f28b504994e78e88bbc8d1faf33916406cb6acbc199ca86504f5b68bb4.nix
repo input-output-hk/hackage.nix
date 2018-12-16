@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
@@ -51,14 +51,14 @@
       };
       exes = {
         "play-log" = {
-          depends  = [
+          depends = [
             (hsPkgs.log-warper)
             (hsPkgs.universum)
             (hsPkgs.yaml)
           ];
         };
         "how-to" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.log-warper)
             (hsPkgs.markdown-unlit)
@@ -68,7 +68,7 @@
       };
       tests = {
         "log-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.data-default)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
@@ -35,7 +35,7 @@
       };
       tests = {
         "optparse-applicative-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.QuickCheck)

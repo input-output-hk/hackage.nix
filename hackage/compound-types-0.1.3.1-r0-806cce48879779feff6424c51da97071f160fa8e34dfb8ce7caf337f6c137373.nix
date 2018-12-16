@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.compound-types)
             (hsPkgs.base-prelude)
           ];

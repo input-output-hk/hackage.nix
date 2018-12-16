@@ -25,21 +25,21 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       tests = {
         "test-nat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.type-level-numbers)
           ];
         };
         "test-int" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.type-level-numbers)

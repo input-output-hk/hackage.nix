@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pugs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.mtl)

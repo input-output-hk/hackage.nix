@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -44,13 +44,13 @@
       };
       exes = {
         "hsc3-sine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-process)
           ];
         };
         "hsc3-nrt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-process)
           ];

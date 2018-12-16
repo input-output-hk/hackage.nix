@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (!system.isWindows && !system.isHalvm) (hsPkgs.unix);

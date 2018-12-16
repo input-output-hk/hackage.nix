@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -38,7 +38,7 @@
       };
       exes = {
         "print-mifare-uid-forever" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
             (hsPkgs.bytestring)

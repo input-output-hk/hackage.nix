@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.applicative-extras)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       exes = {
         "hmm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-default)
@@ -74,7 +74,7 @@
           ];
         };
         "tests" = {
-          depends  = pkgs.lib.optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.bytestring)

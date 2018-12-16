@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ] ++ [
@@ -34,7 +34,7 @@
       };
       exes = {
         "basic-tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.deepseq)
           ] ++ [
@@ -42,7 +42,7 @@
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.base);
         };
         "extended-tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.deepseq)
           ] ++ [
@@ -50,7 +50,7 @@
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.base);
         };
         "terminal-tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.deepseq)
           ] ++ [
@@ -58,7 +58,7 @@
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.base);
         };
         "optimize-tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.deepseq)
           ] ++ [

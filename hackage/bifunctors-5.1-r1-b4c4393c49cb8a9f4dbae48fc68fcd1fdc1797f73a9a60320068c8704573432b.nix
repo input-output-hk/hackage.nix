@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
@@ -36,7 +36,7 @@
       };
       tests = {
         "bifunctors-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.hspec)

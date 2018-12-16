@@ -26,7 +26,7 @@
     components = {
       exes = {
         "beinctl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-postgresql)
@@ -35,7 +35,7 @@
           ];
         };
         "beind" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-postgresql)
@@ -53,13 +53,13 @@
           ];
         };
         "beinclient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
           ];
         };
         "beinminion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.hsyslog)
@@ -75,7 +75,7 @@
           ];
         };
         "beinhttpd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-postgresql)

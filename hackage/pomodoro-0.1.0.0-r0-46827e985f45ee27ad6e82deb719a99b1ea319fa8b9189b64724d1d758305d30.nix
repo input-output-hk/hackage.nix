@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pomodoro" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)

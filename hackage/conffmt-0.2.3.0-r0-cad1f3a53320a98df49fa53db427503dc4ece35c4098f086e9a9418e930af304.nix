@@ -26,7 +26,7 @@
     components = {
       exes = {
         "conffmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)

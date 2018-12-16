@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Diff)
           (hsPkgs.aeson)
@@ -47,7 +47,7 @@
       };
       exes = {
         "guess-changelog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.distribution-opensuse)
@@ -58,7 +58,7 @@
       };
       tests = {
         "test-strip-space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distribution-opensuse)
           ];

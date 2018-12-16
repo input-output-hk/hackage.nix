@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.syb)
@@ -37,7 +37,7 @@
       };
       tests = {
         "derive-topdown-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.mtl)

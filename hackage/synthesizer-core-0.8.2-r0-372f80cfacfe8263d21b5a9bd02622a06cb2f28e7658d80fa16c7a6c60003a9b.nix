@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.sample-frame-np)
           (hsPkgs.sox)
           (hsPkgs.transformers)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.synthesizer-core)
             (hsPkgs.storablevector)
             (hsPkgs.storable-tuple)
@@ -75,7 +75,7 @@
       };
       benchmarks = {
         "fouriertest" = {
-          depends  = [
+          depends = [
             (hsPkgs.synthesizer-core)
             (hsPkgs.numeric-prelude)
             (hsPkgs.timeit)
@@ -86,7 +86,7 @@
           ];
         };
         "speedtest" = {
-          depends  = [
+          depends = [
             (hsPkgs.synthesizer-core)
             (hsPkgs.numeric-prelude)
             (hsPkgs.old-time)
@@ -98,7 +98,7 @@
           ];
         };
         "speedtest-exp" = {
-          depends  = [
+          depends = [
             (hsPkgs.synthesizer-core)
             (hsPkgs.storablevector)
             (hsPkgs.old-time)
@@ -110,7 +110,7 @@
           ];
         };
         "speedtest-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.synthesizer-core)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

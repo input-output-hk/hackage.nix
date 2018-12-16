@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -55,7 +55,7 @@
       };
       tests = {
         "Hunt-Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -78,7 +78,7 @@
           ];
         };
         "Hunt-Strictness" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-strict)) [
+          depends = pkgs.lib.optionals (!(!flags.test-strict)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)

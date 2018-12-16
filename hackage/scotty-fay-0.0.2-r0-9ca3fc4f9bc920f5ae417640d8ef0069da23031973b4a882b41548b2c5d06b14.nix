@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.scotty)
           (hsPkgs.fay)
@@ -42,7 +42,7 @@
       };
       tests = {
         "scotty-fay-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty-fay)
             (hsPkgs.wai-test)

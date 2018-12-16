@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ipatch" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs-beta)
             (hsPkgs.base)
             (hsPkgs.unix)

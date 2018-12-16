@@ -26,13 +26,13 @@
     components = {
       exes = {
         "WL500gPStatus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.WL500gPLibrary)
           ];
         };
         "WL500gPControl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.WL500gPLibrary)
             (hsPkgs.mtl)

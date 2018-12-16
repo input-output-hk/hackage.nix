@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.JuicyPixels)
           (hsPkgs.hmatrix)
@@ -34,7 +34,7 @@
       };
       exes = {
         "picedit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.picedit)
             (hsPkgs.cli)

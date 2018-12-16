@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.wtk)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hasloQC" = {
-          depends  = [
+          depends = [
             (hsPkgs.old-time)
             (hsPkgs.QuickCheck)
             (hsPkgs.mtl)
@@ -43,7 +43,7 @@
           ];
         };
         "hasloSample" = {
-          depends  = [
+          depends = [
             (hsPkgs.old-time)
             (hsPkgs.QuickCheck)
             (hsPkgs.mtl)

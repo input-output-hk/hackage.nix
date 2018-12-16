@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.sample-frame)
           (hsPkgs.numeric-prelude)
         ] ++ (if flags.splitbase

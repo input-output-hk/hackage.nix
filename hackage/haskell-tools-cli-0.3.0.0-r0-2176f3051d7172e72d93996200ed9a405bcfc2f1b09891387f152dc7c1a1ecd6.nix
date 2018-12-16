@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -41,7 +41,7 @@
       };
       exes = {
         "ht-refact" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-tools-cli)
           ];
@@ -49,7 +49,7 @@
       };
       tests = {
         "haskell-tools-cli-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.directory)

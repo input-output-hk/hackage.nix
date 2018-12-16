@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.QuickCheck)
@@ -35,7 +35,7 @@
       };
       exes = {
         "BERTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -44,7 +44,7 @@
           ];
         };
         "BERTest2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -53,7 +53,7 @@
           ];
         };
         "X509Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -62,7 +62,7 @@
           ];
         };
         "PKCS8Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -71,7 +71,7 @@
           ];
         };
         "AttributeCertificate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)

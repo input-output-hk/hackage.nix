@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       exes = {
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)

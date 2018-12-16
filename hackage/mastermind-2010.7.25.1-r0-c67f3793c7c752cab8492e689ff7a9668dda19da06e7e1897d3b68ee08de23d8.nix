@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mastermind" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
           ];

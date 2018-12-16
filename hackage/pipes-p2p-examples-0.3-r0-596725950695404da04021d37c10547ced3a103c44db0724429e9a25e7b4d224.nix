@@ -26,7 +26,7 @@
     components = {
       exes = {
         "address-exchanger" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)

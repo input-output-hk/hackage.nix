@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.parsec)
           (hsPkgs.blaze-html)
@@ -65,7 +65,7 @@
       };
       exes = {
         "pandoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.parsec)
             (hsPkgs.blaze-html)
@@ -100,7 +100,7 @@
             else [ (hsPkgs.base) ]);
         };
         "test-pandoc" = {
-          depends  = pkgs.lib.optionals (!(!flags.tests)) [
+          depends = pkgs.lib.optionals (!(!flags.tests)) [
             (hsPkgs.base)
             (hsPkgs.Diff)
             (hsPkgs.test-framework)

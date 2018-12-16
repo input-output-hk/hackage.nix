@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.async)
           (hsPkgs.base)
@@ -77,7 +77,7 @@
       };
       exes = {
         "bdcs-api-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bdcs-api)
             (hsPkgs.safe-exceptions)
@@ -86,7 +86,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bdcs)

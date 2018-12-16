@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc)
           (hsPkgs.Cabal)
           (hsPkgs.base)
@@ -43,7 +43,7 @@
       };
       exes = {
         "Hubrify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.Cabal)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.storable-record)
           (hsPkgs.utility-ht)
         ] ++ (if flags.splitbase

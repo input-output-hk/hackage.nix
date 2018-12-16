@@ -26,7 +26,7 @@
     components = {
       exes = {
         "example_01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.hogre)
@@ -34,7 +34,7 @@
           libs = [ (pkgs."OgreMain") ];
         };
         "example_02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.hogre)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -44,7 +44,7 @@
       };
       tests = {
         "simple-processes" = {
-          depends  = [
+          depends = [
             (hsPkgs.streaming-process)
             (hsPkgs.base)
             (hsPkgs.bytestring)

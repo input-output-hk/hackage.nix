@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.QuickCheck)
           (hsPkgs.HUnit)
@@ -45,7 +45,7 @@
       };
       exes = {
         "geni" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.filepath)
             (hsPkgs.parsec)
             (hsPkgs.QuickCheck)

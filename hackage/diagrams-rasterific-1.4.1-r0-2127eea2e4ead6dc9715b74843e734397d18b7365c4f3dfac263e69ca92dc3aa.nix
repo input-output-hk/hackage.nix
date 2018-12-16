@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams-core)
           (hsPkgs.diagrams-lib)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test0" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)
@@ -53,7 +53,7 @@
           ];
         };
         "test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)

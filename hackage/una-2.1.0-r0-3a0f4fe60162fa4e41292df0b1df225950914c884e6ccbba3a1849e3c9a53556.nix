@@ -26,7 +26,7 @@
     components = {
       exes = {
         "una" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.io-storage)

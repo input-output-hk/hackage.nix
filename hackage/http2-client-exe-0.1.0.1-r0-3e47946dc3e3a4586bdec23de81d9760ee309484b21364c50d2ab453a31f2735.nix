@@ -26,7 +26,7 @@
     components = {
       exes = {
         "http2-client-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)

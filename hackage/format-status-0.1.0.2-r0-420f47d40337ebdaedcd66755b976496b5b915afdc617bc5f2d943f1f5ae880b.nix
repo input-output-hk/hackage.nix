@@ -26,7 +26,7 @@
     components = {
       exes = {
         "format-status" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.time)

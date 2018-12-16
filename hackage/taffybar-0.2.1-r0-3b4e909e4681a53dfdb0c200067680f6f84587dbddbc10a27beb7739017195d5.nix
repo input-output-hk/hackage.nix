@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.old-locale)
@@ -55,7 +55,7 @@
       };
       exes = {
         "taffybar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dyre)
             (hsPkgs.gtk)

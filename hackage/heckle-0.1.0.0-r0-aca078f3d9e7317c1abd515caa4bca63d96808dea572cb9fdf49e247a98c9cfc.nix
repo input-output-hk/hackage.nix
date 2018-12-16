@@ -26,7 +26,7 @@
     components = {
       exes = {
         "heckle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.containers)

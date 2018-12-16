@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.process)
@@ -36,7 +36,7 @@
       };
       exes = {
         "orc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm)
             (hsPkgs.process)

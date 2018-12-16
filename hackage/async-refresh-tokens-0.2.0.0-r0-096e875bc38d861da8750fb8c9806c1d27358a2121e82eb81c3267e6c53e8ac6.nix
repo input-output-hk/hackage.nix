@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async-refresh)
           (hsPkgs.monad-logger)
@@ -42,7 +42,7 @@
       };
       tests = {
         "async-refresh-tokens-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async-refresh-tokens)
             (hsPkgs.HUnit)

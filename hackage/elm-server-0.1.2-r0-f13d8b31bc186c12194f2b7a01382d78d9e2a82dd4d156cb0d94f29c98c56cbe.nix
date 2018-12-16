@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elm-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers)

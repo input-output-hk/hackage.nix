@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.sample-frame)
           (hsPkgs.explicit-exception)
           (hsPkgs.transformers)

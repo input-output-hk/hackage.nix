@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.pretty-show)
@@ -33,7 +33,7 @@
       };
       exes = {
         "pretty-display-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty-display)
             (hsPkgs.pretty-show)
@@ -43,7 +43,7 @@
       };
       tests = {
         "pretty-display-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty-display)
           ];

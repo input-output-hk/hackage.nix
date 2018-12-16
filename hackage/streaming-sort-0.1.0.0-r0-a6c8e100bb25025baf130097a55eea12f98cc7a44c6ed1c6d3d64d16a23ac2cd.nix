@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "sorting-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.streaming-sort)
             (hsPkgs.base)
             (hsPkgs.binary)

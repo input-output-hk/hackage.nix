@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ConfigFile)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       exes = {
         "envstatus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.envstatus)
           ];
@@ -44,7 +44,7 @@
       };
       tests = {
         "envstatus-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.tasty)

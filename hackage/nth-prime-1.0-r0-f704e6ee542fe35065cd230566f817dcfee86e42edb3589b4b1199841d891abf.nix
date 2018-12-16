@@ -26,14 +26,14 @@
     components = {
       exes = {
         "nth-prime" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opentheory-primitive)
             (hsPkgs.opentheory-prime)
           ];
         };
         "nth-prime-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opentheory-primitive)
             (hsPkgs.opentheory-prime)

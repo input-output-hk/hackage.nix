@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.base)
         ];
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)

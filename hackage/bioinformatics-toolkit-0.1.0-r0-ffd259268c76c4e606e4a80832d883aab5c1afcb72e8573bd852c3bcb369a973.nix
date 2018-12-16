@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -60,7 +60,7 @@
       };
       exes = {
         "mkindex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bioinformatics-toolkit)
             (hsPkgs.shelly)
@@ -68,7 +68,7 @@
           ];
         };
         "viewSeq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bioinformatics-toolkit)
             (hsPkgs.bytestring)
@@ -77,7 +77,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.random)
@@ -95,7 +95,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bioinformatics-toolkit)
             (hsPkgs.random)

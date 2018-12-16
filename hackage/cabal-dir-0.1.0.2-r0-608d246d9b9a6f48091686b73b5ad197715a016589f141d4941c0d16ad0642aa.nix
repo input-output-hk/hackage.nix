@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-dir" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.Cabal)

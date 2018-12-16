@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.generics-sop)
           (hsPkgs.lens)
@@ -35,7 +35,7 @@
       };
       tests = {
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.TotalMap)
             (hsPkgs.generics-sop)

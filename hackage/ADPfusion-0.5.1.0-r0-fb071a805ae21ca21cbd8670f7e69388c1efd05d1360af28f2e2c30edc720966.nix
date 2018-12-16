@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bits)
           (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       exes = {
         "NeedlemanWunsch" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -58,7 +58,7 @@
           ];
         };
         "Nussinov" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -67,7 +67,7 @@
           ];
         };
         "PartNussinov" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.log-domain)
@@ -77,7 +77,7 @@
           ];
         };
         "Durbin" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -86,7 +86,7 @@
           ];
         };
         "Pseudoknot" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -95,7 +95,7 @@
           ];
         };
         "OverlappingPalindromes" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -104,7 +104,7 @@
           ];
         };
         "SplitTests" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -113,7 +113,7 @@
           ];
         };
         "spectest" = {
-          depends  = pkgs.lib.optionals (flags.spectest) [
+          depends = pkgs.lib.optionals (flags.spectest) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -124,7 +124,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.bits)
@@ -141,7 +141,7 @@
       };
       benchmarks = {
         "performance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.BenchmarkHistory)

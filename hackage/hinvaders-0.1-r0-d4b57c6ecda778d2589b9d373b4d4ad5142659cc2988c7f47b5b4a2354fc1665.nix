@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hinvaders" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.haskell98)

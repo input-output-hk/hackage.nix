@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dixi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.composition-tree)
             (hsPkgs.patches-vector)

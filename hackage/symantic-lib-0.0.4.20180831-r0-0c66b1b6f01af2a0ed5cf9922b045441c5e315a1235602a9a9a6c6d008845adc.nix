@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.symantic)
           (hsPkgs.symantic-grammar)
           (hsPkgs.base)
@@ -37,7 +37,7 @@
       };
       tests = {
         "symantic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.symantic)
             (hsPkgs.symantic-grammar)
             (hsPkgs.symantic-lib)

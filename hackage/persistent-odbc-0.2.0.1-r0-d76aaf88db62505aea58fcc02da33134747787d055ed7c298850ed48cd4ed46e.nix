@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.aeson)
@@ -52,7 +52,7 @@
       };
       exes = {
         "TestODBC" = {
-          depends  = pkgs.lib.optionals (flags.tester) [
+          depends = pkgs.lib.optionals (flags.tester) [
             (hsPkgs.base)
             (hsPkgs.persistent-odbc)
             (hsPkgs.blaze-html)

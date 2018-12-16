@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.OneTuple)
         ];
       };
       tests = {
         "HeterogenousListLiterals-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.heterogeneous-list-literals)
           ];

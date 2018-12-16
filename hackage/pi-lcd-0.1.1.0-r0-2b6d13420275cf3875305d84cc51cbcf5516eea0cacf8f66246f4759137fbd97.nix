@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.clock)
@@ -40,28 +40,28 @@
       };
       exes = {
         "pi-lcd-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pi-lcd)
             (hsPkgs.text)
           ];
         };
         "pi-lcd-custom" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pi-lcd)
             (hsPkgs.text)
           ];
         };
         "pi-lcd-ui" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pi-lcd)
             (hsPkgs.text)
           ];
         };
         "pi-lcd-test-rom" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pi-lcd)
             (hsPkgs.text)

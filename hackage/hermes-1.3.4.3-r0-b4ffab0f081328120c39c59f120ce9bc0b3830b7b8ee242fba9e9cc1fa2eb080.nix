@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.cereal)
@@ -95,7 +95,7 @@
       };
       exes = {
         "hermes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.atlas)
             (hsPkgs.shelly)
@@ -110,7 +110,7 @@
           ];
         };
         "hermes-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hastache)
             (hsPkgs.shelly)
@@ -123,7 +123,7 @@
           ];
         };
         "hermes-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.amqp)
             (hsPkgs.atlas)
@@ -169,7 +169,7 @@
           ];
         };
         "hermes-progress" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.atlas)
             (hsPkgs.shelly)
@@ -182,7 +182,7 @@
           ];
         };
         "hermes-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.amqp)
             (hsPkgs.base)
@@ -223,7 +223,7 @@
           ];
         };
         "hermes-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shelly)
             (hsPkgs.transformers)

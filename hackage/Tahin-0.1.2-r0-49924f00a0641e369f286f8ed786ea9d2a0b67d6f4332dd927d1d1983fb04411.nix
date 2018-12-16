@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       exes = {
         "tahin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base64-bytestring)
             (hsPkgs.bytestring)

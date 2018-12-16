@@ -38,7 +38,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((([
+        depends = (((((([
           (hsPkgs.base)
           (hsPkgs.regex-compat)
           (hsPkgs.mtl)
@@ -66,7 +66,7 @@
       };
       exes = {
         "darcs" = {
-          depends  = (((((([
+          depends = (((((([
             (hsPkgs.base)
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)

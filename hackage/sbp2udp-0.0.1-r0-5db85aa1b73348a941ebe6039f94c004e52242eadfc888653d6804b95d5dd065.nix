@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sbp2udp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.binary)

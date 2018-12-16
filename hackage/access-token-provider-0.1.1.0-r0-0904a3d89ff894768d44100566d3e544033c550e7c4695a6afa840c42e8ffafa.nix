@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.text)
@@ -54,7 +54,7 @@
       };
       tests = {
         "access-token-provider-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.access-token-provider)
             (hsPkgs.aeson)

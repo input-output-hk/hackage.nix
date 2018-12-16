@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.monad-loops-stm)
           (hsPkgs.stm)
         ] ++ (if flags.base4

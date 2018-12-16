@@ -29,37 +29,37 @@
     components = {
       exes = {
         "cpsa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ] ++ pkgs.lib.optional (flags.par) (hsPkgs.parallel);
         };
         "cpsagraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ];
         };
         "cpsashapes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ];
         };
         "cpsaannotations" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ];
         };
         "cpsaparameters" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ];
         };
         "cpsapp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ];

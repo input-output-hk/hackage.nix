@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hirt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.containers)

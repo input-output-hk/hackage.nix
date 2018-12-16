@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.array)
           (hsPkgs.base-compat-batteries)
           (hsPkgs.bifunctors)
@@ -66,7 +66,7 @@
       };
       tests = {
         "spec" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.array)
             (hsPkgs.base-compat-batteries)
             (hsPkgs.base-orphans)
@@ -108,7 +108,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.array)
             (hsPkgs.base-compat-batteries)
             (hsPkgs.bifunctors)

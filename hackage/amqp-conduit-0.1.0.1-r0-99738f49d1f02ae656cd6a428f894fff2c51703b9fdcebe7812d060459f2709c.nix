@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.amqp)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-amqp-conduit" = {
-          depends  = [
+          depends = [
             (hsPkgs.amqp-conduit)
             (hsPkgs.base)
             (hsPkgs.resourcet)

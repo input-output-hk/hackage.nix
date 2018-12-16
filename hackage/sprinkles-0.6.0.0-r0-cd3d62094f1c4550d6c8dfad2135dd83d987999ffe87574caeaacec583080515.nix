@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.Glob)
@@ -97,7 +97,7 @@
       };
       exes = {
         "sprinkles" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sprinkles)
             (hsPkgs.async)
@@ -110,7 +110,7 @@
       };
       tests = {
         "sprinkles-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sprinkles)
             (hsPkgs.data-default)

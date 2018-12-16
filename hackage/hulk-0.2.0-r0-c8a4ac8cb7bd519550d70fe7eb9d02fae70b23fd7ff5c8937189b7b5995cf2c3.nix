@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.ConfigFile)
@@ -51,7 +51,7 @@
       };
       exes = {
         "hulk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.ConfigFile)
@@ -76,7 +76,7 @@
           ];
         };
         "hulk-generate-pass" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

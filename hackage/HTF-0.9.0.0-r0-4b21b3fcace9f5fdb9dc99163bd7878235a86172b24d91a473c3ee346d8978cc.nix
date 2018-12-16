@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       exes = {
         "htfpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.cpphs)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.base)

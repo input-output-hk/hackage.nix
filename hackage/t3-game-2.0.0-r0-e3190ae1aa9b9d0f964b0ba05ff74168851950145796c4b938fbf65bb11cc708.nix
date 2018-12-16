@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.text)
@@ -38,7 +38,7 @@
       };
       tests = {
         "t3-game-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.t3-game)
             (hsPkgs.hspec)

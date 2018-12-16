@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackport" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.parsec)

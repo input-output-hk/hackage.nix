@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.MissingH)
           (hsPkgs.directory)
@@ -45,7 +45,7 @@
       };
       exes = {
         "git-vogue" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -55,7 +55,7 @@
           ];
         };
         "git-vogue-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.git-vogue)
@@ -63,7 +63,7 @@
           ];
         };
         "git-vogue-hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -77,7 +77,7 @@
           ];
         };
         "git-vogue-stylish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Diff)
             (hsPkgs.directory)
@@ -89,7 +89,7 @@
           ];
         };
         "git-vogue-ghc-mod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Diff)
             (hsPkgs.directory)
@@ -103,7 +103,7 @@
       };
       tests = {
         "test-git-setup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -115,7 +115,7 @@
           ];
         };
         "test-plugins" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.git-vogue)

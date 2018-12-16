@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.boomerang)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       tests = {
         "DemangleTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.itanium-abi)
             (hsPkgs.base)
             (hsPkgs.process)

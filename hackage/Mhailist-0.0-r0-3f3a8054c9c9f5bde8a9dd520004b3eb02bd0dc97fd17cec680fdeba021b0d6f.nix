@@ -29,7 +29,7 @@
     components = {
       exes = {
         "mhailist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)
@@ -43,7 +43,7 @@
           ];
         };
         "Test" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

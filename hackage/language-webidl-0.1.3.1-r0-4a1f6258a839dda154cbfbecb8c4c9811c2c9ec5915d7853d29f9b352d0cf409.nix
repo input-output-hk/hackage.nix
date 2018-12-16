@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.wl-pprint)
@@ -33,7 +33,7 @@
       };
       tests = {
         "language-webidl-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-webidl)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.postgresql-simple)
           (hsPkgs.transformers)
@@ -36,7 +36,7 @@
       };
       tests = {
         "pg-transact-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcs-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.process)

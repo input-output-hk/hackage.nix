@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sos" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fsnotify)
             (hsPkgs.filepath)

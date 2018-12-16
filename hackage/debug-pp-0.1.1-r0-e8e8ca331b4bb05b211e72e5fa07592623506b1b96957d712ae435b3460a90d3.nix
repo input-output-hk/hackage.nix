@@ -26,7 +26,7 @@
     components = {
       exes = {
         "debug-pp" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.debug-hoed)

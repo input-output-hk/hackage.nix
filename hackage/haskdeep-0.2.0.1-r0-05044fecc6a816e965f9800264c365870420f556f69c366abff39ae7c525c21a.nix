@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskdeep" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)

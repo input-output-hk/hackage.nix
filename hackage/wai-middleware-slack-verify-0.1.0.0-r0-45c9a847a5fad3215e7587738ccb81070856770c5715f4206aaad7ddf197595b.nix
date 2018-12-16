@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cryptonite)
@@ -39,7 +39,7 @@
       };
       exes = {
         "bot-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cryptonite)
@@ -57,7 +57,7 @@
       };
       tests = {
         "wai-middleware-slack-verify-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)

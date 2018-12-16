@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gitit" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.pretty)

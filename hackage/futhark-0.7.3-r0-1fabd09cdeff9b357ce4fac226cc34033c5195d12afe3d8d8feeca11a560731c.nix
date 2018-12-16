@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -77,7 +77,7 @@
       };
       exes = {
         "futhark" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -128,7 +128,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -179,7 +179,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-c" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -230,7 +230,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-cs" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -281,7 +281,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-csopencl" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -332,7 +332,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-dataset" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -383,7 +383,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-doc" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -434,7 +434,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-opencl" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -485,7 +485,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-pkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -536,7 +536,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-py" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -587,7 +587,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-pyopencl" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -638,7 +638,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futhark-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -689,7 +689,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "futharki" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -740,7 +740,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.ansi-terminal)

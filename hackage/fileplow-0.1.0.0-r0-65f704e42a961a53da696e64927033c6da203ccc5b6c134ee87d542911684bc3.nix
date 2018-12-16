@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       tests = {
         "fileplow-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fileplow)
             (hsPkgs.hspec)

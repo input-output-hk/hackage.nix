@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ad)
           (hsPkgs.base)
           (hsPkgs.hmatrix)
@@ -37,7 +37,7 @@
       };
       exes = {
         "hamilton-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.containers)

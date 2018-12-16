@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.time)
@@ -42,7 +42,7 @@
       };
       exes = {
         "mctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hquantlib)
             (hsPkgs.parallel)
@@ -54,7 +54,7 @@
       };
       tests = {
         "main-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

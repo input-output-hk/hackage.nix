@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lucienne" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mongoDB)
             (hsPkgs.compact-string-fix)
@@ -46,7 +46,7 @@
           ];
         };
         "lucienne-fetch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mongoDB)
             (hsPkgs.compact-string-fix)

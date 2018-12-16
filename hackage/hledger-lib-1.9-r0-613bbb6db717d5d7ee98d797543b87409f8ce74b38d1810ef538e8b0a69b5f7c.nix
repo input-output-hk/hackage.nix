@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Decimal)
           (hsPkgs.HUnit)
           (hsPkgs.ansi-terminal)
@@ -61,7 +61,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.Glob)
             (hsPkgs.HUnit)
@@ -98,7 +98,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "easytests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
             (hsPkgs.ansi-terminal)
@@ -135,7 +135,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         };
         "hunittests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
             (hsPkgs.ansi-terminal)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.monad-control)
@@ -41,14 +41,14 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)
           ];
         };
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gitson)
             (hsPkgs.transformers)
@@ -61,7 +61,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.transformers)

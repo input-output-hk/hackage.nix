@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.use-backport
+        depends = if flags.use-backport
           then [
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "prop-compiled" = {
-          depends  = if flags.use-backport
+          depends = if flags.use-backport
             then [
               (hsPkgs.base)
               (hsPkgs.bytestring-short)

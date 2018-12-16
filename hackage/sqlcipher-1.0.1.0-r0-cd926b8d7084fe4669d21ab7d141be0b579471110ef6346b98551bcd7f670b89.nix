@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pretty)
           (hsPkgs.utf8-string)
@@ -44,7 +44,7 @@
       };
       tests = {
         "sqlite-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sqlcipher)
             (hsPkgs.temporary)

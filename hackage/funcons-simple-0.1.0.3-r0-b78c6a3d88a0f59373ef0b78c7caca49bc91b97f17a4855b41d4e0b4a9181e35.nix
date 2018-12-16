@@ -26,7 +26,7 @@
     components = {
       exes = {
         "runfct-SIMPLE" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.funcons-tools)
             (hsPkgs.funcons-values)

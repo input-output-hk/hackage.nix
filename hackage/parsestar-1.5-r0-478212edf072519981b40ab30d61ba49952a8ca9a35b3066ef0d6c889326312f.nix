@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -45,7 +45,7 @@
       };
       exes = {
         "PrintCSTypes" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -57,7 +57,7 @@
           ];
         };
         "MergeCoord" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -68,7 +68,7 @@
           ];
         };
         "TestChemShifts" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -79,7 +79,7 @@
           ];
         };
         "STAR2Fasta" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.mtl)

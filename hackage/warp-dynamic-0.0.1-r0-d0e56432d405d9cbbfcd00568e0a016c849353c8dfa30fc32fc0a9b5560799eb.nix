@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default)
           (hsPkgs.dyre)
@@ -36,7 +36,7 @@
       };
       exes = {
         "warpd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp-dynamic)
           ];

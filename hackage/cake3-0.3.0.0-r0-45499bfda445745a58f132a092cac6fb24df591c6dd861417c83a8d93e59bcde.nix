@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.template-haskell)
@@ -47,13 +47,13 @@
       };
       exes = {
         "cake3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];
         };
         "urembed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.language-javascript)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gruff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ad)
             (hsPkgs.containers)

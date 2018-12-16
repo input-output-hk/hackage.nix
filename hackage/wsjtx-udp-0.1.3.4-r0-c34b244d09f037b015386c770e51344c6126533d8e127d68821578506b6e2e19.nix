@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -38,7 +38,7 @@
       };
       exes = {
         "wsjtx-dump-udp" = {
-          depends  = pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+          depends = pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs.base)
             (hsPkgs.wsjtx-udp)
           ];

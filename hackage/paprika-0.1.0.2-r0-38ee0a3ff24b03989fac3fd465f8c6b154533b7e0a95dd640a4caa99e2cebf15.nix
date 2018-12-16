@@ -25,20 +25,20 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.huckleberry)
         ];
       };
       exes = {
         "paprika-console-ctrl-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.paprika)
           ];
         };
         "paprika-wai-ctrl-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.paprika)
             (hsPkgs.distributed-process)
@@ -60,7 +60,7 @@
           ];
         };
         "paprika-wai-cutter-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.paprika)
             (hsPkgs.distributed-process)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hedgehog)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       tests = {
         "hw-hedgehog-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hw-hedgehog)
           ];

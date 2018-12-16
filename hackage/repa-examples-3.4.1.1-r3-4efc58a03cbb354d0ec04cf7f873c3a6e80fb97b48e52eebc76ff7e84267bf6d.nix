@@ -26,14 +26,14 @@
     components = {
       exes = {
         "repa-canny" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
           ];
         };
         "repa-mmult" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.repa)
@@ -42,7 +42,7 @@
           ];
         };
         "repa-laplace" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-io)
@@ -50,7 +50,7 @@
           ];
         };
         "repa-fft2d" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
@@ -58,7 +58,7 @@
           ];
         };
         "repa-fft2d-highpass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
@@ -66,14 +66,14 @@
           ];
         };
         "repa-fft3d-highpass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
           ];
         };
         "repa-blur" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
@@ -81,21 +81,21 @@
           ];
         };
         "repa-sobel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
           ];
         };
         "repa-volume" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.repa-io)
           ];
         };
         "repa-unit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.QuickCheck)

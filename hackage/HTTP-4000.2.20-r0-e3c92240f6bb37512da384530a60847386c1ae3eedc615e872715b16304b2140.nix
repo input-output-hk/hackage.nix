@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.array)
@@ -51,7 +51,7 @@
       };
       tests = {
         "test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.HTTP)
             (hsPkgs.HUnit)
             (hsPkgs.httpd-shed)

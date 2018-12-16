@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cqrs-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.async)

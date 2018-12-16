@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.ini)
@@ -50,7 +50,7 @@
       };
       exes = {
         "saturnin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Saturnin)
           ];
@@ -58,7 +58,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Saturnin)
             (hsPkgs.mtl)
@@ -68,7 +68,7 @@
           ];
         };
         "style" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

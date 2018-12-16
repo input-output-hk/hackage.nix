@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
           (hsPkgs.filepath)
@@ -40,7 +40,7 @@
       };
       exes = {
         "mud" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mud)
             (hsPkgs.mtl)
@@ -49,7 +49,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mud)
             (hsPkgs.hspec)

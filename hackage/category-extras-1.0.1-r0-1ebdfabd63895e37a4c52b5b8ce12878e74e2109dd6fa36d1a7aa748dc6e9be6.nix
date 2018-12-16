@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.adjunctions)
           (hsPkgs.bifunctors)
           (hsPkgs.categories)

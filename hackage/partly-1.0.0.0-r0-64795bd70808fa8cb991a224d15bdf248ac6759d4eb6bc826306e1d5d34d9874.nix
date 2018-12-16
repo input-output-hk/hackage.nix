@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -33,7 +33,7 @@
       };
       exes = {
         "partly" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.vector)
@@ -44,12 +44,12 @@
       };
       tests = {
         "test-partly-lib" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ];
         };
         "test-partly-json" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.QuickCheck)
           ];

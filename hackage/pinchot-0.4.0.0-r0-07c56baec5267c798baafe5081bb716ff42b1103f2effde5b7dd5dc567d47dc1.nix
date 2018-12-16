@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "print-postal-grammar" = {
-          depends  = pkgs.lib.optionals (flags.executables) [
+          depends = pkgs.lib.optionals (flags.executables) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers)
@@ -48,7 +48,7 @@
           ];
         };
         "postal-parser" = {
-          depends  = pkgs.lib.optionals (flags.executables) [
+          depends = pkgs.lib.optionals (flags.executables) [
             (hsPkgs.pretty-show)
             (hsPkgs.base)
             (hsPkgs.containers)

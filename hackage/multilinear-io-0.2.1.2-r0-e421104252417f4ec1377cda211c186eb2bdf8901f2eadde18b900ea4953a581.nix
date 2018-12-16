@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "multilinear-io-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.either)
             (hsPkgs.multilinear)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "multilinear-io-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

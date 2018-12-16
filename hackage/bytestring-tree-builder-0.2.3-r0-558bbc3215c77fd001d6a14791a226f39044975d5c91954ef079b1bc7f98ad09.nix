@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.semigroups)
           (hsPkgs.bytestring)
           (hsPkgs.base-prelude)
@@ -34,7 +34,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring-tree-builder)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring-tree-builder)
             (hsPkgs.criterion)
             (hsPkgs.bytestring)

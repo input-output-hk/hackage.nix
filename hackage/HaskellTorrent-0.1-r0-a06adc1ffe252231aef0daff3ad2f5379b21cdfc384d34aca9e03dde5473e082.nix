@@ -29,7 +29,7 @@
     components = {
       exes = {
         "HaskellTorrent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."seccomp") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
@@ -33,7 +33,7 @@
       };
       tests = {
         "seccomp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

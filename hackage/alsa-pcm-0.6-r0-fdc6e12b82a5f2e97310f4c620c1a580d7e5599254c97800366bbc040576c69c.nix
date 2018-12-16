@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.alsa-core)
           (hsPkgs.storable-record)
           (hsPkgs.sample-frame)
@@ -43,7 +43,7 @@
       };
       exes = {
         "alsa-minisynth" = {
-          depends  = pkgs.lib.optionals (flags.buildsynthesizer) [
+          depends = pkgs.lib.optionals (flags.buildsynthesizer) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.containers)
@@ -55,7 +55,7 @@
           ];
         };
         "alsa-sine" = {
-          depends  = pkgs.lib.optionals (flags.buildsynthesizer) [
+          depends = pkgs.lib.optionals (flags.buildsynthesizer) [
             (hsPkgs.alsa-core)
             (hsPkgs.storablevector)
             (hsPkgs.storable-record)
@@ -64,7 +64,7 @@
           ];
         };
         "alsa-duplex" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-core)
             (hsPkgs.storable-record)
             (hsPkgs.sample-frame)
@@ -72,7 +72,7 @@
           ];
         };
         "alsa-play" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-core)
             (hsPkgs.storable-record)
             (hsPkgs.sample-frame)
@@ -80,7 +80,7 @@
           ];
         };
         "alsa-record" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-core)
             (hsPkgs.storable-record)
             (hsPkgs.sample-frame)
@@ -88,7 +88,7 @@
           ];
         };
         "alsa-volume-meter" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-core)
             (hsPkgs.storable-record)
             (hsPkgs.sample-frame)

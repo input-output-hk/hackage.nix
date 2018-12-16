@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mustache2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.parsec)

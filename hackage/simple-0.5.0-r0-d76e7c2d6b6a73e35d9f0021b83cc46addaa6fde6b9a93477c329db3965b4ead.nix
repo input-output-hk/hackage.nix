@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.conduit)
@@ -43,7 +43,7 @@
       };
       exes = {
         "smpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.base64-bytestring)

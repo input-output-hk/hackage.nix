@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.split)
         ];
       };
       tests = {
         "test-boxes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.QuickCheck)

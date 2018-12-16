@@ -26,7 +26,7 @@
     components = {
       exes = {
         "baskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.parsec)

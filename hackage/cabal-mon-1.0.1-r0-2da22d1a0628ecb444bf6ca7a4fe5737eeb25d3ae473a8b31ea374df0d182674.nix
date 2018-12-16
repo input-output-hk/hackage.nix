@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-mon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vty)
             (hsPkgs.simple-get-opt)

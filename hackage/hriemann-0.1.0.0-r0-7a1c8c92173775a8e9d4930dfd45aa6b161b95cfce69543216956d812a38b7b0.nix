@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protocol-buffers)
           (hsPkgs.protocol-buffers-descriptor)
@@ -43,7 +43,7 @@
       };
       exes = {
         "hriemann-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hriemann)
           ];
@@ -51,7 +51,7 @@
       };
       tests = {
         "hriemann-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hriemann)
           ];

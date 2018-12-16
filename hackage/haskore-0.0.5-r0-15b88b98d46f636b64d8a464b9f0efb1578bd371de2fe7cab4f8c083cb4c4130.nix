@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.event-list)
           (hsPkgs.midi)
           (hsPkgs.markov-chain)

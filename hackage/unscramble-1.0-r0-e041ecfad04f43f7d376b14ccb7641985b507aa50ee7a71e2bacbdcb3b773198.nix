@@ -26,7 +26,7 @@
     components = {
       exes = {
         "unscramble" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.optparse-applicative)

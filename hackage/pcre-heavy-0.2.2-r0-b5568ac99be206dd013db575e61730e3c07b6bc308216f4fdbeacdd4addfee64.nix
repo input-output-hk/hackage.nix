@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pcre-light)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)

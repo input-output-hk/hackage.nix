@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optionals (flags.cryptoapi) [
@@ -39,7 +39,7 @@
       };
       exes = {
         "Bench" = {
-          depends  = pkgs.lib.optionals (flags.benchmark) [
+          depends = pkgs.lib.optionals (flags.benchmark) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test-kat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)

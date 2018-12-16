@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.ansi-wl-pprint)
@@ -39,7 +39,7 @@
       };
       exes = {
         "stylish-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.optparse-applicative)
@@ -49,13 +49,13 @@
       };
       tests = {
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "strictness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.StrictCheck)
@@ -69,7 +69,7 @@
           ];
         };
         "roundtrip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.ansi-wl-pprint)
@@ -81,7 +81,7 @@
           ];
         };
         "roundtrip-hackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.aeson)

@@ -27,13 +27,13 @@
       "library" = {};
       exes = {
         "heapsort-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
           ];
         };
         "heapsort-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.QuickCheck)

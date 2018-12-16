@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.syb)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-pandoc-types" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
             (hsPkgs.syb)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "benchmark-pandoc-types" = {
-          depends  = [
+          depends = [
             (hsPkgs.pandoc-types)
             (hsPkgs.base)
             (hsPkgs.criterion)

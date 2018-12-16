@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cabal-macosx)
           (hsPkgs.reactive-banana)
@@ -39,7 +39,7 @@
         "Animation" = {};
         "Arithmetic" = {};
         "Asteroids" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.random)
             (hsPkgs.executable-path)
             (hsPkgs.filepath)
@@ -47,16 +47,16 @@
         };
         "Counter" = {};
         "CurrencyConverter" = {
-          depends  = pkgs.lib.optional (flags.buildexamples) (hsPkgs.process);
+          depends = pkgs.lib.optional (flags.buildexamples) (hsPkgs.process);
         };
         "CRUD" = {
-          depends  = pkgs.lib.optional (flags.buildexamples) (hsPkgs.containers);
+          depends = pkgs.lib.optional (flags.buildexamples) (hsPkgs.containers);
         };
         "NetMonitor" = {
-          depends  = pkgs.lib.optional (flags.buildexamples) (hsPkgs.process);
+          depends = pkgs.lib.optional (flags.buildexamples) (hsPkgs.process);
         };
         "TicTacToe" = {
-          depends  = pkgs.lib.optional (flags.buildexamples) (hsPkgs.array);
+          depends = pkgs.lib.optional (flags.buildexamples) (hsPkgs.array);
         };
         "TwoCounters" = {};
         "Wave" = {};

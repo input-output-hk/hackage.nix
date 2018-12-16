@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.normaldistribution)
           (hsPkgs.random)
@@ -33,7 +33,7 @@
       };
       tests = {
         "HNumeric-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HNumeric)
             (hsPkgs.base)
             (hsPkgs.normaldistribution)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fuzzytime" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.haskell98)

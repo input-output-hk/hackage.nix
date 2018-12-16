@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xdcc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ascii-progress)
             (hsPkgs.bytestring)

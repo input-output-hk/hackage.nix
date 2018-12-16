@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
             (hsPkgs.Cabal)

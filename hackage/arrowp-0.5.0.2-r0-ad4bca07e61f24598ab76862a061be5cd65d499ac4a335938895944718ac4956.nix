@@ -26,7 +26,7 @@
     components = {
       exes = {
         "arrowp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)

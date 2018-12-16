@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.haste-inst
+        depends = if flags.haste-inst
           then [
             (hsPkgs.base)
             (hsPkgs.transformers)

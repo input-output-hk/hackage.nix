@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Yampa)
           (hsPkgs.newtype)
@@ -35,7 +35,7 @@
       };
       exes = {
         "yampa-glfw-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Yampa)
             (hsPkgs.newtype)

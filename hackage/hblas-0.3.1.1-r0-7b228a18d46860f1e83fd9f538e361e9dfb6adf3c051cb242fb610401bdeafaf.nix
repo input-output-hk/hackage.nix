@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.storable-complex)
           (hsPkgs.primitive)
@@ -48,7 +48,7 @@
       };
       tests = {
         "unit-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.hblas)
             (hsPkgs.base)
             (hsPkgs.tasty)

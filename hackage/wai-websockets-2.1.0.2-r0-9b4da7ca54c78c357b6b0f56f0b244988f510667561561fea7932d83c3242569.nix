@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
@@ -41,7 +41,7 @@
       };
       exes = {
         "wai-websockets-example" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.wai-websockets)

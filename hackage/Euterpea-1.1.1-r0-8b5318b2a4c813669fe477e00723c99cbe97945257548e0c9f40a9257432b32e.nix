@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.arrows)
           (hsPkgs.array)
@@ -47,7 +47,7 @@
       };
       tests = {
         "test-euterpea" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Euterpea)
             (hsPkgs.QuickCheck)

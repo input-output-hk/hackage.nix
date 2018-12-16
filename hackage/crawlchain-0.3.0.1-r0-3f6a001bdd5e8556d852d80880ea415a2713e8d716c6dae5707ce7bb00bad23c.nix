@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -39,7 +39,7 @@
       };
       tests = {
         "html-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.crawlchain)
             (hsPkgs.network-uri)
@@ -48,7 +48,7 @@
           ];
         };
         "crawling-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.crawlchain)
             (hsPkgs.bytestring)

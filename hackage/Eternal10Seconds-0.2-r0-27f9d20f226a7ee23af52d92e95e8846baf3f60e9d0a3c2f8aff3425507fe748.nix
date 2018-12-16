@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Eternal10Seconds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.SDL)

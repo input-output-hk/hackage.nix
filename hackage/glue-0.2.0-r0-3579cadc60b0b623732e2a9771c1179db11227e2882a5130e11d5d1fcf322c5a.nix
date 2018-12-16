@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
@@ -40,7 +40,7 @@
       };
       exes = {
         "glue-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glue)
             (hsPkgs.transformers)
@@ -59,7 +59,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)

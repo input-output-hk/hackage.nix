@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shadower" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fsnotify)
             (hsPkgs.process)

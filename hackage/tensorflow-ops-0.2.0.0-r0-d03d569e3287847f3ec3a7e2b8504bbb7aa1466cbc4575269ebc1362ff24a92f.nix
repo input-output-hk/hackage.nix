@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.proto-lens)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "RegressionTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.lens-family)
@@ -54,7 +54,7 @@
           ];
         };
         "MatrixTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.random)
@@ -69,7 +69,7 @@
           ];
         };
         "BuildTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.proto-lens)
@@ -84,7 +84,7 @@
           ];
         };
         "EmbeddingOpsTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -103,7 +103,7 @@
           ];
         };
         "ArrayOpsTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -121,7 +121,7 @@
           ];
         };
         "OpsTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -141,7 +141,7 @@
           ];
         };
         "VariableTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.tensorflow)
@@ -154,7 +154,7 @@
           ];
         };
         "DataFlowOpsTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -171,7 +171,7 @@
           ];
         };
         "GradientTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -189,7 +189,7 @@
           ];
         };
         "MiscTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -204,7 +204,7 @@
           ];
         };
         "NNTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -218,7 +218,7 @@
           ];
         };
         "QueueTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -234,7 +234,7 @@
           ];
         };
         "TracingTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -247,7 +247,7 @@
           ];
         };
         "TypesTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -268,7 +268,7 @@
       };
       benchmarks = {
         "FeedFetchBench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ascii)
           (hsPkgs.attoparsec)
           (hsPkgs.blaze-builder)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-time-http" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.ascii)
             (hsPkgs.attoparsec)

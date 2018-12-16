@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
       };
       tests = {
         "curryrs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curryrs)
             (hsPkgs.tasty)
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "curryrs-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curryrs)
           ];

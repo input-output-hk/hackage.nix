@@ -26,7 +26,7 @@
     components = {
       exes = {
         "resource-embed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

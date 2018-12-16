@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector-space)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "perf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sparse-linear-algebra)
             (hsPkgs.matrix-market-attoparsec)
@@ -50,7 +50,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.containers)

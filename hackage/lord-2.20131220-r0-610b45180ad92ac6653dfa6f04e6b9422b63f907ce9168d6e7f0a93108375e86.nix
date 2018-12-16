@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lord" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
@@ -57,7 +57,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)

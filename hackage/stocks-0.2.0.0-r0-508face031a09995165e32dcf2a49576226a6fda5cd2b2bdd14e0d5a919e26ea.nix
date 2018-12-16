@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-conduit)
           (hsPkgs.aeson)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stocks)
             (hsPkgs.bytestring)

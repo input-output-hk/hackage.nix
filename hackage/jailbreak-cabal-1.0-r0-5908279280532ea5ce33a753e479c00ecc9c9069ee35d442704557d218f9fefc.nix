@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jailbreak-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
           ];

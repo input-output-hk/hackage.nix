@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.array)
@@ -33,7 +33,7 @@
       };
       exes = {
         "sized-types-test1" = {
-          depends  = if flags.devel
+          depends = if flags.devel
             then [
               (hsPkgs.base)
               (hsPkgs.QuickCheck)
@@ -41,7 +41,7 @@
             else [ (hsPkgs.base) ];
         };
         "sized-types-example1" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

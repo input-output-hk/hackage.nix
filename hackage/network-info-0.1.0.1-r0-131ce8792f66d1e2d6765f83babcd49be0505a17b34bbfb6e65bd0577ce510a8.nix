@@ -25,12 +25,12 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi"));
       };
       exes = {
         "test-network-info" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.network-info)
           ];

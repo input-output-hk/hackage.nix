@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vty-ui)
             (hsPkgs.vty)

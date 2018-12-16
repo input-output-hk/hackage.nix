@@ -26,7 +26,7 @@
     components = {
       exes = {
         "activehs" = {
-          depends  = [
+          depends = [
             (hsPkgs.Agda)
             (hsPkgs.highlighting-kate)
             (hsPkgs.hoogle)

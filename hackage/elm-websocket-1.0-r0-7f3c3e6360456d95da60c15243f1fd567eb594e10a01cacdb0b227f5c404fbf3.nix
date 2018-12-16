@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       exes = {
         "elm-websocket-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.concurrent-extra)
@@ -60,7 +60,7 @@
           ];
         };
         "elm-websocket-code-generator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.concurrent-extra)
@@ -76,7 +76,7 @@
       };
       tests = {
         "elm-websocket-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.concurrent-extra)

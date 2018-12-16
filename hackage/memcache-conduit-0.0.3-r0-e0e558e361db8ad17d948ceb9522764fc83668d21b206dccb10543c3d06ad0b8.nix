@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -41,7 +41,7 @@
       };
       exes = {
         "memcache-sample-hemcached" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.stm)
@@ -57,7 +57,7 @@
           ];
         };
         "memcache-sample-proxy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.stm)

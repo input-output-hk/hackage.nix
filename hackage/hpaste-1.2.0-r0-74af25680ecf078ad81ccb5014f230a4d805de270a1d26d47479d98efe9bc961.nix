@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpaste" = {
-          depends  = [
+          depends = [
             (hsPkgs.Diff)
             (hsPkgs.blaze-html)
             (hsPkgs.blaze-markup)

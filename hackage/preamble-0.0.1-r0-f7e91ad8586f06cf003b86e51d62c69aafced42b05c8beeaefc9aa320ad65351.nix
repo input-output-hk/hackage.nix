@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.basic-prelude)
@@ -46,7 +46,7 @@
       };
       exes = {
         "shake-preamble" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.shake)

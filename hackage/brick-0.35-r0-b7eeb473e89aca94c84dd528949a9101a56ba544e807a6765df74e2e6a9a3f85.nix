@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vty)
           (hsPkgs.transformers)
@@ -48,14 +48,14 @@
       };
       exes = {
         "brick-readme-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.text)
           ];
         };
         "brick-form-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.text)
@@ -65,7 +65,7 @@
           ];
         };
         "brick-text-wrap-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.text)
@@ -73,7 +73,7 @@
           ];
         };
         "brick-cache-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -83,7 +83,7 @@
           ];
         };
         "brick-visibility-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -93,7 +93,7 @@
           ];
         };
         "brick-viewport-scroll-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -102,7 +102,7 @@
           ];
         };
         "brick-dialog-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -111,7 +111,7 @@
           ];
         };
         "brick-mouse-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -122,7 +122,7 @@
           ];
         };
         "brick-layer-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -132,7 +132,7 @@
           ];
         };
         "brick-suspend-resume-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -142,7 +142,7 @@
           ];
         };
         "brick-padding-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -151,7 +151,7 @@
           ];
         };
         "brick-theme-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -160,7 +160,7 @@
           ];
         };
         "brick-attr-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -169,7 +169,7 @@
           ];
         };
         "brick-markup-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -178,7 +178,7 @@
           ];
         };
         "brick-list-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -188,7 +188,7 @@
           ];
         };
         "brick-list-vi-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -198,7 +198,7 @@
           ];
         };
         "brick-custom-event-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -208,7 +208,7 @@
           ];
         };
         "brick-fill-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -217,7 +217,7 @@
           ];
         };
         "brick-hello-world-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -226,7 +226,7 @@
           ];
         };
         "brick-edit-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -237,7 +237,7 @@
           ];
         };
         "brick-border-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -246,7 +246,7 @@
           ];
         };
         "brick-progressbar-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)

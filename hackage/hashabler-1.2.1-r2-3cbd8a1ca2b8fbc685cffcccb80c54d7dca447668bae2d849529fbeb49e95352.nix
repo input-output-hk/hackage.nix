@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "tests" = {
-          depends  = pkgs.lib.optionals (flags.dev) ([
+          depends = pkgs.lib.optionals (flags.dev) ([
             (hsPkgs.base)
             (hsPkgs.hashabler)
             (hsPkgs.directory)
@@ -54,7 +54,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = pkgs.lib.optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -67,7 +67,7 @@
           ];
         };
         "viz" = {
-          depends  = pkgs.lib.optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -81,7 +81,7 @@
           ];
         };
         "core" = {
-          depends  = pkgs.lib.optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs.base)
             (hsPkgs.hashabler)
           ];

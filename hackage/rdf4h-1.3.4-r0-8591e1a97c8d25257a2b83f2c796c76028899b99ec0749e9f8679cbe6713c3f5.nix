@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.parsec)
           (hsPkgs.fgl)
           (hsPkgs.HTTP)
@@ -55,7 +55,7 @@
       };
       exes = {
         "rdf4h" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.rdf4h)
             (hsPkgs.containers)
             (hsPkgs.text)
@@ -74,7 +74,7 @@
       };
       tests = {
         "test-rdf4h" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.rdf4h)
             (hsPkgs.test-framework)
@@ -96,7 +96,7 @@
       };
       benchmarks = {
         "rdf4h-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.rdf4h)

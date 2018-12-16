@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.random)
           (hsPkgs.QuickCheck)
           (hsPkgs.smallcheck)

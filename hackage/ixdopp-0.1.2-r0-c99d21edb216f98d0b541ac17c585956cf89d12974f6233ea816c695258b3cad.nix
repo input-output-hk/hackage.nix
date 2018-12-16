@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ixdopp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.preprocessor-tools)

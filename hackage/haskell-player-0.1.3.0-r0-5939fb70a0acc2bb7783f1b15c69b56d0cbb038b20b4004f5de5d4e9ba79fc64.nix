@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.brick)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       exes = {
         "haskell-player" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-player)
           ];
@@ -51,7 +51,7 @@
       };
       tests = {
         "haskell-player-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-player)
           ];

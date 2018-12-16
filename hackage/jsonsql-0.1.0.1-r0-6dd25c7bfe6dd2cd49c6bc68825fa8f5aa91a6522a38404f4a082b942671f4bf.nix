@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jsonsql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.unordered-containers)

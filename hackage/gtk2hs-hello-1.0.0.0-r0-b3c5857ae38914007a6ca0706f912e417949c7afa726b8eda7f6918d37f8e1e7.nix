@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gtk2hs-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.gtk3)

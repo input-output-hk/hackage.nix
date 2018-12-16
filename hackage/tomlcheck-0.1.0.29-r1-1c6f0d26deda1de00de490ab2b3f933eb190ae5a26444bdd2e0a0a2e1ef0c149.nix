@@ -28,7 +28,7 @@
     components = {
       exes = {
         "tomlcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.htoml-megaparsec)
             (hsPkgs.optparse-generic)

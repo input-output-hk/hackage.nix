@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xkcd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.tagsoup)

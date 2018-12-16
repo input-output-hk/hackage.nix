@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.markov-chain)
           (hsPkgs.midi)
           (hsPkgs.event-list)
@@ -54,7 +54,7 @@
       };
       exes = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
           ];

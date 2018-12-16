@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Diff)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.QuickCheck-GenT)
             (hsPkgs.base)

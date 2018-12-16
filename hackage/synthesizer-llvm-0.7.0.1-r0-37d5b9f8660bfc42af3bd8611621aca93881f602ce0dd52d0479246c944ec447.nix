@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.llvm-extra)
           (hsPkgs.llvm-tf)
           (hsPkgs.tfp)
@@ -56,7 +56,7 @@
       };
       exes = {
         "synthi-llvm-example" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -83,7 +83,7 @@
           ];
         };
         "synthi-llvm-alsa" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -109,7 +109,7 @@
           ];
         };
         "synthi-llvm-jack" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples && flags.jack) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.jack) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.jack)
             (hsPkgs.llvm-extra)
@@ -134,7 +134,7 @@
           ];
         };
         "synthi-llvm-render" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -158,7 +158,7 @@
           ];
         };
         "synthi-llvm-sample" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.gnuplot)
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.synthesizer-core)
@@ -169,7 +169,7 @@
           ];
         };
         "synthi-llvm-speech" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.gnuplot)
             (hsPkgs.filepath)
             (hsPkgs.sox)
@@ -184,7 +184,7 @@
       };
       tests = {
         "synthi-llvm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)

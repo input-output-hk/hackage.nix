@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.picosat)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "picologic" = {
-          depends  = pkgs.lib.optionals (flags.shell) [
+          depends = pkgs.lib.optionals (flags.shell) [
             (hsPkgs.base)
             (hsPkgs.picosat)
             (hsPkgs.containers)

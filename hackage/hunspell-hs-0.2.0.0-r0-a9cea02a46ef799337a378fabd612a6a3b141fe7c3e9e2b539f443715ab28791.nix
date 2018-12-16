@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
         ];
@@ -34,7 +34,7 @@
       };
       tests = {
         "hunspell-hs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hunspell-hs)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "hunspell-hs-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

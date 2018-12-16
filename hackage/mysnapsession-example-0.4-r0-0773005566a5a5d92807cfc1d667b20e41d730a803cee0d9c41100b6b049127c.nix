@@ -26,7 +26,7 @@
     components = {
       exes = {
         "animalgame" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.heist)
@@ -40,7 +40,7 @@
           ];
         };
         "clientcount" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.heist)

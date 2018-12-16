@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "hsbencher-fusion-upload-criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
           ];
         };
         "hsbencher-fusion-upload-csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)

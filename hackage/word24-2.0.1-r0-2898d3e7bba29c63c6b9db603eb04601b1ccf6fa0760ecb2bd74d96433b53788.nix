@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ];
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.word24)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "bench24" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.word24)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.base)
           (hsPkgs.array)
@@ -46,7 +46,7 @@
       };
       exes = {
         "jukebox" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.base)
             (hsPkgs.array)

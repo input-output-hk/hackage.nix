@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hext-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hext)
           ];

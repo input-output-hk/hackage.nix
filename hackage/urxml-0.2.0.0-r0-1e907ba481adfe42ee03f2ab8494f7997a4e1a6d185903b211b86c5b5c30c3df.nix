@@ -26,7 +26,7 @@
     components = {
       exes = {
         "urxml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.mtl)

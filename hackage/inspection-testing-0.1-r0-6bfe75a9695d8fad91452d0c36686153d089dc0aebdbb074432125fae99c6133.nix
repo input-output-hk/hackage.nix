@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.template-haskell)
@@ -34,32 +34,32 @@
       };
       tests = {
         "NS_NP" = {
-          depends  = [
+          depends = [
             (hsPkgs.inspection-testing)
             (hsPkgs.base)
           ];
         };
         "generic-lens" = {
-          depends  = [
+          depends = [
             (hsPkgs.inspection-testing)
             (hsPkgs.base)
             (hsPkgs.generic-lens)
           ];
         };
         "simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.inspection-testing)
             (hsPkgs.base)
           ];
         };
         "fusion" = {
-          depends  = [
+          depends = [
             (hsPkgs.inspection-testing)
             (hsPkgs.base)
           ];
         };
         "text" = {
-          depends  = [
+          depends = [
             (hsPkgs.inspection-testing)
             (hsPkgs.base)
             (hsPkgs.text)

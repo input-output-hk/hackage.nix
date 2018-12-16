@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -40,7 +40,7 @@
       };
       exes = {
         "angle" = {
-          depends  = [
+          depends = [
             (hsPkgs.angle)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -55,7 +55,7 @@
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.angle)
             (hsPkgs.QuickCheck)
@@ -70,21 +70,21 @@
       };
       benchmarks = {
         "parsing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.angle)
           ];
         };
         "scanning" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.angle)
           ];
         };
         "operations" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.angle)

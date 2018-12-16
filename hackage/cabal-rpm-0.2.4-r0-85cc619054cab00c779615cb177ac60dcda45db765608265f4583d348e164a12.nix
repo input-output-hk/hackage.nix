@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-rpm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.filepath)

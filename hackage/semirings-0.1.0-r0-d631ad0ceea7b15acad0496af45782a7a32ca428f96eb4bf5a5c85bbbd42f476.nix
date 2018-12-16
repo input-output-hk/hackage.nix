@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.integer-gmp)
         ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.6.1") ((((((pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0.1") (hsPkgs.coerce-util)) ++ pkgs.lib.optional (flags.constrictor) (hsPkgs.constrictor)) ++ pkgs.lib.optional (flags.containers) (hsPkgs.containers)) ++ pkgs.lib.optional (flags.hashable) (hsPkgs.hashable)) ++ pkgs.lib.optional (flags.hashable && flags.unordered-containers) (hsPkgs.unordered-containers)) ++ pkgs.lib.optional (flags.vector) (hsPkgs.vector));

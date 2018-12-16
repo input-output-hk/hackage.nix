@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.blaze-builder)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.streaming-commons)
             (hsPkgs.hspec)
@@ -63,7 +63,7 @@
       };
       benchmarks = {
         "count-chars" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.bytestring)
@@ -71,7 +71,7 @@
           ];
         };
         "decode-memory-usage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)

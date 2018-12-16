@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc-types)
           (hsPkgs.latex-formulae-image)
@@ -38,7 +38,7 @@
       };
       exes = {
         "latex-formulae-filter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.latex-formulae-pandoc)
             (hsPkgs.pandoc-types)

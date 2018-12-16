@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "http2-client-grpc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http2-client-grpc)
           ];

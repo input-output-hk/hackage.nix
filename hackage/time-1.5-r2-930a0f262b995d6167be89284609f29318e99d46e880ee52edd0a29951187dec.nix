@@ -25,20 +25,20 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
       };
       tests = {
         "ShowDefaultTZAbbreviations" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
           ];
         };
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.time)

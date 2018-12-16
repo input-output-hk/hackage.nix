@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.heap)
         ];
       };
       tests = {
         "median-stream-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.median-stream)
             (hsPkgs.QuickCheck)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cpu)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-siphash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.siphash)
             (hsPkgs.bytestring)

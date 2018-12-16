@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network-transport)
           (hsPkgs.data-accessor)
@@ -38,7 +38,7 @@
       };
       tests = {
         "TestTCP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network-transport-tests)
@@ -48,7 +48,7 @@
           ];
         };
         "TestQC" = {
-          depends  = pkgs.lib.optionals (flags.use-mock-network) [
+          depends = pkgs.lib.optionals (flags.use-mock-network) [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)

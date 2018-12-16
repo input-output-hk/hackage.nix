@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hiccup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)

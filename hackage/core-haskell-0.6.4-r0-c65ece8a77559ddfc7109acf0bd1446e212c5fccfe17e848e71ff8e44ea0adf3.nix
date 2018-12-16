@@ -26,7 +26,7 @@
     components = {
       exes = {
         "core-haskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.hint)

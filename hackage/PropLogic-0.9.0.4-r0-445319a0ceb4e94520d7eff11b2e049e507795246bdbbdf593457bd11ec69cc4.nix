@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.random)
@@ -33,7 +33,7 @@
       };
       exes = {
         "program" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-time)
             (hsPkgs.random)

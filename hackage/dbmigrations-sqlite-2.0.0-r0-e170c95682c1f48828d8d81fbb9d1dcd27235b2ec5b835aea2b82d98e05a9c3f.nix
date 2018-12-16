@@ -26,7 +26,7 @@
     components = {
       exes = {
         "moo-sqlite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbmigrations)
             (hsPkgs.HDBC-sqlite3)
@@ -35,7 +35,7 @@
       };
       tests = {
         "dbmigrations-sqlite-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbmigrations)
             (hsPkgs.HDBC)

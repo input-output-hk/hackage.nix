@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.RepLib)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       tests = {
         "lambda-calculus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.RepLib)
             (hsPkgs.mtl)

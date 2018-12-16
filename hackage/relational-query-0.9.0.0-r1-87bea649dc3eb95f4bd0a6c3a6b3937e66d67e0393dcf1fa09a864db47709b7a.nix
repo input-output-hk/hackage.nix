@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       tests = {
         "sqls" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickcheck-simple)
             (hsPkgs.relational-query)
@@ -55,7 +55,7 @@
           ] ++ pkgs.lib.optional (flags.ghc74-generic) (hsPkgs.ghc-prim);
         };
         "sqlsArrow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickcheck-simple)
             (hsPkgs.relational-query)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pipes)
           (hsPkgs.webex-teams-api)
@@ -33,7 +33,7 @@
       };
       exes = {
         "webex-teams-pipes-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.data-default)
@@ -49,7 +49,7 @@
       };
       tests = {
         "webex-teams-conduit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)

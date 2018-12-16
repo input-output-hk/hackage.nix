@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.vector)
@@ -43,7 +43,7 @@
       };
       exes = {
         "Benchmarks" = {
-          depends  = pkgs.lib.optionals (flags.benchmark) [
+          depends = pkgs.lib.optionals (flags.benchmark) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-api)
@@ -55,7 +55,7 @@
       };
       tests = {
         "test-cryptocipher" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.crypto-api)
             (hsPkgs.cryptocipher)

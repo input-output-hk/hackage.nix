@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.process)
@@ -36,7 +36,7 @@
       };
       exes = {
         "panpipe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.panpipe)
           ];
@@ -44,7 +44,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.panpipe)
             (hsPkgs.QuickCheck)

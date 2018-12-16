@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.markov-chain)
           (hsPkgs.midi)
           (hsPkgs.event-list)
@@ -54,7 +54,7 @@
       };
       exes = {
         "flipsong" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.haskore)
             (hsPkgs.midi)
             (hsPkgs.bytestring)
@@ -62,7 +62,7 @@
           ];
         };
         "autotrack" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.haskore)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -71,7 +71,7 @@
       };
       tests = {
         "test-haskore" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.haskore)

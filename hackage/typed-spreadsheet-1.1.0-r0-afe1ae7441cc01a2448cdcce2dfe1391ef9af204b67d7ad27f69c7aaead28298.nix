@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.diagrams-cairo)
@@ -41,14 +41,14 @@
       };
       exes = {
         "typed-spreadsheet-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.typed-spreadsheet)
           ];
         };
         "typed-spreadsheet-example-graphics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-cairo)
             (hsPkgs.diagrams-lib)

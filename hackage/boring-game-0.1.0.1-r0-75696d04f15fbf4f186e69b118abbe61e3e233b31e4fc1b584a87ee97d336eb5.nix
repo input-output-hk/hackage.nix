@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gloss)
         ];
       };
       exes = {
         "boring-game-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boring-game)
             (hsPkgs.gloss)
@@ -41,7 +41,7 @@
       };
       tests = {
         "boring-game-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boring-game)
           ];

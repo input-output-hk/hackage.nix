@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Crypto)
           (hsPkgs.dataenc)
@@ -40,7 +40,7 @@
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optional (flags.test) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.test) (hsPkgs.HUnit);
         };
       };
     };

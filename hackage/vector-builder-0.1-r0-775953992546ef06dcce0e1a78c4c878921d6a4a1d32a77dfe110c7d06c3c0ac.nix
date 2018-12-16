@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.primitive)
           (hsPkgs.vector)
           (hsPkgs.semigroups)
@@ -35,7 +35,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)

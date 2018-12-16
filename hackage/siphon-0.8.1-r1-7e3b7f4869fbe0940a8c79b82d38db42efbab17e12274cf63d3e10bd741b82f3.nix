@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.colonnade)
           (hsPkgs.text)
@@ -38,14 +38,14 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.siphon)
             (hsPkgs.doctest)
           ];
         };
         "siphon-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.either)
             (hsPkgs.siphon)

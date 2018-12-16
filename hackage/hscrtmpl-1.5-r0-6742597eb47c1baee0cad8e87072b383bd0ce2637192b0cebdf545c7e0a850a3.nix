@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hscrtmpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

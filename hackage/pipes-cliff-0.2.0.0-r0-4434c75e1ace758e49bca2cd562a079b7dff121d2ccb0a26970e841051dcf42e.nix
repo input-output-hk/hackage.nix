@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pipes)
           (hsPkgs.pipes-safe)
@@ -37,7 +37,7 @@
       };
       exes = {
         "numsToLess" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes)
             (hsPkgs.pipes-safe)
@@ -48,7 +48,7 @@
           ];
         };
         "alphaNumbers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes)
             (hsPkgs.pipes-safe)
@@ -59,7 +59,7 @@
           ];
         };
         "limitedAlphaNumbers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes)
             (hsPkgs.pipes-safe)
@@ -70,7 +70,7 @@
           ];
         };
         "alphaNumbersByteString" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes)
             (hsPkgs.pipes-safe)

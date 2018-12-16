@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.array)
@@ -51,7 +51,7 @@
       };
       exes = {
         "xquery" = {
-          depends  = (if compiler.isGhc && compiler.version.lt "6.10"
+          depends = (if compiler.isGhc && compiler.version.lt "6.10"
             then [ (hsPkgs.readline) ]
             else [
               (hsPkgs.editline)

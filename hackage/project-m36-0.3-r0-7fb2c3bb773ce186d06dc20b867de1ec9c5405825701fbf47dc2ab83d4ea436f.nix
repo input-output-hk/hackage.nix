@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
@@ -88,7 +88,7 @@
       };
       exes = {
         "tutd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)
@@ -131,7 +131,7 @@
           ];
         };
         "project-m36-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)
@@ -165,7 +165,7 @@
           ];
         };
         "bigrel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -208,7 +208,7 @@
           ];
         };
         "Example-SimpleClient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -249,7 +249,7 @@
           ];
         };
         "Example-OutOfTheTarpit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -294,7 +294,7 @@
           ];
         };
         "Example-Blog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -342,7 +342,7 @@
           ];
         };
         "Example-Hair" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -387,7 +387,7 @@
           ];
         };
         "project-m36-websocket-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.path-pieces)
@@ -417,7 +417,7 @@
           ];
         };
         "handles" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -462,7 +462,7 @@
       };
       tests = {
         "test-tutoriald" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -501,7 +501,7 @@
           ];
         };
         "test-tutoriald-atomfunctionscript" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.project-m36)
@@ -521,7 +521,7 @@
           ];
         };
         "test-tutoriald-databasecontextfunctionscript" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.project-m36)
@@ -541,7 +541,7 @@
           ];
         };
         "test-relation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -577,7 +577,7 @@
           ];
         };
         "test-static-optimizer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -613,7 +613,7 @@
           ];
         };
         "test-transactiongraph-persist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -651,7 +651,7 @@
           ];
         };
         "test-relation-import-csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -686,7 +686,7 @@
           ];
         };
         "test-tutoriald-import-tutoriald" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -724,7 +724,7 @@
           ];
         };
         "test-relation-export-csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -759,7 +759,7 @@
           ];
         };
         "test-transactiongraph-merge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -802,7 +802,7 @@
           ];
         };
         "test-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -842,7 +842,7 @@
           ];
         };
         "test-scripts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -883,7 +883,7 @@
           ];
         };
         "test-websocket-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -928,7 +928,7 @@
           ];
         };
         "test-isomorphic-schemas" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -969,7 +969,7 @@
           ];
         };
         "test-atomable" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -1013,7 +1013,7 @@
           ];
         };
         "test-multiprocess-access" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -1056,7 +1056,7 @@
           ];
         };
         "test-transactiongraph-automerge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -1100,7 +1100,7 @@
           ];
         };
         "test-tupleable" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -1144,7 +1144,7 @@
           ];
         };
         "test-client-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
@@ -1190,7 +1190,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)

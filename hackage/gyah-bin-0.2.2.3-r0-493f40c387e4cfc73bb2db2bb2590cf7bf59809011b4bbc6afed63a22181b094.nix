@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gyah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GiveYouAHead)
             (hsPkgs.extra)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.iconv)
           (hsPkgs.shelly)
@@ -36,7 +36,7 @@
       };
       tests = {
         "iconv-typed-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.iconv-typed)
           ];

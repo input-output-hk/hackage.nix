@@ -26,7 +26,7 @@
     components = {
       exes = {
         "patronscraper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.HandsomeSoup)

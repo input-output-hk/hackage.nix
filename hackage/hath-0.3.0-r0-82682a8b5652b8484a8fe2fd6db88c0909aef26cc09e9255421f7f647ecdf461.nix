@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.MissingH)
@@ -39,7 +39,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.MissingH)
@@ -50,7 +50,7 @@
           ];
         };
         "shelltests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.MissingH)

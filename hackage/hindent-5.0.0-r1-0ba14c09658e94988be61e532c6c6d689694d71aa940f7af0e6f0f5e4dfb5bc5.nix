@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.haskell-src-exts)
@@ -37,7 +37,7 @@
       };
       exes = {
         "hindent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.text)
@@ -48,7 +48,7 @@
           ];
         };
         "hindent-generate-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.text)
@@ -58,7 +58,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.haskell-src-exts)
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "hindent-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.text)

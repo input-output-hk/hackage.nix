@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.ansi-wl-pprint)
@@ -75,14 +75,14 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.doctest)
           ];
         };
         "nofib-interpreter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
           ];

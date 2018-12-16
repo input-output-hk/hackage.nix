@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.hybrid-vectors)
@@ -37,7 +37,7 @@
       };
       tests = {
         "basicTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.tslib)
             (hsPkgs.base)
             (hsPkgs.lens)
@@ -48,7 +48,7 @@
           ];
         };
         "basicUTimeTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.tslib)
             (hsPkgs.base)
             (hsPkgs.lens)
@@ -59,7 +59,7 @@
           ];
         };
         "periodicTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.tslib)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -69,7 +69,7 @@
           ];
         };
         "utimeTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.tslib)
             (hsPkgs.base)
             (hsPkgs.lens)

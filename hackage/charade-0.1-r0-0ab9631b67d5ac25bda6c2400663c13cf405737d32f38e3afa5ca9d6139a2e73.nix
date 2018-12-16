@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.heist)
           (hsPkgs.xmlhtml)
@@ -33,7 +33,7 @@
       };
       exes = {
         "charade" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.configurator)

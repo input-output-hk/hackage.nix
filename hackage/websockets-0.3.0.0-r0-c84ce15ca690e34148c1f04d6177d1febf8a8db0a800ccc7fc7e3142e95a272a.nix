@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.pureMD5)
           (hsPkgs.network)
           (hsPkgs.base)

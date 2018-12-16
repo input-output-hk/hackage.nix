@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.synthesizer-filter)
           (hsPkgs.synthesizer-core)
           (hsPkgs.haskore)
@@ -46,7 +46,7 @@
       };
       exes = {
         "rendersong" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskore-synthesizer)
             (hsPkgs.synthesizer-core)
             (hsPkgs.utility-ht)

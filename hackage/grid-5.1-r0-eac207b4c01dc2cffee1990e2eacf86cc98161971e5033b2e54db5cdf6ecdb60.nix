@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.cereal)
@@ -34,7 +34,7 @@
       };
       tests = {
         "grid-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.exact-combinatorics)
             (hsPkgs.test-framework-quickcheck2)

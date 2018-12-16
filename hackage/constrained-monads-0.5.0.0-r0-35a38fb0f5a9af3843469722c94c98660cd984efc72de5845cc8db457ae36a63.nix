@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "constrained-monads-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.constrained-monads)
             (hsPkgs.doctest)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.constrained-monads)
             (hsPkgs.criterion)

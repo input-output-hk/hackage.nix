@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.regex)
           (hsPkgs.base)
           (hsPkgs.base-compat)

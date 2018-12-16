@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cubicbezier)
           (hsPkgs.base)
           (hsPkgs.wx)

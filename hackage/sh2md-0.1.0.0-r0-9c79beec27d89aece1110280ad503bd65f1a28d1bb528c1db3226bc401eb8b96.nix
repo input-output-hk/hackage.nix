@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Hclip)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "sh2md" = {
-          depends  = [
+          depends = [
             (hsPkgs.Hclip)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -53,7 +53,7 @@
       };
       tests = {
         "sh2md-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Hclip)
             (hsPkgs.base)
             (hsPkgs.containers)

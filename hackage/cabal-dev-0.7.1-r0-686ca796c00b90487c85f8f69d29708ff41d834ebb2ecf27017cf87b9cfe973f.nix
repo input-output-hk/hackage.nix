@@ -29,13 +29,13 @@
     components = {
       exes = {
         "ghc-pkg-6_8-compat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
           ];
         };
         "cabal-dev-test" = {
-          depends  = pkgs.lib.optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
+          depends = pkgs.lib.optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
             (hsPkgs.MonadRandom)
             (hsPkgs.random)
             (hsPkgs.test-framework)
@@ -50,7 +50,7 @@
           ]) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
         };
         "cabal-dev" = {
-          depends  = pkgs.lib.optionals (!flags.no-cabal-dev) ([
+          depends = pkgs.lib.optionals (!flags.no-cabal-dev) ([
             (hsPkgs.bytestring)
             (hsPkgs.directory)
             (hsPkgs.filepath)

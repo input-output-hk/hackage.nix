@@ -28,13 +28,13 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
         ] ++ [ (hsPkgs.base) ];
       };
       exes = {
         "ansi-wl-pprint-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
           ] ++ [ (hsPkgs.base) ];
         };

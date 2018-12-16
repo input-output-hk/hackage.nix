@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.utf8-string)
@@ -37,7 +37,7 @@
       };
       tests = {
         "pkcs11-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspkcs11)
             (hsPkgs.unix)

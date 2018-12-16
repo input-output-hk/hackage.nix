@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
@@ -33,7 +33,7 @@
       };
       exes = {
         "yaml-union" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

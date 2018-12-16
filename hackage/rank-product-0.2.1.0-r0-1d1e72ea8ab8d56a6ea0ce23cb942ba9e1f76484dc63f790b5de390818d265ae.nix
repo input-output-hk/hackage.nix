@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.random-fu)
@@ -35,7 +35,7 @@
       };
       exes = {
         "rank-product" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-generic)
             (hsPkgs.rank-product)

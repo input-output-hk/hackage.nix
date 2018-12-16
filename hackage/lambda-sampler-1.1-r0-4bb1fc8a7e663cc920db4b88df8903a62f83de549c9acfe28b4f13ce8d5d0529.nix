@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.MonadRandom)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "lambda-sampler-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

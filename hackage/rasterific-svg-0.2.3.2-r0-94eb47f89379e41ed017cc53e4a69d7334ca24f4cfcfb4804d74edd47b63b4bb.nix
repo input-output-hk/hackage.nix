@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       exes = {
         "svgrender" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.directory)

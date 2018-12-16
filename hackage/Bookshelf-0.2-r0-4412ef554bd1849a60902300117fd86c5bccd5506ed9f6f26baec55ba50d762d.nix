@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bookshelf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "test-g4ip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.g4ip)
           ];

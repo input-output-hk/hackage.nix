@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.timerep)
@@ -36,7 +36,7 @@
       };
       tests = {
         "cayene-lpp-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cayene-lpp)
             (hsPkgs.hspec)

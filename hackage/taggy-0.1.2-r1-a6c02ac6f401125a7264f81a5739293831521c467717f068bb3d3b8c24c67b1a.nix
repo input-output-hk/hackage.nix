@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
@@ -37,7 +37,7 @@
       };
       exes = {
         "taggy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)
@@ -47,7 +47,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.blaze-markup)
@@ -60,7 +60,7 @@
           ];
         };
         "integration" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.blaze-markup)
@@ -76,7 +76,7 @@
       };
       benchmarks = {
         "taggytagsoup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)

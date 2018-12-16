@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
       };
       exes = {
         "load-font-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fltkhs)
             (hsPkgs.load-font)

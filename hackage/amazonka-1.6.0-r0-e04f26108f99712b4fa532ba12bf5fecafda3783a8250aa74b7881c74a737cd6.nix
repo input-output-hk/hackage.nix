@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka-core)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka)
             (hsPkgs.base)
             (hsPkgs.tasty)

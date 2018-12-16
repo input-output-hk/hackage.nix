@@ -26,7 +26,7 @@
     components = {
       exes = {
         "billeksah-main-static" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

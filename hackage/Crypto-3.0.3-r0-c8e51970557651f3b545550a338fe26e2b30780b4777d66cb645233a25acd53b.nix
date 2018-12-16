@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.QuickCheck)
@@ -35,7 +35,7 @@
       };
       exes = {
         "BERTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -44,7 +44,7 @@
           ];
         };
         "X509Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -53,7 +53,7 @@
           ];
         };
         "PKCS8Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -62,7 +62,7 @@
           ];
         };
         "AttributeCertificate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -71,7 +71,7 @@
           ];
         };
         "RSAEncryptionExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -80,7 +80,7 @@
           ];
         };
         "RSAVerifyExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -89,7 +89,7 @@
           ];
         };
         "SymmetricTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -98,7 +98,7 @@
           ];
         };
         "RSATest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -107,7 +107,7 @@
           ];
         };
         "QuickTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)

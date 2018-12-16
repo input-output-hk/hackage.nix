@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       exes = {
         "tests" = {
-          depends  = pkgs.lib.optionals (flags.tests) [
+          depends = pkgs.lib.optionals (flags.tests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)

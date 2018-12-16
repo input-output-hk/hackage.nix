@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.math-functions)
           (hsPkgs.monad-loops)
           (hsPkgs.random-shuffle)

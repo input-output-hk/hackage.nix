@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.yesod)
           (hsPkgs.pandoc)
           (hsPkgs.containers)

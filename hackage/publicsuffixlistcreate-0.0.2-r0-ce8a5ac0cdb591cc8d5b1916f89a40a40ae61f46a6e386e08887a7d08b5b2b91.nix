@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.data-default)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-public-suffix-list-create" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.publicsuffixlist)
             (hsPkgs.HUnit)

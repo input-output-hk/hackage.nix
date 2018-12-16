@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basic-prelude)
           (hsPkgs.conduit)
@@ -44,7 +44,7 @@
       };
       exes = {
         "sbp2rtcm3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.binary-conduit)
@@ -55,7 +55,7 @@
           ];
         };
         "rtcm32sbp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.binary-conduit)
@@ -68,7 +68,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)

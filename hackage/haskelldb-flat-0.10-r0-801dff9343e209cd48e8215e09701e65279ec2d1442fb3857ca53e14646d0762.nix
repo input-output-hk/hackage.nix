@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "flatdb-create" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.mtl)

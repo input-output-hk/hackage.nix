@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.log-base)
           (hsPkgs.log-elasticsearch)
@@ -34,7 +34,7 @@
       };
       tests = {
         "log-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bloodhound)
@@ -50,7 +50,7 @@
           ];
         };
         "log-test-integration" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bloodhound)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "log-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ekg)
             (hsPkgs.log)

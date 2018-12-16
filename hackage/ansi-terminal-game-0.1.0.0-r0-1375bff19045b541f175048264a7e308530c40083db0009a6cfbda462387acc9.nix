@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.timers-tick)
@@ -41,7 +41,7 @@
       };
       exes = {
         "alone-in-a-room" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal-game)
           ];
@@ -49,7 +49,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.linebreak)

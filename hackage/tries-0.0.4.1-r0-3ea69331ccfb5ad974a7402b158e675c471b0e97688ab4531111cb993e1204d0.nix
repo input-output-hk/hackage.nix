@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-trie)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tries)
             (hsPkgs.containers)
@@ -59,14 +59,14 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tries)
             (hsPkgs.criterion)
           ];
         };
         "bench-lookup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tries)
             (hsPkgs.criterion)

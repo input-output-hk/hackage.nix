@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.copilot-core)
           (hsPkgs.copilot-language)
@@ -34,7 +34,7 @@
       };
       exes = {
         "copilot-regression" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.copilot-core)
             (hsPkgs.copilot-language)

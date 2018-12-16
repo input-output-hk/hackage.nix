@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.data-accessor)
@@ -52,7 +52,7 @@
       };
       tests = {
         "ExchangeTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -85,7 +85,7 @@
           ];
         };
         "MailboxTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)

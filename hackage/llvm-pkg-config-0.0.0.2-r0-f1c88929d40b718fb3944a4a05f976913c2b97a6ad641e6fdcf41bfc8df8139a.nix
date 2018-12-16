@@ -26,7 +26,7 @@
     components = {
       exes = {
         "llvm-pkg-config" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.process)
             (hsPkgs.explicit-exception)

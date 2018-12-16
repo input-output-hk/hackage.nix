@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod)
           (hsPkgs.yesod-core)
@@ -43,7 +43,7 @@
       };
       exes = {
         "yesod-mangopay" = {
-          depends  = [
+          depends = [
             (hsPkgs.yesod-mangopay)
             (hsPkgs.mangopay)
             (hsPkgs.base)

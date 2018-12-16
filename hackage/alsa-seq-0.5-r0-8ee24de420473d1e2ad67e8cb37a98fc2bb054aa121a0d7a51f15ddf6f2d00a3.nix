@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.alsa-core)
           (hsPkgs.array)
           (hsPkgs.extensible-exceptions)
@@ -37,35 +37,35 @@
       };
       exes = {
         "test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "test2" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "test3" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "test4" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "test5" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.array)
             (hsPkgs.base)

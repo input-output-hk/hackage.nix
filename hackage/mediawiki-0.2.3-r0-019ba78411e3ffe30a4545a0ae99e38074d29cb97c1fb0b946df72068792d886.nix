@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.xml)
           (hsPkgs.HTTP)
           (hsPkgs.network)
@@ -35,10 +35,10 @@
       };
       exes = {
         "main" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "listCat" = {
-          depends  = [
+          depends = [
             (hsPkgs.pretty)
           ] ++ [ (hsPkgs.base) ];
         };

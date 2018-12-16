@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.base)
@@ -75,7 +75,7 @@
       };
       benchmarks = {
         "blaze" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.conduit)

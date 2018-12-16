@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.exceptions)
@@ -40,7 +40,7 @@
       };
       tests = {
         "merging" = {
-          depends  = [
+          depends = [
             (hsPkgs.streaming-concurrency)
             (hsPkgs.base)
             (hsPkgs.bytestring)

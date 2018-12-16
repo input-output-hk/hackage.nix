@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.blaze-html)
@@ -40,7 +40,7 @@
       };
       tests = {
         "yesod-content-pdf-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-content-pdf)
           ];

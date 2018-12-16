@@ -26,7 +26,7 @@
     components = {
       exes = {
         "halberd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.haskell-packages)

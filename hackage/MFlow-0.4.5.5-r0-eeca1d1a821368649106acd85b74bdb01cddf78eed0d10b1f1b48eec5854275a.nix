@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Workflow)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
@@ -62,7 +62,7 @@
       };
       exes = {
         "demos-blaze" = {
-          depends  = [
+          depends = [
             (hsPkgs.MFlow)
             (hsPkgs.RefSerialize)
             (hsPkgs.TCache)

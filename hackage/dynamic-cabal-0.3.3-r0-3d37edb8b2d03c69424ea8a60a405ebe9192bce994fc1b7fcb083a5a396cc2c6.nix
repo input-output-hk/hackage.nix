@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
@@ -41,7 +41,7 @@
       };
       tests = {
         "dynamic-cabal-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dynamic-cabal)
             (hsPkgs.tasty)
@@ -53,7 +53,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

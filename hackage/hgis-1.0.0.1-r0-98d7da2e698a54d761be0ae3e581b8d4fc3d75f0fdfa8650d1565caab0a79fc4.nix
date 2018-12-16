@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.Chart)
           (hsPkgs.lens)
@@ -47,7 +47,7 @@
       };
       tests = {
         "hgis-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgis)
             (hsPkgs.hspec)

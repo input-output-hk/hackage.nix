@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dfsbuild" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)

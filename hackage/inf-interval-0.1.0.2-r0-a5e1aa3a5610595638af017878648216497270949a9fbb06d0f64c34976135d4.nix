@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.deepseq)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       tests = {
         "Interval" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.deepseq)
             (hsPkgs.vector)

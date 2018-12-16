@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Frames)
           (hsPkgs.basic-prelude)
@@ -37,7 +37,7 @@
       };
       tests = {
         "composite-base-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.basic-prelude)

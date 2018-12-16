@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.monads-fd)
           (hsPkgs.enumerator)
         ] ++ (if compiler.isGhc && compiler.version.ge "6.10"

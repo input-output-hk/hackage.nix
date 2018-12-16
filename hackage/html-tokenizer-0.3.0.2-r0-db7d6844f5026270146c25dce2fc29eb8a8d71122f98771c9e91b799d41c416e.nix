@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.conversion)
           (hsPkgs.conversion-text)
           (hsPkgs.conversion-case-insensitive)
@@ -37,7 +37,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.doctest)
             (hsPkgs.directory)
             (hsPkgs.filepath)

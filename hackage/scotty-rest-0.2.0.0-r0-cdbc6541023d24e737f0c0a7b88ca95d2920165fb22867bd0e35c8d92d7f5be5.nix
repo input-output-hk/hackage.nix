@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-prelude)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       exes = {
         "database-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty-rest)
             (hsPkgs.aeson)
@@ -59,7 +59,7 @@
           ];
         };
         "hello-world-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty-rest)
             (hsPkgs.scotty)
@@ -67,7 +67,7 @@
           ];
         };
         "parameters-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty-rest)
             (hsPkgs.scotty)
@@ -76,7 +76,7 @@
           ];
         };
         "mutable-state-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty-rest)
             (hsPkgs.scotty)
@@ -87,7 +87,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)

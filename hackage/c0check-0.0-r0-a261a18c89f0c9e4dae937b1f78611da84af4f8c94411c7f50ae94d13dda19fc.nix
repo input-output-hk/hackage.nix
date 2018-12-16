@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
         ];
       };
       exes = {
         "c0check" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.c0check)
           ];

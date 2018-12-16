@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.mysql-simple)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-qq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.haskell-src-meta)

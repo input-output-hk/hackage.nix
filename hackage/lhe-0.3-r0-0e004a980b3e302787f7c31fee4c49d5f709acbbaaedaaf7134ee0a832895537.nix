@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell2010)
           (hsPkgs.HaXml)
           (hsPkgs.bytestring)

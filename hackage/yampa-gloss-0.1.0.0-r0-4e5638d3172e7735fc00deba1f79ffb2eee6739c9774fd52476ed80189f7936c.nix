@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gloss)
           (hsPkgs.Yampa)
@@ -33,7 +33,7 @@
       };
       exes = {
         "yampa-examples-gloss-rotatingcolor" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.Yampa)

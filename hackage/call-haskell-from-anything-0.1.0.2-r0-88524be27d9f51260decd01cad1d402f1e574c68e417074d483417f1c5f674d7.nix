@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.msgpack)
@@ -36,7 +36,7 @@
       };
       exes = {
         "call-haskell-from-anything.so" = {
-          depends  = [
+          depends = [
             (hsPkgs.call-haskell-from-anything)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpack" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -41,7 +41,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.base-compat)

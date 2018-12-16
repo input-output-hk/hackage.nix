@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.atom)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "copilot-c99-qc" = {
-          depends  = [
+          depends = [
             (hsPkgs.atom)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.monadLib)
@@ -37,7 +37,7 @@
       };
       exes = {
         "verilog-gt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.verilog)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.conduit-parse)
@@ -46,7 +46,7 @@
       };
       tests = {
         "Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.atom-conduit)
             (hsPkgs.base)
             (hsPkgs.conduit)

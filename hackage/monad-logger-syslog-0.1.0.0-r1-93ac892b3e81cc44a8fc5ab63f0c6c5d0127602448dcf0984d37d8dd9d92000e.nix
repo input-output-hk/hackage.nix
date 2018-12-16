@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-logger)
           (hsPkgs.fast-logger)
@@ -37,7 +37,7 @@
       };
       tests = {
         "smoke" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monad-logger)
             (hsPkgs.monad-logger-syslog)

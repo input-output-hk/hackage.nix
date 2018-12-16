@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tpb" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
@@ -49,7 +49,7 @@
           ];
         };
         "pb-notify" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

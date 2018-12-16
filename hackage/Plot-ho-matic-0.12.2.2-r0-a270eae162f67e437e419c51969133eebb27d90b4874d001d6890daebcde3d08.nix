@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cairo)
@@ -47,14 +47,14 @@
       };
       exes = {
         "plot-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Plot-ho-matic)
             (hsPkgs.containers)
           ];
         };
         "set-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Plot-ho-matic)
             (hsPkgs.generic-accessors)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       exes = {
         "dhall-hpack-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -64,7 +64,7 @@
           ];
         };
         "dhall-hpack-dhall" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -84,7 +84,7 @@
           ];
         };
         "dhall-hpack-json" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -104,7 +104,7 @@
           ];
         };
         "dhall-hpack-yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -126,7 +126,7 @@
       };
       tests = {
         "golden" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.Diff)
             (hsPkgs.aeson)

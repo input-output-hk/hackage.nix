@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.cborg)
@@ -43,7 +43,7 @@
       };
       exes = {
         "hakyll-dhall-test-app" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall)
             (hsPkgs.hakyll)

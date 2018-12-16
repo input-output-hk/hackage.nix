@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monads-tf)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-x86-64bit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monads-tf)
             (hsPkgs.vector)

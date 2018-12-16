@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((([
+        depends = (((((([
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.annotated-wl-pprint)
@@ -86,7 +86,7 @@
       };
       exes = {
         "idris" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -96,7 +96,7 @@
           ];
         };
         "idris-codegen-c" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -105,7 +105,7 @@
           ];
         };
         "idris-codegen-javascript" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -114,7 +114,7 @@
           ];
         };
         "idris-codegen-node" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -125,7 +125,7 @@
       };
       tests = {
         "regression-and-sanity-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.containers)

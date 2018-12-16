@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shplit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
           ];

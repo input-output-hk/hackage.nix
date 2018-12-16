@@ -50,7 +50,7 @@
     components = {
       exes = {
         "git-annex" = {
-          depends  = ((((((((((((((((((([
+          depends = ((((((((((((((((((([
             (hsPkgs.base)
             (hsPkgs.cryptohash)
             (hsPkgs.containers)

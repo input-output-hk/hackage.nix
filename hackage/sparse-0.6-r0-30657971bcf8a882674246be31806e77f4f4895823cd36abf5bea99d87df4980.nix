@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.contravariant)
           (hsPkgs.deepseq)
@@ -44,7 +44,7 @@
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hybrid-vectors)
@@ -60,7 +60,7 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -76,7 +76,7 @@
       };
       benchmarks = {
         "mm" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.criterion)

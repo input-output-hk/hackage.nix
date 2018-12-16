@@ -38,7 +38,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.profunctors)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -74,13 +74,13 @@
       };
       tests = {
         "templates" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-templates)) [
+          depends = pkgs.lib.optionals (!(!flags.test-templates)) [
             (hsPkgs.base)
             (hsPkgs.lens)
           ];
         };
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.QuickCheck)
@@ -91,7 +91,7 @@
           ];
         };
         "hunit" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hunit)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hunit)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -103,7 +103,7 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -123,7 +123,7 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -131,7 +131,7 @@
       };
       benchmarks = {
         "plated" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad)
             (hsPkgs.criterion)
@@ -142,7 +142,7 @@
           ] ++ pkgs.lib.optional (flags.benchmark-uniplate) (hsPkgs.uniplate);
         };
         "alongside" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad)
             (hsPkgs.criterion)
@@ -152,7 +152,7 @@
           ];
         };
         "folds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.containers)
@@ -163,7 +163,7 @@
           ];
         };
         "traversals" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.containers)
@@ -175,7 +175,7 @@
           ];
         };
         "unsafe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad)
             (hsPkgs.criterion)

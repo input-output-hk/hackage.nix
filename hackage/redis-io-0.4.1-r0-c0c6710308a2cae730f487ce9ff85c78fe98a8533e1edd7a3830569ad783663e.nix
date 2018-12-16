@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.auto-update)
           (hsPkgs.base)
@@ -46,7 +46,7 @@
       };
       tests = {
         "redis-io-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -63,7 +63,7 @@
       };
       benchmarks = {
         "redis-io-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

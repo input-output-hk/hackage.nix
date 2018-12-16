@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.comark-syntax)
@@ -34,7 +34,7 @@
       };
       exes = {
         "comark-html-profile" = {
-          depends  = pkgs.lib.optionals (flags.profile) [
+          depends = pkgs.lib.optionals (flags.profile) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.comark-html)
@@ -47,7 +47,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comark-html)
             (hsPkgs.comark-testutils)
@@ -57,7 +57,7 @@
       };
       benchmarks = {
         "progit-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.text)

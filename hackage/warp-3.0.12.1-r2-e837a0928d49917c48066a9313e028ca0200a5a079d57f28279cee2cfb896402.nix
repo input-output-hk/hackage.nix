@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.auto-update)
@@ -73,13 +73,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.auto-update)
@@ -122,7 +122,7 @@
       };
       benchmarks = {
         "parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

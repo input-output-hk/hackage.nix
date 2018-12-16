@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hfractal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.gd)

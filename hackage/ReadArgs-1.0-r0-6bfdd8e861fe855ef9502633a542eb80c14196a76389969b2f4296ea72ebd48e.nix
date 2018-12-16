@@ -25,16 +25,16 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "ReadArgsEx" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
       tests = {
         "ReadArgsSpec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.base)
           ];

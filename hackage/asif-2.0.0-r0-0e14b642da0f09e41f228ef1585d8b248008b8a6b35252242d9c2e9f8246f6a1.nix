@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -51,7 +51,7 @@
       };
       exes = {
         "asif" = {
-          depends  = [
+          depends = [
             (hsPkgs.asif)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -81,7 +81,7 @@
       };
       tests = {
         "asif-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.arbor-ip)
             (hsPkgs.asif)
             (hsPkgs.attoparsec)

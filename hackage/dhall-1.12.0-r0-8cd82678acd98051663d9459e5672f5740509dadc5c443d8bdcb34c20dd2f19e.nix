@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base16-bytestring)
@@ -56,7 +56,7 @@
       };
       exes = {
         "dhall" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.dhall)
@@ -68,7 +68,7 @@
           ];
         };
         "dhall-repl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.dhall)
@@ -82,7 +82,7 @@
           ];
         };
         "dhall-format" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.dhall)
@@ -94,7 +94,7 @@
           ];
         };
         "dhall-hash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall)
             (hsPkgs.optparse-generic)
@@ -105,7 +105,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.dhall)

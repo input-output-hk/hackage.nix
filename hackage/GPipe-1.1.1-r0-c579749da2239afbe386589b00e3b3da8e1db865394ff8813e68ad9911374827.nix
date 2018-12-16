@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Boolean)
           (hsPkgs.GLUT)
           (hsPkgs.OpenGL)

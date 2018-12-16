@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-autoscaling)
@@ -72,7 +72,7 @@
       };
       exes = {
         "groot" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-autoscaling)
@@ -114,7 +114,7 @@
       };
       tests = {
         "groot-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.amazonka)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.deepseq)
@@ -36,7 +36,7 @@
       };
       tests = {
         "matrix-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.matrix)
             (hsPkgs.tasty)
@@ -45,7 +45,7 @@
           ];
         };
         "matrix-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.matrix)
           ];
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "matrix-mult" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.matrix)
             (hsPkgs.criterion)

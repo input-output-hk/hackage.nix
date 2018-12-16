@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "ghc-parmake" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc-parmake)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -51,7 +51,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

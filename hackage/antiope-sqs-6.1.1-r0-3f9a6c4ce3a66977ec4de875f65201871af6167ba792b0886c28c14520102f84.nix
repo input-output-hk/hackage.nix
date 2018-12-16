@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
@@ -45,7 +45,7 @@
       };
       tests = {
         "antiope-sqs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-core)

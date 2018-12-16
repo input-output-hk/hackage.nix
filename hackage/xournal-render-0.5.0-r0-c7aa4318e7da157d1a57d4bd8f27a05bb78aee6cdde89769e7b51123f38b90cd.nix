@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.poppler
+        depends = if flags.poppler
           then [
             (hsPkgs.base)
             (hsPkgs.mtl)

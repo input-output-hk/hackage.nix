@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.grid)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.halma)
             (hsPkgs.grid)
             (hsPkgs.HUnit)

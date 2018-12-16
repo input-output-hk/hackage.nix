@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       exes = {
         "blosum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blosum)
             (hsPkgs.containers)

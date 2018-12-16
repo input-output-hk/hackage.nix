@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.cereal)
@@ -39,7 +39,7 @@
       };
       tests = {
         "main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.identifiers)
             (hsPkgs.QuickCheck)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "identifiers-hashable" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.binary)
@@ -62,7 +62,7 @@
           ];
         };
         "identifiers-listlike" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.binary)

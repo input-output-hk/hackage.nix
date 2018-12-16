@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tls)
           (hsPkgs.mtl)
@@ -45,28 +45,28 @@
       };
       exes = {
         "stunnel" = {
-          depends  = pkgs.lib.optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs.network)
             (hsPkgs.cmdargs)
             (hsPkgs.cprng-aes)
           ];
         };
         "checkciphers" = {
-          depends  = pkgs.lib.optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs.network)
             (hsPkgs.cmdargs)
             (hsPkgs.cprng-aes)
           ];
         };
         "retrievecertificate" = {
-          depends  = pkgs.lib.optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs.network)
             (hsPkgs.cmdargs)
             (hsPkgs.cprng-aes)
           ];
         };
         "Tests" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

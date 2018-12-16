@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "backdropper_consol" = {
-          depends  = [
+          depends = [
             (hsPkgs.hslogger)
           ] ++ (if flags.small_base
             then [

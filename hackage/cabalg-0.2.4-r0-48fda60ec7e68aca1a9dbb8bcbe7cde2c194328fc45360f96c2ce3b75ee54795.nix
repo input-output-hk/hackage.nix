@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.directory)
@@ -34,7 +34,7 @@
       };
       exes = {
         "cabalg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabalg)
             (hsPkgs.directory)

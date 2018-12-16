@@ -26,7 +26,7 @@
     components = {
       exes = {
         "greenclip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.exceptions)

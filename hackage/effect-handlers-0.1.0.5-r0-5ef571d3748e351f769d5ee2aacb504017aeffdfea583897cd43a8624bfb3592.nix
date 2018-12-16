@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.free)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.effect-handlers)
             (hsPkgs.hspec)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "benchm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.effect-handlers)
             (hsPkgs.criterion)

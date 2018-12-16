@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "dataurl-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.dataurl)
             (hsPkgs.HTF)
             (hsPkgs.base)

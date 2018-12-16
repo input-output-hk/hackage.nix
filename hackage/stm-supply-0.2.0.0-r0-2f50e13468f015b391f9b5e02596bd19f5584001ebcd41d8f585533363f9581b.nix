@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.concurrent-supply)
         ];
       };
       tests = {
         "stm-supply-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm-supply)
             (hsPkgs.async)

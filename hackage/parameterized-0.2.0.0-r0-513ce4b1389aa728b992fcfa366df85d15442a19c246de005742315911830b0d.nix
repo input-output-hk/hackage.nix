@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-diverse)
           (hsPkgs.transformers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "parameterized-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parameterized)
             (hsPkgs.hspec)

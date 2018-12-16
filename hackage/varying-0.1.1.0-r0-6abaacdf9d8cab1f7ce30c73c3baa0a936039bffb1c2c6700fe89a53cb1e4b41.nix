@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
         ];
       };
       exes = {
         "varying-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
           ];

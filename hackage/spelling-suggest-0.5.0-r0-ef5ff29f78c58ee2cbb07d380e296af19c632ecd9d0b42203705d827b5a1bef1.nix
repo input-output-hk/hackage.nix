@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.edit-distance)
           (hsPkgs.phonetic-code)
@@ -34,7 +34,7 @@
       };
       exes = {
         "thimk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parseargs)
             (hsPkgs.edit-distance)
@@ -43,7 +43,7 @@
           ];
         };
         "thimk-makedb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parseargs)
             (hsPkgs.phonetic-code)

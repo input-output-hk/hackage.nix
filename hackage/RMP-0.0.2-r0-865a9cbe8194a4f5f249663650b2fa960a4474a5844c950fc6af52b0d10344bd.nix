@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.allocated-processor)
         ];
@@ -37,7 +37,7 @@
       };
       exes = {
         "rmp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.allocated-processor)
           ];
@@ -48,7 +48,7 @@
           ];
         };
         "rmp-test-facedetect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.allocated-processor)
             (hsPkgs.cv-combinators)

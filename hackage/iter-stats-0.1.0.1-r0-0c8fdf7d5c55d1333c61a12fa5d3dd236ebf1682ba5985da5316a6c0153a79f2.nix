@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.heap)
           (hsPkgs.iteratee)
@@ -35,7 +35,7 @@
       };
       tests = {
         "iter-stats-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.statistics)
             (hsPkgs.test-framework)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.http-server)
           (hsPkgs.HTTP)
           (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.exceptions)
@@ -40,7 +40,7 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fraxl)
             (hsPkgs.transformers)
@@ -48,7 +48,7 @@
           ];
         };
         "monadbench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fraxl)
             (hsPkgs.time)

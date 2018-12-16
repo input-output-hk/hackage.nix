@@ -26,7 +26,7 @@
     components = {
       exes = {
         "astview" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.bytestring)

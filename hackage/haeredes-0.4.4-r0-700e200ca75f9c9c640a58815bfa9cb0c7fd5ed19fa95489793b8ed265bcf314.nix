@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haeredes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
@@ -39,7 +39,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filemanip)

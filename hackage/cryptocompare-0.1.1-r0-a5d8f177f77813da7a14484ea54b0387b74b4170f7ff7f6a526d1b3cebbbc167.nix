@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.text)
@@ -42,7 +42,7 @@
       };
       tests = {
         "cryptocompare-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cryptocompare)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -47,7 +47,7 @@
       };
       tests = {
         "binary-ext-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

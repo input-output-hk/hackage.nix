@@ -29,7 +29,7 @@
     components = {
       exes = {
         "c2hs" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.language-c)
@@ -49,7 +49,7 @@
             ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.fail);
         };
         "regression-suite" = {
-          depends  = pkgs.lib.optionals (flags.regression) [
+          depends = pkgs.lib.optionals (flags.regression) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.shelly)
@@ -60,7 +60,7 @@
       };
       tests = {
         "test-bugs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.test-framework)
@@ -75,7 +75,7 @@
           ];
         };
         "test-system" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

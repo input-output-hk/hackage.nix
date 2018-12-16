@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       exes = {
         "client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.either)
             (hsPkgs.haskell-kubernetes)
@@ -62,7 +62,7 @@
           ];
         };
         "server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-kubernetes)
             (hsPkgs.servant-server)

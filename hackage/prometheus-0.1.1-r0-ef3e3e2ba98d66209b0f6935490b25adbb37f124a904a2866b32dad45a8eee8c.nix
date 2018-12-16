@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.atomic-primops)
           (hsPkgs.base)
           (hsPkgs.bytestring)

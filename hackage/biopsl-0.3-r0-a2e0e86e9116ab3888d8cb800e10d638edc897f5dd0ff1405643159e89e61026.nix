@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.biocore)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       exes = {
         "psluniq" = {};
         "pslfilter" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
         "pslcov" = {};
       };

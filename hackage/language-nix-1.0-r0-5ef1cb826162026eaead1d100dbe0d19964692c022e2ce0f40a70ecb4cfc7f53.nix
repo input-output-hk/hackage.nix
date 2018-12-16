@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.transformers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "parse-nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-nix)
             (hsPkgs.parsec)
@@ -47,7 +47,7 @@
           ];
         };
         "run-nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-nix)
             (hsPkgs.parsec)
@@ -60,7 +60,7 @@
       };
       tests = {
         "self-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-nix)
             (hsPkgs.parsec)

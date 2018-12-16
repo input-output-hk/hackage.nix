@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.attoparsec)
@@ -33,7 +33,7 @@
       };
       exes = {
         "unicoder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-unicoder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)

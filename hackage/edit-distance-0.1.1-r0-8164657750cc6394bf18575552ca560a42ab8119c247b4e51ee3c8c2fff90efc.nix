@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.splitbase
+        depends = if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.array)
@@ -40,7 +40,7 @@
       };
       exes = {
         "edit-distance-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.test-framework)
             (hsPkgs.QuickCheck)
           ] ++ (if flags.splitbase
@@ -52,7 +52,7 @@
             else [ (hsPkgs.base) ]);
         };
         "edit-distance-benchmark" = {
-          depends  = if flags.splitbase
+          depends = if flags.splitbase
             then [
               (hsPkgs.base)
               (hsPkgs.array)

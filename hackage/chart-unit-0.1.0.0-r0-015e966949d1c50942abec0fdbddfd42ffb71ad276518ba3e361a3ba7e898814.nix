@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.colour)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod)
           (hsPkgs.text)
@@ -45,7 +45,7 @@
       };
       exes = {
         "informative-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
             (hsPkgs.text)

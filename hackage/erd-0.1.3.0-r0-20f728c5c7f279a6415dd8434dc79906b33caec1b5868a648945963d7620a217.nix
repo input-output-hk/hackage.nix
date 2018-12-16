@@ -26,7 +26,7 @@
     components = {
       exes = {
         "erd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graphviz)
             (hsPkgs.text)

@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ((pkgs.lib.optional (flags.syb-with-class) (hsPkgs.syb-with-class) ++ pkgs.lib.optional (flags.simple-generics) (hsPkgs.syb)) ++ pkgs.lib.optionals (flags.quasi-quotation) [
+        depends = ((pkgs.lib.optional (flags.syb-with-class) (hsPkgs.syb-with-class) ++ pkgs.lib.optional (flags.simple-generics) (hsPkgs.syb)) ++ pkgs.lib.optionals (flags.quasi-quotation) [
           (hsPkgs.template-haskell)
           (hsPkgs.syb)
           (hsPkgs.mtl)

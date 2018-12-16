@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nlp-scores)
             (hsPkgs.text)
@@ -35,7 +35,7 @@
           ];
         };
         "mean" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nlp-scores)
             (hsPkgs.text)

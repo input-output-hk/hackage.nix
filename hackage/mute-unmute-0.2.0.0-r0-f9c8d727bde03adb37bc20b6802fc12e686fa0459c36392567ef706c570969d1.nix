@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mute-unmute" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.mtl)

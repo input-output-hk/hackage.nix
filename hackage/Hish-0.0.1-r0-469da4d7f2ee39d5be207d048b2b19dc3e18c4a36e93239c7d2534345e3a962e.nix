@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.MissingH)
           (hsPkgs.process)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MissingH)
             (hsPkgs.process)

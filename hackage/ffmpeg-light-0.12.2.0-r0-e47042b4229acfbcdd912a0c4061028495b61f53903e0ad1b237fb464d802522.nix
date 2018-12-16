@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.either)
           (hsPkgs.exceptions)
@@ -53,7 +53,7 @@
       };
       exes = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.mtl)
@@ -65,7 +65,7 @@
           ];
         };
         "raster" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.mtl)
@@ -77,7 +77,7 @@
           ];
         };
         "vplay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
@@ -90,7 +90,7 @@
           ];
         };
         "transcode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.JuicyPixels)
           ] ++ pkgs.lib.optional (flags.buildtranscodedemo) (hsPkgs.ffmpeg-light);

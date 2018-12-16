@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.Shellac)
         ] ++ pkgs.lib.optional (flags.useeditline) (hsPkgs.Shellac-editline)) ++ pkgs.lib.optional (!flags.useeditline && flags.usereadline) (hsPkgs.Shellac-readline)) ++ pkgs.lib.optional (!flags.useeditline && !flags.usereadline) (hsPkgs.DependencyResolutionFailure);

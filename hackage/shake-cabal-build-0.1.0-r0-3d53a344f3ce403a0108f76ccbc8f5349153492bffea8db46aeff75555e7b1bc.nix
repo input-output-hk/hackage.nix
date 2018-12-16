@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shake-cabal-build" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.bytestring-lexing)
         ] ++ (if flags.split-base
           then [ (hsPkgs.base) ]

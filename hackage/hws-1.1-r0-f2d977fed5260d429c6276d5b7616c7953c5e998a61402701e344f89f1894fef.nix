@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hws" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.network)

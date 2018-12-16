@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bits-extra)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       tests = {
         "hw-simd-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.bytestring)
@@ -73,7 +73,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.bytestring)

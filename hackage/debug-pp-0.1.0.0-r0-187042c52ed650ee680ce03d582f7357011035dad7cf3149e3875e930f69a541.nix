@@ -26,7 +26,7 @@
     components = {
       exes = {
         "debug-pp" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

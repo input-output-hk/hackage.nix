@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.parsec)
@@ -33,7 +33,7 @@
       };
       exes = {
         "simple-expression" = {
-          depends  = pkgs.lib.optional (!(!flags.examples)) (hsPkgs.parsec);
+          depends = pkgs.lib.optional (!(!flags.examples)) (hsPkgs.parsec);
         };
       };
     };

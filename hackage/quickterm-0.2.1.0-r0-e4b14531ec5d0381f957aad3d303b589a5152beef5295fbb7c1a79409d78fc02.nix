@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.edit-distance)
           (hsPkgs.hashmap)
           (hsPkgs.base)
@@ -38,7 +38,7 @@
       };
       exes = {
         "qt-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickterm)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc)
           (hsPkgs.base)
           (hsPkgs.filepath)
@@ -39,7 +39,7 @@
         "diffLDIF" = {};
         "ldif2html" = {};
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
           ];

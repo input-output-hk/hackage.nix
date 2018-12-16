@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.time)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.hpp)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -49,7 +49,7 @@
       };
       tests = {
         "aslib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hpp)
             (hsPkgs.transformers)

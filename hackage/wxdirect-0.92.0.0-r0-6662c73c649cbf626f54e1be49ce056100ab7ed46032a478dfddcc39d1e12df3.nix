@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "wxdirect" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.parsec)
             (hsPkgs.strict)

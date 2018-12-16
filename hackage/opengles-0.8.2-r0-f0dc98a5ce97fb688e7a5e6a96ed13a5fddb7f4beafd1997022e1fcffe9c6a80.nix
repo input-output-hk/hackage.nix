@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.bytestring)
@@ -64,7 +64,7 @@
       };
       exes = {
         "windmill" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opengles)
             (hsPkgs.random)
@@ -75,7 +75,7 @@
           ];
         };
         "glsl-sandbox-player" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opengles)
             (hsPkgs.GLFW-b)
@@ -87,7 +87,7 @@
       };
       tests = {
         "opengles-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opengles)
           ];

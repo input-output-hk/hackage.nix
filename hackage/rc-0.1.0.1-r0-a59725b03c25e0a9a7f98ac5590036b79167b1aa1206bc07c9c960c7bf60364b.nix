@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Learning)
           (hsPkgs.base)
           (hsPkgs.dde)
@@ -36,7 +36,7 @@
       };
       exes = {
         "ntc" = {
-          depends  = [
+          depends = [
             (hsPkgs.Learning)
             (hsPkgs.base)
             (hsPkgs.dde)
@@ -49,7 +49,7 @@
       };
       tests = {
         "rc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Learning)
             (hsPkgs.base)
             (hsPkgs.dde)

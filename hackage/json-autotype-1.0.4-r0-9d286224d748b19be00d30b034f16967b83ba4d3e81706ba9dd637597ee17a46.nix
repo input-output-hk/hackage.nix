@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GenericPretty)
           (hsPkgs.aeson)
@@ -48,7 +48,7 @@
       };
       exes = {
         "json-autotype" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GenericPretty)
             (hsPkgs.aeson)
@@ -72,7 +72,7 @@
       };
       tests = {
         "json-autotype-qc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GenericPretty)
             (hsPkgs.aeson)
@@ -95,7 +95,7 @@
           ];
         };
         "json-autotype-random-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GenericPretty)
             (hsPkgs.aeson)

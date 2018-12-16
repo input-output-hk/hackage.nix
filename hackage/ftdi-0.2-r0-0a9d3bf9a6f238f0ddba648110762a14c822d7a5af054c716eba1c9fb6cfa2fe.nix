@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.derive)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)

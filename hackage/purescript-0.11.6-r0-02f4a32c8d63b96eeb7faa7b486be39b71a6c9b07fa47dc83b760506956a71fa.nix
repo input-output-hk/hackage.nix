@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-better-errors)
           (hsPkgs.ansi-terminal)
@@ -84,7 +84,7 @@
       };
       exes = {
         "purs" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-better-errors)
             (hsPkgs.ansi-terminal)
@@ -153,7 +153,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-better-errors)
             (hsPkgs.ansi-terminal)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.amqp)
           (hsPkgs.cereal)
@@ -47,7 +47,7 @@
       };
       tests = {
         "amqp-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-amqp)
@@ -58,7 +58,7 @@
           ];
         };
         "api-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-amqp)

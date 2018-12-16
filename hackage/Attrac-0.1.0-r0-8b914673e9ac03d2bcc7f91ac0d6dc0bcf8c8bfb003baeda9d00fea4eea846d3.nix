@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Attrac" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.OpenGL)

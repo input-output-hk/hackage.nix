@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mangopay)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "yesod-mangopay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.http-conduit)

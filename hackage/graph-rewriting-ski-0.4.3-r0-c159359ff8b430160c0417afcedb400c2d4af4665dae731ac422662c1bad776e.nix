@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.graph-rewriting)
@@ -39,7 +39,7 @@
       };
       exes = {
         "ski" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.graph-rewriting)

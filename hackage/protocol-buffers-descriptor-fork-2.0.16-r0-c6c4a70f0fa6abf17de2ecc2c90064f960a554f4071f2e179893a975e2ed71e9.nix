@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.protocol-buffers-fork)
           (hsPkgs.bytestring)
           (hsPkgs.containers)

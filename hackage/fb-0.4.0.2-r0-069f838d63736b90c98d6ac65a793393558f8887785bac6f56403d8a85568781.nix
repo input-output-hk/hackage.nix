@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lifted-base)
           (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lifted-base)
             (hsPkgs.transformers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ngrams" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.HCL)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.singletons)
         ];
       };
       tests = {
         "travel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.units)
           ];

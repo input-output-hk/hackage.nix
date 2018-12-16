@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = (pkgs.lib.optionals (system.isWindows) [
           (pkgs."stdc++")
           (pkgs."ole32")

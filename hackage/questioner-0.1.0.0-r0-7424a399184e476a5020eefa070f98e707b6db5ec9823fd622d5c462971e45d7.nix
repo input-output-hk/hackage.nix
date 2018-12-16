@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.terminal-size)
@@ -34,25 +34,25 @@
       };
       exes = {
         "questioner-list-prompt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.questioner)
           ];
         };
         "questioner-checkbox-prompt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.questioner)
           ];
         };
         "questioner-spinner" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.questioner)
           ];
         };
         "questioner-progressbar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.questioner)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.containers)
@@ -34,7 +34,7 @@
       };
       exes = {
         "blubber-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blubber-server)
             (hsPkgs.Cabal)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.QuickCheck)
           (hsPkgs.storable-record)
@@ -43,13 +43,13 @@
       };
       exes = {
         "numeric-prelude-demo" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.numeric-prelude)
             (hsPkgs.base)
           ];
         };
         "numeric-prelude-gaussian" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.gnuplot)
             (hsPkgs.HTam)
             (hsPkgs.numeric-prelude)
@@ -61,7 +61,7 @@
       };
       tests = {
         "numeric-prelude-test" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.HUnit)
             (hsPkgs.numeric-prelude)
             (hsPkgs.QuickCheck)

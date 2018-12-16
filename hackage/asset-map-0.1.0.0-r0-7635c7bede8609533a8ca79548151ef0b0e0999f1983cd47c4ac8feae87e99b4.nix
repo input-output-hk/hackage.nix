@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "aeson-asset-map-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.asset-map)
             (hsPkgs.hspec)

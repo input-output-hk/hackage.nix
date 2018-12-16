@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
           (hsPkgs.zlib)
@@ -33,7 +33,7 @@
       };
       tests = {
         "smoke" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlibgit2)
             (hsPkgs.process)

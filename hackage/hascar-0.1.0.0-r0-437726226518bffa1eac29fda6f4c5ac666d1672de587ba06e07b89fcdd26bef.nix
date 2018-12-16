@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.attoparsec)
@@ -43,7 +43,7 @@
       };
       exes = {
         "hascar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.binary)
@@ -62,7 +62,7 @@
       };
       tests = {
         "hascar-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.conduit)

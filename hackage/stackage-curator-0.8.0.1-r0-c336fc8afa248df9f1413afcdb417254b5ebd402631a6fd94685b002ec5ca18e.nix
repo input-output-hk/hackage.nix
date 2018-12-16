@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.Cabal)
@@ -66,7 +66,7 @@
       };
       exes = {
         "stackage-curator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-curator)
             (hsPkgs.optparse-applicative)
@@ -82,7 +82,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-curator)
             (hsPkgs.hspec)

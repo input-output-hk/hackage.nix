@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghci)
@@ -34,7 +34,7 @@
       };
       tests = {
         "ids-concrete" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghci)
@@ -46,7 +46,7 @@
           ];
         };
         "ids-handwritten" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghci)
@@ -58,7 +58,7 @@
           ];
         };
         "ids-newtype" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghci)
@@ -70,7 +70,7 @@
           ];
         };
         "ids-parametrised-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghci)
@@ -82,7 +82,7 @@
           ];
         };
         "ids-typesynonym" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghci)
@@ -96,7 +96,7 @@
       };
       benchmarks = {
         "plugin-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.criterion)

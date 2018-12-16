@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.deepseq)
@@ -34,7 +34,7 @@
       };
       tests = {
         "semver-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semver)
             (hsPkgs.tasty)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "semver-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.semver)

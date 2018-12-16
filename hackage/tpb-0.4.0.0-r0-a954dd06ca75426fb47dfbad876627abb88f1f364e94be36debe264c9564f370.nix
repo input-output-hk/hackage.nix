@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tpb" = {
-          depends  = [
+          depends = [
             (hsPkgs.pushbullet-types)
             (hsPkgs.servant-pushbullet-client)
             (hsPkgs.aeson)
@@ -49,7 +49,7 @@
           ];
         };
         "pb-notify" = {
-          depends  = [
+          depends = [
             (hsPkgs.pushbullet-types)
             (hsPkgs.servant-pushbullet-client)
             (hsPkgs.aeson)

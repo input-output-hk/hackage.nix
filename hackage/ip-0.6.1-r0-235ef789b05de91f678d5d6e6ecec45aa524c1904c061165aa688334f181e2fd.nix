@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.aeson)
@@ -36,7 +36,7 @@
       };
       tests = {
         "ip-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ip)
             (hsPkgs.test-framework)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ip)
             (hsPkgs.criterion)

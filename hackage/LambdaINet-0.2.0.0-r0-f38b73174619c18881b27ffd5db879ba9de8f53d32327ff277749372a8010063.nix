@@ -26,7 +26,7 @@
     components = {
       exes = {
         "LambdaINet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLFW)

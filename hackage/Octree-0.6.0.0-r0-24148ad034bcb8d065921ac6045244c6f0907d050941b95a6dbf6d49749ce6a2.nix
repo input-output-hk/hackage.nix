@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.lens)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test_Octree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.QuickCheck)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "bench-octree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.ghc-prim)

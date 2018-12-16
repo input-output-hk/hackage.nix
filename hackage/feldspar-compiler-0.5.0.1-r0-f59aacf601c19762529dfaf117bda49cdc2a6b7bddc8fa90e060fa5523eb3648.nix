@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.feldspar-language)
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
@@ -42,7 +42,7 @@
       };
       exes = {
         "feldspar" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
           ];
         };

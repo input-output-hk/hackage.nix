@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -36,7 +36,7 @@
           ];
         };
         "rewriter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.containers)

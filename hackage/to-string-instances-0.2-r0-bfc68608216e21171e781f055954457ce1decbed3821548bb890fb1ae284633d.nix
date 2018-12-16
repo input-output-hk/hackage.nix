@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.to-string-class)
         ] ++ pkgs.lib.optional (flags.bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (flags.doc) (hsPkgs.pretty)) ++ pkgs.lib.optional (flags.text) (hsPkgs.text);
       };

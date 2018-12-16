@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Pup-Events-Server)
           (hsPkgs.Pup-Events-Client)
@@ -34,7 +34,7 @@
       };
       exes = {
         "pupevents-all" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "atom" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xleb)
             (hsPkgs.xml)

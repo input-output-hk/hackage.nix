@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.FindBin)

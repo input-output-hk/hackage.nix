@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (system.isOsx) (hsPkgs.base);
+        depends = pkgs.lib.optional (system.isOsx) (hsPkgs.base);
         frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Carbon");
       };
     };

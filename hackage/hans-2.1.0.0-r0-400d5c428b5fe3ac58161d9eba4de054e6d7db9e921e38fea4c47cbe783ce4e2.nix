@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       exes = {
         "test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)

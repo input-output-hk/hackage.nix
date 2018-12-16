@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       tests = {
         "text-regex-replace-specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text-regex-replace)
             (hsPkgs.QuickCheck)

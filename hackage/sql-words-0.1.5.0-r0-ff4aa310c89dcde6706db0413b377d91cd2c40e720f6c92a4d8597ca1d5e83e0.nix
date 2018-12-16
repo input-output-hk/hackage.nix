@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "monoids" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickcheck-simple)
             (hsPkgs.QuickCheck)

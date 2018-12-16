@@ -29,7 +29,7 @@
     components = {
       exes = {
         "vigilance-server" = {
-          depends  = pkgs.lib.optionals (!flags.no-server) [
+          depends = pkgs.lib.optionals (!flags.no-server) [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.aeson)
@@ -73,7 +73,7 @@
           ];
         };
         "vigilance" = {
-          depends  = pkgs.lib.optionals (!flags.no-client) [
+          depends = pkgs.lib.optionals (!flags.no-client) [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.aeson)
@@ -116,7 +116,7 @@
       };
       tests = {
         "test-vigilance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.aeson)

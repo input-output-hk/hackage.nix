@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.mtl)
           (hsPkgs.regions)

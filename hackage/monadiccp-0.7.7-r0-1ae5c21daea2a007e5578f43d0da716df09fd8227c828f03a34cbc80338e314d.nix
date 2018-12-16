@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "olympic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monadiccp)
           ];

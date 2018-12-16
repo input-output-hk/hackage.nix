@@ -26,7 +26,7 @@
     components = {
       exes = {
         "refh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskheap)
             (hsPkgs.clippard)

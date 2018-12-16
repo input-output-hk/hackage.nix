@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Decimal)
           (hsPkgs.aeson)
           (hsPkgs.array)
@@ -46,7 +46,7 @@
       };
       exes = {
         "hax" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.aeson)
             (hsPkgs.array)

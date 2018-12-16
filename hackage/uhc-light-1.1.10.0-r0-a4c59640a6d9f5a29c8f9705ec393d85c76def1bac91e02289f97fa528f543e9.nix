@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.fgl)
           (hsPkgs.uulib)
           (hsPkgs.hashable)
@@ -54,7 +54,7 @@
       };
       exes = {
         "uhcl" = {
-          depends  = [
+          depends = [
             (hsPkgs.uhc-light)
             (hsPkgs.fgl)
             (hsPkgs.uulib)
@@ -83,7 +83,7 @@
           ];
         };
         "uhcr" = {
-          depends  = [
+          depends = [
             (hsPkgs.uhc-light)
             (hsPkgs.fgl)
             (hsPkgs.uulib)

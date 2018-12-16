@@ -26,7 +26,7 @@
     components = {
       exes = {
         "c2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
           ] ++ (if flags.splitbase

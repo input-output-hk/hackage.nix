@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.xmlhtml)
@@ -35,7 +35,7 @@
       };
       tests = {
         "TransformTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hquery)
             (hsPkgs.xmlhtml)
@@ -48,7 +48,7 @@
           ];
         };
         "ParserTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hquery)
             (hsPkgs.HUnit)
@@ -58,7 +58,7 @@
           ];
         };
         "UtilsTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hquery)
             (hsPkgs.HUnit)

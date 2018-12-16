@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "testParser" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

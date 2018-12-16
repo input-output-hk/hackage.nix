@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
@@ -69,7 +69,7 @@
       };
       exes = {
         "postgrest" = {
-          depends  = [
+          depends = [
             (hsPkgs.auto-update)
             (hsPkgs.base)
             (hsPkgs.hasql)
@@ -87,7 +87,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-qq)
             (hsPkgs.async)

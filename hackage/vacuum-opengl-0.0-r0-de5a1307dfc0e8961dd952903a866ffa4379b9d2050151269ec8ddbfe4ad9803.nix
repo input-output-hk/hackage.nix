@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.vacuum)
         ] ++ [
           (hsPkgs.base)
@@ -35,7 +35,7 @@
       };
       exes = {
         "vacuum-opengl-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.stb-image)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)

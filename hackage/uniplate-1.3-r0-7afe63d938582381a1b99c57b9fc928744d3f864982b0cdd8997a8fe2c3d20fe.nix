@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.ghc_6_10
+        depends = if flags.ghc_6_10
           then [
             (hsPkgs.base)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Ranged-sets)
           (hsPkgs.attoparsec)
           (hsPkgs.base)

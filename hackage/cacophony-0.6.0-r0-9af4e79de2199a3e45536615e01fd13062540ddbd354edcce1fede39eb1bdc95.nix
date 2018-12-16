@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cryptonite)
@@ -42,7 +42,7 @@
       };
       exes = {
         "echo-server" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.auto-update)
@@ -59,7 +59,7 @@
           ];
         };
         "echo-client" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.base64-bytestring)
@@ -74,7 +74,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -86,7 +86,7 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -94,7 +94,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)

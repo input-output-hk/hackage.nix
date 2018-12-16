@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primes)
         ];
       };
       tests = {
         "primes-type-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primes)
             (hsPkgs.primes-type)

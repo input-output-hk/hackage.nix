@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.api-tools)
           (hsPkgs.asn1-types)
           (hsPkgs.asn1-encoding)
@@ -66,13 +66,13 @@
       };
       exes = {
         "ks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.keystore)
           ];
         };
         "psd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

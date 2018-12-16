@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ampersand" = {
-          depends  = [
+          depends = [
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-odbc)
             (hsPkgs.HStringTemplate)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.logging-facade)
           (hsPkgs.hsyslog)
@@ -34,7 +34,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-facade)
             (hsPkgs.hsyslog)

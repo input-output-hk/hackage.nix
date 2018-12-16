@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.containers)
@@ -34,26 +34,26 @@
       };
       exes = {
         "DumpExpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sequent-core)
           ];
         };
         "SpecConstrExpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sequent-core)
             (hsPkgs.containers)
           ];
         };
         "SimplExpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sequent-core)
           ];
         };
         "CasesExpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sequent-core)
           ];

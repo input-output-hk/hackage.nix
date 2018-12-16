@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.non-negative)
           (hsPkgs.mtl)
           (hsPkgs.QuickCheck)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
         ];
       };
       tests = {
         "pong-server-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pong-server)
             (hsPkgs.hspec)

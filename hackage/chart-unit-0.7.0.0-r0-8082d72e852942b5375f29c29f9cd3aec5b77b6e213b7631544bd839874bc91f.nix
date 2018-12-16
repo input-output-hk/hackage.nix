@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.SVGFonts)
           (hsPkgs.base)
           (hsPkgs.colour)
@@ -50,7 +50,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.doctest)

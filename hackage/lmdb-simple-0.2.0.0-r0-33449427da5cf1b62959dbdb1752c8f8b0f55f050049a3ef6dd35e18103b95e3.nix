@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -34,13 +34,13 @@
       };
       tests = {
         "sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lmdb-simple)
           ];
         };
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.lmdb-simple)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.lmdb-simple)

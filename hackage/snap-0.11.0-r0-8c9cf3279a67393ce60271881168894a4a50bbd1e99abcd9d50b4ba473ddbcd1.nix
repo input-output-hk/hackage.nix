@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MonadCatchIO-transformers)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -65,7 +65,7 @@
       };
       exes = {
         "snap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bla" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.haskell98)

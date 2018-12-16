@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hgl-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTam)
             (hsPkgs.HGL)
             (hsPkgs.utility-ht)

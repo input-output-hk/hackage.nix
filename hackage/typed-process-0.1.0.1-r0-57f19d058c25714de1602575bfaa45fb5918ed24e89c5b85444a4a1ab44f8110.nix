@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "typed-process-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.base64-bytestring)

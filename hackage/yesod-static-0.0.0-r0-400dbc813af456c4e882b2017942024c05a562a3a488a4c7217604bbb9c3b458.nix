@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod-core)
           (hsPkgs.base64-bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)

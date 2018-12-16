@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (system.isOsx) [
           (hsPkgs.utf8-string)
@@ -42,7 +42,7 @@
       };
       exes = {
         "keyring-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.keyring)
           ];

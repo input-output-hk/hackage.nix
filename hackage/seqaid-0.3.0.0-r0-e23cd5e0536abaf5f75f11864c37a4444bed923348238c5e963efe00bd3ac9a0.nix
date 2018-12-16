@@ -40,7 +40,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.base)
           (hsPkgs.deepseq-bounded)
           (hsPkgs.syb)
@@ -64,7 +64,7 @@
       };
       exes = {
         "seqaid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.temporary)
             (hsPkgs.directory)
@@ -72,7 +72,7 @@
           ] ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs.cpphs);
         };
         "seqaidpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regex-base)
             (hsPkgs.regex-pcre)

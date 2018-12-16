@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.fast-logger)
@@ -38,7 +38,7 @@
       };
       tests = {
         "rio-orphans-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.exceptions)
             (hsPkgs.fast-logger)

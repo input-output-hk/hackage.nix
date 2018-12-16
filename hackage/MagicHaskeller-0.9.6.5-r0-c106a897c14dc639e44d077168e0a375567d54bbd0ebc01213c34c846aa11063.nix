@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.time)
           (hsPkgs.template-haskell)
           (hsPkgs.base)
@@ -55,7 +55,7 @@
       };
       exes = {
         "MagicHaskeller" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.MagicHaskeller)
             (hsPkgs.time)
             (hsPkgs.template-haskell)
@@ -82,7 +82,7 @@
           ];
         };
         "MagicHaskeller.cgi" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.time)
             (hsPkgs.template-haskell)
             (hsPkgs.base)

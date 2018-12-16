@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haven" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

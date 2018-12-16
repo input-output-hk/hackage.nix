@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hub" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hexpat)
             (hsPkgs.regex-compat)

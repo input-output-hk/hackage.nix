@@ -26,7 +26,7 @@
     components = {
       exes = {
         "secret-santa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-lib)
             (hsPkgs.random)

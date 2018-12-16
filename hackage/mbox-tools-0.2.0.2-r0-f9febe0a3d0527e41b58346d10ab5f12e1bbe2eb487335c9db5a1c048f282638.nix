@@ -29,14 +29,14 @@
     components = {
       exes = {
         "mbox-counting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
           ];
         };
         "mbox-average-size" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -44,14 +44,14 @@
           ];
         };
         "mbox-quoting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
           ];
         };
         "redact-mbox" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -60,7 +60,7 @@
           ];
         };
         "mbox-list" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -72,7 +72,7 @@
           ];
         };
         "mbox-pick" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -84,7 +84,7 @@
           ];
         };
         "mbox-partition" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -97,7 +97,7 @@
           ];
         };
         "mbox-grep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -109,7 +109,7 @@
           ] ++ pkgs.lib.optional (flags.use_hutt) (hsPkgs.hutt);
         };
         "split-mbox" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -121,7 +121,7 @@
           ];
         };
         "mbox-iter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)
@@ -134,7 +134,7 @@
           ];
         };
         "mbox-from-files" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.codec-mbox)

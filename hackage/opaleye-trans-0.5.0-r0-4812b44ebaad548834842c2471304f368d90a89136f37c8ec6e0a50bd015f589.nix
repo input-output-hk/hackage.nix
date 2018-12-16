@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.opaleye)
@@ -37,7 +37,7 @@
       };
       exes = {
         "opaleye-rosetree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opaleye)
             (hsPkgs.opaleye-trans)
@@ -46,7 +46,7 @@
           ];
         };
         "opaleye-rosetree2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opaleye)
             (hsPkgs.opaleye-trans)

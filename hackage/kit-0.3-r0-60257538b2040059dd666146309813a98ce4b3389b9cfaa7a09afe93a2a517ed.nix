@@ -26,7 +26,7 @@
     components = {
       exes = {
         "kit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.network)

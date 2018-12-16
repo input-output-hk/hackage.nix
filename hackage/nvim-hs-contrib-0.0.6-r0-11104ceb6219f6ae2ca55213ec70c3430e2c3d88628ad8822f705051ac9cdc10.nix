@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.nvim-hs)
           (hsPkgs.ansi-wl-pprint)
@@ -49,7 +49,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nvim-hs)
             (hsPkgs.hspec)

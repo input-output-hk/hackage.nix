@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.lifted-base)
@@ -62,7 +62,7 @@
       };
       exes = {
         "psc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.containers)
@@ -82,7 +82,7 @@
           ];
         };
         "psci" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -102,7 +102,7 @@
           ];
         };
         "psc-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.optparse-applicative)
@@ -118,7 +118,7 @@
           ];
         };
         "psc-publish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.bytestring)
@@ -127,7 +127,7 @@
           ];
         };
         "psc-hierarchy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.optparse-applicative)
@@ -140,7 +140,7 @@
           ];
         };
         "psc-bundle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.filepath)
@@ -155,7 +155,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -175,7 +175,7 @@
           ];
         };
         "psci-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

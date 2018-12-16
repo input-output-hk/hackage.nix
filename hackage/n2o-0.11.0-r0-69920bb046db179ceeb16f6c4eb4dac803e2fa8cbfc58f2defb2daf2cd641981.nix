@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "n2o-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.n2o)
             (hsPkgs.bert)

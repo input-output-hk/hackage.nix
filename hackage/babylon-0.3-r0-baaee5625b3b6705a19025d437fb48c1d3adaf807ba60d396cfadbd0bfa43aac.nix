@@ -26,7 +26,7 @@
     components = {
       exes = {
         "babylon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gpah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.haskell-src-exts)

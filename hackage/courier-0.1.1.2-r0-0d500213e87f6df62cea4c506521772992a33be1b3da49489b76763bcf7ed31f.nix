@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.bytestring)
@@ -40,14 +40,14 @@
       };
       exes = {
         "echo-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.courier)
           ];
         };
         "echo-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.courier)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test-courier" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)

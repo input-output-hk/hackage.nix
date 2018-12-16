@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wordlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.boxes)

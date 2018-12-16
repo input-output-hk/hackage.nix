@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.unordered-containers)
           (hsPkgs.binary-parser)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.url-decoders)
             (hsPkgs.http-types)
             (hsPkgs.tasty)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "primary-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.url-decoders)
             (hsPkgs.http-types)
             (hsPkgs.criterion)
@@ -58,7 +58,7 @@
           ];
         };
         "comparison-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.url-decoders)
             (hsPkgs.http-types)
             (hsPkgs.criterion)

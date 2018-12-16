@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.clientsession)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadCatchIO-transformers)
             (hsPkgs.base)

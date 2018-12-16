@@ -26,7 +26,7 @@
     components = {
       exes = {
         "midisurface" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)

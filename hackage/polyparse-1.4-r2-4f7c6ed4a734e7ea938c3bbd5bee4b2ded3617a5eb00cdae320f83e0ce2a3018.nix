@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell98)
         ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.bytestring);

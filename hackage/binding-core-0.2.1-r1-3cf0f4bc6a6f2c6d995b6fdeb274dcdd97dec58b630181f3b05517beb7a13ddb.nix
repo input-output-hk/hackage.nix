@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
         ];
       };
       tests = {
         "hunit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binding-core)
             (hsPkgs.random)
@@ -40,7 +40,7 @@
           ];
         };
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binding-core)
             (hsPkgs.QuickCheck)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HTTP)
           (hsPkgs.old-locale)
@@ -38,7 +38,7 @@
       };
       exes = {
         "dresdner-verkehrsbetriebe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.old-locale)

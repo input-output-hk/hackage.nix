@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filemanip)
           (hsPkgs.process)
@@ -55,7 +55,7 @@
       };
       exes = {
         "ide-backend-exe-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.ide-backend)
             (hsPkgs.ide-backend-common)
             (hsPkgs.base)
@@ -94,7 +94,7 @@
       };
       tests = {
         "TestSuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ide-backend)
             (hsPkgs.ide-backend-common)
@@ -118,7 +118,7 @@
           ];
         };
         "rpc-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filemanip)

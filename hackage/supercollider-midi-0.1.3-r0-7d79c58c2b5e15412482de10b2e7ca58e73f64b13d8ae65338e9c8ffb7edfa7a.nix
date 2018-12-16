@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sc-keyboard" = {
-          depends  = [
+          depends = [
             (hsPkgs.supercollider-ht)
             (hsPkgs.opensoundcontrol-ht)
             (hsPkgs.hsc3)
@@ -48,7 +48,7 @@
             else [ (hsPkgs.base) ]);
         };
         "sc-wind" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsc3)
             (hsPkgs.hosc)
             (hsPkgs.alsa-midi)

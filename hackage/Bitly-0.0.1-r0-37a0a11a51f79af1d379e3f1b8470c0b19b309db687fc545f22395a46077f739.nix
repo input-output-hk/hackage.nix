@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HTTP)
           (hsPkgs.HaXml)
@@ -33,7 +33,7 @@
       };
       exes = {
         "bitly" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.directory)
           ];

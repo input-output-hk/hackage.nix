@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "benchmark" = {
-          depends  = pkgs.lib.optionals (!(!flags.benchmark)) [
+          depends = pkgs.lib.optionals (!(!flags.benchmark)) [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.containers)
@@ -57,7 +57,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.containers)

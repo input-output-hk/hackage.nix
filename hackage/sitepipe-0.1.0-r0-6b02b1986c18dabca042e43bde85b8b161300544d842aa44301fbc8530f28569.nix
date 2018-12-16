@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
           (hsPkgs.unordered-containers)
@@ -52,7 +52,7 @@
       };
       exes = {
         "sitepipe-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sitepipe)
             (hsPkgs.lens)
@@ -65,7 +65,7 @@
       };
       tests = {
         "sitepipe-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sitepipe)
           ];

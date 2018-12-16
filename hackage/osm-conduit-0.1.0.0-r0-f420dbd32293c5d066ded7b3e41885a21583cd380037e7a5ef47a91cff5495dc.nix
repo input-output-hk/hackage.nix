@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.xml-types)
@@ -38,7 +38,7 @@
       };
       tests = {
         "osm-conduit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.osm-conduit)
             (hsPkgs.conduit)

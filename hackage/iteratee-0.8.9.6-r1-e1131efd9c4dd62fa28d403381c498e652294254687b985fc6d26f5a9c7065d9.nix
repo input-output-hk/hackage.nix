@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ListLike)
           (hsPkgs.monad-control)
@@ -39,7 +39,7 @@
       };
       tests = {
         "testIteratee" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.iteratee)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "bench-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.iteratee)
             (hsPkgs.bytestring)
             (hsPkgs.monad-control)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.blaze-builder)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hjsmin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.blaze-builder)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test-hjsmin" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

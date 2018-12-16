@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "wxdirect" = {
-          depends  = if flags.splitbase
+          depends = if flags.splitbase
             then [
               (hsPkgs.base)
               (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.not-gloss)
           (hsPkgs.linear)
@@ -39,7 +39,7 @@
       };
       exes = {
         "hfoil" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hfoil)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hyper-haskell-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

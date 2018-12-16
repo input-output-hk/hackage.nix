@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.data-default)
@@ -61,7 +61,7 @@
       };
       exes = {
         "multiple_shooting" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.vector)
@@ -74,7 +74,7 @@
           ];
         };
         "plotSofa" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.not-gloss)
@@ -88,7 +88,7 @@
           ];
         };
         "sofaTime" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.casadi-bindings-core)
@@ -100,21 +100,21 @@
           ];
         };
         "homotopy" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
           ];
         };
         "vec" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
           ];
         };
         "ocpMonad" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
@@ -124,7 +124,7 @@
           ];
         };
         "rocket" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
@@ -134,35 +134,35 @@
           ];
         };
         "staticExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
           ];
         };
         "basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
           ];
         };
         "basicJ" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
           ];
         };
         "daeColl" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.vector)
           ];
         };
         "glider" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -174,7 +174,7 @@
           ];
         };
         "sailboat" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -187,7 +187,7 @@
           ];
         };
         "dynoplot" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -201,7 +201,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

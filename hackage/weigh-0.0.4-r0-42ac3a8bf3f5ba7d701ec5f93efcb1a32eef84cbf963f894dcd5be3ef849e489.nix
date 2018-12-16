@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.deepseq)
@@ -37,14 +37,14 @@
       };
       tests = {
         "weigh-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.weigh)
             (hsPkgs.deepseq)
           ];
         };
         "weigh-maps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.weigh)
             (hsPkgs.deepseq)

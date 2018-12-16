@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.opentheory-unicode)
           (hsPkgs.api-opentheory-unicode)
@@ -33,14 +33,14 @@
       };
       exes = {
         "fen2s" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opentheory-unicode)
             (hsPkgs.api-opentheory-unicode)
           ];
         };
         "fen2s-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opentheory-unicode)
             (hsPkgs.api-opentheory-unicode)

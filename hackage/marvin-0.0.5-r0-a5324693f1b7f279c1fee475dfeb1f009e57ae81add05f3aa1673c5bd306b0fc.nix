@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wreq)
           (hsPkgs.aeson)
@@ -55,7 +55,7 @@
       };
       exes = {
         "marvin-pp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mustache)
             (hsPkgs.directory)
@@ -70,7 +70,7 @@
           ];
         };
         "marvin-init" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mustache)
             (hsPkgs.directory)

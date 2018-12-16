@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.ghc-prim)
@@ -41,7 +41,7 @@
       };
       tests = {
         "spec" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.arithmoi)
             (hsPkgs.criterion)

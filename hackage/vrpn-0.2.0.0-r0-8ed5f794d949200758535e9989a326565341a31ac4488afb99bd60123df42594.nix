@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."vrpn")
           (pkgs."stdc++")
@@ -33,7 +33,7 @@
       };
       exes = {
         "test-vrpn" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [
             (pkgs."vrpn")
             (pkgs."stdc++")

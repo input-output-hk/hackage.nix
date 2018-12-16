@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.genvalidity)
@@ -37,7 +37,7 @@
       };
       tests = {
         "genvalidity-unordered-containers-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.genvalidity)
             (hsPkgs.genvalidity-hspec)

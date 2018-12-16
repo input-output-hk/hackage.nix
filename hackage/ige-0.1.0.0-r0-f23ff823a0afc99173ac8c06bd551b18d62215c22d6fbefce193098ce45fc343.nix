@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ige" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cairo)
             (hsPkgs.gtk)

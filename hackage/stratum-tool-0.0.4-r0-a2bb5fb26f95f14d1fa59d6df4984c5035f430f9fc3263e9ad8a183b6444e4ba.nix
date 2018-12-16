@@ -26,7 +26,7 @@
     components = {
       exes = {
         "stratum-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)

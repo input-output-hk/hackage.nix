@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       exes = {
         "xing-api-cli-demo" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
           ];
         };
         "xing-api-yesod-demo" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)
@@ -71,7 +71,7 @@
           ];
         };
         "xing-api-minimal-demo" = {
-          depends  = pkgs.lib.optionals (flags.minimal-demo) [
+          depends = pkgs.lib.optionals (flags.minimal-demo) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.xing-api)
@@ -80,7 +80,7 @@
       };
       tests = {
         "TestMain" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)

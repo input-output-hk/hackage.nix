@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs."assert")
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       tests = {
         "som-test" = {
-          depends  = [
+          depends = [
             (hsPkgs."assert")
             (hsPkgs.base)
             (hsPkgs.test-framework-quickcheck2)

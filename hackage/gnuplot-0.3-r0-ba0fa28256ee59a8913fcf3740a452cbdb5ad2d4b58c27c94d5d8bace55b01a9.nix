@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.utility-ht)
         ] ++ (if flags.splitbase
           then [

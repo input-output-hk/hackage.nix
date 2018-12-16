@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-comfort-graph" = {
-          depends  = [
+          depends = [
             (hsPkgs.comfort-graph)
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)

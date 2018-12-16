@@ -26,7 +26,7 @@
     components = {
       exes = {
         "funion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.HFuse)

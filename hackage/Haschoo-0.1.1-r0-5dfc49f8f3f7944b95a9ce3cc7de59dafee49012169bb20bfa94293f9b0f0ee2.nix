@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haschoo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.mtl)

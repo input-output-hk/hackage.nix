@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elm-get" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.binary)

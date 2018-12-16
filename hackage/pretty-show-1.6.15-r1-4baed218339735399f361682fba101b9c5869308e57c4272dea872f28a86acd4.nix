@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       exes = {
         "ppsh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty-show)
           ];

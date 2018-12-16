@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shu-thing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.haskell98)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hashable)
           (hsPkgs.list-t)
           (hsPkgs.focus)
@@ -36,7 +36,7 @@
       };
       tests = {
         "word-array-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.free)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -54,7 +54,7 @@
           ];
         };
         "api-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HTF)
             (hsPkgs.stm-containers)
@@ -73,7 +73,7 @@
       };
       benchmarks = {
         "insertion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.mwc-random)
             (hsPkgs.mwc-random-monad)
             (hsPkgs.criterion)
@@ -92,7 +92,7 @@
           ];
         };
         "concurrent-insertion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.mwc-random)
             (hsPkgs.mwc-random-monad)
@@ -111,7 +111,7 @@
           ];
         };
         "concurrent-transactions-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.mwc-random)
             (hsPkgs.mwc-random-monad)

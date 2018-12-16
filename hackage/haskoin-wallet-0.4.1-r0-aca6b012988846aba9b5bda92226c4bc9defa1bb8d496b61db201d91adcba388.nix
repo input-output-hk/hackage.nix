@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.base)
@@ -72,13 +72,13 @@
       };
       exes = {
         "hw" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskoin-wallet)
           ];
         };
         "example-inproc-wallet-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -95,7 +95,7 @@
       };
       tests = {
         "test-haskoin-wallet" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

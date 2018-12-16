@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
           (hsPkgs.base)
@@ -33,7 +33,7 @@
       };
       exes = {
         "neat-interpolation-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.template-haskell)
             (hsPkgs.base)

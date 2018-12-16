@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.csv)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       exes = {
         "pandoc-csv2table" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.csv)
             (hsPkgs.pandoc)

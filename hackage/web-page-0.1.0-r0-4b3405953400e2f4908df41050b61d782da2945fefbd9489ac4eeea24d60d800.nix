@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "web-page-test" = {
-          depends  = pkgs.lib.optionals (flags.testprogram) [
+          depends = pkgs.lib.optionals (flags.testprogram) [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.bytestring)

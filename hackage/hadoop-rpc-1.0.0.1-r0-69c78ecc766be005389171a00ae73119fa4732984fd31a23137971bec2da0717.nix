@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       tests = {
         "hdfs-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hadoop-rpc)
             (hsPkgs.protobuf)

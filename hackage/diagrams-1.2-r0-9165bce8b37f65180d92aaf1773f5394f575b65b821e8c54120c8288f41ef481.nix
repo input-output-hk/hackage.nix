@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.diagrams-core)
           (hsPkgs.diagrams-lib)
           (hsPkgs.diagrams-contrib)

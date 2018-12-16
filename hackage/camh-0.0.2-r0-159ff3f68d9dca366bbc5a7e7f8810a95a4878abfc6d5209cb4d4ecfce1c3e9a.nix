@@ -26,7 +26,7 @@
     components = {
       exes = {
         "camh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.terminfo)

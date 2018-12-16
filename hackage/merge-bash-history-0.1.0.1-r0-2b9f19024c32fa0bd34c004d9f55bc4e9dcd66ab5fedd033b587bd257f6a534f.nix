@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.data-ordlist)
@@ -35,7 +35,7 @@
       };
       exes = {
         "merge-bash-history" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.merge-bash-history)
             (hsPkgs.optparse-applicative)
@@ -45,7 +45,7 @@
       };
       tests = {
         "MergeBashHistory-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.merge-bash-history)
           ];

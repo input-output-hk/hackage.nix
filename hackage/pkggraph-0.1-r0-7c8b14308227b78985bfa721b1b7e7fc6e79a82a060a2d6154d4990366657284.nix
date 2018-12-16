@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pkggraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.split)

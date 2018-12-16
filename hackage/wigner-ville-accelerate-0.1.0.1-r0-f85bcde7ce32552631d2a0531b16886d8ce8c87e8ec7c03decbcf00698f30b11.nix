@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.accelerate)
           (hsPkgs.accelerate-fft)
@@ -33,7 +33,7 @@
       };
       tests = {
         "wigner-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wigner)
           ];

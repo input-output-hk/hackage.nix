@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       exes = {
         "anki-tools-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.anki-tools)
             (hsPkgs.data-default)

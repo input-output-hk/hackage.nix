@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.mtl)
@@ -42,14 +42,14 @@
       };
       exes = {
         "todo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
           ];
         };
         "todo-node" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
@@ -57,14 +57,14 @@
           ];
         };
         "purecss-side-menu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
         };
         "test-client-13" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.time)
@@ -72,7 +72,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
         };
         "test-client-14" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.time)
@@ -81,7 +81,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
         };
         "route-example" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.time)

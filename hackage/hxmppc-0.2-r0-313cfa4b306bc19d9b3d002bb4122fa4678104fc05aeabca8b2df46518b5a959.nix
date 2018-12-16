@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hxmppc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.xml-types)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "open-signals-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.open-signals)
           ];

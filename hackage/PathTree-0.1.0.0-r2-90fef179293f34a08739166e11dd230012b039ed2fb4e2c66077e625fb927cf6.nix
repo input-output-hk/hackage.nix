@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "PathTree-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PathTree)
             (hsPkgs.QuickCheck)

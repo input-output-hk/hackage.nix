@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tablize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.comma)

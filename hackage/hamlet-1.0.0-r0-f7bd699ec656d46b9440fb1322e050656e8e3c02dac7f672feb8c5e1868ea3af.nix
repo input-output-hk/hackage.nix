@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.shakespeare)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hamlet)
             (hsPkgs.base)
             (hsPkgs.parsec)

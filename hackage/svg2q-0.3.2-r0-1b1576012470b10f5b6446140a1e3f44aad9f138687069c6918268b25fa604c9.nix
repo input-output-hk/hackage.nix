@@ -26,7 +26,7 @@
     components = {
       exes = {
         "svg2q" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.svgutils)
             (hsPkgs.language-c)

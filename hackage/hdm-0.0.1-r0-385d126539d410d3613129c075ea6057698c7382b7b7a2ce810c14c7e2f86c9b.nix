@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hdm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vty)
             (hsPkgs.unix)

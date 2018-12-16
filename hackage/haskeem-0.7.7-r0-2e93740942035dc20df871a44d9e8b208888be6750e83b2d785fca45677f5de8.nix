@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskeem" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.containers)

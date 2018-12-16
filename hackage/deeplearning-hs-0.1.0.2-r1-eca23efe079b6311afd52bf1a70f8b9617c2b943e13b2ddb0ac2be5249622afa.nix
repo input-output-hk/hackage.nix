@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.accelerate)
           (hsPkgs.vector)
@@ -36,7 +36,7 @@
       };
       exes = {
         "deeplearning_demonstration" = {
-          depends  = [
+          depends = [
             (hsPkgs.deeplearning-hs)
             (hsPkgs.base)
             (hsPkgs.accelerate)
@@ -49,7 +49,7 @@
       };
       tests = {
         "deeplearning_test" = {
-          depends  = [
+          depends = [
             (hsPkgs.deeplearning-hs)
             (hsPkgs.base)
             (hsPkgs.accelerate)

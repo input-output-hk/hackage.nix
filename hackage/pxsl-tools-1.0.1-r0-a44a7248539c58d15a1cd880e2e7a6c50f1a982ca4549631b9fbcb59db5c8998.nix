@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pxslcc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.parsec)

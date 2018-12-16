@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xmonad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.unix)

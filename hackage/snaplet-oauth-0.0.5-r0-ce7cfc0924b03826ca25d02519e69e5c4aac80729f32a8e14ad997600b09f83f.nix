@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.data-lens)
@@ -49,7 +49,7 @@
       };
       tests = {
         "oauth-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.aeson)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "TransformersStepByStep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)

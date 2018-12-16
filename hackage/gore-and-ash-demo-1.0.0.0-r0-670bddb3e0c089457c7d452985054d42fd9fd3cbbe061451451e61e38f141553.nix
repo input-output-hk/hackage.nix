@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gore-and-ash-demo-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
@@ -55,7 +55,7 @@
           ];
         };
         "gore-and-ash-demo-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)

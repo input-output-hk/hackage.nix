@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "htirage-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.htirage)
             (hsPkgs.base)
             (hsPkgs.containers)

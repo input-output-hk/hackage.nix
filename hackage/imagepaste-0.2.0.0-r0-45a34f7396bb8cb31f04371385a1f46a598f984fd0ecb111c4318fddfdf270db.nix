@@ -26,7 +26,7 @@
     components = {
       exes = {
         "imagepaste" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.network)

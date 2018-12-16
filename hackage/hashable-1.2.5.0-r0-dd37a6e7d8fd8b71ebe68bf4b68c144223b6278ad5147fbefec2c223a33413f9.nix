@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
@@ -41,7 +41,7 @@
       };
       exes = {
         "hashable-examples" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.hashable)
           ];
@@ -49,7 +49,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.ghc-prim)
@@ -66,7 +66,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

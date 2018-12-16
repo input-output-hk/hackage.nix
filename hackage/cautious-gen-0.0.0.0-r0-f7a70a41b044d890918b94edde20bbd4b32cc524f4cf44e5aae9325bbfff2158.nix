@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cautious)
           (hsPkgs.genvalidity)
@@ -33,7 +33,7 @@
       };
       tests = {
         "cautious-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.cautious)

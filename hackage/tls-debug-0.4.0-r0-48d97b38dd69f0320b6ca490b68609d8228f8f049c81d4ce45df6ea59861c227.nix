@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tls-stunnel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
           ];
         };
         "tls-retrievecertificate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
           ];
         };
         "tls-simpleclient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)

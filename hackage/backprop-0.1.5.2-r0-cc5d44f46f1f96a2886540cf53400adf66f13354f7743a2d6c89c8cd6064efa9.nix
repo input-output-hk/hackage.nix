@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.deepseq)
@@ -40,7 +40,7 @@
       };
       benchmarks = {
         "backprop-mnist-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.backprop)
             (hsPkgs.base)
             (hsPkgs.bifunctors)

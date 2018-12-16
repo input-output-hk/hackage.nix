@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.directory)
@@ -46,7 +46,7 @@
       };
       exes = {
         "paranoia" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.paranoia)
             (hsPkgs.hdaemonize)
@@ -56,7 +56,7 @@
       };
       tests = {
         "paranoia-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.paranoia)
           ];

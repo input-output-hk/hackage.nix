@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.nagios-check)
           (hsPkgs.transformers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "check_ekg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nagios-check)
             (hsPkgs.text)
@@ -51,7 +51,7 @@
       };
       tests = {
         "sample-data" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)

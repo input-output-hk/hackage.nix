@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhc && compiler.version.ge "7.10"
+        depends = if compiler.isGhc && compiler.version.ge "7.10"
           then [
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -48,7 +48,7 @@
       };
       tests = {
         "configurator-export-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.configurator-export)
           ];

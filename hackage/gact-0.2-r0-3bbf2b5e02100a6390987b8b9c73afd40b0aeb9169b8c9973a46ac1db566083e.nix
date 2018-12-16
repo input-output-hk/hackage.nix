@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gact" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biopsl)
             (hsPkgs.cmdargs)

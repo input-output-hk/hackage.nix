@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql)
           (hsPkgs.json-pointer)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.hasql)
             (hsPkgs.json-pointer)

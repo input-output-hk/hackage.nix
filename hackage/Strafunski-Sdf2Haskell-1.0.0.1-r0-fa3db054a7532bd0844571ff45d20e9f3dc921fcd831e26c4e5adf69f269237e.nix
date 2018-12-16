@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Sdf2Haskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ATermLib)
             (hsPkgs.template-haskell)

@@ -30,7 +30,7 @@
       "library" = {};
       exes = {
         "tkyprof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
@@ -61,7 +61,7 @@
           ];
         };
         "prof2json" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.blaze-builder)

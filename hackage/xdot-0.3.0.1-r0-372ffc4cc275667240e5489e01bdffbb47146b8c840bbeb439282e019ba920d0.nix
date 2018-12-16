@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.cairo)
@@ -37,7 +37,7 @@
       };
       exes = {
         "xdot-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cairo)
             (hsPkgs.graphviz)

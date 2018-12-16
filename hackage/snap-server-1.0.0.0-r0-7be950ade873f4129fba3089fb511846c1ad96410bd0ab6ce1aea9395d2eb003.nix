@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
@@ -59,7 +59,7 @@
       };
       exes = {
         "snap-test-pong-server" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
@@ -85,7 +85,7 @@
           ];
         };
         "snap-test-server" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
@@ -115,7 +115,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
@@ -159,7 +159,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.blaze-builder)

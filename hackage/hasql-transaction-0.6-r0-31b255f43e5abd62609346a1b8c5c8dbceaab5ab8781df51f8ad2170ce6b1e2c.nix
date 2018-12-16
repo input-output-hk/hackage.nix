@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql)
           (hsPkgs.bytestring-tree-builder)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "conflicts-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql-transaction)
             (hsPkgs.hasql)
             (hsPkgs.async)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gotta-go-fast" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.word-wrap)

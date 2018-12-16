@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.integer-gmp)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "asn1-records-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.asn1-codec)
             (hsPkgs.test-framework)

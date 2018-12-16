@@ -26,7 +26,7 @@
     components = {
       exes = {
         "helisp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)

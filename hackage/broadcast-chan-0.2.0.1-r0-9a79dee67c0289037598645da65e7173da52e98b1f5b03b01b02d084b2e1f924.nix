@@ -28,14 +28,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unliftio-core)
         ];
       };
       benchmarks = {
         "sync" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.atomic-primops)
@@ -45,7 +45,7 @@
           ];
         };
         "channels" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan)
             (hsPkgs.async)
@@ -55,7 +55,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.bifunctors);
         };
         "utilities" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.genvalidity-hspec)
           (hsPkgs.genvalidity)
@@ -38,14 +38,14 @@
       };
       tests = {
         "genvalidity-hspec-aeson-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.genvalidity-hspec-aeson)
           ];
         };
         "genvalidity-hspec-aeson-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.genvalidity)
             (hsPkgs.genvalidity-hspec-aeson)

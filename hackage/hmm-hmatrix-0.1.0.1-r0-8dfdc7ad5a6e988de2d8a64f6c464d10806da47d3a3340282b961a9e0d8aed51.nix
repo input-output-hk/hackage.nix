@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hmatrix)
           (hsPkgs.explicit-exception)
           (hsPkgs.lazy-csv)

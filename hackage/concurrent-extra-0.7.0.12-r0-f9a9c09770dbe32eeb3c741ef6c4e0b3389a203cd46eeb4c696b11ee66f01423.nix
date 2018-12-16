@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.unbounded-delays)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-concurrent-extra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm)
             (hsPkgs.unbounded-delays)

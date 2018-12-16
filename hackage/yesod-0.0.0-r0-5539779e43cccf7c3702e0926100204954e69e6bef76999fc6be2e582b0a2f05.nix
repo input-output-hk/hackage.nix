@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-locale)
           (hsPkgs.time)
@@ -58,12 +58,12 @@
       };
       exes = {
         "yesod" = {
-          depends  = [
+          depends = [
             (hsPkgs.file-embed)
           ];
         };
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)

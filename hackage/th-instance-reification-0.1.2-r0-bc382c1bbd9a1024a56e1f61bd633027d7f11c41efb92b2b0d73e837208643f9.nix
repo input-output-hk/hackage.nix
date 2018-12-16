@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.loch-th)
           (hsPkgs.placeholders)
@@ -37,7 +37,7 @@
       };
       tests = {
         "th-instance-reification-htf-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck-GenT)
             (hsPkgs.QuickCheck)

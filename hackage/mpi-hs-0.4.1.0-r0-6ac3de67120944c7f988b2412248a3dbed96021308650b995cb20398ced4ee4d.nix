@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mpi-hs)
           ];
@@ -48,20 +48,20 @@
       };
       tests = {
         "mpi-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monad-loops)
             (hsPkgs.mpi-hs)
           ];
         };
         "mpi-test-packing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mpi-hs)
           ];
         };
         "mpi-test-store" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mpi-hs)
           ];
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "mpi-hs-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.mpi-hs)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HCodecs)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "mida" = {
-          depends  = [
+          depends = [
             (hsPkgs.HCodecs)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -68,7 +68,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HCodecs)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

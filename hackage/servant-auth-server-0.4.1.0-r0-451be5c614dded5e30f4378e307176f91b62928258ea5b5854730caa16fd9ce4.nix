@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.base64-bytestring)
@@ -55,7 +55,7 @@
       };
       tests = {
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-auth)
             (hsPkgs.servant-auth-server)
@@ -71,7 +71,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

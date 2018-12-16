@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -42,7 +42,7 @@
       };
       tests = {
         "jvm-binary-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -70,7 +70,7 @@
       };
       benchmarks = {
         "jvm-binary-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.binary)

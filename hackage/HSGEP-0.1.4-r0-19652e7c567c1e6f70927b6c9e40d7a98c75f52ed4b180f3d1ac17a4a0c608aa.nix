@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.haskell98)
@@ -36,7 +36,7 @@
       };
       exes = {
         "HSGEP_Regression" = {
-          depends  = [ (hsPkgs.csv) ];
+          depends = [ (hsPkgs.csv) ];
         };
         "HSGEP_CADensity" = {};
       };

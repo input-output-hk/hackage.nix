@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell2010)
           (hsPkgs.HUnit)
           (hsPkgs.array)
@@ -35,7 +35,7 @@
       };
       tests = {
         "Test" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell2010)
             (hsPkgs.HUnit)
             (hsPkgs.array)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.carray)
           (hsPkgs.storable-complex)
           (hsPkgs.transformers)

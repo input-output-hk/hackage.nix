@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.haskell98)
@@ -44,7 +44,7 @@
       };
       exes = {
         "hledger" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.haskell98)

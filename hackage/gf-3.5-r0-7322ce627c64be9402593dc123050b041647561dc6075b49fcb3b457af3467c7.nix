@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.fst)
@@ -42,7 +42,7 @@
       };
       exes = {
         "gf" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)

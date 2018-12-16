@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.eventsource-api)
           (hsPkgs.protolude)
@@ -36,7 +36,7 @@
       };
       tests = {
         "eventsource-stub-store-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eventsource-store-specs)
             (hsPkgs.eventsource-stub-store)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.binary)
@@ -45,7 +45,7 @@
       };
       tests = {
         "TestCHInMemory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -55,7 +55,7 @@
           ];
         };
         "TestCHInTCP" = {
-          depends  = pkgs.lib.optionals (flags.tcp) [
+          depends = pkgs.lib.optionals (flags.tcp) [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -65,7 +65,7 @@
           ];
         };
         "TestClosure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -75,7 +75,7 @@
           ];
         };
         "TestStats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -85,7 +85,7 @@
           ];
         };
         "TestMx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -95,7 +95,7 @@
           ];
         };
         "TestTracing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)

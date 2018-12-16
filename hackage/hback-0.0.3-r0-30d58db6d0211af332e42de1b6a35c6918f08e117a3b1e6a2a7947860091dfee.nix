@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hback" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.process)
             (hsPkgs.filepath)

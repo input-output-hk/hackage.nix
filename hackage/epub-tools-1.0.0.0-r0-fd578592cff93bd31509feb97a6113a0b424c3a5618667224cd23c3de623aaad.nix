@@ -26,7 +26,7 @@
     components = {
       exes = {
         "epubmeta" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.epub-metadata)
@@ -35,7 +35,7 @@
           ];
         };
         "epubname" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.epub-metadata)
@@ -44,7 +44,7 @@
           ];
         };
         "epubzip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.epub-metadata)
             (hsPkgs.filepath)

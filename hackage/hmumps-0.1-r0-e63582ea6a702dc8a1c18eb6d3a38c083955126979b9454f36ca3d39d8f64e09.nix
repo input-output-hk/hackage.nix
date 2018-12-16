@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hmumps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.regex-compat)

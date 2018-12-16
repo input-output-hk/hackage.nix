@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.vector)
           (hsPkgs.text)
           (hsPkgs.scientific)

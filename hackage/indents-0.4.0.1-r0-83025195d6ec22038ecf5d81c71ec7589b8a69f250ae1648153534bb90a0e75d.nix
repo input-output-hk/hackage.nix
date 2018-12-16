@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       tests = {
         "indents-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.indents)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

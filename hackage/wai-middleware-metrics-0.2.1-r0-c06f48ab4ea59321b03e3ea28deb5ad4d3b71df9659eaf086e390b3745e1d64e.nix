@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai)
           (hsPkgs.ekg-core)
@@ -35,7 +35,7 @@
       };
       tests = {
         "metrics-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai)
             (hsPkgs.ekg-core)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "metrics-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.wai)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hspec)
           (hsPkgs.zeromq3-haskell)
@@ -55,7 +55,7 @@
       };
       exes = {
         "IHaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.zeromq3-haskell)
@@ -90,7 +90,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.zeromq3-haskell)

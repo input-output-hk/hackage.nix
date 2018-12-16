@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -77,7 +77,7 @@
       };
       exes = {
         "leksah-server" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -124,7 +124,7 @@
           ];
         };
         "leksahecho" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.deepseq)
@@ -142,7 +142,7 @@
       };
       tests = {
         "test-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.leksah-server)

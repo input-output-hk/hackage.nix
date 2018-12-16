@@ -31,7 +31,7 @@
     components = {
       exes = {
         "d-mucheck" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.distributed-process-simplelocalnet)
             (hsPkgs.distributed-process)
@@ -44,7 +44,7 @@
           ] ++ pkgs.lib.optional (flags.quickcheck) (hsPkgs.MuCheck-QuickCheck)) ++ pkgs.lib.optional (flags.smallcheck) (hsPkgs.MuCheck-SmallCheck)) ++ pkgs.lib.optional (flags.hunit) (hsPkgs.MuCheck-HUnit)) ++ pkgs.lib.optional (flags.hspec) (hsPkgs.MuCheck-Hspec);
         };
         "d-master" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.distributed-process-simplelocalnet)
             (hsPkgs.distributed-process)
@@ -57,7 +57,7 @@
           ] ++ pkgs.lib.optional (flags.quickcheck) (hsPkgs.MuCheck-QuickCheck)) ++ pkgs.lib.optional (flags.smallcheck) (hsPkgs.MuCheck-SmallCheck)) ++ pkgs.lib.optional (flags.hunit) (hsPkgs.MuCheck-HUnit)) ++ pkgs.lib.optional (flags.hspec) (hsPkgs.MuCheck-Hspec);
         };
         "d-slave" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.distributed-process-simplelocalnet)
             (hsPkgs.distributed-process)
@@ -70,7 +70,7 @@
           ] ++ pkgs.lib.optional (flags.quickcheck) (hsPkgs.MuCheck-QuickCheck)) ++ pkgs.lib.optional (flags.smallcheck) (hsPkgs.MuCheck-SmallCheck)) ++ pkgs.lib.optional (flags.hunit) (hsPkgs.MuCheck-HUnit)) ++ pkgs.lib.optional (flags.hspec) (hsPkgs.MuCheck-Hspec);
         };
         "dummy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MuCheck)
           ];

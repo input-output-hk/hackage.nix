@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.exceptions)

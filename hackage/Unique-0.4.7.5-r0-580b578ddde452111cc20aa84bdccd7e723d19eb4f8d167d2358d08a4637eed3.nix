@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.extra)
@@ -35,7 +35,7 @@
       };
       tests = {
         "HspecTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "Criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Unique)
             (hsPkgs.criterion)

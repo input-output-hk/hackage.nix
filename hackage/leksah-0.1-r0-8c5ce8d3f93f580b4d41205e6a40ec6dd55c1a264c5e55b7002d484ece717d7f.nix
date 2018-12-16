@@ -26,7 +26,7 @@
     components = {
       exes = {
         "leksah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.Cabal)

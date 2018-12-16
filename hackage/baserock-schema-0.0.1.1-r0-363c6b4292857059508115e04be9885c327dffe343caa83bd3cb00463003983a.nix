@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.algebraic-graphs)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "baserock" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebraic-graphs)
             (hsPkgs.base)
             (hsPkgs.baserock-schema)
@@ -59,7 +59,7 @@
       };
       tests = {
         "earthquake-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.algebraic-graphs)
             (hsPkgs.base)

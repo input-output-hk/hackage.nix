@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.dlist)
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
@@ -33,7 +33,7 @@
       };
       tests = {
         "attoparsec-integration-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.unsequential)
             (hsPkgs.interspersed)
             (hsPkgs.attoparsec)

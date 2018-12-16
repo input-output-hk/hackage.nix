@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tkhs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pointedlist)
             (hsPkgs.mtl)
@@ -37,7 +37,7 @@
           ];
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)

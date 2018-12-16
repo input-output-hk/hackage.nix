@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       exes = {
         "boogaloo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-boogie)
             (hsPkgs.containers)
@@ -61,7 +61,7 @@
           ];
         };
         "boogaloo-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-boogie)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.tuple-th)
           (hsPkgs.template-haskell)
           (hsPkgs.contravariant)

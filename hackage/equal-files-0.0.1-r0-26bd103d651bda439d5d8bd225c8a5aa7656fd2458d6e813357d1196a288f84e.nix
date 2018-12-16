@@ -26,7 +26,7 @@
     components = {
       exes = {
         "equal-files" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

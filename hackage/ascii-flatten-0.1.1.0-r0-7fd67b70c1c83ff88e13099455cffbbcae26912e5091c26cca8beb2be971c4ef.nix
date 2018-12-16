@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "ascii-flatten" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ascii-flatten)
             (hsPkgs.text)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ (if !system.isWindows
           then [ (hsPkgs.unix) ]

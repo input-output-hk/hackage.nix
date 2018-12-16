@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.music-dynamics-literal)
           (hsPkgs.music-pitch-literal)
           (hsPkgs.abcnotation)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.Chart-cairo)
@@ -47,7 +47,7 @@
       };
       exes = {
         "amby-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.amby)
           ];
@@ -55,7 +55,7 @@
       };
       tests = {
         "amby-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.amby)
           ];

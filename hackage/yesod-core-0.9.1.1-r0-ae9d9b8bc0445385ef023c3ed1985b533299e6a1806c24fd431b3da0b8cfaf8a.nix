@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.time)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
@@ -61,7 +61,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.wai-test)
             (hsPkgs.wai)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.aeson)
@@ -51,7 +51,7 @@
       };
       tests = {
         "hpqtypes-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hpqtypes)
             (hsPkgs.base)
             (hsPkgs.HUnit)

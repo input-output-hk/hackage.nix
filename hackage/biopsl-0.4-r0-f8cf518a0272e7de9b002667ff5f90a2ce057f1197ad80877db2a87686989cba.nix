@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.biocore)
           (hsPkgs.bytestring)
@@ -33,13 +33,13 @@
       };
       exes = {
         "pslstats" = {
-          depends  = [
+          depends = [
             (hsPkgs.unordered-containers)
           ];
         };
         "psluniq" = {};
         "pslfilter" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
         "pslcov" = {};
       };

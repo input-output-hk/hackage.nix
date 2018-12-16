@@ -26,7 +26,7 @@
     components = {
       exes = {
         "moo-postgresql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbmigrations)
             (hsPkgs.HDBC-postgresql)
@@ -35,7 +35,7 @@
       };
       tests = {
         "dbmigrations-postgresql-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbmigrations)
             (hsPkgs.HDBC)

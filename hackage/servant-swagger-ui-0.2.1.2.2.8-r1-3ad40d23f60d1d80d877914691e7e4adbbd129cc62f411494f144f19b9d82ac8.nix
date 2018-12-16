@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-markup)
           (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
       };
       tests = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-markup)
             (hsPkgs.bytestring)

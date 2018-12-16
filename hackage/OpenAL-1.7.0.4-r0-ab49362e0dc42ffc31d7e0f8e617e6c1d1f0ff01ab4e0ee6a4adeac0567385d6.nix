@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.ObjectName)
@@ -42,7 +42,7 @@
       };
       exes = {
         "TestDevice" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenAL)
           ];

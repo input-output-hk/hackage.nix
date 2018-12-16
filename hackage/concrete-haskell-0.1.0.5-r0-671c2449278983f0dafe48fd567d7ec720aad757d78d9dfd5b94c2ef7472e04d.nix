@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.thrift)
           (hsPkgs.text)
@@ -46,7 +46,7 @@
       };
       exes = {
         "ingest_json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.megaparsec)
             (hsPkgs.bytestring)
@@ -63,7 +63,7 @@
           ];
         };
         "inspect_communications" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.megaparsec)
             (hsPkgs.bytestring)

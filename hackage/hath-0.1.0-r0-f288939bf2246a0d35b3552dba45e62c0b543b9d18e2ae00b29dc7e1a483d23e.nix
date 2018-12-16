@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
@@ -44,7 +44,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
@@ -60,7 +60,7 @@
           ];
         };
         "shelltests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
@@ -77,7 +77,7 @@
           ];
         };
         "shelltests-net" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)

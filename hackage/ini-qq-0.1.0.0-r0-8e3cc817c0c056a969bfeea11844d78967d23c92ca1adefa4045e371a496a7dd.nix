@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ini)
           (hsPkgs.template-haskell)
@@ -34,7 +34,7 @@
       };
       tests = {
         "ini-qq-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.ini)

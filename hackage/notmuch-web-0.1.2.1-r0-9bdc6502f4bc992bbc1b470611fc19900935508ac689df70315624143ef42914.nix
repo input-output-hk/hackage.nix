@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.no-icu
+        depends = if flags.no-icu
           then [
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -126,7 +126,7 @@
       };
       exes = {
         "notmuch-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.notmuch-web)
             (hsPkgs.pwstore-fast)
@@ -137,7 +137,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.notmuch-web)
             (hsPkgs.hspec)

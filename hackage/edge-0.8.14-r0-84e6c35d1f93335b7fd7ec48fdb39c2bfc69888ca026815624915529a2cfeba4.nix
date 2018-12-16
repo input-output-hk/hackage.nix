@@ -26,7 +26,7 @@
     components = {
       exes = {
         "edge" = {
-          depends  = [
+          depends = [
             (hsPkgs.gloss)
             (hsPkgs.wraparound)
             (hsPkgs.base)

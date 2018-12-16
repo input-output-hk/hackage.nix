@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client-tls)
           (hsPkgs.http-client)
@@ -51,7 +51,7 @@
       };
       exes = {
         "tweet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tweet-hs)
           ];
@@ -59,7 +59,7 @@
       };
       tests = {
         "tweeths-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tweet-hs)
             (hsPkgs.hspec)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "tweeths-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.tweet-hs)

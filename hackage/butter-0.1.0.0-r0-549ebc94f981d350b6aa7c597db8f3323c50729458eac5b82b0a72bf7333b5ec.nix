@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -42,7 +42,7 @@
       };
       tests = {
         "Lang-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -59,7 +59,7 @@
           ];
         };
         "Protocol-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.aeson)
             (hsPkgs.base)

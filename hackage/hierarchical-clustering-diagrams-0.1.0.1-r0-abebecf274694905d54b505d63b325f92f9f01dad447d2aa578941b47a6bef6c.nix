@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hierarchical-clustering)
           (hsPkgs.diagrams-lib)
@@ -33,7 +33,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hierarchical-clustering)
             (hsPkgs.diagrams-lib)

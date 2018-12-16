@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Spock)
           (hsPkgs.async)
@@ -47,7 +47,7 @@
       };
       exes = {
         "shelduck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shelduck)
             (hsPkgs.Spock)
@@ -71,7 +71,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.lens)

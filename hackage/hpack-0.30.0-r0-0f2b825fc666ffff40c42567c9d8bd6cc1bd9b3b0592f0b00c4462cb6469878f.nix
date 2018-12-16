@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.Glob)
           (hsPkgs.aeson)
@@ -52,7 +52,7 @@
       };
       exes = {
         "hpack" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.Glob)
             (hsPkgs.aeson)
@@ -81,7 +81,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.Glob)
             (hsPkgs.HUnit)

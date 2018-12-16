@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.Unixutils)

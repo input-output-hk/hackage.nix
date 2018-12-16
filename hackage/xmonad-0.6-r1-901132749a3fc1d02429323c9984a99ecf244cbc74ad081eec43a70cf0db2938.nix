@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.X11)
           (hsPkgs.mtl)
           (hsPkgs.unix)
@@ -43,7 +43,7 @@
       };
       exes = {
         "xmonad" = {
-          depends  = pkgs.lib.optional (flags.testing) (hsPkgs.QuickCheck) ++ pkgs.lib.optional (flags.testing && flags.small_base) (hsPkgs.random);
+          depends = pkgs.lib.optional (flags.testing) (hsPkgs.QuickCheck) ++ pkgs.lib.optional (flags.testing && flags.small_base) (hsPkgs.random);
         };
       };
     };

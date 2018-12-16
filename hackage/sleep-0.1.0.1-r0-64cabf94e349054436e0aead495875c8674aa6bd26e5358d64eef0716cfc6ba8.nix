@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
         ];
       };
       exes = {
         "sleep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
           ];

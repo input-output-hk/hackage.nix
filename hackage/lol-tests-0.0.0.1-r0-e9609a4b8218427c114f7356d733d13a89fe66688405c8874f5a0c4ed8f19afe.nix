@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lol)
           (hsPkgs.MonadRandom)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-lol" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lol)
             (hsPkgs.lol-tests)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.base)
           (hsPkgs.pointless-haskell)
@@ -45,7 +45,7 @@
       };
       exes = {
         "multifocal" = {
-          depends  = [
+          depends = [
             (hsPkgs.mtl)
             (hsPkgs.base)
             (hsPkgs.pointless-haskell)

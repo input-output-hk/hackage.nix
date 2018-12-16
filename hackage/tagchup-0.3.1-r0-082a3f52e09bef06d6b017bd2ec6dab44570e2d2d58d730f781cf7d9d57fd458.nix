@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.xml-basic)
           (hsPkgs.transformers)
           (hsPkgs.explicit-exception)
@@ -38,7 +38,7 @@
       };
       exes = {
         "tagchuptest" = {
-          depends  = [
+          depends = [
             (hsPkgs.xml-basic)
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)
@@ -50,7 +50,7 @@
           ];
         };
         "tagchupspeed" = {
-          depends  = [
+          depends = [
             (hsPkgs.xml-basic)
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)
@@ -63,7 +63,7 @@
           ];
         };
         "validate-tagchup" = {
-          depends  = [
+          depends = [
             (hsPkgs.xml-basic)
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)

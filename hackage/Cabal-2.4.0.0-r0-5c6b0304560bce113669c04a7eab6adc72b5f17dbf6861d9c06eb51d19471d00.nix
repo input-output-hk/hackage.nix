@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -70,7 +70,7 @@
           ];
         };
         "parser-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.bytestring)
@@ -84,7 +84,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") (hsPkgs.tree-diff);
         };
         "check-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
@@ -95,7 +95,7 @@
           ];
         };
         "custom-setup-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -104,7 +104,7 @@
           ];
         };
         "hackage-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.bytestring)

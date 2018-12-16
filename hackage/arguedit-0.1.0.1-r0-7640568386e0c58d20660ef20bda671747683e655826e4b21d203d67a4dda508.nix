@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ArguEdit.bin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.mtl)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parallel)
         ];
       };
       exes = {
         "jumpthefive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parallel)
           ];

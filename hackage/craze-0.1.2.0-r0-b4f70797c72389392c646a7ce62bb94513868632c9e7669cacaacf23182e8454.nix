@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.curl)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "craze-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       tests = {
         "craze-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl)
             (hsPkgs.bytestring)
@@ -66,7 +66,7 @@
           ];
         };
         "craze-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.classy-prelude-conduit)
           (hsPkgs.abstract-par)
           (hsPkgs.bifunctors)

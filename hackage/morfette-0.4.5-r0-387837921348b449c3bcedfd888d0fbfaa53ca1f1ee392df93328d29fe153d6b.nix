@@ -26,7 +26,7 @@
     components = {
       exes = {
         "morfette" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)

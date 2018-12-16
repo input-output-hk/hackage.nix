@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tuple)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       tests = {
         "clr-typed-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clr-typed)
           ];

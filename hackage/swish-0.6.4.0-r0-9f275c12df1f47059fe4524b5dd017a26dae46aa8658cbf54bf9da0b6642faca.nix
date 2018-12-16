@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.binary)
@@ -44,7 +44,7 @@
       };
       exes = {
         "Swish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.binary)
@@ -64,7 +64,7 @@
       };
       tests = {
         "test-builtinmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -79,7 +79,7 @@
           ];
         };
         "test-graphpartition" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -87,7 +87,7 @@
           ];
         };
         "test-graph" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -95,7 +95,7 @@
           ];
         };
         "test-nt" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -110,7 +110,7 @@
           ];
         };
         "test-n3parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -125,7 +125,7 @@
           ];
         };
         "test-n3formatter" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -140,7 +140,7 @@
           ];
         };
         "test-rdfdatatypexsdinteger" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -155,7 +155,7 @@
           ];
         };
         "test-rdfgraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -169,7 +169,7 @@
           ];
         };
         "test-rdfproofcontext" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -184,7 +184,7 @@
           ];
         };
         "test-rdfproof" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -199,7 +199,7 @@
           ];
         };
         "test-rdfquery" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -214,7 +214,7 @@
           ];
         };
         "test-rdfruleset" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.hashable)
@@ -229,7 +229,7 @@
           ];
         };
         "test-varbinding" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -240,13 +240,13 @@
           ];
         };
         "test-lookupmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
           ];
         };
         "test-qname" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.text)

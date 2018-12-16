@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bzlib)
@@ -54,7 +54,7 @@
       };
       exes = {
         "ingest_communications" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bzlib)
@@ -83,7 +83,7 @@
           ];
         };
         "inspect_communications" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bzlib)
@@ -114,7 +114,7 @@
       };
       tests = {
         "unit_tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bzlib)

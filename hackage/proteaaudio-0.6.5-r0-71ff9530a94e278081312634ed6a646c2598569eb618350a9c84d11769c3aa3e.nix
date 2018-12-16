@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = (pkgs.lib.optionals (system.isWindows) [
           (pkgs."stdc++")
           (pkgs."ole32")
@@ -49,7 +49,7 @@
       };
       exes = {
         "proteaaudio-play" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.bytestring)

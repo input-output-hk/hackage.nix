@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "SubOptDistance" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
       };
     };

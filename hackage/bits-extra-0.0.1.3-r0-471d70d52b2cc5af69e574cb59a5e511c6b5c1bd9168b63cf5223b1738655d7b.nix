@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       tests = {
         "bits-extra-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.ghc-prim)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.criterion)

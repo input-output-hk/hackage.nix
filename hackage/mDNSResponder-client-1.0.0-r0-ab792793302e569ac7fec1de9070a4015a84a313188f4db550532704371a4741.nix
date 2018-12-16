@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.mDNSResponder-client)
             (hsPkgs.base)
             (hsPkgs.bytestring)

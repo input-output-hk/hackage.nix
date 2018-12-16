@@ -25,18 +25,18 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "jump-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jump)
             (hsPkgs.hspec)
           ];
         };
         "jump-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jump)
             (hsPkgs.criterion)

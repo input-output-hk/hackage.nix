@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gnome-desktop" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.directory)

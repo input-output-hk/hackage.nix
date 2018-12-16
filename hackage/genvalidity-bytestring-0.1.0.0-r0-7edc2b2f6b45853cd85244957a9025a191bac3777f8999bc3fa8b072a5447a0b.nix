@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.validity)
           (hsPkgs.validity-bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "genvalidity-bytestring-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

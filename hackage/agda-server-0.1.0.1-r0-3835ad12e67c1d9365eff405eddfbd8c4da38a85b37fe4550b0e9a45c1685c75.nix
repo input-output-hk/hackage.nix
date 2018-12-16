@@ -26,7 +26,7 @@
     components = {
       exes = {
         "agda-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.unix)
@@ -33,7 +33,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.unix)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "bench.hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.posix-paths)
             (hsPkgs.bytestring)

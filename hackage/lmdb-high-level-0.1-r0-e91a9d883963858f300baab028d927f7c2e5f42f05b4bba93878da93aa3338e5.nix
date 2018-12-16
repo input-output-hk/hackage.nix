@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "lmbd-high-level-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lmdb-high-level)
             (hsPkgs.test-framework)

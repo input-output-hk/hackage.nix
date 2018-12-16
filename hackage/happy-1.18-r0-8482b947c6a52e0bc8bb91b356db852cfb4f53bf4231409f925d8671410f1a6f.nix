@@ -26,7 +26,7 @@
     components = {
       exes = {
         "happy" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.mtl)
           ] ++ (if flags.small_base

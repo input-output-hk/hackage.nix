@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cless" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.highlighting-kate)
             (hsPkgs.wl-pprint-terminfo)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mancala" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

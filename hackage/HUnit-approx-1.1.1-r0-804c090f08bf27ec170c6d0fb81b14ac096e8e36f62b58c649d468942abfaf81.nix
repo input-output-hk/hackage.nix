@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HUnit)
           (hsPkgs.call-stack)
@@ -33,7 +33,7 @@
       };
       tests = {
         "sanity-check" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.HUnit-approx)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
@@ -33,7 +33,7 @@
       };
       tests = {
         "psqueues-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "psqueues-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.process)
@@ -36,7 +36,7 @@
       };
       exes = {
         "NameServer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.process)
@@ -46,7 +46,7 @@
           ];
         };
         "Phil" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.process)
@@ -56,7 +56,7 @@
           ];
         };
         "ChatClient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.process)
@@ -66,7 +66,7 @@
           ];
         };
         "ChatServer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.process)
@@ -76,7 +76,7 @@
           ];
         };
         "Bomberman" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.process)

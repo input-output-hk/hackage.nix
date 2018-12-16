@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HDBC)
           (hsPkgs.time)
@@ -46,7 +46,7 @@
       };
       exes = {
         "moo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.time)
@@ -68,7 +68,7 @@
       };
       tests = {
         "dbmigrations-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.containers)

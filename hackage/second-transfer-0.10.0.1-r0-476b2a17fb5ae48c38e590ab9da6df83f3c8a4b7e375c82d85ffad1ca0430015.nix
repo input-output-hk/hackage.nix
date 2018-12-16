@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.bytestring)
@@ -69,7 +69,7 @@
       };
       tests = {
         "hunit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.lens)

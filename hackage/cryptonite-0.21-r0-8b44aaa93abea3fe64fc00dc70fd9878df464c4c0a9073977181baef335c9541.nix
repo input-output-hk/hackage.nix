@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.memory)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test-cryptonite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.memory)

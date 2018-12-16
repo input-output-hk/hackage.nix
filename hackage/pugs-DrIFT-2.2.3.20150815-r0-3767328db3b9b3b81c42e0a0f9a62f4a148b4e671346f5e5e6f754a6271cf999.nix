@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.random)
@@ -42,7 +42,7 @@
       };
       exes = {
         "pugs-DrIFT" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-time)
             (hsPkgs.random)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.inline-c)
           (hsPkgs.primitive)
@@ -36,7 +36,7 @@
       };
       exes = {
         "c-mosquitto" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.c-mosquitto)
             (hsPkgs.options)
@@ -45,7 +45,7 @@
       };
       tests = {
         "c-mosquitto-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.c-mosquitto)
           ];

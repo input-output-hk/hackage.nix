@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-hastache" = {
-          depends  = [
+          depends = [
             (hsPkgs.hastache)
             (hsPkgs.base)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.template-haskell)
@@ -40,14 +40,14 @@
       };
       tests = {
         "Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.subhask)
             (hsPkgs.HerbiePlugin)
           ];
         };
         "ValidRewrite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.subhask)
             (hsPkgs.HerbiePlugin)

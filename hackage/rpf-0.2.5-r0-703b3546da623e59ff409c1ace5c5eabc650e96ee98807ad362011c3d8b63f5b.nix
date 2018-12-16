@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rpf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.appar)
             (hsPkgs.blaze-builder)

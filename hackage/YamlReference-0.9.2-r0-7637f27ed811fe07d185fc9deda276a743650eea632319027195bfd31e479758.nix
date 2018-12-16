@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.regex-compat)
           (hsPkgs.dlist)
@@ -40,7 +40,7 @@
       exes = {
         "yaml2yeast" = {};
         "yaml2yeast-test" = {
-          depends  = pkgs.lib.optional (flags.small_base) (hsPkgs.directory);
+          depends = pkgs.lib.optional (flags.small_base) (hsPkgs.directory);
         };
       };
     };

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.integer-gmp)
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
@@ -52,7 +52,7 @@
       };
       exes = {
         "haste-boot" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -72,7 +72,7 @@
           ];
         };
         "hastec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.ghc)
@@ -94,7 +94,7 @@
           ];
         };
         "haste-inst" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)
@@ -103,7 +103,7 @@
           ];
         };
         "haste-pkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)
@@ -112,7 +112,7 @@
           ];
         };
         "haste-install-his" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -121,7 +121,7 @@
           ];
         };
         "haste-copy-pkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

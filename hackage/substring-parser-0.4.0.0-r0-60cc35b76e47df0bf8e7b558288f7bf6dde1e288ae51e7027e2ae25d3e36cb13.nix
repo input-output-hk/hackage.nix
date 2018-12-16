@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.NoTrace)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -35,7 +35,7 @@
       };
       tests = {
         "substring-parser-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.NoTrace)
             (hsPkgs.QuickCheck)
             (hsPkgs.attoparsec)

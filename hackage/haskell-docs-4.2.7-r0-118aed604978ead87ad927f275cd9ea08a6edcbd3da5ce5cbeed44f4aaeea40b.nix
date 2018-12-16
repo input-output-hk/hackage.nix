@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((([
+        depends = (((((([
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -55,7 +55,7 @@
       };
       exes = {
         "haskell-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.text)
             (hsPkgs.base)
             (hsPkgs.haskell-docs)
@@ -65,7 +65,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-docs)
           ];

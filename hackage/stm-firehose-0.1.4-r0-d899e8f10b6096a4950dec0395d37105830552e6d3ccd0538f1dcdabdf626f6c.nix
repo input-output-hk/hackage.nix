@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.stm-chans)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-stm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm-firehose)
             (hsPkgs.hspec)

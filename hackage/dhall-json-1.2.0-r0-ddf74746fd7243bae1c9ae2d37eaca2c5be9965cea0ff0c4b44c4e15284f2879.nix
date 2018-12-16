@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.dhall)
@@ -37,7 +37,7 @@
       };
       exes = {
         "dhall-to-json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
@@ -49,7 +49,7 @@
           ];
         };
         "dhall-to-yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.dhall)

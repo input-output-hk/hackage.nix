@@ -28,7 +28,7 @@
     components = {
       exes = {
         "apelsin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
           (hsPkgs.base)
           (hsPkgs.pretty)
@@ -37,7 +37,7 @@
       };
       exes = {
         "hdirect" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.pretty)

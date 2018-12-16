@@ -26,7 +26,7 @@
     components = {
       exes = {
         "keiretsu" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.ansi-terminal)

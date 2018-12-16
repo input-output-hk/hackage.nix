@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Pollutocracy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.random)

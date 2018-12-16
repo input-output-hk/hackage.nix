@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sdl2)
           (hsPkgs.sdl2-image)
@@ -33,7 +33,7 @@
       };
       exes = {
         "sdl2-sprite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sdl2-sprite)
             (hsPkgs.sdl2)

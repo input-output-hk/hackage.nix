@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mushu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-prelude)
             (hsPkgs.safe-exceptions)
@@ -63,7 +63,7 @@
       };
       tests = {
         "mushu-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.bytestring)

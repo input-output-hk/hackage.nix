@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.contravariant)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.cereal)
             (hsPkgs.edges)
             (hsPkgs.foldl)

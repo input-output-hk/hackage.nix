@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "ldifdiff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ldif)
             (hsPkgs.cmdargs)
@@ -50,7 +50,7 @@
           ];
         };
         "ldif2html" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ldif)
             (hsPkgs.containers)
@@ -60,7 +60,7 @@
           ];
         };
         "ldifmodify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ldif)
             (hsPkgs.cmdargs)
@@ -69,7 +69,7 @@
           ];
         };
         "ldifundo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ldif)
             (hsPkgs.cmdargs)
@@ -81,7 +81,7 @@
       };
       tests = {
         "ldif-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
           ];

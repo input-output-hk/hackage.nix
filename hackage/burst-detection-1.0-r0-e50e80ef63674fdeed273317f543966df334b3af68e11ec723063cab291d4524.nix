@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ];
       };
       tests = {
         "simple-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.burst-detection)
           ];
@@ -40,7 +40,7 @@
       };
       benchmarks = {
         "c-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.burst-detection)

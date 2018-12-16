@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.MonadRandom)
@@ -34,21 +34,21 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fused-effects)
             (hsPkgs.hspec)
           ];
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fused-effects)
             (hsPkgs.hspec)
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

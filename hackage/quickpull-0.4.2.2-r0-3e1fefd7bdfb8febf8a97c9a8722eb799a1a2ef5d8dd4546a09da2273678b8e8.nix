@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -36,14 +36,14 @@
       };
       exes = {
         "quickpull" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
           ] ++ [ (hsPkgs.QuickCheck) ];
         };
         "quickpull-test-gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.barecheck)
           ] ++ pkgs.lib.optionals (flags.build-test-gen) ([
             (hsPkgs.base)
@@ -54,7 +54,7 @@
       };
       tests = {
         "quickpull-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

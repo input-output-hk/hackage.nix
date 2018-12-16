@@ -26,7 +26,7 @@
     components = {
       exes = {
         "soundgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.WAVE)
             (hsPkgs.split)

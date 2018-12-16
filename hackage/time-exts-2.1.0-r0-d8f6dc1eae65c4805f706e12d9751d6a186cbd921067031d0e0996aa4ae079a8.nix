@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       exes = {
         "test-time-exts" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

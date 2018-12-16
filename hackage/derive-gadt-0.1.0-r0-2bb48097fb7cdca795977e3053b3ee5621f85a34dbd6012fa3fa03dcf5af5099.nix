@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.pretty)
@@ -36,14 +36,14 @@
       };
       exes = {
         "derive-gadt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.haskell-src-meta)
           ];
         };
         "hstidy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-meta)
             (hsPkgs.haskell-src-exts)

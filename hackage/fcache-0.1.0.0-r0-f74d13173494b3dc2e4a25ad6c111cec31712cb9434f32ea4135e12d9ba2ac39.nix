@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
@@ -35,7 +35,7 @@
       };
       tests = {
         "fcache-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fcache)
             (hsPkgs.hspec)

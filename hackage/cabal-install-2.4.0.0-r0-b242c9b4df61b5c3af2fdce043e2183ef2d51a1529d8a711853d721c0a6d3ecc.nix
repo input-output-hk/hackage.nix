@@ -31,7 +31,7 @@
     components = {
       exes = {
         "cabal" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.async)
             (hsPkgs.array)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.test-framework)
           (hsPkgs.testing-feat)
@@ -33,7 +33,7 @@
       };
       tests = {
         "Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.testing-feat)

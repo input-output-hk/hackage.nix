@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tableaux.cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

@@ -36,7 +36,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cpphs)
           (hsPkgs.base)
           (hsPkgs.vector-sized)

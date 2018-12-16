@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       exes = {
         "Hit" = {
-          depends  = pkgs.lib.optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)
@@ -62,7 +62,7 @@
           ];
         };
         "Tests" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.use_parsec
+        depends = if flags.use_parsec
           then [
             (hsPkgs.base)
             (hsPkgs.parsec)
@@ -34,7 +34,7 @@
       };
       tests = {
         "ghci-history-parser-test" = {
-          depends  = if flags.use_parsec
+          depends = if flags.use_parsec
             then [
               (hsPkgs.base)
               (hsPkgs.hspec)
@@ -48,7 +48,7 @@
             ];
         };
         "ghci-history-parser-doctest" = {
-          depends  = if flags.use_parsec
+          depends = if flags.use_parsec
             then [
               (hsPkgs.base)
               (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.random)
           (hsPkgs.base)
           (hsPkgs.vector)

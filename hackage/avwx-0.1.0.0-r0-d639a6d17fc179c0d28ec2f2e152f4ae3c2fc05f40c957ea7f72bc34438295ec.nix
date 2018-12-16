@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.HTTP)
@@ -34,7 +34,7 @@
       };
       exes = {
         "metar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.avwx)
             (hsPkgs.pretty-show)
@@ -43,7 +43,7 @@
       };
       tests = {
         "avwx-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.avwx)
             (hsPkgs.text)

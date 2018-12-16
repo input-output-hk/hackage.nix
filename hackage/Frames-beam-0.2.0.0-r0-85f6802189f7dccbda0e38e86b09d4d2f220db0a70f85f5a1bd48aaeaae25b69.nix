@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.beam-core)
           (hsPkgs.beam-postgres)
@@ -47,7 +47,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Frames-beam)
             (hsPkgs.hspec)

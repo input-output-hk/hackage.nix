@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "symmetric-properties-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.symmetric-properties)
             (hsPkgs.hspec)

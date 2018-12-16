@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.containers)
@@ -50,7 +50,7 @@
       };
       exes = {
         "rbb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repo-based-blog)
           ];
@@ -58,7 +58,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repo-based-blog)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.record)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.parsec)
@@ -40,7 +40,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.doctest)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -49,7 +49,7 @@
           ];
         };
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.record)
             (hsPkgs.record-syntax)
             (hsPkgs.hspec)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.record)
             (hsPkgs.record-syntax)
             (hsPkgs.conversion)

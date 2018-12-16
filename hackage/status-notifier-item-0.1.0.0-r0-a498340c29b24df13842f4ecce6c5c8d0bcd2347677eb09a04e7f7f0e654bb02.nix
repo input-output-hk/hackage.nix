@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       exes = {
         "sni-cl-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbus)
             (hsPkgs.optparse-applicative)
@@ -51,7 +51,7 @@
           ];
         };
         "status-notifier-watcher" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbus)
             (hsPkgs.hslogger)

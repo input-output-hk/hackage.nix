@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (system.isWindows) ([
+        depends = pkgs.lib.optionals (system.isWindows) ([
           (hsPkgs.old-time)
         ] ++ [ (hsPkgs.base) ]);
         libs = pkgs.lib.optionals (system.isWindows) [

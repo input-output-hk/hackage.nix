@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.process)
@@ -37,7 +37,7 @@
           ];
         };
         "hackage4nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.pretty)

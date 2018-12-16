@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.timezone-series)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-parsedate" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.canteven-parsedate)

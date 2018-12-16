@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rdtsc)
           (hsPkgs.foldl)
@@ -37,7 +37,7 @@
       };
       exes = {
         "perf-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.perf)

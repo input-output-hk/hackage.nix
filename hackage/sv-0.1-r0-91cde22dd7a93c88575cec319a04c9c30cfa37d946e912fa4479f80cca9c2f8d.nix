@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -54,7 +54,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.foundation)
@@ -36,7 +36,7 @@
       };
       exes = {
         "courses" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hexml)
@@ -48,7 +48,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.doctest)
             (hsPkgs.hexml-lens)
             (hsPkgs.QuickCheck)

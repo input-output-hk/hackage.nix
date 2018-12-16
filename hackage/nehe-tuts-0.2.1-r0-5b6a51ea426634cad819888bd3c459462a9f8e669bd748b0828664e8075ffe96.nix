@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lesson01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -34,7 +34,7 @@
           ];
         };
         "lesson02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -42,7 +42,7 @@
           ];
         };
         "lesson03" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -50,7 +50,7 @@
           ];
         };
         "lesson04" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -58,7 +58,7 @@
           ];
         };
         "lesson05" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -66,7 +66,7 @@
           ];
         };
         "lesson06" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -77,7 +77,7 @@
           ];
         };
         "lesson07" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -88,7 +88,7 @@
           ];
         };
         "lesson08" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -99,7 +99,7 @@
           ];
         };
         "lesson09" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -111,7 +111,7 @@
           ];
         };
         "lesson10" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -122,7 +122,7 @@
           ];
         };
         "lesson11" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)
@@ -134,7 +134,7 @@
           ];
         };
         "lesson12" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLURaw)

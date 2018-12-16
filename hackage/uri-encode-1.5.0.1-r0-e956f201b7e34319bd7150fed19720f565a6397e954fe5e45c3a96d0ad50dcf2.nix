@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -35,7 +35,7 @@
       };
       exes = {
         "uri-encode" = {
-          depends  = pkgs.lib.optionals (flags.tools) [
+          depends = pkgs.lib.optionals (flags.tools) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network)
@@ -44,7 +44,7 @@
           ];
         };
         "uri-decode" = {
-          depends  = pkgs.lib.optionals (flags.tools) [
+          depends = pkgs.lib.optionals (flags.tools) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network)

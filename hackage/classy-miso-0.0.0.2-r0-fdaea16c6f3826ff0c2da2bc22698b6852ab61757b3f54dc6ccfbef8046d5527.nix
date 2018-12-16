@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.miso)
           (hsPkgs.rfc)
@@ -45,7 +45,7 @@
       };
       exes = {
         "classy-miso-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-miso)
             (hsPkgs.miso)
@@ -55,7 +55,7 @@
       };
       tests = {
         "ghcjs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-miso)
             (hsPkgs.miso)

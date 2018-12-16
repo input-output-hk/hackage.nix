@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.base)
           (hsPkgs.blaze-html)
@@ -70,7 +70,7 @@
       };
       exes = {
         "hledger-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hledger-web)
           ];

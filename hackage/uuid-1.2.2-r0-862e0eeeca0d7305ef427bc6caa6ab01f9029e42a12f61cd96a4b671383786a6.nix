@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.random)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "benchuuid" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.random)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
           ];
         };
         "testuuid" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.random)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

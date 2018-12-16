@@ -26,7 +26,7 @@
     components = {
       exes = {
         "game-of-life" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.hscurses)

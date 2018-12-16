@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ieee754)
           (hsPkgs.storable-complex)
@@ -35,7 +35,7 @@
       };
       exes = {
         "test-hs-linear-algebra" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)

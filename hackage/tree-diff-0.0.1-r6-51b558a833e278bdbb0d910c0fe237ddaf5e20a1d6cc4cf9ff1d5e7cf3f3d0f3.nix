@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
@@ -55,7 +55,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tree-diff)
             (hsPkgs.base-compat)

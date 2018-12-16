@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ekg-core)
           (hsPkgs.amazonka)
@@ -38,7 +38,7 @@
       };
       tests = {
         "ekg-cloudwatch-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ekg-core)
             (hsPkgs.amazonka)

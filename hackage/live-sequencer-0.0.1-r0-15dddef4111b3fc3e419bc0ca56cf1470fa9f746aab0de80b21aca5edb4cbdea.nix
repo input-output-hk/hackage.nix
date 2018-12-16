@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.non-negative)
           (hsPkgs.event-list)
           (hsPkgs.base)
@@ -36,7 +36,7 @@
       };
       exes = {
         "live-sequencer" = {
-          depends  = [
+          depends = [
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)
             (hsPkgs.parsec)
@@ -57,7 +57,7 @@
           ];
         };
         "live-sequencer-gui" = {
-          depends  = pkgs.lib.optionals (flags.gui) [
+          depends = pkgs.lib.optionals (flags.gui) [
             (hsPkgs.wx)
             (hsPkgs.wxcore)
             (hsPkgs.stm)

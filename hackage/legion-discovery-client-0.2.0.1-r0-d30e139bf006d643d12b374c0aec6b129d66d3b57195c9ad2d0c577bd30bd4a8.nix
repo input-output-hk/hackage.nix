@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       tests = {
         "legion-discovery-client-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.legion-discovery-client)
           ];

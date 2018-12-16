@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.MonadRandom)
@@ -37,7 +37,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.AlanDeniseEricLauren)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.AlanDeniseEricLauren)
             (hsPkgs.base)
             (hsPkgs.containers)

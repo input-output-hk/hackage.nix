@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hs-nombre-generator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.HandsomeSoup)

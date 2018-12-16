@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -63,7 +63,7 @@
       };
       exes = {
         "ghc-mod" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.mtl)
@@ -79,7 +79,7 @@
           ];
         };
         "ghc-modi" = {
-          depends  = [
+          depends = [
             (hsPkgs.binary)
             (hsPkgs.deepseq)
             (hsPkgs.directory)
@@ -94,13 +94,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -119,7 +119,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.convertible)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs.ghc-boot);
         };
         "shelltest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];
@@ -127,7 +127,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.base)

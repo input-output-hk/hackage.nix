@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hledger-irr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hledger-lib)
             (hsPkgs.Decimal)

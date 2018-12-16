@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flaccuraterip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.deepseq)

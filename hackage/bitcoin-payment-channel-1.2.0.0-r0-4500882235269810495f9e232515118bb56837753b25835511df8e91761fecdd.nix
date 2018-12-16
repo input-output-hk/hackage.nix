@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskoin-core)
           (hsPkgs.base16-bytestring)
@@ -54,7 +54,7 @@
       };
       tests = {
         "test-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskoin-core)
             (hsPkgs.base16-bytestring)
@@ -92,7 +92,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskoin-core)
             (hsPkgs.base16-bytestring)

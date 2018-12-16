@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-control)
           (hsPkgs.transformers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.concurrent-machines)
             (hsPkgs.machines)
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "fanout" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.machines)

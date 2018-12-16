@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-boot)
@@ -76,7 +76,7 @@
       };
       exes = {
         "liquid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-boot)
@@ -94,7 +94,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -116,7 +116,7 @@
           ];
         };
         "liquidhaskell-parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-boot)
             (hsPkgs.containers)

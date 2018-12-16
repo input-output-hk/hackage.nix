@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
       };
       tests = {
         "text-show-properties" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)

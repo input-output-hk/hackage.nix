@@ -26,7 +26,7 @@
     components = {
       exes = {
         "typescript-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.utf8-string)
             (hsPkgs.syb)
             (hsPkgs.split)

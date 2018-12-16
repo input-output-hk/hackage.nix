@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.scotty)
           (hsPkgs.unordered-containers)
           (hsPkgs.text)

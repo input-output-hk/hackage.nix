@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.curl)
           (hsPkgs.tagsoup)
           (hsPkgs.feed)

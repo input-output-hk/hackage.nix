@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hashrename" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe)
           (hsPkgs.threepenny-gui)
@@ -33,7 +33,7 @@
       };
       exes = {
         "Ordinary-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.Ordinary)
             (hsPkgs.base)
             (hsPkgs.safe)
@@ -43,7 +43,7 @@
       };
       tests = {
         "Ordinary-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Ordinary)
             (hsPkgs.base)
             (hsPkgs.safe)

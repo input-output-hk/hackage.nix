@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat-batteries)
           (hsPkgs.deepseq)
@@ -40,7 +40,7 @@
       };
       tests = {
         "merge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.step-function)
             (hsPkgs.QuickCheck)

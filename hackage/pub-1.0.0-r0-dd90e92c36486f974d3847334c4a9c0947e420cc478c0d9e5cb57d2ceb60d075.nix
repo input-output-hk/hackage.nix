@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pub" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)

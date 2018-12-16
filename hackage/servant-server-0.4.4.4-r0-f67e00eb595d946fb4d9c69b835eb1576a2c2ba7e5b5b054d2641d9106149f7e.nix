@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -50,7 +50,7 @@
       };
       exes = {
         "greet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant)
             (hsPkgs.servant-server)
@@ -63,7 +63,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -90,7 +90,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant)
             (hsPkgs.doctest)

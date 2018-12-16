@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -48,7 +48,7 @@
       };
       exes = {
         "lambdacube-compiler-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.lambdacube-compiler)
@@ -59,7 +59,7 @@
           ];
         };
         "lambdacube-compiler-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -82,7 +82,7 @@
           ];
         };
         "lambdacube-compiler-performance-report" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -91,7 +91,7 @@
           ];
         };
         "lc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdacube-compiler)
             (hsPkgs.optparse-applicative)
@@ -101,7 +101,7 @@
           ];
         };
         "lambdacube-backend-test-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)
@@ -122,7 +122,7 @@
           ];
         };
         "lambdacube-compiler-coverage-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)

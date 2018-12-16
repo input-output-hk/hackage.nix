@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -79,7 +79,7 @@
       };
       exes = {
         "bdcs" = {
-          depends  = [
+          depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.cond)
@@ -92,7 +92,7 @@
           ];
         };
         "bdcs-import" = {
-          depends  = [
+          depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.cond)
@@ -104,7 +104,7 @@
           ];
         };
         "bdcs-inspect" = {
-          depends  = [
+          depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.cond)
@@ -117,7 +117,7 @@
           ];
         };
         "inspect-groups" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -133,7 +133,7 @@
           ];
         };
         "inspect-ls" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -149,7 +149,7 @@
           ];
         };
         "inspect-nevras" = {
-          depends  = [
+          depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.cond)
@@ -161,7 +161,7 @@
           ];
         };
         "bdcs-export" = {
-          depends  = [
+          depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.cond)
@@ -173,7 +173,7 @@
           ];
         };
         "bdcs-tmpfiles" = {
-          depends  = [
+          depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -181,7 +181,7 @@
           ];
         };
         "bdcs-depsolve" = {
-          depends  = [
+          depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -191,7 +191,7 @@
       };
       tests = {
         "test-bdcs" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.aeson)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "llvm-diff-ffi" = {
-          depends  = [
+          depends = [
             (hsPkgs.utility-ht)
             (hsPkgs.regex-posix)
             (hsPkgs.containers)
@@ -34,7 +34,7 @@
           ];
         };
         "llvm-function-mangler" = {
-          depends  = [
+          depends = [
             (hsPkgs.utility-ht)
             (hsPkgs.regex-posix)
             (hsPkgs.containers)
@@ -42,7 +42,7 @@
           ];
         };
         "llvm-intrinsic-mangler" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.regex-posix)
             (hsPkgs.base)

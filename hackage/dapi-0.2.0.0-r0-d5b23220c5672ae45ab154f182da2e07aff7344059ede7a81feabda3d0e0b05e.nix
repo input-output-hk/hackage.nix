@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dapi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.text)

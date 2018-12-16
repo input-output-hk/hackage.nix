@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."doublefann")
           (pkgs."m")
@@ -36,7 +36,7 @@
       };
       exes = {
         "HFANNTest" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [
             (pkgs."doublefann")
             (pkgs."m")

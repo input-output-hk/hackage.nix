@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "map-lazy-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -46,7 +46,7 @@
           ];
         };
         "map-strict-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -59,7 +59,7 @@
           ];
         };
         "set-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -72,7 +72,7 @@
           ];
         };
         "intmap-lazy-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -85,7 +85,7 @@
           ];
         };
         "intmap-strict-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -98,7 +98,7 @@
           ];
         };
         "intset-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -111,7 +111,7 @@
           ];
         };
         "deprecated-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -122,7 +122,7 @@
           ];
         };
         "seq-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -133,7 +133,7 @@
           ];
         };
         "map-strictness-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.ChasingBottoms)
@@ -145,7 +145,7 @@
           ];
         };
         "intmap-strictness-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.ChasingBottoms)

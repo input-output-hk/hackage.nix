@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmdargs)
           (hsPkgs.lens)
@@ -38,7 +38,7 @@
       };
       exes = {
         "cabal-bounds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal-bounds)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "cabal-bounds-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)

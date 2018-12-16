@@ -25,21 +25,21 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pretty)
         ];
       };
       exes = {
         "smtLib-test-1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smtLib)
             (hsPkgs.process)
           ];
         };
         "smtLib-test-2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smtLib)
             (hsPkgs.process)

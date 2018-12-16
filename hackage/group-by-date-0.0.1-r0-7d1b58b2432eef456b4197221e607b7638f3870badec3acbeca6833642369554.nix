@@ -26,7 +26,7 @@
     components = {
       exes = {
         "group-by-date" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsshellscript)
             (hsPkgs.filemanip)
             (hsPkgs.filepath)

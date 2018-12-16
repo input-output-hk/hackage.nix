@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.hmatrix)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hahp-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hahp)
             (hsPkgs.time)

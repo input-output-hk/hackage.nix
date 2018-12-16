@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.deepseq)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-unbound-generics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.tasty)
@@ -54,7 +54,7 @@
       };
       benchmarks = {
         "benchmark-unbound-generics" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

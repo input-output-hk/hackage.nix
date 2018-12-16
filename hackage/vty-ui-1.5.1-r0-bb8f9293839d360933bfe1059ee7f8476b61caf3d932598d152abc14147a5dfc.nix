@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vty)
           (hsPkgs.containers)
@@ -44,26 +44,26 @@
       };
       exes = {
         "vty-ui-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ];
         };
         "vty-ui-list-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vty)
           ];
         };
         "vty-ui-progressbar-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vty)
           ];
         };
         "vty-ui-complex-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
@@ -73,28 +73,28 @@
           ];
         };
         "vty-ui-dirbrowser-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vty)
           ];
         };
         "vty-ui-phoneinput-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vty)
           ];
         };
         "vty-ui-dialog-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vty)
           ];
         };
         "vty-ui-edit-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vty)

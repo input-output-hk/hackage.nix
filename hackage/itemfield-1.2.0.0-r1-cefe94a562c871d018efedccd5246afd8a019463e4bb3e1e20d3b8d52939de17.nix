@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vty)
           (hsPkgs.text)
@@ -37,7 +37,7 @@
       };
       exes = {
         "bookcase" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -49,7 +49,7 @@
           ] ++ [ (hsPkgs.brick) ];
         };
         "workreport" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.vty)
@@ -64,7 +64,7 @@
       };
       tests = {
         "test_itemfield" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
@@ -79,7 +79,7 @@
           ] ++ [ (hsPkgs.brick) ];
         };
         "test_layout" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

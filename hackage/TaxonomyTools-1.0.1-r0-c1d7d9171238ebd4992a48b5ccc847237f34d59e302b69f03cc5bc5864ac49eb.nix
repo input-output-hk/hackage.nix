@@ -26,7 +26,7 @@
     components = {
       exes = {
         "TaxIds2Text" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.Taxonomy)
@@ -36,7 +36,7 @@
           ];
         };
         "Accessions2TaxIds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.process)
@@ -53,7 +53,7 @@
           ];
         };
         "TaxIds2TreeCompare" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.process)
@@ -67,7 +67,7 @@
           ];
         };
         "TaxIds2Tree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.process)
@@ -82,7 +82,7 @@
           ];
         };
         "TaxIdsDistance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.process)

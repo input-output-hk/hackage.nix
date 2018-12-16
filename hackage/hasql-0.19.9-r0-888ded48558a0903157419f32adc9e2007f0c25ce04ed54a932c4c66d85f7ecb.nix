@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.postgresql-binary)
           (hsPkgs.postgresql-libpq)
@@ -56,7 +56,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.criterion)
             (hsPkgs.uuid)

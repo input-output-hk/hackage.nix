@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.crypto-api)
@@ -42,7 +42,7 @@
       };
       exes = {
         "rsa_test" = {
-          depends  = [
+          depends = [
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-api)
@@ -62,7 +62,7 @@
       };
       tests = {
         "test-RSA" = {
-          depends  = [
+          depends = [
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-api)

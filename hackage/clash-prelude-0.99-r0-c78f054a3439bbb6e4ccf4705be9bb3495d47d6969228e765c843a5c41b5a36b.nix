@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bifunctors)
@@ -53,7 +53,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
@@ -61,7 +61,7 @@
       };
       benchmarks = {
         "benchmark-clash-prelude" = {
-          depends  = pkgs.lib.optionals (!(!flags.benchmarks)) [
+          depends = pkgs.lib.optionals (!(!flags.benchmarks)) [
             (hsPkgs.base)
             (hsPkgs.clash-prelude)
             (hsPkgs.criterion)

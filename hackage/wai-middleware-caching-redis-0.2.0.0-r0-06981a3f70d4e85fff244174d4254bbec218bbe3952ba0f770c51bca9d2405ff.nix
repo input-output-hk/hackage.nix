@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai-middleware-caching)
           (hsPkgs.hedis)
@@ -38,7 +38,7 @@
       };
       tests = {
         "wai-middleware-caching-redis-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-middleware-caching-redis)
           ];

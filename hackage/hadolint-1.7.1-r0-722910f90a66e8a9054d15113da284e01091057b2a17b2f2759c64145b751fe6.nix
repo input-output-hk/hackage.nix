@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ShellCheck)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -40,7 +40,7 @@
       };
       exes = {
         "hadolint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -56,7 +56,7 @@
       };
       tests = {
         "hadolint-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.ShellCheck)
             (hsPkgs.aeson)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gruff-labels" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.gruff)
@@ -34,7 +34,7 @@
           ];
         };
         "gruff-octopus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gruff)
             (hsPkgs.ruff)
@@ -44,7 +44,7 @@
           ] ++ pkgs.lib.optional (flags.mpfr) (hsPkgs.hmpfr);
         };
         "gruff-patterns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gruff)
             (hsPkgs.ruff)
@@ -54,7 +54,7 @@
           ] ++ pkgs.lib.optional (flags.mpfr) (hsPkgs.hmpfr);
         };
         "gruff-randoms" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gruff)
             (hsPkgs.ruff)
@@ -65,7 +65,7 @@
           ] ++ pkgs.lib.optional (flags.mpfr) (hsPkgs.hmpfr);
         };
         "gruff-whn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gruff)
             (hsPkgs.ruff)

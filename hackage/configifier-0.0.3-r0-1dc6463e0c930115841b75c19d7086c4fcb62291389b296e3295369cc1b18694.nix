@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.case-insensitive)
@@ -42,7 +42,7 @@
       };
       exes = {
         "configifier-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.configifier)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.configifier)
             (hsPkgs.aeson)

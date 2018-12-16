@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lifter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.gloss)

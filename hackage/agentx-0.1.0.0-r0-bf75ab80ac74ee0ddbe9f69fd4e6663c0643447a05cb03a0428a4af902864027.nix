@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.snmp)
           (hsPkgs.binary)
@@ -48,7 +48,7 @@
       };
       exes = {
         "agentx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.snmp)
             (hsPkgs.binary)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Frames)
           (hsPkgs.ansi-wl-pprint)
@@ -52,7 +52,7 @@
       };
       tests = {
         "refurb-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.ansi-wl-pprint)

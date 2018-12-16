@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       tests = {
         "test-sha512" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-sha512)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "bench-sha512" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-sha512)
             (hsPkgs.base)
             (hsPkgs.bytestring)

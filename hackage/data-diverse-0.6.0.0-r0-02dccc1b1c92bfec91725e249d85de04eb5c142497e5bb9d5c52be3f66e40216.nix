@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)
@@ -34,7 +34,7 @@
       };
       tests = {
         "data-diverse-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-diverse)
             (hsPkgs.hspec)

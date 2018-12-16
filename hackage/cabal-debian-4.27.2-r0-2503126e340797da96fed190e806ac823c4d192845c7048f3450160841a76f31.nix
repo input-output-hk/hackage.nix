@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.Cabal)
@@ -68,7 +68,7 @@
       };
       exes = {
         "cabal-debian" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal-debian)
             (hsPkgs.Cabal)
@@ -87,7 +87,7 @@
       };
       tests = {
         "cabal-debian-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal-debian)
             (hsPkgs.Cabal)

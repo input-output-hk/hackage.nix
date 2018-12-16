@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hs2dot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.split)

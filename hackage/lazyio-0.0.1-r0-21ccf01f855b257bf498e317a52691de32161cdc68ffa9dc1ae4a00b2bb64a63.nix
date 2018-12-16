@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
         ] ++ (if flags.splitbase
           then [ (hsPkgs.base) ]

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       exes = {
         "docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hakyll)
             (hsPkgs.split)

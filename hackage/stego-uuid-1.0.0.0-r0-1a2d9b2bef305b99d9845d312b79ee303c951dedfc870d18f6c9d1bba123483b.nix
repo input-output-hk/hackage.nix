@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.uuid)
           (hsPkgs.cryptonite)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-stego-uuid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stego-uuid)
             (hsPkgs.random)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabalvchk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
           ];

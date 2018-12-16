@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcs-fastconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
             (hsPkgs.hashed-storage)
             (hsPkgs.cmdlib)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-gen)
           (hsPkgs.pandoc)
@@ -34,7 +34,7 @@
       };
       exes = {
         "pandoc-sidenote" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-sidenote)
             (hsPkgs.pandoc-types)

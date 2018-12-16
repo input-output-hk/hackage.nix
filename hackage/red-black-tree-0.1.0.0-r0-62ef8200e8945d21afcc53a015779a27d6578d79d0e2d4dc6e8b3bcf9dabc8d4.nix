@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "red-black-tree-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.red-black-tree)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.regex-compat)
           (hsPkgs.haskell98)
@@ -36,7 +36,7 @@
       exes = {
         "wash2hs" = {};
         "washc" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc-paths)
             (hsPkgs.process)
             (hsPkgs.directory)

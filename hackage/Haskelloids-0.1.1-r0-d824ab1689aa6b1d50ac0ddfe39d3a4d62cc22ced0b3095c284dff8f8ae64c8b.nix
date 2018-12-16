@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Haskelloids" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)

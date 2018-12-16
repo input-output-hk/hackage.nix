@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random-shuffle)
           (hsPkgs.safe)
@@ -33,13 +33,13 @@
       };
       exes = {
         "draw-poker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.draw-poker)
           ];
         };
         "draw-poker-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.draw-poker)
           ];
@@ -47,7 +47,7 @@
       };
       tests = {
         "draw-poker-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.draw-poker)
           ];

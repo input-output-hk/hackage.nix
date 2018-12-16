@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -40,7 +40,7 @@
       };
       exes = {
         "quickbench" = {
-          depends  = [
+          depends = [
             (hsPkgs.quickbench)
             (hsPkgs.base)
             (hsPkgs.process)
@@ -49,7 +49,7 @@
       };
       tests = {
         "quickbench-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickbench)
           ];

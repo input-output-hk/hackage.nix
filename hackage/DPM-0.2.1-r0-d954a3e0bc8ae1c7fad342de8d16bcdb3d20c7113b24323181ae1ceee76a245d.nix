@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "dpm-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
             (hsPkgs.bytestring)
             (hsPkgs.time)
@@ -50,7 +50,7 @@
           ];
         };
         "dpm" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
             (hsPkgs.bytestring)
             (hsPkgs.time)

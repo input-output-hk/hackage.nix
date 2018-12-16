@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.CSPM-Frontend)
           (hsPkgs.CSPM-CoreLanguage)
           (hsPkgs.base)
@@ -37,7 +37,7 @@
       };
       exes = {
         "cspmEval" = {
-          depends  = [
+          depends = [
             (hsPkgs.CSPM-Frontend)
             (hsPkgs.CSPM-CoreLanguage)
             (hsPkgs.base)

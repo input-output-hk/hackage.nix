@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-flowlocks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.flowlocks-framework)
             (hsPkgs.QuickCheck)

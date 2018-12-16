@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.parsec)
@@ -38,7 +38,7 @@
       };
       exes = {
         "clippings2tsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clippings)
             (hsPkgs.cassava)
@@ -50,7 +50,7 @@
       };
       tests = {
         "wright-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clippings)
             (hsPkgs.data-default)

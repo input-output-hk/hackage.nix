@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.async)
           (hsPkgs.base)
@@ -35,7 +35,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -44,7 +44,7 @@
           ];
         };
         "download-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTTP)
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)
@@ -61,7 +61,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)
             (hsPkgs.base)

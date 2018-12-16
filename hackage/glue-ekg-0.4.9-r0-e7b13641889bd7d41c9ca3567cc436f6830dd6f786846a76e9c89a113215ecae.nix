@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.glue-common)
           (hsPkgs.transformers)
@@ -41,7 +41,7 @@
       };
       tests = {
         "glue-ekg-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glue-common)
             (hsPkgs.glue-ekg)

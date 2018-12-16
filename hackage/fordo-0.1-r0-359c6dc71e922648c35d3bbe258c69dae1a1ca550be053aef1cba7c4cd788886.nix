@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fordo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.transformers)

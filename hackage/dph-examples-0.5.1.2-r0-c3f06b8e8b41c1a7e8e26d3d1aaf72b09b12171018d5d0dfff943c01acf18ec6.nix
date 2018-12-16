@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dph-sumsq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -37,7 +37,7 @@
           ];
         };
         "dph-sumsq-seq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -48,7 +48,7 @@
           ];
         };
         "dph-dotp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -59,7 +59,7 @@
           ];
         };
         "dph-dotp-seq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -70,7 +70,7 @@
           ];
         };
         "dph-evens" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -81,7 +81,7 @@
           ];
         };
         "dph-evens-seq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -92,7 +92,7 @@
           ];
         };
         "dph-reverse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -103,7 +103,7 @@
           ];
         };
         "dph-reverse-seq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -114,7 +114,7 @@
           ];
         };
         "dph-smvm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -125,7 +125,7 @@
           ];
         };
         "dph-smvm-seq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -136,7 +136,7 @@
           ];
         };
         "dph-quickhull" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -147,7 +147,7 @@
           ];
         };
         "dph-quickhull-seq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -158,7 +158,7 @@
           ];
         };
         "dph-quickhull-vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.old-time)
@@ -166,7 +166,7 @@
           ];
         };
         "dph-quicksort" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -177,7 +177,7 @@
           ];
         };
         "dph-nbody-gloss" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)
@@ -190,7 +190,7 @@
           ];
         };
         "dph-nbody-batch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.dph-base)

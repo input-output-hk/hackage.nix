@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackage-find-contribution" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.hackage-db)
             (hsPkgs.containers)

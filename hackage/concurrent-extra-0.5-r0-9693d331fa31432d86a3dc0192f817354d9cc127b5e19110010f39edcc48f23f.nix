@@ -29,14 +29,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
         ];
       };
       exes = {
         "test-concurrent-extra" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.HUnit)

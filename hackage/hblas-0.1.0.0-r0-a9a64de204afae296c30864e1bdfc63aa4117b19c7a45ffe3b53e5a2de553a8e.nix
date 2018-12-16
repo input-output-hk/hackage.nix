@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.storable-complex)
           (hsPkgs.vector)
@@ -42,7 +42,7 @@
       };
       tests = {
         "simple-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.hblas)

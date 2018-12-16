@@ -26,7 +26,7 @@
     components = {
       exes = {
         "castle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shelly)
             (hsPkgs.errors)
@@ -42,7 +42,7 @@
       };
       tests = {
         "castle-specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)

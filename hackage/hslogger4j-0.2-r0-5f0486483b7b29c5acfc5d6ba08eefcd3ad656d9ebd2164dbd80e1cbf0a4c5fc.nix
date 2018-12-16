@@ -25,9 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
-          (hsPkgs.hslogger)
-        ];
+        depends = [ (hsPkgs.hslogger) ];
       };
     };
   }

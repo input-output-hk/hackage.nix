@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "dbfunctor-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.DBFunctor)
             (hsPkgs.MissingH)
             (hsPkgs.base)
@@ -61,7 +61,7 @@
       };
       tests = {
         "dbfunctor-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.DBFunctor)
             (hsPkgs.MissingH)
             (hsPkgs.base)

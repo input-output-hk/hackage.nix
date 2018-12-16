@@ -26,7 +26,7 @@
     components = {
       exes = {
         "plural" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.regex-tdfa)
             (hsPkgs.base)

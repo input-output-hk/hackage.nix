@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.filepath)
           (hsPkgs.temporary)
           (hsPkgs.array)
@@ -46,7 +46,7 @@
       };
       exes = {
         "gnuplot-demo" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.gnuplot)
             (hsPkgs.time)
             (hsPkgs.array)

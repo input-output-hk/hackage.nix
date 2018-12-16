@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams-lib)
           (hsPkgs.optparse-applicative)
@@ -35,7 +35,7 @@
       };
       exes = {
         "drawpuzzle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.puzzle-draw)
             (hsPkgs.diagrams-lib)

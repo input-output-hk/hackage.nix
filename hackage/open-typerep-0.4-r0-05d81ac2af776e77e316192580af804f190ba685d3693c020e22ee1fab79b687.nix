@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.constraints)
@@ -37,7 +37,7 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.open-typerep)
             (hsPkgs.syntactic)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "dynamic-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.open-typerep)

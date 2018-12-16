@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "matplotlib-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.matplotlib)
             (hsPkgs.tasty)

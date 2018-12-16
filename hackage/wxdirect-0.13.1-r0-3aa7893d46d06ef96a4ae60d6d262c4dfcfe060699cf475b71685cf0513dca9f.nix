@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "wxdirect" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.time)
             (hsPkgs.strict)

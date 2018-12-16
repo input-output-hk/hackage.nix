@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cufft)
           (hsPkgs.cuda)
           (hsPkgs.accelerate-fourier)
@@ -39,7 +39,7 @@
       };
       exes = {
         "accelerate-cufft-demo" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.accelerate-cufft)
             (hsPkgs.accelerate-cuda)
             (hsPkgs.accelerate)
@@ -47,7 +47,7 @@
           ];
         };
         "accelerate-cufft-demo-merged" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.accelerate-cuda)
             (hsPkgs.accelerate)
             (hsPkgs.cufft)
@@ -56,7 +56,7 @@
           ];
         };
         "accelerate-cufft-demo-separate" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.accelerate-cuda)
             (hsPkgs.accelerate)
             (hsPkgs.cufft)
@@ -65,7 +65,7 @@
           ];
         };
         "cufft-demo" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.cufft)
             (hsPkgs.cuda)
             (hsPkgs.base)

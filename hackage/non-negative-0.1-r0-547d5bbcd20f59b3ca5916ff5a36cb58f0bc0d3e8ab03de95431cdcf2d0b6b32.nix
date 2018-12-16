@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.utility-ht)
           (hsPkgs.QuickCheck)
         ] ++ [ (hsPkgs.base) ];

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.distributive)
@@ -36,7 +36,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

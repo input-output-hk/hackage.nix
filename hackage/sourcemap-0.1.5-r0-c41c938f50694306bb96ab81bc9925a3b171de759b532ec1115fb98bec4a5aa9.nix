@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
@@ -38,7 +38,7 @@
       };
       tests = {
         "nodejs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sourcemap)
             (hsPkgs.process)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "vlq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tokyocabinet-haskell)
           (hsPkgs.random)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hmark" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

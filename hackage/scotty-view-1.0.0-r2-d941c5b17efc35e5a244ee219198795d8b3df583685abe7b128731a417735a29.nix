@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.scotty)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       exes = {
         "web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty)
             (hsPkgs.text)

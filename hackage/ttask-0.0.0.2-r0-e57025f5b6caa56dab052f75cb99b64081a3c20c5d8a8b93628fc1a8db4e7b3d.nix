@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.extra)
@@ -35,7 +35,7 @@
       };
       exes = {
         "ttask" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.ttask)
@@ -46,7 +46,7 @@
       };
       tests = {
         "ttask-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ttask)
           ];

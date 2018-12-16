@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.ghc)
@@ -51,14 +51,14 @@
       };
       exes = {
         "fake-ghc-for-ghc-imported-from" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.process-streaming)
           ];
         };
         "ghc-imported-from" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.ghc)
@@ -86,7 +86,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.ghc)

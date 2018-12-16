@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskus-utils-types)
           (hsPkgs.haskus-utils-data)
@@ -45,7 +45,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskus-utils)
             (hsPkgs.tasty)

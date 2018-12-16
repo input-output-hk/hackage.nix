@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -50,7 +50,7 @@
       };
       exes = {
         "quoridor-exec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quoridor-hs)
           ];
@@ -58,7 +58,7 @@
       };
       tests = {
         "quoridor-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.quoridor-hs)

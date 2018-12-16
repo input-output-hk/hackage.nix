@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.monad-mersenne-random)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hmep-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hmatrix)
@@ -49,7 +49,7 @@
       };
       tests = {
         "hmep-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)

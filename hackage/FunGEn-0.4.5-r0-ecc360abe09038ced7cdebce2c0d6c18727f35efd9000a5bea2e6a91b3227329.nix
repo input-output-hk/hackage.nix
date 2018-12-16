@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.OpenGL)
           (hsPkgs.GLUT)
@@ -34,7 +34,7 @@
       };
       exes = {
         "fungen-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.FunGEn)
             (hsPkgs.base)
             (hsPkgs.OpenGL)
@@ -43,7 +43,7 @@
           ];
         };
         "fungen-pong" = {
-          depends  = [
+          depends = [
             (hsPkgs.FunGEn)
             (hsPkgs.base)
             (hsPkgs.OpenGL)
@@ -52,7 +52,7 @@
           ];
         };
         "fungen-worms" = {
-          depends  = [
+          depends = [
             (hsPkgs.FunGEn)
             (hsPkgs.base)
             (hsPkgs.OpenGL)

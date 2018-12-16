@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.binary)
           (hsPkgs.unix-compat)
         ] ++ (if flags.bytestring-in-base

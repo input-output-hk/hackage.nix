@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.primitive)
           (hsPkgs.guarded-allocation)
           (hsPkgs.storable-record)
@@ -37,7 +37,7 @@
       };
       tests = {
         "comfort-array-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.comfort-array)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

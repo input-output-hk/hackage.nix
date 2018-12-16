@@ -26,7 +26,7 @@
     components = {
       exes = {
         "asic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.bytestring)

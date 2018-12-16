@@ -28,13 +28,13 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (flags.text) (hsPkgs.text);
       };
       exes = {
         "base91" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base91)
             (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base91)
             (hsPkgs.bytestring)

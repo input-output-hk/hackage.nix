@@ -26,7 +26,7 @@
     components = {
       exes = {
         "randometer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random-fu)
           ];

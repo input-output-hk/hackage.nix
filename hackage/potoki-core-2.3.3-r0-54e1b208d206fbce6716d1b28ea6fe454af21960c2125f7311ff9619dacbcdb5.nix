@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.acquire)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -50,7 +50,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.acquire)
             (hsPkgs.attoparsec)
             (hsPkgs.deferred-folds)
@@ -70,7 +70,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.potoki-core)
             (hsPkgs.rerebase)

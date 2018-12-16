@@ -29,14 +29,14 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (flags.support_bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (flags.support_deepseq) (hsPkgs.deepseq)) ++ pkgs.lib.optional (flags.support_foundation) (hsPkgs.foundation);
       };
       tests = {
         "test-memory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

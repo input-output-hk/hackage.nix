@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       tests = {
         "unittest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.persistent-template)
@@ -56,13 +56,13 @@
           ];
         };
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "examples" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-examples)) [
+          depends = pkgs.lib.optionals (!(!flags.test-examples)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.conduit)

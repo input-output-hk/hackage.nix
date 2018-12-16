@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat-batteries)
           (hsPkgs.aeson)
@@ -42,7 +42,7 @@
       };
       tests = {
         "json-schema-generic-aeson-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat-batteries)
             (hsPkgs.aeson)

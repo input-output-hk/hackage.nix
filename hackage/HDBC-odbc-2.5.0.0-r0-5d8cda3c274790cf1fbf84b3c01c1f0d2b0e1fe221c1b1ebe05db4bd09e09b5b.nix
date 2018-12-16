@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.concurrent-extra)
           (hsPkgs.mtl)
@@ -46,7 +46,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.HDBC)
@@ -61,7 +61,7 @@
           ];
         };
         "stresstest" = {
-          depends  = pkgs.lib.optionals (flags.buildstresstest) [
+          depends = pkgs.lib.optionals (flags.buildstresstest) [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-odbc)

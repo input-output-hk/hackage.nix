@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scyther-proof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.autoexporter)
           (hsPkgs.base)
@@ -42,7 +42,7 @@
       };
       exes = {
         "descript-cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.array)
             (hsPkgs.autoexporter)
@@ -75,7 +75,7 @@
       };
       tests = {
         "descript-lang-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.array)

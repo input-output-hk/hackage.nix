@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.xml-basic)
           (hsPkgs.transformers)
           (hsPkgs.explicit-exception)
@@ -41,21 +41,21 @@
       };
       exes = {
         "validate-tagchup" = {
-          depends  = [
+          depends = [
             (hsPkgs.tagchup)
             (hsPkgs.xml-basic)
             (hsPkgs.base)
           ];
         };
         "escape-html" = {
-          depends  = [
+          depends = [
             (hsPkgs.tagchup)
             (hsPkgs.xml-basic)
             (hsPkgs.base)
           ] ++ pkgs.lib.optional (flags.buildexamples) (hsPkgs.hxt);
         };
         "strip-html" = {
-          depends  = [
+          depends = [
             (hsPkgs.tagchup)
             (hsPkgs.xml-basic)
             (hsPkgs.base)
@@ -64,7 +64,7 @@
       };
       tests = {
         "tagchuptest" = {
-          depends  = [
+          depends = [
             (hsPkgs.tagchup)
             (hsPkgs.xml-basic)
             (hsPkgs.base)
@@ -73,7 +73,7 @@
       };
       benchmarks = {
         "tagchupspeed" = {
-          depends  = [
+          depends = [
             (hsPkgs.old-time)
             (hsPkgs.xml-basic)
             (hsPkgs.data-accessor)

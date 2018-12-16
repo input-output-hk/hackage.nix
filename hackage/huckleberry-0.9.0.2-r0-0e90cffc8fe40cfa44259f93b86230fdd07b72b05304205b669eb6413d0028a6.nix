@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "huckleberry-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.huckleberry)
             (hsPkgs.HUnit)

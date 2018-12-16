@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.megaparsec)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       tests = {
         "tibetan-utils-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tibetan-utils)
             (hsPkgs.hspec)

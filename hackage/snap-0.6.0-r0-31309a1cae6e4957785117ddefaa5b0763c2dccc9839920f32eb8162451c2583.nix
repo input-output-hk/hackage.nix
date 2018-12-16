@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.Crypto)
           (hsPkgs.MonadCatchIO-transformers)
           (hsPkgs.aeson)
@@ -66,7 +66,7 @@
       };
       exes = {
         "snap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

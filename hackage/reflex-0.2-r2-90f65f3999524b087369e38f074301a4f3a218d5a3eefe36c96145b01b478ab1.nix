@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dependent-sum)
           (hsPkgs.dependent-map)
@@ -40,7 +40,7 @@
       };
       benchmarks = {
         "spider-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dependent-sum)
             (hsPkgs.dependent-map)

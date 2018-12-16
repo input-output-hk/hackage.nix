@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.case-insensitive)
           (hsPkgs.data-default-class)
         ];

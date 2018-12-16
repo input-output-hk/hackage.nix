@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.resourcet)
           (hsPkgs.cryptohash)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-merkel-patricia-db" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.leveldb-haskell)

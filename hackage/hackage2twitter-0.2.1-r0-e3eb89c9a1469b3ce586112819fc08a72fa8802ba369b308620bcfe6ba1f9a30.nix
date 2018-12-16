@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackage2twitter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.feed)
             (hsPkgs.feed2twitter)

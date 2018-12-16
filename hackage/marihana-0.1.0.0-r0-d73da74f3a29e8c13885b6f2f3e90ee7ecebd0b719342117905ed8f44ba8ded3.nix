@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "marihana" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.marihana)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "marihana-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.marihana)
           ];

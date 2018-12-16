@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.directory)
@@ -45,7 +45,7 @@
       };
       exes = {
         "haddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
           ] ++ (if flags.in-ghc-tree
             then [
@@ -63,7 +63,7 @@
       };
       tests = {
         "html-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)
@@ -72,7 +72,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.binary)
@@ -39,7 +39,7 @@
       };
       tests = {
         "tdigest-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tdigest)
             (hsPkgs.base-compat)
@@ -53,7 +53,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

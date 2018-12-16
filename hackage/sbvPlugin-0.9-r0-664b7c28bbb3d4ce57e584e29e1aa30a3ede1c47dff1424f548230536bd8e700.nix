@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-prim)
@@ -37,7 +37,7 @@
       };
       tests = {
         "sbvPluginTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sbvPlugin)
             (hsPkgs.tasty)

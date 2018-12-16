@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aig)
           (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       exes = {
         "long-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.abcBridge)
           ];
@@ -51,7 +51,7 @@
       };
       tests = {
         "abc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.abcBridge)
             (hsPkgs.aig)

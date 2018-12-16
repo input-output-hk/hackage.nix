@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bond-haskell-compiler)
           (hsPkgs.aeson)
@@ -45,7 +45,7 @@
       };
       tests = {
         "bond-haskell-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bond-haskell)
@@ -66,7 +66,7 @@
       };
       benchmarks = {
         "bond-haskell-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bond-haskell)
             (hsPkgs.bytestring)

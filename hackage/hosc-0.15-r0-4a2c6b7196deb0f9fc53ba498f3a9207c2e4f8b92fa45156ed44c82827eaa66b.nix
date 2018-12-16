@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.blaze-builder)
@@ -38,7 +38,7 @@
       };
       tests = {
         "hosc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hosc)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "hosc-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
@@ -81,7 +81,7 @@
       };
       exes = {
         "wreck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.markdown-unlit)
@@ -95,7 +95,7 @@
       };
       tests = {
         "wrecker-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.hspec)

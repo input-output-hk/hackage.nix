@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.lens)
@@ -37,7 +37,7 @@
       };
       tests = {
         "coreDump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.static-tensor)
             (hsPkgs.tasty)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "matMul" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mp3driver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)

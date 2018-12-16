@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "bson-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)

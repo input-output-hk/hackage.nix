@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dimensions)
           (hsPkgs.safe-exceptions)
@@ -41,7 +41,7 @@
       };
       sublibs = {
         "hasktorch-cpu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-types-th)
             (hsPkgs.dimensions)
@@ -55,7 +55,7 @@
           ] ++ pkgs.lib.optional (!flags.lite) (hsPkgs.hasktorch-indef-unsigned);
         };
         "hasktorch-gpu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-types-th)
             (hsPkgs.dimensions)
@@ -71,21 +71,21 @@
           ] ++ pkgs.lib.optional (!flags.lite) (hsPkgs.hasktorch-indef-unsigned);
         };
         "hasktorch-indef-unsigned" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-signatures-partial)
             (hsPkgs.hasktorch-indef)
           ];
         };
         "hasktorch-indef-signed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-signatures-partial)
             (hsPkgs.hasktorch-indef)
           ];
         };
         "hasktorch-indef-floating" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-indef)
             (hsPkgs.hasktorch-signatures-partial)
@@ -94,25 +94,25 @@
       };
       exes = {
         "isdefinite-cpu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-cpu)
           ];
         };
         "isdefinite-gpu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-gpu)
           ];
         };
         "isdefinite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch)
           ];
         };
         "memcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch)
           ];
@@ -120,7 +120,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.backprop)
             (hsPkgs.base)

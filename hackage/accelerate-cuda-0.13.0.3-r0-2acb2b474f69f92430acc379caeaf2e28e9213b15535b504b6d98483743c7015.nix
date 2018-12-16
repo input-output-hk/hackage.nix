@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.accelerate)
           (hsPkgs.base)
           (hsPkgs.array)

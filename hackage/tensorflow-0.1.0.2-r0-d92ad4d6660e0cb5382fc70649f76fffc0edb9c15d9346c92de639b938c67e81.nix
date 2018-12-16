@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.proto-lens)
           (hsPkgs.proto-lens-protoc)
           (hsPkgs.tensorflow-proto)
@@ -54,7 +54,7 @@
       };
       tests = {
         "FFITest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -67,7 +67,7 @@
           ];
         };
         "VarIntTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.cmdargs)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "makecharts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bench-graph)
             (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.gauge)

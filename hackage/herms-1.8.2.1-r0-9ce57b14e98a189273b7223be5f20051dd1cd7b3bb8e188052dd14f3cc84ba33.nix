@@ -26,7 +26,7 @@
     components = {
       exes = {
         "herms" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.brick)

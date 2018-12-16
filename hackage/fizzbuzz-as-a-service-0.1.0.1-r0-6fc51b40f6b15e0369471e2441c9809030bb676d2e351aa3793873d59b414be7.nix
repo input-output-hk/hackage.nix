@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fizzbuzz-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)

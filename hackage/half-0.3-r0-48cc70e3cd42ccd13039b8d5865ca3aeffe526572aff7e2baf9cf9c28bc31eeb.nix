@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") (hsPkgs.deepseq)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim);
       };
       tests = {
         "spec" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
             (hsPkgs.base)
             (hsPkgs.half)
             (hsPkgs.hspec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ztail" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.time)

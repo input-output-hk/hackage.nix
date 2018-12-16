@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.random)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hw-prim-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hw-prim)
           ];
@@ -42,7 +42,7 @@
       };
       tests = {
         "hw-prim-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.hw-prim)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.smallcheck)
           (hsPkgs.MuCheck)
@@ -33,7 +33,7 @@
       };
       exes = {
         "mucheck-smallcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smallcheck)
             (hsPkgs.MuCheck)

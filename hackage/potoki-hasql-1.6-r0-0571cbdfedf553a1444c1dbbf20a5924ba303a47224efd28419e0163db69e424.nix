@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.acquire)
           (hsPkgs.base)
           (hsPkgs.bytestring)

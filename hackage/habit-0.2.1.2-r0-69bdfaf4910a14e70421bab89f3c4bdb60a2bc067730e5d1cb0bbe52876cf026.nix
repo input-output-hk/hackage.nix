@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.persistent-postgresql)
           (hsPkgs.persistent-template)
@@ -48,7 +48,7 @@
       };
       exes = {
         "hello-bot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.habit)
             (hsPkgs.text)

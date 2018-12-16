@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((([
+        depends = ((((([
           (hsPkgs.Cabal)
           (hsPkgs.array)
           (hsPkgs.binary)
@@ -83,7 +83,7 @@
       };
       exes = {
         "yi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yi)
           ];
@@ -91,7 +91,7 @@
       };
       tests = {
         "test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.semigroups)

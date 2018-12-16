@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.assert-failure)
           (hsPkgs.base)
@@ -63,7 +63,7 @@
       };
       exes = {
         "LambdaHack" = {
-          depends  = [
+          depends = [
             (hsPkgs.LambdaHack)
             (hsPkgs.template-haskell)
             (hsPkgs.array)

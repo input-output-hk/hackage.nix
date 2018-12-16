@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lifted-base)
           (hsPkgs.yaml)
@@ -53,7 +53,7 @@
       };
       exes = {
         "iridium" = {
-          depends  = [
+          depends = [
             (hsPkgs.iridium)
             (hsPkgs.base)
             (hsPkgs.yaml)

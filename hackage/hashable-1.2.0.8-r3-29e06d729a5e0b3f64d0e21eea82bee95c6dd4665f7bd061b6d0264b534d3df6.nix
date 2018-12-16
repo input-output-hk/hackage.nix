@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
@@ -41,7 +41,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.ghc-prim)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

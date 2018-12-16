@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       sublibs = {
         "internal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base64-bytestring)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.internal)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monoid-extras)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "namespace-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.namespace)
           ];

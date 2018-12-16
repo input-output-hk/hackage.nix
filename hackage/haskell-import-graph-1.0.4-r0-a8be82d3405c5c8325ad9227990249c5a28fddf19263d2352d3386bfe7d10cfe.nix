@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.classy-prelude)
           (hsPkgs.ghc)
@@ -37,7 +37,7 @@
       };
       exes = {
         "haskell-import-graph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-import-graph)
           ];

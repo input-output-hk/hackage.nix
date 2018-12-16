@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.exceptions)
@@ -44,7 +44,7 @@
       };
       tests = {
         "consumers-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.consumers)
             (hsPkgs.hpqtypes)
@@ -56,7 +56,7 @@
           ];
         };
         "consumers-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.consumers)
             (hsPkgs.exceptions)

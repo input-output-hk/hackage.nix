@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.attoparsec)
@@ -45,7 +45,7 @@
       };
       exes = {
         "glirc" = {
-          depends  = [
+          depends = [
             (hsPkgs.irc-core)
             (hsPkgs.connection)
             (hsPkgs.tls)

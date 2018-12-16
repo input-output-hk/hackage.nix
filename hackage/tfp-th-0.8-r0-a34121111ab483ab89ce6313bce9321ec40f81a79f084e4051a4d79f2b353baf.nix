@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.tfp)
           (hsPkgs.template-haskell)
           (hsPkgs.base)

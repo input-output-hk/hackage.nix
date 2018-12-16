@@ -26,7 +26,7 @@
     components = {
       exes = {
         "supero" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

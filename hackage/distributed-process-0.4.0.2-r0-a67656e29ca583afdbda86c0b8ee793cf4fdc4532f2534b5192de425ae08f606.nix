@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.network-transport)
@@ -49,7 +49,7 @@
       };
       exes = {
         "distributed-process-throughput" = {
-          depends  = pkgs.lib.optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -58,7 +58,7 @@
           ];
         };
         "distributed-process-latency" = {
-          depends  = pkgs.lib.optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -67,7 +67,7 @@
           ];
         };
         "distributed-process-channels" = {
-          depends  = pkgs.lib.optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -76,7 +76,7 @@
           ];
         };
         "distributed-process-spawns" = {
-          depends  = pkgs.lib.optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -87,7 +87,7 @@
       };
       tests = {
         "TestCH" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.ansi-terminal)
@@ -99,7 +99,7 @@
           ];
         };
         "TestClosure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.ansi-terminal)

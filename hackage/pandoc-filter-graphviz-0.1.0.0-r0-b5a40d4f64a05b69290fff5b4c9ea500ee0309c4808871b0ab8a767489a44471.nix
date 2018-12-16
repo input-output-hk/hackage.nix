@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pandoc-filter-graphviz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.pandoc)

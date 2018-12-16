@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flower" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -39,27 +39,27 @@
           ];
         };
         "flowselect" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.random)
             (hsPkgs.base)
           ];
         };
         "frecover" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
           ];
         };
         "frename" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
         };
         "flowt" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.cmdargs)

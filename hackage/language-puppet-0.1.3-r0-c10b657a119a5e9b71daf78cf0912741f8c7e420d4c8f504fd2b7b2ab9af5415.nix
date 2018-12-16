@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.MissingH)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test-lexer" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.Glob)
@@ -52,14 +52,14 @@
           ];
         };
         "test-expr" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.parsec)
           ];
         };
         "test-interpreter" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.Glob)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "bench-lexer" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
           ];

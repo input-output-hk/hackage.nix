@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rehoo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.parallel-io)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "prove-everywhere-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp)
             (hsPkgs.wai)

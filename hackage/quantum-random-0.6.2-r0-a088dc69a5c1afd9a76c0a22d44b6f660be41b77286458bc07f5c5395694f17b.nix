@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansigraph)
           (hsPkgs.aeson)
@@ -40,7 +40,7 @@
       };
       exes = {
         "qrand" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.mtl)
@@ -50,7 +50,7 @@
       };
       tests = {
         "test-quantum-random" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quantum-random)
             (hsPkgs.hspec)

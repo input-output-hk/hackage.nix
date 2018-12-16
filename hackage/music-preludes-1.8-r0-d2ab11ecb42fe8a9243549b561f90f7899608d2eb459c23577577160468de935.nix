@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.lens)
@@ -55,37 +55,37 @@
       };
       exes = {
         "music2ly" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.music-preludes)
           ];
         };
         "music2pdf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.music-preludes)
           ];
         };
         "music2png" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.music-preludes)
           ];
         };
         "music2svg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.music-preludes)
           ];
         };
         "music2musicxml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.music-preludes)
           ];
         };
         "music2midi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.music-preludes)
           ];
@@ -93,7 +93,7 @@
       };
       tests = {
         "regression" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)

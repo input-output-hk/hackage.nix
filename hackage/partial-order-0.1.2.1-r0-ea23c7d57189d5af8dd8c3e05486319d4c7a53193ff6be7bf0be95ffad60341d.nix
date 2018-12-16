@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "partial-order-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.partial-order)
             (hsPkgs.HUnit)

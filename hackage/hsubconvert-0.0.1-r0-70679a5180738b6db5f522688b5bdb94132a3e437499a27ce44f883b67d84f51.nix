@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsubconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.svndump)
             (hsPkgs.gitlib)

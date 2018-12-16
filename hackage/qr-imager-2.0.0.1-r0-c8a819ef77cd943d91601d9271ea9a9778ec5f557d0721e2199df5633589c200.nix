@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.JuicyPixels)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test-lib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.qr-imager)
             (hsPkgs.hspec)

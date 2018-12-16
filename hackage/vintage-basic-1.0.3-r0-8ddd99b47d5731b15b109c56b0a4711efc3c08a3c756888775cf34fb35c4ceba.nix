@@ -26,7 +26,7 @@
     components = {
       exes = {
         "vintbas" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.hashable)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test-vintbas" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time-locale-compat)
           (hsPkgs.time)
@@ -40,7 +40,7 @@
       };
       exes = {
         "hap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time-locale-compat)
             (hsPkgs.time)
@@ -56,7 +56,7 @@
       };
       tests = {
         "hapistrano-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time-locale-compat)
             (hsPkgs.time)

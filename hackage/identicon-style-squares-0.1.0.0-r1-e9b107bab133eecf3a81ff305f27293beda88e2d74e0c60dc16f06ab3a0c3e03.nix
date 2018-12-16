@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.identicon)
           (hsPkgs.JuicyPixels)
@@ -34,7 +34,7 @@
       };
       tests = {
         "squares" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.JuicyPixels)
             (hsPkgs.identicon)

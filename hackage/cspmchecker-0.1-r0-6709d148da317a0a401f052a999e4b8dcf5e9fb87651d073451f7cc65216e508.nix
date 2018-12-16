@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cspmchecker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libcspm)
             (hsPkgs.filepath)

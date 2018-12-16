@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.leancheck)
           (hsPkgs.cmdargs)
@@ -34,28 +34,28 @@
       };
       tests = {
         "mutate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.fitspec)
           ];
         };
         "showmutable" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.fitspec)
           ];
         };
         "derive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.fitspec)
           ];
         };
         "utils" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.fitspec)
@@ -64,80 +64,80 @@
       };
       benchmarks = {
         "avltrees" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "bools" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "digraphs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "heaps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "id" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "list" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "mergeheaps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "pretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
             (hsPkgs.pretty)
           ];
         };
         "sets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "setsofsets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "sieve" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "sorting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];
         };
         "spring" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fitspec)
           ];

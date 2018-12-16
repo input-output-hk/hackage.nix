@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.process)
@@ -35,7 +35,7 @@
       };
       tests = {
         "pure" = {
-          depends  = [
+          depends = [
             (hsPkgs.hgdbmi)
             (hsPkgs.base)
             (hsPkgs.HUnit)
@@ -45,7 +45,7 @@
           ];
         };
         "io" = {
-          depends  = [
+          depends = [
             (hsPkgs.hgdbmi)
             (hsPkgs.base)
             (hsPkgs.directory)

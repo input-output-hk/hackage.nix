@@ -29,7 +29,7 @@
     components = {
       exes = {
         "squeeze" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

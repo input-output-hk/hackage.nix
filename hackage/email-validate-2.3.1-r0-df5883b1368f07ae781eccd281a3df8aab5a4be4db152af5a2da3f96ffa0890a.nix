@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "Main" = {
-          depends  = [
+          depends = [
             (hsPkgs.email-validate)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -43,7 +43,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

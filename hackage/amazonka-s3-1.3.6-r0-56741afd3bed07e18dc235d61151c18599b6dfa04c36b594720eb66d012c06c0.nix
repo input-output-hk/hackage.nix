@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka-core)
           (hsPkgs.base)
           (hsPkgs.lens)
@@ -34,7 +34,7 @@
       };
       tests = {
         "amazonka-s3-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka-core)
             (hsPkgs.amazonka-test)
             (hsPkgs.amazonka-s3)

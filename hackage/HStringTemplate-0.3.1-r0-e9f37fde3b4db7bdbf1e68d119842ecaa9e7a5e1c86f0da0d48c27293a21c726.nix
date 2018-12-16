@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (flags.syb-with-class) (hsPkgs.syb-with-class) ++ (if flags.small-base
+        depends = pkgs.lib.optional (flags.syb-with-class) (hsPkgs.syb-with-class) ++ (if flags.small-base
           then [
             (hsPkgs.base)
             (hsPkgs.filepath)

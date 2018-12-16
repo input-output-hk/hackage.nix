@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.array)
@@ -46,19 +46,19 @@
       };
       exes = {
         "gtk2hsTypeGen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk2hs-buildtools)
           ];
         };
         "gtk2hsHookGenerator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk2hs-buildtools)
           ];
         };
         "gtk2hsC2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk2hs-buildtools)
           ];

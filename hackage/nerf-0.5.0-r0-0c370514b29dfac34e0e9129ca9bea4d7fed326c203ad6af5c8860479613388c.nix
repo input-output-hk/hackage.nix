@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.vector)
@@ -49,7 +49,7 @@
       };
       exes = {
         "nerf" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.temporary)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.storablevector)
           (hsPkgs.carray)
           (hsPkgs.utility-ht)

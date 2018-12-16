@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "arpa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.arpa)
           ];

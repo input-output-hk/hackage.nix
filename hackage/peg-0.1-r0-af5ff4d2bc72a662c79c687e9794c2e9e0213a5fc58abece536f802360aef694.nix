@@ -26,7 +26,7 @@
     components = {
       exes = {
         "peg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logict)
             (hsPkgs.containers)

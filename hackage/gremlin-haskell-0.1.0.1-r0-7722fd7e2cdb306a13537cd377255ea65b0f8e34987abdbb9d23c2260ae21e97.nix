@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "gremlin-haskell-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gremlin-haskell)
             (hsPkgs.text)
@@ -54,7 +54,7 @@
       };
       tests = {
         "gremlin-haskell-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gremlin-haskell)
             (hsPkgs.lens)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.IfElse)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "doctests-hpath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
@@ -50,7 +50,7 @@
           ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.unbuildable);
         };
         "doctests-posix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.unix)
@@ -61,7 +61,7 @@
           ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.unbuildable);
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.IfElse)

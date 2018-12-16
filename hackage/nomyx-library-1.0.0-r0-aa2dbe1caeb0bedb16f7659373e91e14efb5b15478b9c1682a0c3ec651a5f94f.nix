@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.nomyx-language)
           (hsPkgs.base)
           (hsPkgs.containers)

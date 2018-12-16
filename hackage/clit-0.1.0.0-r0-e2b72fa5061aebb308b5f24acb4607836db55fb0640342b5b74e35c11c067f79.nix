@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.http-client-tls)
@@ -39,7 +39,7 @@
       };
       exes = {
         "tweet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clit)
           ];

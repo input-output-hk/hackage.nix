@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
         ];
@@ -35,7 +35,7 @@
       };
       exes = {
         "print-extents" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.linux-file-extents)
           ];

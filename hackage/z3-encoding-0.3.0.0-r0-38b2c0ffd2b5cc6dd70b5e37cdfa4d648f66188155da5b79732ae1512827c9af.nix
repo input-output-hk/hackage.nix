@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.containers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "z3-encoding-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.z3)
             (hsPkgs.z3-encoding)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -58,7 +58,7 @@
       };
       exes = {
         "fetch_service" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -91,7 +91,7 @@
           ];
         };
         "ingest_communications" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -124,7 +124,7 @@
           ];
         };
         "inspect_communications" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -157,7 +157,7 @@
           ];
         };
         "store_service" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -192,7 +192,7 @@
       };
       tests = {
         "ingesters" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -225,7 +225,7 @@
           ];
         };
         "serialization" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -260,7 +260,7 @@
       };
       benchmarks = {
         "ingest" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)

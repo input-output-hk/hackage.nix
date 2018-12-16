@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoodie" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.array)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
         ];
       };
       exes = {
         "scatter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plot-light)
             (hsPkgs.plot-light-examples)
@@ -44,7 +44,7 @@
           ];
         };
         "timeseries" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plot-light)
             (hsPkgs.plot-light-examples)
@@ -58,7 +58,7 @@
           ];
         };
         "heatmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plot-light)
             (hsPkgs.plot-light-examples)

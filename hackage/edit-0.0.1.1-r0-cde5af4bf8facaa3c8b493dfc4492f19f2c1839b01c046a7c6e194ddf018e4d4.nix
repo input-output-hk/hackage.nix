@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.transformers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-edit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.edit)
             (hsPkgs.doctest)

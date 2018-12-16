@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hake" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.regexpr)

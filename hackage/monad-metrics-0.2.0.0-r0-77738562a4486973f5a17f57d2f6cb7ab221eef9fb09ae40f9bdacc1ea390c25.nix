@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.clock)
           (hsPkgs.ekg-core)
@@ -39,7 +39,7 @@
       };
       tests = {
         "monad-metrics-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monad-metrics)
           ];

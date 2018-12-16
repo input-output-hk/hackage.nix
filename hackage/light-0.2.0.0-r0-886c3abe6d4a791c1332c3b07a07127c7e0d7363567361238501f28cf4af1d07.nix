@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.linear)
           (hsPkgs.gjk2d)
@@ -36,7 +36,7 @@
       };
       tests = {
         "light-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.light)
             (hsPkgs.linear)

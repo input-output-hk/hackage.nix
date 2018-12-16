@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.optparse-applicative)
@@ -43,7 +43,7 @@
       };
       exes = {
         "pg-recorder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pg-recorder)
             (hsPkgs.protolude)
@@ -52,7 +52,7 @@
       };
       tests = {
         "pg-recorder-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pg-recorder)
             (hsPkgs.resource-pool)

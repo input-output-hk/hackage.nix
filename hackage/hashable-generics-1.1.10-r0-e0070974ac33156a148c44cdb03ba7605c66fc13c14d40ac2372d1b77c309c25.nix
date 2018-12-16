@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.ghc-prim)
@@ -33,7 +33,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hashable)
             (hsPkgs.test-framework)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "compare-to-handrolled" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hashable)
             (hsPkgs.hashable-generics)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
@@ -33,7 +33,7 @@
       };
       tests = {
         "hashmap-lazy-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hashable)
@@ -44,7 +44,7 @@
           ];
         };
         "hashmap-strict-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hashable)
@@ -55,7 +55,7 @@
           ];
         };
         "hashset-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hashable)
@@ -66,7 +66,7 @@
           ];
         };
         "regressions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hashable)
             (hsPkgs.HUnit)
@@ -78,7 +78,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

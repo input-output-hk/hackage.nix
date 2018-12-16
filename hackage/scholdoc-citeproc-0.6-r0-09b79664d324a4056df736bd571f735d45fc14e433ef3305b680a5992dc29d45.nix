@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.mtl)
@@ -66,7 +66,7 @@
       };
       exes = {
         "scholdoc-citeproc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scholdoc-citeproc)
             (hsPkgs.scholdoc-types)
@@ -81,7 +81,7 @@
           ];
         };
         "test-citeproc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.directory)
@@ -101,7 +101,7 @@
       };
       tests = {
         "test-scholdoc-citeproc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.directory)

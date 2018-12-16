@@ -26,7 +26,7 @@
     components = {
       exes = {
         "exherbo-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.bytestring)

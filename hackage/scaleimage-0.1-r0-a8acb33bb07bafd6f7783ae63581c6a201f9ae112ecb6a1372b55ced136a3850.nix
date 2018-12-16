@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scaleimage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gd)
             (hsPkgs.filepath)

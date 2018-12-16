@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-bloomfilter-redis" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bloomfilter-redis)
             (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "bench-bloomfilter-redis" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bloomfilter-redis)
             (hsPkgs.random)

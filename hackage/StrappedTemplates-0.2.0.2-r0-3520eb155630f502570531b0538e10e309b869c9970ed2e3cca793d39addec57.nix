@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "Main" = {
-          depends  = [
+          depends = [
             (hsPkgs.StrappedTemplates)
             (hsPkgs.base)
             (hsPkgs.hspec)

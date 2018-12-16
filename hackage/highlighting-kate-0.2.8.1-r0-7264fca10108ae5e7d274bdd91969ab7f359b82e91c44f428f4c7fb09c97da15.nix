@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.parsec)
           (hsPkgs.xhtml)
         ] ++ (if flags.splitbase
@@ -47,7 +47,7 @@
       };
       exes = {
         "Highlight" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.xhtml)

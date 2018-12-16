@@ -25,20 +25,20 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bookkeeping)
         ];
       };
       tests = {
         "bookkeeping-jp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bookkeeping-jp)
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)

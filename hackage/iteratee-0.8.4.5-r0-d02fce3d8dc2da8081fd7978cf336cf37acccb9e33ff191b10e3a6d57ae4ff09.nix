@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ListLike)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "testIteratee" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)

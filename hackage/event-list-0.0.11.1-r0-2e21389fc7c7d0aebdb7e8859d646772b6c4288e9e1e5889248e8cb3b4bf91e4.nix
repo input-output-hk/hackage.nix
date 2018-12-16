@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.non-negative)
           (hsPkgs.transformers)
           (hsPkgs.utility-ht)
@@ -42,7 +42,7 @@
       };
       exes = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ] ++ pkgs.lib.optional (flags.splitbase) (hsPkgs.random);
         };

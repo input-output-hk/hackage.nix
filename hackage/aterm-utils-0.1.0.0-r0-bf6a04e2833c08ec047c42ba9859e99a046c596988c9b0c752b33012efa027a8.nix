@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aterm)
           (hsPkgs.transformers)
@@ -34,7 +34,7 @@
       };
       exes = {
         "ppaterm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aterm)
             (hsPkgs.aterm-utils)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
         ];
       };
       exes = {
         "table-layout-test-styles" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default-class)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "table-layout-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

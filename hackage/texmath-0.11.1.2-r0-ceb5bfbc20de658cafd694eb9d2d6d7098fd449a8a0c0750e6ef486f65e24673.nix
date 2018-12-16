@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.xml)
@@ -40,7 +40,7 @@
       };
       exes = {
         "texmath" = {
-          depends  = pkgs.lib.optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs.base)
             (hsPkgs.texmath)
             (hsPkgs.xml)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test-texmath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

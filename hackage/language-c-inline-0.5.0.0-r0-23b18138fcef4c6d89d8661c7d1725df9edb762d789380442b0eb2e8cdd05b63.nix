@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "concept" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-c-quote)
             (hsPkgs.language-c-inline)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.natural-transformation)
           (hsPkgs.transformers)
@@ -33,14 +33,14 @@
       };
       tests = {
         "remote-monad-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.natural-transformation)
             (hsPkgs.remote-monad)
           ];
         };
         "remote-monad-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.natural-transformation)

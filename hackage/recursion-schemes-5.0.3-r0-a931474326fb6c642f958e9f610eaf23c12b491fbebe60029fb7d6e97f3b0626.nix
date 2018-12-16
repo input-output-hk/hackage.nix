@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((([
+        depends = ((((([
           (hsPkgs.base)
           (hsPkgs.comonad)
           (hsPkgs.free)
@@ -43,7 +43,7 @@
       };
       tests = {
         "Expr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.recursion-schemes)

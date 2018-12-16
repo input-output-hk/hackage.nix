@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.explicit-exception)
           (hsPkgs.rainbow)
@@ -35,7 +35,7 @@
       };
       exes = {
         "prednote-test" = {
-          depends  = pkgs.lib.optional (flags.test) (hsPkgs.QuickCheck);
+          depends = pkgs.lib.optional (flags.test) (hsPkgs.QuickCheck);
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-prelude)
           (hsPkgs.formatting)
@@ -35,7 +35,7 @@
       };
       exes = {
         "schema-add" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-prelude)
             (hsPkgs.time)
@@ -47,7 +47,7 @@
           ];
         };
         "schema-apply" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-prelude)
             (hsPkgs.optparse-applicative)

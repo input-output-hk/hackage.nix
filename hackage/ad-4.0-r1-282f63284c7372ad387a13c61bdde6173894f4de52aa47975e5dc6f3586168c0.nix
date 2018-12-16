@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -43,7 +43,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -54,7 +54,7 @@
       };
       benchmarks = {
         "blackscholes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ad)
             (hsPkgs.erf)

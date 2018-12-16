@@ -29,7 +29,7 @@
     components = {
       exes = {
         "alms" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.syb)

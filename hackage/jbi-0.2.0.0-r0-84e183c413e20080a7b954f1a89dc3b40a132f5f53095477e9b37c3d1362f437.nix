@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.Cabal)
@@ -38,7 +38,7 @@
       };
       exes = {
         "jbi" = {
-          depends  = [
+          depends = [
             (hsPkgs.jbi)
             (hsPkgs.base)
             (hsPkgs.aeson-pretty)

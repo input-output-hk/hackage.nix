@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hamtsolo" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.attoparsec)
             (hsPkgs.attoparsec-binary)

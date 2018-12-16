@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cassava)
@@ -38,7 +38,7 @@
       };
       exes = {
         "tutorial" = {
-          depends  = pkgs.lib.optionals (!(!flags.tutorial)) [
+          depends = pkgs.lib.optionals (!(!flags.tutorial)) [
             (hsPkgs.base)
             (hsPkgs.cassava-streams)
             (hsPkgs.io-streams)
@@ -47,7 +47,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       exes = {
         "egison" = {
-          depends  = [
+          depends = [
             (hsPkgs.egison)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -65,7 +65,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.egison)
             (hsPkgs.base)
             (hsPkgs.transformers)
@@ -79,7 +79,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.egison)
             (hsPkgs.base)
             (hsPkgs.deepseq)

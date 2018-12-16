@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cfopu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)

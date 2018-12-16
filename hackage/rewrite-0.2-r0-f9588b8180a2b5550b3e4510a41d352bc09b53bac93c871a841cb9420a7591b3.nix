@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rewrite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.multiarg)
             (hsPkgs.temporary)

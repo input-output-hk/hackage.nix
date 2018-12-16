@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
@@ -38,13 +38,13 @@
       };
       tests = {
         "heterocephalus-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.heterocephalus)
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)

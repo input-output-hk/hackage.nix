@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "int-cast-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.int-cast)
             (hsPkgs.base)
             (hsPkgs.test-framework)

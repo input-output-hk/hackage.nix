@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.QuickCheck)
@@ -34,7 +34,7 @@
       };
       tests = {
         "semiring-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semiring-num)
             (hsPkgs.QuickCheck)

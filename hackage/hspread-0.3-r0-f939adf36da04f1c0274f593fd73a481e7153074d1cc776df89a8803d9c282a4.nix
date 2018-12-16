@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.network)
           (hsPkgs.binary)
         ] ++ (if flags.small_base

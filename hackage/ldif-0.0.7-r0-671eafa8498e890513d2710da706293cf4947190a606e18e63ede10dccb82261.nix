@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc)
           (hsPkgs.base)
           (hsPkgs.filepath)
@@ -42,7 +42,7 @@
         "ldifmodify" = {};
         "ldifparse" = {};
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
           ];

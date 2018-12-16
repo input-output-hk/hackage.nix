@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.shakespeare)
           (hsPkgs.vector)
@@ -53,7 +53,7 @@
       };
       exes = {
         "yesod-dsl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakespeare)
             (hsPkgs.text)

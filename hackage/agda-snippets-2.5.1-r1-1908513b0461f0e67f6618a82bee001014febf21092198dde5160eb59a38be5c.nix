@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Agda)
           (hsPkgs.xhtml)
@@ -36,7 +36,7 @@
       };
       exes = {
         "agda-snippets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.agda-snippets)
             (hsPkgs.Agda)

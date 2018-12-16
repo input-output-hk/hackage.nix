@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "bordacount-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bordacount)
             (hsPkgs.hspec)

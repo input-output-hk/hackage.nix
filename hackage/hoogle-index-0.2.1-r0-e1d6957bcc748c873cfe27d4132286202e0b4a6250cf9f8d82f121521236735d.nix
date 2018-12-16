@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoogle-index" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.directory)

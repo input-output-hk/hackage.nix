@@ -29,7 +29,7 @@
     components = {
       exes = {
         "uuagc" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.haskell98)
             (hsPkgs.uulib)
           ] ++ (if flags.compatibility1

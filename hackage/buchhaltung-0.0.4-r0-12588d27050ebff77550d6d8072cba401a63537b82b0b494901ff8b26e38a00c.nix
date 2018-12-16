@@ -26,7 +26,7 @@
     components = {
       exes = {
         "buchhaltung" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.ListLike)
             (hsPkgs.MissingH)

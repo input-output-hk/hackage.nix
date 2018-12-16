@@ -26,7 +26,7 @@
     components = {
       exes = {
         "memis" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.blaze-html)

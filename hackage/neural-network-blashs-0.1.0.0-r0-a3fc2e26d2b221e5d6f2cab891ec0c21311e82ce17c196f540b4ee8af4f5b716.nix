@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blas-hs)
           (hsPkgs.mwc-random)
@@ -42,7 +42,7 @@
       };
       tests = {
         "s1" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

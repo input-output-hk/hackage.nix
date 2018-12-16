@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -38,7 +38,7 @@
       };
       exes = {
         "desert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.desert)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "desert-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.desert)
             (hsPkgs.hspec)

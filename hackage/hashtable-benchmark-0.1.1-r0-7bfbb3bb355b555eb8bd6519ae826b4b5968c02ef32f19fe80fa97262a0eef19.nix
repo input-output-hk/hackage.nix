@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hashtable-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)

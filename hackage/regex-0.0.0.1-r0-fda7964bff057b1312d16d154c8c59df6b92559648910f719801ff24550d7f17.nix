@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.bytestring)
           (hsPkgs.base)
@@ -50,7 +50,7 @@
       };
       exes = {
         "re-gen-modules" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -63,7 +63,7 @@
           ];
         };
         "re-include" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -72,7 +72,7 @@
           ];
         };
         "re-pp" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -84,7 +84,7 @@
       };
       tests = {
         "re-include-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -93,7 +93,7 @@
           ];
         };
         "re-gen-modules-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -106,7 +106,7 @@
           ];
         };
         "re-nginx-log-processor" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -123,7 +123,7 @@
           ];
         };
         "re-pp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -133,7 +133,7 @@
           ];
         };
         "re-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -149,7 +149,7 @@
           ];
         };
         "re-tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)

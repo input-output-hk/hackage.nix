@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-crypto-numbers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.crypto-random-api)
             (hsPkgs.crypto-numbers)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "bench-crypto-numbers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-random-api)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.typeable_fingerprint
+        depends = if flags.typeable_fingerprint
           then [
             (hsPkgs.base)
             (hsPkgs.containers)

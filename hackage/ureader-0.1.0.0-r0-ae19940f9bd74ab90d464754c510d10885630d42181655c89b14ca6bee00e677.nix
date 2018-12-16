@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ureader" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.implicit-params)
             (hsPkgs.data-default)

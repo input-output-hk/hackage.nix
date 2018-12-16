@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-normalization-insensitive" = {
-          depends  = [
+          depends = [
             (hsPkgs.normalization-insensitive)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "bench-normalization-insensitive" = {
-          depends  = [
+          depends = [
             (hsPkgs.normalization-insensitive)
             (hsPkgs.base)
             (hsPkgs.bytestring)

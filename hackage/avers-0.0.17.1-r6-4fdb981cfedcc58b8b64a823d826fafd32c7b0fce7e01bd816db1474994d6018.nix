@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -54,7 +54,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.MonadRandom)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
@@ -80,7 +80,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.avers)
             (hsPkgs.base)

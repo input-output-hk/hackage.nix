@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.containers)
@@ -45,7 +45,7 @@
       };
       exes = {
         "hydra-view" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.containers)
@@ -65,7 +65,7 @@
           ];
         };
         "hydra-head" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.containers)
@@ -87,7 +87,7 @@
       };
       tests = {
         "test-hydra-print" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.containers)

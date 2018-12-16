@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dbus)
           (hsPkgs.hslogger)
@@ -33,7 +33,7 @@
       };
       exes = {
         "dbus-hslogger-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbus)
             (hsPkgs.dbus-hslogger)

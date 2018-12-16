@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GLUT)
           (hsPkgs.kafka-device)
@@ -35,7 +35,7 @@
       };
       exes = {
         "kafka-device-glut" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.kafka-device)

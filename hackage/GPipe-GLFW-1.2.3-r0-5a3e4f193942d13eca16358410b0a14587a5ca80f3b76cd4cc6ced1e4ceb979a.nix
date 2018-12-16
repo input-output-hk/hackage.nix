@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.GLFW-b)
@@ -34,7 +34,7 @@
       };
       exes = {
         "gpipe-glfw-smoketests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GPipe)
             (hsPkgs.GPipe-GLFW)

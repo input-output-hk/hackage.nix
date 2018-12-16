@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.directory)
@@ -44,7 +44,7 @@
       };
       exes = {
         "blogination" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ConfigFile)
             (hsPkgs.haskell98)

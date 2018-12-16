@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-zora" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Zora)
           ];

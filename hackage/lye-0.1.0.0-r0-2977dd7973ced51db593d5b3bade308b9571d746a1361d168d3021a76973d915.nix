@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lye" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HCodecs)
             (hsPkgs.containers)

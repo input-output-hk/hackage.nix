@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoogle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.filepath)

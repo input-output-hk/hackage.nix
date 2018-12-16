@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql)
           (hsPkgs.hasql-transaction)
           (hsPkgs.hasql-cursor-transaction)
@@ -39,7 +39,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.hasql-cursor-query)
             (hsPkgs.tasty)

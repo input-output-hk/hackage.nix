@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.text)
@@ -39,7 +39,7 @@
       };
       exes = {
         "pp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.platinum-parsing)
             (hsPkgs.optparse-applicative)
@@ -58,7 +58,7 @@
       };
       tests = {
         "pp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.platinum-parsing)
             (hsPkgs.hspec)

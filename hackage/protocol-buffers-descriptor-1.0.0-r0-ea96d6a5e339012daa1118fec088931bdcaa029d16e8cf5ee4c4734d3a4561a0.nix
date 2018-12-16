@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.protocol-buffers)
         ] ++ (if flags.small_base
           then [

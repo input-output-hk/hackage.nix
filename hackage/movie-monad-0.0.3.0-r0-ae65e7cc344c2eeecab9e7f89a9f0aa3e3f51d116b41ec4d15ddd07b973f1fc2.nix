@@ -26,7 +26,7 @@
     components = {
       exes = {
         "movie-monad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.system-fileio)

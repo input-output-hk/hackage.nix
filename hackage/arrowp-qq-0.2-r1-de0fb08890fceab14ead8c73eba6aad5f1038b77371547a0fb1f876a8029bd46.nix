@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       exes = {
         "arrowp-ext" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.arrowp-qq)
             (hsPkgs.haskell-src-exts)
@@ -60,7 +60,7 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.arrows)
             (hsPkgs.arrowp-qq)

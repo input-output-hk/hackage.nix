@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.ghc-prim)
@@ -38,7 +38,7 @@
       };
       exes = {
         "cnf-stat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.ghc-prim)
@@ -48,7 +48,7 @@
           ];
         };
         "mios162" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.ghc-prim)
@@ -61,7 +61,7 @@
       };
       tests = {
         "mios-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.ghc-prim)

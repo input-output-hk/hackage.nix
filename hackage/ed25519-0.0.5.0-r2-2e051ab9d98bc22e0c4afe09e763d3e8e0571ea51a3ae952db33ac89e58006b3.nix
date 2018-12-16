@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc-prim)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
@@ -46,13 +46,13 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

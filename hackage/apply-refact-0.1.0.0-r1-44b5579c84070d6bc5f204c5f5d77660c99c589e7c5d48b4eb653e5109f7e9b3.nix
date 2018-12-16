@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.refact)
           (hsPkgs.ghc-exactprint)
@@ -39,7 +39,7 @@
       };
       exes = {
         "refactor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.refact)
             (hsPkgs.ghc-exactprint)
@@ -60,7 +60,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
             (hsPkgs.tasty-expected-failure)

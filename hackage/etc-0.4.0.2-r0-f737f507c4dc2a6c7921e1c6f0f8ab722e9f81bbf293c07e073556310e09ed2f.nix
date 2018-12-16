@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.hashable)
@@ -44,7 +44,7 @@
       };
       tests = {
         "etc-testsuite" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.rio)

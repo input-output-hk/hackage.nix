@@ -26,7 +26,7 @@
     components = {
       exes = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-session)

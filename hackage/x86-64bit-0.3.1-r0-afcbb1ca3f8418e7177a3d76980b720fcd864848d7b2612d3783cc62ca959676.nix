@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monads-tf)
           (hsPkgs.tardis)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-x86-64bit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monads-tf)
             (hsPkgs.tardis)

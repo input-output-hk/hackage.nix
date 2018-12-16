@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.lens)
@@ -46,7 +46,7 @@
       };
       exes = {
         "RNAforestry" = {
-          depends  = pkgs.lib.optionals (flags.rnaforestry) [
+          depends = pkgs.lib.optionals (flags.rnaforestry) [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.containers)
@@ -71,7 +71,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
@@ -83,7 +83,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.Forestry)

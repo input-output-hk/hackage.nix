@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.atom-conduit)
@@ -76,7 +76,7 @@
       };
       exes = {
         "imm" = {
-          depends  = [
+          depends = [
             (hsPkgs.imm)
             (hsPkgs.base)
             (hsPkgs.free)

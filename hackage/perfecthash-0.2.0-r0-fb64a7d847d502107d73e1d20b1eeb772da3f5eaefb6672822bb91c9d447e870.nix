@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.cmph)
@@ -36,7 +36,7 @@
       };
       tests = {
         "cmph-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.cmph)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "bench-foo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

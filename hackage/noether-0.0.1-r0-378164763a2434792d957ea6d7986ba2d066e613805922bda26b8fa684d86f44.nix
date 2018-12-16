@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.ghc-prim)
@@ -46,7 +46,7 @@
       };
       exes = {
         "noether" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.noether)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "noether-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.noether)
             (hsPkgs.hedgehog)
@@ -63,7 +63,7 @@
       };
       benchmarks = {
         "noether-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.noether)
             (hsPkgs.criterion)

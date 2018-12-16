@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.gtk)
           (hsPkgs.cairo)
           (hsPkgs.time)

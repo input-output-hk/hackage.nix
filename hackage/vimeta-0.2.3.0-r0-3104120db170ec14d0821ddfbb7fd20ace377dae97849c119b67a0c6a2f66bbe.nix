@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.byline)
@@ -54,7 +54,7 @@
       };
       exes = {
         "vimeta" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vimeta)
           ];

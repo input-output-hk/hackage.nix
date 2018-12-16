@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.alsa-core)
           (hsPkgs.enumset)
           (hsPkgs.transformers)
@@ -46,7 +46,7 @@
       };
       exes = {
         "alsa-seq-dump" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.transformers)
@@ -54,7 +54,7 @@
           ];
         };
         "alsa-seq-send-note" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.transformers)
@@ -62,7 +62,7 @@
           ];
         };
         "alsa-seq-broadcast" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.transformers)
@@ -70,7 +70,7 @@
           ];
         };
         "alsa-seq-list-ports" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
@@ -79,7 +79,7 @@
           ];
         };
         "alsa-seq-melody" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.transformers)
@@ -87,7 +87,7 @@
           ];
         };
         "alsa-seq-list-subscribers" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.transformers)
@@ -96,7 +96,7 @@
           ];
         };
         "alsa-seq-beat" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.transformers)
@@ -105,7 +105,7 @@
           ];
         };
         "alsa-seq-sysex" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.transformers)

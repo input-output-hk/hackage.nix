@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hspec-expectations)
           (hsPkgs.transformers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "hspec-meta-discover" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs.unix)) ++ pkgs.lib.optionals (flags.usb) [
           (hsPkgs.usb)
@@ -36,7 +36,7 @@
       };
       exes = {
         "blink1" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.blink1)
           ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs.unix)) ++ pkgs.lib.optionals (flags.usb) [

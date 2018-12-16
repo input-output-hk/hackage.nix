@@ -26,7 +26,7 @@
     components = {
       exes = {
         "BotPP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -53,7 +53,7 @@
           ];
         };
         "lambdabot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -80,7 +80,7 @@
           ];
         };
         "hoogle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -107,7 +107,7 @@
           ];
         };
         "djinn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -134,7 +134,7 @@
           ];
         };
         "ft" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -161,7 +161,7 @@
           ];
         };
         "runplugs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -188,7 +188,7 @@
           ];
         };
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)
@@ -215,7 +215,7 @@
           ];
         };
         "smallcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)

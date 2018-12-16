@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
@@ -36,7 +36,7 @@
       };
       exes = {
         "rpc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.rpc-framework)
             (hsPkgs.base)
           ];

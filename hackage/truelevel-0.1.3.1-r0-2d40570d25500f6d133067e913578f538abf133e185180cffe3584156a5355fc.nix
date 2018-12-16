@@ -26,7 +26,7 @@
     components = {
       exes = {
         "truelevel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parseargs)

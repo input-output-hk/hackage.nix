@@ -26,7 +26,7 @@
     components = {
       exes = {
         "starrover2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.OpenGL)

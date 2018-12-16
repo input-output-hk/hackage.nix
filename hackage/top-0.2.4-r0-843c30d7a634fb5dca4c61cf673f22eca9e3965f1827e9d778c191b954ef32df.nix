@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       tests = {
         "top-test-repo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.tasty)
@@ -63,7 +63,7 @@
           ];
         };
         "top-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filemanip)

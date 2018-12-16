@@ -26,7 +26,7 @@
     components = {
       exes = {
         "primula-board" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.happstack-helpers)
             (hsPkgs.happstack-server)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filemanip)
           (hsPkgs.filepath)
@@ -54,7 +54,7 @@
       };
       exes = {
         "haggis" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filemanip)
             (hsPkgs.filepath)

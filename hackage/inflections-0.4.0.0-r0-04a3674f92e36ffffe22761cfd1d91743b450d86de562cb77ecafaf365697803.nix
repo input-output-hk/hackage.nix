@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.megaparsec)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.inflections)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

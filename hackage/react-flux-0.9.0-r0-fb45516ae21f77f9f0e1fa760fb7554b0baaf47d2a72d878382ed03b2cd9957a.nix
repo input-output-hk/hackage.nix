@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.mtl)
@@ -38,14 +38,14 @@
       };
       exes = {
         "todo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
           ];
         };
         "test-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);

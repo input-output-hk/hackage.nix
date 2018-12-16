@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.linear)
           (hsPkgs.spatial-math)
@@ -44,14 +44,14 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
           libs = [ (pkgs."stdc++") ];
         };
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)

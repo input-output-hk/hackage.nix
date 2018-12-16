@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.transformers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "environment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.chuchu)
@@ -45,7 +45,7 @@
           ];
         };
         "calculator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
@@ -53,7 +53,7 @@
           ];
         };
         "prefix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.attoparsec)
@@ -67,7 +67,7 @@
       };
       exes = {
         "glirc2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glirc)
             (hsPkgs.lens)
@@ -77,7 +77,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glirc)
             (hsPkgs.HUnit)

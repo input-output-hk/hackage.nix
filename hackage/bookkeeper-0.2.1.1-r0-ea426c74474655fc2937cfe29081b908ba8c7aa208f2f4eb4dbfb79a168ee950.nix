@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.type-level-sets)
         ];
       };
       exes = {
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-level-sets)
             (hsPkgs.base)
@@ -43,7 +43,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-level-sets)
             (hsPkgs.doctest)
@@ -52,7 +52,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-level-sets)
             (hsPkgs.bookkeeper)

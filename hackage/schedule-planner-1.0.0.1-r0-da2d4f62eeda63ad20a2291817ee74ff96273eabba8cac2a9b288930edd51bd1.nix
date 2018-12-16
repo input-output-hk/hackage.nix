@@ -26,7 +26,7 @@
     components = {
       exes = {
         "schedule-planner" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.aeson)
@@ -41,7 +41,7 @@
           ];
         };
         "schedule-planner-standalone" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.aeson)

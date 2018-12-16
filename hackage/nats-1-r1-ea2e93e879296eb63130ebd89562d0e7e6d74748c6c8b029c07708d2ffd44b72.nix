@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.9")) ([
+        depends = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.9")) ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.hashable) (hsPkgs.hashable));
       };

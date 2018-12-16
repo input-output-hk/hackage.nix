@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -54,7 +54,7 @@
       };
       exes = {
         "yql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yql)
             (hsPkgs.containers)

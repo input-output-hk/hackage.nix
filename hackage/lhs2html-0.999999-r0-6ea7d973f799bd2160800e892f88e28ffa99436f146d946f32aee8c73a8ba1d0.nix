@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lhs2html" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.Glob)

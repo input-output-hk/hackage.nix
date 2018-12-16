@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.utility-ht)
           (hsPkgs.deepseq)
           (hsPkgs.base)
@@ -35,7 +35,7 @@
       };
       exes = {
         "sox-concat" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghci-ng" = {
-          depends  = (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.ghc) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
+          depends = (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.ghc) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

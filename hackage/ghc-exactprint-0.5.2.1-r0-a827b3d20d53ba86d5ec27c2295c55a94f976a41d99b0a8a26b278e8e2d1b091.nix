@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "roundtrip" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.2" && flags.roundtrip) ([
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.2" && flags.roundtrip) ([
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -56,7 +56,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") (hsPkgs.ghc-boot));
         };
         "static" = {
-          depends  = pkgs.lib.optionals (flags.roundtrip) ([
+          depends = pkgs.lib.optionals (flags.roundtrip) ([
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filemanip)
@@ -66,7 +66,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") (hsPkgs.ghc-boot));
         };
         "prepare-hackage" = {
-          depends  = pkgs.lib.optionals (flags.roundtrip) ([
+          depends = pkgs.lib.optionals (flags.roundtrip) ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -82,7 +82,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.containers)

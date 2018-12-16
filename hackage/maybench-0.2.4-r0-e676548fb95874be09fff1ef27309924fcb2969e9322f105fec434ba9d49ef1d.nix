@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.benchpress)
         ] ++ (if flags.splitbase
           then [
@@ -41,7 +41,7 @@
       };
       exes = {
         "maybench" = {
-          depends  = [
+          depends = [
             (hsPkgs.benchpress)
           ] ++ (if flags.splitbase
             then [
@@ -55,7 +55,7 @@
             ]);
         };
         "darcs-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.benchpress)
             (hsPkgs.Cabal)
           ] ++ (if flags.splitbase

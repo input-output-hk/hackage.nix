@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.diagrams-lib)
@@ -50,7 +50,7 @@
       };
       exes = {
         "CMCV" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.BiobaseInfernal)
@@ -71,7 +71,7 @@
           ];
         };
         "CMV" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.BiobaseInfernal)
@@ -92,7 +92,7 @@
           ];
         };
         "CMCWStoCMCV" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.BiobaseInfernal)
@@ -112,7 +112,7 @@
           ];
         };
         "CMCtoHMMC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.BiobaseInfernal)
@@ -133,7 +133,7 @@
           ];
         };
         "HMMCtoCMC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.BiobaseInfernal)
@@ -154,7 +154,7 @@
           ];
         };
         "CMVJson" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.BiobaseInfernal)
@@ -172,7 +172,7 @@
           ];
         };
         "HMMCV" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.diagrams-lib)
@@ -191,7 +191,7 @@
           ];
         };
         "HMMV" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.diagrams-lib)

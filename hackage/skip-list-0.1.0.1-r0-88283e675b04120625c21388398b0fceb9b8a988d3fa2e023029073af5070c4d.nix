@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "skip-list-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.skip-list)
             (hsPkgs.tasty)
@@ -39,7 +39,7 @@
       };
       benchmarks = {
         "bench-foo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.skip-list)

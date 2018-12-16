@@ -26,7 +26,7 @@
     components = {
       exes = {
         "frag" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "diffdump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filemanip)
             (hsPkgs.ansi-terminal)
@@ -40,7 +40,7 @@
           ];
         };
         "patchdump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

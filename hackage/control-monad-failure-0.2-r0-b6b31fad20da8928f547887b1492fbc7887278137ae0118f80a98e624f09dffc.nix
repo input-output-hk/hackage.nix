@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
         ] ++ pkgs.lib.optional (flags.mtl) (hsPkgs.mtl);

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.nonlinear-optimization)
           (hsPkgs.ad)
@@ -38,7 +38,7 @@
       };
       exes = {
         "LinearRegression" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.csv)
             (hsPkgs.nonlinear-optimization-ad)

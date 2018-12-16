@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optional (flags.buildtests) (hsPkgs.QuickCheck);
+          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs.QuickCheck);
         };
       };
     };

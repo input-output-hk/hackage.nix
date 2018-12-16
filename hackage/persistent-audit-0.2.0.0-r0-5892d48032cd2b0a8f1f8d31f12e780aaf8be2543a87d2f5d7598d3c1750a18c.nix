@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.aeson)
@@ -44,7 +44,7 @@
       };
       exes = {
         "persistent-audit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.getopt-generics)
             (hsPkgs.persistent-audit)
@@ -55,7 +55,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)

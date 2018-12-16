@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.powerqueue)
           (hsPkgs.stm)
@@ -44,7 +44,7 @@
       };
       tests = {
         "powerqueue-levelmem-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.powerqueue-levelmem)
             (hsPkgs.powerqueue)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "powerqueue-levelmem-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.powerqueue)
             (hsPkgs.powerqueue-levelmem)

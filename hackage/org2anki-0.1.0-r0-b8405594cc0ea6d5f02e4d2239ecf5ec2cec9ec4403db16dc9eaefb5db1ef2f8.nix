@@ -26,7 +26,7 @@
     components = {
       exes = {
         "org2anki" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.regex-compat)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.editline)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hedi" = {
-          depends  = [
+          depends = [
             (hsPkgs.editline)
             (hsPkgs.base)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.gauge)
           (hsPkgs.hedgehog)
           (hsPkgs.hspec-expectations)

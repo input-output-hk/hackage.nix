@@ -26,7 +26,7 @@
     components = {
       exes = {
         "DBlimited" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.base)
             (hsPkgs.parsec)

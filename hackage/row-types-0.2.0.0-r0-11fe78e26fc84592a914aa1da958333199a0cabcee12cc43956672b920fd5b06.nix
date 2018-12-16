@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
@@ -35,7 +35,7 @@
       };
       benchmarks = {
         "perf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.row-types)
             (hsPkgs.deepseq)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -60,7 +60,7 @@
       };
       tests = {
         "spocktests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hspec-wai)
@@ -75,7 +75,7 @@
       };
       benchmarks = {
         "spock-simple-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Spock)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -50,7 +50,7 @@
       };
       tests = {
         "consul-haskell-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.consul-haskell)
             (hsPkgs.http-client)

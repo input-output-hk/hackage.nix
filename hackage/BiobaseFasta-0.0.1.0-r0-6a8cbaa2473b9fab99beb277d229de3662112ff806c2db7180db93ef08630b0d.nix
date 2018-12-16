@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.biocore)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "FastaTool" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
       };
     };

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "inquire" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aether)
             (hsPkgs.text)

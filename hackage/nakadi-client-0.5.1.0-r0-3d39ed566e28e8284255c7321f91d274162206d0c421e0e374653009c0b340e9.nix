@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-casing)
           (hsPkgs.async-timer)
@@ -65,7 +65,7 @@
       };
       tests = {
         "nakadi-client-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-casing)
             (hsPkgs.async)

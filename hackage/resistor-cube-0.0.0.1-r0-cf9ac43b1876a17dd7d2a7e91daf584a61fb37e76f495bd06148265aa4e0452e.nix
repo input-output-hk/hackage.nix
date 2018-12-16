@@ -26,7 +26,7 @@
     components = {
       exes = {
         "resistor-cube" = {
-          depends  = [
+          depends = [
             (hsPkgs.hmatrix)
             (hsPkgs.transformers)
             (hsPkgs.utility-ht)

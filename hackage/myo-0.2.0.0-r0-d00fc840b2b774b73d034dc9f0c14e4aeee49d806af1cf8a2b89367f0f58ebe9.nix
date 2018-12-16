@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.websockets)
@@ -56,7 +56,7 @@
       };
       exes = {
         "myo-ws-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.myo)
             (hsPkgs.websockets)
@@ -68,7 +68,7 @@
       };
       tests = {
         "myo-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.myo)
             (hsPkgs.tasty)

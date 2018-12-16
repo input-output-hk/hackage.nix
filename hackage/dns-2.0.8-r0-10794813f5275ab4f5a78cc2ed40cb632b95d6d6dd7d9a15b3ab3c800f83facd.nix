@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhc && compiler.version.ge "7"
+        depends = if compiler.isGhc && compiler.version.ge "7"
           then [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
@@ -62,7 +62,7 @@
       };
       tests = {
         "network" = {
-          depends  = [
+          depends = [
             (hsPkgs.dns)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -71,7 +71,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.binary)
@@ -92,7 +92,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

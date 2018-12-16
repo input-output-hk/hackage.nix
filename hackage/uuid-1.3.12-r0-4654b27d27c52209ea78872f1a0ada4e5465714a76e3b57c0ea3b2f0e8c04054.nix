@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "testuuid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uuid)
             (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uuid)
             (hsPkgs.criterion)

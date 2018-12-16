@@ -42,7 +42,7 @@
     components = {
       exes = {
         "xmobar" = {
-          depends  = (((((((([
+          depends = (((((((([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.regex-compat)

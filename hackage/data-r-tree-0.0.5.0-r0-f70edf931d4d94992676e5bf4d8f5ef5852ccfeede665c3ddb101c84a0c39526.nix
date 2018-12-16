@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.binary)
@@ -35,7 +35,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.data-r-tree)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -48,7 +48,7 @@
           ];
         };
         "strict" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-strict)) [
+          depends = pkgs.lib.optionals (!(!flags.test-strict)) [
             (hsPkgs.data-r-tree)
             (hsPkgs.base)
             (hsPkgs.deepseq)

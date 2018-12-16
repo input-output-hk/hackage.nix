@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cacophony)
@@ -38,7 +38,7 @@
       };
       exes = {
         "loopback" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cacophony)
@@ -50,7 +50,7 @@
       };
       tests = {
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

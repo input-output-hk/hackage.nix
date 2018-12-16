@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rws" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-qt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)

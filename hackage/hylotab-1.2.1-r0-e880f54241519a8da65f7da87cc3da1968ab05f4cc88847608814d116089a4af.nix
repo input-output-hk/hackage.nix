@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hylotab" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.mtl)

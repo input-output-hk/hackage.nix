@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.directory)
@@ -46,7 +46,7 @@
       };
       exes = {
         "git-fmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extra)
             (hsPkgs.fast-logger)

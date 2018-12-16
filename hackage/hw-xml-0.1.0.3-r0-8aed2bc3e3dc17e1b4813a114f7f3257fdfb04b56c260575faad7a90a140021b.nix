@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.array)
           (hsPkgs.attoparsec)
@@ -53,7 +53,7 @@
       };
       exes = {
         "hw-xml-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hw-balancedparens)
@@ -67,7 +67,7 @@
       };
       tests = {
         "hw-xml-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -87,7 +87,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.conduit)

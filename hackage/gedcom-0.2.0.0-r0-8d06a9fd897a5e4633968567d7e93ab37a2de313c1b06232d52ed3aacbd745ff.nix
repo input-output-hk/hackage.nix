@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "gedcom-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gedcom)
             (hsPkgs.hspec)

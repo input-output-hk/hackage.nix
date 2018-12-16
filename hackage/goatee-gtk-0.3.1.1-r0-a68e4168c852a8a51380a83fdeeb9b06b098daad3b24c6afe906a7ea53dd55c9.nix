@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cairo)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "goatee-gtk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.goatee-gtk)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test-goatee-gtk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goatee-gtk)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       exes = {
         "pg_migrate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)

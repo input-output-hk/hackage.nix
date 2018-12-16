@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HsOpenSSL)
           (hsPkgs.async)
@@ -66,7 +66,7 @@
       };
       exes = {
         "glirc2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glirc)
             (hsPkgs.lens)
@@ -77,7 +77,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glirc)
             (hsPkgs.HUnit)

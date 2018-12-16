@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snippet-extractor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
           ];

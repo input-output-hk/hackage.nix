@@ -26,7 +26,7 @@
     components = {
       exes = {
         "INblobs" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.wx)
             (hsPkgs.wxcore)

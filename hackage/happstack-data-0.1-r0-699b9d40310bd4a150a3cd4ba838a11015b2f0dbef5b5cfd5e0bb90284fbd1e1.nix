@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
           (hsPkgs.syb-with-class)
@@ -47,7 +47,7 @@
       };
       exes = {
         "happstack-data-tests" = {
-          depends  = [ (hsPkgs.HUnit) ];
+          depends = [ (hsPkgs.HUnit) ];
         };
       };
     };

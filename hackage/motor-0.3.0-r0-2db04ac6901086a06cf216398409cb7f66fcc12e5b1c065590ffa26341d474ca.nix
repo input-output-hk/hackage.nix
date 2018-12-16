@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.indexed)
           (hsPkgs.indexed-extras)
@@ -36,7 +36,7 @@
       };
       exes = {
         "example-door" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.indexed)
             (hsPkgs.indexed-extras)
@@ -47,7 +47,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.indexed)
             (hsPkgs.indexed-extras)

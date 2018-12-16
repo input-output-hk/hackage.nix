@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HandsomeSoup)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -43,7 +43,7 @@
       };
       exes = {
         "follow_pocket_auth" = {
-          depends  = [
+          depends = [
             (hsPkgs.HandsomeSoup)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -63,7 +63,7 @@
       };
       tests = {
         "follow-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HandsomeSoup)
             (hsPkgs.aeson)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       tests = {
         "NanoFeldsparEval" = {
-          depends  = [
+          depends = [
             (hsPkgs.syntactic)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -52,7 +52,7 @@
           ];
         };
         "NanoFeldsparEval2" = {
-          depends  = [
+          depends = [
             (hsPkgs.syntactic)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -63,7 +63,7 @@
           ];
         };
         "NanoFeldsparTree" = {
-          depends  = [
+          depends = [
             (hsPkgs.syntactic)
             (hsPkgs.base)
             (hsPkgs.bytestring)

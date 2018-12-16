@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "vgg16_example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.JuicyPixels)
             (hsPkgs.optparse-applicative)
@@ -51,7 +51,7 @@
           ];
         };
         "mnist_example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.JuicyPixels)
@@ -63,7 +63,7 @@
       };
       tests = {
         "Test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.filepath)

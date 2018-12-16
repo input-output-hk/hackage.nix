@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fswatcher" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.process)

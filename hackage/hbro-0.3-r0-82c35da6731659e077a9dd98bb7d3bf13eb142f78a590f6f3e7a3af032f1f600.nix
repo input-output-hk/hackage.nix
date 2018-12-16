@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hbro" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.webkit)
             (hsPkgs.gtk)

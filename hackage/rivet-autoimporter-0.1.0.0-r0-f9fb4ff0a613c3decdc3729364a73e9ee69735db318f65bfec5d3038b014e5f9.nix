@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rivet-autoimporter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

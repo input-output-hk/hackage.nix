@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.intro) ];
+        depends = [ (hsPkgs.intro) ];
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.intro)
             (hsPkgs.intro-prelude)
           ];

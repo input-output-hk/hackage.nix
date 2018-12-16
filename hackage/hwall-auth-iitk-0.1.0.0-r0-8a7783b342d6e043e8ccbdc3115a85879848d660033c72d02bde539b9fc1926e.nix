@@ -26,7 +26,7 @@
     components = {
       exes = {
         "firewall-auth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.haskeline)

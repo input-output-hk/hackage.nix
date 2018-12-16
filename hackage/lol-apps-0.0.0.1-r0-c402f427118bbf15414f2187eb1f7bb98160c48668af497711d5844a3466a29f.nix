@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.lol)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-apps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.constraints)
             (hsPkgs.deepseq)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "bench-apps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

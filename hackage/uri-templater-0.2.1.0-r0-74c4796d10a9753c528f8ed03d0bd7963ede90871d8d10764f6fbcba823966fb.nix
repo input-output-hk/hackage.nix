@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.trifecta)
           (hsPkgs.charset)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-uri-templates" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.uri-templater)

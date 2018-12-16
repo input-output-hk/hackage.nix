@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.transformers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-chaselev-deque" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.abstract-deque)
             (hsPkgs.HUnit)

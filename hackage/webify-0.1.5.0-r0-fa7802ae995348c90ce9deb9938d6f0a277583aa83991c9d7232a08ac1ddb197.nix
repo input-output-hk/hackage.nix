@@ -26,7 +26,7 @@
     components = {
       exes = {
         "webify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "linkcore" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.extcore)
             (hsPkgs.filepath)

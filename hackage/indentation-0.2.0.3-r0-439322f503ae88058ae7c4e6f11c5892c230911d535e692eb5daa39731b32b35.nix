@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.mtl)
         ] ++ pkgs.lib.optional (flags.parsec) (hsPkgs.parsec)) ++ pkgs.lib.optionals (flags.trifecta) [
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-indentation" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

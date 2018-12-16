@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "mine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MonadPrompt)
             (hsPkgs.array)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "j2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hx)
             (hsPkgs.java-bridge)

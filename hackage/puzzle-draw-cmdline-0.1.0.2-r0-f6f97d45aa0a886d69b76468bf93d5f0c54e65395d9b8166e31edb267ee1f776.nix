@@ -26,7 +26,7 @@
     components = {
       exes = {
         "drawpuzzle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.puzzle-draw)
             (hsPkgs.diagrams-lib)

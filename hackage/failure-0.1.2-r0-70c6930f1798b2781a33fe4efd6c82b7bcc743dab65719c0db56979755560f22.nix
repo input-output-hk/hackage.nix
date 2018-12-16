@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.base43
+        depends = if flags.base43
           then [ (hsPkgs.base) ]
           else [
             (hsPkgs.base)

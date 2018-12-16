@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.hasql-backend)
           (hsPkgs.postgresql-libpq)
@@ -48,7 +48,7 @@
       };
       tests = {
         "library-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)
@@ -76,7 +76,7 @@
           ];
         };
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql-postgres)
             (hsPkgs.hasql-backend)
             (hsPkgs.hasql)
@@ -101,7 +101,7 @@
       };
       benchmarks = {
         "competition" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-simple)
             (hsPkgs.hasql-postgres)
             (hsPkgs.hasql-backend)
@@ -120,7 +120,7 @@
           ];
         };
         "profiling" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-simple)
             (hsPkgs.hasql-postgres)
             (hsPkgs.hasql-backend)

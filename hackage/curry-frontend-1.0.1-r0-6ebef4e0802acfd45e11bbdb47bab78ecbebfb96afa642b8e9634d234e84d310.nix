@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.curry-base)
@@ -43,7 +43,7 @@
       };
       exes = {
         "curry-frontend" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.curry-base)
@@ -63,7 +63,7 @@
       };
       tests = {
         "test-frontend" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.curry-base)

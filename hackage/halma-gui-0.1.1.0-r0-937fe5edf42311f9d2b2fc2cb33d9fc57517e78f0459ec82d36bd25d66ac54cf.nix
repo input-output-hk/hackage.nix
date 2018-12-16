@@ -26,7 +26,7 @@
     components = {
       exes = {
         "halma-gui" = {
-          depends  = [
+          depends = [
             (hsPkgs.halma)
             (hsPkgs.base)
             (hsPkgs.diagrams-gtk)

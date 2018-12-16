@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.edit-distance-vector)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-patches-vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.patches-vector)

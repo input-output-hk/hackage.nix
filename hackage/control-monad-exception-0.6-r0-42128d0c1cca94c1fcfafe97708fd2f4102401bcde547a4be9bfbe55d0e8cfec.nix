@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.control-monad-failure)
           (hsPkgs.monadloc)
           (hsPkgs.pretty)

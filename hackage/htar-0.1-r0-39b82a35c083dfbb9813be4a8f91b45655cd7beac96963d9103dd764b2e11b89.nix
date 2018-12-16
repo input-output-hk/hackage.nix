@@ -26,7 +26,7 @@
     components = {
       exes = {
         "htar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tar)
             (hsPkgs.compression)

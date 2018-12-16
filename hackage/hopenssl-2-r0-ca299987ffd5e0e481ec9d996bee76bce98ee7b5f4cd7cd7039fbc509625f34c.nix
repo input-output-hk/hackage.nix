@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -33,21 +33,21 @@
       };
       tests = {
         "check-low-level-digest-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hopenssl)
             (hsPkgs.HUnit)
           ];
         };
         "check-high-level-digest-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hopenssl)
             (hsPkgs.HUnit)
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hopenssl)
             (hsPkgs.doctest)

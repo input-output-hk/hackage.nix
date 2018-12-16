@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.attoparsec)
@@ -41,7 +41,7 @@
       };
       exes = {
         "jenkinsPlugins2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.bimap)
@@ -53,7 +53,7 @@
       };
       tests = {
         "jenkinsPlugins2nix-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.jenkinsPlugins2nix)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-read" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libpafe)
             (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
           ];
         };
         "test-read-fcf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libpafe)
             (hsPkgs.bytestring)

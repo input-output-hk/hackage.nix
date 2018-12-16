@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhc && compiler.version.ge "6.8"
+        depends = if compiler.isGhc && compiler.version.ge "6.8"
           then [
             (hsPkgs.base)
             (hsPkgs.haskell-src)

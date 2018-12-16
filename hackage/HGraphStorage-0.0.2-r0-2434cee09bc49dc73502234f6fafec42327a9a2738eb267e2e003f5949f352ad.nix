@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.filepath)
@@ -44,7 +44,7 @@
       };
       tests = {
         "hgraphstorage-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HGraphStorage)
             (hsPkgs.tasty)
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "HGraphStorage-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HGraphStorage)
             (hsPkgs.bytestring)

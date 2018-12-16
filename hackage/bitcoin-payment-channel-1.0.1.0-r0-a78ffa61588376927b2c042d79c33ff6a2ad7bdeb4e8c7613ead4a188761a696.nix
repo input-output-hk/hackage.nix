@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskoin-core)
           (hsPkgs.rbpcp-api)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test-bitcoin-payment-channel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskoin-core)
             (hsPkgs.rbpcp-api)
@@ -81,7 +81,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskoin-core)
             (hsPkgs.rbpcp-api)

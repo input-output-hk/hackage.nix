@@ -26,7 +26,7 @@
     components = {
       exes = {
         "minions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.process)

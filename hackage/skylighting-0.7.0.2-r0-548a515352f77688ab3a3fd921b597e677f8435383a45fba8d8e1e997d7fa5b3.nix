@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.skylighting-core)
           (hsPkgs.mtl)
@@ -56,7 +56,7 @@
       };
       exes = {
         "skylighting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.text)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       tests = {
         "aig-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aig)
             (hsPkgs.tasty)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.text)
           (hsPkgs.free)
           (hsPkgs.base-prelude)

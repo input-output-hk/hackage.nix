@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hscope" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.mtl)
@@ -44,7 +44,7 @@
       };
       tests = {
         "Build" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-simple)
             (hsPkgs.process)

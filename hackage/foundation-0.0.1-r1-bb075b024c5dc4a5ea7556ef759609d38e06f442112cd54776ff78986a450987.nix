@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
       };
       tests = {
         "test-foundation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
@@ -45,14 +45,14 @@
       };
       benchmarks = {
         "bench-array" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.foundation)
           ];
         };
         "bench-profile-break" = {
-          depends  = [
+          depends = [
             (hsPkgs.foundation)
           ];
         };

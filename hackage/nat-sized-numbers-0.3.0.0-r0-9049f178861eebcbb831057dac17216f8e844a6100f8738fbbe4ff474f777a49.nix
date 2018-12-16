@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ];
       };
       tests = {
         "nat-sized-numbers-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nat-sized-numbers)
             (hsPkgs.hedgehog)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.sample-frame)
           (hsPkgs.storablevector)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       exes = {
         "soxlib-demo" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.uniplate)
           (hsPkgs.text)
@@ -42,7 +42,7 @@
       };
       tests = {
         "lens-creation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.array)

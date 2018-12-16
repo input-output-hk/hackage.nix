@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ip6addr" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

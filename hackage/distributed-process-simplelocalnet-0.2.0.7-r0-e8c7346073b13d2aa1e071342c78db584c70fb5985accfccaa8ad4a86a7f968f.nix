@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -43,7 +43,7 @@
       };
       exes = {
         "TestSimpleLocalnet" = {
-          depends  = pkgs.lib.optionals (flags.build-example) [
+          depends = pkgs.lib.optionals (flags.build-example) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network)

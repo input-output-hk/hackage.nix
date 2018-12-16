@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.gdiff)
@@ -40,7 +40,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.DebugTraceHelpers)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

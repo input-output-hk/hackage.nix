@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.midi)
           (hsPkgs.template-haskell)
@@ -46,7 +46,7 @@
       };
       exes = {
         "music-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AlgoRhythm)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "music-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AlgoRhythm)
             (hsPkgs.test-framework)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "pansite-app" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -67,14 +67,14 @@
       };
       tests = {
         "pansite-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.Glob)
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "pansite-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.pansite)

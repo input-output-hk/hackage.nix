@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.primitive)
@@ -42,7 +42,7 @@
       };
       tests = {
         "impure-containers-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.impure-containers)
             (hsPkgs.containers)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "impure-containers-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.impure-containers)
             (hsPkgs.criterion)

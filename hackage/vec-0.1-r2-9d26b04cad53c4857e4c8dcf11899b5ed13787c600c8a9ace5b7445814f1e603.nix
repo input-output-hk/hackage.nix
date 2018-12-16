@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.adjunctions)
           (hsPkgs.base)
           (hsPkgs.base-compat)
@@ -39,7 +39,7 @@
       };
       tests = {
         "inspection" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fin)
             (hsPkgs.vec)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fin)
             (hsPkgs.vec)

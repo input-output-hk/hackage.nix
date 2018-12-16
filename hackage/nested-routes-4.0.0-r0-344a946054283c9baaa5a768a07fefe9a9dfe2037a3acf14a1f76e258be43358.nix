@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
@@ -62,7 +62,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
@@ -95,7 +95,7 @@
           ];
         };
         "example-stm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
@@ -143,7 +143,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hspec-wai)

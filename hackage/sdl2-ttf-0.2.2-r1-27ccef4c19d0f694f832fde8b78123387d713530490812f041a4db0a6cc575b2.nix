@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sdl2)
         ];
@@ -36,7 +36,7 @@
       };
       exes = {
         "font-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sdl2)
             (hsPkgs.sdl2-ttf)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.criterion)
@@ -38,7 +38,7 @@
       };
       exes = {
         "profile-256" = {
-          depends  = [
+          depends = [
             (hsPkgs.arb-fft)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       tests = {
         "basic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.arb-fft)
             (hsPkgs.base)
             (hsPkgs.containers)

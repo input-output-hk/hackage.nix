@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.deepseq)
         ] ++ (if flags.split-base
           then [ (hsPkgs.base) ]

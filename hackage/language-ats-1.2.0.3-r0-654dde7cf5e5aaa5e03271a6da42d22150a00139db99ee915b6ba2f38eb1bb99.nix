@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.microlens)
@@ -46,7 +46,7 @@
       };
       tests = {
         "language-ats-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-ats)
             (hsPkgs.hspec)
@@ -57,7 +57,7 @@
       };
       benchmarks = {
         "language-ats-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-ats)
             (hsPkgs.criterion)

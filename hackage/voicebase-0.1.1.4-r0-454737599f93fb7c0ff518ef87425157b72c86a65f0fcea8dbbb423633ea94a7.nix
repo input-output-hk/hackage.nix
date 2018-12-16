@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HsOpenSSL)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       exes = {
         "voicebase" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       tests = {
         "voicebase-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.voicebase)

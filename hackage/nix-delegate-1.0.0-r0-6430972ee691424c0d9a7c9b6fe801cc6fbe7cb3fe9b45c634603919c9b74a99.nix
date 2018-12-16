@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.neat-interpolation)
           (hsPkgs.optparse-applicative)
@@ -37,7 +37,7 @@
       };
       exes = {
         "nix-delegate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nix-delegate)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pipes-core)
           (hsPkgs.attoparsec)
@@ -35,7 +35,7 @@
       };
       exes = {
         "MimeParser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.attoparsec)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "free-er-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.free-er)
           ];

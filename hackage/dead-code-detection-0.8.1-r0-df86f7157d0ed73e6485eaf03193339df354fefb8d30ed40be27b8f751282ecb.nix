@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dead-code-detection" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.silently)
             (hsPkgs.getopt-generics)
@@ -44,7 +44,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.silently)
             (hsPkgs.getopt-generics)

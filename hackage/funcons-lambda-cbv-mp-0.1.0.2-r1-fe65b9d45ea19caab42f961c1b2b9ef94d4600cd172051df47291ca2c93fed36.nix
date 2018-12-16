@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambda-cbv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gll)
             (hsPkgs.funcons-tools)

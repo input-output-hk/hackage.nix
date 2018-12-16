@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
@@ -60,14 +60,14 @@
       };
       exes = {
         "curry-memcached" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-conduit)
             (hsPkgs.CurryDB)
           ];
         };
         "curry-redis" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-conduit)
             (hsPkgs.system-filepath)
@@ -79,7 +79,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -87,7 +87,7 @@
           ];
         };
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.mtl)
@@ -99,7 +99,7 @@
       };
       benchmarks = {
         "curry-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)

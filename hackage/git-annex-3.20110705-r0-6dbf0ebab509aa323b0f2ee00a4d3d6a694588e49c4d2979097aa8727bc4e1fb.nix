@@ -26,7 +26,7 @@
     components = {
       exes = {
         "git-annex" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.MissingH)
             (hsPkgs.hslogger)

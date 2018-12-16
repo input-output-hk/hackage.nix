@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.jose-jwt)
             (hsPkgs.base)
             (hsPkgs.aeson-qq)
@@ -73,7 +73,7 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.doctest)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.cprng-aes)
@@ -82,7 +82,7 @@
       };
       benchmarks = {
         "bench-jwt" = {
-          depends  = [
+          depends = [
             (hsPkgs.jose-jwt)
             (hsPkgs.base)
             (hsPkgs.bytestring)

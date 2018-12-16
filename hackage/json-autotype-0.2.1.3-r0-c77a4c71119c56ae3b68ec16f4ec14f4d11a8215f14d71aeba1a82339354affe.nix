@@ -26,7 +26,7 @@
     components = {
       exes = {
         "json-autotype" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.bytestring)

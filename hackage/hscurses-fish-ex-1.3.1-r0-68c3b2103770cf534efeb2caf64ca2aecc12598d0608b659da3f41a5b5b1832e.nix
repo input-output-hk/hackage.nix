@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hscurses-fish-ex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hscurses)
             (hsPkgs.random)

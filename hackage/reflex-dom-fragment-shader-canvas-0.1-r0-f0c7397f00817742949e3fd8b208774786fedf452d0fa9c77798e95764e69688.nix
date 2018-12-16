@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.jsaddle)
           (hsPkgs.reflex-dom)
@@ -38,7 +38,7 @@
       };
       exes = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.reflex-dom)

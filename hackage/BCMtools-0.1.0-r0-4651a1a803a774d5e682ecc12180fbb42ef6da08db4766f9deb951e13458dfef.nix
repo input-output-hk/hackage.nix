@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.data-binary-ieee754)
@@ -43,7 +43,7 @@
       };
       exes = {
         "bcmtools" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.BCMtools)
             (hsPkgs.binary)

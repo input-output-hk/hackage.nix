@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.uniplate)
@@ -33,7 +33,7 @@
       };
       exes = {
         "nsis" = {
-          depends  = [ (hsPkgs.process) ];
+          depends = [ (hsPkgs.process) ];
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       exes = {
         "clevercss" = {
-          depends  = [ (hsPkgs.parsec) ];
+          depends = [ (hsPkgs.parsec) ];
         };
       };
     };

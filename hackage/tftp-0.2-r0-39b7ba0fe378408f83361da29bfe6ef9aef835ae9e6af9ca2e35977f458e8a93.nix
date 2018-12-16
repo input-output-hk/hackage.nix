@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.binary)
@@ -39,7 +39,7 @@
       };
       exes = {
         "tftp_upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tftp)
             (hsPkgs.hslogger)
@@ -54,14 +54,14 @@
       };
       tests = {
         "message-decoding" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tftp)
             (hsPkgs.QuickCheck)
           ];
         };
         "protocol" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tftp)
             (hsPkgs.hslogger)
@@ -70,7 +70,7 @@
           ];
         };
         "udp-io" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tftp)
             (hsPkgs.hslogger)

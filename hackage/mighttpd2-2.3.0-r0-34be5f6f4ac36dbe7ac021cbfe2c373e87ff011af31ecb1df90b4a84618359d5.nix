@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mighty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.network)
@@ -48,7 +48,7 @@
           ];
         };
         "mkindex" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

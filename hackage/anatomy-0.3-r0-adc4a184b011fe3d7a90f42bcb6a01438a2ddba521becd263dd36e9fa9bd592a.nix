@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.atomo)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "anatomy" = {
-          depends  = [
+          depends = [
             (hsPkgs.atomo)
             (hsPkgs.base)
             (hsPkgs.containers)

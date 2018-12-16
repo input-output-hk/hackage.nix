@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
           (hsPkgs.base64-bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-plist-buddy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.plist-buddy)

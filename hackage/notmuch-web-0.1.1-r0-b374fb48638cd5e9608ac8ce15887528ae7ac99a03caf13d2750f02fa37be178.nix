@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -84,7 +84,7 @@
       };
       exes = {
         "notmuch-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.notmuch-web)
             (hsPkgs.pwstore-fast)
@@ -95,7 +95,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.notmuch-web)
             (hsPkgs.hspec)

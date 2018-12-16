@@ -26,7 +26,7 @@
     components = {
       exes = {
         "werewolf-slack" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

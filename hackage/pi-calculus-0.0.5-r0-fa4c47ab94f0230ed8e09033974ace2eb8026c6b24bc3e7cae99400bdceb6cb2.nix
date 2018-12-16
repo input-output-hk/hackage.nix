@@ -26,7 +26,7 @@
     components = {
       exes = {
         "phi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.parsec)

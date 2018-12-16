@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hesql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-postgresql)

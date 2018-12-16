@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.0") [
           (hsPkgs.semigroupoids)

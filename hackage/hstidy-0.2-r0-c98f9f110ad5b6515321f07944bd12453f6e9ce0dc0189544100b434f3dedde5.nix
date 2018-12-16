@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hstidy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
           ];

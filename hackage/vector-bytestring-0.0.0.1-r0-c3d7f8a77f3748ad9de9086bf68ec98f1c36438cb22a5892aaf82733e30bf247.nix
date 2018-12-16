@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.ghc-prim)
@@ -36,7 +36,7 @@
       };
       exes = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.vector-bytestring)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -47,7 +47,7 @@
       };
       tests = {
         "prop-compiled" = {
-          depends  = [
+          depends = [
             (hsPkgs.vector-bytestring)
             (hsPkgs.base)
             (hsPkgs.random)

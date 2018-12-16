@@ -26,7 +26,7 @@
     components = {
       exes = {
         "blatex" = {
-          depends  = [
+          depends = [
             (hsPkgs.HaTeX)
             (hsPkgs.base)
             (hsPkgs.blaze-html)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.IfElse)
           (hsPkgs.OpenGL)
           (hsPkgs.array)

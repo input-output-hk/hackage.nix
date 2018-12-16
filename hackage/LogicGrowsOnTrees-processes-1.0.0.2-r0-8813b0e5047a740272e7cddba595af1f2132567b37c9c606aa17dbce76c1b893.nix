@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.LogicGrowsOnTrees)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       exes = {
         "count-all-nqueens-solutions" = {
-          depends  = [
+          depends = [
             (hsPkgs.LogicGrowsOnTrees-processes)
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)
@@ -56,7 +56,7 @@
           ];
         };
         "count-all-trivial-tree-leaves" = {
-          depends  = [
+          depends = [
             (hsPkgs.LogicGrowsOnTrees-processes)
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)
@@ -67,7 +67,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.LogicGrowsOnTrees-processes)
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)
@@ -84,7 +84,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.LogicGrowsOnTrees-processes)
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)

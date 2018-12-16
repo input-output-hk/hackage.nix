@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = if system.isWindows
           then [ (pkgs."OpenAL32") ]
           else [ (pkgs."openal") ];

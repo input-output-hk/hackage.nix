@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.mtl)
           (hsPkgs.stm)
           (hsPkgs.template-haskell)
@@ -58,7 +58,7 @@
       };
       exes = {
         "happstack-state-tests" = {
-          depends  = [ (hsPkgs.HUnit) ];
+          depends = [ (hsPkgs.HUnit) ];
         };
       };
     };

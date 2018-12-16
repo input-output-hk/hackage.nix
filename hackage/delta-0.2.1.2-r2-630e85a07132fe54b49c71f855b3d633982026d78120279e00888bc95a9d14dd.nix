@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -38,13 +38,13 @@
       };
       exes = {
         "delta-cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.delta)
           ];
         };
         "delta-run" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.delta)
             (hsPkgs.optparse-applicative)
@@ -56,7 +56,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.delta)
             (hsPkgs.hspec)

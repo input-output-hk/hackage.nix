@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.comfort-graph)
           (hsPkgs.hmatrix)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-linear-circuit" = {
-          depends  = [
+          depends = [
             (hsPkgs.linear-circuit)
             (hsPkgs.QuickCheck)
             (hsPkgs.comfort-graph)

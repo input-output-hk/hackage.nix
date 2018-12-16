@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mxnet)
           (hsPkgs.unordered-containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "lenet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mxnet)
             (hsPkgs.unordered-containers)

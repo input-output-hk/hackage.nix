@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.filemanip)
@@ -49,7 +49,7 @@
       };
       exes = {
         "atspkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-pkg)
           ];

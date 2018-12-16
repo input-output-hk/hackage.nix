@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-markup-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text-markup)
             (hsPkgs.QuickCheck)

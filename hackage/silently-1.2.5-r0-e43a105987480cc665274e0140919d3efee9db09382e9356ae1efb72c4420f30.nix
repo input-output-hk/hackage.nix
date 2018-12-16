@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "spec-specific" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.silently)
             (hsPkgs.directory)
@@ -42,7 +42,7 @@
           ];
         };
         "spec-generic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.directory)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "playlist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
@@ -50,7 +50,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
@@ -60,7 +60,7 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctest)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

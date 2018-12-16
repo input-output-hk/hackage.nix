@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hspec)
         ];
       };
       exes = {
         "hspec-discover" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -41,7 +41,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -50,14 +50,14 @@
           ];
         };
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec-shouldbe)
             (hsPkgs.hspec-discover)
           ];
         };
         "integration-test-empty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec-discover)
           ];

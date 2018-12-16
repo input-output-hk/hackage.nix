@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hTensor)
           (hsPkgs.MonadRandom)
@@ -34,7 +34,7 @@
       };
       tests = {
         "haquil-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hTensor)
             (hsPkgs.MonadRandom)

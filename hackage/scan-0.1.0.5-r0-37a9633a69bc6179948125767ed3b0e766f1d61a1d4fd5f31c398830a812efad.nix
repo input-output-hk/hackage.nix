@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
           ];

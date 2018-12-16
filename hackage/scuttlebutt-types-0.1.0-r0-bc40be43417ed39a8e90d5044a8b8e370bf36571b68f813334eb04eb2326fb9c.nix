@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-conversion)
@@ -37,7 +37,7 @@
       };
       tests = {
         "scuttlebutt-types-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scuttlebutt-types)
             (hsPkgs.hspec)

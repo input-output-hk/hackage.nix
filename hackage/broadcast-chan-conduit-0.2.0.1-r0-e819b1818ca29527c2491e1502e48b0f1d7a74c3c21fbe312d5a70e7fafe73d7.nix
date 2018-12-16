@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.broadcast-chan)
           (hsPkgs.conduit)
@@ -36,7 +36,7 @@
       };
       tests = {
         "conduit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan-conduit)
             (hsPkgs.broadcast-chan-tests)

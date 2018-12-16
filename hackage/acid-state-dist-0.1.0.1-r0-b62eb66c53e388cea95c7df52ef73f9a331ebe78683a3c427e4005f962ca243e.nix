@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safecopy)
           (hsPkgs.acid-state)
@@ -44,7 +44,7 @@
       };
       tests = {
         "Simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -54,7 +54,7 @@
           ];
         };
         "SlaveUpdates" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -64,7 +64,7 @@
           ];
         };
         "CRCFail" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -74,7 +74,7 @@
           ];
         };
         "CheckpointSync" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -84,7 +84,7 @@
           ];
         };
         "OrderingRandom" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -95,7 +95,7 @@
           ];
         };
         "NReplication" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -105,7 +105,7 @@
           ];
         };
         "UpdateError" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -115,7 +115,7 @@
           ];
         };
         "SyncTimeout" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -127,7 +127,7 @@
       };
       benchmarks = {
         "Local" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -137,7 +137,7 @@
           ];
         };
         "MasterOnly" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -148,7 +148,7 @@
           ];
         };
         "MasterSlave" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -159,7 +159,7 @@
           ];
         };
         "Slave" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)

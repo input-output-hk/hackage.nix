@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.loop)
@@ -43,7 +43,7 @@
       };
       exes = {
         "reedsolomon-simple-encoder" = {
-          depends  = pkgs.lib.optionals (!system.isWindows && flags.examples) [
+          depends = pkgs.lib.optionals (!system.isWindows && flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vector)
@@ -54,7 +54,7 @@
           ];
         };
         "reedsolomon-simple-decoder" = {
-          depends  = pkgs.lib.optionals (!system.isWindows && flags.examples) [
+          depends = pkgs.lib.optionals (!system.isWindows && flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vector)
@@ -65,7 +65,7 @@
           ];
         };
         "reedsolomon-simple-bench" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -75,7 +75,7 @@
           ];
         };
         "reedsolomon-profiling" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.deepseq)
@@ -88,7 +88,7 @@
       };
       tests = {
         "reedsolomon-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.loop)
@@ -109,7 +109,7 @@
       };
       benchmarks = {
         "reedsolomon-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vector)

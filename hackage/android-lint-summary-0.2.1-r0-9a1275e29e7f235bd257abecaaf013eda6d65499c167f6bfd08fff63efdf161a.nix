@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basic-prelude)
           (hsPkgs.data-default)
@@ -45,7 +45,7 @@
       };
       exes = {
         "android-lint-summary" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.android-lint-summary)
             (hsPkgs.basic-prelude)
@@ -63,7 +63,7 @@
       };
       tests = {
         "hspec-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.android-lint-summary)

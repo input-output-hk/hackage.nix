@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.mtl)
@@ -39,7 +39,7 @@
         "preLieBad" = {};
         "altDual" = {};
         "OperadTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ];
         };

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
       };
       exes = {
         "hakka-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hakka)
           ];

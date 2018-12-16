@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.autoexporter)
           (hsPkgs.monad-skeleton)
@@ -36,7 +36,7 @@
       };
       tests = {
         "typesafe-precure-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typesafe-precure)
             (hsPkgs.hspec)

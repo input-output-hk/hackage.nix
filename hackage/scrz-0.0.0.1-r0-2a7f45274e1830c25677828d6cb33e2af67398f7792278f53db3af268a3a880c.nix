@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scrz" = {
-          depends  = [
+          depends = [
             (hsPkgs.MonadRandom)
             (hsPkgs.aeson)
             (hsPkgs.base)

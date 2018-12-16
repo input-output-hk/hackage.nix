@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default)
           (hsPkgs.deepseq)
@@ -49,7 +49,7 @@
       };
       tests = {
         "extensible-effects-concurrent-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extensible-effects-concurrent)
             (hsPkgs.extensible-effects)

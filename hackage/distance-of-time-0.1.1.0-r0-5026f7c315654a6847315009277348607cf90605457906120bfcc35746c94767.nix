@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
         ];
       };
       tests = {
         "distance-of-time-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distance-of-time)
             (hsPkgs.hspec)

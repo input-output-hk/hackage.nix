@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.base64-bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "unbreak" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
             (hsPkgs.unbreak)

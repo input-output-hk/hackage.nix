@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.th-data-compat)
@@ -38,7 +38,7 @@
       };
       tests = {
         "nested" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickcheck-simple)
             (hsPkgs.persistable-record)

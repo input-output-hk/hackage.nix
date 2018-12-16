@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.happstack-data)
           (hsPkgs.happstack-ixset)
@@ -39,7 +39,7 @@
       };
       exes = {
         "happstack-tests" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.byteable)
@@ -37,7 +37,7 @@
       };
       exes = {
         "fernet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fernet)
             (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       tests = {
         "fernet-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)

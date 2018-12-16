@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.text)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hs-rs-notify-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-rs-notify)
             (hsPkgs.protolude)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.certificate)
@@ -38,7 +38,7 @@
       };
       exes = {
         "network-simple-tls-example-https-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network-simple-tls)
@@ -49,7 +49,7 @@
           ];
         };
         "network-simple-tls-example-echo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network-simple-tls)

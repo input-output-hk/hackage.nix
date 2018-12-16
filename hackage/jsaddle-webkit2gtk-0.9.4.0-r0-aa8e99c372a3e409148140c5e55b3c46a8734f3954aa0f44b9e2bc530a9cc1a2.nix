@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs.aeson)

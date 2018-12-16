@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xml2x" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio)
             (hsPkgs.containers)

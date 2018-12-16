@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
           (hsPkgs.old-time)
           (hsPkgs.base)

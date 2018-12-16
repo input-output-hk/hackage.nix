@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hw-bits)
           (hsPkgs.hw-prim)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hw-rankselect-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hw-rankselect)
           ];
@@ -42,7 +42,7 @@
       };
       tests = {
         "hw-rankselect-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hw-bits)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.conduit)

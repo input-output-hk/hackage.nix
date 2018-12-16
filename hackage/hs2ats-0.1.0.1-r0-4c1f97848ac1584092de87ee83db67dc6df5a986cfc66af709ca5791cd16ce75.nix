@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.language-ats)
@@ -39,7 +39,7 @@
       };
       exes = {
         "hs2ats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs2ats)
           ];
@@ -47,7 +47,7 @@
       };
       tests = {
         "hs2ats-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs2ats)
             (hsPkgs.hspec)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "hs2ats-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs2ats)
             (hsPkgs.criterion)

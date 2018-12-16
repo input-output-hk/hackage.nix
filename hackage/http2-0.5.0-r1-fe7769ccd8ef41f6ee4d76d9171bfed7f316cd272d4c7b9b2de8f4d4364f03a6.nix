@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.PSQueue)
           (hsPkgs.array)
@@ -37,7 +37,7 @@
       };
       exes = {
         "hpack-encode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PSQueue)
             (hsPkgs.aeson)
@@ -53,7 +53,7 @@
           ];
         };
         "hpack-debug" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PSQueue)
             (hsPkgs.aeson)
@@ -68,7 +68,7 @@
           ];
         };
         "hpack-stat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PSQueue)
             (hsPkgs.aeson)
@@ -88,13 +88,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PSQueue)
             (hsPkgs.array)
@@ -107,7 +107,7 @@
           ];
         };
         "hpack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PSQueue)
             (hsPkgs.aeson)

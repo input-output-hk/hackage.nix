@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.time)
@@ -36,7 +36,7 @@
       };
       tests = {
         "elm-hybrid-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elm-hybrid)
           ];

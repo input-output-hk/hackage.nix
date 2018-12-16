@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.ghc)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-uom-plugin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uom-plugin)
             (hsPkgs.tasty)

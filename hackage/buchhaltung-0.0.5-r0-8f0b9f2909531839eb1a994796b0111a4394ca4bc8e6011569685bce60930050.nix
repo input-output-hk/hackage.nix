@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Decimal)
           (hsPkgs.ListLike)
           (hsPkgs.MissingH)
@@ -76,7 +76,7 @@
       };
       exes = {
         "buchhaltung" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.ListLike)
             (hsPkgs.MissingH)

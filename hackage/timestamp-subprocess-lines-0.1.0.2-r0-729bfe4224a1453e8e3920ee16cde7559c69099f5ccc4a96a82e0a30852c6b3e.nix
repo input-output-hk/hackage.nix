@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Timestamp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.split)

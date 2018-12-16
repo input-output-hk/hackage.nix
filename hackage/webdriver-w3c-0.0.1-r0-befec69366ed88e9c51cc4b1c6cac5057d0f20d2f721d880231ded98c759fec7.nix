@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -58,14 +58,14 @@
       };
       exes = {
         "webdriver-w3c-intro" = {
-          depends  = [
+          depends = [
             (hsPkgs.webdriver-w3c)
             (hsPkgs.base)
             (hsPkgs.tasty)
           ];
         };
         "wd-tasty-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.webdriver-w3c)
             (hsPkgs.base)
             (hsPkgs.tasty)
@@ -73,7 +73,7 @@
           ];
         };
         "wd-parallel-stress-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.webdriver-w3c)
             (hsPkgs.base)
             (hsPkgs.tasty)
@@ -82,7 +82,7 @@
       };
       tests = {
         "webdriver-w3c-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.webdriver-w3c)
             (hsPkgs.base)
             (hsPkgs.aeson)

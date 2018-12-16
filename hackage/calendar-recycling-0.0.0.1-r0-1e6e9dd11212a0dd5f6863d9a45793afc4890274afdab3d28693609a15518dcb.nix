@@ -26,7 +26,7 @@
     components = {
       exes = {
         "calendar-recycling" = {
-          depends  = [
+          depends = [
             (hsPkgs.html)
             (hsPkgs.old-time)
             (hsPkgs.containers)

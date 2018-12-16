@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-sign" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pureMD5)
             (hsPkgs.optparse-applicative)

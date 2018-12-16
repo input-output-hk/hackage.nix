@@ -26,7 +26,7 @@
     components = {
       exes = {
         "git-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shelly)
             (hsPkgs.cmdargs)

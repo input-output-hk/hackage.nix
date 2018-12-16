@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
           (hsPkgs.process)
@@ -42,7 +42,7 @@
       };
       exes = {
         "wayland-list-globals" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hayland)
           ];
@@ -50,7 +50,7 @@
       };
       tests = {
         "firsttest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hayland)
             (hsPkgs.xml)
@@ -58,7 +58,7 @@
           ];
         };
         "enumtest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hayland)
             (hsPkgs.xml)

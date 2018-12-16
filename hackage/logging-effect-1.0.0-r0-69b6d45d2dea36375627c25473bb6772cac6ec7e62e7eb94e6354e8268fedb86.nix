@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.transformers)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "benchmark-logging-effect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.criterion)

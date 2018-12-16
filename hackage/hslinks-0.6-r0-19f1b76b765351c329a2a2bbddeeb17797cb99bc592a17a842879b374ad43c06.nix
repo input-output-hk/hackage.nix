@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hslinks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.hint)

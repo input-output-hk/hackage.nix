@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -41,7 +41,7 @@
       };
       exes = {
         "aws-ec2-pubkeys" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aws-ec2-knownhosts)
             (hsPkgs.io-streams)
@@ -50,7 +50,7 @@
           ];
         };
         "aws-ec2-knownhosts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aws-ec2-knownhosts)
@@ -60,7 +60,7 @@
           ];
         };
         "aws-ec2-keysync" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aws-ec2-knownhosts)

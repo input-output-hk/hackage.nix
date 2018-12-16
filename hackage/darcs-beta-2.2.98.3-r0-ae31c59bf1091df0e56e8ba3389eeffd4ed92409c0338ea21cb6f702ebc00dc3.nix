@@ -38,7 +38,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((((([
+        depends = ((((((([
           (hsPkgs.base)
           (hsPkgs.regex-compat)
           (hsPkgs.mtl)
@@ -71,7 +71,7 @@
           libs = pkgs.lib.optional (!flags.zlib) (pkgs."z");
         };
         "darcs" = {
-          depends  = ((((((([
+          depends = ((((((([
             (hsPkgs.base)
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)
@@ -100,7 +100,7 @@
           pkgconfig = pkgs.lib.optionals (flags.curl) (pkgs.lib.optionals (flags.curl-pipelining) (pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libcurl)));
         };
         "unit" = {
-          depends  = (((((pkgs.lib.optionals (!(!flags.test)) [
+          depends = (((((pkgs.lib.optionals (!(!flags.test)) [
             (hsPkgs.base)
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)

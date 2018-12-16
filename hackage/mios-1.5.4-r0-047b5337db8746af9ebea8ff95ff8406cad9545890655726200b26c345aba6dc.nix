@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.ghc-prim)
@@ -39,62 +39,62 @@
       };
       exes = {
         "mios-1.5.4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
           ];
         };
         "cnf-stat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)
           ];
         };
         "mios-mc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)
           ];
         };
         "mc-dump2csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)
           ];
         };
         "mc-averagecsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)
           ];
         };
         "mc-summary" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)
           ];
         };
         "mc-stat2csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)
           ];
         };
         "mc-pickup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)
           ];
         };
         "mc-numbers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mios)
             (hsPkgs.bytestring)

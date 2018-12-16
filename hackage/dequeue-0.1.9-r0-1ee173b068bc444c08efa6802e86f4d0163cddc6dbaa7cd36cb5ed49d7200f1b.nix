@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe)
           (hsPkgs.QuickCheck)
@@ -33,7 +33,7 @@
       };
       exes = {
         "dequeue-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
           ];

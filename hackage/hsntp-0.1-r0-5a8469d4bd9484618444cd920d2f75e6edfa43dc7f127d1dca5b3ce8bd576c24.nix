@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       exes = {
         "sntpdate" = {
-          depends  = [ (hsPkgs.unix) ];
+          depends = [ (hsPkgs.unix) ];
         };
         "sntpd" = {};
       };

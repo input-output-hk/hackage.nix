@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.primitive)
@@ -33,7 +33,7 @@
       };
       tests = {
         "map-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "sequential" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hashable)
             (hsPkgs.random)
@@ -59,7 +59,7 @@
           ];
         };
         "concurrent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.hashable)

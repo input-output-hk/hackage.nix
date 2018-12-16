@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -44,7 +44,7 @@
       };
       exes = {
         "homomprf" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -61,7 +61,7 @@
           ];
         };
         "khprf" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -74,7 +74,7 @@
           ];
         };
         "symmshe" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.lol)
@@ -87,7 +87,7 @@
       };
       tests = {
         "test-apps" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.constraints)
@@ -113,7 +113,7 @@
       };
       benchmarks = {
         "bench-apps" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.containers)

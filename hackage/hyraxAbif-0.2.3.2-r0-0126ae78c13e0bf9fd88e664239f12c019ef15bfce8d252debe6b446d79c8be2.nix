@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.text)
@@ -37,7 +37,7 @@
       };
       exes = {
         "hyraxAbif-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hyraxAbif)
             (hsPkgs.protolude)
@@ -50,7 +50,7 @@
       };
       tests = {
         "hyraxAbif-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hyraxAbif)
             (hsPkgs.protolude)

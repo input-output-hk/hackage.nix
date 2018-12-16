@@ -26,7 +26,7 @@
     components = {
       exes = {
         "typeilluminator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
           ];

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hosc)
           (hsPkgs.hsc3)
           (hsPkgs.opensoundcontrol-ht)

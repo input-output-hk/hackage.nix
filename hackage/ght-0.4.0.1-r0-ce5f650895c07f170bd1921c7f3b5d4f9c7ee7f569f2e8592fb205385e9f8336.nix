@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.data-default)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -40,7 +40,7 @@
       };
       exes = {
         "ght" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.data-default)
             (hsPkgs.directory)

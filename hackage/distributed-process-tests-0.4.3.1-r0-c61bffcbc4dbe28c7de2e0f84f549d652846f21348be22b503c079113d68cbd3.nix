@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.binary)
@@ -44,7 +44,7 @@
       };
       tests = {
         "TestCH" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -54,7 +54,7 @@
           ];
         };
         "TestClosure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -64,7 +64,7 @@
           ];
         };
         "TestStats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -74,7 +74,7 @@
           ];
         };
         "TestMx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)
@@ -84,7 +84,7 @@
           ];
         };
         "TestTracing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-tests)
             (hsPkgs.network)

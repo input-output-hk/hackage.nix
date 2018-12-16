@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ttn)
           (hsPkgs.config-ini)
@@ -44,7 +44,7 @@
       };
       exes = {
         "ttnc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ttn)
             (hsPkgs.ttn-client)

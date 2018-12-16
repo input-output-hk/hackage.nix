@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -38,7 +38,7 @@
       };
       exes = {
         "aeson-pretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

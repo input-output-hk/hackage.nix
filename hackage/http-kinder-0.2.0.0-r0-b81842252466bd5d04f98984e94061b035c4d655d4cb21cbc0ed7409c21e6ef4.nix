@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "http-kinder-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-kinder)
             (hsPkgs.HUnit)

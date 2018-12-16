@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.free)
           (hsPkgs.JuicyPixels)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Rasterific)
             (hsPkgs.JuicyPixels)

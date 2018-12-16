@@ -34,7 +34,7 @@
     components = {
       exes = {
         "hackage-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -90,7 +90,7 @@
           ];
         };
         "hackage-mirror" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -117,7 +117,7 @@
           ];
         };
         "hackage-build" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -146,7 +146,7 @@
           ];
         };
         "hackage-import" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -178,7 +178,7 @@
       };
       tests = {
         "HighLevelTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.base64-bytestring)
@@ -200,7 +200,7 @@
           ];
         };
         "CreateUserTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.base64-bytestring)

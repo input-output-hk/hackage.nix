@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "twee" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.twee)
             (hsPkgs.containers)

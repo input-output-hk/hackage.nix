@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.temporary)
           (hsPkgs.unix)
@@ -35,7 +35,7 @@
       };
       tests = {
         "atomic-write-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.temporary)
             (hsPkgs.unix)

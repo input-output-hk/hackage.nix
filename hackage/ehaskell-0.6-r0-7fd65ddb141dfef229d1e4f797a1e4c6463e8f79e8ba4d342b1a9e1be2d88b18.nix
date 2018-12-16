@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ehs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtlparse)
             (hsPkgs.yjtools)

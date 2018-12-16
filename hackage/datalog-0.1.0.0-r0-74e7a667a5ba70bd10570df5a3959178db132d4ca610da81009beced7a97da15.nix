@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.unordered-containers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "NQueensTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.datalog)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -50,7 +50,7 @@
           ];
         };
         "AncestorTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.datalog)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -61,7 +61,7 @@
           ];
         };
         "WorksForTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.datalog)
             (hsPkgs.base)
             (hsPkgs.text)

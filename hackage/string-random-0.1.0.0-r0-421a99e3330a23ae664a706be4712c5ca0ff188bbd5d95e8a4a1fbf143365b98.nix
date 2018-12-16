@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       tests = {
         "string-random-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.pcre-heavy)
@@ -47,7 +47,7 @@
           ];
         };
         "string-random-quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pcre-heavy)
             (hsPkgs.QuickCheck)

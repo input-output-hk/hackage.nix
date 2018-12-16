@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.QuickCheck)
@@ -49,7 +49,7 @@
       };
       tests = {
         "SBVTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-binary-ieee754)
             (hsPkgs.filepath)
@@ -67,7 +67,7 @@
           ];
         };
         "SBVDocTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -82,7 +82,7 @@
           ];
         };
         "SBVHLint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

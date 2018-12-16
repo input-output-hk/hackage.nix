@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bogocopy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

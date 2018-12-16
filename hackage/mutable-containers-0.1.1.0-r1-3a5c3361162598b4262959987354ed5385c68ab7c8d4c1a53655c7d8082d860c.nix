@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mutable-containers)
             (hsPkgs.hspec)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "deque" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mutable-containers)
             (hsPkgs.criterion)
@@ -56,7 +56,7 @@
           ];
         };
         "ref" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mutable-containers)
             (hsPkgs.criterion)

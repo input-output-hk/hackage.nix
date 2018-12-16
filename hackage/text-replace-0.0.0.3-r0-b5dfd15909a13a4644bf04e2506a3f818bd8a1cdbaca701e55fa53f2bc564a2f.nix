@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       exes = {
         "text-replace" = {
-          depends  = [
+          depends = [
             (hsPkgs.text-replace)
             (hsPkgs.base)
             (hsPkgs.parsec)
@@ -42,7 +42,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.text-replace)
             (hsPkgs.base)
             (hsPkgs.hedgehog)

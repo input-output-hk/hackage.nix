@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mountains" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)
@@ -34,7 +34,7 @@
           ];
         };
         "l-systems" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)

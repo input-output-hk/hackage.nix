@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambda2js" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell2010)
             (hsPkgs.parsec)
           ];

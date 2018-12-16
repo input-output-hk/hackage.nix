@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsc3-forth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

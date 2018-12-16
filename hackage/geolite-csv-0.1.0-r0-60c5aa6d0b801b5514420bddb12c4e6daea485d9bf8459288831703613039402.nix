@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.colonnade)
           (hsPkgs.siphon)
@@ -36,7 +36,7 @@
       };
       tests = {
         "geolite-csv-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.geolite-csv)
             (hsPkgs.siphon)

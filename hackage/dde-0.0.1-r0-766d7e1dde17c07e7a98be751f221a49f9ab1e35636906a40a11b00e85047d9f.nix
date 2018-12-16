@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
       };
       exes = {
         "mackey-glass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dde)
             (hsPkgs.vector)
@@ -41,7 +41,7 @@
       };
       tests = {
         "dde-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dde)
             (hsPkgs.vector)

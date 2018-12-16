@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sqlcli)
           (hsPkgs.sqlcli-odbc)
@@ -46,7 +46,7 @@
       };
       exes = {
         "transfer-db" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.yaml)
@@ -68,7 +68,7 @@
       };
       tests = {
         "hspec-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

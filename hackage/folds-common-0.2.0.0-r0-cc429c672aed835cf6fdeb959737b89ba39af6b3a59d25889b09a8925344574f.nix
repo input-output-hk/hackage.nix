@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.folds)
@@ -33,7 +33,7 @@
       };
       tests = {
         "left-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.folds-common)
             (hsPkgs.containers)
             (hsPkgs.tasty)
@@ -42,7 +42,7 @@
           ];
         };
         "monoid-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.folds-common)
             (hsPkgs.containers)
             (hsPkgs.tasty)
@@ -51,7 +51,7 @@
           ];
         };
         "right-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.folds-common)
             (hsPkgs.containers)
             (hsPkgs.tasty)

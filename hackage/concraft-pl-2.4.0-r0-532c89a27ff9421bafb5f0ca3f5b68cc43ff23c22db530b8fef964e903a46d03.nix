@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.concraft)
           (hsPkgs.pedestrian-dag)
@@ -54,7 +54,7 @@
       };
       exes = {
         "concraft-pl" = {
-          depends  = [
+          depends = [
             (hsPkgs.concraft-pl)
             (hsPkgs.concraft)
             (hsPkgs.tagset-positional)

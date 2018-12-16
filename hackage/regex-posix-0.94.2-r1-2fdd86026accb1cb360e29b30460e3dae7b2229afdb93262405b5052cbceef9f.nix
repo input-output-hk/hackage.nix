@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.newbase
+        depends = if flags.newbase
           then [
             (hsPkgs.regex-base)
             (hsPkgs.base)

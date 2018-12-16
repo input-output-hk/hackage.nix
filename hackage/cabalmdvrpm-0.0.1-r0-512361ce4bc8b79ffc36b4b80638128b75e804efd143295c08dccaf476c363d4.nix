@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
           (hsPkgs.base)
           (hsPkgs.Cabal)
@@ -34,7 +34,7 @@
       };
       exes = {
         "cabalmdvspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.Cabal)

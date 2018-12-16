@@ -26,7 +26,7 @@
     components = {
       exes = {
         "historian" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

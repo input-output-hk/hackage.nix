@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.midi)
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
@@ -49,13 +49,13 @@
       };
       exes = {
         "amplify" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.base)
           ];
         };
         "capture" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.explicit-exception)
             (hsPkgs.transformers)
@@ -64,7 +64,7 @@
           ];
         };
         "impulse-train" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.explicit-exception)
             (hsPkgs.transformers)
@@ -73,14 +73,14 @@
           ];
         };
         "midimon" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.midi)
             (hsPkgs.base)
           ];
         };
         "synth" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.midi)
             (hsPkgs.event-list)

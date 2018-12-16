@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Enum)
           (hsPkgs.base)
           (hsPkgs.util)

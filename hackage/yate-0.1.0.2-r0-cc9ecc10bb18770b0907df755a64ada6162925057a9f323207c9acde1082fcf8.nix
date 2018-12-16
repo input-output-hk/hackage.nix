@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.noaeson
+        depends = if flags.noaeson
           then [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
@@ -49,7 +49,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.yate)

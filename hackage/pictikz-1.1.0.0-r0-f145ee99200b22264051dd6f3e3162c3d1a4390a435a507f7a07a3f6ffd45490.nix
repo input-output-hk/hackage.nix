@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pictikz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xml)
             (hsPkgs.transformers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcs-graph" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "minesweeper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.numeric-prelude)
             (hsPkgs.containers)

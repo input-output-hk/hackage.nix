@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dependent-sum)
           (hsPkgs.dependent-map)
@@ -43,7 +43,7 @@
       };
       tests = {
         "cross-impl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reflex)
             (hsPkgs.ref-tf)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "spider-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dependent-sum)
             (hsPkgs.dependent-map)

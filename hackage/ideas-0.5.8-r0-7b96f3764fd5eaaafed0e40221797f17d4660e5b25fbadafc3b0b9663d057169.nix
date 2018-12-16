@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ideas" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.mtl)

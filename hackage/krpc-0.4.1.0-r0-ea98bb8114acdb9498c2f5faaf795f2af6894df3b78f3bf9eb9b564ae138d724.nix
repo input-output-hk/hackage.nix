@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.lifted-base)
@@ -37,7 +37,7 @@
       };
       exes = {
         "test-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bencoding)
@@ -46,7 +46,7 @@
           ];
         };
         "bench-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.krpc)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.process)
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "bench-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

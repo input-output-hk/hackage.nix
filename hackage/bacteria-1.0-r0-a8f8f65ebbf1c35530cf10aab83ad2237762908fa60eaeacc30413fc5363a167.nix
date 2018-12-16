@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bacteria" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gd)
             (hsPkgs.X11)

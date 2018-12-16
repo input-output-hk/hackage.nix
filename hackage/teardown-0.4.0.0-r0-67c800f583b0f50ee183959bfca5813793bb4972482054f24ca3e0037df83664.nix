@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
           (hsPkgs.rio)
@@ -35,7 +35,7 @@
       };
       tests = {
         "teardown-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rio)
             (hsPkgs.tasty)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "teardown-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.rio)

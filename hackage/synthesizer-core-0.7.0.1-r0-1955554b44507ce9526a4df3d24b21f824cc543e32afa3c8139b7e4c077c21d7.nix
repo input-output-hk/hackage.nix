@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.sample-frame-np)
           (hsPkgs.sox)
           (hsPkgs.transformers)
@@ -59,7 +59,7 @@
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.synthesizer-core)
             (hsPkgs.storablevector)
             (hsPkgs.storable-tuple)
@@ -75,7 +75,7 @@
           ];
         };
         "fouriertest" = {
-          depends  = pkgs.lib.optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs.synthesizer-core)
             (hsPkgs.numeric-prelude)
             (hsPkgs.timeit)
@@ -86,7 +86,7 @@
           ];
         };
         "speedtest" = {
-          depends  = pkgs.lib.optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs.synthesizer-core)
             (hsPkgs.numeric-prelude)
             (hsPkgs.old-time)
@@ -98,7 +98,7 @@
           ];
         };
         "speedtest-exp" = {
-          depends  = pkgs.lib.optionals (flags.buildprofilers) ([
+          depends = pkgs.lib.optionals (flags.buildprofilers) ([
             (hsPkgs.synthesizer-core)
             (hsPkgs.storablevector)
             (hsPkgs.binary)
@@ -111,7 +111,7 @@
           ]);
         };
         "speedtest-simple" = {
-          depends  = pkgs.lib.optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs.synthesizer-core)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

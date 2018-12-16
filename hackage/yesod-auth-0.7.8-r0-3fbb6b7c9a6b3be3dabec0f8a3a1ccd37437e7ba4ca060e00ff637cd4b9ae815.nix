@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.authenticate)
           (hsPkgs.bytestring)
           (hsPkgs.yesod-core)

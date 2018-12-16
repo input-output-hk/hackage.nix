@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.filepath)
         ] ++ (if flags.splitbase
           then [
@@ -56,7 +56,7 @@
       };
       tests = {
         "language-c-harness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-c)
             (hsPkgs.directory)

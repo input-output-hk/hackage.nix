@@ -26,7 +26,7 @@
     components = {
       exes = {
         "4Blocks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.haskell98)

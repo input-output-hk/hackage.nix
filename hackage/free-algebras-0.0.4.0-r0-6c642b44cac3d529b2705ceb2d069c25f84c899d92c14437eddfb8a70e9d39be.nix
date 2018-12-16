@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.containers)
@@ -68,7 +68,7 @@
       };
       tests = {
         "free-algebras-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.constraints)
             (hsPkgs.containers)

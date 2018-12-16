@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dimensional)
           (hsPkgs.array)
@@ -33,7 +33,7 @@
       };
       tests = {
         "GeodeticTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.geodetics)
             (hsPkgs.base)
             (hsPkgs.HUnit)

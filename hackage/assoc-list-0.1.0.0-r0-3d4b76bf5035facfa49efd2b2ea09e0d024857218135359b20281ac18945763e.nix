@@ -25,20 +25,20 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.contravariant)
         ];
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "hedgehog" = {
-          depends  = [
+          depends = [
             (hsPkgs.assoc-list)
             (hsPkgs.base)
             (hsPkgs.contravariant)

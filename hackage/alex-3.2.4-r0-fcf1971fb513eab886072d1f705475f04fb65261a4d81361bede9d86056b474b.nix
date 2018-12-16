@@ -26,7 +26,7 @@
     components = {
       exes = {
         "alex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
           ] ++ (if flags.small_base
             then [
@@ -40,7 +40,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

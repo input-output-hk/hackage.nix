@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       tests = {
         "text-cp437-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text-cp437)
             (hsPkgs.QuickCheck)

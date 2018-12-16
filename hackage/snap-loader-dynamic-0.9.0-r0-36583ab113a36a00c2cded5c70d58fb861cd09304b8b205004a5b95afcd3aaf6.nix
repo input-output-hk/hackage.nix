@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hint)
           (hsPkgs.old-time)
           (hsPkgs.base)

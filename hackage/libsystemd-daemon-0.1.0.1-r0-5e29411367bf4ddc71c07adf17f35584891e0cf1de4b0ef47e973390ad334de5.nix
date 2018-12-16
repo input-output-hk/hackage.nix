@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -40,7 +40,7 @@
       };
       tests = {
         "run-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libsystemd-daemon)
             (hsPkgs.network)

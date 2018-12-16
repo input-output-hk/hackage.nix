@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.adjunctions)
           (hsPkgs.base)
           (hsPkgs.bifunctors)
@@ -51,13 +51,13 @@
       };
       tests = {
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

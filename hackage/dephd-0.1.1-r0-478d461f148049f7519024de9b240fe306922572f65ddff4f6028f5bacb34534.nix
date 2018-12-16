@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dephd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio)
             (hsPkgs.regex-compat)

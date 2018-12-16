@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.time)
@@ -38,7 +38,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.testpack)

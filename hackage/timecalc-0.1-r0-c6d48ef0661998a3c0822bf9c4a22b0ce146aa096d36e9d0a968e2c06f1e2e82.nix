@@ -26,7 +26,7 @@
     components = {
       exes = {
         "timecalc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.uu-parsinglib)

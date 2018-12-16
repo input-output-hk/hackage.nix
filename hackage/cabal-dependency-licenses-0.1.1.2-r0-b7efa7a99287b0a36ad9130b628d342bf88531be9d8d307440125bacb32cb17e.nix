@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-dependency-licenses" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.containers)
             (hsPkgs.base)

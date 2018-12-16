@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.time)
@@ -37,7 +37,7 @@
       };
       exes = {
         "takusen_tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.time)
@@ -47,7 +47,7 @@
           ] ++ pkgs.lib.optional (!(!flags.buildtests)) (hsPkgs.takusen-oracle);
         };
         "miniunit_tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
           ];

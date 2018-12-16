@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.random)
@@ -33,13 +33,13 @@
       };
       tests = {
         "montecarlo-pi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.splitmix)
           ];
         };
         "dieharder-input" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.splitmix)
             (hsPkgs.random)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "comparison" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.splitmix)
             (hsPkgs.random)

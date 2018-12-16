@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.clock)
           (hsPkgs.directory)
@@ -52,7 +52,7 @@
       };
       exes = {
         "grasp-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grasp)
           ];
@@ -60,7 +60,7 @@
       };
       tests = {
         "grasp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grasp)
           ];

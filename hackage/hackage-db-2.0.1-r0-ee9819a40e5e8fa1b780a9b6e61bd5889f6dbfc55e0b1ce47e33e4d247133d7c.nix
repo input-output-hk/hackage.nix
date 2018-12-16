@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "list-known-versions" = {
-          depends  = pkgs.lib.optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)
@@ -51,7 +51,7 @@
           ];
         };
         "show-meta-data" = {
-          depends  = pkgs.lib.optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)
@@ -60,7 +60,7 @@
           ];
         };
         "show-package-versions" = {
-          depends  = pkgs.lib.optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

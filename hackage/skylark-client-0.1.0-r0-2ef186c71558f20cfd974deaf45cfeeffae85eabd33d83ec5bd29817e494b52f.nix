@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.conduit)
@@ -38,7 +38,7 @@
       };
       exes = {
         "skylark-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit-extra)
             (hsPkgs.optparse-generic)
@@ -47,7 +47,7 @@
           ];
         };
         "shake-skylark-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakers)
           ];

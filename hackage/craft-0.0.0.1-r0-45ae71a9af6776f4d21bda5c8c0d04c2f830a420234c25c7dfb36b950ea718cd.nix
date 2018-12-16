@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -74,7 +74,7 @@
       };
       tests = {
         "craft-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.craft)
             (hsPkgs.hspec)

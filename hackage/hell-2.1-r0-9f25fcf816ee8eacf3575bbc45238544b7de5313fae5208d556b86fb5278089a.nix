@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.split)
           (hsPkgs.template-haskell)
           (hsPkgs.resourcet)
@@ -54,7 +54,7 @@
       };
       exes = {
         "hell" = {
-          depends  = [
+          depends = [
             (hsPkgs.utf8-string)
             (hsPkgs.transformers)
             (hsPkgs.base)

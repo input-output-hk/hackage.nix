@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.scientific)
           (hsPkgs.base)
           (hsPkgs.aeson)
@@ -67,7 +67,7 @@
       };
       exes = {
         "fpco-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.scientific)
             (hsPkgs.base)
             (hsPkgs.fpco-api)

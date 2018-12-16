@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.elf)
           (hsPkgs.bytestring-mmap)
@@ -39,7 +39,7 @@
       };
       exes = {
         "dumpdwarf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dwarfadt)
             (hsPkgs.dwarf-el)
@@ -47,7 +47,7 @@
           ];
         };
         "dumpadt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dwarfadt)
             (hsPkgs.dwarf-el)

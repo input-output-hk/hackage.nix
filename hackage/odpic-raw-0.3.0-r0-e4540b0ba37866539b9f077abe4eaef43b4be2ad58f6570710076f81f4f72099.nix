@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Decimal)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "odpic-raw-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.base)
             (hsPkgs.bytestring)

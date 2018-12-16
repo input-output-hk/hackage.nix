@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghcjs-dom)
           (hsPkgs.shine)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-shine-varying-misc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
             (hsPkgs.shine)
@@ -45,7 +45,7 @@
           ];
         };
         "test-shine-varying-resize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
             (hsPkgs.shine)

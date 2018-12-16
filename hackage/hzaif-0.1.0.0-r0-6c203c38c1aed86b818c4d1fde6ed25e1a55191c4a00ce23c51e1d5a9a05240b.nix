@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-conduit)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       exes = {
         "hzaif-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hzaif)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "hzaif-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hzaif)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "xeno-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sax)
             (hsPkgs.hspec)

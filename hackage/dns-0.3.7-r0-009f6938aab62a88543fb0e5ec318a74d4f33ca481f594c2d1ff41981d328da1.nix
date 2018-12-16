@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhc && compiler.version.ge "7"
+        depends = if compiler.isGhc && compiler.version.ge "7"
           then [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
@@ -60,7 +60,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.attoparsec-conduit)

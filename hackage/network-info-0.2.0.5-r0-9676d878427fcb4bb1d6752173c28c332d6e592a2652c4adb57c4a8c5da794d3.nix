@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi") ++ pkgs.lib.optionals (system.isSolaris) [
           (pkgs."socket")
           (pkgs."nsl")

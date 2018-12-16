@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -58,7 +58,7 @@
       };
       exes = {
         "mock-mellon-server" = {
-          depends  = pkgs.lib.optionals (!(!flags.mock-example)) [
+          depends = pkgs.lib.optionals (!(!flags.mock-example)) [
             (hsPkgs.base)
             (hsPkgs.mellon-core)
             (hsPkgs.mellon-web)
@@ -66,7 +66,7 @@
           ];
         };
         "gpio-mellon-server" = {
-          depends  = pkgs.lib.optionals (!(!flags.gpio-example)) [
+          depends = pkgs.lib.optionals (!(!flags.gpio-example)) [
             (hsPkgs.base)
             (hsPkgs.exceptions)
             (hsPkgs.hpio)
@@ -82,7 +82,7 @@
           ];
         };
         "mellon-schedule-unlock" = {
-          depends  = pkgs.lib.optionals (!(!flags.client-unlock-example)) [
+          depends = pkgs.lib.optionals (!(!flags.client-unlock-example)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)
@@ -102,19 +102,19 @@
       };
       tests = {
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctest" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)

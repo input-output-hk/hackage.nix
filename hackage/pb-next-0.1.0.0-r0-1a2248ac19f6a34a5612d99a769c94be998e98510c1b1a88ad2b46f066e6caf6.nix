@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.parsec)
@@ -35,7 +35,7 @@
       };
       exes = {
         "pbhelp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pb-next)
             (hsPkgs.either)
@@ -47,7 +47,7 @@
       };
       tests = {
         "pb-next-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pb-next)
             (hsPkgs.tasty)

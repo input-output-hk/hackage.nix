@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bitspeak" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bindings-DSL)
             (hsPkgs.bindings-glib)

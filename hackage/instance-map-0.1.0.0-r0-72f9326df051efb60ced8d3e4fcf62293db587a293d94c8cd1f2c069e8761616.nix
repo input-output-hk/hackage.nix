@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "instance-map-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.instance-map)
             (hsPkgs.bytestring)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.blaze-html)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lightning-haskell)
             (hsPkgs.aeson)
@@ -58,7 +58,7 @@
           ];
         };
         "test-integration" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lightning-haskell)
             (hsPkgs.aeson)

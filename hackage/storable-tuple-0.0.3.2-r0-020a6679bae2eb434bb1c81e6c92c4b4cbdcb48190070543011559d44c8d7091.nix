@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.storable-record)
           (hsPkgs.utility-ht)
           (hsPkgs.base-orphans)

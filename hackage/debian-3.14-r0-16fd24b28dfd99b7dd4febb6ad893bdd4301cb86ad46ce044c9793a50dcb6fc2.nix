@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.Unixutils)
@@ -51,7 +51,7 @@
       };
       exes = {
         "fakechanges" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.Unixutils)
@@ -76,7 +76,7 @@
           ];
         };
         "debian-report" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.Unixutils)
@@ -101,7 +101,7 @@
           ];
         };
         "debian-versions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.Unixutils)
@@ -126,7 +126,7 @@
           ];
         };
         "cabal-debian" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.Unixutils)

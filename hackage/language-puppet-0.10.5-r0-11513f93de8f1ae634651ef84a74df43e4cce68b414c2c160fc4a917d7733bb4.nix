@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.strict-base-types)
@@ -66,7 +66,7 @@
       };
       exes = {
         "puppetresources" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -87,7 +87,7 @@
           ];
         };
         "pdbquery" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
@@ -103,7 +103,7 @@
       };
       tests = {
         "test-lexer" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.Glob)
@@ -115,7 +115,7 @@
           ];
         };
         "test-expr" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -125,7 +125,7 @@
           ];
         };
         "test-hiera" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -139,7 +139,7 @@
           ];
         };
         "test-puppetdb" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-puppet)
             (hsPkgs.base)
             (hsPkgs.temporary)

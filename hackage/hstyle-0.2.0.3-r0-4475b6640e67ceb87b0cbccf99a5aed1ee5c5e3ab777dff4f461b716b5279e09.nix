@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hstyle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
@@ -33,7 +33,7 @@
       };
       tests = {
         "include-file-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.include-file)
             (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "include-file-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.include-file)
             (hsPkgs.bytestring)

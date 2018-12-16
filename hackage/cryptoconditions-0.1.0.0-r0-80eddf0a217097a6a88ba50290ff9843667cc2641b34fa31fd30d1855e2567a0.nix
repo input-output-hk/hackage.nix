@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.asn1-encoding)
           (hsPkgs.asn1-parse)
@@ -40,7 +40,7 @@
       };
       tests = {
         "cryptoconditions-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cryptoconditions)
             (hsPkgs.aeson)

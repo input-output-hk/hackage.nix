@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
           (hsPkgs.binary)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test-merkle-patricia-db" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.leveldb-haskell)

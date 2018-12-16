@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ];
       };
       tests = {
         "unpacked-either-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unpacked-either)
             (hsPkgs.QuickCheck)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "can-i-have-a-pony" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

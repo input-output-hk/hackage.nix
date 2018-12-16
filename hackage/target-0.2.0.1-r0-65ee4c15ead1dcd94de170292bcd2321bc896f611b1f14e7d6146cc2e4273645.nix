@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -52,7 +52,7 @@
       };
       exes = {
         "target" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hint)
             (hsPkgs.target)
@@ -61,7 +61,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.target)
             (hsPkgs.ghc)
@@ -82,7 +82,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

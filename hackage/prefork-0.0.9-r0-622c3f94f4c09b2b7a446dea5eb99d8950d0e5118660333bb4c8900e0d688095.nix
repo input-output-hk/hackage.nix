@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "prefork-sample-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -48,7 +48,7 @@
           ];
         };
         "prefork-sample-various-workers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -58,7 +58,7 @@
           ];
         };
         "prefork-sample-warp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -77,7 +77,7 @@
       };
       tests = {
         "test-prefork" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prefork)
             (hsPkgs.hspec)
@@ -91,7 +91,7 @@
           ];
         };
         "test-prefork-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prefork)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.primitive-sort)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "gauge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primitive)
             (hsPkgs.primitive-containers)

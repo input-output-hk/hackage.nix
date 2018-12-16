@@ -26,7 +26,7 @@
     components = {
       exes = {
         "javasf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-java-classfile)
             (hsPkgs.binary)
@@ -36,7 +36,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filepath)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.primitive)
@@ -33,7 +33,7 @@
       };
       tests = {
         "intset-imperative-test-random" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.intset-imperative)
             (hsPkgs.mtl)
@@ -44,7 +44,7 @@
           ];
         };
         "intset-imperative-test-fixed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.intset-imperative)
           ];
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "intset-imperative-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.intset-imperative)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.socket)
@@ -37,7 +37,7 @@
       };
       tests = {
         "SendReceiveMessage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -45,7 +45,7 @@
           ];
         };
         "TooSmallBuffer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -53,7 +53,7 @@
           ];
         };
         "SendAll" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -64,7 +64,7 @@
           ];
         };
         "Notifications" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)

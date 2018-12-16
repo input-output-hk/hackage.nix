@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.natural-numbers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "loop-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.throttled-io-loop)
             (hsPkgs.hspec)

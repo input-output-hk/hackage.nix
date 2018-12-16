@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -33,14 +33,14 @@
       };
       exes = {
         "cci-example-client" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cci)
           ];
         };
         "cci-example-pingpong" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cci)
@@ -48,14 +48,14 @@
           ];
         };
         "cci-example-server" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cci)
           ];
         };
         "cci-example-registration-benchmark" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cci)
@@ -65,7 +65,7 @@
       };
       tests = {
         "test-cci" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cci)
@@ -80,7 +80,7 @@
           ];
         };
         "test-worker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cci)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -64,7 +64,7 @@
       };
       tests = {
         "th-typegraph-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.th-lift)
             (hsPkgs.HUnit)

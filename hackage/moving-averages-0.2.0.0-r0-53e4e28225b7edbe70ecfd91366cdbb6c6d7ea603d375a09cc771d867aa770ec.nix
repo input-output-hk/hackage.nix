@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "moving-averages-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.moving-averages)
             (hsPkgs.hspec)

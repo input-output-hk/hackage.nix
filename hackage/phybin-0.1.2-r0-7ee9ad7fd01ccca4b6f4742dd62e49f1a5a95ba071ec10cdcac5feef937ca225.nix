@@ -26,7 +26,7 @@
     components = {
       exes = {
         "phybin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

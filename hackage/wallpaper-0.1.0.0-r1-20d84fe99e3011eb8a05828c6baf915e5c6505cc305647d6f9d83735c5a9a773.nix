@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.JuicyPixels)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "wallpaper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wallpaper)
             (hsPkgs.JuicyPixels)
@@ -44,7 +44,7 @@
           ];
         };
         "rosette" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wallpaper)
             (hsPkgs.JuicyPixels)
@@ -54,7 +54,7 @@
       };
       tests = {
         "wallpaper-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wallpaper)
           ];

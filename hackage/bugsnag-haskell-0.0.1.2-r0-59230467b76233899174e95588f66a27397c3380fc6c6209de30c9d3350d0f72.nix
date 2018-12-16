@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -47,19 +47,19 @@
       };
       exes = {
         "example-cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bugsnag-haskell)
           ];
         };
         "example-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bugsnag-haskell)
           ];
         };
         "example-warp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bugsnag-haskell)
             (hsPkgs.wai)
@@ -67,7 +67,7 @@
           ];
         };
         "example-yesod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bugsnag-haskell)
             (hsPkgs.exceptions)
@@ -79,13 +79,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-qq)
             (hsPkgs.base)

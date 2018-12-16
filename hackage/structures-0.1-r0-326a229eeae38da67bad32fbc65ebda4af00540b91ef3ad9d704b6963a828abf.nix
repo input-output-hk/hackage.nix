@@ -33,7 +33,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.contravariant)
           (hsPkgs.deepseq)
@@ -54,7 +54,7 @@
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.structures)
             (hsPkgs.deepseq)
@@ -65,7 +65,7 @@
           ];
         };
         "hunit" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hunit)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hunit)) [
             (hsPkgs.base)
             (hsPkgs.structures)
             (hsPkgs.QuickCheck)
@@ -75,13 +75,13 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -96,7 +96,7 @@
       };
       benchmarks = {
         "maps" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -108,7 +108,7 @@
           ];
         };
         "lookups" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -121,7 +121,7 @@
           ];
         };
         "inserts" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)

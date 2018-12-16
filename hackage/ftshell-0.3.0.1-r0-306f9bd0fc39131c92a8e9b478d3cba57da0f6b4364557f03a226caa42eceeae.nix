@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ftshell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.Shellac)

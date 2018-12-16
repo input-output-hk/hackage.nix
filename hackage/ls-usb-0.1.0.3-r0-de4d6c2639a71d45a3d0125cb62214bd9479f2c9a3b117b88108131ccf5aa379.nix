@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ls-usb" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.matrix)
@@ -33,7 +33,7 @@
       };
       tests = {
         "astro-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.astro)
             (hsPkgs.time)

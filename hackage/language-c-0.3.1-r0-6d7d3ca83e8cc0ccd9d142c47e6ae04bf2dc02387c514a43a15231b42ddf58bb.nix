@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.filepath)
         ] ++ (if flags.splitbase
           then [

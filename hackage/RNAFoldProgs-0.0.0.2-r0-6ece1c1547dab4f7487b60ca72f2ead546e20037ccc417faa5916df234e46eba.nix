@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsRNAFold" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.Biobase)
@@ -36,7 +36,7 @@
           ];
         };
         "hsRNAEval" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.split)

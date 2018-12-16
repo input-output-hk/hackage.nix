@@ -26,7 +26,7 @@
     components = {
       exes = {
         "plocketed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.socketed)
             (hsPkgs.optparse-applicative)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "qudb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

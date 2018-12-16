@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sensenet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

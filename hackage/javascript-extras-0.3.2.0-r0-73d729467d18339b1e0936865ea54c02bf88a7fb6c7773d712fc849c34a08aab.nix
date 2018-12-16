@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.parallel)
@@ -34,7 +34,7 @@
       };
       exes = {
         "javascript-extras-test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.javascript-extras)
           ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [

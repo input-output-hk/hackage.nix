@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -66,7 +66,7 @@
           ];
         };
         "priority-semaphore" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.tasty)
@@ -76,13 +76,13 @@
           ];
         };
         "retained-store-strictness-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mqtt)
           ];
         };
         "routing-tree-size-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mqtt)
@@ -92,7 +92,7 @@
       };
       benchmarks = {
         "topic-matching" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
@@ -102,7 +102,7 @@
           ];
         };
         "binary" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.binary)

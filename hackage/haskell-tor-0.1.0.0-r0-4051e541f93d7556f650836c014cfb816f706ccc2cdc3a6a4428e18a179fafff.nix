@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.array)
           (hsPkgs.asn1-encoding)
           (hsPkgs.asn1-types)
@@ -55,7 +55,7 @@
       };
       exes = {
         "haskell-tor" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.asn1-encoding)
             (hsPkgs.asn1-types)
             (hsPkgs.base)
@@ -76,7 +76,7 @@
       };
       tests = {
         "test-tor" = {
-          depends  = [
+          depends = [
             (hsPkgs.asn1-types)
             (hsPkgs.base)
             (hsPkgs.binary)

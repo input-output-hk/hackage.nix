@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-locale)
           (hsPkgs.time)
@@ -33,7 +33,7 @@
       };
       exes = {
         "logger-0.0.1.0-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-locale)
             (hsPkgs.time)

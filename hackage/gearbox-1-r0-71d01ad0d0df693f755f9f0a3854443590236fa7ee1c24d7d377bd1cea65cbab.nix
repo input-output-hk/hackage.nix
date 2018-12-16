@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gearbox" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGLRaw)

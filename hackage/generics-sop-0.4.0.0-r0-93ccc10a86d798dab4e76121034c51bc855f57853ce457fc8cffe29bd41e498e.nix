@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sop-core)
           (hsPkgs.template-haskell)
@@ -34,7 +34,7 @@
       };
       tests = {
         "generics-sop-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generics-sop)
           ];
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "generics-sop-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hashmap)

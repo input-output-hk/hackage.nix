@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.rts) ];
+        depends = [ (hsPkgs.rts) ];
         libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."user32")
           (pkgs."mingw32")

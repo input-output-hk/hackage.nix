@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsqml-manic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Parallel-Arrows-Definition)
           (hsPkgs.base)
           (hsPkgs.deepseq)
@@ -35,7 +35,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.Parallel-Arrows-BaseSpec)
             (hsPkgs.Parallel-Arrows-Definition)
             (hsPkgs.Parallel-Arrows-Multicore)

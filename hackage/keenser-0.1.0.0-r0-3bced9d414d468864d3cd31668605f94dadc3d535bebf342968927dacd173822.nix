@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -52,7 +52,7 @@
       };
       exes = {
         "keenser-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.keenser)
             (hsPkgs.aeson)
@@ -67,7 +67,7 @@
       };
       tests = {
         "keenser-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.keenser)
           ];

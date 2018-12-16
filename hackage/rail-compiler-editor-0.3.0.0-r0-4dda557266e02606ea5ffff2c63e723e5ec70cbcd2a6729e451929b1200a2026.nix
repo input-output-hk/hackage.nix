@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.llvm-general-pure)
           (hsPkgs.llvm-general)
@@ -35,13 +35,13 @@
       };
       exes = {
         "RailCompiler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rail-compiler-editor)
           ];
         };
         "RailEditor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers)
@@ -55,7 +55,7 @@
       };
       tests = {
         "testcases" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.rail-compiler-editor)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hw-rankselect-base)
           (hsPkgs.vector)
           (hsPkgs.base)
@@ -37,7 +37,7 @@
       };
       exes = {
         "hw-rankselect" = {
-          depends  = [
+          depends = [
             (hsPkgs.hw-rankselect-base)
             (hsPkgs.vector)
             (hsPkgs.base)
@@ -54,7 +54,7 @@
       };
       tests = {
         "hw-rankselect-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hw-rankselect-base)
             (hsPkgs.vector)
             (hsPkgs.base)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.hw-rankselect-base)
             (hsPkgs.vector)
             (hsPkgs.base)

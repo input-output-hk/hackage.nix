@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.language-ats)
           (hsPkgs.optparse-applicative)
@@ -47,7 +47,7 @@
       };
       exes = {
         "atsfmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-format)
           ];

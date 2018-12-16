@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.regex-posix)
@@ -43,7 +43,7 @@
       };
       exes = {
         "test-framework-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.ansi-terminal)
             (hsPkgs.ansi-wl-pprint)

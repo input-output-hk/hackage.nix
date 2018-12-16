@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "bam" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.samtools)
             (hsPkgs.cmdargs)

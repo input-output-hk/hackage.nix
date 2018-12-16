@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.monad-logger)
@@ -38,7 +38,7 @@
       };
       tests = {
         "error-context-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.error-context)
             (hsPkgs.exceptions)

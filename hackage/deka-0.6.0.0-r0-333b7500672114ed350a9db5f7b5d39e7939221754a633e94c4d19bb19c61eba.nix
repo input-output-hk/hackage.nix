@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.parsec)
@@ -35,7 +35,7 @@
       };
       tests = {
         "dectest" = {
-          depends  = [
+          depends = [
             (hsPkgs.deka)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
           libs = [ (pkgs."mpdec") ];
         };
         "native" = {
-          depends  = [
+          depends = [
             (hsPkgs.deka)
             (hsPkgs.base)
             (hsPkgs.bytestring)

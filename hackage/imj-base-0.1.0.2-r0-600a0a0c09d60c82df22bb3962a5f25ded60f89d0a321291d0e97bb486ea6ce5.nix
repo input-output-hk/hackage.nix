@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.imj-prelude)
@@ -42,7 +42,7 @@
       };
       exes = {
         "imj-base-examples-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.mtl)
@@ -55,7 +55,7 @@
       };
       tests = {
         "imj-base-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.mtl)

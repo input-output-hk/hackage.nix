@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -35,7 +35,7 @@
       };
       tests = {
         "ftp-client-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ftp-client)
           ];

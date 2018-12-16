@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.text)
@@ -37,7 +37,7 @@
       };
       tests = {
         "multiaddr-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.multiaddr)
             (hsPkgs.tasty)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       tests = {
         "test-kat" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "bench-hashes" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
           ];
         };
         "bench-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams-lib)
           (hsPkgs.parsec)
@@ -47,7 +47,7 @@
       };
       exes = {
         "drawpuzzle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.puzzle-draw)
             (hsPkgs.diagrams-lib)
@@ -60,7 +60,7 @@
             else [ (hsPkgs.diagrams-svg) ]);
         };
         "checkpuzzle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.puzzle-draw)
             (hsPkgs.yaml)
@@ -70,7 +70,7 @@
           ];
         };
         "test-compare" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
@@ -81,7 +81,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)

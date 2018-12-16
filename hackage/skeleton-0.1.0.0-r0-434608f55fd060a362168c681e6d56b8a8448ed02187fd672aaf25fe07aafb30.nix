@@ -26,7 +26,7 @@
     components = {
       exes = {
         "skeleton" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)

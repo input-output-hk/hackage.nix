@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.fay-base)
           (hsPkgs.fay-text)
         ];

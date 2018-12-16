@@ -26,7 +26,7 @@
     components = {
       exes = {
         "spaceInvaders" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.random)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
@@ -53,13 +53,13 @@
       };
       exes = {
         "cabal2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal2nix)
           ];
         };
         "hackage2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.aeson)
             (hsPkgs.base)

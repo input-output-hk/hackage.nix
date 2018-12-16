@@ -28,7 +28,7 @@
     components = {
       exes = {
         "hpg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
           ] ++ pkgs.lib.optional (system.isOpenbsd) (hsPkgs.unix);

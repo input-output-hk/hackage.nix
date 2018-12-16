@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       exes = {
         "test-hadoop-rpc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hadoop-rpc)
             (hsPkgs.protobuf)

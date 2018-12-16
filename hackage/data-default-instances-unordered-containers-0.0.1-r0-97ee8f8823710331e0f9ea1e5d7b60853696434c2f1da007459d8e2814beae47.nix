@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.unordered-containers)
           (hsPkgs.data-default-class)
         ];

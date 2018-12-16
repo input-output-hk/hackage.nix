@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pandoc-unlit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc)
           ];

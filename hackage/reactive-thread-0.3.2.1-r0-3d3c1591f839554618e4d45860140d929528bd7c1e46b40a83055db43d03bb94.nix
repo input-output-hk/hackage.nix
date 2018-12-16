@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-parallel)
           (hsPkgs.stm)
@@ -34,7 +34,7 @@
       };
       exes = {
         "example-sdl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monad-parallel)
             (hsPkgs.reactive-thread)

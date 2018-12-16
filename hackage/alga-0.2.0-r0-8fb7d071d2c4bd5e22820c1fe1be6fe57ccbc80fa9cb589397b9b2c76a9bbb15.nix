@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.exceptions)
@@ -42,7 +42,7 @@
       };
       exes = {
         "alga" = {
-          depends  = [
+          depends = [
             (hsPkgs.alga)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -68,7 +68,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.alga)
             (hsPkgs.base)

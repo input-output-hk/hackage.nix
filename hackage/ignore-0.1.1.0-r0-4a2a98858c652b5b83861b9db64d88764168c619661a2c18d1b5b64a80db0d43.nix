@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.path)
           (hsPkgs.Glob)
@@ -38,7 +38,7 @@
       };
       exes = {
         "ignore" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ignore)
             (hsPkgs.path)
@@ -48,7 +48,7 @@
       };
       tests = {
         "ignore-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ignore)
             (hsPkgs.text)

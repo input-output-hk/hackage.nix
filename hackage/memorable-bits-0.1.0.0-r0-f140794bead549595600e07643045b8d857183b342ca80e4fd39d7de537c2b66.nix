@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.bits)
           (hsPkgs.bytes)
@@ -50,7 +50,7 @@
       };
       exes = {
         "membits" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.memorable-bits)
             (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
       };
       tests = {
         "test-memorable-bits" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.memorable-bits)
             (hsPkgs.tasty)
@@ -75,7 +75,7 @@
       };
       benchmarks = {
         "bench-memorable-bits" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.memorable-bits)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "follower" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-locale)
             (hsPkgs.time)

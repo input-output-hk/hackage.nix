@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.list-t)
           (hsPkgs.html-tokenizer)
           (hsPkgs.text)

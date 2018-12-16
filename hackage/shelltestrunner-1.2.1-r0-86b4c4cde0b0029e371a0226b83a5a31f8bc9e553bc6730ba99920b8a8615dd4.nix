@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shelltest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal-file-th)
             (hsPkgs.filemanip)

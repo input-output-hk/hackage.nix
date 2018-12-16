@@ -26,7 +26,7 @@
     components = {
       exes = {
         "slidemews" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.MonadCatchIO-transformers)

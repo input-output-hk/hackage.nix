@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ad)
           (hsPkgs.array)
@@ -56,7 +56,7 @@
       };
       exes = {
         "iris" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.neural)
@@ -64,14 +64,14 @@
           ];
         };
         "sqrt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MonadRandom)
             (hsPkgs.neural)
           ];
         };
         "MNIST" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.JuicyPixels)
@@ -83,7 +83,7 @@
       };
       tests = {
         "neural-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.MonadRandom)
@@ -91,7 +91,7 @@
           ];
         };
         "neural-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -100,7 +100,7 @@
       };
       benchmarks = {
         "neural-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.neural)

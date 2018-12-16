@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoodle-publish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

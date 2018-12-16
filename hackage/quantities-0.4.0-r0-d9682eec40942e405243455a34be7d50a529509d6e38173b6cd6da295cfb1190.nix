@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "quantities" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quantities)
             (hsPkgs.containers)
@@ -45,7 +45,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quantities)
             (hsPkgs.hspec)
@@ -55,20 +55,20 @@
           ];
         };
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
           ];
         };
         "coverage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.regex-compat)

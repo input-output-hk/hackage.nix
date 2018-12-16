@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yolobot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

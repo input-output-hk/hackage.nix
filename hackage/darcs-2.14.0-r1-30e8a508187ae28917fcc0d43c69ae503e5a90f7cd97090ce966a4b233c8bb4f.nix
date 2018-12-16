@@ -35,7 +35,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.binary)
@@ -86,7 +86,7 @@
       };
       exes = {
         "darcs" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
             (hsPkgs.base)
           ];
@@ -94,7 +94,7 @@
       };
       tests = {
         "darcs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
             (hsPkgs.base)
             (hsPkgs.array)

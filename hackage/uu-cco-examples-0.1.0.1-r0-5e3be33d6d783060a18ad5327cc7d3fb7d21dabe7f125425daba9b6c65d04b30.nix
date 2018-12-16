@@ -26,7 +26,7 @@
     components = {
       exes = {
         "uu-cco-parse-arith" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -34,7 +34,7 @@
           ];
         };
         "uu-cco-parse-arithbool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -42,7 +42,7 @@
           ];
         };
         "uu-cco-pp-arith" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -50,7 +50,7 @@
           ];
         };
         "uu-cco-pp-arithbool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -58,7 +58,7 @@
           ];
         };
         "uu-cco-eval-arith" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -66,7 +66,7 @@
           ];
         };
         "uu-cco-eval-arithbool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -74,7 +74,7 @@
           ];
         };
         "uu-cco-interp-arith" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -82,7 +82,7 @@
           ];
         };
         "uu-cco-interp-arithbool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -90,7 +90,7 @@
           ];
         };
         "uu-cco-tc-arithbool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
             (hsPkgs.uuagc)
@@ -98,7 +98,7 @@
           ];
         };
         "uu-cco-pp-aterm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-cco)
           ];

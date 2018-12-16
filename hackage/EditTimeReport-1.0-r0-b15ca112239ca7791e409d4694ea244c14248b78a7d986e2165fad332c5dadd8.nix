@@ -26,7 +26,7 @@
     components = {
       exes = {
         "report" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.xhtml)

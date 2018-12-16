@@ -26,7 +26,7 @@
     components = {
       exes = {
         "stackage-init" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)
@@ -39,7 +39,7 @@
           ];
         };
         "stackage-purge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)
@@ -51,7 +51,7 @@
           ];
         };
         "stackage-upgrade" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)

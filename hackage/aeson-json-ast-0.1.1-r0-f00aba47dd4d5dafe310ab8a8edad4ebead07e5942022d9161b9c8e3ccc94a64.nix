@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.json-ast)
           (hsPkgs.aeson)
           (hsPkgs.base)

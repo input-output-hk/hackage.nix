@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snus" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -48,7 +48,7 @@
           ];
         };
         "mumrik" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.filepath)

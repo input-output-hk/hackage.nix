@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       exes = {
         "mmaptest" = {
-          depends  = pkgs.lib.optionals (flags.mmaptest) [
+          depends = pkgs.lib.optionals (flags.mmaptest) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)

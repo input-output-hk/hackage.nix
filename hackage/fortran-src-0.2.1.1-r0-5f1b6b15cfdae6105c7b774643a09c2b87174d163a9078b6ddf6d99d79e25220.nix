@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.array)
@@ -47,7 +47,7 @@
       };
       exes = {
         "fortran-src" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.array)
@@ -67,7 +67,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.deepseq)
             (hsPkgs.base)
             (hsPkgs.hspec)

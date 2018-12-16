@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.HTTP)

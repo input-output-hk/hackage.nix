@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test-tls" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.cereal)
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "bench-tls" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tls)
             (hsPkgs.x509)

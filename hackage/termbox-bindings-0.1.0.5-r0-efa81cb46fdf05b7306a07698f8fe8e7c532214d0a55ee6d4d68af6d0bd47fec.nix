@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.termbox-bindings)
           ];

@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.attoparsec)
           (hsPkgs.aeson)
@@ -51,7 +51,7 @@
       };
       tests = {
         "sanity" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -65,7 +65,7 @@
           ];
         };
         "rewrite" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -78,7 +78,7 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (flags.hlint) [
+          depends = pkgs.lib.optionals (flags.hlint) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -86,7 +86,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.criterion)

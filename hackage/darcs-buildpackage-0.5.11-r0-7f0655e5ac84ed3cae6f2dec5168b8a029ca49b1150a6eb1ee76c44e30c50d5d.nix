@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcs-buildpackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -38,7 +38,7 @@
           ];
         };
         "dbp-importorig" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -50,7 +50,7 @@
           ];
         };
         "dbp-importdsc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -62,7 +62,7 @@
           ];
         };
         "dbp-markdeb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -74,7 +74,7 @@
           ];
         };
         "dbp-get" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)

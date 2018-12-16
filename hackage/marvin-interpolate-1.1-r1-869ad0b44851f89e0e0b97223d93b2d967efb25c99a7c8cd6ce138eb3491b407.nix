@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
@@ -36,7 +36,7 @@
       };
       tests = {
         "marvin-interpolate-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.marvin-interpolate)
             (hsPkgs.hspec)

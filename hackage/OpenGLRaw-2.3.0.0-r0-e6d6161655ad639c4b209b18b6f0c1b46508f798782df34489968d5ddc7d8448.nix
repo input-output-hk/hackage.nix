@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."opengl32") ]
           else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) (pkgs."GL"));

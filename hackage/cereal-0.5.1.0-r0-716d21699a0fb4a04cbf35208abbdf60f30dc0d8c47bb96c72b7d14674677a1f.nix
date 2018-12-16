@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-cereal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)

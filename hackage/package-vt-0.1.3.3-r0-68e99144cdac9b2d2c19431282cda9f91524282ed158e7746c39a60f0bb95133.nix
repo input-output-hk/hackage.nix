@@ -26,7 +26,7 @@
     components = {
       exes = {
         "package-vt" = {
-          depends  = [
+          depends = [
             (hsPkgs.Diff)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.filepath)

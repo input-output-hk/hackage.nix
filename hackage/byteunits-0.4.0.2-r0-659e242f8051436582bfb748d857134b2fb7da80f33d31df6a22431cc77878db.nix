@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe)
         ];
       };
       tests = {
         "testing-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

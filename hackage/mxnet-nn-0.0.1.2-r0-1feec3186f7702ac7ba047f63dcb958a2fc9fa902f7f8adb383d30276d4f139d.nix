@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mxnet)
           (hsPkgs.unordered-containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "mnist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mxnet)
             (hsPkgs.unordered-containers)
@@ -57,7 +57,7 @@
           ];
         };
         "lenet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mxnet)
             (hsPkgs.unordered-containers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bookshelf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -40,7 +40,7 @@
       };
       tests = {
         "documentation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

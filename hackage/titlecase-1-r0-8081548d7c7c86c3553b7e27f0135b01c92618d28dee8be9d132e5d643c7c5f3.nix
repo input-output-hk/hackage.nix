@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "titlecase" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.titlecase)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.titlecase)
             (hsPkgs.tasty)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.split)
           (hsPkgs.HUnit)
@@ -33,7 +33,7 @@
       };
       exes = {
         "tsv2csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tsv2csv)
           ];

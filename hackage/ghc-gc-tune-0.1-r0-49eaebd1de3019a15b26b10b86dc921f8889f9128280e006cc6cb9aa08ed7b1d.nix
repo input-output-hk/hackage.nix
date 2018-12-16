@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-gc-tune" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

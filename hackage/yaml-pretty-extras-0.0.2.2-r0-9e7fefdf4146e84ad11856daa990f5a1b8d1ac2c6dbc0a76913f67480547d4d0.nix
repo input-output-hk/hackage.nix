@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.microlens-platform)
           (hsPkgs.rio)
@@ -34,7 +34,7 @@
       };
       tests = {
         "yaml-pretty-extras-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.microlens-platform)

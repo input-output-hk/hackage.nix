@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cryptonite)
@@ -33,7 +33,7 @@
       };
       tests = {
         "crypto-simple-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.crypto-simple)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "javasf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-java-classfile)
             (hsPkgs.binary)

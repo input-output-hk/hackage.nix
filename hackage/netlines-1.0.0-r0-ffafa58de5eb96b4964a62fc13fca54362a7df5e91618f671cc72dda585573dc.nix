@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.contstuff)
@@ -36,7 +36,7 @@
       };
       exes = {
         "netlines-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTF)
             (hsPkgs.random)

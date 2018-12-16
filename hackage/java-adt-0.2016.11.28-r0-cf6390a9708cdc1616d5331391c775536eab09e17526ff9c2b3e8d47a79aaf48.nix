@@ -26,7 +26,7 @@
     components = {
       exes = {
         "java-adt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.pretty)

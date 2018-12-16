@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.iproute)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "targets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
           ];
         };
         "blocking" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.bytestring)

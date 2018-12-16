@@ -26,7 +26,7 @@
     components = {
       exes = {
         "seito" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.process)
@@ -47,7 +47,7 @@
           ];
         };
         "sensei" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.process)
@@ -68,7 +68,7 @@
           ];
         };
         "sensei-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.process)
@@ -91,7 +91,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.process)

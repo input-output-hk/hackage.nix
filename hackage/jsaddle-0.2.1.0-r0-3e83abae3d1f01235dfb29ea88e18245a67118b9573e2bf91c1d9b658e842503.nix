@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.template-haskell)
           (hsPkgs.base)
           (hsPkgs.lens)
@@ -47,7 +47,7 @@
       };
       tests = {
         "test-tool" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.template-haskell)
             (hsPkgs.base)
             (hsPkgs.lens)

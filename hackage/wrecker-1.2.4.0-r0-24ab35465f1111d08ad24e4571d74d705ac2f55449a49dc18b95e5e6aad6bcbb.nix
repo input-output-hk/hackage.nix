@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
           (hsPkgs.ansigraph)
@@ -80,7 +80,7 @@
       };
       exes = {
         "wreck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)

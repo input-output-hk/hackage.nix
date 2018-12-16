@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sjsp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.syb)

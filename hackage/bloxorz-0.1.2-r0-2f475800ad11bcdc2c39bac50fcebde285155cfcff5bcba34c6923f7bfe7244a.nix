@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bloxorz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLFW)

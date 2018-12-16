@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cgrep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.bytestring)

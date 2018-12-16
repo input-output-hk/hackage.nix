@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.semigroups)
@@ -34,7 +34,7 @@
       };
       tests = {
         "incremental-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.incremental)
           ];

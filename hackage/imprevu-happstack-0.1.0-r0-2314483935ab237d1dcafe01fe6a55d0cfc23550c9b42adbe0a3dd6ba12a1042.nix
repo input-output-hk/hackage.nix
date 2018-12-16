@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.DebugTraceHelpers)
           (hsPkgs.imprevu)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.imprevu-happstack)
             (hsPkgs.Cabal)

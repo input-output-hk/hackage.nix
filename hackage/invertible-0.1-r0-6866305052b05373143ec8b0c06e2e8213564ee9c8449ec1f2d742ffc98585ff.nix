@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((((([
+        depends = ((((((([
           (hsPkgs.base)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.template-haskell)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "csv-to-qif" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.regex-tdfa)
@@ -37,7 +37,7 @@
       };
       tests = {
         "tester" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.regex-tdfa)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HUnit)
           (hsPkgs.parsec)
@@ -34,7 +34,7 @@
       };
       exes = {
         "glsl-pprint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.language-glsl)

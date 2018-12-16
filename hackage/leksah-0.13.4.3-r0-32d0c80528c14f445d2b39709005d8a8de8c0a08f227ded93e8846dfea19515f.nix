@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((((([
+        depends = ((((((([
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -111,7 +111,7 @@
       };
       exes = {
         "leksah" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.leksah)
             (hsPkgs.base)
             (hsPkgs.gtk3)
@@ -122,7 +122,7 @@
           libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
         "bewleksah" = {
-          depends  = pkgs.lib.optionals (!(!flags.webkit)) ([
+          depends = pkgs.lib.optionals (!(!flags.webkit)) ([
             (hsPkgs.leksah)
             (hsPkgs.base)
             (hsPkgs.jsaddle)
@@ -144,7 +144,7 @@
       };
       tests = {
         "tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)

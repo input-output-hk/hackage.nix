@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.convertible)
@@ -41,31 +41,31 @@
       };
       exes = {
         "delayed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.friday)
           ];
         };
         "canny" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.friday)
           ];
         };
         "gaussian_blur" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.friday)
           ];
         };
         "histogram" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.friday)
           ];
         };
         "resize_image" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.friday)
           ];
@@ -73,7 +73,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.friday)
@@ -85,7 +85,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.friday)

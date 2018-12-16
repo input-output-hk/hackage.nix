@@ -26,7 +26,7 @@
     components = {
       exes = {
         "statechart" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.polyparse)
           ];

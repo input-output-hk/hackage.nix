@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "lxd-client-config-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lxd-client-config)
             (hsPkgs.HUnit)

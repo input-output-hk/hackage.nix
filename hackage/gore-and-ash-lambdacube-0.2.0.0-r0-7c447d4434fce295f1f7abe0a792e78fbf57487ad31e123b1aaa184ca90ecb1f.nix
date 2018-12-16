@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -41,7 +41,7 @@
       };
       exes = {
         "gore-and-ash-lambdacube-example01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -60,7 +60,7 @@
           ];
         };
         "gore-and-ash-lambdacube-example02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -81,7 +81,7 @@
           ];
         };
         "gore-and-ash-lambdacube-example03" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -102,7 +102,7 @@
           ];
         };
         "gore-and-ash-lambdacube-example04" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "nomyx-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.nomyx-core)
             (hsPkgs.nomyx-language)
             (hsPkgs.nomyx-web)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nomyx-server)
             (hsPkgs.Cabal)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
           (hsPkgs.binary)
@@ -35,7 +35,7 @@
       };
       tests = {
         "resolv" = {
-          depends  = [
+          depends = [
             (hsPkgs.resolv)
             (hsPkgs.base)
             (hsPkgs.bytestring)

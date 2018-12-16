@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       exes = {
         "servant-checked-exceptions-example-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.http-api-data)
@@ -63,7 +63,7 @@
           ];
         };
         "servant-checked-exceptions-example-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.http-api-data)
@@ -75,7 +75,7 @@
           ];
         };
         "servant-checked-exceptions-example-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.http-api-data)
@@ -92,7 +92,7 @@
       };
       tests = {
         "servant-checked-exceptions-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hspec-wai)

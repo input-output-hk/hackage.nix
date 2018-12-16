@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       tests = {
         "hpc-coveralls-stub" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hpc-coveralls)
             (hsPkgs.wai-middleware-static)

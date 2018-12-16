@@ -26,7 +26,7 @@
     components = {
       exes = {
         "neko-obfs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.attoparsec)

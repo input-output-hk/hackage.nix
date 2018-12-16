@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.regression-flag
+        depends = if flags.regression-flag
           then [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -50,7 +50,7 @@
       };
       exes = {
         "sc-qc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smartcheck)
             (hsPkgs.QuickCheck)

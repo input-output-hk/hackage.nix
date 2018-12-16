@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskeline)
           (hsPkgs.directory)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hfswatch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.directory)

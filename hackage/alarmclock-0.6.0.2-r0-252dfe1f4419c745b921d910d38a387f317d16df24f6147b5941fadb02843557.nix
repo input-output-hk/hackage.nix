@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.clock)
@@ -36,7 +36,7 @@
       };
       tests = {
         "alarmclock-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.alarmclock)
             (hsPkgs.async)
             (hsPkgs.base)

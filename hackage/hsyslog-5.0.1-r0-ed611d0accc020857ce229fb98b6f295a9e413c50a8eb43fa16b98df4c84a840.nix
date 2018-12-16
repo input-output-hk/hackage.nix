@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];
       };
       exes = {
         "hsyslog-example" = {
-          depends  = pkgs.lib.optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs.base)
             (hsPkgs.hsyslog)
             (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsyslog)
             (hsPkgs.base)
             (hsPkgs.doctest)

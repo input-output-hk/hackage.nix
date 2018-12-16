@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.spiros)
           (hsPkgs.ghc-prim)
@@ -38,7 +38,7 @@
       };
       exes = {
         "example-enumerate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enumerate)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "virthualenv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

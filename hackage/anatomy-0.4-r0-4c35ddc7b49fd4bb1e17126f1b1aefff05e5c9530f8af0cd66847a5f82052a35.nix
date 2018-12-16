@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       exes = {
         "anatomy" = {
-          depends  = [
+          depends = [
             (hsPkgs.atomo)
             (hsPkgs.base)
             (hsPkgs.blaze-html)

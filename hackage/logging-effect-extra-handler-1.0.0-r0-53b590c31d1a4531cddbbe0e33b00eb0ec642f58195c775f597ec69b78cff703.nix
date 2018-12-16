@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.logging-effect)
           (hsPkgs.wl-pprint-text)
@@ -35,7 +35,7 @@
       };
       exes = {
         "dispatch-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.wl-pprint-text)
@@ -43,7 +43,7 @@
           ];
         };
         "dispatch-handler-with-iso8601" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.wl-pprint-text)
@@ -51,7 +51,7 @@
           ];
         };
         "iso8601-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.wl-pprint-text)
@@ -59,7 +59,7 @@
           ];
         };
         "iso8601plus-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.wl-pprint-text)
@@ -67,7 +67,7 @@
           ];
         };
         "rfc822-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.wl-pprint-text)

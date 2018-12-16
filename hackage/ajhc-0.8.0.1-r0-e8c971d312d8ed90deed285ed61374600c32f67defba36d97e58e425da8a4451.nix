@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ajhc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HsSyck)
             (hsPkgs.array)

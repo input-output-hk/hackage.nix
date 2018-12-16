@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.time)
           (hsPkgs.yesod-routes)
           (hsPkgs.wai)
@@ -76,7 +76,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.wai-test)
             (hsPkgs.wai)

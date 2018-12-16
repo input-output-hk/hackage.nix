@@ -30,7 +30,7 @@
     components = {
       exes = {
         "accelerate-quickcheck" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.accelerate)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
@@ -42,7 +42,7 @@
           ]) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl);
         };
         "accelerate-examples" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)
             (hsPkgs.base)
@@ -67,7 +67,7 @@
           libs = [ (pkgs."stdc++") ];
         };
         "accelerate-crystal" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -76,7 +76,7 @@
           ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl);
         };
         "accelerate-canny" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)
             (hsPkgs.base)
@@ -88,7 +88,7 @@
           ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl);
         };
         "accelerate-mandelbrot" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -97,7 +97,7 @@
           ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl);
         };
         "accelerate-fluid" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-io)
             (hsPkgs.base)
@@ -108,7 +108,7 @@
           ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda);
         };
         "accelerate-nbody" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -117,7 +117,7 @@
           ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda);
         };
         "accelerate-smoothlife" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-fft)
             (hsPkgs.base)
@@ -127,7 +127,7 @@
           ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda);
         };
         "accelerate-hashcat" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate)
             (hsPkgs.base)
             (hsPkgs.bytestring)

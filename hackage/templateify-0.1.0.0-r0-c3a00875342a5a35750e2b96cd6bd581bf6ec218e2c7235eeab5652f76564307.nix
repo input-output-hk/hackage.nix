@@ -26,7 +26,7 @@
     components = {
       exes = {
         "templateify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagsoup)
             (hsPkgs.uniplate)

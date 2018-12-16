@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.extra)
@@ -39,7 +39,7 @@
       };
       tests = {
         "debug-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.debug)
           ];

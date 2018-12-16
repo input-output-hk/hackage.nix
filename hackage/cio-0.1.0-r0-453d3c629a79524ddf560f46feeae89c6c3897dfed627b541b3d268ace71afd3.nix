@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parallel-io)
           (hsPkgs.monad-stm)
           (hsPkgs.stm)

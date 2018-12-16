@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)

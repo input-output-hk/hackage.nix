@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hedis)
           (hsPkgs.string-conversions)
@@ -35,7 +35,7 @@
       };
       tests = {
         "haskell-disque-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-disque)
           ];

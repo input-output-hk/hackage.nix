@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "hascal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.numbers)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "test" = {
-          depends  = [ (hsPkgs.HUnit) ];
+          depends = [ (hsPkgs.HUnit) ];
         };
       };
     };

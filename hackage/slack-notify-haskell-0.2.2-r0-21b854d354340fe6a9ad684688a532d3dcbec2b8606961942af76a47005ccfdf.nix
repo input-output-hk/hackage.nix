@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HTTP)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.slack-notify-haskell)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "traypoweroff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.process)

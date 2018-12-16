@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ListLike)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       tests = {
         "zm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.regex-posix)
           (hsPkgs.MissingH)
@@ -38,7 +38,7 @@
       };
       tests = {
         "hakyll-shortcode-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)

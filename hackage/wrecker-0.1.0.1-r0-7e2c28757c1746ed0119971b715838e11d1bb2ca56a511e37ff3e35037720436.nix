@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.stm-chans)
@@ -57,7 +57,7 @@
       };
       tests = {
         "wrecker-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wrecker)
             (hsPkgs.hspec)

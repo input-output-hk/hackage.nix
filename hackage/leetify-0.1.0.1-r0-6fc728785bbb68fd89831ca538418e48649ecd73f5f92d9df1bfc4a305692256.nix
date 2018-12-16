@@ -26,7 +26,7 @@
     components = {
       exes = {
         "leetify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
           ];

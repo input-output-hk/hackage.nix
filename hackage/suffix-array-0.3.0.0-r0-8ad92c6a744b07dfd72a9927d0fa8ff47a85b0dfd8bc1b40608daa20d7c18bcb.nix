@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
         ];
       };
       exes = {
         "suffix-array-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.suffix-array)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "suffix-array-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "suffix-array-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.random)

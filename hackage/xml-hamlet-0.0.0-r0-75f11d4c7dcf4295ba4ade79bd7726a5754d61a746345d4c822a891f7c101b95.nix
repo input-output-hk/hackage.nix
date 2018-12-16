@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml-enumerator)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clash" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bifunctors)

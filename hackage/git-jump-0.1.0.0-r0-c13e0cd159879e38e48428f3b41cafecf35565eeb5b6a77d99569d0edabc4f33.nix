@@ -26,7 +26,7 @@
     components = {
       exes = {
         "git-jump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.base-compat)

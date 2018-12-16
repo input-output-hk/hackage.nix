@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -81,13 +81,13 @@
       };
       exes = {
         "gf" = {
-          depends  = [
+          depends = [
             (hsPkgs.gf)
             (hsPkgs.base)
           ];
         };
         "pgf-shell" = {
-          depends  = [
+          depends = [
             (hsPkgs.gf)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -98,7 +98,7 @@
       };
       tests = {
         "rgl-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTF)
             (hsPkgs.process)
@@ -108,7 +108,7 @@
           ];
         };
         "gf-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

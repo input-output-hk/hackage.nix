@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.time)
           (hsPkgs.directory)
@@ -56,7 +56,7 @@
       };
       tests = {
         "shelly-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.async)

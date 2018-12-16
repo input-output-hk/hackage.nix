@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "test-ost" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.order-statistic-tree)
             (hsPkgs.tasty)
@@ -40,7 +40,7 @@
       };
       benchmarks = {
         "bench-ost" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.order-statistic-tree)
             (hsPkgs.criterion)

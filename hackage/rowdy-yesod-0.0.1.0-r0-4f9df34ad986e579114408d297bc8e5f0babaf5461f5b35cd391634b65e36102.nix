@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rowdy)
           (hsPkgs.yesod-core)
@@ -33,7 +33,7 @@
       };
       tests = {
         "specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.rowdy)

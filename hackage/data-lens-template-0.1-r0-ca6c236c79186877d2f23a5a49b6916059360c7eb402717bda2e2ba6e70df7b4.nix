@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.comonad-transformers)
           (hsPkgs.utility-ht)
           (hsPkgs.base)

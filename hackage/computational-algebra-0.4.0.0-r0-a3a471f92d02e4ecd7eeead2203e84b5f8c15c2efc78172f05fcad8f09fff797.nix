@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.template-haskell)
           (hsPkgs.MonadRandom)
           (hsPkgs.algebraic-prelude)
@@ -66,14 +66,14 @@
       };
       exes = {
         "groebner-prof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
             (hsPkgs.deepseq)
           ];
         };
         "solve" = {
-          depends  = [
+          depends = [
             (hsPkgs.semigroups)
             (hsPkgs.constraints)
             (hsPkgs.algebra)
@@ -91,14 +91,14 @@
           ];
         };
         "algebraic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.algebraic-prelude)
             (hsPkgs.computational-algebra)
           ];
         };
         "ipsolve" = {
-          depends  = [
+          depends = [
             (hsPkgs.semigroups)
             (hsPkgs.parallel)
             (hsPkgs.constraints)
@@ -120,7 +120,7 @@
           ];
         };
         "faugere-prof" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.semigroups)
             (hsPkgs.constraints)
@@ -140,7 +140,7 @@
           ];
         };
         "hensel-prof" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.semigroups)
             (hsPkgs.constraints)
@@ -160,7 +160,7 @@
           ];
         };
         "sandpit-poly" = {
-          depends  = [
+          depends = [
             (hsPkgs.semigroups)
             (hsPkgs.constraints)
             (hsPkgs.computational-algebra)
@@ -171,7 +171,7 @@
           ];
         };
         "quotient" = {
-          depends  = [
+          depends = [
             (hsPkgs.semigroups)
             (hsPkgs.constraints)
             (hsPkgs.computational-algebra)
@@ -185,7 +185,7 @@
       };
       tests = {
         "test-multi-table" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
@@ -210,7 +210,7 @@
           ];
         };
         "singular-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebra)
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
@@ -238,7 +238,7 @@
           ];
         };
         "monomial-order-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
@@ -258,7 +258,7 @@
           ];
         };
         "linear-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
@@ -285,7 +285,7 @@
           ];
         };
         "matrix-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
@@ -312,7 +312,7 @@
           ];
         };
         "specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
@@ -343,7 +343,7 @@
           ];
         };
         "new-div-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
@@ -371,7 +371,7 @@
       };
       benchmarks = {
         "unipol-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -389,7 +389,7 @@
           ];
         };
         "normal-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -407,7 +407,7 @@
           ];
         };
         "elimination-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -425,7 +425,7 @@
           ];
         };
         "quotient-bench-randomized" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.QuickCheck)
             (hsPkgs.algebra)
@@ -452,7 +452,7 @@
           ];
         };
         "monomial-order-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.QuickCheck)
             (hsPkgs.algebra)
@@ -479,7 +479,7 @@
           ];
         };
         "linear-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
@@ -510,7 +510,7 @@
           ];
         };
         "division-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
@@ -541,7 +541,7 @@
           ];
         };
         "sugar-paper-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.sized)
@@ -572,7 +572,7 @@
           ];
         };
         "solve-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.sized)
@@ -603,7 +603,7 @@
           ];
         };
         "coercion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.sized)
@@ -634,7 +634,7 @@
           ];
         };
         "faugere4-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.sized)
@@ -664,7 +664,7 @@
           ];
         };
         "unipol-mult-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.sized)
@@ -694,7 +694,7 @@
           ];
         };
         "unipol-div-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.constraints)
             (hsPkgs.HUnit)
             (hsPkgs.sized)

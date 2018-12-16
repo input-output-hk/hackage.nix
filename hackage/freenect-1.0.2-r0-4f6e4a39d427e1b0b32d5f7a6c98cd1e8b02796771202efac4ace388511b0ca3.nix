@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
@@ -36,7 +36,7 @@
       };
       exes = {
         "freenect-haskell-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
           ];

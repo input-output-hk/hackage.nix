@@ -28,7 +28,7 @@
     components = {
       exes = {
         "passman-cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.contravariant)

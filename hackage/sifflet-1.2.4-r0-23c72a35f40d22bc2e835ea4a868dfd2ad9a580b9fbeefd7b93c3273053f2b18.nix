@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sifflet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cairo)
             (hsPkgs.glib)

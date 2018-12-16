@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       tests = {
         "semiring-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semiring-num)
             (hsPkgs.smallcheck)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semiring-num)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.ghc)
@@ -38,7 +38,7 @@
       };
       exes = {
         "graphmod-plugin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graphmod-plugin)
           ];

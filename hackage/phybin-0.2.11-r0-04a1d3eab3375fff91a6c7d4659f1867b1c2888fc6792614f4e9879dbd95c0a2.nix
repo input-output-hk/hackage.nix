@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.process)
@@ -51,7 +51,7 @@
       };
       exes = {
         "phybin" = {
-          depends  = [
+          depends = [
             (hsPkgs.phybin)
             (hsPkgs.base)
             (hsPkgs.directory)

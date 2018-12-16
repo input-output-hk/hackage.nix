@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "filepath-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

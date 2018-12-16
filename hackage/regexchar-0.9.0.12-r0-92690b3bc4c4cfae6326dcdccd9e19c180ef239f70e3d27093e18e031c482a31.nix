@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.parsec)
@@ -38,7 +38,7 @@
       };
       exes = {
         "grecce" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.Cabal)
             (hsPkgs.parallel)

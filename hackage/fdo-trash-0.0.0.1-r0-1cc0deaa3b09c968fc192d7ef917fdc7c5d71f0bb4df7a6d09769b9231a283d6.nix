@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.Diff)
@@ -39,7 +39,7 @@
       };
       exes = {
         "fdo-trash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fdo-trash)
             (hsPkgs.Diff)

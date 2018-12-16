@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.yesod)
@@ -36,7 +36,7 @@
       };
       exes = {
         "yesod-paginator-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
             (hsPkgs.yesod-paginator)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.yesod-paginator)

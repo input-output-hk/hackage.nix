@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.directory)

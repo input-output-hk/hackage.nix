@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sslocal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.binary)
@@ -40,7 +40,7 @@
           ];
         };
         "ssserver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.binary)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.binary)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.containers)
@@ -47,7 +47,7 @@
       };
       exes = {
         "infernu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.infernu)
@@ -58,7 +58,7 @@
           ];
         };
         "infernu-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.infernu)
           ] ++ pkgs.lib.optionals (flags.quickcheck) [
@@ -67,7 +67,7 @@
           ];
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.infernu)
           ] ++ pkgs.lib.optionals (flags.quickcheck) [

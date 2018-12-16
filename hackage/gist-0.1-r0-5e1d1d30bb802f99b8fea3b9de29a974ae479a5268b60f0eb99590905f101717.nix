@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

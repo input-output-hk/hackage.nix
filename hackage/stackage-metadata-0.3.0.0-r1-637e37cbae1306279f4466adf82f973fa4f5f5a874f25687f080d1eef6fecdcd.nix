@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "all-cabal-metadata-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-metadata)
             (hsPkgs.filepath)

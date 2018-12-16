@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.split)
         ];
       };
       exes = {
         "fullstop" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fullstop)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "hstest-fullstop" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fullstop)
             (hsPkgs.HUnit)

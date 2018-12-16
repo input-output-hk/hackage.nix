@@ -26,7 +26,7 @@
     components = {
       exes = {
         "PlslLint" = {
-          depends  = [
+          depends = [
             (hsPkgs.old-locale)
             (hsPkgs.old-time)
             (hsPkgs.filepath)

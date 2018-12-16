@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hailgun-send" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hailgun)
             (hsPkgs.bytestring)

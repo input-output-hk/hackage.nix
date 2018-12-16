@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pipes-http)
           (hsPkgs.pipes)
@@ -41,7 +41,7 @@
       };
       exes = {
         "latest-npm-version" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-http)
             (hsPkgs.pipes)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -60,7 +60,7 @@
       };
       exes = {
         "token-ring" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.data-default)
@@ -86,7 +86,7 @@
       };
       tests = {
         "time-warp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.data-default)

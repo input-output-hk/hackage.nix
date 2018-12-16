@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Glob)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "semdoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semdoc)
           ];

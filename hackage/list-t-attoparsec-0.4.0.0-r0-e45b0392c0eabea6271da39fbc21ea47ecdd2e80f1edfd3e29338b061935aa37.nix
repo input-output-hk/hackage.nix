@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.text)
           (hsPkgs.list-t)
@@ -36,7 +36,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.list-t-attoparsec)
             (hsPkgs.list-t-text)

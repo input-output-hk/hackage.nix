@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "maam" = {
-          depends  = [ (hsPkgs.maam) ];
+          depends = [ (hsPkgs.maam) ];
         };
       };
     };

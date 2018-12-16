@@ -26,14 +26,14 @@
     components = {
       exes = {
         "string-literal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.extra)
           ];
         };
         "cmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.extra)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-string-literal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.extra)
@@ -51,7 +51,7 @@
           ];
         };
         "test-cmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.extra)

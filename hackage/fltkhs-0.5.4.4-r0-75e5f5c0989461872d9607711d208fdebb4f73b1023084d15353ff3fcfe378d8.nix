@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -40,7 +40,7 @@
       };
       exes = {
         "fltkhs-fluidtohs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.fltkhs)
@@ -50,13 +50,13 @@
           ];
         };
         "fltkhs-buttons" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fltkhs)
           ];
         };
         "fltkhs-example-opengl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fltkhs)
             (hsPkgs.text)

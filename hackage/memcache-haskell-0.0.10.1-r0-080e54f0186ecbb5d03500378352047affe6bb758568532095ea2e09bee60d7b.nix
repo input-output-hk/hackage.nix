@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -37,7 +37,7 @@
       };
       exes = {
         "memcache-sample-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.stm)
@@ -51,7 +51,7 @@
           ];
         };
         "memcache-sample-retrieval" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.stm)
@@ -67,7 +67,7 @@
       };
       tests = {
         "test-memcache" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network)

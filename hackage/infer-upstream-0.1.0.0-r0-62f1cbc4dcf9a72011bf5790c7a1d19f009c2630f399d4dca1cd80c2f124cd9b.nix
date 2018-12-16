@@ -26,7 +26,7 @@
     components = {
       exes = {
         "infer-upstream" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)

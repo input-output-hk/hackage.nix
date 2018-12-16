@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hellage" = {
-          depends  = [
+          depends = [
             (hsPkgs.hellnet)
             (hsPkgs.Lucu)
             (hsPkgs.network)
@@ -40,7 +40,7 @@
           ];
         };
         "hellage-genmeta" = {
-          depends  = [
+          depends = [
             (hsPkgs.hellnet)
             (hsPkgs.hjpath)
             (hsPkgs.hjson)

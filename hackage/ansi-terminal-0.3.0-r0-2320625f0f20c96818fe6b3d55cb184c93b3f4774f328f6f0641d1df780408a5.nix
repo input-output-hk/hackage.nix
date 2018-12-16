@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (if system.isWindows
+        depends = (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]) ++ [
           (hsPkgs.base)
@@ -40,7 +40,7 @@
       };
       exes = {
         "ansi-terminal-example" = {
-          depends  = (if system.isWindows
+          depends = (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]) ++ [
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "modsplit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.mtl)

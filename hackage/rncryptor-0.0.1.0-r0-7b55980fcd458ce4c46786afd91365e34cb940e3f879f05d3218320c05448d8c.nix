@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "rncryptor-stream" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.io-streams)
@@ -50,7 +50,7 @@
       };
       tests = {
         "rncryptor-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.rncryptor)
             (hsPkgs.base)
             (hsPkgs.bytestring)

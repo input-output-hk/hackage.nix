@@ -26,7 +26,7 @@
     components = {
       exes = {
         "commando" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.system-filepath)

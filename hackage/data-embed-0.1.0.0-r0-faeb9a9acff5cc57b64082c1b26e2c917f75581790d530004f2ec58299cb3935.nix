@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "embedtool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)

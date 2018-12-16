@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Only)
         ];
       };
       tests = {
         "IndexedListLiterals-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.indexed-list-literals)
             (hsPkgs.hspec)

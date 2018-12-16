@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.katip)
           (hsPkgs.bloodhound)
@@ -49,7 +49,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.katip-elasticsearch)
             (hsPkgs.katip)
             (hsPkgs.http-client)
@@ -76,7 +76,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.katip-elasticsearch)
             (hsPkgs.bloodhound)

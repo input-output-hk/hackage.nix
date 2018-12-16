@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "text-containers" = {
-          depends  = [
+          depends = [
             (hsPkgs.text-containers)
             (hsPkgs.base)
             (hsPkgs.bytestring)

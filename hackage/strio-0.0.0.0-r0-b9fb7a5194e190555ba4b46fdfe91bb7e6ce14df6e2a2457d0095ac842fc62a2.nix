@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "new-template-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.strio)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "new-template-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.strio)
           ];

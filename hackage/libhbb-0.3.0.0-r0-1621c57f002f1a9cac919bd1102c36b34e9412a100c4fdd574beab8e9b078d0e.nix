@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.syb)
@@ -43,7 +43,7 @@
       };
       exes = {
         "hbb-simple-cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libhbb)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.hspec)

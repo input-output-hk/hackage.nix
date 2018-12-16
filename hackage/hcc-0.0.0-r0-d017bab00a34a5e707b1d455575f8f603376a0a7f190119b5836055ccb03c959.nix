@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hcc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.language-c)

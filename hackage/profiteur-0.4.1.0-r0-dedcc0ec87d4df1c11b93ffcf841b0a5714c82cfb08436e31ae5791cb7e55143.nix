@@ -26,7 +26,7 @@
     components = {
       exes = {
         "profiteur" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

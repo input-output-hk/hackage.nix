@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.foldl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "lhs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.readme-lhs)
@@ -46,7 +46,7 @@
           ];
         };
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.text)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.tasty)

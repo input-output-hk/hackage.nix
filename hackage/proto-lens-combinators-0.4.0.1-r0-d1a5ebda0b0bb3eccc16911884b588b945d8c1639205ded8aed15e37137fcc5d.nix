@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens-family)
           (hsPkgs.proto-lens)
@@ -34,7 +34,7 @@
       };
       tests = {
         "combinators_test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.lens-family)

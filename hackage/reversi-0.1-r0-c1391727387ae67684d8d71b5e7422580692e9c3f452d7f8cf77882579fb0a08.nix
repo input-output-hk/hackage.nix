@@ -26,7 +26,7 @@
     components = {
       exes = {
         "reversi" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.process)

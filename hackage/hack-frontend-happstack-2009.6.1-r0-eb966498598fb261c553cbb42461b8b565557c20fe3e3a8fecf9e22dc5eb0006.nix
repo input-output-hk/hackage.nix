@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.happstack-fastcgi)
           (hsPkgs.hack-frontend-monadcgi)

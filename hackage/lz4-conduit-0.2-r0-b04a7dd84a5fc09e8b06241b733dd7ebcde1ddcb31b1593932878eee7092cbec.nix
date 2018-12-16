@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "LZ4" = {
-          depends  = [
+          depends = [
             (hsPkgs.lz4-conduit)
             (hsPkgs.base)
             (hsPkgs.conduit)
@@ -47,7 +47,7 @@
       };
       tests = {
         "props" = {
-          depends  = [
+          depends = [
             (hsPkgs.lz4-conduit)
             (hsPkgs.base)
             (hsPkgs.conduit)

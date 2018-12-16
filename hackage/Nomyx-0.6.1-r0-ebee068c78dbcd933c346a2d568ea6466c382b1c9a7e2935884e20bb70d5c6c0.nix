@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Nomyx" = {
-          depends  = [
+          depends = [
             (hsPkgs.Nomyx-Core)
             (hsPkgs.Nomyx-Language)
             (hsPkgs.Nomyx-Web)

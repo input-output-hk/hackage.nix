@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.list-t)
           (hsPkgs.html-tokenizer)
           (hsPkgs.html-entities)
@@ -41,7 +41,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.list-t-html-parser)
             (hsPkgs.list-t-attoparsec)

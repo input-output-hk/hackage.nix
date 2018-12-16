@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.array)
@@ -52,7 +52,7 @@
       };
       exes = {
         "hermit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hermit)
           ];

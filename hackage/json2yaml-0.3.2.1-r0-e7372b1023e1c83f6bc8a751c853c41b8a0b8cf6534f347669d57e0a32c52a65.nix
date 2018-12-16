@@ -26,7 +26,7 @@
     components = {
       exes = {
         "json2yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.yaml)

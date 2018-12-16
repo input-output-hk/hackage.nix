@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsfilt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
           ];

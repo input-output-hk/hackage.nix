@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.adjunctions)
           (hsPkgs.base)
           (hsPkgs.comonad)
@@ -37,7 +37,7 @@
       };
       tests = {
         "difference-monoid-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.adjunctions)
             (hsPkgs.base)
@@ -51,7 +51,7 @@
           ];
         };
         "difference-monoid-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.adjunctions)
             (hsPkgs.base)
             (hsPkgs.comonad)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.storable-record)
@@ -40,35 +40,35 @@
       };
       tests = {
         "context" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
           libs = [ (pkgs."xkbcommon") ];
         };
         "filecomp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
           libs = [ (pkgs."xkbcommon") ];
         };
         "keyseq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
           libs = [ (pkgs."xkbcommon") ];
         };
         "keysym" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
           libs = [ (pkgs."xkbcommon") ];
         };
         "rulescomp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
             (hsPkgs.unix)
@@ -76,14 +76,14 @@
           libs = [ (pkgs."xkbcommon") ];
         };
         "state" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
           libs = [ (pkgs."xkbcommon") ];
         };
         "stringcomp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
@@ -92,7 +92,7 @@
       };
       benchmarks = {
         "bench-key-proc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
             (hsPkgs.random)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.persistent)
           (hsPkgs.persistent-template)
@@ -40,7 +40,7 @@
       };
       tests = {
         "users-persistent-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.persistent-sqlite)

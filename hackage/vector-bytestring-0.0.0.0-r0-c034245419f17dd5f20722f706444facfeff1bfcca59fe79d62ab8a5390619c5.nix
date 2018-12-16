@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.ghc-prim)
@@ -36,7 +36,7 @@
       };
       exes = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primitive)
             (hsPkgs.ghc-prim)
@@ -49,7 +49,7 @@
       };
       tests = {
         "prop-compiled" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primitive)
             (hsPkgs.ghc-prim)

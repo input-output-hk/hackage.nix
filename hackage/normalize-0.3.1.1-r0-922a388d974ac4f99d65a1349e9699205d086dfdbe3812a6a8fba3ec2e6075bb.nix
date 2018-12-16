@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cassava)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "normalize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.normalize)
             (hsPkgs.bytestring)

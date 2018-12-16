@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
         ];
@@ -35,7 +35,7 @@
       };
       exes = {
         "termbox-example-colors" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.termbox)
           ];

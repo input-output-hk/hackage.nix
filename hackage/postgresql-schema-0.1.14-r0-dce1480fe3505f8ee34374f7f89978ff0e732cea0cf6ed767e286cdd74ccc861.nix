@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basic-prelude)
           (hsPkgs.postgresql-simple)
@@ -35,7 +35,7 @@
       };
       exes = {
         "schema-add" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.optparse-applicative)
@@ -46,7 +46,7 @@
           ];
         };
         "schema-apply" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.optparse-applicative)
@@ -56,7 +56,7 @@
           ];
         };
         "schema-clear" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.optparse-applicative)

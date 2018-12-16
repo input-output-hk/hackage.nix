@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rainbow)
           (hsPkgs.split)
@@ -38,7 +38,7 @@
       };
       exes = {
         "prednote-visual-tests" = {
-          depends  = pkgs.lib.optionals (flags.visual-tests) [
+          depends = pkgs.lib.optionals (flags.visual-tests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.quickpull)
             (hsPkgs.base)
@@ -52,7 +52,7 @@
       };
       tests = {
         "prednote-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.quickpull)
             (hsPkgs.base)

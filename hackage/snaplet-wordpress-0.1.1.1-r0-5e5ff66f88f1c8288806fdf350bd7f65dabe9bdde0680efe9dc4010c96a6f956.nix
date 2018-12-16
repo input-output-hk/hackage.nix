@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
@@ -56,7 +56,7 @@
       };
       tests = {
         "test-snaplet-wordpress" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.heist)
             (hsPkgs.hspec-snap)

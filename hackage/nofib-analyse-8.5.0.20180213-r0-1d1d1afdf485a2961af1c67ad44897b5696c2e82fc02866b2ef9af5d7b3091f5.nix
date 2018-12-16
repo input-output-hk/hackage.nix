@@ -26,7 +26,7 @@
     components = {
       exes = {
         "nofib-analyse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regex-compat)
             (hsPkgs.array)

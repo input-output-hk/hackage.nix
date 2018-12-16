@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
@@ -44,7 +44,7 @@
       };
       exes = {
         "summon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.summoner)
             (hsPkgs.universum)
@@ -53,7 +53,7 @@
       };
       tests = {
         "summoner-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedgehog)
             (hsPkgs.tasty)

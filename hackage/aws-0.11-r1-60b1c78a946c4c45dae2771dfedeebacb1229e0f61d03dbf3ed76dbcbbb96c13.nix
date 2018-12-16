@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -66,7 +66,7 @@
       };
       exes = {
         "GetObject" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
@@ -75,7 +75,7 @@
           ];
         };
         "MultipartUpload" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
@@ -85,7 +85,7 @@
           ];
         };
         "NukeBucket" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
@@ -96,14 +96,14 @@
           ];
         };
         "SimpleDb" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.text)
           ];
         };
         "DynamoDb" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.aws)
             (hsPkgs.base)
             (hsPkgs.data-default)
@@ -114,7 +114,7 @@
           ];
         };
         "Sqs" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.errors)
@@ -125,7 +125,7 @@
       };
       tests = {
         "sqs-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.aws)
@@ -148,7 +148,7 @@
           ];
         };
         "dynamodb-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.aws)

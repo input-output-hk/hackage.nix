@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.accelerate)
           (hsPkgs.utility-ht)
           (hsPkgs.base)

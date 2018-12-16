@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.non-negative)
           (hsPkgs.utility-ht)
           (hsPkgs.transformers)
@@ -50,7 +50,7 @@
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) ([
+          depends = pkgs.lib.optionals (flags.buildtests) ([
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
           ] ++ (if flags.splitbase
@@ -60,13 +60,13 @@
             else [ (hsPkgs.base) ]));
         };
         "speedtest" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) ([
+          depends = pkgs.lib.optionals (flags.buildtests) ([
             (hsPkgs.sample-frame)
             (hsPkgs.deepseq)
           ] ++ [ (hsPkgs.base) ]);
         };
         "speedpointer" = {
-          depends  = pkgs.lib.optional (flags.buildtests) (hsPkgs.base);
+          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs.base);
         };
       };
     };

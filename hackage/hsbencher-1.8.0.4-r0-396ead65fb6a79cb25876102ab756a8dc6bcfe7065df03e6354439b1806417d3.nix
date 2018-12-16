@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.process)
@@ -43,7 +43,7 @@
       };
       tests = {
         "hsbencher-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsbencher)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -56,7 +56,7 @@
           ] ++ pkgs.lib.optional (flags.hydra) (hsPkgs.hydra-print);
         };
         "hsbencher-test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.process)
@@ -74,7 +74,7 @@
           ] ++ pkgs.lib.optional (flags.hydra) (hsPkgs.hydra-print);
         };
         "hsbencher-test2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.process)

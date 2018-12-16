@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.containers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "refty-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.refty)
           ];

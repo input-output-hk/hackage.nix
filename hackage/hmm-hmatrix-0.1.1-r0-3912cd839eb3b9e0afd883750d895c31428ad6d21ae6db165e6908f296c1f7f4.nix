@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hmatrix)
           (hsPkgs.QuickCheck)
           (hsPkgs.explicit-exception)
@@ -43,7 +43,7 @@
       };
       tests = {
         "hmm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hmm-hmatrix)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

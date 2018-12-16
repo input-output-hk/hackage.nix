@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.binary-bits)
@@ -38,7 +38,7 @@
       };
       exes = {
         "octane" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.octane)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "octane-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.binary-bits)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "octane-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.binary-bits)

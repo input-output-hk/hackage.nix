@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.array)
           (hsPkgs.async)
@@ -55,7 +55,7 @@
       };
       tests = {
         "hinterface-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.async)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clr-win-linker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.pipes)

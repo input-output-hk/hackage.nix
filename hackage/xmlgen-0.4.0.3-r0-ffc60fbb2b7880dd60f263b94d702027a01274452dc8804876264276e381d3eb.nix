@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "tests" = {
-          depends  = pkgs.lib.optionals (flags.tests) [
+          depends = pkgs.lib.optionals (flags.tests) [
             (hsPkgs.HTF)
             (hsPkgs.MissingH)
             (hsPkgs.hxt)
@@ -49,7 +49,7 @@
           ];
         };
         "benchmarks" = {
-          depends  = pkgs.lib.optional (flags.benchmarks) (hsPkgs.criterion);
+          depends = pkgs.lib.optional (flags.benchmarks) (hsPkgs.criterion);
         };
       };
     };

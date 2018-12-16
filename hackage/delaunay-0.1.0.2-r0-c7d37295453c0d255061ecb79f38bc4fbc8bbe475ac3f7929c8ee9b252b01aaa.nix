@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.AC-Vector)
           (hsPkgs.unordered-containers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "delaunay-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AC-Vector)
             (hsPkgs.delaunay)

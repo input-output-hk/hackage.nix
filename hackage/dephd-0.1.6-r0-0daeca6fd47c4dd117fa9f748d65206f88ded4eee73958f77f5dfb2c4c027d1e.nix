@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dephd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio)
             (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
           ];
         };
         "fakequal" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.cmdargs)
           ];

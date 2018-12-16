@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.BoundedChan)
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
@@ -47,7 +47,7 @@
       };
       exes = {
         "dfinity-radix-tree-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
@@ -62,7 +62,7 @@
           ];
         };
         "dfinity-radix-tree-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "debug-me" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)

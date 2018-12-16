@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hastache)
           (hsPkgs.file-embed)
@@ -43,7 +43,7 @@
       };
       exes = {
         "hackmanager" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hackmanager)
             (hsPkgs.text)

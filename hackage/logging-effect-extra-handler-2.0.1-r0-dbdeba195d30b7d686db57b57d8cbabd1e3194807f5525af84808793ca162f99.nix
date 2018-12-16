@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.logging-effect)
@@ -35,7 +35,7 @@
       };
       exes = {
         "iso8601-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.logging-effect-extra-handler)
@@ -43,7 +43,7 @@
           ];
         };
         "iso8601plus-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.logging-effect-extra-handler)
@@ -51,7 +51,7 @@
           ];
         };
         "rfc822-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.logging-effect-extra-handler)
@@ -59,7 +59,7 @@
           ];
         };
         "route-handler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.logging-effect-extra-handler)
@@ -67,7 +67,7 @@
           ];
         };
         "route-handler-with-iso8601" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect)
             (hsPkgs.logging-effect-extra-handler)

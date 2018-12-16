@@ -26,7 +26,7 @@
     components = {
       exes = {
         "trs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.graph-rewriting)

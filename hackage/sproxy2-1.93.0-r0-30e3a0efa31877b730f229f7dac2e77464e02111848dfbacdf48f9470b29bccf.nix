@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sproxy2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.base64-bytestring)

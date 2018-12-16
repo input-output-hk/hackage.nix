@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wreq)
           (hsPkgs.lens-aeson)
@@ -40,7 +40,7 @@
       };
       exes = {
         "handwriting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.handwriting)
             (hsPkgs.text)
@@ -53,7 +53,7 @@
       };
       tests = {
         "handwriting-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.handwriting)
           ];

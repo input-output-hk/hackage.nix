@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
         ];
       };
       tests = {
         "KdTreeTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.KdTree)
             (hsPkgs.QuickCheck)

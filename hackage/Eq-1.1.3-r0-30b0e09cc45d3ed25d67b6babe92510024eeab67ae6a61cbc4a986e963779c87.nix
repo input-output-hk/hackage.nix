@@ -30,7 +30,7 @@
     components = {
       exes = {
         "eq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.HaXml)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pointfree-internal)
         ];
       };
       sublibs = {
         "pointfree-internal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       exes = {
         "pointfree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pointfree-internal)
           ];
@@ -51,7 +51,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pointfree-internal)
             (hsPkgs.HUnit)

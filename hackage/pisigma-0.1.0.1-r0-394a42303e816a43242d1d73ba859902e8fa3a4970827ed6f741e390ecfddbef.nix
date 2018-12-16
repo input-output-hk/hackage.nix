@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pisigma" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.mtl)

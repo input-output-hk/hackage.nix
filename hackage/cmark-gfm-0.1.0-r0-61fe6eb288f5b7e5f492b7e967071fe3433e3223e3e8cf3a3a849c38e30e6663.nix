@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-cmark-gfm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmark-gfm)
             (hsPkgs.text)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "bench-cmark-gfm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.cmark-gfm)

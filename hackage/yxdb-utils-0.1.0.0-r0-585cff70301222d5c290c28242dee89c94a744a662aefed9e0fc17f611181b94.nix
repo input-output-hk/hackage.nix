@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.attoparsec)
           (hsPkgs.Codec-Compression-LZF)
@@ -63,13 +63,13 @@
       };
       exes = {
         "csv2yxdb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yxdb-utils)
           ];
         };
         "yxdb2csv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yxdb-utils)
           ];
@@ -77,7 +77,7 @@
       };
       tests = {
         "yxdb-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Codec-Compression-LZF)
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)

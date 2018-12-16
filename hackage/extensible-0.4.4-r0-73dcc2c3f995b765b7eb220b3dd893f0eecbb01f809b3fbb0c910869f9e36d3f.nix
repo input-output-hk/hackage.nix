@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.constraints)
@@ -44,7 +44,7 @@
       };
       tests = {
         "effects" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extensible)
           ];

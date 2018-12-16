@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.primitive)
@@ -54,7 +54,7 @@
       };
       tests = {
         "test-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
           ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs.QuickCheck)

@@ -25,13 +25,13 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.template-haskell)) ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.template-haskell)) ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.template-haskell)) ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.template-haskell);
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.is)

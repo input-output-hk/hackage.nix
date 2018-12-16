@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
           (hsPkgs.linear)
@@ -34,7 +34,7 @@
       };
       exes = {
         "qchas-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix)
             (hsPkgs.qchas)
@@ -43,7 +43,7 @@
       };
       tests = {
         "qchas-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

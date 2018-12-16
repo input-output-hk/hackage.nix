@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.numhask)
           (hsPkgs.base)
           (hsPkgs.protolude)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.numhask)
             (hsPkgs.base)
             (hsPkgs.doctest)

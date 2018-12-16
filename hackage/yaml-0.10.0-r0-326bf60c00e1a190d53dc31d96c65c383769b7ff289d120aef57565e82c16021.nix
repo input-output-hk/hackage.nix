@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -52,7 +52,7 @@
       };
       exes = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -76,7 +76,7 @@
           ];
         };
         "json2yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -98,7 +98,7 @@
           ];
         };
         "yaml2json" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -122,7 +122,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "breve" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp)
             (hsPkgs.Spock)

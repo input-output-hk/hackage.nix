@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.broadcast-chan)
@@ -45,7 +45,7 @@
       };
       tests = {
         "basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan)
             (hsPkgs.broadcast-chan-tests)
@@ -55,7 +55,7 @@
           ];
         };
         "basic-unthreaded" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan)
             (hsPkgs.broadcast-chan-tests)
@@ -65,7 +65,7 @@
           ];
         };
         "parallel-io" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan)
             (hsPkgs.broadcast-chan-tests)

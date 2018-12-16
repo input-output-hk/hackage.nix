@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sws" = {
-          depends  = [
+          depends = [
             (hsPkgs.asn1-types)
             (hsPkgs.asn1-encoding)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "nc-indicators" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.attoparsec)

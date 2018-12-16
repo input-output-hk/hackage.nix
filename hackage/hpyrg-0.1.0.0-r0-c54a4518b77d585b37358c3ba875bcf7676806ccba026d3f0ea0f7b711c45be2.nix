@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpyrg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.parsec)

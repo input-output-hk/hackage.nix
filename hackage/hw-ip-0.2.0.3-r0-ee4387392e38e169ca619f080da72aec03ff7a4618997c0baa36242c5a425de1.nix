@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.generic-lens)
           (hsPkgs.hw-bits)
@@ -35,7 +35,7 @@
       };
       tests = {
         "hw-ip-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.generic-lens)
             (hsPkgs.hw-bits)

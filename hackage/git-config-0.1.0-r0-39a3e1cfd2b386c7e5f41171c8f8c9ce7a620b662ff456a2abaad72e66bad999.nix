@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.megaparsec)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       tests = {
         "git-config-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.git-config)
             (hsPkgs.megaparsec)

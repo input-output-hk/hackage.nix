@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dmenu-pmount" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.lens)

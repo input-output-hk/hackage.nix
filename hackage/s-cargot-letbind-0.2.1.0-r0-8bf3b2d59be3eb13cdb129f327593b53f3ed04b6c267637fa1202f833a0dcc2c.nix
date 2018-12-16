@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.s-cargot)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       tests = {
         "s-cargot-printparselet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.HUnit)

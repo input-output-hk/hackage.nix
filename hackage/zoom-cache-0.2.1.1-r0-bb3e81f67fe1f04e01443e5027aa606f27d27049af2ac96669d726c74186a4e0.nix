@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "zoom-cache" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghcjs-dom)
           (hsPkgs.ghcjs-prim)
@@ -37,14 +37,14 @@
       };
       tests = {
         "test-shine-animateeverything" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
             (hsPkgs.shine)
           ];
         };
         "test-shine-simpleinteraction" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
             (hsPkgs.shine)

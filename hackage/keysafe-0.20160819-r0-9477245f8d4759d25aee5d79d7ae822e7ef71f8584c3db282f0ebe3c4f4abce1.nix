@@ -26,7 +26,7 @@
     components = {
       exes = {
         "keysafe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)

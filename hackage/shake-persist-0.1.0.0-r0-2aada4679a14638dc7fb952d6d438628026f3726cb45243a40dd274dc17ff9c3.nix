@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.binary)
@@ -35,7 +35,7 @@
       };
       exes = {
         "ex.shake-persist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shake-persist)
             (hsPkgs.shake)

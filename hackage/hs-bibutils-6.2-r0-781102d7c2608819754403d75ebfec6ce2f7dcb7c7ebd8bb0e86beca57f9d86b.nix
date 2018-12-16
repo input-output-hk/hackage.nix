@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhc && compiler.version.ge "6.10"
+        depends = if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs.base)
             (hsPkgs.syb)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-auth)
@@ -39,7 +39,7 @@
       };
       tests = {
         "yesod-auth-ldap-native-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-auth-ldap-native)
           ];

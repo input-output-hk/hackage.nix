@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hasql-pool)
           (hsPkgs.text)
@@ -45,7 +45,7 @@
       };
       exes = {
         "postgrest-ws" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.string-conversions)
@@ -62,7 +62,7 @@
       };
       tests = {
         "postgrest-ws-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.postgrest-ws)
           ];

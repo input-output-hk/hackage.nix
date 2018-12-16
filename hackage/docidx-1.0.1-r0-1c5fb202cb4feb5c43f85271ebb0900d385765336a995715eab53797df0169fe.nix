@@ -26,7 +26,7 @@
     components = {
       exes = {
         "docidx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
           (hsPkgs.constraints)
@@ -40,7 +40,7 @@
       };
       tests = {
         "quickcheck-state-machine-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.mtl)

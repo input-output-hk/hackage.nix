@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "test-binary-protocol-zmq" = {
-          depends  = pkgs.lib.optionals (!(!flags.tests)) [
+          depends = pkgs.lib.optionals (!(!flags.tests)) [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

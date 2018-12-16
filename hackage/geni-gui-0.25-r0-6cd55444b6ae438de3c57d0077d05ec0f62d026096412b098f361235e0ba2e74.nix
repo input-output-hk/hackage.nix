@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GenI)
           (hsPkgs.cabal-macosx)
@@ -47,7 +47,7 @@
       };
       exes = {
         "geni-gui" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GenI)
             (hsPkgs.geni-gui)

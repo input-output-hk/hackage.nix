@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hawitter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.containers)

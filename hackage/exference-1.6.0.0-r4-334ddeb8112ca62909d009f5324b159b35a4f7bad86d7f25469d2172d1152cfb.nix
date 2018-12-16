@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.containers)
@@ -60,7 +60,7 @@
       };
       exes = {
         "exference" = {
-          depends  = pkgs.lib.optionals (flags.build-executables) [
+          depends = pkgs.lib.optionals (flags.build-executables) [
             (hsPkgs.exference)
             (hsPkgs.base)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.language-c)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       exes = {
         "c2ats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.c2ats)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "c2ats-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)

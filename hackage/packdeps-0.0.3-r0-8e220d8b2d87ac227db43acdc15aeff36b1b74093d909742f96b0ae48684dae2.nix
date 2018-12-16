@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (!flags.web) [
+        depends = pkgs.lib.optionals (!flags.web) [
           (hsPkgs.base)
           (hsPkgs.tar)
           (hsPkgs.split)
@@ -42,7 +42,7 @@
         "packdeps" = {};
         "packdeps-yesod" = {};
         "save-newest" = {
-          depends  = pkgs.lib.optionals (flags.web) [
+          depends = pkgs.lib.optionals (flags.web) [
             (hsPkgs.yesod-newsfeed)
             (hsPkgs.yesod)
             (hsPkgs.hamlet)

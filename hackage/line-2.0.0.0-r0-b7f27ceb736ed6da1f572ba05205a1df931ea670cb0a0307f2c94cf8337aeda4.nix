@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai)
           (hsPkgs.http-types)
@@ -43,7 +43,7 @@
       };
       tests = {
         "line-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.line)
             (hsPkgs.hspec)

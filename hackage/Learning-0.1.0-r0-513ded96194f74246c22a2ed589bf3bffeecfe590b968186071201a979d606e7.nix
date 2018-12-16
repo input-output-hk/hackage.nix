@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.hmatrix)
@@ -34,7 +34,7 @@
       };
       exes = {
         "learning-pca" = {
-          depends  = [
+          depends = [
             (hsPkgs.Learning)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -43,7 +43,7 @@
           ];
         };
         "learning-pca-advanced" = {
-          depends  = [
+          depends = [
             (hsPkgs.Learning)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -54,7 +54,7 @@
       };
       tests = {
         "Learning-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Learning)
             (hsPkgs.base)
             (hsPkgs.containers)

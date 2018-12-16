@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "loading-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.random)
             (hsPkgs.directory)
             (hsPkgs.system-fileio)

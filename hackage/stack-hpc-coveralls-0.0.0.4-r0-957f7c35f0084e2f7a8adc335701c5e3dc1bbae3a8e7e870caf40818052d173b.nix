@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hpc)
           (hsPkgs.filepath)
@@ -47,7 +47,7 @@
       };
       exes = {
         "stack-hpc-coveralls" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -58,14 +58,14 @@
       };
       tests = {
         "stack-hpc-coveralls-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stack-hpc-coveralls)
             (hsPkgs.hspec)
           ];
         };
         "style" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
         ];
@@ -38,13 +38,13 @@
       };
       exes = {
         "quickcheck-re" = {
-          depends  = pkgs.lib.optionals (flags.quickcheck) [
+          depends = pkgs.lib.optionals (flags.quickcheck) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
           ];
         };
         "criterion-re" = {
-          depends  = pkgs.lib.optionals (flags.criterion) [
+          depends = pkgs.lib.optionals (flags.criterion) [
             (hsPkgs.base)
             (hsPkgs.criterion)
           ];

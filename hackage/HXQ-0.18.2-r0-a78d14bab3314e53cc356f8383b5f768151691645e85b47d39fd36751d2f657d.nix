@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.array)
@@ -50,7 +50,7 @@
       };
       exes = {
         "xquery" = {
-          depends  = if flags.mysql
+          depends = if flags.mysql
             then [
               (hsPkgs.HDBC)
               (hsPkgs.HDBC-odbc)

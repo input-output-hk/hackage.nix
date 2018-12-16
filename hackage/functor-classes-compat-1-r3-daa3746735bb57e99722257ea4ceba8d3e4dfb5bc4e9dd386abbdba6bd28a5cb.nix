@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.hashable)
         ] ++ (if flags.base-transformers-1
           then if flags.base-transformers-2

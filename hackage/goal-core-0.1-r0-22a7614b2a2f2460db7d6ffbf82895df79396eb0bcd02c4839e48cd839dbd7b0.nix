@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.lens)
@@ -40,7 +40,7 @@
       };
       exes = {
         "contours" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
           ];

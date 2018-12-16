@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.transformers)
@@ -47,7 +47,7 @@
       };
       exes = {
         "jukebox" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jukebox)
           ];

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "gray-extended-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gray-extended)
             (hsPkgs.test-framework)

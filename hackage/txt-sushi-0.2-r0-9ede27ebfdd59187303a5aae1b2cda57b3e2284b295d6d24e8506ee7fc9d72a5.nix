@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tssql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.directory)
@@ -36,7 +36,7 @@
           ];
         };
         "csvtotab" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.directory)
@@ -44,7 +44,7 @@
           ];
         };
         "tabtocsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.directory)
@@ -52,7 +52,7 @@
           ];
         };
         "csvtopretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.directory)
@@ -60,7 +60,7 @@
           ];
         };
         "tabtopretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.directory)

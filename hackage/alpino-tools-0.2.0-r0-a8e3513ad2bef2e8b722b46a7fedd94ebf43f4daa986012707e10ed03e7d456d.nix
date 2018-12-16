@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -42,14 +42,14 @@
       };
       exes = {
         "at_model_rescore_data" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alpino-tools)
             (hsPkgs.conduit)
           ];
         };
         "at_model_filter_data" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alpino-tools)
             (hsPkgs.conduit)
@@ -58,14 +58,14 @@
           ];
         };
         "at_model_oracle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alpino-tools)
             (hsPkgs.conduit)
           ];
         };
         "at_model_random_sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alpino-tools)
             (hsPkgs.conduit)
@@ -75,7 +75,7 @@
           ];
         };
         "at_model_statistics_data" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alpino-tools)
             (hsPkgs.conduit)

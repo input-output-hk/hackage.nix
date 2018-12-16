@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "barbies-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.barbies)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

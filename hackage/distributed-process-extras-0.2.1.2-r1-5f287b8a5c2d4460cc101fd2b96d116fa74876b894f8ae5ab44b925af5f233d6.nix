@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-accessor)
           (hsPkgs.distributed-process)
@@ -48,7 +48,7 @@
       };
       tests = {
         "InternalQueueTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.distributed-process)
@@ -64,7 +64,7 @@
           ];
         };
         "PrimitivesTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.distributed-process)
@@ -86,7 +86,7 @@
           ];
         };
         "TimerTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.deepseq)
@@ -105,7 +105,7 @@
           ];
         };
         "LoggerTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)

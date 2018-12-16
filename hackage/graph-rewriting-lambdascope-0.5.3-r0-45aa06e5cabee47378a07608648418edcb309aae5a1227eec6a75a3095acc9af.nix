@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bad-context-sharing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.graph-rewriting)

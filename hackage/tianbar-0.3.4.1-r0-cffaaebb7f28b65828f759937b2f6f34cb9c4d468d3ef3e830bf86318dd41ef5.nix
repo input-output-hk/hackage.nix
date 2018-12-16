@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dbus)
           (hsPkgs.xmonad)
@@ -37,7 +37,7 @@
       };
       exes = {
         "tianbar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.containers)

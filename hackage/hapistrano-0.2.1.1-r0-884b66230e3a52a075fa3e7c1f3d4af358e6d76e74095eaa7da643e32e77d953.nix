@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.either)
           (hsPkgs.filepath)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hapistrano)
             (hsPkgs.base-compat)
@@ -47,7 +47,7 @@
       };
       tests = {
         "hapistrano-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hapistrano)
             (hsPkgs.directory)

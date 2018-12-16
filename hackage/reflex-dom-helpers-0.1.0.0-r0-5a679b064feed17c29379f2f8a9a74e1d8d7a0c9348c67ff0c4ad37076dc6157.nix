@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.reflex)
           (hsPkgs.reflex-dom)
@@ -34,7 +34,7 @@
       };
       tests = {
         "reflex-dom-helpers-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reflex-dom-helpers)
           ];

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dotgen)
           (hsPkgs.containers)
@@ -50,7 +50,7 @@
       };
       exes = {
         "kansas-lava-unittest" = {
-          depends  = if flags.unit || flags.all
+          depends = if flags.unit || flags.all
             then [
               (hsPkgs.base)
               (hsPkgs.dotgen)
@@ -72,7 +72,7 @@
             else [ (hsPkgs.base) ];
         };
         "kansas-lava-testreport" = {
-          depends  = if flags.unit || flags.all
+          depends = if flags.unit || flags.all
             then [
               (hsPkgs.base)
               (hsPkgs.dotgen)
@@ -94,7 +94,7 @@
             else [ (hsPkgs.base) ];
         };
         "kansas-lava-tbf2vcd" = {
-          depends  = if flags.tools || flags.all
+          depends = if flags.tools || flags.all
             then [
               (hsPkgs.base)
               (hsPkgs.dotgen)

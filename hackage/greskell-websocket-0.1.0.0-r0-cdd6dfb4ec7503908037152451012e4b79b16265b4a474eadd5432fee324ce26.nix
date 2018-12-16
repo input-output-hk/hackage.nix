@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.greskell-core)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.greskell-websocket)
             (hsPkgs.aeson)
@@ -59,7 +59,7 @@
           ];
         };
         "server-test" = {
-          depends  = pkgs.lib.optionals (flags.server-test) [
+          depends = pkgs.lib.optionals (flags.server-test) [
             (hsPkgs.base)
             (hsPkgs.greskell-websocket)
             (hsPkgs.greskell-core)

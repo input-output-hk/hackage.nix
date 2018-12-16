@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.vector)
@@ -33,28 +33,28 @@
       };
       exes = {
         "ex-3-1" = {
-          depends  = [
+          depends = [
             (hsPkgs.mdp)
             (hsPkgs.base)
             (hsPkgs.vector)
           ];
         };
         "ex-3-1-relative" = {
-          depends  = [
+          depends = [
             (hsPkgs.mdp)
             (hsPkgs.base)
             (hsPkgs.vector)
           ];
         };
         "ex-3-2" = {
-          depends  = [
+          depends = [
             (hsPkgs.mdp)
             (hsPkgs.base)
             (hsPkgs.vector)
           ];
         };
         "mm1" = {
-          depends  = [
+          depends = [
             (hsPkgs.mdp)
             (hsPkgs.base)
             (hsPkgs.vector)
@@ -63,7 +63,7 @@
       };
       tests = {
         "TestMain" = {
-          depends  = [
+          depends = [
             (hsPkgs.mdp)
             (hsPkgs.base)
             (hsPkgs.vector)

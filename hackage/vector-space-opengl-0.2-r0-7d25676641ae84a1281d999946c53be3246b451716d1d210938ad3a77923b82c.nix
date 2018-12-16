@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.OpenGL)
           (hsPkgs.vector-space)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-vector-space-opengl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.ieee754)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hasktags" = {
-          depends  = [
+          depends = [
             (hsPkgs.utf8-string)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-casing)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-state" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graylog)
             (hsPkgs.aeson)

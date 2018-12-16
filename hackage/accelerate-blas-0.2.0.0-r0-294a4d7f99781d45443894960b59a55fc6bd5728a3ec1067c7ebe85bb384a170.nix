@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.accelerate)
         ] ++ pkgs.lib.optionals (flags.llvm-cpu) [
@@ -50,7 +50,7 @@
       };
       tests = {
         "test-llvm-native" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-blas)
@@ -61,7 +61,7 @@
           ];
         };
         "test-llvm-ptx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-blas)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "bench-hmatrix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.mwc-random)
@@ -83,7 +83,7 @@
           ];
         };
         "bench-llvm-native" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-blas)
@@ -94,7 +94,7 @@
           ];
         };
         "bench-llvm-ptx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-blas)

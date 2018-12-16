@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.cmdargs)
@@ -40,13 +40,13 @@
       };
       exes = {
         "nirum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nirum)
           ];
         };
         "nirum-static" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nirum)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -74,7 +74,7 @@
           ];
         };
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

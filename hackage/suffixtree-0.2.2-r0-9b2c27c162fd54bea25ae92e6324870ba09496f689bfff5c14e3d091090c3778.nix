@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.QuickCheck)
         ] ++ (if flags.bytestring-in-base
           then [ (hsPkgs.base) ]

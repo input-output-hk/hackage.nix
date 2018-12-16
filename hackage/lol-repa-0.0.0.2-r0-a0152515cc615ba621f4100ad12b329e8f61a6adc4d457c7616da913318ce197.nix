@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.data-default)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test-lol-repa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lol-repa)
             (hsPkgs.lol-tests)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "bench-lol-repa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.DRBG)
             (hsPkgs.lol)

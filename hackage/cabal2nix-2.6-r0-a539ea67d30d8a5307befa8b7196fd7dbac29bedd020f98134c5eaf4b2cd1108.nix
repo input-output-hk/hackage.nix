@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
@@ -52,7 +52,7 @@
       };
       exes = {
         "cabal2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
@@ -79,7 +79,7 @@
           ];
         };
         "hackage2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
@@ -113,7 +113,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)

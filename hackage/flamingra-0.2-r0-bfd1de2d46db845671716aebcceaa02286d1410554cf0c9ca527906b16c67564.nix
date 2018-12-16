@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "flamingra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes)
             (hsPkgs.optparse-applicative)

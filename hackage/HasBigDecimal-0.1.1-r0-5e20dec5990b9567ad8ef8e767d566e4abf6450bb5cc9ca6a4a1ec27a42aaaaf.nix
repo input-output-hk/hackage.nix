@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "HasBigDecimal-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HasBigDecimal)
             (hsPkgs.hspec)

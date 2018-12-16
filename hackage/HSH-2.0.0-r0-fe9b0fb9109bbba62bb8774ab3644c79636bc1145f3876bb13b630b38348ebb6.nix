@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.utf8-string)
           (hsPkgs.process)
@@ -42,7 +42,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) ([
+          depends = pkgs.lib.optionals (flags.buildtests) ([
             (hsPkgs.base)
             (hsPkgs.utf8-string)
             (hsPkgs.process)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hircules" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.utf8-string)

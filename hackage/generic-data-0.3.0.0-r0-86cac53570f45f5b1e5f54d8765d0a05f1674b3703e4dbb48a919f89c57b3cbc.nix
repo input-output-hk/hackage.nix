@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base-orphans)
           (hsPkgs.contravariant)
           (hsPkgs.show-combinators)
@@ -34,7 +34,7 @@
       };
       tests = {
         "unit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.generic-data)
@@ -42,7 +42,7 @@
           ];
         };
         "record-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.generic-data)
             (hsPkgs.base)
           ];

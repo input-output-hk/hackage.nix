@@ -26,7 +26,7 @@
     components = {
       exes = {
         "carte" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-conduit)
           (hsPkgs.directory)
@@ -45,7 +45,7 @@
       };
       exes = {
         "trurl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.trurl)
           ];
@@ -53,7 +53,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hastache)
             (hsPkgs.tasty)

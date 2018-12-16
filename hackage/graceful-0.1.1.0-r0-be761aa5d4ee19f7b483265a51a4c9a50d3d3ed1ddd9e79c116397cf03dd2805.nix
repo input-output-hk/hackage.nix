@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.unix)
@@ -35,7 +35,7 @@
       };
       tests = {
         "graceful-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graceful)
             (hsPkgs.hspec)

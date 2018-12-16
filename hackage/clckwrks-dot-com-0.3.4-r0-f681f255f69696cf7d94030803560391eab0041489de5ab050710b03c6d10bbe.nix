@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clckwrks-dot-com-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clckwrks)
             (hsPkgs.clckwrks-theme-clckwrks)
@@ -43,7 +43,7 @@
           ];
         };
         "clckwrks-dot-com-backups" = {
-          depends  = pkgs.lib.optionals (flags.backups) [
+          depends = pkgs.lib.optionals (flags.backups) [
             (hsPkgs.archive)
             (hsPkgs.base)
             (hsPkgs.Extra)

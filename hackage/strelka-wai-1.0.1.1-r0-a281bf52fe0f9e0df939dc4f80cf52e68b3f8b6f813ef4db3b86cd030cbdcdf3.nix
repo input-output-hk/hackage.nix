@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.wai)
           (hsPkgs.warp)
           (hsPkgs.http-types)

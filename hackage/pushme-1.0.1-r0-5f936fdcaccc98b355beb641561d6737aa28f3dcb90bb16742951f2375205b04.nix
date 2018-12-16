@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pushme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.cabal-file-th)

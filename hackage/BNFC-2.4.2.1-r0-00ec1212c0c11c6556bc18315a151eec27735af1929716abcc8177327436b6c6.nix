@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bnfc" = {
-          depends  = [
+          depends = [
             (hsPkgs.mtl)
             (hsPkgs.directory)
             (hsPkgs.array)

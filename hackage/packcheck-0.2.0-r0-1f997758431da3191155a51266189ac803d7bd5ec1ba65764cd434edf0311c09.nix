@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.packcheck)
             (hsPkgs.base)
           ];
@@ -37,7 +37,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.packcheck)
             (hsPkgs.base)
           ];

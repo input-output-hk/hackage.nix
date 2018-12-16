@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (flags.enable-hedgehog) (hsPkgs.partial-semigroup-hedgehog);
+        depends = pkgs.lib.optional (flags.enable-hedgehog) (hsPkgs.partial-semigroup-hedgehog);
       };
     };
   }

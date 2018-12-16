@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.async)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       tests = {
         "zifter-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)

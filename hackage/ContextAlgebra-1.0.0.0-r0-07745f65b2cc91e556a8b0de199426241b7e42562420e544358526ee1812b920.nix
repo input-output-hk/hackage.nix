@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ContextAlgebra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.multiset)
             (hsPkgs.criterion)

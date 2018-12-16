@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cakyrespa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lojbanParser)
             (hsPkgs.gluturtle)

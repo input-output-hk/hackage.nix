@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cereal)
           (hsPkgs.stm)
           (hsPkgs.time)
@@ -45,7 +45,7 @@
       };
       tests = {
         "cereal-plus-htf-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.cereal-plus)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)

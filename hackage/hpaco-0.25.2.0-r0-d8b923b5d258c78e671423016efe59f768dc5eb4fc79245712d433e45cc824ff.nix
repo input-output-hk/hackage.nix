@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpaco" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.cmdargs)

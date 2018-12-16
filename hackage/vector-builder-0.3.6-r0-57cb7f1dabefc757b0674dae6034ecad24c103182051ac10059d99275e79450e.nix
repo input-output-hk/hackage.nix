@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.vector)
           (hsPkgs.semigroups)
           (hsPkgs.base-prelude)
@@ -34,7 +34,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)

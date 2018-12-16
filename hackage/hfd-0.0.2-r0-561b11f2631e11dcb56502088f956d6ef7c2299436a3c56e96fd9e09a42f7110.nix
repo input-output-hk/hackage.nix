@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hfd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.haskeline)

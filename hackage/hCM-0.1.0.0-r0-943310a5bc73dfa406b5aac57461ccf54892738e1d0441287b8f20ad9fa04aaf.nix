@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src)
           (hsPkgs.hashable)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hCM" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hCM)
             (hsPkgs.hashable)
@@ -42,7 +42,7 @@
       };
       tests = {
         "hCM-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hCM)
             (hsPkgs.hashable)

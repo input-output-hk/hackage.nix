@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.binary-parser)
           (hsPkgs.aeson)
           (hsPkgs.uuid)
@@ -44,7 +44,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-binary)
             (hsPkgs.postgresql-libpq)
             (hsPkgs.tasty)
@@ -75,7 +75,7 @@
       };
       benchmarks = {
         "encoding" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-binary)
             (hsPkgs.criterion)
             (hsPkgs.time)
@@ -88,7 +88,7 @@
           ];
         };
         "decoding" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-binary)
             (hsPkgs.criterion)
             (hsPkgs.time)

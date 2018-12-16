@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-constraints" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.optparse-applicative)

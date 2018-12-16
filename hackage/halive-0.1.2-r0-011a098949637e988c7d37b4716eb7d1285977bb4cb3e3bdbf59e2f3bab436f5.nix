@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foreign-store)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "halive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)
@@ -60,7 +60,7 @@
       };
       tests = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gl)
             (hsPkgs.sdl2)
@@ -75,7 +75,7 @@
           ];
         };
         "subhalive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.halive)
             (hsPkgs.mtl)

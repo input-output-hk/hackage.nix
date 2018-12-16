@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambdiff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)

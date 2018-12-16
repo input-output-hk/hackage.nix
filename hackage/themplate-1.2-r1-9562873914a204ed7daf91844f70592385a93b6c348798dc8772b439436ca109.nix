@@ -26,7 +26,7 @@
     components = {
       exes = {
         "themplate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

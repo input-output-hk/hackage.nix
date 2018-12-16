@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
@@ -34,7 +34,7 @@
       };
       exes = {
         "chunk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cryptohash)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bytestring-arbitrary)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "benchmark-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

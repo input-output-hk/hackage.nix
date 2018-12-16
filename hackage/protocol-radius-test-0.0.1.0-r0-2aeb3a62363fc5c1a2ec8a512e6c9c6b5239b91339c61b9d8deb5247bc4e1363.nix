@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.quickcheck-simple)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "isomorphism" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protocol-radius-test)
             (hsPkgs.quickcheck-simple)

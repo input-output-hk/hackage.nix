@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.lens)
@@ -38,7 +38,7 @@
       };
       exes = {
         "betris-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.betris)
             (hsPkgs.containers)

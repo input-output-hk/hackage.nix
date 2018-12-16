@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -35,7 +35,7 @@
       };
       exes = {
         "cartel-visual-test" = {
-          depends  = pkgs.lib.optionals (flags.visual) [
+          depends = pkgs.lib.optionals (flags.visual) [
             (hsPkgs.multiarg)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -52,7 +52,7 @@
       };
       tests = {
         "cartel-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.multiarg)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)

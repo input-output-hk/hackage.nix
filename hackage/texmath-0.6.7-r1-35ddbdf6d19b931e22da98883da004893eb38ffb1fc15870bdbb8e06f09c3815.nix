@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
           (hsPkgs.parsec)
@@ -44,14 +44,14 @@
       };
       exes = {
         "texmath" = {
-          depends  = pkgs.lib.optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs.base)
             (hsPkgs.texmath)
             (hsPkgs.xml)
           ];
         };
         "texmath-cgi" = {
-          depends  = pkgs.lib.optionals (flags.cgi) [
+          depends = pkgs.lib.optionals (flags.cgi) [
             (hsPkgs.base)
             (hsPkgs.texmath)
             (hsPkgs.xml)
@@ -63,7 +63,7 @@
       };
       tests = {
         "test-texmath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

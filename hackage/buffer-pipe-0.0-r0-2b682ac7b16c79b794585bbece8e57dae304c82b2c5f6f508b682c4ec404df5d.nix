@@ -26,7 +26,7 @@
     components = {
       exes = {
         "buffer-pipe" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

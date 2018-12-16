@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
         libs = if system.isWindows && flags.usenativewindowslibraries

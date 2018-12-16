@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gtk)
           (hsPkgs.binding-core)
@@ -34,7 +34,7 @@
       };
       tests = {
         "simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.binding-core)
@@ -42,7 +42,7 @@
           ];
         };
         "lists" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.binding-core)

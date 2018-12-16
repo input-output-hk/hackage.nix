@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clifm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.optparse-applicative)

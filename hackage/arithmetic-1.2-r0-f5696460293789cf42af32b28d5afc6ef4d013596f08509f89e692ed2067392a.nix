@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.QuickCheck)
@@ -38,7 +38,7 @@
       };
       exes = {
         "arithmetic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.QuickCheck)
@@ -52,7 +52,7 @@
       };
       tests = {
         "arithmetic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.QuickCheck)

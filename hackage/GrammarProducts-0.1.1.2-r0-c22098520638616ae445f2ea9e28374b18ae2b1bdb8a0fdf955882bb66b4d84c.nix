@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ADPfusion)
           (hsPkgs.ansi-wl-pprint)
@@ -45,7 +45,7 @@
       };
       exes = {
         "AlignGlobal" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.containers)

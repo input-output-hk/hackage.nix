@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.comonad)
         ];
       };
       exes = {
         "aa2u" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ascii-art-to-unicode)
             (hsPkgs.strict)
@@ -41,7 +41,7 @@
       };
       tests = {
         "ascii-art-to-unicode-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ascii-art-to-unicode)
             (hsPkgs.doctest)

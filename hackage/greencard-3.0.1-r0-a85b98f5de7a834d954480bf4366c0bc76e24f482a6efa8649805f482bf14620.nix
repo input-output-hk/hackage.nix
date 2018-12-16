@@ -26,7 +26,7 @@
     components = {
       exes = {
         "greencard" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.containers)

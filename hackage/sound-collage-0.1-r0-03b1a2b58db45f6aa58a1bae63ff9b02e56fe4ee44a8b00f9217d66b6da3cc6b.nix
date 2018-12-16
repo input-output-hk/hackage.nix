@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sound-collage" = {
-          depends  = [
+          depends = [
             (hsPkgs.fft)
             (hsPkgs.carray)
             (hsPkgs.array)

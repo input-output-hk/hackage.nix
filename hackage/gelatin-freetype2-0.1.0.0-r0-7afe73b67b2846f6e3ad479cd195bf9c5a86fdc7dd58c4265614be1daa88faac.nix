@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gelatin)
           (hsPkgs.gelatin-gl)
@@ -38,7 +38,7 @@
       };
       tests = {
         "gelatin-freetype2-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gelatin-freetype2)
           ];

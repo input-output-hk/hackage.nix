@@ -26,7 +26,7 @@
     components = {
       exes = {
         "highlight-versions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hackage-db)

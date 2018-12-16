@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blank-canvas)
           (hsPkgs.stm)
@@ -35,7 +35,7 @@
       };
       exes = {
         "yampa-canvas-bouncing-balls" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blank-canvas)
             (hsPkgs.text)

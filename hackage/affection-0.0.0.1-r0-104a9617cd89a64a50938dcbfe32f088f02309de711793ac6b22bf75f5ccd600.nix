@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sdl2)
           (hsPkgs.text)
@@ -41,7 +41,7 @@
       };
       exes = {
         "example00" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.affection)
             (hsPkgs.sdl2)
@@ -52,7 +52,7 @@
           ];
         };
         "example01" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.affection)
             (hsPkgs.sdl2)
@@ -63,7 +63,7 @@
           ];
         };
         "example02" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.affection)
             (hsPkgs.sdl2)
@@ -74,7 +74,7 @@
           ];
         };
         "example03" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.affection)
             (hsPkgs.sdl2)

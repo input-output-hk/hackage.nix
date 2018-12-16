@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.sample-frame-np)
           (hsPkgs.sox)
           (hsPkgs.transformers)
@@ -65,7 +65,7 @@
       exes = {
         "test" = {};
         "fouriertest" = {
-          depends  = pkgs.lib.optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs.storablevector)
             (hsPkgs.utility-ht)
             (hsPkgs.storable-tuple)
@@ -75,7 +75,7 @@
         };
         "speedtest" = {};
         "speedtest-exp" = {
-          depends  = pkgs.lib.optionals (flags.splitbase) [
+          depends = pkgs.lib.optionals (flags.splitbase) [
             (hsPkgs.old-time)
             (hsPkgs.directory)
           ];

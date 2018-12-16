@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Nomyx" = {
-          depends  = [
+          depends = [
             (hsPkgs.DebugTraceHelpers)
             (hsPkgs.MonadCatchIO-mtl)
             (hsPkgs.Nomyx-Rules)

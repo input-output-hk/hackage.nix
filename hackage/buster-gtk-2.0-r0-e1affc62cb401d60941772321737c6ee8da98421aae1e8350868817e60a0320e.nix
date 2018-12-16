@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.buster)
           (hsPkgs.gtk)
           (hsPkgs.binary)

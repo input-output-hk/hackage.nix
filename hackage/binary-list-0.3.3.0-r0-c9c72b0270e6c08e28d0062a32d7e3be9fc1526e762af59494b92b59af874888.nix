@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -35,7 +35,7 @@
       };
       benchmarks = {
         "binary-list-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary-list)
             (hsPkgs.deepseq)

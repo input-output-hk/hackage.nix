@@ -31,7 +31,7 @@
     components = {
       exes = {
         "yi" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)

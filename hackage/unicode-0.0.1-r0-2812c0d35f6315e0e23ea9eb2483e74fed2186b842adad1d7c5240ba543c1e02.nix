@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.semigroups)
           (hsPkgs.base)
@@ -35,7 +35,7 @@
       };
       exes = {
         "visualize-unicode" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.unicode)
             (hsPkgs.containers)
             (hsPkgs.utility-ht)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.unicode)
             (hsPkgs.containers)
             (hsPkgs.utility-ht)

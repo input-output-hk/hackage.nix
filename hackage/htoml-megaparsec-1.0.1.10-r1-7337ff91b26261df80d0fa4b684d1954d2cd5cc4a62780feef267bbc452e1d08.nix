@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.megaparsec)
@@ -41,7 +41,7 @@
       };
       tests = {
         "htoml-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.megaparsec)
             (hsPkgs.containers)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)

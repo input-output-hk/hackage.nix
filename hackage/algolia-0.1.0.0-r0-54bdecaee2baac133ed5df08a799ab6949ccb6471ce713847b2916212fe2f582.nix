@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-iproute)
           (hsPkgs.attoparsec)
@@ -52,7 +52,7 @@
       };
       tests = {
         "algolia-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.algolia)
             (hsPkgs.base)

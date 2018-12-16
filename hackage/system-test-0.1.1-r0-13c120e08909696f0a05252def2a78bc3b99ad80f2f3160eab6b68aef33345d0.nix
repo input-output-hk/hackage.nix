@@ -26,7 +26,7 @@
     components = {
       exes = {
         "system-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.bytestring)

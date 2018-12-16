@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
           (hsPkgs.fail)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
@@ -59,7 +59,7 @@
             else [ (hsPkgs.base) ]);
         };
         "test-irbuilder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

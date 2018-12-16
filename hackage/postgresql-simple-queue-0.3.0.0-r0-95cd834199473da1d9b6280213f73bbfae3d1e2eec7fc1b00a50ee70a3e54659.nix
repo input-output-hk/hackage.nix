@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.postgresql-simple)
           (hsPkgs.pg-transact)
@@ -49,7 +49,7 @@
       };
       exes = {
         "async-email-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.postgresql-simple-queue)
             (hsPkgs.amazonka)
@@ -63,7 +63,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.postgresql-simple-queue)
             (hsPkgs.hspec)

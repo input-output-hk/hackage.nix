@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       exes = {
         "simple-calc-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.ipython-kernel)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -57,7 +57,7 @@
           ];
         };
         "fun-calc-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.ipython-kernel)
             (hsPkgs.base)
             (hsPkgs.filepath)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "splot" = {
-          depends  = [
+          depends = [
             (hsPkgs.cairo)
             (hsPkgs.bytestring)
             (hsPkgs.bytestring-lexing)

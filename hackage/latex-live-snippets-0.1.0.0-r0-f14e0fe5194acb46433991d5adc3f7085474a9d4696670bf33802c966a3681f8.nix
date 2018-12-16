@@ -26,7 +26,7 @@
     components = {
       exes = {
         "latex-live-snippets" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.base)
             (hsPkgs.directory)

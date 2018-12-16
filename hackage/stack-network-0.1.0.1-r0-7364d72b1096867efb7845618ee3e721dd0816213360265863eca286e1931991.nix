@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.ansi-terminal)
           (hsPkgs.async)
@@ -55,7 +55,7 @@
       };
       exes = {
         "stack-network" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)
@@ -86,7 +86,7 @@
       };
       tests = {
         "distributed-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)

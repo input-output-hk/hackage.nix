@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "hakyll-convert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
@@ -52,7 +52,7 @@
           ];
         };
         "hakyll-convert-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hakyll)
             (hsPkgs.hakyll-convert)

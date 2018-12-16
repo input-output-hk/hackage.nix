@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -42,7 +42,7 @@
       };
       tests = {
         "typesafe-precure-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typesafe-precure)
             (hsPkgs.hspec)

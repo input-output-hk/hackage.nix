@@ -29,7 +29,7 @@
     components = {
       exes = {
         "ptq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.mtl)
@@ -37,7 +37,7 @@
           ] ++ pkgs.lib.optional (flags.utf8terminal) (hsPkgs.utf8-string);
         };
         "ptq.cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.mtl)

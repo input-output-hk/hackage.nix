@@ -26,7 +26,7 @@
     components = {
       exes = {
         "networkedit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
           ];
         };
         "idfilepathdb" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.attoparsec)

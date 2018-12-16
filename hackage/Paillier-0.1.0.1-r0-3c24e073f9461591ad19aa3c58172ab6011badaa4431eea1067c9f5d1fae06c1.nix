@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.crypto-numbers)
           (hsPkgs.crypto-random)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-Paillier" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-th)

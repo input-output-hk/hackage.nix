@@ -26,7 +26,7 @@
     components = {
       exes = {
         "retryer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.optparse-applicative)

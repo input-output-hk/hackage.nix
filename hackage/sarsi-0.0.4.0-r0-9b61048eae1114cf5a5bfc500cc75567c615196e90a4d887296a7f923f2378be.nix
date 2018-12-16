@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.attoparsec)
@@ -50,21 +50,21 @@
       };
       exes = {
         "sarsi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.sarsi)
           ];
         };
         "sarsi-hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sarsi)
             (hsPkgs.machines)
           ];
         };
         "sarsi-nvim" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sarsi)
             (hsPkgs.machines)
@@ -83,14 +83,14 @@
           ];
         };
         "sarsi-rs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sarsi)
             (hsPkgs.machines)
           ];
         };
         "sarsi-sbt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sarsi)
             (hsPkgs.machines)
@@ -101,7 +101,7 @@
           ];
         };
         "sarsi-vi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sarsi)
             (hsPkgs.directory)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "typalyze" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.filepath)
@@ -36,7 +36,7 @@
           ];
         };
         "hswatch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.filepath)

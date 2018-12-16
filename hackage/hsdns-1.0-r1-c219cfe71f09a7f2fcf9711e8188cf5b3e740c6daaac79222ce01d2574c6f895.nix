@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
         ];
@@ -33,7 +33,7 @@
       };
       exes = {
         "adns-reverse-lookup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
           ];

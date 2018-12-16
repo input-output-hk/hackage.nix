@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ski-inet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.graph-rewriting)
@@ -38,7 +38,7 @@
           ];
         };
         "ski-direct" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.graph-rewriting)

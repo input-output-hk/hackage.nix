@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-markup)
           (hsPkgs.haskell-src-exts)
@@ -36,7 +36,7 @@
       };
       tests = {
         "template-hsml-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-hsml)
             (hsPkgs.parsec)

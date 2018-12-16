@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.zeromq4-haskell)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "proxy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-zeromq4)
             (hsPkgs.pipes)
@@ -46,7 +46,7 @@
           ];
         };
         "client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-zeromq4)
             (hsPkgs.pipes)
@@ -57,7 +57,7 @@
           ];
         };
         "server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-zeromq4)
             (hsPkgs.pipes)
@@ -68,7 +68,7 @@
           ];
         };
         "serverPipeline" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-zeromq4)
             (hsPkgs.pipes)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.gloss)
           (hsPkgs.base)
           (hsPkgs.MissingH)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.split)
           (hsPkgs.regex-compat)
@@ -35,7 +35,7 @@
       };
       exes = {
         "mathista" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.regex-compat)
@@ -47,7 +47,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mathista)
             (hsPkgs.parsec)

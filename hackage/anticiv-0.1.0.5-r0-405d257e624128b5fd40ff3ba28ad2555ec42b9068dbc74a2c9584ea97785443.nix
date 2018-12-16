@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.chatty)
           (hsPkgs.chatty-utils)
@@ -42,7 +42,7 @@
       };
       exes = {
         "anticiv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chatty)
             (hsPkgs.chatty-utils)

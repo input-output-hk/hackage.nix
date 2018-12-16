@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.syntactic)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "syntactic-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

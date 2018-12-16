@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shelltest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filemanip)
             (hsPkgs.HUnit)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "earclipper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.earclipper)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.earclipper)
             (hsPkgs.hspec)

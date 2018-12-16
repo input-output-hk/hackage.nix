@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "secp256k1-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.secp256k1)
             (hsPkgs.HUnit)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -40,7 +40,7 @@
       };
       exes = {
         "gargoyle-psql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.gargoyle)
@@ -51,7 +51,7 @@
           ];
         };
         "gargoyle-postgres-monitor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.gargoyle)
@@ -63,7 +63,7 @@
       };
       tests = {
         "gargoyle-psql-test" = {
-          depends  = pkgs.lib.optionals (!(!flags.enable-psql-test)) [
+          depends = pkgs.lib.optionals (!(!flags.enable-psql-test)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

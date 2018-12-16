@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base-noprelude)
           (hsPkgs.ansi-terminal)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "life" = {
-          depends  = [
+          depends = [
             (hsPkgs.base-noprelude)
             (hsPkgs.containers)
             (hsPkgs.life-sync)
@@ -53,7 +53,7 @@
       };
       tests = {
         "life-sync-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base-noprelude)
             (hsPkgs.life-sync)
             (hsPkgs.containers)

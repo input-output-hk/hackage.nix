@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       exes = {
         "cerberus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ekg)
             (hsPkgs.ekg-core)
@@ -61,7 +61,7 @@
       };
       tests = {
         "cerberus-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cerberus)
           ];

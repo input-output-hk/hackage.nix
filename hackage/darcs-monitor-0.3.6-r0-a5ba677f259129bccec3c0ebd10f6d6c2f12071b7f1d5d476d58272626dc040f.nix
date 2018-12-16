@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcs-monitor" = {
-          depends  = [
+          depends = [
             (hsPkgs.mtl)
             (hsPkgs.HaXml)
           ] ++ (if flags.splitbase

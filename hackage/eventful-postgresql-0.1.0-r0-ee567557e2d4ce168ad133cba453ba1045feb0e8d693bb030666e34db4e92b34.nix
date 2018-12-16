@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.eventful-core)
           (hsPkgs.eventful-sql-common)
@@ -39,7 +39,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eventful-core)
             (hsPkgs.eventful-sql-common)
@@ -55,7 +55,7 @@
           ];
         };
         "style" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eventful-core)
             (hsPkgs.eventful-sql-common)

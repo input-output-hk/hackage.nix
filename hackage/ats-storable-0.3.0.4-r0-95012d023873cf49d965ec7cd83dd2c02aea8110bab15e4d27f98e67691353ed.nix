@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.composition-prelude)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       tests = {
         "ats-storable-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-storable)
             (hsPkgs.hspec)

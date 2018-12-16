@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "hgettext" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uniplate)
             (hsPkgs.haskell-src)

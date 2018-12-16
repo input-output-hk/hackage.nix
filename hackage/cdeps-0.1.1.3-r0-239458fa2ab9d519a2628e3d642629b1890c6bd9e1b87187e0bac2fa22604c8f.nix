@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       exes = {
         "cdeps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cdeps)
             (hsPkgs.optparse-applicative)
@@ -54,7 +54,7 @@
       };
       tests = {
         "cdeps-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cdeps)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primes)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "primes-type-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primes)
             (hsPkgs.primes-type)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "primes-type-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primes)
             (hsPkgs.primes-type)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "phono-learner-hw-gui" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.maxent-learner-hw)
             (hsPkgs.containers)

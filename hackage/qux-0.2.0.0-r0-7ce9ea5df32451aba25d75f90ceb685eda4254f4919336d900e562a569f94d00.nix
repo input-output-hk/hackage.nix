@@ -26,7 +26,7 @@
     components = {
       exes = {
         "qux" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

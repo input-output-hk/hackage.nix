@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.linear)
         ];
       };
       tests = {
         "gjk2d-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.gjk2d)

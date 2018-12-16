@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
@@ -59,7 +59,7 @@
       };
       exes = {
         "fay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fay)
             (hsPkgs.data-default)
@@ -68,7 +68,7 @@
           ];
         };
         "fay-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fay)
             (hsPkgs.HUnit)

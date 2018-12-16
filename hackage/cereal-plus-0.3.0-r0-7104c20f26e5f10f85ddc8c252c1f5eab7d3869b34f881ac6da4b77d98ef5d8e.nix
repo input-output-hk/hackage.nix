@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cio)
           (hsPkgs.cereal)
           (hsPkgs.errors)

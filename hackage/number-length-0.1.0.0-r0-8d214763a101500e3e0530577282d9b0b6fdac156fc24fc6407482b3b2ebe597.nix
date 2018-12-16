@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.old-base
+        depends = if flags.old-base
           then [
             (hsPkgs.base)
             (hsPkgs.tagged)
@@ -37,7 +37,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.number-length)
           ] ++ (if flags.old-base

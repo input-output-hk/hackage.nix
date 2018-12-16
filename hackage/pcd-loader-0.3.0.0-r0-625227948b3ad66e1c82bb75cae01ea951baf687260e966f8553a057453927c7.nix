@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.mtl)
@@ -40,7 +40,7 @@
       };
       exes = {
         "pcd2bin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pcd-loader)
           ];
@@ -48,7 +48,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

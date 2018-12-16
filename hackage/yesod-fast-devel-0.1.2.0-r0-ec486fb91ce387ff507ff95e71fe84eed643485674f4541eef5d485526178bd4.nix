@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yesod-fast-devel" = {
-          depends  = [
+          depends = [
             (hsPkgs.Glob)
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)

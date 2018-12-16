@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -55,7 +55,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.lens)
@@ -93,7 +93,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.HUnit)
             (hsPkgs.criterion)
             (hsPkgs.criterion-measurement)

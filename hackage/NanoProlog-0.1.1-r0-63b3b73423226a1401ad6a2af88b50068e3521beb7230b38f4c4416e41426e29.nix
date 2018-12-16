@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.uu-parsinglib)
           (hsPkgs.ListLike)
@@ -34,7 +34,7 @@
       };
       exes = {
         "nano-prolog" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

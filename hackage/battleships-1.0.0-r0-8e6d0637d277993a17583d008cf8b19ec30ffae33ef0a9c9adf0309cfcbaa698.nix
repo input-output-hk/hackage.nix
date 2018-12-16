@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod)
           (hsPkgs.yesod-core)
@@ -70,7 +70,7 @@
       };
       exes = {
         "main.fcgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.battleships)
             (hsPkgs.yesod)
@@ -81,7 +81,7 @@
             ]);
         };
         "img-gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.battleships)
@@ -93,7 +93,7 @@
           ];
         };
         "aibenchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.battleships)
             (hsPkgs.mtl)
@@ -103,7 +103,7 @@
           ];
         };
         "key-gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -64,7 +64,7 @@
       };
       exes = {
         "hsdev" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsdev)
             (hsPkgs.aeson)
@@ -85,7 +85,7 @@
           ];
         };
         "hsinspect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsdev)
             (hsPkgs.aeson)
@@ -101,7 +101,7 @@
           ];
         };
         "hsclearimports" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsdev)
             (hsPkgs.aeson)
@@ -116,7 +116,7 @@
           ];
         };
         "hscabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsdev)
             (hsPkgs.aeson)
@@ -129,7 +129,7 @@
           ];
         };
         "hshayoo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsdev)
             (hsPkgs.aeson)
@@ -144,7 +144,7 @@
       };
       tests = {
         "test" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

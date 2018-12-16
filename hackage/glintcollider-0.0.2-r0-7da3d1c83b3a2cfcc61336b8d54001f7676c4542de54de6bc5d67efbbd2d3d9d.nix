@@ -26,7 +26,7 @@
     components = {
       exes = {
         "glintcollider" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ppm)
             (hsPkgs.split)

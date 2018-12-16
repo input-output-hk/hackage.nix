@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.markdown-unlit)
         ];
       };
       tests = {
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.markdown-unlit)
             (hsPkgs.hspec)
@@ -45,7 +45,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.markdown-unlit)
             (hsPkgs.hspec)

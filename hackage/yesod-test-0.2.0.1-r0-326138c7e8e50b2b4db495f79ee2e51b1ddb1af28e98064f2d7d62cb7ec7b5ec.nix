@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.hxt)
           (hsPkgs.attoparsec)
           (hsPkgs.persistent)
@@ -60,7 +60,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-test)
             (hsPkgs.hspec)

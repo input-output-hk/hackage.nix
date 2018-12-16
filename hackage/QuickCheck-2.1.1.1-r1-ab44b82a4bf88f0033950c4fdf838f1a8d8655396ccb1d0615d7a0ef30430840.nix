@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.mtl)
         ] ++ (if flags.extensibleexceptions
           then [

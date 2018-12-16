@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
           (hsPkgs.base-prelude)
@@ -34,7 +34,7 @@
       };
       tests = {
         "api-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.neat-interpolation)
             (hsPkgs.HTF)
             (hsPkgs.base-prelude)

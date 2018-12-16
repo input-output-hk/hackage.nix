@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "codecov-haskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
           ];
         };
         "run-cabal-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.process)
@@ -63,7 +63,7 @@
       };
       tests = {
         "test-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.codecov-haskell)
             (hsPkgs.HUnit)

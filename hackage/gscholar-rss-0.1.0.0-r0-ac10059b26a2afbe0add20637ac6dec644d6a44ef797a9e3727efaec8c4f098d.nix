@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gscholar-rss" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scalpel-core)
             (hsPkgs.feed)

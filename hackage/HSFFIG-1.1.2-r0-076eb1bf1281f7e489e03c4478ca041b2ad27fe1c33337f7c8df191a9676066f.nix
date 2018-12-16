@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.Cabal)
@@ -39,7 +39,7 @@
       };
       exes = {
         "ffipkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.Cabal)
@@ -52,7 +52,7 @@
           ];
         };
         "hsffig" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.Cabal)
@@ -65,7 +65,7 @@
           ];
         };
         "testparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.Cabal)

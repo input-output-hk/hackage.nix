@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hosts-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.data-default)

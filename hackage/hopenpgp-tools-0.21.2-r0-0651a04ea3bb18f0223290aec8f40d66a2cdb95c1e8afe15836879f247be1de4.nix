@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.array)
@@ -53,7 +53,7 @@
           ];
         };
         "hokey" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.base16-bytestring)
@@ -87,7 +87,7 @@
           ];
         };
         "hkt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.array)

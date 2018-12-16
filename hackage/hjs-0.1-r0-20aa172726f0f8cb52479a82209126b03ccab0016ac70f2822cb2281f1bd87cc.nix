@@ -26,7 +26,7 @@
     components = {
       exes = {
         "FixHappy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.happy)
             (hsPkgs.alex)
@@ -34,7 +34,7 @@
           ];
         };
         "hjs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.happy)
             (hsPkgs.alex)

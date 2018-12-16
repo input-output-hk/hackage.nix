@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hfiar" = {
-          depends  = [
+          depends = [
             (hsPkgs.wxcore)
             (hsPkgs.wxcore)
             (hsPkgs.wx)

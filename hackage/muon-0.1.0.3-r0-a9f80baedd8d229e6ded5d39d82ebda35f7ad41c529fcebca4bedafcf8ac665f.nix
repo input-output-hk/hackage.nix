@@ -26,7 +26,7 @@
     components = {
       exes = {
         "muon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.HStringTemplate)

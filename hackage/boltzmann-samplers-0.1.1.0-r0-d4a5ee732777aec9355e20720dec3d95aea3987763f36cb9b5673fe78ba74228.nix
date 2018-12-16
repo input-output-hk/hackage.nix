@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ad)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-tree" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.optparse-generic)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "bench-binarytree" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsqml-morris" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)

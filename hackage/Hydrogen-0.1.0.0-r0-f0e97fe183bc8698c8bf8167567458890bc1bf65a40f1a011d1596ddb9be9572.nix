@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.aeson)
@@ -38,7 +38,7 @@
       };
       exes = {
         "Hydrogen-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Hydrogen)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "Hydrogen-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Hydrogen)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GenericPretty)
           (hsPkgs.pretty)
@@ -34,7 +34,7 @@
       };
       exes = {
         "remarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.remarks)
             (hsPkgs.GenericPretty)
@@ -45,7 +45,7 @@
       };
       tests = {
         "remarks-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.remarks)
             (hsPkgs.GenericPretty)

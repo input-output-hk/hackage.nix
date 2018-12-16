@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -39,56 +39,56 @@
       };
       tests = {
         "API_Usage_Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
           libs = [ (pkgs."boolector") ];
         };
         "Array_Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
           libs = [ (pkgs."boolector") ];
         };
         "UF_Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
           libs = [ (pkgs."boolector") ];
         };
         "Arith_Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
           libs = [ (pkgs."boolector") ];
         };
         "Arith_Example2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
           libs = [ (pkgs."boolector") ];
         };
         "Arith_Example3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
           libs = [ (pkgs."boolector") ];
         };
         "GetSetSymbol_Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
           libs = [ (pkgs."boolector") ];
         };
         "UF_Example2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];

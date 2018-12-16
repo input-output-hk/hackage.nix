@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.3d-graphics-examples)
           (hsPkgs.3dmodels)
           (hsPkgs.4Blocks)

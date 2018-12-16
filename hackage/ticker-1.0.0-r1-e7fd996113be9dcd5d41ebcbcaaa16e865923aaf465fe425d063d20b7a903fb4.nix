@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.safe-exceptions)
@@ -33,7 +33,7 @@
       };
       tests = {
         "ticker-hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ticker)
             (hsPkgs.hspec)
@@ -42,7 +42,7 @@
           ];
         };
         "ticker-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)

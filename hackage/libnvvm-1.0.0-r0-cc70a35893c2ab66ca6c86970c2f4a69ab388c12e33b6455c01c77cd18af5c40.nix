@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cuda)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.libnvvm)
             (hsPkgs.base)
             (hsPkgs.bytestring)

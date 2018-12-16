@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       exes = {
         "fay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fay)
             (hsPkgs.optparse-applicative)
@@ -63,7 +63,7 @@
           ];
         };
         "fay-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)

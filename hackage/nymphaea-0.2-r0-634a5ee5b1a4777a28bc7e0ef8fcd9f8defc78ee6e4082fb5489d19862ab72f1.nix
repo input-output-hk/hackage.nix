@@ -26,7 +26,7 @@
     components = {
       exes = {
         "nymphaea" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.containers)

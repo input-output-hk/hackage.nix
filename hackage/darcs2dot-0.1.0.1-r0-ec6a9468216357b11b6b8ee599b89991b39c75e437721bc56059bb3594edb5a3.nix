@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcs2dot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.darcs)
             (hsPkgs.string-conversions)

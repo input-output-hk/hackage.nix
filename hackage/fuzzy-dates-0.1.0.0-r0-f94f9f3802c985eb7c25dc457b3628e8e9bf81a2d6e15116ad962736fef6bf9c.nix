@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hourglass)
           (hsPkgs.hspec)
@@ -35,7 +35,7 @@
       };
       exes = {
         "fuzzy-dates-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fuzzy-dates)
             (hsPkgs.hourglass)
@@ -47,7 +47,7 @@
       };
       tests = {
         "fuzzy-dates-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fuzzy-dates)
             (hsPkgs.hourglass)

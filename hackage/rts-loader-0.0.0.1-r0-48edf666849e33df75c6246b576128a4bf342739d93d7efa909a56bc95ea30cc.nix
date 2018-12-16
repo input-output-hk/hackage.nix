@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.zenc)
           (hsPkgs.unix)
@@ -37,7 +37,7 @@
       exes = {
         "rts-loader" = {};
         "rts-loader-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.process)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "TestInterval" = {
-          depends  = [
+          depends = [
             (hsPkgs.IntervalMap)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -41,7 +41,7 @@
           ];
         };
         "TestIntervalMap" = {
-          depends  = [
+          depends = [
             (hsPkgs.IntervalMap)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.utf8-string)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-opencc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.hopencc)

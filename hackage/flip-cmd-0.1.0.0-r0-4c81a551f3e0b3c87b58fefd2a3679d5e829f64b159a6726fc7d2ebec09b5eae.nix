@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.safe-exceptions)

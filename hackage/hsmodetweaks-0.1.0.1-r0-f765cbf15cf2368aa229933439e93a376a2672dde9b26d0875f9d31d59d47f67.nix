@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsmodetweaks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

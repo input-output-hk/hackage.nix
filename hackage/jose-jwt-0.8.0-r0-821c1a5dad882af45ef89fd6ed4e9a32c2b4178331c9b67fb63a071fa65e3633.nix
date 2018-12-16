@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.0")) [
+        depends = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.0")) [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -46,7 +46,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.jose-jwt)
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -64,7 +64,7 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.doctest)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.cryptonite)
@@ -73,7 +73,7 @@
       };
       benchmarks = {
         "bench-jwt" = {
-          depends  = [
+          depends = [
             (hsPkgs.jose-jwt)
             (hsPkgs.base)
             (hsPkgs.bytestring)

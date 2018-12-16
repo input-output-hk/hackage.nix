@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dotfs" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.base)
             (hsPkgs.HFuse)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-dotfs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

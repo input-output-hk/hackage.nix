@@ -26,7 +26,7 @@
     components = {
       exes = {
         "settimana" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)

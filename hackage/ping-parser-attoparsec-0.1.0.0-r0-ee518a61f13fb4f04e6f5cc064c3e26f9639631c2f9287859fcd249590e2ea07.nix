@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.placeholders)
           (hsPkgs.attoparsec)
@@ -35,7 +35,7 @@
       };
       exes = {
         "ping-parser-attoparsec-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ping-parser-attoparsec)
             (hsPkgs.placeholders)
@@ -44,7 +44,7 @@
       };
       tests = {
         "ping-parser-attoparsec-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ping-parser-attoparsec)
             (hsPkgs.hspec)

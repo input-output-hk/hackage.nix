@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-cloudformation)
@@ -49,7 +49,7 @@
       };
       tests = {
         "cloud-seeder-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka-cloudformation)
             (hsPkgs.base)
             (hsPkgs.bytestring)

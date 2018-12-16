@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mdcat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc)
             (hsPkgs.directory)

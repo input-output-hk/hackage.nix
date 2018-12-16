@@ -26,14 +26,14 @@
     components = {
       exes = {
         "dicegame" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.random)
           ];
         };
         "du" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -43,44 +43,44 @@
           ];
         };
         "filecount" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extra)
           ];
         };
         "gcd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
           ];
         };
         "genSQL" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.text)
           ];
         };
         "ioref" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "locator" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "maybe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.safe)
           ];
         };
         "reader" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
           ];
         };
         "rpnexpr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.safe)
@@ -88,19 +88,19 @@
           ];
         };
         "showexpr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hint)
           ];
         };
         "shunting-yard" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
           ];
         };
         "stockquotes" = {
-          depends  = [
+          depends = [
             (hsPkgs.Chart)
             (hsPkgs.Chart-diagrams)
             (hsPkgs.base)
@@ -115,28 +115,28 @@
           ];
         };
         "stref" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "vocab1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
           ];
         };
         "vocab2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
           ];
         };
         "vocab3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
           ];
         };
         "weapons" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.random)

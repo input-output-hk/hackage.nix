@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -38,19 +38,19 @@
       };
       exes = {
         "tcod-haskell-sample01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tcod-haskell)
           ];
         };
         "tcod-haskell-sample02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tcod-haskell)
           ];
         };
         "tcod-haskell-sample03" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tcod-haskell)
           ];

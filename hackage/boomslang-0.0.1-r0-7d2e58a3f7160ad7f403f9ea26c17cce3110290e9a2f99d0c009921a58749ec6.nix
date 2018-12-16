@@ -26,7 +26,7 @@
     components = {
       exes = {
         "boomslang" = {
-          depends  = [
+          depends = [
             (hsPkgs.GLFW-b)
             (hsPkgs.MonadRandom)
             (hsPkgs.OpenGL)

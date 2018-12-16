@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.json-pointer)
           (hsPkgs.aeson)
           (hsPkgs.unordered-containers)

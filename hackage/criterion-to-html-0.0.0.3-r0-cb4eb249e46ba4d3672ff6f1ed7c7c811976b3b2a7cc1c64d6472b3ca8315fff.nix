@@ -26,7 +26,7 @@
     components = {
       exes = {
         "criterion-to-html" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.blaze-html)

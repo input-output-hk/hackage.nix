@@ -26,7 +26,7 @@
     components = {
       exes = {
         "stackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

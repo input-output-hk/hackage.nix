@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.flexible-defaults)
           (hsPkgs.mersenne-random-pure64)
           (hsPkgs.random)

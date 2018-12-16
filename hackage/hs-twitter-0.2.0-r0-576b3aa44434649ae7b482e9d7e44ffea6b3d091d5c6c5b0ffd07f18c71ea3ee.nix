@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HTTP)
           (hsPkgs.network)
           (hsPkgs.utf8-string)

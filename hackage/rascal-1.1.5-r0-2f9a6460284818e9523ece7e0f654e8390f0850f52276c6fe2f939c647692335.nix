@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rascal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl-aeson)
             (hsPkgs.curl)
@@ -43,7 +43,7 @@
       };
       tests = {
         "Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl-aeson)
             (hsPkgs.curl)

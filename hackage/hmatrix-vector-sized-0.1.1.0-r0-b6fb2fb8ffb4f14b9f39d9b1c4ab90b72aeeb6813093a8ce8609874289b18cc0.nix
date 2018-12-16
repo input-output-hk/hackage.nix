@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       tests = {
         "hmatrix-vector-sized-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-typelits-knownnat)
             (hsPkgs.hedgehog)

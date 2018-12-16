@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.atomic-primops)
           (hsPkgs.primitive)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primitive)
             (hsPkgs.atomic-primops)
@@ -47,14 +47,14 @@
       };
       benchmarks = {
         "single" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unagi-chan)
             (hsPkgs.criterion)
           ] ++ pkgs.lib.optional (flags.compare-benchmarks) (hsPkgs.stm);
         };
         "multi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unagi-chan)
             (hsPkgs.criterion)

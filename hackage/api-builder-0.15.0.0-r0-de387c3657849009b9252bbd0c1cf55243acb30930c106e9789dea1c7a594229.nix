@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HTTP)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.aeson)
             (hsPkgs.api-builder)
@@ -54,7 +54,7 @@
           ];
         };
         "test-io" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.aeson)
             (hsPkgs.api-builder)

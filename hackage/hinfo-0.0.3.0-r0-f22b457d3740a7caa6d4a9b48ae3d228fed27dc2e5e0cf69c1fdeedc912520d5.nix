@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
@@ -35,7 +35,7 @@
       };
       exes = {
         "hinfo" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.hinfo)
@@ -47,7 +47,7 @@
       };
       tests = {
         "hinfo-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.hinfo)

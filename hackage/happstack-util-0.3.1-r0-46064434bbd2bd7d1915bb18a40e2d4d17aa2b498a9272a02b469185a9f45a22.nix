@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.array)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -54,7 +54,7 @@
       };
       exes = {
         "happstack-util-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
           ] ++ pkgs.lib.optional (flags.tests) (hsPkgs.network);
         };

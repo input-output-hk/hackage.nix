@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "instances" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.store)
             (hsPkgs.template-haskell)

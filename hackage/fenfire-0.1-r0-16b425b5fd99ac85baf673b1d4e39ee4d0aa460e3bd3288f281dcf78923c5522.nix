@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fenfire" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.gtk)
@@ -39,7 +39,7 @@
           libs = [ (pkgs."raptor") ];
         };
         "functortest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.gtk)
@@ -51,7 +51,7 @@
           ];
         };
         "vobtest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.gtk)
@@ -63,7 +63,7 @@
           ];
         };
         "darcs2rdf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.gtk)

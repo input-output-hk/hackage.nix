@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gebop" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wxcore)
             (hsPkgs.wx)

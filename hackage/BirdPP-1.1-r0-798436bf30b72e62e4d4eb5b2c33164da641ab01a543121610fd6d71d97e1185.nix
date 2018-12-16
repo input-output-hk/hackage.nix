@@ -26,7 +26,7 @@
     components = {
       exes = {
         "BirdPP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
           ];

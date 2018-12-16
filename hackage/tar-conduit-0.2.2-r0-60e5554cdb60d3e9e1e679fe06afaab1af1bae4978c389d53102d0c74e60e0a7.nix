@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.conduit-combinators)
@@ -45,7 +45,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -58,7 +58,7 @@
           ];
         };
         "space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.weigh)
             (hsPkgs.deepseq)
@@ -75,7 +75,7 @@
       };
       benchmarks = {
         "time" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

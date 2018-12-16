@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Rasenschach" = {
-          depends  = [
+          depends = [
             (hsPkgs.SDL)
             (hsPkgs.SDL-gfx)
             (hsPkgs.SDL-image)

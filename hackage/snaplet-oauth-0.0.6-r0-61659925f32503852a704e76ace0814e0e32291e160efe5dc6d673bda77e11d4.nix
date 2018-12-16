@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MonadCatchIO-mtl)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       tests = {
         "oauth-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.aeson)
             (hsPkgs.base)

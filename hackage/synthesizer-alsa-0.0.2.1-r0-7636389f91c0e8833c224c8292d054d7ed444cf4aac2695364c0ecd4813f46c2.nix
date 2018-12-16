@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.sox)
           (hsPkgs.alsa)
           (hsPkgs.storablevector)

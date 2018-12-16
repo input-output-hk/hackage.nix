@@ -26,7 +26,7 @@
     components = {
       exes = {
         "termplot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time-units)
             (hsPkgs.transformers)

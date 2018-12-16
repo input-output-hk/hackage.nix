@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
@@ -51,7 +51,7 @@
       };
       exes = {
         "zephyr" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
             (hsPkgs.ansi-wl-pprint)
@@ -78,7 +78,7 @@
       };
       tests = {
         "zephyr-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)

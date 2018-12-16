@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.time)
@@ -35,7 +35,7 @@
       };
       exes = {
         "notmuch-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-locale)
             (hsPkgs.parseargs)

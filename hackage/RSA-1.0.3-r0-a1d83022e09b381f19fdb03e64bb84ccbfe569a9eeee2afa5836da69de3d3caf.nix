@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.SHA)
@@ -39,7 +39,7 @@
       };
       exes = {
         "test_rsa" = {
-          depends  = pkgs.lib.optionals (!flags.skiptests) [
+          depends = pkgs.lib.optionals (!flags.skiptests) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.SHA)

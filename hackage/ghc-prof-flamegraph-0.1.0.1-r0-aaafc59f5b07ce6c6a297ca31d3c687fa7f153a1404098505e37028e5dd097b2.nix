@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-prof-flamegraph" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

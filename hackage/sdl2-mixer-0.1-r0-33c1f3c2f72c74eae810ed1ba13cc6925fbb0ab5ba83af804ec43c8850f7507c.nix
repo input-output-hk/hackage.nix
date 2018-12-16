@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.data-default-class)
@@ -44,7 +44,7 @@
       };
       exes = {
         "sdl2-mixer-basic" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.data-default-class)
             (hsPkgs.sdl2)
@@ -52,14 +52,14 @@
           ];
         };
         "sdl2-mixer-raw" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.sdl2)
             (hsPkgs.sdl2-mixer)
           ];
         };
         "sdl2-mixer-jumbled" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.data-default-class)
             (hsPkgs.sdl2)
@@ -67,7 +67,7 @@
           ];
         };
         "sdl2-mixer-music" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.data-default-class)
             (hsPkgs.sdl2)
@@ -75,7 +75,7 @@
           ];
         };
         "sdl2-mixer-effect" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.data-default-class)
             (hsPkgs.sdl2)

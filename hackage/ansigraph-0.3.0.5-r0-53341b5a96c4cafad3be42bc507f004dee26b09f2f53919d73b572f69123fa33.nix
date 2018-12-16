@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.transformers);
       };
       tests = {
         "test-ansigraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansigraph)
             (hsPkgs.hspec)

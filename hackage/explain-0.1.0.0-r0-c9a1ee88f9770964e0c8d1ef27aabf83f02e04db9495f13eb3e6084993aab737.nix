@@ -26,7 +26,7 @@
     components = {
       exes = {
         "explain" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.haskell-src-exts)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cloben" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.turtle)
             (hsPkgs.foldl)

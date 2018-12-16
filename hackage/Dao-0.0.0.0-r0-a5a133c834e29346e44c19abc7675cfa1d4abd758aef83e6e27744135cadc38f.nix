@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dao" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

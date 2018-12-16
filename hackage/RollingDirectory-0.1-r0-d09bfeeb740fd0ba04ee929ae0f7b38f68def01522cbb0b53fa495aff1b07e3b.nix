@@ -26,7 +26,7 @@
     components = {
       exes = {
         "RollingDirectory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hinotify)
             (hsPkgs.unix)
@@ -43,7 +43,7 @@
       };
       tests = {
         "MainTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

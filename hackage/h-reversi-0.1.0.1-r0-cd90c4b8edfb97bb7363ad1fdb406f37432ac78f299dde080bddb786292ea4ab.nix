@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blank-canvas)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "h-reversi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blank-canvas)
             (hsPkgs.containers)
@@ -48,7 +48,7 @@
       };
       tests = {
         "h-reversi-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.containers)

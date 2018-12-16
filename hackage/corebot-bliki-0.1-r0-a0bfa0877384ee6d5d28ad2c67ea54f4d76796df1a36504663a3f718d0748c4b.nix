@@ -26,7 +26,7 @@
     components = {
       exes = {
         "corebot-bliki" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.blaze-builder)

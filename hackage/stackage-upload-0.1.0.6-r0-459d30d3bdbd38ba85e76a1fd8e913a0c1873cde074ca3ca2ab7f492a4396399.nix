@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "stackage-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-upload)
             (hsPkgs.stackage-cli)

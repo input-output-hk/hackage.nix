@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.com)
           (hsPkgs.haskell98)
           (hsPkgs.directory)

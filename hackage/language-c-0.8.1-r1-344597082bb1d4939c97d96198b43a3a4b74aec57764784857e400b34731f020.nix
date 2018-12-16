@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -54,7 +54,7 @@
       };
       tests = {
         "language-c-harness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-c)
             (hsPkgs.directory)

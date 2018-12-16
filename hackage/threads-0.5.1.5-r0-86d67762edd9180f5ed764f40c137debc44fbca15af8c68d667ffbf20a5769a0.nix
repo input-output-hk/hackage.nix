@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
         ];
       };
       tests = {
         "test-threads" = {
-          depends  = [
+          depends = [
             (hsPkgs.threads)
             (hsPkgs.base)
             (hsPkgs.stm)

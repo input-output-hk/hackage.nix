@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "zeromq-haskell-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)

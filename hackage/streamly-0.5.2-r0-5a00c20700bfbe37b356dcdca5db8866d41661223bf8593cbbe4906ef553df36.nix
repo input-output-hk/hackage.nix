@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.containers)
@@ -48,7 +48,7 @@
       };
       exes = {
         "chart" = {
-          depends  = pkgs.lib.optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs.base)
             (hsPkgs.bench-show)
             (hsPkgs.split)
@@ -56,28 +56,28 @@
           ];
         };
         "SearchQuery" = {
-          depends  = pkgs.lib.optionals (flags.examples || flags.examples-sdl) [
+          depends = pkgs.lib.optionals (flags.examples || flags.examples-sdl) [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.http-conduit)
           ];
         };
         "ListDir" = {
-          depends  = pkgs.lib.optionals (flags.examples || flags.examples-sdl) ([
+          depends = pkgs.lib.optionals (flags.examples || flags.examples-sdl) ([
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.path-io)
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.transformers));
         };
         "MergeSort" = {
-          depends  = pkgs.lib.optionals (flags.examples || flags.examples-sdl) [
+          depends = pkgs.lib.optionals (flags.examples || flags.examples-sdl) [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.random)
           ];
         };
         "AcidRain" = {
-          depends  = pkgs.lib.optionals (flags.examples || flags.examples-sdl) ([
+          depends = pkgs.lib.optionals (flags.examples || flags.examples-sdl) ([
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -87,14 +87,14 @@
           ]);
         };
         "CirclingSquare" = {
-          depends  = pkgs.lib.optionals (flags.examples-sdl) [
+          depends = pkgs.lib.optionals (flags.examples-sdl) [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.SDL)
           ];
         };
         "ControlFlow" = {
-          depends  = pkgs.lib.optionals (flags.examples || flags.examples-sdl) ([
+          depends = pkgs.lib.optionals (flags.examples || flags.examples-sdl) ([
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.exceptions)
@@ -105,7 +105,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -116,7 +116,7 @@
           ];
         };
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -124,7 +124,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.transformers);
         };
         "maxrate" = {
-          depends  = pkgs.lib.optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.clock)
@@ -133,20 +133,20 @@
           ];
         };
         "loops" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
           ];
         };
         "nested-loops" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.random)
           ];
         };
         "parallel-loops" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.random)
@@ -155,7 +155,7 @@
       };
       benchmarks = {
         "linear" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -164,7 +164,7 @@
           ];
         };
         "linear-async" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -173,7 +173,7 @@
           ];
         };
         "linear-rate" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -182,7 +182,7 @@
           ];
         };
         "nested" = {
-          depends  = [
+          depends = [
             (hsPkgs.streamly)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -191,7 +191,7 @@
           ];
         };
         "base" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.random)

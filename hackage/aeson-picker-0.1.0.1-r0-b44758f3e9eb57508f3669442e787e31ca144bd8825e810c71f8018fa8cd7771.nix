@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.lens)
@@ -35,7 +35,7 @@
       };
       tests = {
         "aeson-picker-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson-picker)
             (hsPkgs.hspec)

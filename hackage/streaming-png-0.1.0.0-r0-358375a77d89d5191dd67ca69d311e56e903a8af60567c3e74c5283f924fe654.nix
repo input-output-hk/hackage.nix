@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.JuicyPixels)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       exes = {
         "streaming-png-demo" = {
-          depends  = pkgs.lib.optionals (flags.build-demo) [
+          depends = pkgs.lib.optionals (flags.build-demo) [
             (hsPkgs.JuicyPixels)
             (hsPkgs.base)
             (hsPkgs.criterion)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2slackBuild" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.unix)
             (hsPkgs.filepath)

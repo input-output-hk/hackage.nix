@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.kan-extensions)
           (hsPkgs.mcmc-types)
@@ -41,7 +41,7 @@
       };
       tests = {
         "rosenbrock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-probability)
             (hsPkgs.declarative)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hakyll)
           (hsPkgs.pandoc)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hakyll-contrib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hakyll)
             (hsPkgs.directory)

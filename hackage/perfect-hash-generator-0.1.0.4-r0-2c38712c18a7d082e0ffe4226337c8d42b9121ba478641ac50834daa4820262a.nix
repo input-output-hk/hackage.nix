@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hash-perfectly-ints-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.perfect-hash-generator)
@@ -50,7 +50,7 @@
           ];
         };
         "hash-perfectly-strings-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.perfect-hash-generator)
@@ -63,7 +63,7 @@
       };
       tests = {
         "regression-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.perfect-hash-generator)

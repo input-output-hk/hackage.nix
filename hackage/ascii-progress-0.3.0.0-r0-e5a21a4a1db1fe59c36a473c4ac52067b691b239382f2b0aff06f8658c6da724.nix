@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.concurrent-output)
           (hsPkgs.async)
@@ -36,7 +36,7 @@
       };
       exes = {
         "example" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.ansi-terminal)
             (hsPkgs.concurrent-output)
             (hsPkgs.async)
@@ -46,7 +46,7 @@
           ];
         };
         "download-example" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.HTTP)
             (hsPkgs.concurrent-output)
             (hsPkgs.ansi-terminal)
@@ -62,7 +62,7 @@
           ];
         };
         "multi-example" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.ansi-terminal)
             (hsPkgs.concurrent-output)
             (hsPkgs.async)
@@ -72,7 +72,7 @@
           ];
         };
         "crazy-multi-example" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.ansi-terminal)
             (hsPkgs.concurrent-output)
             (hsPkgs.async)
@@ -85,7 +85,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.concurrent-output)
             (hsPkgs.async)

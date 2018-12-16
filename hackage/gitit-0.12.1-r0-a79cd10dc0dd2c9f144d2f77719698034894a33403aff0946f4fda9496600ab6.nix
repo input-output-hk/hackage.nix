@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.safe)
@@ -91,7 +91,7 @@
       };
       exes = {
         "gitit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gitit)
             (hsPkgs.mtl)
@@ -107,7 +107,7 @@
             else [ (hsPkgs.network) ]);
         };
         "expireGititCache" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.url)

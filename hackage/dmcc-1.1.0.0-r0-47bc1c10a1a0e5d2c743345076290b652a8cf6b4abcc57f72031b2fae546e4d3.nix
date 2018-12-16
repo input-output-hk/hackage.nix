@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HsOpenSSL)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -53,7 +53,7 @@
       };
       exes = {
         "dmcc-ws" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

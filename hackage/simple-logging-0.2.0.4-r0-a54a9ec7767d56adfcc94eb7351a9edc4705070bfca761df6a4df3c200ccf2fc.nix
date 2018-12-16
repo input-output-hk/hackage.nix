@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.vector)
@@ -46,7 +46,7 @@
       };
       tests = {
         "logging-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.simple-logging)
             (hsPkgs.aeson)

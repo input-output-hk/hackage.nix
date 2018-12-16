@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lhae" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.wx)

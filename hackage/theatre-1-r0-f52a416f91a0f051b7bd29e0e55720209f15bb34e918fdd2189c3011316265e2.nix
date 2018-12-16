@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.unagi-chan)
           (hsPkgs.slave-thread)
           (hsPkgs.contravariant)

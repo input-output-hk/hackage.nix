@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.semigroups)
           (hsPkgs.utility-ht)
           (hsPkgs.QuickCheck)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.semigroups)
             (hsPkgs.utility-ht)

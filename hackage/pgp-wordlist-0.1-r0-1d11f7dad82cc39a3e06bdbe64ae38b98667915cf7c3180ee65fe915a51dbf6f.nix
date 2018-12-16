@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bimap)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.pgp-wordlist)
             (hsPkgs.base)
             (hsPkgs.bytestring)

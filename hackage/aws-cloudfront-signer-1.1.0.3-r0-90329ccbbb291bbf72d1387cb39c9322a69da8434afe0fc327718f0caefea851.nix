@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.RSA)
           (hsPkgs.asn1-types)
           (hsPkgs.asn1-encoding)

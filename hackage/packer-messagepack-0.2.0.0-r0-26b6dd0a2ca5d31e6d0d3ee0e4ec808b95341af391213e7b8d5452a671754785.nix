@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.packer)
           (hsPkgs.unliftio)
@@ -37,7 +37,7 @@
       };
       tests = {
         "packer-msgpack-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.packer)
             (hsPkgs.packer-messagepack)

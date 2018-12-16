@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = (((pkgs.lib.optionals (flags.atlas) [
           (pkgs."gsl")
           (pkgs."cblas")

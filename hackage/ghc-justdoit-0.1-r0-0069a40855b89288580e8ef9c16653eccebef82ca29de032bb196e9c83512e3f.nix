@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hashable)
           (hsPkgs.ghc)
@@ -33,7 +33,7 @@
       };
       tests = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-justdoit)
             (hsPkgs.inspection-testing)

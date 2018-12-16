@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
@@ -55,7 +55,7 @@
       };
       exes = {
         "migration-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.api-tools)
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
@@ -82,7 +82,7 @@
       };
       tests = {
         "test-api-tools" = {
-          depends  = [
+          depends = [
             (hsPkgs.api-tools)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)

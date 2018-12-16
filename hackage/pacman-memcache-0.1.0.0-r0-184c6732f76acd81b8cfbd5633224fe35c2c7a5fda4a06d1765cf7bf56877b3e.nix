@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pacman-memcache" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory-tree)
             (hsPkgs.deepseq)

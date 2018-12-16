@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (system.isWindows) (if flags.win32-2-5-3
           then [ (hsPkgs.Win32) ]

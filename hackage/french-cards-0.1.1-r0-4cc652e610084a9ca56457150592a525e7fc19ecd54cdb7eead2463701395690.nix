@@ -25,18 +25,18 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "card" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.french-cards)
             (hsPkgs.HUnit)
           ];
         };
         "misc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.french-cards)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.binary)
@@ -41,7 +41,7 @@
       };
       exes = {
         "self-bundle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.self-extract)
           ];

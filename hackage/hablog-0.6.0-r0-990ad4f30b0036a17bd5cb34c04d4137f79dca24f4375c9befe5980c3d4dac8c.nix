@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.scotty)
           (hsPkgs.scotty-tls)
@@ -49,7 +49,7 @@
       };
       exes = {
         "hablog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)

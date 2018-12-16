@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vty)
           (hsPkgs.brick)
@@ -54,7 +54,7 @@
       };
       exes = {
         "onrmtssh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OnRmt)
             (hsPkgs.vty)
@@ -81,7 +81,7 @@
           ];
         };
         "onrmtsample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OnRmt)
             (hsPkgs.vty)
@@ -107,7 +107,7 @@
           ];
         };
         "onrmtsamplecli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OnRmt)
             (hsPkgs.time)
@@ -135,7 +135,7 @@
       };
       tests = {
         "test_ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.transformers)

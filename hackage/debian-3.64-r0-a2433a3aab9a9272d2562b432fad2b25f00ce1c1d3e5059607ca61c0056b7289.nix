@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bzlib)
@@ -52,13 +52,13 @@
       };
       exes = {
         "fakechanges" = {
-          depends  = [ (hsPkgs.Cabal) ];
+          depends = [ (hsPkgs.Cabal) ];
         };
         "debian-report" = {
-          depends  = [ (hsPkgs.Cabal) ];
+          depends = [ (hsPkgs.Cabal) ];
         };
         "apt-get-build-depends" = {
-          depends  = [ (hsPkgs.Cabal) ];
+          depends = [ (hsPkgs.Cabal) ];
         };
       };
     };

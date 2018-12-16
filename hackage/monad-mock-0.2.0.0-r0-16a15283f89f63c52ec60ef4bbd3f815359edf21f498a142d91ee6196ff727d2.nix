@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.exceptions)
@@ -40,7 +40,7 @@
       };
       tests = {
         "monad-stub-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.monad-mock)

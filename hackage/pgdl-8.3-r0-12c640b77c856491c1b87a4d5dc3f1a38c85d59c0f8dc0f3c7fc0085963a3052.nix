@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pgdl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

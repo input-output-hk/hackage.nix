@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.MissingH)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "imparse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MissingH)
             (hsPkgs.containers)

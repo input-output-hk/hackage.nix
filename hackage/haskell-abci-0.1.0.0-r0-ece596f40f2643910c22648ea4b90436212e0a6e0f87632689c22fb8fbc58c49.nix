@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foundation)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "haskell-abci-counter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foundation)
             (hsPkgs.text)

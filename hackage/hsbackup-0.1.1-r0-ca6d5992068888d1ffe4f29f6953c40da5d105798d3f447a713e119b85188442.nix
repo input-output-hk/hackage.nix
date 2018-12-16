@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsbackup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hashed-storage)
             (hsPkgs.cmdargs)

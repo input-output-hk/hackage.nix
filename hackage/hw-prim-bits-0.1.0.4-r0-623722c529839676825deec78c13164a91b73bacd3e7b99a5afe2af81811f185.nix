@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "hw-prim-bits-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hw-prim-bits)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "hw-prim-bits-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedgehog)
             (hsPkgs.hspec)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.hw-prim-bits)

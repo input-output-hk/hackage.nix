@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.generics-sop)
@@ -35,7 +35,7 @@
       };
       tests = {
         "HappyTree-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HappyTree)
             (hsPkgs.base)
             (hsPkgs.constraints)

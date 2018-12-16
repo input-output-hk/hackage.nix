@@ -26,7 +26,7 @@
     components = {
       exes = {
         "arbtt-capture" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -51,7 +51,7 @@
             else [ (pkgs."Xss") ];
         };
         "arbtt-stats" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)
@@ -76,7 +76,7 @@
             else [ (hsPkgs.time) ]);
         };
         "arbtt-dump" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)
@@ -98,7 +98,7 @@
             else [ (hsPkgs.time) ]);
         };
         "arbtt-import" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)
@@ -118,7 +118,7 @@
             else [ (hsPkgs.time) ]);
         };
         "arbtt-recover" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.binary)
@@ -137,7 +137,7 @@
       };
       tests = {
         "test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
         ];
       };
       exes = {
         "folger-stage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.folgerhs)
             (hsPkgs.xml)

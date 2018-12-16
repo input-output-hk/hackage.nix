@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GLFW-b)
           (hsPkgs.GLUtil)
@@ -44,7 +44,7 @@
       };
       exes = {
         "sample_shapes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLFW-b)
             (hsPkgs.GLUtil)
@@ -60,7 +60,7 @@
           ];
         };
         "sample_scheduler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLFW-b)
             (hsPkgs.GLUtil)
@@ -77,7 +77,7 @@
           ];
         };
         "sample_sprite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLFW-b)
             (hsPkgs.GLUtil)
@@ -95,7 +95,7 @@
           ];
         };
         "sample_spritesheet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLFW-b)
             (hsPkgs.GLUtil)
@@ -113,7 +113,7 @@
           ];
         };
         "sample_asteroids" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLFW-b)
             (hsPkgs.GLUtil)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       exes = {
         "docean" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hdo)
             (hsPkgs.comonad)

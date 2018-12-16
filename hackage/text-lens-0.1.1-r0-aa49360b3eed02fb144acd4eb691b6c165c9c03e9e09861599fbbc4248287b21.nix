@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.lens)
@@ -34,7 +34,7 @@
       };
       tests = {
         "text-lens-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text-lens)
             (hsPkgs.hspec)

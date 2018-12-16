@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.mtl)
@@ -37,7 +37,7 @@
       };
       exes = {
         "imelody" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.melody)
           ];
@@ -45,7 +45,7 @@
       };
       tests = {
         "test-melody" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

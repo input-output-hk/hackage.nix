@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ivory-fibtutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.monadLib)
@@ -42,7 +42,7 @@
           ];
         };
         "ivory-c-clang-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.monadLib)

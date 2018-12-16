@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.byteable)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-ciphers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
@@ -53,7 +53,7 @@
           ];
         };
         "test-hashes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tagged)
@@ -65,7 +65,7 @@
           ];
         };
         "test-hmac" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tagged)
@@ -77,7 +77,7 @@
           ];
         };
         "test-umac" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tagged)

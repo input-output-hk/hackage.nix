@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = if flags.mkl
           then [
             (pkgs."mkl_lapack")

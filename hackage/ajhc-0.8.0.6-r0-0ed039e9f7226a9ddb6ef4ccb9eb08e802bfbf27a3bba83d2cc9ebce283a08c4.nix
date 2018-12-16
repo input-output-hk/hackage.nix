@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HsSyck)
           (hsPkgs.array)
@@ -53,7 +53,7 @@
       };
       exes = {
         "ajhc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HsSyck)
             (hsPkgs.array)
@@ -81,7 +81,7 @@
             else [ (hsPkgs.unix) ]);
         };
         "jahm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.wai)
@@ -40,7 +40,7 @@
       };
       tests = {
         "solga-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.solga)
             (hsPkgs.text)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskore-realtime)
           (hsPkgs.haskore)
           (hsPkgs.hosc)
@@ -55,7 +55,7 @@
       exes = {
         "song-air" = {};
         "test" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
           ];

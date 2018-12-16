@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.enumset)
           (hsPkgs.base)
         ];
@@ -49,7 +49,7 @@
       };
       exes = {
         "llvm-ffi-example" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.llvm-ffi)
             (hsPkgs.utility-ht)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell-src)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)

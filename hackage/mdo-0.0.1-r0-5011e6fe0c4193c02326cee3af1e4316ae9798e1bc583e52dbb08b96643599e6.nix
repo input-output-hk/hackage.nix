@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mdo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

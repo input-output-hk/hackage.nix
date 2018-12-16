@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "cgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)
@@ -40,7 +40,7 @@
           ];
         };
         "cgen-hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)
@@ -53,7 +53,7 @@
           ];
         };
         "grgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)

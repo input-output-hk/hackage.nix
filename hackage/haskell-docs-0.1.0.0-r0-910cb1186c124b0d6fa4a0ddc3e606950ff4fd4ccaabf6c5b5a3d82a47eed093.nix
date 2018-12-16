@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskell-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)

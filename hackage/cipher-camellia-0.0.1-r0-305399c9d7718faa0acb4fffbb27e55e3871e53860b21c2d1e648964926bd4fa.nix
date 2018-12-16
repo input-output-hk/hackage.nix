@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.byteable)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-cipher-camellia" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cipher-camellia)
             (hsPkgs.crypto-cipher-types)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "bench-cipher-camellia" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cipher-camellia)

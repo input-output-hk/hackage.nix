@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams-core)
           (hsPkgs.diagrams-lib)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test-render" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)
@@ -53,7 +53,7 @@
           ];
         };
         "test-widths" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)
@@ -61,7 +61,7 @@
           ];
         };
         "test-size" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)

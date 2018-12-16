@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.process)
           (hsPkgs.containers)
@@ -39,14 +39,14 @@
       };
       tests = {
         "Ramsey" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)
           ];
         };
         "RamseyFM" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.satchmo)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.binary)
@@ -38,7 +38,7 @@
       };
       exes = {
         "iris" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-ml)
             (hsPkgs.hmatrix)
@@ -48,7 +48,7 @@
       };
       tests = {
         "fcnTest1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-ml)
             (hsPkgs.MonadRandom)

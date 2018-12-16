@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
       };
       exes = {
         "hpio-example" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.exceptions)
@@ -67,7 +67,7 @@
           ];
         };
         "hpio-reader-example" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.exceptions)
@@ -80,7 +80,7 @@
           ];
         };
         "hpio-sysfs-example" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.exceptions)
@@ -95,7 +95,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.lt "7.10")) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.lt "7.10")) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
@@ -103,14 +103,14 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
             (hsPkgs.protolude)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.containers)

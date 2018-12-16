@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       exes = {
         "sha-streams" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.io-streams)
             (hsPkgs.SHA)

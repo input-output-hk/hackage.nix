@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hVOIDP" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.hmatrix)
             (hsPkgs.base)

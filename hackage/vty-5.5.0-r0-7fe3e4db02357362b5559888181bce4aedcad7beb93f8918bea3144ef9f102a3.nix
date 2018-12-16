@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       exes = {
         "vty-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -65,7 +65,7 @@
       };
       tests = {
         "verify-attribute-ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -82,7 +82,7 @@
           ];
         };
         "verify-using-mock-terminal" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -100,7 +100,7 @@
           ];
         };
         "verify-terminal" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -119,7 +119,7 @@
           ];
         };
         "verify-display-attributes" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -136,7 +136,7 @@
           ];
         };
         "verify-empty-image-props" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -153,7 +153,7 @@
           ];
         };
         "verify-eval-terminfo-caps" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -172,7 +172,7 @@
           ];
         };
         "verify-image-ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -189,7 +189,7 @@
           ];
         };
         "verify-image-trans" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -206,7 +206,7 @@
           ];
         };
         "verify-inline" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -223,7 +223,7 @@
           ];
         };
         "verify-parse-terminfo-caps" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -241,7 +241,7 @@
           ];
         };
         "verify-simple-span-generation" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -258,7 +258,7 @@
           ];
         };
         "verify-crop-span-generation" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -275,7 +275,7 @@
           ];
         };
         "verify-layers-span-generation" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -292,7 +292,7 @@
           ];
         };
         "verify-utf8-width" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
@@ -309,7 +309,7 @@
           ];
         };
         "verify-using-mock-input" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.data-default)
@@ -335,7 +335,7 @@
           ];
         };
         "verify-config" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.Cabal)
             (hsPkgs.data-default)

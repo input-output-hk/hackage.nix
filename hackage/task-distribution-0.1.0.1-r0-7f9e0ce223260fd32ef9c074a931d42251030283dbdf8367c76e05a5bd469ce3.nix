@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hint)
           (hsPkgs.binary)
@@ -55,7 +55,7 @@
       };
       exes = {
         "slave" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.task-distribution)
             (hsPkgs.hslogger)
@@ -66,7 +66,7 @@
           ];
         };
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.task-distribution)
@@ -78,7 +78,7 @@
           ];
         };
         "task-distribution-object-code-remote" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hslogger)
@@ -99,7 +99,7 @@
           ];
         };
         "run-demo-task" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.zlib)
@@ -108,7 +108,7 @@
           ];
         };
         "test-visit-performance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.containers)
@@ -119,7 +119,7 @@
       };
       tests = {
         "test-node-matching" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.task-distribution)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wreq)
           (hsPkgs.lens)
@@ -36,7 +36,7 @@
       };
       tests = {
         "hzulip-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wreq)
             (hsPkgs.lens)

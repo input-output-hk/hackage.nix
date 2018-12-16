@@ -30,7 +30,7 @@
     components = {
       exes = {
         "Allure" = {
-          depends  = [
+          depends = [
             (hsPkgs.ConfigFile)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -53,7 +53,7 @@
           libs = pkgs.lib.optional (flags.curses) (pkgs."curses");
         };
         "BotAllure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
           ];

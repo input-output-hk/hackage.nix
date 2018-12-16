@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       tests = {
         "haskey-mtl-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskey)
             (hsPkgs.haskey-btree)

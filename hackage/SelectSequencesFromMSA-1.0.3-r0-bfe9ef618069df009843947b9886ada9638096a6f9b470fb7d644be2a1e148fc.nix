@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmdargs)
           (hsPkgs.ViennaRNAParser)
@@ -48,7 +48,7 @@
       };
       exes = {
         "SelectSequencesFromMSA" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.either-unwrap)

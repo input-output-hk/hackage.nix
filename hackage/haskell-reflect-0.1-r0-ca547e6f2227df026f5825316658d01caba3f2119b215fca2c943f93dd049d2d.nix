@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hsreflect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-reflect)
             (hsPkgs.containers)

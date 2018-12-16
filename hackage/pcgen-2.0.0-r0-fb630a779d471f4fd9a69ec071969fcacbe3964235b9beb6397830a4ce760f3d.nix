@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
         ];
       };
       tests = {
         "pcgen-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pcgen)
             (hsPkgs.hspec)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "pcgen-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pcgen)
             (hsPkgs.criterion)

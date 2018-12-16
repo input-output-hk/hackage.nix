@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
       };
       tests = {
         "roc-cluster-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.roc-cluster)
             (hsPkgs.hspec)

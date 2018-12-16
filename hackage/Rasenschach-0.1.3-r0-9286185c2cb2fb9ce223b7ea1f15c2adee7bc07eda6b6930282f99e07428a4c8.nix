@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Rasenschach" = {
-          depends  = [
+          depends = [
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)
             (hsPkgs.Yampa)

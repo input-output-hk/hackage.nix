@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cnc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

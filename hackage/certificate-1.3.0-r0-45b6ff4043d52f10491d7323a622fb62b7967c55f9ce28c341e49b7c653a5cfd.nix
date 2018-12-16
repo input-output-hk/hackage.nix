@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
@@ -45,7 +45,7 @@
       };
       exes = {
         "certificate" = {
-          depends  = pkgs.lib.optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs.cmdargs)
             (hsPkgs.text)
             (hsPkgs.cryptohash)
@@ -54,7 +54,7 @@
           ];
         };
         "Tests" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.HUnit)

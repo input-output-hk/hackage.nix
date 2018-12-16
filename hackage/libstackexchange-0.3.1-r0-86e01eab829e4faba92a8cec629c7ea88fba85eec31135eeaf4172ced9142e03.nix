@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -42,7 +42,7 @@
       };
       exes = {
         "rep-watcher" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-lens)
             (hsPkgs.base)
             (hsPkgs.lens)
@@ -50,7 +50,7 @@
           ];
         };
         "badges-watcher" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-lens)
             (hsPkgs.base)
             (hsPkgs.lens)
@@ -58,7 +58,7 @@
           ];
         };
         "server-side-authentication" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.happstack-server)
             (hsPkgs.lens)
@@ -69,7 +69,7 @@
       };
       tests = {
         "api" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.http-conduit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.aeson)
@@ -41,7 +41,7 @@
       };
       exes = {
         "test-http-test-bayeshive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-test)
           ];

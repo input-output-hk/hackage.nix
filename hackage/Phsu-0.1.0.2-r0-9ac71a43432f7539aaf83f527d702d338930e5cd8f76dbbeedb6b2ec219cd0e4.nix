@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Phsu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.happstack-server)
             (hsPkgs.happstack-server-tls)

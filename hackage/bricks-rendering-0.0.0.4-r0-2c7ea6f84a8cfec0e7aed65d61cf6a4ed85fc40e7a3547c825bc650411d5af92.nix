@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bricks-internal)
           (hsPkgs.bricks-syntax)
@@ -35,7 +35,7 @@
       };
       tests = {
         "cases" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bricks-internal)
             (hsPkgs.bricks-internal-test)
@@ -48,7 +48,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bricks-internal)
             (hsPkgs.bricks-syntax)

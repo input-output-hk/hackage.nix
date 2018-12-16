@@ -31,20 +31,20 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.strict)
         ] ++ [ (hsPkgs.base) ];
       };
       exes = {
         "nsort" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.strict)
           ] ++ [ (hsPkgs.base) ];
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
             (hsPkgs.strict)

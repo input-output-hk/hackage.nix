@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabalsearch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-sqlite3)

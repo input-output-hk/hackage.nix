@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.managed)
           (hsPkgs.profunctors)
@@ -34,7 +34,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.potoki-core)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

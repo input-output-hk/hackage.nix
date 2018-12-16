@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scurry" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.network)

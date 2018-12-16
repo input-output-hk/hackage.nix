@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.hedis)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hedis-namespace-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedis-namespace)
             (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       tests = {
         "hedis-namespace-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedis-namespace)
           ];

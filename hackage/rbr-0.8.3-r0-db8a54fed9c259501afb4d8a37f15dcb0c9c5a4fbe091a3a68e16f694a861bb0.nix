@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bio)
@@ -33,12 +33,12 @@
       };
       exes = {
         "rbr" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
           ];
         };
         "mct" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
           ];
         };

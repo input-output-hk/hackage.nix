@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lucid)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       tests = {
         "site-gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.lucid-extras)

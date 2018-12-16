@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.api-builder)
           (hsPkgs.base)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.aeson)
             (hsPkgs.api-builder)
@@ -59,7 +59,7 @@
           ];
         };
         "test-anon" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.api-builder)
             (hsPkgs.base)
@@ -72,7 +72,7 @@
           ];
         };
         "test-io" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.api-builder)
             (hsPkgs.base)

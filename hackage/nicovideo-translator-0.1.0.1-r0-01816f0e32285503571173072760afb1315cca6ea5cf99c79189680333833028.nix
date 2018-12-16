@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.case-insensitive)
@@ -48,7 +48,7 @@
       };
       exes = {
         "nicovideo-translator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nicovideo-translator)
           ];

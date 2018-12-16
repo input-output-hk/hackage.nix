@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base-noprelude)
           (hsPkgs.bizzlelude)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.bizzlelude)
             (hsPkgs.containers)
             (hsPkgs.lame-tester)

@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.semigroups)
           (hsPkgs.transformers)

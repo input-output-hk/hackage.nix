@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mmorph)
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
@@ -35,7 +35,7 @@
       };
       tests = {
         "api-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.list-t)
             (hsPkgs.HTF)
             (hsPkgs.mtl-prelude)

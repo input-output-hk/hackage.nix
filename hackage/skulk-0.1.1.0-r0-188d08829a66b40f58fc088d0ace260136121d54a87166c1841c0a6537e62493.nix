@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.skulk)
             (hsPkgs.base)
             (hsPkgs.hspec)

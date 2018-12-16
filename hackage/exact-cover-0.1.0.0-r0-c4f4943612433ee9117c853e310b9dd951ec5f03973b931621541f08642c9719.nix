@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       exes = {
         "sudoku" = {
-          depends  = [
+          depends = [
             (hsPkgs.exact-cover)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.exact-cover)
             (hsPkgs.base)
             (hsPkgs.tasty)

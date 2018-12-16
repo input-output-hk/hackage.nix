@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hpc)
           (hsPkgs.filepath)
@@ -44,7 +44,7 @@
       };
       exes = {
         "shc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       tests = {
         "shc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stack-hpc-coveralls)
             (hsPkgs.hspec)
@@ -69,7 +69,7 @@
           ];
         };
         "style" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

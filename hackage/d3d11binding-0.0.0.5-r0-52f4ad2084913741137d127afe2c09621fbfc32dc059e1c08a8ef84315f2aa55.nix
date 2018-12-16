@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Win32)
           (hsPkgs.c-storable-deriving)
@@ -42,14 +42,14 @@
       };
       exes = {
         "Triangle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Win32)
             (hsPkgs.d3d11binding)
           ];
         };
         "Cube" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Win32)
             (hsPkgs.d3d11binding)
@@ -58,7 +58,7 @@
           ];
         };
         "RevolveCube" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Win32)
             (hsPkgs.d3d11binding)

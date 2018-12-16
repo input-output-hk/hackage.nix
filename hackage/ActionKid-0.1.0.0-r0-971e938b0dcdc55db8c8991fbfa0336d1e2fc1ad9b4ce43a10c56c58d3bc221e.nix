@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.gloss)
           (hsPkgs.StateVar)
@@ -41,7 +41,7 @@
       };
       exes = {
         "actionkid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.StateVar)
@@ -58,7 +58,7 @@
       };
       tests = {
         "test-actionkid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.ActionKid)

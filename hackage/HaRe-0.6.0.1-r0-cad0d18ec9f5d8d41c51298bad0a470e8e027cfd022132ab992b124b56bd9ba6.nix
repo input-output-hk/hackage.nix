@@ -26,14 +26,14 @@
     components = {
       exes = {
         "hare-evaluate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hint)
             (hsPkgs.filepath)
           ];
         };
         "hare" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.network)
@@ -49,7 +49,7 @@
           ];
         };
         "hare-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.network)

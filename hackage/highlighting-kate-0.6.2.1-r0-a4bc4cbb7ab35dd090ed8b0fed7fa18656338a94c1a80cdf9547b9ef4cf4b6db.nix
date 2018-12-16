@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.parsec)
@@ -46,7 +46,7 @@
       };
       exes = {
         "highlighting-kate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.blaze-html)
@@ -57,7 +57,7 @@
       };
       tests = {
         "test-highlighting-kate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.highlighting-kate)

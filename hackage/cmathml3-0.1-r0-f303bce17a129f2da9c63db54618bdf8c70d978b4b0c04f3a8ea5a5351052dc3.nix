@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hxt)
           (hsPkgs.base)
           (hsPkgs.arrowapply-utils)
@@ -40,7 +40,7 @@
       };
       exes = {
         "mathtest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.filepath)

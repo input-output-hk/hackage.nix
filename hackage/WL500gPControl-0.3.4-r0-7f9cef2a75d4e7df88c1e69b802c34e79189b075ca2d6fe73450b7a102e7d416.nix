@@ -26,13 +26,13 @@
     components = {
       exes = {
         "WL500gPStatus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.WL500gPLib)
           ];
         };
         "WL500gPControl" = {
-          depends  = if !system.isWindows
+          depends = if !system.isWindows
             then [
               (hsPkgs.base)
               (hsPkgs.filepath)

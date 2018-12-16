@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.alsa-core)
           (hsPkgs.enumset)
           (hsPkgs.transformers)
@@ -46,7 +46,7 @@
       };
       exes = {
         "alsa-seq-dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)
@@ -58,7 +58,7 @@
           ];
         };
         "alsa-seq-send-note" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)
@@ -70,7 +70,7 @@
           ];
         };
         "alsa-seq-broadcast" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)
@@ -82,7 +82,7 @@
           ];
         };
         "alsa-seq-list-ports" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)
@@ -94,7 +94,7 @@
           ];
         };
         "alsa-seq-melody" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)
@@ -106,7 +106,7 @@
           ];
         };
         "alsa-seq-list-subscribers" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)
@@ -118,7 +118,7 @@
           ];
         };
         "alsa-seq-beat" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)
@@ -130,7 +130,7 @@
           ];
         };
         "alsa-seq-sysex" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.transformers)

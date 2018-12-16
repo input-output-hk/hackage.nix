@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -57,7 +57,7 @@
       };
       exes = {
         "replicant" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.replicant)
             (hsPkgs.bytestring)
@@ -68,7 +68,7 @@
       };
       tests = {
         "replicant-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.replicant)
           ];

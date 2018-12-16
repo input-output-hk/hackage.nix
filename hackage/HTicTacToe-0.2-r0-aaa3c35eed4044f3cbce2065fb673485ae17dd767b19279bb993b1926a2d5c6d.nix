@@ -26,7 +26,7 @@
     components = {
       exes = {
         "HTicTacToe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.array)

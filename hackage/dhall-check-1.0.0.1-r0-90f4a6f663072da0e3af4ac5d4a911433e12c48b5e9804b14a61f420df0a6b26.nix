@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dhall-check" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
       };
       exes = {
         "shake" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
@@ -85,7 +85,7 @@
       };
       tests = {
         "shake-test" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

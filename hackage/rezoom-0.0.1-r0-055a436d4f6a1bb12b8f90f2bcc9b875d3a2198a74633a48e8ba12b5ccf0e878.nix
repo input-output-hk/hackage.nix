@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rezoom" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.json)
             (hsPkgs.xhtml)

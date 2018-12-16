@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pandoc-include-code" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.process)

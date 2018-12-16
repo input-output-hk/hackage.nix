@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.control-monad-failure)
         ] ++ (if flags.extensibleexceptions
           then [

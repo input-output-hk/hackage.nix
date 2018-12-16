@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.singletons)
@@ -33,7 +33,7 @@
       };
       tests = {
         "Get-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Get)
             (hsPkgs.base)
             (hsPkgs.constraints)

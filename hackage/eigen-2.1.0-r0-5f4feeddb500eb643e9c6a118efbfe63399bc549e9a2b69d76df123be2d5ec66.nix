@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.primitive)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-solve" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primitive)
             (hsPkgs.vector)
@@ -43,7 +43,7 @@
           ];
         };
         "test-rank" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primitive)
             (hsPkgs.vector)
@@ -51,7 +51,7 @@
           ];
         };
         "test-regression" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.primitive)
             (hsPkgs.vector)

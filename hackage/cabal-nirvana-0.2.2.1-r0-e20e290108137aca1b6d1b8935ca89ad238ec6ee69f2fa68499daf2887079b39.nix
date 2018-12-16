@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-nirvana" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.process)
@@ -37,7 +37,7 @@
           ];
         };
         "cabal-nirvana-generate" = {
-          depends  = pkgs.lib.optionals (flags.generate) [
+          depends = pkgs.lib.optionals (flags.generate) [
             (hsPkgs.Cabal)
             (hsPkgs.containers)
             (hsPkgs.transformers)

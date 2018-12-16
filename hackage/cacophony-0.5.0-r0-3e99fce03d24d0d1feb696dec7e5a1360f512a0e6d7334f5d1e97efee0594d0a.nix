@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cryptonite)
@@ -41,7 +41,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -53,13 +53,13 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.doctest)) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)

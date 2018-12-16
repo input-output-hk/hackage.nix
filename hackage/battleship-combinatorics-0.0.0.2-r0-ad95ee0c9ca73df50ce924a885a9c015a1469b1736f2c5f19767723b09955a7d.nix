@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.pooled-io)
           (hsPkgs.combinatorial)
@@ -48,7 +48,7 @@
       };
       exes = {
         "battleship-combinatorics" = {
-          depends  = [
+          depends = [
             (hsPkgs.battleship-combinatorics)
             (hsPkgs.containers)
             (hsPkgs.base)
@@ -57,7 +57,7 @@
       };
       tests = {
         "battleship-combinatorics-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.battleship-combinatorics)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

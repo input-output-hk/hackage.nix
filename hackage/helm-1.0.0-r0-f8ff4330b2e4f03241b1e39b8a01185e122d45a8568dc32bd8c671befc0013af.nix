@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cairo)
           (hsPkgs.pango)
@@ -41,7 +41,7 @@
       };
       exes = {
         "helm-example-flappy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.random)
@@ -51,7 +51,7 @@
       };
       tests = {
         "helm-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.helm)

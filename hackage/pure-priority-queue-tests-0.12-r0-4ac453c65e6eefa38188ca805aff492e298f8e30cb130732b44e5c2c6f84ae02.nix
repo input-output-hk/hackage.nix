@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pure-priority-queue-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pure-priority-queue)

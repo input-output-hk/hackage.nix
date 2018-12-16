@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dlist)
           (hsPkgs.mtl)
@@ -35,13 +35,13 @@
       };
       tests = {
         "bookkeeping-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bookkeeping)
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)

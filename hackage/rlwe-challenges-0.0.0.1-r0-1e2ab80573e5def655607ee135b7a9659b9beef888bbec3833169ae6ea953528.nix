@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lol)
           (hsPkgs.MonadRandom)
@@ -35,7 +35,7 @@
       };
       exes = {
         "rlwe-challenges" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.bytestring)

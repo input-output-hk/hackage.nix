@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.derive)
           (hsPkgs.mtl)
@@ -41,7 +41,7 @@
       };
       exes = {
         "cake" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.cmdargs)

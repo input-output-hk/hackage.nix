@@ -26,7 +26,7 @@
     components = {
       exes = {
         "huttons-razor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.parsec-numbers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "happraise" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

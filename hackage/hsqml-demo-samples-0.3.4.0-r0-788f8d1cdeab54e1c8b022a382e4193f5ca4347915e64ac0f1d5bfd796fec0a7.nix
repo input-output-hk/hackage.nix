@@ -26,28 +26,28 @@
     components = {
       exes = {
         "hsqml-factorial1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.hsqml)
           ];
         };
         "hsqml-factorial2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.hsqml)
           ];
         };
         "hsqml-model1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.hsqml)
           ];
         };
         "hsqml-opengl1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.OpenGL)
@@ -56,7 +56,7 @@
           ];
         };
         "hsqml-opengl2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.OpenGL)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       exes = {
         "nuxeo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nuxeo)
             (hsPkgs.optparse-applicative)

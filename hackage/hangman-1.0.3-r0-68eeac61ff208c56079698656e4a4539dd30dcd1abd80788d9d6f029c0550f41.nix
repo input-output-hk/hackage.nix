@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hangman" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.random)

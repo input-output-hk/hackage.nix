@@ -26,7 +26,7 @@
     components = {
       exes = {
         "_carettah_main_" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.filepath)
@@ -42,7 +42,7 @@
           ];
         };
         "carettah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)

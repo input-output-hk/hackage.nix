@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.synthesizer-dimensional)
           (hsPkgs.synthesizer-core)
           (hsPkgs.sox)
@@ -50,7 +50,7 @@
       };
       exes = {
         "render-midi" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.synthesizer-midi)
             (hsPkgs.synthesizer-core)
             (hsPkgs.sox)
@@ -64,7 +64,7 @@
           ];
         };
         "test" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.synthesizer-midi)
             (hsPkgs.synthesizer-core)
             (hsPkgs.storablevector)

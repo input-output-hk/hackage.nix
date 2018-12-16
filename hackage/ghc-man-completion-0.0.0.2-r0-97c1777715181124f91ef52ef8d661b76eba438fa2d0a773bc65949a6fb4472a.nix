@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-man-completion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.process)

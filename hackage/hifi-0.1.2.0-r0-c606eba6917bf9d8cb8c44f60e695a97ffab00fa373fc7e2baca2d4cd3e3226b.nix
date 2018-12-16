@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mustache)
           (hsPkgs.directory)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hifi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hifi)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "hifi-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hifi)
           ];

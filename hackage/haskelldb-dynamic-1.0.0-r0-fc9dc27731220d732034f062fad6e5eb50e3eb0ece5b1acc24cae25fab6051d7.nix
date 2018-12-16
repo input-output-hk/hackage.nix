@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
           (hsPkgs.mtl)
           (hsPkgs.haskelldb)
@@ -35,7 +35,7 @@
       };
       exes = {
         "DBDirect-dynamic" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskelldb)
           ];
         };

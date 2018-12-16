@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
         ];
       };
       tests = {
         "real-day-end-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.real-day-end)

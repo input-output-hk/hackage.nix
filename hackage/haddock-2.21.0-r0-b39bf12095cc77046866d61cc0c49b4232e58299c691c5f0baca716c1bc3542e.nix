@@ -28,7 +28,7 @@
     components = {
       exes = {
         "haddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
           ] ++ (if flags.in-ghc-tree
             then [
@@ -51,7 +51,7 @@
       };
       tests = {
         "html-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.haddock-test)
@@ -61,7 +61,7 @@
           ];
         };
         "hypsrc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.haddock-test)
@@ -71,7 +71,7 @@
           ];
         };
         "latex-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.haddock-test)
@@ -81,7 +81,7 @@
           ];
         };
         "hoogle-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.haddock-test)

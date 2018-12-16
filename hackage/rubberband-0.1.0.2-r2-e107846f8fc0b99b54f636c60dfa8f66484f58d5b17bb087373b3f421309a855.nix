@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-rubberband" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rubberband)
           ];

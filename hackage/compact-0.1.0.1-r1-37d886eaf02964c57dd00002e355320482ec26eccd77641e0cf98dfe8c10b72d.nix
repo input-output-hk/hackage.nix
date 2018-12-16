@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-compact)
           (hsPkgs.binary)
@@ -34,7 +34,7 @@
       };
       tests = {
         "compact-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.compact)
             (hsPkgs.base)
             (hsPkgs.directory)

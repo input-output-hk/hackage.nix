@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.quipper-core)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       exes = {
         "entangle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.entangle)
             (hsPkgs.quipper-core)

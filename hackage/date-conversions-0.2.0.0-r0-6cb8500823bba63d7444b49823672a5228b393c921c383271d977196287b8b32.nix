@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.dates)
@@ -33,7 +33,7 @@
       };
       tests = {
         "date-conversions-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.date-conversions)
             (hsPkgs.hspec)

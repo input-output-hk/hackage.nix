@@ -26,25 +26,25 @@
     components = {
       exes = {
         "duplex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];
         };
         "play" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];
         };
         "record" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];
         };
         "volume_meter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];

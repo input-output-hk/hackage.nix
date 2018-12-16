@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       tests = {
         "qq-literals-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.qq-literals)
             (hsPkgs.template-haskell)

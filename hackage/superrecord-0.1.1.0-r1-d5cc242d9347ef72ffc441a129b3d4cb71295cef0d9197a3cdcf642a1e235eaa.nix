@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.constraints)
@@ -37,7 +37,7 @@
       };
       tests = {
         "superrecord-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.superrecord)
             (hsPkgs.hspec)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "superrecord-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.superrecord)
             (hsPkgs.criterion)

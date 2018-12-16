@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.ListLike)
@@ -33,39 +33,39 @@
       };
       exes = {
         "earley-english" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
             (hsPkgs.unordered-containers)
           ];
         };
         "earley-expr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
           ];
         };
         "earley-expr2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
           ];
         };
         "earley-mixfix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
             (hsPkgs.containers)
           ];
         };
         "earley-very-ambiguous" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
           ];
         };
         "earley-words" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
           ];
@@ -73,7 +73,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
             (hsPkgs.tasty)
@@ -84,7 +84,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.criterion)

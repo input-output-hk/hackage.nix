@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.diagrams-cairo)
@@ -42,7 +42,7 @@
       };
       exes = {
         "typed-spreadsheet-example-text" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.typed-spreadsheet)
@@ -50,7 +50,7 @@
           frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Cocoa");
         };
         "typed-spreadsheet-example-cell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.typed-spreadsheet)
@@ -58,7 +58,7 @@
           frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Cocoa");
         };
         "typed-spreadsheet-example-graphics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-lib)
             (hsPkgs.typed-spreadsheet)

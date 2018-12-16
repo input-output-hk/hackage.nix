@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpc-tracer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hpc)
             (hsPkgs.unix)

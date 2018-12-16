@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cao" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.pretty)

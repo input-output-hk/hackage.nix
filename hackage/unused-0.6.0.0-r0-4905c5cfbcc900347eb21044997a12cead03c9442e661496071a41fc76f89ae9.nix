@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.containers)
@@ -50,7 +50,7 @@
       };
       exes = {
         "unused" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unused)
             (hsPkgs.optparse-applicative)
@@ -61,7 +61,7 @@
       };
       tests = {
         "unused-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unused)
             (hsPkgs.hspec)

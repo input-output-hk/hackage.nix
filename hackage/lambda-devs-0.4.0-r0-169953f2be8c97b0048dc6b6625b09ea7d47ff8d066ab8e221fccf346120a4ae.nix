@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       exes = {
         "lambda-devs-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.containers)
@@ -48,7 +48,7 @@
       };
       tests = {
         "lambda-devs-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.containers)

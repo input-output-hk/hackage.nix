@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.time)
@@ -53,7 +53,7 @@
       };
       exes = {
         "takusen_tests" = {
-          depends  = (pkgs.lib.optionals (!(!flags.buildtests)) [
+          depends = (pkgs.lib.optionals (!(!flags.buildtests)) [
             (hsPkgs.Takusen)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -65,7 +65,7 @@
           ];
         };
         "miniunit_tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
           ] ++ [ (hsPkgs.base) ];

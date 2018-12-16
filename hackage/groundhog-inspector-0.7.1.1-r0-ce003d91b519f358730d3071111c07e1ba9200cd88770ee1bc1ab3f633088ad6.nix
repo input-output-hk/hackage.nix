@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.time)
@@ -46,7 +46,7 @@
       };
       exes = {
         "groundhog_inspector" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.cmdargs)

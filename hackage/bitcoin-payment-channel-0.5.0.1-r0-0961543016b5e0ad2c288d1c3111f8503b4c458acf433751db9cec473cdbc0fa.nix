@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskoin-core)
           (hsPkgs.base16-bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-bitcoin-payment-channel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskoin-core)
             (hsPkgs.bytestring)

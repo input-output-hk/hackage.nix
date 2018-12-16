@@ -26,7 +26,7 @@
     components = {
       exes = {
         "primula-bot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.XMPP)
             (hsPkgs.network)

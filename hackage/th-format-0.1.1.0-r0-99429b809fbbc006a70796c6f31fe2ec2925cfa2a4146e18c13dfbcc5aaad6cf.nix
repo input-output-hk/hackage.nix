@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Earley)
           (hsPkgs.base)
           (hsPkgs.haskell-src-meta)
@@ -35,7 +35,7 @@
       };
       tests = {
         "th-format-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

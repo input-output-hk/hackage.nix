@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.hashable)
@@ -41,7 +41,7 @@
       };
       exes = {
         "chr-term" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chr-data)
             (hsPkgs.chr-lang)

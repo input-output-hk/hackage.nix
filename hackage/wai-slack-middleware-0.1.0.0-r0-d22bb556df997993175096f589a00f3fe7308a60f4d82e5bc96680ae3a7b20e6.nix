@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.wai)
@@ -35,7 +35,7 @@
       };
       exes = {
         "wai-slack-middleware-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-slack-middleware)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "wai-slack-middleware-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-slack-middleware)
           ];

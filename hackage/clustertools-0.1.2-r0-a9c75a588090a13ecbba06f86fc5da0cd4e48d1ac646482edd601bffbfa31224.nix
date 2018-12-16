@@ -26,35 +26,35 @@
     components = {
       exes = {
         "filter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.simpleargs)
           ];
         };
         "clusc" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
           ];
         };
         "add_single" = {};
         "ace2contigs" = {
-          depends  = [ (hsPkgs.bio) ];
+          depends = [ (hsPkgs.bio) ];
         };
         "ace2fasta" = {
-          depends  = [ (hsPkgs.bio) ];
+          depends = [ (hsPkgs.bio) ];
         };
         "ace2clusters" = {
-          depends  = [ (hsPkgs.bio) ];
+          depends = [ (hsPkgs.bio) ];
         };
         "clusterlibs" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex-compat)
             (hsPkgs.QuickCheck)
           ];
         };
         "xcerpt" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
           ];
         };

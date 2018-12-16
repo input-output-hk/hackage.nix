@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Hclip)
             (hsPkgs.HTTP)

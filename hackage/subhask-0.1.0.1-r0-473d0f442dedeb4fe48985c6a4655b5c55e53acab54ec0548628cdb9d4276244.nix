@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.template-haskell)
@@ -54,26 +54,26 @@
       };
       tests = {
         "TestSuite-Unoptimized" = {
-          depends  = [
+          depends = [
             (hsPkgs.subhask)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
           ];
         };
         "Example0001" = {
-          depends  = [
+          depends = [
             (hsPkgs.subhask)
             (hsPkgs.base)
           ];
         };
         "Example0002" = {
-          depends  = [
+          depends = [
             (hsPkgs.subhask)
             (hsPkgs.base)
           ];
         };
         "Example0003" = {
-          depends  = [
+          depends = [
             (hsPkgs.subhask)
             (hsPkgs.base)
           ];
@@ -81,7 +81,7 @@
       };
       benchmarks = {
         "Vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.subhask)
             (hsPkgs.criterion)

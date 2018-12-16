@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.loop)
@@ -42,7 +42,7 @@
       };
       exes = {
         "reedsolomon-simple-encoder" = {
-          depends  = pkgs.lib.optionals (!system.isWindows) [
+          depends = pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vector)
@@ -53,7 +53,7 @@
           ];
         };
         "reedsolomon-simple-decoder" = {
-          depends  = pkgs.lib.optionals (!system.isWindows) [
+          depends = pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vector)
@@ -64,7 +64,7 @@
           ];
         };
         "reedsolomon-simple-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -74,7 +74,7 @@
           ];
         };
         "reedsolomon-profiling" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.deepseq)
@@ -87,7 +87,7 @@
       };
       tests = {
         "reedsolomon-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.loop)
@@ -108,7 +108,7 @@
       };
       benchmarks = {
         "reedsolomon-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.vector)

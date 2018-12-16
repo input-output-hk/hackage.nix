@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell-src-exts)
           (hsPkgs.base)
         ];
       };
       exes = {
         "groom" = {
-          depends  = [
+          depends = [
             (hsPkgs.groom)
             (hsPkgs.base)
           ];

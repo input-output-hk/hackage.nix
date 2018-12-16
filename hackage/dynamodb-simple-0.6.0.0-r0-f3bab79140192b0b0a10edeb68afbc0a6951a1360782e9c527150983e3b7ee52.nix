@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.amazonka-dynamodb)
           (hsPkgs.generics-sop)
@@ -54,7 +54,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dynamodb-simple)
             (hsPkgs.hspec)

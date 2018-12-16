@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.mtl)
           (hsPkgs.convertible)
           (hsPkgs.utf8-string)
@@ -48,7 +48,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) (([
+          depends = pkgs.lib.optionals (flags.buildtests) (([
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.testpack)

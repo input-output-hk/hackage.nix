@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fix-imports" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

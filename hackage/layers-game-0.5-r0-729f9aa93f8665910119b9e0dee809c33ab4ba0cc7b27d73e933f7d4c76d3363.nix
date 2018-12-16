@@ -26,7 +26,7 @@
     components = {
       exes = {
         "layers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.pretty-show)

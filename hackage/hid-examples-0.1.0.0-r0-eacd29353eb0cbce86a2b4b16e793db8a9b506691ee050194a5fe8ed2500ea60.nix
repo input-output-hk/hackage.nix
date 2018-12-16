@@ -26,34 +26,34 @@
     components = {
       exes = {
         "locator" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "vocab1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
           ];
         };
         "vocab2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
           ];
         };
         "vocab3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
           ];
         };
         "showexpr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hint)
           ];
         };
         "stockquotes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.blaze-html)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "secrm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
           ];

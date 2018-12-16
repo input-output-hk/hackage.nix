@@ -26,14 +26,14 @@
     components = {
       exes = {
         "server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Pup-Events-Server)
             (hsPkgs.parsec)
           ];
         };
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Pup-Events-Client)
             (hsPkgs.stm)

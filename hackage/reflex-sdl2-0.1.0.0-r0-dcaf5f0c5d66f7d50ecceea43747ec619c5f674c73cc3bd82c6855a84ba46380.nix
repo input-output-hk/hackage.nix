@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dependent-sum)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       exes = {
         "reflex-sdl2-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reflex-sdl2)
           ];

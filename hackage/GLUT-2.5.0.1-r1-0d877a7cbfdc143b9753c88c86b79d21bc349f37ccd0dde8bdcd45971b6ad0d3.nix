@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.OpenGL)
           (hsPkgs.OpenGLRaw)
         ] ++ (if flags.split-base

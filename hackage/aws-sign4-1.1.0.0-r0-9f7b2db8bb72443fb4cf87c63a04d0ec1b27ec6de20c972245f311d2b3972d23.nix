@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aws)
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
@@ -41,7 +41,7 @@
       };
       tests = {
         "ets-sign4" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.aws)
             (hsPkgs.attempt)

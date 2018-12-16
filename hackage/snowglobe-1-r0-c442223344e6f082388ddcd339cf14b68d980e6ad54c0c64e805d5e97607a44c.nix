@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snowglobe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)

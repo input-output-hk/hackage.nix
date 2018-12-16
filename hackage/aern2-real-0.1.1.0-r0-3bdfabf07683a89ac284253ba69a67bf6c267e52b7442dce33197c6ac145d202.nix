@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.convertible)
@@ -42,7 +42,7 @@
       };
       exes = {
         "aern2-real-benchOp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mixed-types-num)
             (hsPkgs.aern2-mp)
@@ -54,7 +54,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aern2-real)
             (hsPkgs.hspec)

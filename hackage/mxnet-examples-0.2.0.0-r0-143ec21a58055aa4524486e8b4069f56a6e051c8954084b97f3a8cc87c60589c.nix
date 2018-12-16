@@ -26,13 +26,13 @@
     components = {
       exes = {
         "ndarray" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mxnet)
           ];
         };
         "symbol" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mxnet)
           ];

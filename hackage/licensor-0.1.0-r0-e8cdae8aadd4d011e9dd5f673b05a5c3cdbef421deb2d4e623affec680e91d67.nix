@@ -26,7 +26,7 @@
     components = {
       exes = {
         "licensor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

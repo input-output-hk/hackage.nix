@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.bytestring)
@@ -70,7 +70,7 @@
       };
       exes = {
         "cryptol" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -90,7 +90,7 @@
           ];
         };
         "cryptol-server" = {
-          depends  = pkgs.lib.optionals (flags.server) [
+          depends = pkgs.lib.optionals (flags.server) [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -111,7 +111,7 @@
       };
       benchmarks = {
         "cryptol-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.cryptol)

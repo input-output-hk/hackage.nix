@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.base)
           (hsPkgs.haskell98)
@@ -36,7 +36,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.base)
             (hsPkgs.haskell98)

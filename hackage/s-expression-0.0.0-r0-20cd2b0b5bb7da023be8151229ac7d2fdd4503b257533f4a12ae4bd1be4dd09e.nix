@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.derive-monoid)
           (hsPkgs.lens)
@@ -34,7 +34,7 @@
       };
       exes = {
         "example-s-expressions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.s-expression)
           ];

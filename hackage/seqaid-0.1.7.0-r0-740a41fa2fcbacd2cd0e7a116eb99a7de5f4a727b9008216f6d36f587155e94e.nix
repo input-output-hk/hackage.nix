@@ -36,7 +36,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.syb)
@@ -55,7 +55,7 @@
       };
       exes = {
         "seqaid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.temporary)
             (hsPkgs.directory)
@@ -63,7 +63,7 @@
           ];
         };
         "seqaidpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regex-base)
             (hsPkgs.regex-pcre)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.lifted-base)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-lifted-async" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.lifted-async)
@@ -56,7 +56,7 @@
           ];
         };
         "regression-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.lifted-async)
@@ -68,7 +68,7 @@
       };
       benchmarks = {
         "benchmark-lifted-async" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.criterion)
@@ -77,7 +77,7 @@
           ];
         };
         "benchmark-lifted-async-threaded" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.criterion)

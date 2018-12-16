@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.conduit)
           (hsPkgs.conduit-extra)
@@ -49,7 +49,7 @@
       };
       exes = {
         "find-hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit-find)
             (hsPkgs.conduit)
@@ -75,7 +75,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit-find)
             (hsPkgs.conduit)
@@ -99,7 +99,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

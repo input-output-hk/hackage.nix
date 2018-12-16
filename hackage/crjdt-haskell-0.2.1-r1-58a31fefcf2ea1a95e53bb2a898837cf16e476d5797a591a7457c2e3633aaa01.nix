@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       exes = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.crjdt-haskell)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "crjdt-haskell-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.crjdt-haskell)
             (hsPkgs.hspec)

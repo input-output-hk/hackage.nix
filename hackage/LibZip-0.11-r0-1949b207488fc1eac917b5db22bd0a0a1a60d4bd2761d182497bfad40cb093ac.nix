@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-libzip)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-libzip" = {
-          depends  = [
+          depends = [
             (hsPkgs.LibZip)
             (hsPkgs.base)
             (hsPkgs.bindings-libzip)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.pipes)
@@ -44,7 +44,7 @@
       };
       tests = {
         "btree-quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pipes)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "btree-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.b-tree)
             (hsPkgs.pipes)

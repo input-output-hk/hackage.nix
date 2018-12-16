@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -53,14 +53,14 @@
       };
       exes = {
         "ea-analyze" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ethereum-analyzer-cli)
             (hsPkgs.protolude)
           ];
         };
         "ea-bytecode-vis" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ethereum-analyzer-cli)
             (hsPkgs.hflags)
@@ -69,7 +69,7 @@
           ];
         };
         "ea-dump-contract" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ethereum-analyzer-cli)
             (hsPkgs.ethereum-analyzer-deps)

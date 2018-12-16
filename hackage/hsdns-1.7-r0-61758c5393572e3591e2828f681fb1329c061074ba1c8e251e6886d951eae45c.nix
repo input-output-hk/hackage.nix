@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.containers)
@@ -36,21 +36,21 @@
       };
       exes = {
         "adns-reverse-lookup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.hsdns)
           ];
         };
         "adns-srv-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.hsdns)
           ];
         };
         "adns-test-and-traverse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsdns)
           ];

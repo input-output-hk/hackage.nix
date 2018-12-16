@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
       };
       tests = {
         "rev-state-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rev-state)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
@@ -34,7 +34,7 @@
       };
       exes = {
         "SSTG-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SSTG)
             (hsPkgs.containers)
@@ -43,7 +43,7 @@
       };
       tests = {
         "SSTG-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SSTG)
             (hsPkgs.containers)

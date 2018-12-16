@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xmonad)
           (hsPkgs.xmonad-contrib)
@@ -38,13 +38,13 @@
       };
       exes = {
         "xmonad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xmonad-vanessa)
           ];
         };
         "getkb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xmonad-vanessa)
           ];

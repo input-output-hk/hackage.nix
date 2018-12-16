@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
           (hsPkgs.containers)
@@ -54,7 +54,7 @@
       };
       exes = {
         "haste-boot" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -71,7 +71,7 @@
           ];
         };
         "hastec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.ghc)
@@ -92,7 +92,7 @@
           ];
         };
         "haste-inst" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shellmate)
             (hsPkgs.ghc-paths)
@@ -101,7 +101,7 @@
           ];
         };
         "haste-pkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shellmate)
             (hsPkgs.ghc-paths)
@@ -111,7 +111,7 @@
           ];
         };
         "haste-install-his" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shellmate)
             (hsPkgs.ghc-paths)
@@ -120,7 +120,7 @@
           ];
         };
         "haste-copy-pkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shellmate)
             (hsPkgs.ghc-paths)
@@ -129,7 +129,7 @@
           ];
         };
         "haste-cat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shellmate)
             (hsPkgs.ghc-paths)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.network-uri-flag)
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
@@ -69,7 +69,7 @@
       };
       exes = {
         "hoogle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hoogle)
           ];

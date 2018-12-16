@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.optparse-applicative)
           (hsPkgs.criterion)
           (hsPkgs.statistics)
@@ -47,7 +47,7 @@
       };
       tests = {
         "internal-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.HTF)

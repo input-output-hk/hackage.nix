@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.megaparsec)
           (hsPkgs.scientific)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-coalpit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.coalpit)
             (hsPkgs.generic-random)

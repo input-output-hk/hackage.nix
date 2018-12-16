@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.Win32)
@@ -36,21 +36,21 @@
       };
       exes = {
         "win32-security-sid-lookup" = {
-          depends  = pkgs.lib.optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.Win32-security)
           ];
         };
         "win32-security-file-security" = {
-          depends  = pkgs.lib.optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.Win32-security)
           ];
         };
         "win32-security-get-process-sid" = {
-          depends  = pkgs.lib.optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs.base)
             (hsPkgs.Win32-security)
           ];

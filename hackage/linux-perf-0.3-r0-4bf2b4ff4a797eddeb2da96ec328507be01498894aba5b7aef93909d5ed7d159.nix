@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.mtl)
@@ -36,14 +36,14 @@
       };
       exes = {
         "dump-perf" = {
-          depends  = [
+          depends = [
             (hsPkgs.linux-perf)
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
         };
         "ghc-events-perf-record" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.directory)
@@ -51,7 +51,7 @@
           ];
         };
         "ghc-events-perf-sync" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-events)
             (hsPkgs.containers)
@@ -59,7 +59,7 @@
           ];
         };
         "ghc-events-perf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)
@@ -67,7 +67,7 @@
           ];
         };
         "count-events" = {
-          depends  = [
+          depends = [
             (hsPkgs.linux-perf)
             (hsPkgs.base)
           ];

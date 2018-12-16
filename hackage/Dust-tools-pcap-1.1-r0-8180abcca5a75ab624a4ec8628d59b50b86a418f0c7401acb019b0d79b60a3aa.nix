@@ -26,7 +26,7 @@
     components = {
       exes = {
         "replay-convert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust-crypto)
             (hsPkgs.Dust)
@@ -48,7 +48,7 @@
           ];
         };
         "update" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)
@@ -69,7 +69,7 @@
           ];
         };
         "export" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)
@@ -90,7 +90,7 @@
           ];
         };
         "show" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)

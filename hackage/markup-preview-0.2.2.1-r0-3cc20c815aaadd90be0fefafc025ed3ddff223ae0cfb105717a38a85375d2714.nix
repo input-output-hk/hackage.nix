@@ -26,7 +26,7 @@
     components = {
       exes = {
         "markup-preview" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk2hs-buildtools)
             (hsPkgs.gtk)

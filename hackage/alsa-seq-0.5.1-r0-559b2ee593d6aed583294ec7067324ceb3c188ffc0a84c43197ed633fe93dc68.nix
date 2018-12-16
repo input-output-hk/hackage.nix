@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.alsa-core)
           (hsPkgs.enumset)
           (hsPkgs.array)
@@ -43,7 +43,7 @@
       };
       exes = {
         "alsa-seq-dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.array)
@@ -52,7 +52,7 @@
           ];
         };
         "alsa-seq-send-note" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.array)
@@ -61,7 +61,7 @@
           ];
         };
         "alsa-seq-broadcast" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.array)
@@ -70,7 +70,7 @@
           ];
         };
         "alsa-seq-list-clients" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.array)
@@ -79,7 +79,7 @@
           ];
         };
         "alsa-seq-melody" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.array)
@@ -88,7 +88,7 @@
           ];
         };
         "alsa-seq-list-subscribers" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.enumset)
             (hsPkgs.array)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "sin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libltdl)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "CG" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.utf8-string)

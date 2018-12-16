@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "newman" = {
-          depends  = pkgs.lib.optionals (!(!flags.executables)) [
+          depends = pkgs.lib.optionals (!(!flags.executables)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers)
@@ -56,7 +56,7 @@
           ];
         };
         "newmanPretty" = {
-          depends  = pkgs.lib.optionals (!(!flags.executables)) [
+          depends = pkgs.lib.optionals (!(!flags.executables)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers)

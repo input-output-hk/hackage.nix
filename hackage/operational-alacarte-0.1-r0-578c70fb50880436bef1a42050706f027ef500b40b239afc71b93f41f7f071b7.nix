@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
       };
       tests = {
         "Examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.operational-alacarte)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Hipmunk)
           (hsPkgs.linear)
@@ -34,7 +34,7 @@
       };
       tests = {
         "Hipmunk-Utils-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Hipmunk-Utils)
           ];

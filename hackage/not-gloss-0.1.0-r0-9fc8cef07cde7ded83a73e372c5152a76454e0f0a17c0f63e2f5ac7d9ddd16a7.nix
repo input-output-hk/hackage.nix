@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GLUT)
           (hsPkgs.time)
@@ -35,7 +35,7 @@
       };
       exes = {
         "not-gloss-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.spatial-math)

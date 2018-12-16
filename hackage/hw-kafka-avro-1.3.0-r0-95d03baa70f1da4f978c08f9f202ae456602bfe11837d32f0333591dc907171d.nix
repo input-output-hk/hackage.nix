@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.avro)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       exes = {
         "kafka-avro-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.avro)
             (hsPkgs.base)
@@ -74,7 +74,7 @@
       };
       tests = {
         "kafka-avro-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.avro)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (compiler.isGhc && true && flags.gmp) [
           (hsPkgs.integer-gmp)
@@ -37,7 +37,7 @@
       };
       exes = {
         "bv-tester" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)

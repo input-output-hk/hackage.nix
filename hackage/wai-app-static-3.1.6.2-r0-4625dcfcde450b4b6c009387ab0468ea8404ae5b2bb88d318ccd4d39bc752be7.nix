@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai)
           (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       exes = {
         "warp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-app-static)
             (hsPkgs.directory)
@@ -68,7 +68,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.unix-compat)

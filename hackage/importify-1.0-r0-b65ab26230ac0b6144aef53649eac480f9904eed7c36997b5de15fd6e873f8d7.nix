@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -57,7 +57,7 @@
       };
       exes = {
         "importify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.importify)
             (hsPkgs.log-warper)
@@ -66,7 +66,7 @@
           ];
         };
         "golden-generator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.importify)
             (hsPkgs.text)
@@ -78,7 +78,7 @@
       };
       tests = {
         "importify-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.importify)
             (hsPkgs.filepath)

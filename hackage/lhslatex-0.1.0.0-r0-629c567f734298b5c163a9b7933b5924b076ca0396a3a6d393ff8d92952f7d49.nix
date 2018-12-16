@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lhslatex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

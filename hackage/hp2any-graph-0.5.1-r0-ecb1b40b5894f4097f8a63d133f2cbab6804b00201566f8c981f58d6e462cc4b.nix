@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hp2any-core)
           (hsPkgs.OpenGL)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hp2any-graph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)
@@ -49,7 +49,7 @@
           libs = [ (pkgs."glut") ];
         };
         "hp2any-relay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

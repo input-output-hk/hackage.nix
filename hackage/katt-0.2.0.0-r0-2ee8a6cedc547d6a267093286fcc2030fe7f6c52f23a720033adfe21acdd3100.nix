@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.blaze-builder)
           (hsPkgs.ConfigFile)
           (hsPkgs.directory)
@@ -47,7 +47,7 @@
       };
       exes = {
         "katt" = {
-          depends  = [
+          depends = [
             (hsPkgs.http-streams)
             (hsPkgs.HsOpenSSL)
             (hsPkgs.katt)
@@ -60,7 +60,7 @@
       };
       tests = {
         "test-katt-sourcehandler" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.http-streams)
             (hsPkgs.HsOpenSSL)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ];
       };
       tests = {
         "pvTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.persistent-vector)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "pvBench" = {
-          depends  = [
+          depends = [
             (hsPkgs.persistent-vector)
             (hsPkgs.base)
             (hsPkgs.containers)

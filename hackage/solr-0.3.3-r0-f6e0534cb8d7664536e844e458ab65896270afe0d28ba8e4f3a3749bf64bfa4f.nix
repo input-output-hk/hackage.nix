@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.http-response-decoder)
           (hsPkgs.http-client)
           (hsPkgs.uri-encode)

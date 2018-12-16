@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.Cabal)
@@ -54,7 +54,7 @@
       };
       exes = {
         "bishbosh" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bishbosh)
@@ -81,7 +81,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bishbosh)

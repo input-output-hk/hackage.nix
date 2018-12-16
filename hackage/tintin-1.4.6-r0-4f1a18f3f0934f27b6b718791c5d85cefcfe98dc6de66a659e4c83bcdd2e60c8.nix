@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.clay)
           (hsPkgs.data-has)
@@ -43,7 +43,7 @@
       };
       exes = {
         "tintin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-generic)
             (hsPkgs.require)
@@ -54,7 +54,7 @@
       };
       tests = {
         "tintin-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.require)
             (hsPkgs.tintin)

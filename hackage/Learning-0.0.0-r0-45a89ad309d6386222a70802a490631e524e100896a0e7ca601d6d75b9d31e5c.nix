@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       exes = {
         "Learning-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.Learning)
             (hsPkgs.base)
             (hsPkgs.hmatrix)
@@ -43,7 +43,7 @@
       };
       tests = {
         "Learning-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Learning)
             (hsPkgs.base)
             (hsPkgs.hmatrix)

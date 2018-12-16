@@ -26,7 +26,7 @@
     components = {
       exes = {
         "loopy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix)
             (hsPkgs.GoogleChart)

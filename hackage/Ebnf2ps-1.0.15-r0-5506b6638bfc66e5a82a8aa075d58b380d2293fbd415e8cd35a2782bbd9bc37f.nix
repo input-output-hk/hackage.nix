@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ebnf2ps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.old-time)

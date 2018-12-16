@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cblrepo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.filepath)

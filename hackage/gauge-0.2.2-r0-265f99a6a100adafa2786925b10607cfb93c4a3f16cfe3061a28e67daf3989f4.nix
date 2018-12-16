@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basement)
           (hsPkgs.deepseq)
@@ -36,7 +36,7 @@
       };
       tests = {
         "sanity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.gauge)
@@ -44,7 +44,7 @@
           ];
         };
         "cleanup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.gauge)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "self" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gauge)
           ];

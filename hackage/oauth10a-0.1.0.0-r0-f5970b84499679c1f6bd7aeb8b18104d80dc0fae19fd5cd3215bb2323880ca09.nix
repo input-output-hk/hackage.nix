@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "oauth10a-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.oauth10a)
             (hsPkgs.bytestring)

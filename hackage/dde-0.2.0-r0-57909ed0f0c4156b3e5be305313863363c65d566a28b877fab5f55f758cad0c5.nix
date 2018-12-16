@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.free-vector-spaces)
           (hsPkgs.lens)
@@ -35,7 +35,7 @@
       };
       exes = {
         "mackey-glass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dde)
             (hsPkgs.free-vector-spaces)
@@ -47,7 +47,7 @@
       };
       tests = {
         "dde-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dde)
             (hsPkgs.free-vector-spaces)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "dde-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.free-vector-spaces)

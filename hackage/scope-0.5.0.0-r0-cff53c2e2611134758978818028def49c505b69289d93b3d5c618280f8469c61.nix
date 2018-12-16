@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cairo)
           (hsPkgs.gtk)
           (hsPkgs.iteratee)
@@ -36,7 +36,7 @@
       };
       exes = {
         "scope" = {
-          depends  = [
+          depends = [
             (hsPkgs.cairo)
             (hsPkgs.containers)
             (hsPkgs.glib)

@@ -29,7 +29,7 @@
     components = {
       exes = {
         "cabal" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -63,7 +63,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

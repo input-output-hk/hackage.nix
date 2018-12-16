@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "conduit-tokenize-attoparsec-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.conduit)
@@ -47,7 +47,7 @@
       };
       tests = {
         "conduit-tokenize-attoparsec-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.conduit)

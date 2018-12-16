@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "migrate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base64-bytestring)
             (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.postgresql-simple)

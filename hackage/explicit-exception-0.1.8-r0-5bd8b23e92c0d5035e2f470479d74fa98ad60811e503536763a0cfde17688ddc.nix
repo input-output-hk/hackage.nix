@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.transformers)
           (hsPkgs.deepseq)
         ] ++ (if compiler.isJhc && true
@@ -45,13 +45,13 @@
       };
       exes = {
         "ee-tar" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.bytestring)
             (hsPkgs.tar)
           ];
         };
         "ee-test" = {
-          depends  = pkgs.lib.optional (flags.buildtests) (hsPkgs.bytestring);
+          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs.bytestring);
         };
         "ee-unzip" = {};
         "ee-writer" = {};

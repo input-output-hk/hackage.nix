@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lhs2TeX-hl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.haskell-src-exts)

@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.text)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.void);
       };
       exes = {
         "generate_readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prettyprinter)
             (hsPkgs.text)
@@ -44,13 +44,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prettyprinter)
             (hsPkgs.pgp-wordlist)
@@ -64,7 +64,7 @@
       };
       benchmarks = {
         "fusion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prettyprinter)
             (hsPkgs.criterion)
@@ -76,7 +76,7 @@
           ];
         };
         "faster-unsafe-text" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prettyprinter)
             (hsPkgs.criterion)
@@ -84,7 +84,7 @@
           ];
         };
         "large-output" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.prettyprinter)
             (hsPkgs.ansi-wl-pprint)

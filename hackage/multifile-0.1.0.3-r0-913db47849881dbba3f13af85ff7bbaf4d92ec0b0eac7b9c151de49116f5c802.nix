@@ -26,7 +26,7 @@
     components = {
       exes = {
         "multifile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaXml)
             (hsPkgs.directory)

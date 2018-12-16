@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.attoparsec-uri)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       exes = {
         "ws" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.attoparsec)
             (hsPkgs.attoparsec-uri)

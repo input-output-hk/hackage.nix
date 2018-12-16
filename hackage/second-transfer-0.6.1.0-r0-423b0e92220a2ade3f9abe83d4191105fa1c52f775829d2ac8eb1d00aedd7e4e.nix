@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.bytestring)
@@ -60,14 +60,14 @@
       };
       tests = {
         "compiling-ok" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.second-transfer)
             (hsPkgs.conduit)
           ];
         };
         "hunit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.lens)

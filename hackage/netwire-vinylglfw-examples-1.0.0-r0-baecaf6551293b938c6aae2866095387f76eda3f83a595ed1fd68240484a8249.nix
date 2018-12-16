@@ -26,7 +26,7 @@
     components = {
       exes = {
         "netwire-vinylglfw-style0" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.vinyl)
@@ -48,7 +48,7 @@
           ];
         };
         "netwire-vinylglfw-style1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.vinyl)
@@ -70,7 +70,7 @@
           ];
         };
         "netwire-vinylglfw-style2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.vinyl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.STL)
           (hsPkgs.cereal)
@@ -35,7 +35,7 @@
       };
       exes = {
         "house" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cube)
             (hsPkgs.STL)
@@ -48,7 +48,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cube)
             (hsPkgs.STL)

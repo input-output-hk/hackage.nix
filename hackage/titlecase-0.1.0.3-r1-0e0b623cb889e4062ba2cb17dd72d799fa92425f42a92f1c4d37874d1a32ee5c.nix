@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-markup)
           (hsPkgs.semigroups)
@@ -34,7 +34,7 @@
       };
       exes = {
         "titlecase" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-markup)
             (hsPkgs.semigroups)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-markup)
             (hsPkgs.semigroups)

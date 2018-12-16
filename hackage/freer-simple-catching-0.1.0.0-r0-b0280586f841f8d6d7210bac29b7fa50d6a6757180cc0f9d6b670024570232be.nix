@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.freer-simple)
         ];
       };
       tests = {
         "freer-simple-catching-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer-simple)
             (hsPkgs.freer-simple-catching)

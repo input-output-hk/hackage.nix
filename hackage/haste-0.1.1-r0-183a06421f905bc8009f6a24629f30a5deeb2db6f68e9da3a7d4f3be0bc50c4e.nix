@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haste" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.mtl)

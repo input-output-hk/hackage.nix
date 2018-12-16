@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HOpenCV)
           (hsPkgs.allocated-processor)
@@ -34,7 +34,7 @@
       };
       exes = {
         "test-cv-combinators" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HOpenCV)
             (hsPkgs.allocated-processor)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dsinf" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.random)

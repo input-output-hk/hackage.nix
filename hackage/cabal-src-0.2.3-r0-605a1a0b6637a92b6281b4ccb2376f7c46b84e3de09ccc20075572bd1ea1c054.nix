@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-src-install" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tar)
@@ -36,7 +36,7 @@
           ];
         };
         "mega-sdist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shelly)
             (hsPkgs.conduit)

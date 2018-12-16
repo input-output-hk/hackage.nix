@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -37,31 +37,31 @@
       };
       exes = {
         "hsc3-hash-at" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-rw)
           ];
         };
         "hsc3-hash-paren" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-rw)
           ];
         };
         "hsc3-id-rewrite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-rw)
           ];
         };
         "hsc3-id-clear" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-rw)
           ];
         };
         "hsc3-scsyndef-to-dot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.hsc3-dot)

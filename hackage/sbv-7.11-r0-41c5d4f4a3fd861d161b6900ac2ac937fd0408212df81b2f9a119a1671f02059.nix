@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.crackNum)
           (hsPkgs.ghc)
@@ -49,7 +49,7 @@
       };
       tests = {
         "SBVTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reinterpret-cast)
             (hsPkgs.filepath)
@@ -69,7 +69,7 @@
           ];
         };
         "SBVDocTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -88,7 +88,7 @@
           ];
         };
         "SBVHLint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

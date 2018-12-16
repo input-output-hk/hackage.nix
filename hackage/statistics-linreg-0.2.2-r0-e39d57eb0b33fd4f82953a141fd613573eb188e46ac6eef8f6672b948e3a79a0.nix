@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.statistics)
           (hsPkgs.vector)
           (hsPkgs.base)

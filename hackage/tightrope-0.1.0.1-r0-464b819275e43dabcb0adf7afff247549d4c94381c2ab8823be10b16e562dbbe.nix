@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.wai-extra)
           (hsPkgs.base)
           (hsPkgs.wai)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.blaze-html)
@@ -40,7 +40,7 @@
       };
       exes = {
         "heckle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.heckle)
             (hsPkgs.directory)

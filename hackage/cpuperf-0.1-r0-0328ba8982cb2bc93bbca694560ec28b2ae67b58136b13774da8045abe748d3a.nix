@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cpuperf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
           ];

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "ls-example-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-popen)
           ];

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HTTP)
           (hsPkgs.network)
           (hsPkgs.network-uri)
@@ -48,7 +48,7 @@
       };
       exes = {
         "infinite-httpd" = {
-          depends  = pkgs.lib.optional (flags.buildtestserver) (hsPkgs.httpd-shed);
+          depends = pkgs.lib.optional (flags.buildtestserver) (hsPkgs.httpd-shed);
         };
       };
     };

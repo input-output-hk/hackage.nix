@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.deepseq)
@@ -37,13 +37,13 @@
       };
       tests = {
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "haddock-coverage" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doc-coverage)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doc-coverage)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -52,7 +52,7 @@
           ];
         };
         "regression" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-regression)) [
+          depends = pkgs.lib.optionals (!(!flags.test-regression)) [
             (hsPkgs.base)
             (hsPkgs.Yampa)
           ];

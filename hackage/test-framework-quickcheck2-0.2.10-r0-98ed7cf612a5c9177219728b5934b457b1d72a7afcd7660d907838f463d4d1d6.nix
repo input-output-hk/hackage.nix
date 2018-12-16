@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.test-framework)
           (hsPkgs.QuickCheck)
           (hsPkgs.extensible-exceptions)

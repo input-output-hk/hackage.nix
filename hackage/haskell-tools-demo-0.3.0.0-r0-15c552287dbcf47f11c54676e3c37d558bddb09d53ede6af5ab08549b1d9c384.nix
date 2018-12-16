@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskell-tools-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.transformers)

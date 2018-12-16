@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhc && compiler.version.lt "7.10"
+        depends = if compiler.isGhc && compiler.version.lt "7.10"
           then [
             (hsPkgs.base)
             (hsPkgs.composition-prelude)
@@ -43,7 +43,7 @@
       };
       tests = {
         "fast-arithmetic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-arithmetic)
             (hsPkgs.hspec)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "fast-arithmetic-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-arithmetic)
             (hsPkgs.criterion)

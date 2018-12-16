@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-cmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmark)
             (hsPkgs.text)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "bench-cmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.cmark)

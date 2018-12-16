@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.pretty)
           (hsPkgs.template-haskell)
         ] ++ (if flags.syb-in-base
@@ -41,7 +41,7 @@
       };
       exes = {
         "MonadLoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell-src-exts)
           ];
         };

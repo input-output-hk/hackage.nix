@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.transformers)
@@ -39,7 +39,7 @@
       };
       tests = {
         "environment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.text)
@@ -48,7 +48,7 @@
           ];
         };
         "calculator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
@@ -56,7 +56,7 @@
           ];
         };
         "prefix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
@@ -64,7 +64,7 @@
           ];
         };
         "multiple_scenarios" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
@@ -72,7 +72,7 @@
           ];
         };
         "background_and_multiple_scenarios" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
@@ -80,7 +80,7 @@
           ];
         };
         "multiple_features" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
@@ -88,7 +88,7 @@
           ];
         };
         "should_fail" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
@@ -96,7 +96,7 @@
           ];
         };
         "background_fail" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)

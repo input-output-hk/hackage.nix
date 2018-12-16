@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -47,7 +47,7 @@
       };
       exes = {
         "tmdb" = {
-          depends  = [
+          depends = [
             (hsPkgs.themoviedb)
             (hsPkgs.base)
             (hsPkgs.unix)
@@ -63,7 +63,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.themoviedb)

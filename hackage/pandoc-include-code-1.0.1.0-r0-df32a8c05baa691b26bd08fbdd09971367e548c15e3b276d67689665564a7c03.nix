@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)
           (hsPkgs.process)
@@ -36,7 +36,7 @@
       };
       exes = {
         "pandoc-include-code" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
             (hsPkgs.pandoc-include-code)
@@ -45,7 +45,7 @@
       };
       tests = {
         "filter-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
             (hsPkgs.pandoc-include-code)

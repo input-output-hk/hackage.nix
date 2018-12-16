@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.shelly)
           (hsPkgs.extra)
@@ -34,7 +34,7 @@
       };
       exes = {
         "vcatt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vcatt)
             (hsPkgs.shelly)

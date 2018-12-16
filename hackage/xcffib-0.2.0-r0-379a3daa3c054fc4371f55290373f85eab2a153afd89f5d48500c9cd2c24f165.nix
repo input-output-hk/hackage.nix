@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xcb-types)
           (hsPkgs.language-python)
@@ -40,7 +40,7 @@
       };
       exes = {
         "xcffibgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xcffib)
             (hsPkgs.language-python)
@@ -59,7 +59,7 @@
       };
       tests = {
         "PyHelpersTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xcffib)
             (hsPkgs.language-python)
@@ -69,7 +69,7 @@
           ];
         };
         "GeneratorTests.hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xcffib)
             (hsPkgs.xcb-types)

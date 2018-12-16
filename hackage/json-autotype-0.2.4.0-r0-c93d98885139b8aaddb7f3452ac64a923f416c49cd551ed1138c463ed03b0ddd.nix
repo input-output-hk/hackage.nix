@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GenericPretty)
           (hsPkgs.MissingH)
@@ -48,7 +48,7 @@
       };
       exes = {
         "json-autotype" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GenericPretty)
             (hsPkgs.MissingH)

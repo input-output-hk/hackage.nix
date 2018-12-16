@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ascii)
           (hsPkgs.attempt)
           (hsPkgs.attoparsec)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-time-http" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.ascii)
             (hsPkgs.attempt)

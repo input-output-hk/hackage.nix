@@ -26,7 +26,7 @@
     components = {
       exes = {
         "google-html5-slide" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.syb)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.data-ref)
           (hsPkgs.transformers)
           (hsPkgs.semigroups)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-unique-logic" = {
-          depends  = [
+          depends = [
             (hsPkgs.unique-logic-tf)
             (hsPkgs.QuickCheck)
             (hsPkgs.non-empty)

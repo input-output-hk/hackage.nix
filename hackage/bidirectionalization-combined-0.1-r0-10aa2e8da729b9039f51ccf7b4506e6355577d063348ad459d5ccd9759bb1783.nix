@@ -26,7 +26,7 @@
     components = {
       exes = {
         "b18n-combined" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.template-haskell)
@@ -36,7 +36,7 @@
           ];
         };
         "b18n-combined-cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.template-haskell)

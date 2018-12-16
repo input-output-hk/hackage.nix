@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random-shuffle)
         ];
       };
       exes = {
         "java-poker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.java-poker)
           ];

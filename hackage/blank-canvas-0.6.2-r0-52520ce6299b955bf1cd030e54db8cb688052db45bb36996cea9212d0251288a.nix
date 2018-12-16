@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base64-bytestring)
           (hsPkgs.base)
@@ -51,7 +51,7 @@
       };
       tests = {
         "wiki-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blank-canvas)
             (hsPkgs.containers)

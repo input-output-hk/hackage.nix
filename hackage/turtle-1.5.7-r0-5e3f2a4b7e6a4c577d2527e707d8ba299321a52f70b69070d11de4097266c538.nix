@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.async)
@@ -55,25 +55,25 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "regression-broken-pipe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.turtle)
           ];
         };
         "regression-masking-exception" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.turtle)
           ];
         };
         "cptree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.temporary)
             (hsPkgs.system-filepath)
@@ -83,7 +83,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.turtle)

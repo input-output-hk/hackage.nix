@@ -26,7 +26,7 @@
     components = {
       exes = {
         "activehs" = {
-          depends  = [
+          depends = [
             (hsPkgs.hoogle)
             (hsPkgs.dia-base)
             (hsPkgs.dia-functions)

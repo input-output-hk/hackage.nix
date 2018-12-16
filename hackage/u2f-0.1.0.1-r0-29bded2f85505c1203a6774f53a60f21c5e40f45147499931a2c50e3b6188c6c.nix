@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cryptonite)
           (hsPkgs.binary)
@@ -40,7 +40,7 @@
       };
       tests = {
         "hspec-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.u2f)

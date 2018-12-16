@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pipeclip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.editor-open)

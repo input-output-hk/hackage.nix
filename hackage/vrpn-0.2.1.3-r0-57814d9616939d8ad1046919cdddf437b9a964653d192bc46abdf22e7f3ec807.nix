@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = if flags.quatstatic
           then [
             (pkgs."vrpn")
@@ -39,7 +39,7 @@
       };
       exes = {
         "test-vrpn" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [
             (pkgs."vrpn")
             (pkgs."stdc++")

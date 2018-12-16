@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.bindings-cctools)
           (hsPkgs.lens)
           (hsPkgs.unix)

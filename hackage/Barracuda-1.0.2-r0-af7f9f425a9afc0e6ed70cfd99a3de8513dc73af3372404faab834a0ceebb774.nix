@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Crypto)
           (hsPkgs.HaXml)
@@ -55,7 +55,7 @@
       };
       exes = {
         "Barracuda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Crypto)
             (hsPkgs.HaXml)

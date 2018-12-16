@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ];
       };
       tests = {
         "testIteratee" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.splaytree)
             (hsPkgs.containers)

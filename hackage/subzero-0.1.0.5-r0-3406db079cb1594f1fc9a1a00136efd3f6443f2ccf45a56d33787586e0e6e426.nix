@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "subzero-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.subzero)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.http-api-data)
@@ -42,13 +42,13 @@
       };
       tests = {
         "yahoo-finance-api-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yahoo-finance-api)
           ];
         };
         "yahoo-finance-api-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)

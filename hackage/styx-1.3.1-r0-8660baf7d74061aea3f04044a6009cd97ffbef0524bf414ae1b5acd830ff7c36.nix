@@ -26,7 +26,7 @@
     components = {
       exes = {
         "styx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.yaml)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-accessor)
           (hsPkgs.distributed-process)
@@ -50,7 +50,7 @@
       };
       tests = {
         "ManagedProcessTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -76,7 +76,7 @@
           ];
         };
         "PrioritisedProcessTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)

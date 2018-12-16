@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.natural-transformation)
           (hsPkgs.transformers-base)
@@ -33,7 +33,7 @@
       };
       exes = {
         "freer-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer-simple)
           ];
@@ -41,7 +41,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.freer-simple)
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.extensible-effects)

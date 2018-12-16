@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.andromeda)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       exes = {
         "liveplot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mvc)
             (hsPkgs.pipes)
@@ -60,7 +60,7 @@
           ];
         };
         "liveplot-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.liveplot)
           ];

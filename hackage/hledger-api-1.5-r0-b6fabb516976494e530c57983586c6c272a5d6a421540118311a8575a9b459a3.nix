@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hledger-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.aeson)
             (hsPkgs.base)

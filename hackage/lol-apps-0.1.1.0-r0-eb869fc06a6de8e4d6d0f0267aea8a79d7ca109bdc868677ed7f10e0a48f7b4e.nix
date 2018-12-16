@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.lol)
@@ -38,7 +38,7 @@
       };
       exes = {
         "simpleSHE" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.lol)
@@ -50,7 +50,7 @@
       };
       tests = {
         "test-apps" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.constraints)
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "bench-apps" = {
-          depends  = [
+          depends = [
             (hsPkgs.arithmoi)
             (hsPkgs.base)
             (hsPkgs.criterion)

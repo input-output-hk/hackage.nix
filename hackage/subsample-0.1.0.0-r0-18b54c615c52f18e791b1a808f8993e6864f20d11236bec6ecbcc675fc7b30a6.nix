@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.random-fu)
@@ -35,7 +35,7 @@
       };
       exes = {
         "subsample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.subsample)
             (hsPkgs.bytestring)

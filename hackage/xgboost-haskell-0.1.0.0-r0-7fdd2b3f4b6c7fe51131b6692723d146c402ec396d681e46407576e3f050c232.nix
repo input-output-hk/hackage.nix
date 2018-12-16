@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foundation)
         ];
       };
       exes = {
         "xgboost-app" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foundation)
             (hsPkgs.xgboost-haskell)
@@ -40,7 +40,7 @@
           libs = [ (pkgs."xgboost") ];
         };
         "xgb-agaricus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foundation)
             (hsPkgs.xgboost-haskell)

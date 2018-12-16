@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql)
           (hsPkgs.postgresql-error-codes)
           (hsPkgs.bytestring-tree-builder)

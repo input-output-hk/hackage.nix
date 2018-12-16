@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.pipes)
           (hsPkgs.pipes-bytestring)
           (hsPkgs.pipes-cereal-plus)
@@ -59,7 +59,7 @@
       };
       tests = {
         "remotion-htf-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.remotion)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)

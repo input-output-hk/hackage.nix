@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((([
+        depends = (((((([
           (hsPkgs.Cabal)
           (hsPkgs.Diff)
           (hsPkgs.array)
@@ -97,7 +97,7 @@
       };
       exes = {
         "parserTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -107,7 +107,7 @@
           ];
         };
         "yi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yi)
           ];
@@ -118,7 +118,7 @@
       };
       tests = {
         "test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

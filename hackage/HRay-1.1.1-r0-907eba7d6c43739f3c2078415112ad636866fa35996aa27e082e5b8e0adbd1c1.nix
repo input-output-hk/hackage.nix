@@ -26,7 +26,7 @@
     components = {
       exes = {
         "HRay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.directory)

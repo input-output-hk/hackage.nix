@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.mersenne-random-pure64)
@@ -37,7 +37,7 @@
       };
       exes = {
         "approx_rand_test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.approx-rand-test)
             (hsPkgs.Chart)
@@ -62,7 +62,7 @@
             ]);
         };
         "approx_rand_test_paired" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.approx-rand-test)
             (hsPkgs.Chart)
@@ -89,7 +89,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.approx-rand-test)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "doccheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.text)

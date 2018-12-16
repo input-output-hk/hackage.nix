@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -55,7 +55,7 @@
       };
       tests = {
         "signature-v4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.aws-general)

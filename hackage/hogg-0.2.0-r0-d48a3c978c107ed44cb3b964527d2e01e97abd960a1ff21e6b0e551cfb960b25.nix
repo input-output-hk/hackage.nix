@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.fps)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hogg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fps)
             (hsPkgs.mtl)
@@ -42,7 +42,7 @@
           ];
         };
         "ListMergeTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fps)
             (hsPkgs.mtl)

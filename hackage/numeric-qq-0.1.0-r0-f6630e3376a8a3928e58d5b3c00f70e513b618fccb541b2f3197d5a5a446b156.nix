@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.template-haskell)
           (hsPkgs.loch-th)
           (hsPkgs.placeholders)
@@ -34,7 +34,7 @@
       };
       tests = {
         "internal-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.template-haskell)
             (hsPkgs.loch-th)

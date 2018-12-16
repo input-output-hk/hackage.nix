@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "scrypt-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.scrypt)
             (hsPkgs.base)
             (hsPkgs.bytestring)

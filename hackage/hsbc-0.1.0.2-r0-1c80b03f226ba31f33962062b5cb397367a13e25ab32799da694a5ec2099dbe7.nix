@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsbc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)

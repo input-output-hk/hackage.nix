@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.sbv)
           (hsPkgs.base)
           (hsPkgs.containers)

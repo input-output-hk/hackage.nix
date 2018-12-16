@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
         ];
       };
       exes = {
         "base-compat-migrate-generate" = {
-          depends  = pkgs.lib.optionals (flags.exe) [
+          depends = pkgs.lib.optionals (flags.exe) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.bytestring)

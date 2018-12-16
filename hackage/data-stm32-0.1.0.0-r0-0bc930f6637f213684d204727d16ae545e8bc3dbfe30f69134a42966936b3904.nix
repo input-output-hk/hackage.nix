@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       exes = {
         "mxmcu" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -53,7 +53,7 @@
           ];
         };
         "stm32-reference-pdf" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -67,7 +67,7 @@
           ];
         };
         "svdparse" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -83,7 +83,7 @@
       };
       tests = {
         "data-cubemx-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

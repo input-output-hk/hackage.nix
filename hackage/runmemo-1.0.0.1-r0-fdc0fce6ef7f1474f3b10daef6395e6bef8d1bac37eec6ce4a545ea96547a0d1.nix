@@ -27,7 +27,7 @@
       "library" = {};
       tests = {
         "test-race" = {
-          depends  = [
+          depends = [
             (hsPkgs.data-memocombinators)
             (hsPkgs.base)
             (hsPkgs.time)

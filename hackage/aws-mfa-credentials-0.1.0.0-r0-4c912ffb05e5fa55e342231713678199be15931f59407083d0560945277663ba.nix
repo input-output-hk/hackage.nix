@@ -26,7 +26,7 @@
     components = {
       exes = {
         "aws-mfa-credentials" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.optparse-text)

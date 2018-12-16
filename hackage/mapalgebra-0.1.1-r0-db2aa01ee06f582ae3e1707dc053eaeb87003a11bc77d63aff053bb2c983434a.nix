@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       tests = {
         "mapalgebra-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit-approx)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "mapalgebra-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

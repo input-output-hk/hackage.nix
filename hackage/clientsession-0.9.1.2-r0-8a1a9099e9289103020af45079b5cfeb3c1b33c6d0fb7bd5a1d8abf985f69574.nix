@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -43,7 +43,7 @@
       };
       exes = {
         "clientsession-generate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clientsession)
           ];
@@ -51,7 +51,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)

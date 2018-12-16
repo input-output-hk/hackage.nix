@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc)
           (hsPkgs.pandoc-types)
@@ -41,7 +41,7 @@
       };
       exes = {
         "gitit" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.pretty)
@@ -100,7 +100,7 @@
           ];
         };
         "expireGititCache" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.url)

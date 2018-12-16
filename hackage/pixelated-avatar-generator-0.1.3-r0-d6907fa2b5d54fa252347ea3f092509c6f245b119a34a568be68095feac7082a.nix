@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.JuicyPixels)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       exes = {
         "pixelated-avatar-generator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pixelated-avatar-generator)
             (hsPkgs.cli)
@@ -46,7 +46,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.JuicyPixels)
             (hsPkgs.bytestring)

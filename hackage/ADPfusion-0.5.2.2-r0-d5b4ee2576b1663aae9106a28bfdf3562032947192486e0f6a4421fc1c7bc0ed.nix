@@ -33,7 +33,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bits)
           (hsPkgs.containers)
@@ -54,7 +54,7 @@
       };
       exes = {
         "NeedlemanWunsch" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.primitive)
@@ -64,7 +64,7 @@
           ];
         };
         "spectest" = {
-          depends  = pkgs.lib.optionals (flags.spectest) [
+          depends = pkgs.lib.optionals (flags.spectest) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.PrimitiveArray)
@@ -75,7 +75,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.bits)
@@ -92,7 +92,7 @@
       };
       benchmarks = {
         "TestBacktrackingStructures" = {
-          depends  = pkgs.lib.optionals (flags.btstruc) [
+          depends = pkgs.lib.optionals (flags.btstruc) [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.fmlist)

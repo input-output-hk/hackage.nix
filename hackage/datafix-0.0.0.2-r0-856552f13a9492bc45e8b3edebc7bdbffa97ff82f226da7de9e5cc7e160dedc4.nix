@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.cabal-toolkit)
@@ -58,7 +58,7 @@
           ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs.lattices)) ++ pkgs.lib.optional (flags.no-lattices) (hsPkgs.pomaps);
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.cabal-toolkit)

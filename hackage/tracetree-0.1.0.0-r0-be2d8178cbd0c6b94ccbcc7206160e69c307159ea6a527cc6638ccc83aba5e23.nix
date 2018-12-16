@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "ttrender" = {
-          depends  = pkgs.lib.optionals (flags.ttrender) [
+          depends = pkgs.lib.optionals (flags.ttrender) [
             (hsPkgs.base)
             (hsPkgs.colour)
             (hsPkgs.json)

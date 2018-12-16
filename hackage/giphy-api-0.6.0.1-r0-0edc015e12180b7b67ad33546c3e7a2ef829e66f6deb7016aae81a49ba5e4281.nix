@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       exes = {
         "giphy-search" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-uri)
             (hsPkgs.text)
@@ -59,7 +59,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.basic-prelude)

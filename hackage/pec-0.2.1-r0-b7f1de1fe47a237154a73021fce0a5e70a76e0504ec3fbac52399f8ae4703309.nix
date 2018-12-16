@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.grm)
@@ -43,7 +43,7 @@
       };
       exes = {
         "pecgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.pec)
             (hsPkgs.base)
             (hsPkgs.derive)
@@ -61,7 +61,7 @@
           ];
         };
         "pec" = {
-          depends  = [
+          depends = [
             (hsPkgs.pec)
             (hsPkgs.base)
             (hsPkgs.old-time)
@@ -80,7 +80,7 @@
           ];
         };
         "pecgencnt" = {
-          depends  = [
+          depends = [
             (hsPkgs.pec)
             (hsPkgs.base)
             (hsPkgs.derive)

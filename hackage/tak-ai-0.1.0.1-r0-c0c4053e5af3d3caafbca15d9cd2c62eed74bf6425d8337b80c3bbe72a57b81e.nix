@@ -26,7 +26,7 @@
     components = {
       exes = {
         "takky" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tak)
             (hsPkgs.random-shuffle)
@@ -35,7 +35,7 @@
       };
       tests = {
         "takky-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tak)
             (hsPkgs.random-shuffle)

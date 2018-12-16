@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       exes = {
         "ogmarkup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ogmarkup)
             (hsPkgs.parsec)
@@ -46,7 +46,7 @@
       };
       tests = {
         "ogmadown-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.ogmarkup)

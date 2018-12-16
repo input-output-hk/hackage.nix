@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.highjson)
           (hsPkgs.swagger2)
@@ -37,7 +37,7 @@
       };
       tests = {
         "highjson-swagger-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.highjson)

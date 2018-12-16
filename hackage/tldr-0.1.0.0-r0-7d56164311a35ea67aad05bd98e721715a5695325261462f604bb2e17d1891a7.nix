@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmark)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       exes = {
         "tldr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tldr)
             (hsPkgs.optparse-applicative)
@@ -47,7 +47,7 @@
       };
       tests = {
         "tldr-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tldr)
           ];

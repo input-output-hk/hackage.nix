@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ddc-war" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.stm)

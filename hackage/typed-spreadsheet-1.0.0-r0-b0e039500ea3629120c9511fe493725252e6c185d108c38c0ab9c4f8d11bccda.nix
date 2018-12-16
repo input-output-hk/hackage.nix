@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.foldl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "typed-spreadsheet-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-spreadsheet)
             (hsPkgs.text)

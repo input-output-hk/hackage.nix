@@ -25,44 +25,44 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
           ];
         };
         "types" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
           ];
         };
         "tiers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
           ];
         };
         "operators" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
           ];
         };
         "derive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
           ];
         };
         "error" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
           ];

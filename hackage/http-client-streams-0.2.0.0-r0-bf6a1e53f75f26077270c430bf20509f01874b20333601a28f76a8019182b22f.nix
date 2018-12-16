@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HsOpenSSL)
           (hsPkgs.base)
           (hsPkgs.bytestring)

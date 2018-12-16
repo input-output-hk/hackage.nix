@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "adp-multi-benchmarks" = {
-          depends  = pkgs.lib.optionals (!(!flags.buildbenchmark)) [
+          depends = pkgs.lib.optionals (!(!flags.buildbenchmark)) [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -56,7 +56,7 @@
           ];
         };
         "adp-test" = {
-          depends  = pkgs.lib.optionals (!(!flags.buildtests)) [
+          depends = pkgs.lib.optionals (!(!flags.buildtests)) [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -73,7 +73,7 @@
       };
       tests = {
         "MainTestSuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)

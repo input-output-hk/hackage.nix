@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.containers)
@@ -42,13 +42,13 @@
           libs = [ (pkgs."cmph") ];
         };
         "benchmark_trie" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring-trie)
           ];
           libs = [ (pkgs."cmph") ];
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
           ];

@@ -27,11 +27,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "hsyslog-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsyslog)
             (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "hsyslog-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsyslog)
             (hsPkgs.base)
             (hsPkgs.doctest)

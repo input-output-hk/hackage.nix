@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.microlens)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs.contravariant);

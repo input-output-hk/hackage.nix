@@ -26,7 +26,7 @@
     components = {
       exes = {
         "unmed2" = {
-          depends  = [
+          depends = [
             (hsPkgs.storable-endian)
             (hsPkgs.utility-ht)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "harmtrace" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.mtl)

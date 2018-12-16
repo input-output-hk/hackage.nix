@@ -26,7 +26,7 @@
     components = {
       exes = {
         "credentials" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.amazonka)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -36,7 +36,7 @@
       };
       tests = {
         "odpic-raw-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.odpic-raw)
             (hsPkgs.hspec)

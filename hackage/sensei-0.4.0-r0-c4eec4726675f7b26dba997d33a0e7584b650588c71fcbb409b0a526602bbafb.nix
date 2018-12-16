@@ -26,7 +26,7 @@
     components = {
       exes = {
         "seito" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -47,7 +47,7 @@
           ];
         };
         "sensei" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -68,7 +68,7 @@
           ];
         };
         "sensei-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.base-compat)
@@ -91,7 +91,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.base-compat)

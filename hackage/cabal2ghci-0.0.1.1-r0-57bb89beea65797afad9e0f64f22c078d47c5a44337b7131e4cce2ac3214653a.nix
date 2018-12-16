@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2ghci" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.system-filepath)

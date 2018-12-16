@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "linked-list-with-iterator-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.linked-list-with-iterator)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "html2hamlet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

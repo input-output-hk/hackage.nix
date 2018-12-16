@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpage" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.mtl)
             (hsPkgs.MonadCatchIO-mtl)

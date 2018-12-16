@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector-space)
           (hsPkgs.hmatrix)
@@ -37,21 +37,21 @@
       };
       exes = {
         "learn-physics-PlaneWave" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-eFieldLine3D" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-LorentzForceSimulation" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
@@ -59,35 +59,35 @@
           ];
         };
         "learn-physics-BCircularLoop" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-sunEarth" = {
-          depends  = [
+          depends = [
             (hsPkgs.gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-eFieldLine2D" = {
-          depends  = [
+          depends = [
             (hsPkgs.gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-Projectile" = {
-          depends  = [
+          depends = [
             (hsPkgs.gnuplot)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-NMR" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];

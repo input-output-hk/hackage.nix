@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sizes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)

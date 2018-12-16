@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       exes = {
         "demo" = {
-          depends  = pkgs.lib.optionals (flags.demo) [
+          depends = pkgs.lib.optionals (flags.demo) [
             (hsPkgs.base)
             (hsPkgs.json-rpc-server)
             (hsPkgs.mtl)
@@ -47,7 +47,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.json-rpc-server)
             (hsPkgs.HUnit)

@@ -30,7 +30,7 @@
     components = {
       exes = {
         "bustle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cairo)
@@ -57,7 +57,7 @@
           ];
         };
         "dump-messages" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -73,7 +73,7 @@
       };
       tests = {
         "test-pcap-crash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -87,13 +87,13 @@
           ];
         };
         "test-regions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
           ];
         };
         "test-renderer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cairo)
             (hsPkgs.containers)

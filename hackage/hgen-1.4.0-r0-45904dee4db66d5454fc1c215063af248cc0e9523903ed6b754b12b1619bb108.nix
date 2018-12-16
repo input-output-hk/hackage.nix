@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.random)

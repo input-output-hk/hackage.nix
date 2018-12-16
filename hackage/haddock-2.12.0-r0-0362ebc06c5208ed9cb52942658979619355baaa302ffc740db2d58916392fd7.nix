@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.directory)
@@ -47,7 +47,7 @@
       };
       exes = {
         "haddock" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -67,7 +67,7 @@
       };
       tests = {
         "html-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

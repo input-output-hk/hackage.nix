@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
           (hsPkgs.amazonka-autoscaling)

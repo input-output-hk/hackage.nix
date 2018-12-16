@@ -26,7 +26,7 @@
     components = {
       exes = {
         "urembed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.language-javascript)

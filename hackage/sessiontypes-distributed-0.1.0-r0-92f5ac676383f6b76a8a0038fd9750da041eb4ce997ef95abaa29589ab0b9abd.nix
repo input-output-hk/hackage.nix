@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sessiontypes)
           (hsPkgs.binary)
@@ -38,7 +38,7 @@
       };
       tests = {
         "sessiontypes-distributed-spawn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sessiontypes-distributed)
             (hsPkgs.sessiontypes)
@@ -48,7 +48,7 @@
           ];
         };
         "sessiontypes-distributed-lifted" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sessiontypes-distributed)
             (hsPkgs.sessiontypes)

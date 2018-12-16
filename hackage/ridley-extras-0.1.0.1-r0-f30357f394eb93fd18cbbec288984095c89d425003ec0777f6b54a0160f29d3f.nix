@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.prometheus)
@@ -39,7 +39,7 @@
       };
       tests = {
         "ridley-extras-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ridley-extras)
           ];

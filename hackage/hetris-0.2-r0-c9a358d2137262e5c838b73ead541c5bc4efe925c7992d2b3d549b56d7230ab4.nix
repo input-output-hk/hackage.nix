@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hetris" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.array)

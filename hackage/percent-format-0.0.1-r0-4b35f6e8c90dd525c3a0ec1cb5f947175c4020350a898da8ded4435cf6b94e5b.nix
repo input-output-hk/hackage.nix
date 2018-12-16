@@ -25,46 +25,46 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "number" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.percent-format)
             (hsPkgs.leancheck)
           ];
         };
         "scientific" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.percent-format)
             (hsPkgs.leancheck)
           ];
         };
         "prop" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.percent-format)
             (hsPkgs.leancheck)
           ];
         };
         "quotient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.percent-format)
             (hsPkgs.leancheck)
           ];
         };
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.percent-format)
             (hsPkgs.leancheck)
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.percent-format)
             (hsPkgs.leancheck)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.array)
           (hsPkgs.async)
@@ -61,7 +61,7 @@
       };
       exes = {
         "mediabus-demo-rtp-alaw-player" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -87,7 +87,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
             (hsPkgs.async)

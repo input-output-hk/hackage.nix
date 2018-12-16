@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Spock)
           (hsPkgs.HTF)
@@ -41,7 +41,7 @@
       };
       tests = {
         "SpockWorkerTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Spock)
             (hsPkgs.HTF)

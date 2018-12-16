@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-fixture-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-fixture)
             (hsPkgs.hspec)

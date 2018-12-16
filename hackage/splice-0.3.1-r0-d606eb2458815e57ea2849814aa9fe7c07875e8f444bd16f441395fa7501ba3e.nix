@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if system.isLinux && !flags.portable
+        depends = if system.isLinux && !flags.portable
           then [
             (hsPkgs.base)
             (hsPkgs.network)

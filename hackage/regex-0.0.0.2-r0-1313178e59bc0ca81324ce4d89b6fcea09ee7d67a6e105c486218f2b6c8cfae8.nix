@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.bytestring)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       exes = {
         "re-gen-modules" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -62,7 +62,7 @@
           ];
         };
         "re-include" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -72,7 +72,7 @@
           ];
         };
         "re-nginx-log-processor" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -88,7 +88,7 @@
           ];
         };
         "re-pp" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -98,7 +98,7 @@
           ];
         };
         "re-tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -126,7 +126,7 @@
       };
       tests = {
         "re-gen-modules-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -139,7 +139,7 @@
           ];
         };
         "re-include-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -149,7 +149,7 @@
           ];
         };
         "re-nginx-log-processor-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -165,7 +165,7 @@
           ];
         };
         "re-pp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -175,7 +175,7 @@
           ];
         };
         "re-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -193,7 +193,7 @@
           ];
         };
         "re-tutorial-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex)
             (hsPkgs.array)
             (hsPkgs.bytestring)

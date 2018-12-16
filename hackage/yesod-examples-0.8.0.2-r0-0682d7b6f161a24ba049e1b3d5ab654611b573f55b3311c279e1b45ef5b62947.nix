@@ -26,21 +26,21 @@
     components = {
       exes = {
         "blog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
           ];
         };
         "ajax" = {
-          depends  = [
+          depends = [
             (hsPkgs.yesod-static)
           ];
         };
         "file-echo" = {
-          depends  = [ (hsPkgs.text) ];
+          depends = [ (hsPkgs.text) ];
         };
         "pretty-yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.data-object-yaml)
             (hsPkgs.data-object)
             (hsPkgs.bytestring)
@@ -49,24 +49,24 @@
         "i18n" = {};
         "session" = {};
         "widgets" = {
-          depends  = [
+          depends = [
             (hsPkgs.yesod-form)
           ];
         };
         "generalized-hamlet" = {};
         "form" = {};
         "persistent-synopsis" = {
-          depends  = [
+          depends = [
             (hsPkgs.transformers)
             (hsPkgs.persistent-sqlite)
             (hsPkgs.persistent-template)
           ];
         };
         "hamlet-synopsis" = {
-          depends  = [ (hsPkgs.hamlet) ];
+          depends = [ (hsPkgs.hamlet) ];
         };
         "chat" = {
-          depends  = [ (hsPkgs.stm) ];
+          depends = [ (hsPkgs.stm) ];
         };
       };
     };

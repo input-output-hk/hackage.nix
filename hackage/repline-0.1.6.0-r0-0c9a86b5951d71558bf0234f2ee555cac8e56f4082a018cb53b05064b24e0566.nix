@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "Simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repline)
             (hsPkgs.process)
@@ -43,7 +43,7 @@
           ];
         };
         "Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repline)
             (hsPkgs.mtl)

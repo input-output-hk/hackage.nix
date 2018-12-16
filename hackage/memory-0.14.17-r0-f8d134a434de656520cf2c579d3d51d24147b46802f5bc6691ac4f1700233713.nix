@@ -30,14 +30,14 @@
     };
     components = {
       "library" = {
-        depends  = ((pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.0")) [
+        depends = ((pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.0")) [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (flags.support_bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (flags.support_deepseq) (hsPkgs.deepseq)) ++ pkgs.lib.optional (flags.support_foundation || flags.support_basement) (hsPkgs.basement);
       };
       tests = {
         "test-memory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.memory)

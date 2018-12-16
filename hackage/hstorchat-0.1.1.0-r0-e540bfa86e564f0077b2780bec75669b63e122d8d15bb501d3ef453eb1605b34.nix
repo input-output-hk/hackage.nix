@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "hstorchat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hsqml)
@@ -53,7 +53,7 @@
       };
       tests = {
         "hstorchat-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hstorchat)
             (hsPkgs.HUnit)

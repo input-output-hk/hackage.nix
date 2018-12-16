@@ -26,7 +26,7 @@
     components = {
       exes = {
         "git-monitor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

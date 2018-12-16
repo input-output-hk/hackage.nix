@@ -26,7 +26,7 @@
     components = {
       exes = {
         "funbot-client-post-receive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

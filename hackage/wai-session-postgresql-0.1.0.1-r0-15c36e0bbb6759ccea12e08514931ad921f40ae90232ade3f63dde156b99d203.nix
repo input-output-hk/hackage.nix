@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -39,7 +39,7 @@
       };
       exes = {
         "postgresql-session-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.data-default)
@@ -57,7 +57,7 @@
       };
       tests = {
         "postgresql-session-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.postgresql-session)
           ];

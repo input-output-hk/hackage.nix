@@ -26,7 +26,7 @@
     components = {
       exes = {
         "stylish-haskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "stylish-haskell-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

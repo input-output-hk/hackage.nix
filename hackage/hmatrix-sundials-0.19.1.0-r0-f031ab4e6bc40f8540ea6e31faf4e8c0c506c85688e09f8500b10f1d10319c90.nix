@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.inline-c)
           (hsPkgs.vector)
@@ -40,7 +40,7 @@
       };
       tests = {
         "hmatrix-sundials-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.inline-c)
             (hsPkgs.vector)

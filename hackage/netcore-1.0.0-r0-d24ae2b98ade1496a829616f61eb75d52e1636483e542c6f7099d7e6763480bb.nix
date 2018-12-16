@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.multiset)
@@ -47,7 +47,7 @@
       };
       tests = {
         "frenetic-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -76,7 +76,7 @@
       };
       benchmarks = {
         "frenetic-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.ansi-wl-pprint)

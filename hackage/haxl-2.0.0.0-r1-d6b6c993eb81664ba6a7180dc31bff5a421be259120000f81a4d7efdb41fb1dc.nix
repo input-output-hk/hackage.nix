@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -47,7 +47,7 @@
       };
       exes = {
         "monadbench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haxl)
             (hsPkgs.hashable)
@@ -55,7 +55,7 @@
           ];
         };
         "cachebench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haxl)
             (hsPkgs.hashable)
@@ -65,7 +65,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.HUnit)
             (hsPkgs.base)

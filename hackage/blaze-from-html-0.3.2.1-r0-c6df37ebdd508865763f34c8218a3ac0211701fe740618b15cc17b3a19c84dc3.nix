@@ -26,7 +26,7 @@
     components = {
       exes = {
         "blaze-from-html" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

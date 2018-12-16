@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       exes = {
         "test-weibo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -46,7 +46,7 @@
           ];
         };
         "test-google" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -57,7 +57,7 @@
           ];
         };
         "test-github" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -68,7 +68,7 @@
           ];
         };
         "test-douban" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -79,7 +79,7 @@
           ];
         };
         "test-facebook" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)
@@ -90,7 +90,7 @@
           ];
         };
         "test-fitbit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.text)
@@ -104,7 +104,7 @@
           ];
         };
         "test-stackexchange" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.http-conduit)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "DataIndex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.DataIndex)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "DataIndex-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.DataIndex)
             (hsPkgs.tasty)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "DataIndex-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.DataIndex)
             (hsPkgs.criterion)

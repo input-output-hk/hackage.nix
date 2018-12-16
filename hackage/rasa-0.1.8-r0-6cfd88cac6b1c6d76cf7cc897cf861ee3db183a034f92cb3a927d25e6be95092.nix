@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.bifunctors)
@@ -45,7 +45,7 @@
       };
       tests = {
         "rasa-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rasa)
             (hsPkgs.hspec)

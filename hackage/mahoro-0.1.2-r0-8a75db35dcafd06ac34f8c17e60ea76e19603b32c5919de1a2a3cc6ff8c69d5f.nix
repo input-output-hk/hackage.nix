@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mahoro" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regex-posix)
             (hsPkgs.XMPP)

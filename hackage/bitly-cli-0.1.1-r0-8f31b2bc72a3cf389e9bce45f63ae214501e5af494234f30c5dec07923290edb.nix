@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bitly" = {
-          depends  = [
+          depends = [
             (hsPkgs.Bitly)
             (hsPkgs.base)
             (hsPkgs.filepath)

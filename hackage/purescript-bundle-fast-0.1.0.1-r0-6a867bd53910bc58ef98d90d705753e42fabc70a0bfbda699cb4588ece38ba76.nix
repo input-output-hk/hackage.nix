@@ -26,7 +26,7 @@
     components = {
       exes = {
         "psc-bundle-fast" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

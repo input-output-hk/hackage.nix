@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.split)
@@ -36,28 +36,28 @@
       };
       exes = {
         "flatten" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mcpi)
             (hsPkgs.transformers)
           ];
         };
         "freefall" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mcpi)
             (hsPkgs.transformers)
           ];
         };
         "hmcpi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.pipes)
           ];
         };
         "isongold" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mcpi)
             (hsPkgs.transformers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cryptonite)
@@ -35,7 +35,7 @@
       };
       exes = {
         "haskell-spake2-interop-entrypoint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cryptonite)
             (hsPkgs.memory)
@@ -47,7 +47,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.base)

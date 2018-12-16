@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-fixfile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fixfile)
             (hsPkgs.cereal)

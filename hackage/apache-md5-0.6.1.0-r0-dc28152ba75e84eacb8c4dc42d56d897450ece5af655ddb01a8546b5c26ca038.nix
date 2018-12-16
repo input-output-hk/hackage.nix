@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optional (flags.deepseq) (hsPkgs.deepseq);
@@ -36,7 +36,7 @@
       };
       tests = {
         "apache-md5-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.transformers)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "apache-md5-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       tests = {
         "svdlibc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hmatrix-svdlibc)
             (hsPkgs.base)
             (hsPkgs.hmatrix)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "svdlibc-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.hmatrix-svdlibc)
             (hsPkgs.base)
             (hsPkgs.hmatrix)

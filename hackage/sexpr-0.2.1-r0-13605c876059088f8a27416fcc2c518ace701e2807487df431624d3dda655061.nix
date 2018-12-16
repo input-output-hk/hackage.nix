@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-string)
           (hsPkgs.pretty)
@@ -35,7 +35,7 @@
       };
       exes = {
         "sexpr-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
           ];

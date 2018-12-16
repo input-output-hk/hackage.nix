@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hledger-ui" = {
-          depends  = [
+          depends = [
             (hsPkgs.hledger)
             (hsPkgs.hledger-lib)
             (hsPkgs.ansi-terminal)

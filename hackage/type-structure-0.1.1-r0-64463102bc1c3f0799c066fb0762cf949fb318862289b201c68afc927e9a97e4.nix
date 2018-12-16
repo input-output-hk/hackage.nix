@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.time)
           (hsPkgs.vector)
           (hsPkgs.array)
@@ -45,7 +45,7 @@
       };
       tests = {
         "type-structure-htf-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck-GenT)
             (hsPkgs.QuickCheck)

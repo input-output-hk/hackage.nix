@@ -30,7 +30,7 @@
     components = {
       exes = {
         "topkata" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.GLFW-b)
@@ -44,7 +44,7 @@
           ]) ++ pkgs.lib.optional (flags.ftgl) (hsPkgs.FTGL);
         };
         "pdflaby" = {
-          depends  = pkgs.lib.optionals (flags.pdflaby) [
+          depends = pkgs.lib.optionals (flags.pdflaby) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.array)

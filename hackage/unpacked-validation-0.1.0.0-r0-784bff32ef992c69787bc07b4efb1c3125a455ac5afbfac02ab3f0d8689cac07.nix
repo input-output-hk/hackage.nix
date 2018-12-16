@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.ghc-prim)
@@ -35,7 +35,7 @@
       };
       tests = {
         "unpacked-validation-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unpacked-validation)
             (hsPkgs.QuickCheck)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.hashable)
@@ -48,7 +48,7 @@
       };
       exes = {
         "shake" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.hashable)
@@ -73,7 +73,7 @@
       };
       tests = {
         "shake-test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.hashable)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -58,7 +58,7 @@
       };
       exes = {
         "concraft-analyse-model" = {
-          depends  = pkgs.lib.optionals (flags.buildanatool) [
+          depends = pkgs.lib.optionals (flags.buildanatool) [
             (hsPkgs.cmdargs)
             (hsPkgs.logfloat)
           ];

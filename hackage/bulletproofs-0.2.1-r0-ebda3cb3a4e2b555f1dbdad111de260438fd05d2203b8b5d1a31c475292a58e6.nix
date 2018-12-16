@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MonadRandom)
           (hsPkgs.arithmoi)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       tests = {
         "bulletproofs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
             (hsPkgs.arithmoi)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.midi)
           (hsPkgs.bytestring)
           (hsPkgs.explicit-exception)
@@ -47,13 +47,13 @@
       };
       exes = {
         "amplify" = {
-          depends  = [
+          depends = [
             (hsPkgs.jack)
             (hsPkgs.base)
           ];
         };
         "impulse-train" = {
-          depends  = [
+          depends = [
             (hsPkgs.jack)
             (hsPkgs.transformers)
             (hsPkgs.array)
@@ -61,7 +61,7 @@
           ];
         };
         "midimon" = {
-          depends  = [
+          depends = [
             (hsPkgs.jack)
             (hsPkgs.midi)
             (hsPkgs.base)

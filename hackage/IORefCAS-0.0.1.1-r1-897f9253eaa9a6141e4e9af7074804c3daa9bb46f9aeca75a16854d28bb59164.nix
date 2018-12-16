@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.bits-atomic)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-IORefCAS" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.bits-atomic)

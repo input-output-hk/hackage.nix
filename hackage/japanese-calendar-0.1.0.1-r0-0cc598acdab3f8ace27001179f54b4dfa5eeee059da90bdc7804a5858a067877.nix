@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
         ];
       };
       tests = {
         "japanese-calendar-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.japanese-calendar)
             (hsPkgs.hspec)

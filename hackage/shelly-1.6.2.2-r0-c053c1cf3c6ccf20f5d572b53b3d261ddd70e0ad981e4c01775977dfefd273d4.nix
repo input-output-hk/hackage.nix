@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.time)
           (hsPkgs.directory)
@@ -51,21 +51,21 @@
       };
       exes = {
         "drain" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs.base)
             (hsPkgs.shelly)
             (hsPkgs.text)
           ];
         };
         "run-handles" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs.base)
             (hsPkgs.shelly)
             (hsPkgs.text)
           ];
         };
         "Color" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.shelly)
@@ -75,7 +75,7 @@
       };
       tests = {
         "shelly-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.async)

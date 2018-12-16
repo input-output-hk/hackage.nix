@@ -43,7 +43,7 @@
     components = {
       exes = {
         "xmobar" = {
-          depends  = ((((((((((([
+          depends = ((((((((((([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.regex-compat)
@@ -86,7 +86,7 @@
       };
       tests = {
         "XmobarTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.containers)

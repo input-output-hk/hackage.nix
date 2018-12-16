@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -39,7 +39,7 @@
       };
       exes = {
         "pit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pit)
             (hsPkgs.bytestring)

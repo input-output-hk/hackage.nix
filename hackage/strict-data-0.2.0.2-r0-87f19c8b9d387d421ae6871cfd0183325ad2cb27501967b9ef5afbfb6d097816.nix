@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
@@ -50,7 +50,7 @@
       };
       tests = {
         "strict-data-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.strict-data)
             (hsPkgs.HTF)
@@ -61,7 +61,7 @@
           ];
         };
         "strict-data-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

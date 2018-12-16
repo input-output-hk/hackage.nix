@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.persistent)
@@ -46,7 +46,7 @@
       };
       exes = {
         "persistent-mysql-haskell-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.persistent)
             (hsPkgs.monad-logger)

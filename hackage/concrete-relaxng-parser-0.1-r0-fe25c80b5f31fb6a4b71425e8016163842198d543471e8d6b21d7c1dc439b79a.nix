@@ -26,7 +26,7 @@
     components = {
       exes = {
         "parse-concrete" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hxt)

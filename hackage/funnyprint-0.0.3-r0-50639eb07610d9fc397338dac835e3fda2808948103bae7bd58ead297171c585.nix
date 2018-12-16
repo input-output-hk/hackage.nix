@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hscolour)
           (hsPkgs.ipprint)
@@ -34,7 +34,7 @@
       };
       tests = {
         "funnyprint-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hscolour)
             (hsPkgs.ipprint)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "funnyprint-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hscolour)
             (hsPkgs.ipprint)

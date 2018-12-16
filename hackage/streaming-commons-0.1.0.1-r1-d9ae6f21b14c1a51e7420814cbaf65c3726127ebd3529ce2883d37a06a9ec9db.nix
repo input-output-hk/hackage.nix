@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.streaming-commons)
             (hsPkgs.hspec)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "count-chars" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text-stream-decode)
             (hsPkgs.criterion)
@@ -65,7 +65,7 @@
           ];
         };
         "decode-memory-usage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text-stream-decode)
             (hsPkgs.bytestring)

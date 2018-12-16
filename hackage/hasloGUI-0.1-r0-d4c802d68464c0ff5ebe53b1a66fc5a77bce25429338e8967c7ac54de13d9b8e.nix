@@ -26,7 +26,7 @@
     components = {
       exes = {
         "HasloGUI" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-time)
             (hsPkgs.QuickCheck)

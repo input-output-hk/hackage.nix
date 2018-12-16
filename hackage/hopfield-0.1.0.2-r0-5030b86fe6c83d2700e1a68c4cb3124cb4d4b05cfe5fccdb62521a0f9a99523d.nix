@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parallel)
           (hsPkgs.array)
@@ -53,14 +53,14 @@
       };
       exes = {
         "experiment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hopfield)
             (hsPkgs.optparse-applicative)
           ];
         };
         "recognize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hopfield)
             (hsPkgs.random)
@@ -74,7 +74,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hopfield)
             (hsPkgs.erf)

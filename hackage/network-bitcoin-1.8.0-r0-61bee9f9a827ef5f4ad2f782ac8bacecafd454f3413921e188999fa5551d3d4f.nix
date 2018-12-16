@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
           (hsPkgs.cookie)
@@ -43,7 +43,7 @@
       };
       exes = {
         "network-bitcoin-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
             (hsPkgs.cookie)

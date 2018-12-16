@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.regex-pcre-builtin)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-split" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pcre-utils)
             (hsPkgs.HUnit)
@@ -46,7 +46,7 @@
           ];
         };
         "test-subs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pcre-utils)
             (hsPkgs.HUnit)

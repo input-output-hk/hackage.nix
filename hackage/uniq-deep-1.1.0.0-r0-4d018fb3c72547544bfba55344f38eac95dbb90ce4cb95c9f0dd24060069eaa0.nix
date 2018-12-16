@@ -26,7 +26,7 @@
     components = {
       exes = {
         "uniq-deep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

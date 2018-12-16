@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -52,13 +52,13 @@
       };
       tests = {
         "effects" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extensible)
           ];
         };
         "bits" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extensible)
             (hsPkgs.lens)

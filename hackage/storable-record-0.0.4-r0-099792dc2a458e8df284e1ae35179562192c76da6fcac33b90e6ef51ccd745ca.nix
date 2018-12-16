@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.transformers)
           (hsPkgs.semigroups)
           (hsPkgs.utility-ht)
@@ -41,7 +41,7 @@
       };
       exes = {
         "storable-record-speed" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.storablevector)
             (hsPkgs.timeit)
           ];

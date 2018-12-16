@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.pugs-DrIFT)
           (hsPkgs.base)
           (hsPkgs.haskell98)

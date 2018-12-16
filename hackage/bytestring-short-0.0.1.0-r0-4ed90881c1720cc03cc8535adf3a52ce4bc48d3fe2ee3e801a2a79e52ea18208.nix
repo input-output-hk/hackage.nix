@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "prop-compiled" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring-short)
             (hsPkgs.bytestring)

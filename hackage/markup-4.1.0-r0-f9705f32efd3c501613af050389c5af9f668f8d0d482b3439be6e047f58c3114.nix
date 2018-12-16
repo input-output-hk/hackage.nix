@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec-uri)
           (hsPkgs.base)
           (hsPkgs.blaze-html)

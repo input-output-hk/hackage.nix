@@ -26,7 +26,7 @@
     components = {
       exes = {
         "a50" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biopsl)
             (hsPkgs.biofasta)

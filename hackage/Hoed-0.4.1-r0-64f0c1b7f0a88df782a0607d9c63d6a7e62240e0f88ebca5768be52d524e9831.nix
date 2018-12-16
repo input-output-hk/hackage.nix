@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -48,14 +48,14 @@
       };
       tests = {
         "test-queens" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)
           ];
         };
         "test-1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)
@@ -63,7 +63,7 @@
           ];
         };
         "test-2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)
@@ -71,7 +71,7 @@
           ];
         };
         "test-3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)
@@ -79,7 +79,7 @@
           ];
         };
         "test-4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)
@@ -87,7 +87,7 @@
           ];
         };
         "test-5" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)
@@ -95,7 +95,7 @@
           ];
         };
         "test-6" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)
@@ -103,7 +103,7 @@
           ];
         };
         "test-7" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.Hoed)

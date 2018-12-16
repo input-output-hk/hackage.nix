@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       exes = {
         "hamsql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hamsql)
           ];
@@ -55,7 +55,7 @@
       };
       tests = {
         "hamsql-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hamsql)
           ];

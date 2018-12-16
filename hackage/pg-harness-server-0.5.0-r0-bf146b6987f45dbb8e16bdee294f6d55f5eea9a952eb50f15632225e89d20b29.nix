@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pg-harness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.ini)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.exceptions)
           (hsPkgs.lifted-async)
@@ -38,7 +38,7 @@
       };
       tests = {
         "merging" = {
-          depends  = [
+          depends = [
             (hsPkgs.streaming-concurrency)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "mapping" = {
-          depends  = [
+          depends = [
             (hsPkgs.streaming-concurrency)
             (hsPkgs.base)
             (hsPkgs.exceptions)

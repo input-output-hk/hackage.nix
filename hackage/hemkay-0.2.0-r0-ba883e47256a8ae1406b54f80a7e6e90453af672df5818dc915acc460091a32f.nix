@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hemkay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

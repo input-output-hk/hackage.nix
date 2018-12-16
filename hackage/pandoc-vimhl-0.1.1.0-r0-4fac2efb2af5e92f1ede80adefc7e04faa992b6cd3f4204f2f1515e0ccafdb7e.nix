@@ -26,7 +26,7 @@
     components = {
       exes = {
         "vimhl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
             (hsPkgs.directory)

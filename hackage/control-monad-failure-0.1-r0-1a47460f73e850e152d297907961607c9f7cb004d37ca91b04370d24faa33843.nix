@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.pretty)
           (hsPkgs.template-haskell)
         ] ++ (if flags.transformers

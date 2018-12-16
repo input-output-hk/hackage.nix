@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dns)
           (hsPkgs.network)
@@ -47,7 +47,7 @@
       };
       exes = {
         "pocket-dns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dns)
             (hsPkgs.network)
@@ -71,7 +71,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pocket-dns)
             (hsPkgs.transformers)

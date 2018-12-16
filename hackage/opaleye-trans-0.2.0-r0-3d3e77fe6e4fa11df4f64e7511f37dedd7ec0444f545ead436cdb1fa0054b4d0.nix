@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.transformers-base)
@@ -36,7 +36,7 @@
       };
       exes = {
         "opaleye-rosetree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opaleye)
             (hsPkgs.postgresql-simple)
@@ -45,7 +45,7 @@
           ];
         };
         "opaleye-rosetree2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.opaleye)
             (hsPkgs.postgresql-simple)

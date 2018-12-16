@@ -26,7 +26,7 @@
     components = {
       exes = {
         "arrowp" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell-src)
           ] ++ (if flags.small_base
             then [

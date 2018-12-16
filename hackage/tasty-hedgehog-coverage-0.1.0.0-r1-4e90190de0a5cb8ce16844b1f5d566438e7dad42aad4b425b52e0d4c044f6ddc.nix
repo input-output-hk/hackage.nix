@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tagged)
           (hsPkgs.tasty)
@@ -40,7 +40,7 @@
       };
       tests = {
         "tasty-hedgehog-coverage-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-expected-failure)

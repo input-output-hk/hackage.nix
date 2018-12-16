@@ -26,7 +26,7 @@
     components = {
       exes = {
         "git-gpush" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gitlib)
             (hsPkgs.gitlib-cmdline)

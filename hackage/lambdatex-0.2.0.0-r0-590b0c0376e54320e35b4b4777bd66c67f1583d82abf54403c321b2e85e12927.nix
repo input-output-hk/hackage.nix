@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HaTeX)
           (hsPkgs.mtl)
@@ -39,7 +39,7 @@
       };
       tests = {
         "lambdatex-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdatex)
             (hsPkgs.hspec)

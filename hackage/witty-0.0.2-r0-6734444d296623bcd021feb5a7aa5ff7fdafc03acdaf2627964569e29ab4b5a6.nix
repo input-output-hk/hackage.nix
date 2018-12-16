@@ -26,7 +26,7 @@
     components = {
       exes = {
         "witty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network)

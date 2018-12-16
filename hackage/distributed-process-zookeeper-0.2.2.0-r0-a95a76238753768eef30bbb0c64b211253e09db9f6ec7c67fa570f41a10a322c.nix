@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hzk)
           (hsPkgs.distributed-process)
@@ -42,7 +42,7 @@
       };
       exes = {
         "boss" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-zookeeper)
             (hsPkgs.distributed-process)
@@ -51,7 +51,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process-zookeeper)
             (hsPkgs.hspec)

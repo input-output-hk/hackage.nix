@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsenv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

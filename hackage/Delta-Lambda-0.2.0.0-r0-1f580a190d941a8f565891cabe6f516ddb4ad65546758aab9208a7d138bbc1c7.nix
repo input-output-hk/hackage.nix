@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Delta-Lambda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)

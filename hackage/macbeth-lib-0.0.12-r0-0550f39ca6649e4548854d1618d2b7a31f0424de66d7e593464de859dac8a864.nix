@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wxcore)
           (hsPkgs.wx)
@@ -57,7 +57,7 @@
       };
       exes = {
         "Macbeth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
@@ -68,7 +68,7 @@
       };
       tests = {
         "macbeth-lib-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.macbeth-lib)
             (hsPkgs.base)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.acquire)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.potoki-core)
             (hsPkgs.attoparsec)
             (hsPkgs.acquire)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "freesect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parallel)
             (hsPkgs.syb)

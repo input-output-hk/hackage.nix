@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-lens)
           (hsPkgs.hxt)
@@ -34,7 +34,7 @@
       };
       exes = {
         "cmdoh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-lens)
             (hsPkgs.hxt)
@@ -47,7 +47,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-lens)
             (hsPkgs.hxt)

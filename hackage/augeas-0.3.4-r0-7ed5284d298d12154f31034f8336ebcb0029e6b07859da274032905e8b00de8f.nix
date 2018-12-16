@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.unix)
@@ -37,7 +37,7 @@
       };
       exes = {
         "test-haskell-augeas" = {
-          depends  = [ (hsPkgs.HUnit) ];
+          depends = [ (hsPkgs.HUnit) ];
           libs = [ (pkgs."augeas") ];
           pkgconfig = [
             (pkgconfPkgs.augeas)

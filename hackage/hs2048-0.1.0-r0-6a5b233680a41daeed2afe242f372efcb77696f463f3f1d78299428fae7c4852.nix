@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
         ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs.hscolour);
       };
       exes = {
         "hs2048" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs2048)
             (hsPkgs.random)
@@ -43,7 +43,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs2048)
             (hsPkgs.hspec)
@@ -53,28 +53,28 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)
           ];
         };
         "hpc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.regex-compat)
           ];
         };
         "haddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.regex-compat)
           ];
         };
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -82,7 +82,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs2048)
             (hsPkgs.criterion)

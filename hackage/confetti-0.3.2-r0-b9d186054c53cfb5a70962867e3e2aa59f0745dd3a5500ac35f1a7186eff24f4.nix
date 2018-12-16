@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.text)
@@ -39,7 +39,7 @@
       };
       exes = {
         "confetti" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.confetti)
@@ -49,7 +49,7 @@
       };
       tests = {
         "confetti-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.confetti)
             (hsPkgs.tasty)

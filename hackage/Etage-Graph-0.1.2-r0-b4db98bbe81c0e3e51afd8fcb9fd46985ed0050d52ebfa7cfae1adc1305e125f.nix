@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Etage)
           (hsPkgs.fgl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "etage-graph-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fgl)
             (hsPkgs.random)

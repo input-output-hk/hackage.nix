@@ -26,7 +26,7 @@
     components = {
       exes = {
         "htodo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HDBC-sqlite3)
             (hsPkgs.HDBC)

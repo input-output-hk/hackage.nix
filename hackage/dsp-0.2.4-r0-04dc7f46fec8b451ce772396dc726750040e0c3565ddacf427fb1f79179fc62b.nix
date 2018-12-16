@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.random)
@@ -36,42 +36,42 @@
       };
       exes = {
         "dsp-demo-article" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.dsp)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "dsp-demo-fft-bench" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.dsp)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "dsp-demo-fft-test" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.dsp)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "dsp-demo-freq" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.dsp)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "dsp-demo-iir" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.dsp)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "dsp-demo-noise" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.dsp)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -80,7 +80,7 @@
       };
       tests = {
         "dsp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.dsp)
             (hsPkgs.containers)

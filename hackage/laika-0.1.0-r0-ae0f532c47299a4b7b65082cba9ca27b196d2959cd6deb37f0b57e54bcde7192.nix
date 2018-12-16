@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.template-haskell)
           (hsPkgs.system-filepath)
           (hsPkgs.system-fileio)
@@ -39,7 +39,7 @@
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.laika)
             (hsPkgs.text)
             (hsPkgs.record)

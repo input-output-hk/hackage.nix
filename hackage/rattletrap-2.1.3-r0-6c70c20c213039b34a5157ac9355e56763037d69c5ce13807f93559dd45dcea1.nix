@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-casing)
           (hsPkgs.base)
@@ -42,7 +42,7 @@
       };
       exes = {
         "rattletrap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rattletrap)
           ];
@@ -50,7 +50,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)

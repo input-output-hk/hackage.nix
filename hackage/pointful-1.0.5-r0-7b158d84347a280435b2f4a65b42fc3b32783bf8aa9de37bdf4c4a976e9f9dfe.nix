@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.haskell-src)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "pointful" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.haskell-src)
             (hsPkgs.mtl)

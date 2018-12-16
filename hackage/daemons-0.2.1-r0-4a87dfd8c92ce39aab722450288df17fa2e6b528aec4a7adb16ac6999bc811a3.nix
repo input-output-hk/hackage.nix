@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -41,7 +41,7 @@
       };
       exes = {
         "memo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
@@ -52,7 +52,7 @@
           ];
         };
         "addone" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.daemons)
             (hsPkgs.data-default)
@@ -60,7 +60,7 @@
           ];
         };
         "queue" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
@@ -74,7 +74,7 @@
           ];
         };
         "name" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
@@ -87,7 +87,7 @@
       };
       tests = {
         "daemon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.daemons)
             (hsPkgs.data-default)

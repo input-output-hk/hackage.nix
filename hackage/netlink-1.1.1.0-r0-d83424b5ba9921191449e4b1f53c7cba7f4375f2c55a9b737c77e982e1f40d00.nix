@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -37,25 +37,25 @@
       };
       exes = {
         "dump_nl80211" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.netlink)
           ];
         };
         "genlinfo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.netlink)
           ];
         };
         "dump_rtnetlink" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.netlink)
           ];
         };
         "Generate" = {
-          depends  = pkgs.lib.optionals (flags.generators) [
+          depends = pkgs.lib.optionals (flags.generators) [
             (hsPkgs.base)
             (hsPkgs.language-c)
             (hsPkgs.containers)
@@ -64,7 +64,7 @@
           ];
         };
         "GenerateGenl" = {
-          depends  = pkgs.lib.optionals (flags.generators) [
+          depends = pkgs.lib.optionals (flags.generators) [
             (hsPkgs.base)
             (hsPkgs.language-c)
             (hsPkgs.containers)
@@ -73,7 +73,7 @@
           ];
         };
         "GenerateNL80211" = {
-          depends  = pkgs.lib.optionals (flags.generators) [
+          depends = pkgs.lib.optionals (flags.generators) [
             (hsPkgs.base)
             (hsPkgs.language-c)
             (hsPkgs.containers)

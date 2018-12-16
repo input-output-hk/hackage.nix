@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.tz)
             (hsPkgs.base)
             (hsPkgs.bindings-posix)
@@ -54,7 +54,7 @@
           ];
         };
         "th-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.tz)
             (hsPkgs.base)
             (hsPkgs.HUnit)
@@ -64,7 +64,7 @@
           ];
         };
         "test-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.tz)
             (hsPkgs.tzdata)
             (hsPkgs.base)
@@ -77,7 +77,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.tz)
             (hsPkgs.base)
             (hsPkgs.bindings-posix)
@@ -89,7 +89,7 @@
           ];
         };
         "bench_c" = {
-          depends  = [
+          depends = [
             (hsPkgs.tz)
             (hsPkgs.base)
             (hsPkgs.bindings-posix)
@@ -98,7 +98,7 @@
           ];
         };
         "bench_greg" = {
-          depends  = [
+          depends = [
             (hsPkgs.tz)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -108,7 +108,7 @@
           ];
         };
         "bench_conv" = {
-          depends  = [
+          depends = [
             (hsPkgs.tz)
             (hsPkgs.base)
             (hsPkgs.criterion)

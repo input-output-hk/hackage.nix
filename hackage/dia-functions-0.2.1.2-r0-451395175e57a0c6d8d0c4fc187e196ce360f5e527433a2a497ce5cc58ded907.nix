@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.data-pprint)
           (hsPkgs.dia-base)
           (hsPkgs.base)

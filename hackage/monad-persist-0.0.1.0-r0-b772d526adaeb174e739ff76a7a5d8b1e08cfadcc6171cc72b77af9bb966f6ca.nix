@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-control)
           (hsPkgs.monad-logger)
@@ -37,7 +37,7 @@
       };
       tests = {
         "monad-persist-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.monad-control)

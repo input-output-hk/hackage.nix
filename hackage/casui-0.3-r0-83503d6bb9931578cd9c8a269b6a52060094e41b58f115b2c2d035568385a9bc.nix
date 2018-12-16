@@ -26,7 +26,7 @@
     components = {
       exes = {
         "casui" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.parsec)

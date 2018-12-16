@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fswait" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-generic)
             (hsPkgs.optparse-applicative)

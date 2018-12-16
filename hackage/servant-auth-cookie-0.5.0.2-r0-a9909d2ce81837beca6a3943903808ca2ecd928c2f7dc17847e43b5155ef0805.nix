@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.blaze-builder)
@@ -66,7 +66,7 @@
       };
       exes = {
         "example" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) ([
+          depends = pkgs.lib.optionals (flags.build-examples) ([
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.base64-bytestring)
@@ -104,7 +104,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
@@ -120,7 +120,7 @@
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs.tagged);
         };
         "example-tests" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) (([
+          depends = pkgs.lib.optionals (flags.build-examples) (([
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.base64-bytestring)
@@ -166,7 +166,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

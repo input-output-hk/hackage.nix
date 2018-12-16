@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.contravariant)
           (hsPkgs.ListLike)
@@ -33,13 +33,13 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "hedgehog" = {
-          depends  = [
+          depends = [
             (hsPkgs.assoc-listlike)
             (hsPkgs.base)
             (hsPkgs.contravariant)

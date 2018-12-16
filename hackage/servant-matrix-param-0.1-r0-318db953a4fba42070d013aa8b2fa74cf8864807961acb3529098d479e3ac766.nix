@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.servant)
         ] ++ pkgs.lib.optional (flags.with-servant-aeson-specs) (hsPkgs.servant-aeson-specs);
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.servant)
@@ -43,7 +43,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant)
             (hsPkgs.doctest)

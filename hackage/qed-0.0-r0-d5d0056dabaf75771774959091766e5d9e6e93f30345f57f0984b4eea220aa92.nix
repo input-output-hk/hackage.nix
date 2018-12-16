@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.directory)
@@ -39,7 +39,7 @@
       };
       tests = {
         "qed-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.qed)
             (hsPkgs.transformers)

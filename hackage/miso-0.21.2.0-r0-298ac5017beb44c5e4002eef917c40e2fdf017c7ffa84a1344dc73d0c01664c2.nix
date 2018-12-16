@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
       };
       exes = {
         "todo-mvc" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -71,7 +71,7 @@
           ];
         };
         "threejs" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.ghcjs-base)
@@ -80,7 +80,7 @@
           ];
         };
         "file-reader" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -89,7 +89,7 @@
           ];
         };
         "xhr" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -98,7 +98,7 @@
           ];
         };
         "canvas2d" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.ghcjs-base)
@@ -106,7 +106,7 @@
           ];
         };
         "router" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -117,7 +117,7 @@
           ];
         };
         "websocket" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -127,7 +127,7 @@
           ];
         };
         "mario" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) ([
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.miso)
@@ -140,7 +140,7 @@
           ]);
         };
         "svg" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.aeson)
@@ -148,19 +148,19 @@
           ];
         };
         "compose-update" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.miso)
           ];
         };
         "mathml" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.miso)
           ];
         };
         "simple" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -170,7 +170,7 @@
           ];
         };
         "tests" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

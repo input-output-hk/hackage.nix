@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lss)
           (hsPkgs.xmlhtml)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-snaplet-lss" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.snap)
             (hsPkgs.lens)

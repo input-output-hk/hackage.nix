@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.blaze-html)
@@ -40,7 +40,7 @@
       };
       exes = {
         "ghclive" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghclive)
             (hsPkgs.yesod-static)
             (hsPkgs.mtl)

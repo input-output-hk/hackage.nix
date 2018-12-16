@@ -26,7 +26,7 @@
     components = {
       exes = {
         "kdesrc-build-extra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.cmdargs)

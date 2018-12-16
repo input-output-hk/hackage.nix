@@ -26,7 +26,7 @@
     components = {
       exes = {
         "FractalArt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mwc-random)

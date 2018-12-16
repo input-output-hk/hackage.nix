@@ -26,7 +26,7 @@
     components = {
       exes = {
         "log-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
           ];
         };
         "log-fetcher" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

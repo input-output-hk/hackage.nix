@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.resourcet)
           (hsPkgs.text)
@@ -48,7 +48,7 @@
       };
       exes = {
         "wai-crowd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clientsession)
             (hsPkgs.gitrev)

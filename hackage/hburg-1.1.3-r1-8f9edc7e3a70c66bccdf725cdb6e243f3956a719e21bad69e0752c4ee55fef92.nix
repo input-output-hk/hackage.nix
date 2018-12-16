@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hburg" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.pretty)

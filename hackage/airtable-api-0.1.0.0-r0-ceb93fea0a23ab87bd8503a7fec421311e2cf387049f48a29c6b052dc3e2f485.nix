@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "airtable-api-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.airtable-api)
           ];

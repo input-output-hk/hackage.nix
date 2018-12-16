@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.clock)
           (hsPkgs.hashable)
@@ -36,7 +36,7 @@
       };
       tests = {
         "cache-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cache)
             (hsPkgs.clock)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."capstone") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
@@ -33,7 +33,7 @@
       };
       tests = {
         "hapstone-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hapstone)
             (hsPkgs.hspec)

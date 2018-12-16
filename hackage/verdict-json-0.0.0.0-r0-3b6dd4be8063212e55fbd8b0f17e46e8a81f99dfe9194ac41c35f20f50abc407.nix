@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.verdict)
@@ -37,7 +37,7 @@
       };
       exes = {
         "Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.verdict)
             (hsPkgs.verdict-json)
@@ -48,7 +48,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.containers)

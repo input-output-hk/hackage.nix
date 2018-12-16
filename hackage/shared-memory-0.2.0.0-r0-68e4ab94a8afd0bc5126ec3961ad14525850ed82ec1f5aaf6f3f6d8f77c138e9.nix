@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
         ];
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-shared-memory-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shared-memory)
             (hsPkgs.bytestring)

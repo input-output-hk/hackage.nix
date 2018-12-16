@@ -30,7 +30,7 @@
     components = {
       exes = {
         "lhc" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.mtl)
             (hsPkgs.pretty)

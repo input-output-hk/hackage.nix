@@ -26,7 +26,7 @@
     components = {
       exes = {
         "abc-puzzle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.minisat)

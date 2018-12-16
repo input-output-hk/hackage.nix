@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.time)
@@ -58,7 +58,7 @@
       };
       exes = {
         "monky" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

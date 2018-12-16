@@ -26,7 +26,7 @@
     components = {
       exes = {
         "threadscope" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.cairo)

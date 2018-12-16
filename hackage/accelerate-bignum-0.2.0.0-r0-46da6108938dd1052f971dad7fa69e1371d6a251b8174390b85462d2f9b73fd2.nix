@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.accelerate)
           (hsPkgs.ghc-prim)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test-llvm-native" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-bignum)
@@ -56,7 +56,7 @@
           ];
         };
         "test-llvm-ptx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-bignum)
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "accelerate-bignum-bench" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-bignum)

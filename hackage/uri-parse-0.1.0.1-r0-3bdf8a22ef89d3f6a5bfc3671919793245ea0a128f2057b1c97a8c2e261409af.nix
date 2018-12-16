@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "uri-parse-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uri-parse)
             (hsPkgs.data-default)

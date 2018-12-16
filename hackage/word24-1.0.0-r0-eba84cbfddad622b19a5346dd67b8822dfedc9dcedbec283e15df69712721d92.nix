@@ -28,13 +28,13 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
         ] ++ [ (hsPkgs.base) ];
       };
       exes = {
         "testWord24" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.haskell98)
@@ -39,7 +39,7 @@
       };
       exes = {
         "gtf-to-bed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.haskell98)
@@ -54,7 +54,7 @@
           ];
         };
         "test-gtf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.haskell98)
@@ -69,7 +69,7 @@
           ];
         };
         "test-bed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.haskell98)
@@ -84,7 +84,7 @@
           ];
         };
         "gtf-introns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.haskell98)

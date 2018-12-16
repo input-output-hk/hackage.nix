@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.haskell98)
@@ -36,20 +36,20 @@
       };
       exes = {
         "toktok-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.progression)
             (hsPkgs.filepath)
           ];
         };
         "toktok-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
           ];
         };
         "toktok" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.gf)
@@ -57,7 +57,7 @@
           ];
         };
         "gf-extract-lexicon" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

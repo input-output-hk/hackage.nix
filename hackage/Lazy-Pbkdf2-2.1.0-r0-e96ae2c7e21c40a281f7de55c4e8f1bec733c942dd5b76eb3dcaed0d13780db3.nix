@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -33,7 +33,7 @@
       };
       tests = {
         "Known-answer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cryptonite)
             (hsPkgs.bytestring)

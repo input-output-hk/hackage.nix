@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "symengine-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.symengine)
             (hsPkgs.tasty)

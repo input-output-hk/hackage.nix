@@ -26,7 +26,7 @@
     components = {
       exes = {
         "docker-build-cacher" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.turtle)
             (hsPkgs.language-dockerfile)

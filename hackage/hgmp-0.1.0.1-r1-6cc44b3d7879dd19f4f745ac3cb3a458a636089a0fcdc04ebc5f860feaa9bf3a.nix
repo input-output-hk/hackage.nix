@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.integer-gmp)
           (hsPkgs.ghc-prim)
@@ -36,7 +36,7 @@
       };
       tests = {
         "Main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgmp)
             (hsPkgs.QuickCheck)

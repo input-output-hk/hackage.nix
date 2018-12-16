@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HsOpenSSL)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       exes = {
         "speechmatics" = {
-          depends  = [
+          depends = [
             (hsPkgs.SHA)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -59,7 +59,7 @@
       };
       tests = {
         "speechmatics-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)

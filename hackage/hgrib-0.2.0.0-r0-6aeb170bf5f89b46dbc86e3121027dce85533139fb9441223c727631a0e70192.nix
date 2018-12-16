@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."grib_api") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
@@ -35,7 +35,7 @@
       };
       exes = {
         "get" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgrib)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.hgrib)

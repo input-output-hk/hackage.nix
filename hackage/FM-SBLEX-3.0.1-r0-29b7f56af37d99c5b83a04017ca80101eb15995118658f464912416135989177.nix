@@ -26,7 +26,7 @@
     components = {
       exes = {
         "saldo" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -34,7 +34,7 @@
           ];
         };
         "dalin" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -42,7 +42,7 @@
           ];
         };
         "fsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.containers)

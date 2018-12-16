@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.wai)
@@ -39,7 +39,7 @@
       };
       exes = {
         "waicookie-genkey" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cryptonite)
             (hsPkgs.bytestring)

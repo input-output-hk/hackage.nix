@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.leancheck)
           (hsPkgs.cmdargs)
@@ -34,7 +34,7 @@
       };
       tests = {
         "expr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "plus-abs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)

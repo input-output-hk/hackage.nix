@@ -26,7 +26,7 @@
     components = {
       exes = {
         "v4l2-capture" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bindings-libv4l2)
             (hsPkgs.bindings-linux-videodev2)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.array)
@@ -36,7 +36,7 @@
       };
       tests = {
         "simpletest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.ghc-prim)
@@ -48,7 +48,7 @@
           ];
         };
         "testexceptions" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.ghc-prim)
@@ -61,7 +61,7 @@
           ];
         };
         "alltests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.ghc-prim)
@@ -74,7 +74,7 @@
           ];
         };
         "testmthread" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.ghc-prim)
@@ -87,7 +87,7 @@
           ];
         };
         "quickchecktest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.ghc-prim)

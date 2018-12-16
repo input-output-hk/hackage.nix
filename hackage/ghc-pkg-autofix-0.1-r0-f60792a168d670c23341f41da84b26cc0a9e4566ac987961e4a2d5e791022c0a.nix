@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-pkg-autofix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.split)

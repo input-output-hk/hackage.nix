@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Aurochs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parsec)

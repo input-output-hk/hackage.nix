@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.mtl)
@@ -50,7 +50,7 @@
       };
       exes = {
         "buildwrapper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buildwrapper)
             (hsPkgs.cmdargs)
@@ -77,7 +77,7 @@
       };
       tests = {
         "buildwrapper-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buildwrapper)
             (hsPkgs.HUnit)

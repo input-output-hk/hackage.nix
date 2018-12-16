@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.threepenny-gui)
         ];
       };
       exes = {
         "threepenny-gui-contextmenu-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.threepenny-gui-contextmenu)

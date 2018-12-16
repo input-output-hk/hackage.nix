@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bits)
           (hsPkgs.bytestring)
@@ -33,7 +33,7 @@
       };
       tests = {
         "bits-bytestring-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits)
             (hsPkgs.bits-bytestring)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "bits-bytestring-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

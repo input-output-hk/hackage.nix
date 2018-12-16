@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.data-accessor)
           (hsPkgs.utility-ht)
           (hsPkgs.base)

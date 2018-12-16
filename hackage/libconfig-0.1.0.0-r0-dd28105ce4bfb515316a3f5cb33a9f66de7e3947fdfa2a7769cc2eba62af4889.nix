@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."config") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
@@ -33,7 +33,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libconfig)
             (hsPkgs.doctest)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.attoparsec)
@@ -54,7 +54,7 @@
       };
       tests = {
         "unittests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.d-bus)
             (hsPkgs.xml-hamlet)
@@ -70,7 +70,7 @@
           ];
         };
         "integrationtest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.d-bus)
             (hsPkgs.text)

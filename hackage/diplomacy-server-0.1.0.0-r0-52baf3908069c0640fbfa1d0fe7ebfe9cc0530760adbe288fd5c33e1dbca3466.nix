@@ -26,7 +26,7 @@
     components = {
       exes = {
         "diplomacy-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.stm)

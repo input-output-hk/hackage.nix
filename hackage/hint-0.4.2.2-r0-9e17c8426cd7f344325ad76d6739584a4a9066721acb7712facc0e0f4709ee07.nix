@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
           (hsPkgs.mtl)
@@ -52,7 +52,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hint)
             (hsPkgs.HUnit)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "accelerate-fourier-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.accelerate-cufft)
             (hsPkgs.accelerate-fftw)

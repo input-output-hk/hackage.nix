@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.azure-service-api)
           (hsPkgs.filepath)
@@ -49,7 +49,7 @@
       };
       exes = {
         "cloud-haskell-azure-echo" = {
-          depends  = pkgs.lib.optionals (flags.build-demos) [
+          depends = pkgs.lib.optionals (flags.build-demos) [
             (hsPkgs.base)
             (hsPkgs.distributed-process-azure)
             (hsPkgs.distributed-process)
@@ -57,7 +57,7 @@
           ];
         };
         "cloud-haskell-azure-ping" = {
-          depends  = pkgs.lib.optionals (flags.build-demos) [
+          depends = pkgs.lib.optionals (flags.build-demos) [
             (hsPkgs.base)
             (hsPkgs.distributed-process-azure)
             (hsPkgs.distributed-process)
@@ -69,7 +69,7 @@
           ];
         };
         "cloud-haskell-azure-fib" = {
-          depends  = pkgs.lib.optionals (flags.build-demos) [
+          depends = pkgs.lib.optionals (flags.build-demos) [
             (hsPkgs.base)
             (hsPkgs.distributed-process-azure)
             (hsPkgs.distributed-process)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "amazon-emailer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.resourcet)
             (hsPkgs.lifted-base)
@@ -41,7 +41,7 @@
           ];
         };
         "amazon-emailer-queue-cleaner" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lifted-base)
             (hsPkgs.postgresql-simple)

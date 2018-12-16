@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.http-client)
@@ -40,7 +40,7 @@
       };
       exes = {
         "stackage-install" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-install)
           ];

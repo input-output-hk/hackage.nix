@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (if flags.splitbase
+        depends = (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "clevercss" = {
-          depends  = [ (hsPkgs.parsec) ];
+          depends = [ (hsPkgs.parsec) ];
         };
       };
     };

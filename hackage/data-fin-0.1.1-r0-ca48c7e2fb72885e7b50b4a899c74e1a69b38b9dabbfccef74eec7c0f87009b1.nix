@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.tagged)
           (hsPkgs.reflection)
           (hsPkgs.prelude-safeenum)

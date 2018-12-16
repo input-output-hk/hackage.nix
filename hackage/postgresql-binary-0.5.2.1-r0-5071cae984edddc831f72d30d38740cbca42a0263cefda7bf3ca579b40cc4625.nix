@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.uuid)
           (hsPkgs.time)
@@ -40,7 +40,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-binary)
             (hsPkgs.HTF)
             (hsPkgs.quickcheck-instances)
@@ -57,7 +57,7 @@
       };
       benchmarks = {
         "decoding" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-binary)
             (hsPkgs.criterion)
             (hsPkgs.time)
@@ -70,7 +70,7 @@
           ];
         };
         "encoding" = {
-          depends  = [
+          depends = [
             (hsPkgs.postgresql-binary)
             (hsPkgs.criterion)
             (hsPkgs.time)

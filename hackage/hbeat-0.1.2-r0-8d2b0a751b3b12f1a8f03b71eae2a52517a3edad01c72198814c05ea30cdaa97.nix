@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hbeat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.old-time)

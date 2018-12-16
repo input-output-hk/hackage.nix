@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hasktorch-types-th)
           (hsPkgs.hasktorch-types-thc)
@@ -34,7 +34,7 @@
       };
       sublibs = {
         "hasktorch-partial-floating" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-signatures-partial)
             (hsPkgs.hasktorch-signatures-support)
@@ -42,7 +42,7 @@
           ];
         };
         "hasktorch-partial-signed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-signatures-partial)
             (hsPkgs.hasktorch-signatures-support)
@@ -50,7 +50,7 @@
           ];
         };
         "hasktorch-partial-unsigned" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-signatures-partial)
             (hsPkgs.hasktorch-signatures-support)
@@ -60,7 +60,7 @@
       };
       exes = {
         "isdefinite-unsigned-th" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-ffi-th)
             (hsPkgs.hasktorch-types-th)
@@ -68,7 +68,7 @@
           ];
         };
         "isdefinite-unsigned-thc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-ffi-thc)
             (hsPkgs.hasktorch-types-thc)
@@ -76,7 +76,7 @@
           ];
         };
         "isdefinite-signed-th" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-ffi-th)
             (hsPkgs.hasktorch-types-th)
@@ -84,7 +84,7 @@
           ];
         };
         "isdefinite-signed-thc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-ffi-thc)
             (hsPkgs.hasktorch-types-thc)
@@ -92,7 +92,7 @@
           ];
         };
         "isdefinite-floating-th" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-ffi-th)
             (hsPkgs.hasktorch-types-th)
@@ -100,7 +100,7 @@
           ];
         };
         "isdefinite-floating-thc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-ffi-thc)
             (hsPkgs.hasktorch-types-thc)

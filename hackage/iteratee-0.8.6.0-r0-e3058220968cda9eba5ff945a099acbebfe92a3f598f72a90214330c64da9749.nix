@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.ListLike)
           (hsPkgs.MonadCatchIO-transformers)
           (hsPkgs.monad-control)
@@ -42,7 +42,7 @@
       };
       exes = {
         "testIteratee" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

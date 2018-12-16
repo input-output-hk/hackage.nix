@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         pkgconfig = [
           (pkgconfPkgs.webkit2gtk-4.0)
         ];

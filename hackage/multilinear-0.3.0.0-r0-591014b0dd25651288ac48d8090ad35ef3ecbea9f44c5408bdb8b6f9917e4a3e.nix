@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -37,7 +37,7 @@
       };
       tests = {
         "all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.multilinear)
@@ -46,14 +46,14 @@
       };
       benchmarks = {
         "memory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.multilinear)
             (hsPkgs.weigh)
           ];
         };
         "time" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.multilinear)

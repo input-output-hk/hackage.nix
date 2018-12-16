@@ -26,7 +26,7 @@
     components = {
       exes = {
         "visualize-cbn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.blaze-html)

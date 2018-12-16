@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams-svg)
           (hsPkgs.colour)
@@ -36,7 +36,7 @@
       };
       tests = {
         "sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.file-embed)
             (hsPkgs.Slides)

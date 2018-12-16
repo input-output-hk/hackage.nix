@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -42,13 +42,13 @@
       };
       exes = {
         "RNAwolfTrain" = {
-          depends  = [
+          depends = [
             (hsPkgs.split)
             (hsPkgs.cmdargs)
           ];
         };
         "RNAwolf" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
       };
     };

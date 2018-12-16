@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monads-tf)
           (hsPkgs.transformers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "berp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monads-tf)
             (hsPkgs.transformers)

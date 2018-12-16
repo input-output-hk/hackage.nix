@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskeline)
           (hsPkgs.transformers)
@@ -33,14 +33,14 @@
       };
       exes = {
         "garepinoh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.transformers)
           ];
         };
         "garepiboh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.transformers)

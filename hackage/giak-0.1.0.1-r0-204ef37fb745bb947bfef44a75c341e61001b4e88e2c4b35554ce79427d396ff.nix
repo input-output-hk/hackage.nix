@@ -26,7 +26,7 @@
     components = {
       exes = {
         "giak" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.async)

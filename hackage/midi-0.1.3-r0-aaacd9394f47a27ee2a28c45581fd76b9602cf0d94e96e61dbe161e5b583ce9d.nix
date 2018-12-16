@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
           (hsPkgs.explicit-exception)

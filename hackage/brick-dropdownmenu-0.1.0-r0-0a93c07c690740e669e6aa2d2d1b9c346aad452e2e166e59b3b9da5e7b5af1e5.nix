@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.brick)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "brick-dropdownmenu-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.brick-dropdownmenu)

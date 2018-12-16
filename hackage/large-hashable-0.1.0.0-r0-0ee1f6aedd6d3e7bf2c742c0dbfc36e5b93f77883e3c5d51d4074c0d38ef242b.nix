@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.text)
@@ -46,7 +46,7 @@
       };
       tests = {
         "large-hashable-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.HTF)
             (hsPkgs.QuickCheck)
@@ -67,7 +67,7 @@
       };
       benchmarks = {
         "large-hashable-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
             (hsPkgs.large-hashable)

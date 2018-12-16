@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filemanip)
           (hsPkgs.filepath)
@@ -35,7 +35,7 @@
       };
       exes = {
         "maclight" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filemanip)
             (hsPkgs.filepath)
@@ -47,7 +47,7 @@
       };
       tests = {
         "MaclightTest.hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.maclight)
             (hsPkgs.HUnit)

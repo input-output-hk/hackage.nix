@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.zlib);

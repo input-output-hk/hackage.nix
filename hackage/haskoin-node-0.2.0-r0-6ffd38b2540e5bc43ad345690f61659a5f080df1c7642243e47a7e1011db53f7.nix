@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.async)
           (hsPkgs.base)
@@ -58,7 +58,7 @@
       };
       tests = {
         "test-haskoin-node" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskoin-node)
             (hsPkgs.HUnit)

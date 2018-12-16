@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mywatch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

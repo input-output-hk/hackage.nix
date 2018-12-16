@@ -33,7 +33,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.containers)
           (hsPkgs.parsec)
           (hsPkgs.xhtml)
@@ -67,7 +67,7 @@
       };
       exes = {
         "pandoc" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.containers)
             (hsPkgs.parsec)
             (hsPkgs.xhtml)
@@ -101,7 +101,7 @@
         };
         "markdown2pdf" = {};
         "test-pandoc" = {
-          depends  = pkgs.lib.optionals (!(!flags.tests)) [
+          depends = pkgs.lib.optionals (!(!flags.tests)) [
             (hsPkgs.base)
             (hsPkgs.Diff)
             (hsPkgs.test-framework)

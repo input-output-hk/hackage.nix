@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.acid-state)
           (hsPkgs.aeson)
@@ -66,7 +66,7 @@
       };
       exes = {
         "pdf-slave-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.pdf-slave-server)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.ieee-utils)
@@ -38,7 +38,7 @@
       };
       exes = {
         "testAERN-Real-Double" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee-utils)
             (hsPkgs.QuickCheck)
@@ -50,7 +50,7 @@
           ];
         };
         "benchAERN-Real-Double" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.ieee-utils)
@@ -63,7 +63,7 @@
           ];
         };
         "demoAERN-Real-Double-Quadratic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.ieee-utils)
@@ -73,7 +73,7 @@
           ];
         };
         "demoAERN-Real-Double-Riemann" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.ieee-utils)
@@ -83,7 +83,7 @@
           ];
         };
         "demoAERN-Real-Double-Zero" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.ieee-utils)

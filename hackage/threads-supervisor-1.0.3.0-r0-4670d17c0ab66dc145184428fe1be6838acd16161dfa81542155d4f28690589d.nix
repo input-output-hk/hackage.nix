@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)
           (hsPkgs.retry)
@@ -35,7 +35,7 @@
       };
       exes = {
         "threads-supervisor-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.threads-supervisor)
             (hsPkgs.unordered-containers)
@@ -46,7 +46,7 @@
       };
       tests = {
         "threads-supervisor-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.threads-supervisor)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ironforge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chatty)
             (hsPkgs.antisplice)

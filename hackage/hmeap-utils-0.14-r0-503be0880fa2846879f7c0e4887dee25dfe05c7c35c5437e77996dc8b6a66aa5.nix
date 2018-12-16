@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hmeap-browse" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
           ];
         };
         "hmeap-parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
           ];
         };
         "hmeap-play" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
           ];
         };
         "hmeap-plot" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -74,7 +74,7 @@
           ];
         };
         "hmeap-stat" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)

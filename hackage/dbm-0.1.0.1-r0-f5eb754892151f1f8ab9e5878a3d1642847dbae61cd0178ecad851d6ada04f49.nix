@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dbm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.ini)

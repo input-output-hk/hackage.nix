@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
@@ -54,7 +54,7 @@
       };
       tests = {
         "phantomjs" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.directory)
@@ -72,7 +72,7 @@
           ];
         };
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.http-types)

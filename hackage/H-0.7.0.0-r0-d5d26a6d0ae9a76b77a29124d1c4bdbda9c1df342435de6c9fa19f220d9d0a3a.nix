@@ -26,7 +26,7 @@
     components = {
       exes = {
         "H" = {
-          depends  = [
+          depends = [
             (hsPkgs.inline-r)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

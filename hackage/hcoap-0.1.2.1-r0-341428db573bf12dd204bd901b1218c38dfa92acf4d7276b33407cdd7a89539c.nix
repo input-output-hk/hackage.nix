@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -42,7 +42,7 @@
       };
       exes = {
         "hcoap-example-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
           ];
         };
         "hcoap-example-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)
@@ -62,7 +62,7 @@
       };
       tests = {
         "hcoap-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hcoap)
             (hsPkgs.network)

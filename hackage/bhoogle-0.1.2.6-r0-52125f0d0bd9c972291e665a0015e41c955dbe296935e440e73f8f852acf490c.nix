@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bhoogle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.text)

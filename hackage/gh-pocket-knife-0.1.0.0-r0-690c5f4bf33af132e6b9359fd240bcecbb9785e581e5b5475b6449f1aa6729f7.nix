@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.resourcet)
@@ -35,7 +35,7 @@
       };
       exes = {
         "gh-pocket-knife" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gh-pocket-knife)
             (hsPkgs.aeson)
@@ -45,7 +45,7 @@
       };
       tests = {
         "gh-pocket-knife-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gh-pocket-knife)
             (hsPkgs.hspec)

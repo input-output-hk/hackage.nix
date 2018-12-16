@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.freer-effects)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       tests = {
         "example-Hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer-effects)
             (hsPkgs.tasty)

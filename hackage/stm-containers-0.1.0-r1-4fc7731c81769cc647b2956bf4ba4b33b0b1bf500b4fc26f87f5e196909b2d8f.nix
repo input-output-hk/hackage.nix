@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.loch-th)
           (hsPkgs.placeholders)
@@ -37,7 +37,7 @@
       };
       exes = {
         "stm-containers-profiling" = {
-          depends  = [
+          depends = [
             (hsPkgs.stm-containers)
             (hsPkgs.loch-th)
             (hsPkgs.placeholders)
@@ -49,7 +49,7 @@
       };
       tests = {
         "word-array-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HTF)
             (hsPkgs.loch-th)
@@ -63,7 +63,7 @@
           ];
         };
         "api-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HTF)
             (hsPkgs.stm-containers)
@@ -80,7 +80,7 @@
       };
       benchmarks = {
         "insertion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.mwc-random)
             (hsPkgs.mwc-random-monad)
             (hsPkgs.criterion)
@@ -97,7 +97,7 @@
           ];
         };
         "concurrent-insertion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.mwc-random)
             (hsPkgs.mwc-random-monad)

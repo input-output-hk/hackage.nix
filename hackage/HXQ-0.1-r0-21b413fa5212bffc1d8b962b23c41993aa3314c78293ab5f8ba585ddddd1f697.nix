@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xquery" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.template-haskell)

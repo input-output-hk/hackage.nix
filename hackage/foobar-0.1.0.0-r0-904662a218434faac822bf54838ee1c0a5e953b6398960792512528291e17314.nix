@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "foobar-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foobar)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "foobar-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foobar)
           ];

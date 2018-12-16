@@ -26,7 +26,7 @@
     components = {
       exes = {
         "only" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.regex-compat)

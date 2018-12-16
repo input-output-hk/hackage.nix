@@ -26,7 +26,7 @@
     components = {
       exes = {
         "happs-tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HStringTemplate)
             (hsPkgs.mtl)

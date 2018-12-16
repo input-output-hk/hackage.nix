@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       exes = {
         "profiling" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger-reader)
             (hsPkgs.text)
@@ -44,7 +44,7 @@
           ];
         };
         "filter-logs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger-reader)
             (hsPkgs.text)

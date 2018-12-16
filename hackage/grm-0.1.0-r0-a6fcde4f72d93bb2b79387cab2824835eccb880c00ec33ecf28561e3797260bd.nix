@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wl-pprint)
           (hsPkgs.process)
@@ -36,7 +36,7 @@
       };
       exes = {
         "grm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.wl-pprint)

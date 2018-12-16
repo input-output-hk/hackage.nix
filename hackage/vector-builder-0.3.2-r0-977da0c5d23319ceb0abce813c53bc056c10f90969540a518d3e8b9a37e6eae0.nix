@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.vector)
           (hsPkgs.semigroups)
           (hsPkgs.base-prelude)
@@ -34,7 +34,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
@@ -44,7 +44,7 @@
           ];
         };
         "foldl-profiling" = {
-          depends  = [
+          depends = [
             (hsPkgs.vector-builder)
             (hsPkgs.foldl)
             (hsPkgs.criterion)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "foldl-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.vector-builder)
             (hsPkgs.foldl)
             (hsPkgs.criterion)

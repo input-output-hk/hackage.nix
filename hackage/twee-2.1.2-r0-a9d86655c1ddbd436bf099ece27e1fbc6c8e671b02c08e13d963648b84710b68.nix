@@ -30,7 +30,7 @@
     components = {
       exes = {
         "twee" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.twee-lib)
             (hsPkgs.containers)

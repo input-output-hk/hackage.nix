@@ -26,7 +26,7 @@
     components = {
       exes = {
         "g-npm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.json)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.byteable)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-cipher-blowfish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cipher-blowfish)
             (hsPkgs.crypto-cipher-types)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "bench-cipher-blowfish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cipher-blowfish)

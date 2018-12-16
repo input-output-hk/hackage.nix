@@ -26,7 +26,7 @@
     components = {
       exes = {
         "firefly-example-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.firefly)
             (hsPkgs.text)

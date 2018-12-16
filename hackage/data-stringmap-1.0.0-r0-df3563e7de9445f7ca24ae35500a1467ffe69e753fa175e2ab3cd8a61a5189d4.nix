@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.binary)
@@ -38,7 +38,7 @@
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) ([
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) ([
             (hsPkgs.data-stringmap)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -52,7 +52,7 @@
           ] ++ pkgs.lib.optional (flags.with-sizeable) (hsPkgs.data-size));
         };
         "strict" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-strict)) ([
+          depends = pkgs.lib.optionals (!(!flags.test-strict)) ([
             (hsPkgs.data-stringmap)
             (hsPkgs.base)
             (hsPkgs.bytestring)

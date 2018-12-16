@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.pretty)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       exes = {
         "hspec-setup" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.pretty)
             (hsPkgs.base)
@@ -59,7 +59,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.pretty)
             (hsPkgs.base)

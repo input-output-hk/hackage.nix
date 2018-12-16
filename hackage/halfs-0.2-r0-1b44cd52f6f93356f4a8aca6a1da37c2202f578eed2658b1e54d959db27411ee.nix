@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.unix)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       exes = {
         "moduleTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.unix)
             (hsPkgs.base)
@@ -56,7 +56,7 @@
           ];
         };
         "newfs-halfs" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.unix)
             (hsPkgs.base)
@@ -71,7 +71,7 @@
           ];
         };
         "fsck-halfs" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.unix)
             (hsPkgs.base)

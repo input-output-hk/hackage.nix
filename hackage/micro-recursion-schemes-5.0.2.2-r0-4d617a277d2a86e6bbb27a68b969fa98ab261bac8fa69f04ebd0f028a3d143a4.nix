@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.template-haskell
+        depends = if flags.template-haskell
           then [
             (hsPkgs.base)
             (hsPkgs.th-abstraction)
@@ -41,7 +41,7 @@
       };
       tests = {
         "Expr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.micro-recursion-schemes)

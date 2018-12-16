@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytes)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "hs-multiaddr-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.either-unwrap)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "frank" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.void)
             (hsPkgs.newtype)

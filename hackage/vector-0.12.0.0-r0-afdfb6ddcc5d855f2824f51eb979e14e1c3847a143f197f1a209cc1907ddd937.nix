@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.ghc-prim)
@@ -39,7 +39,7 @@
       };
       tests = {
         "vector-tests-O0" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.vector)
@@ -53,7 +53,7 @@
           ];
         };
         "vector-tests-O2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.vector)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghci-haskeline" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

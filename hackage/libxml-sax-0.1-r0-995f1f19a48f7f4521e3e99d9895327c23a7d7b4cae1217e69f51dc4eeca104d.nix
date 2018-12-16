@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."xml2") ];
         pkgconfig = [
           (pkgconfPkgs.libxml-2.0)

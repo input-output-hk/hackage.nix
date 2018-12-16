@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.th-desugar)
           (hsPkgs.singletons)
@@ -43,7 +43,7 @@
       };
       tests = {
         "main" = {
-          depends  = [
+          depends = [
             (hsPkgs.units)
             (hsPkgs.base)
             (hsPkgs.th-desugar)

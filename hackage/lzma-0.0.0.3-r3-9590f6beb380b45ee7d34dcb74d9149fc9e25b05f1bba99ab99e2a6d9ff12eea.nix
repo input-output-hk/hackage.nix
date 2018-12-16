@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.lzma-clib);
@@ -33,7 +33,7 @@
       };
       tests = {
         "lzma-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.lzma)
             (hsPkgs.base)
             (hsPkgs.bytestring)

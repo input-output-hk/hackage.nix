@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.data-default)
@@ -39,7 +39,7 @@
       };
       exes = {
         "leveldb-example-comparator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.data-default)
@@ -47,7 +47,7 @@
           ];
         };
         "leveldb-example-features" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.transformers)
@@ -57,7 +57,7 @@
           ];
         };
         "leveldb-example-filterpolicy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.data-default)
@@ -65,7 +65,7 @@
           ];
         };
         "leveldb-example-iterforkio" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.bytestring)
@@ -76,7 +76,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leveldb-haskell-fork)
             (hsPkgs.hspec)

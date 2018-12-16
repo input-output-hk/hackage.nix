@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.array)
@@ -88,7 +88,7 @@
       };
       exes = {
         "hnix" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
@@ -122,7 +122,7 @@
       };
       tests = {
         "hnix-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.Diff)
             (hsPkgs.Glob)
             (hsPkgs.QuickCheck)
@@ -168,7 +168,7 @@
       };
       benchmarks = {
         "hnix-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.bytestring)

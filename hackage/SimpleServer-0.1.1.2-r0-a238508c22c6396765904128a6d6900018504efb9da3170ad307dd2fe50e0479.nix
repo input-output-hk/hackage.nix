@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai-routes)
           (hsPkgs.warp)
@@ -36,7 +36,7 @@
       };
       exes = {
         "simpleserver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-routes)
             (hsPkgs.warp)

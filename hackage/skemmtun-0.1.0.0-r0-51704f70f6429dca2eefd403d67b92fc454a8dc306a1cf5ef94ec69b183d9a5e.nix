@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.data-default)

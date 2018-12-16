@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bowntz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.GLUT)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskell-overridez" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-casing)

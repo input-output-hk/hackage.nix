@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambdabot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdabot-core)
             (hsPkgs.lambdabot-haskell-plugins)

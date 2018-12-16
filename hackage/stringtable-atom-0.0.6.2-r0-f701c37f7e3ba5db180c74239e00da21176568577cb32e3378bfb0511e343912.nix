@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.sybinbase
+        depends = if flags.sybinbase
           then [
             (hsPkgs.base)
             (hsPkgs.bytestring)

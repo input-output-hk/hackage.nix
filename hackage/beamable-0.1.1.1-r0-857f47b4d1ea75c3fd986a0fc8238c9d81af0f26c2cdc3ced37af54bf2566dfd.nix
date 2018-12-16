@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "beamable-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "beamable-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.base)

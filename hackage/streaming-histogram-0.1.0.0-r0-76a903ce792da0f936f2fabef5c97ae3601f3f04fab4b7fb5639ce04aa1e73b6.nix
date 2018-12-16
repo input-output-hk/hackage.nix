@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.criterion)
@@ -33,7 +33,7 @@
       };
       tests = {
         "streaminghist-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.streaming-histogram)
             (hsPkgs.tasty)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "streaminghist-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.streaming-histogram)
             (hsPkgs.criterion)

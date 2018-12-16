@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.either)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-raw-metadata" = {
-          depends  = [
+          depends = [
             (hsPkgs.hnetcdf)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -58,7 +58,7 @@
           libs = [ (pkgs."netcdf") ];
         };
         "test-raw-get-put" = {
-          depends  = [
+          depends = [
             (hsPkgs.hnetcdf)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -74,7 +74,7 @@
           libs = [ (pkgs."netcdf") ];
         };
         "test-raw-attributes" = {
-          depends  = [
+          depends = [
             (hsPkgs.hnetcdf)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -90,7 +90,7 @@
           libs = [ (pkgs."netcdf") ];
         };
         "test-get" = {
-          depends  = [
+          depends = [
             (hsPkgs.hnetcdf)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -108,7 +108,7 @@
           libs = [ (pkgs."netcdf") ];
         };
         "test-put" = {
-          depends  = [
+          depends = [
             (hsPkgs.hnetcdf)
             (hsPkgs.base)
             (hsPkgs.containers)

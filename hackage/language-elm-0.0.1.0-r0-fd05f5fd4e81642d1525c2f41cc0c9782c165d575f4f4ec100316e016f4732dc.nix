@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HUnit)
           (hsPkgs.pretty)
@@ -35,7 +35,7 @@
       };
       exes = {
         "language-elm-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-elm)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "language-elm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-elm)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.arithmoi)
           (hsPkgs.base)
           (hsPkgs.binary-search)

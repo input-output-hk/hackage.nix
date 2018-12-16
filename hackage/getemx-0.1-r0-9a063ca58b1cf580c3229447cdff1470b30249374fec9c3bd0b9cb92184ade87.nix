@@ -26,7 +26,7 @@
     components = {
       exes = {
         "getemx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl)
             (hsPkgs.hxt)

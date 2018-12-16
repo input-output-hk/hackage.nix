@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bifunctors)
@@ -65,14 +65,14 @@
       };
       exes = {
         "clash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clash-ghc)
           ];
           libs = [ (pkgs."pthread") ];
         };
         "clashi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clash-ghc)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "workflow-types-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-types)
           ];

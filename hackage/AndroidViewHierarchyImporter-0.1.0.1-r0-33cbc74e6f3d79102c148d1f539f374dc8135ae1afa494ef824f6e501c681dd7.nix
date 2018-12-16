@@ -26,7 +26,7 @@
     components = {
       exes = {
         "AndroidViewHierarchyImporter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)

@@ -29,7 +29,7 @@
     components = {
       exes = {
         "accelerate-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate)
             (hsPkgs.array)
             (hsPkgs.attoparsec)

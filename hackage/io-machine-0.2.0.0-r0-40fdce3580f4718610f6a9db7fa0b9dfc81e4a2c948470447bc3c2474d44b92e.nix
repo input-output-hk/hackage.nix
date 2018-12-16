@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
         ];
       };
       tests = {
         "io-machine-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.io-machine)
           ];

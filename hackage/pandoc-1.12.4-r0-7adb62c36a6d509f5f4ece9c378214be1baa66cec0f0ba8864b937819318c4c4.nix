@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.containers)
@@ -77,7 +77,7 @@
       };
       exes = {
         "pandoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.pandoc)
             (hsPkgs.pandoc-types)
             (hsPkgs.base)
@@ -95,7 +95,7 @@
           ];
         };
         "make-pandoc-man-pages" = {
-          depends  = [
+          depends = [
             (hsPkgs.pandoc)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -107,7 +107,7 @@
       };
       tests = {
         "test-pandoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.pandoc)
@@ -131,7 +131,7 @@
       };
       benchmarks = {
         "benchmark-pandoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.pandoc)
             (hsPkgs.base)
             (hsPkgs.syb)

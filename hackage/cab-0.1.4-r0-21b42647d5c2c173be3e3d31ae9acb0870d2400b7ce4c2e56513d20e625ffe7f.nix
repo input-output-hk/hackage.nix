@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cab" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

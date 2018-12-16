@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "DBDirect" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.mtl)

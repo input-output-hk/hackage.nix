@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.data-default)
@@ -46,7 +46,7 @@
       };
       exes = {
         "hairy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hairy)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hairy)
             (hsPkgs.hspec)
@@ -70,7 +70,7 @@
       };
       benchmarks = {
         "criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hairy)
             (hsPkgs.criterion)

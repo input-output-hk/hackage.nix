@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.time)
@@ -37,7 +37,7 @@
       };
       exes = {
         "clippings2tsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.clippings)
@@ -50,7 +50,7 @@
       };
       tests = {
         "clippings-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clippings)
             (hsPkgs.data-default)

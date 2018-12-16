@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.syb)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-th-expand-syns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.th-expand-syns)
             (hsPkgs.template-haskell)

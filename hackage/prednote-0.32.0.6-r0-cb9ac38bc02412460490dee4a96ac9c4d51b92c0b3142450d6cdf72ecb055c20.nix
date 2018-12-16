@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rainbow)
           (hsPkgs.split)
@@ -40,7 +40,7 @@
       };
       exes = {
         "prednote-visual-tests" = {
-          depends  = pkgs.lib.optionals (flags.visual-tests) [
+          depends = pkgs.lib.optionals (flags.visual-tests) [
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
@@ -58,7 +58,7 @@
       };
       tests = {
         "prednote-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)

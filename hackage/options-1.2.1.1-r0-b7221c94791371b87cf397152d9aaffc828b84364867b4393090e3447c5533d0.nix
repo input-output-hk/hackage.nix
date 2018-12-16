@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.monads-tf)
@@ -34,7 +34,7 @@
       };
       tests = {
         "options_tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chell)
             (hsPkgs.chell-quickcheck)

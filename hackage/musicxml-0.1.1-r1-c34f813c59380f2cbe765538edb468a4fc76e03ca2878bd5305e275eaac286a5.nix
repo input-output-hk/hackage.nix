@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.pretty)
           (hsPkgs.HaXml)
         ] ++ (if flags.splitbase

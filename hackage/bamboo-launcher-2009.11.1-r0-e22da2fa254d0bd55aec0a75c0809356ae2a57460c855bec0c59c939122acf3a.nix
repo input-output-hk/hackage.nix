@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bamboo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hack)
             (hsPkgs.hack-contrib)

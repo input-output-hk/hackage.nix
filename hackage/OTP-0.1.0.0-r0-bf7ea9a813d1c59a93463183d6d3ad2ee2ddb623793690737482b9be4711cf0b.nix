@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.pure-sha
+        depends = if flags.pure-sha
           then [
             (hsPkgs.SHA)
             (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.OTP)

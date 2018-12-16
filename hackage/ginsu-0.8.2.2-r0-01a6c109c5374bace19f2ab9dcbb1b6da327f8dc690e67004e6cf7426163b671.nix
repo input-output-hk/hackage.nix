@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ginsu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.bytestring)

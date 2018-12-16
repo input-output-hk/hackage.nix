@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -35,20 +35,20 @@
       };
       exes = {
         "riff-structure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.riff)
           ];
         };
         "riff-identity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.riff)
           ];
         };
         "riff-convert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.riff)

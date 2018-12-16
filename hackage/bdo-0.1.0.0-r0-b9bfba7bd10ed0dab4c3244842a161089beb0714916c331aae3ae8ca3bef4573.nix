@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bdo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.url)
             (hsPkgs.text)

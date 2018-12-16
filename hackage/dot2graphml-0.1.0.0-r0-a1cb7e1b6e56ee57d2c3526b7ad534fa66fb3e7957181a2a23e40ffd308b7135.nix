@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dot2graphml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hxt)

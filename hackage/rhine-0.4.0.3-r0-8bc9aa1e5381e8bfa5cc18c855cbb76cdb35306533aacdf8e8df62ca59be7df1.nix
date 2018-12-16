@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dunai)
           (hsPkgs.transformers)
@@ -36,13 +36,13 @@
       };
       exes = {
         "HelloWorld" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rhine)
           ];
         };
         "Demonstration" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rhine)
           ];

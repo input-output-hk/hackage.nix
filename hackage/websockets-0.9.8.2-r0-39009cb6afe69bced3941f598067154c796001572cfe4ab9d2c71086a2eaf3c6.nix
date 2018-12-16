@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -43,7 +43,7 @@
       };
       exes = {
         "websockets-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.websockets)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -63,7 +63,7 @@
       };
       tests = {
         "websockets-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "github-post-receive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

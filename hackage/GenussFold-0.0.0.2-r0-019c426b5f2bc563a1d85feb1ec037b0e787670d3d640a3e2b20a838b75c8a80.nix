@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ADPfusion)
           (hsPkgs.ansi-wl-pprint)
@@ -46,7 +46,7 @@
       };
       exes = {
         "GenussFold" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.FormalGrammars)
@@ -56,7 +56,7 @@
       };
       tests = {
         "properties-fast" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GenussFold)
             (hsPkgs.QuickCheck)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
         ];
       };
       exes = {
         "optparse-version-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.file-embed)
             (hsPkgs.optparse-version)

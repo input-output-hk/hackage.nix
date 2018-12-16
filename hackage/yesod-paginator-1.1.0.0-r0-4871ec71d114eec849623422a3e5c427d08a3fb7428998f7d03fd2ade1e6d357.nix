@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-markup)
           (hsPkgs.path-pieces)
@@ -40,7 +40,7 @@
       };
       exes = {
         "yesod-paginator-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp)
             (hsPkgs.yesod)
@@ -50,13 +50,13 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.yesod-core)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gen-passwd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)

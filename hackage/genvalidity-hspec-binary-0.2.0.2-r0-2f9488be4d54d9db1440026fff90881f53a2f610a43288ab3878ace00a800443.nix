@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -37,7 +37,7 @@
       };
       tests = {
         "genvalidity-hspec-binary-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.genvalidity-hspec-binary)
@@ -45,7 +45,7 @@
           ];
         };
         "genvalidity-hspec-binary-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.genvalidity)
             (hsPkgs.genvalidity-hspec-binary)

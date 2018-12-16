@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.base-compat)
@@ -64,7 +64,7 @@
       };
       tests = {
         "tests" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)

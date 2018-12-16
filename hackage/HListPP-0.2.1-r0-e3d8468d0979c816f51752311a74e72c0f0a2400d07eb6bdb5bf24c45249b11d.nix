@@ -26,7 +26,7 @@
     components = {
       exes = {
         "HListPP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.applicative-quoters)
             (hsPkgs.regex-applicative)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "minirotate" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.base)
             (hsPkgs.directory)

@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.base-compat)
@@ -53,7 +53,7 @@
       };
       exes = {
         "rest-example-happstack" = {
-          depends  = pkgs.lib.optionals (flags.happstack) [
+          depends = pkgs.lib.optionals (flags.happstack) [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.happstack-server)
@@ -64,7 +64,7 @@
           ];
         };
         "rest-example-wai" = {
-          depends  = pkgs.lib.optionals (flags.wai) [
+          depends = pkgs.lib.optionals (flags.wai) [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.rest-example)
@@ -73,7 +73,7 @@
           ];
         };
         "rest-example-snap" = {
-          depends  = pkgs.lib.optionals (flags.snap) [
+          depends = pkgs.lib.optionals (flags.snap) [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.mtl)
@@ -86,7 +86,7 @@
           ];
         };
         "rest-example-gen" = {
-          depends  = pkgs.lib.optionals (flags.gen) [
+          depends = pkgs.lib.optionals (flags.gen) [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.rest-example)

@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.mtl)
@@ -68,7 +68,7 @@
       };
       exes = {
         "pandoc-citeproc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-citeproc)
             (hsPkgs.pandoc-types)
@@ -76,7 +76,7 @@
           ];
         };
         "biblio2yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-citeproc)
             (hsPkgs.yaml)
@@ -89,7 +89,7 @@
       };
       tests = {
         "test-pandoc-citeproc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.utf8-string)
             (hsPkgs.aeson-pretty)

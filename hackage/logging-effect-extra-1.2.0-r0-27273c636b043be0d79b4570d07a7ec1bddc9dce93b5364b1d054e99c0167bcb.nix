@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.logging-effect)
           (hsPkgs.logging-effect-extra-file)
@@ -35,7 +35,7 @@
       };
       exes = {
         "log-extra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logging-effect-extra)
           ];

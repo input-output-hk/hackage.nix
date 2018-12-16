@@ -26,7 +26,7 @@
     components = {
       exes = {
         "msi-kb-backlit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hid)
             (hsPkgs.split)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
@@ -70,7 +70,7 @@
       };
       exes = {
         "cachix" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
@@ -117,7 +117,7 @@
       };
       tests = {
         "cachix-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)

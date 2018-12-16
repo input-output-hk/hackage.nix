@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       exes = {
         "HulkImport-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HulkImport)
             (hsPkgs.text)
@@ -43,7 +43,7 @@
       };
       tests = {
         "HulkImport-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HulkImport)
             (hsPkgs.tasty)

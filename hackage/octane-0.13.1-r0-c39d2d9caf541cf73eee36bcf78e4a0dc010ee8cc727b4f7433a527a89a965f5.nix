@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bimap)
@@ -46,7 +46,7 @@
       };
       exes = {
         "octane" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.octane)
           ];
@@ -54,14 +54,14 @@
       };
       tests = {
         "octane-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.octane)
             (hsPkgs.doctest)
           ];
         };
         "octane-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.octane)
             (hsPkgs.tasty)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "octane-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.octane)

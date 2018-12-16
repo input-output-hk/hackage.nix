@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tsuntsun" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.conduit-combinators)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       tests = {
         "boop-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.boop)
           ];

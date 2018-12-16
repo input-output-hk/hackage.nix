@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -38,7 +38,7 @@
       };
       exes = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.array)
             (hsPkgs.base)
@@ -55,7 +55,7 @@
       };
       tests = {
         "cuckoo-filter-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.array)

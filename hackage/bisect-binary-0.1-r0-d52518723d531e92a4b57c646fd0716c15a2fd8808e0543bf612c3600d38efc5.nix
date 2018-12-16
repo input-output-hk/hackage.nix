@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bisect-binary" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.Chart)
           (hsPkgs.lens)
@@ -43,7 +43,7 @@
       };
       sublibs = {
         "hgis-readshp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       tests = {
         "hgis-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgis)
             (hsPkgs.hspec)

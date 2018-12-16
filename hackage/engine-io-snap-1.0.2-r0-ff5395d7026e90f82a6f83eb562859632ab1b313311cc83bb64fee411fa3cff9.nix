@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec-enumerator)
           (hsPkgs.base)
           (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.minimorph)
@@ -37,7 +37,7 @@
       };
       exes = {
         "antfarm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.antfarm)
             (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       tests = {
         "antfarm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.antfarm)
             (hsPkgs.HUnit)

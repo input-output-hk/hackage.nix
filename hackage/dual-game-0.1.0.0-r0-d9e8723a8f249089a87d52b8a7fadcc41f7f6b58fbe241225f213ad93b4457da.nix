@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dual" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.websockets)
             (hsPkgs.cereal)

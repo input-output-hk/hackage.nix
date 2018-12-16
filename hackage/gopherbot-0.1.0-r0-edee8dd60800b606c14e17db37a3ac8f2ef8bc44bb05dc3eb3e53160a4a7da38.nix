@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gopherbot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)

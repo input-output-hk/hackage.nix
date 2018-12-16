@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "map-lazy-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -47,7 +47,7 @@
           ];
         };
         "map-strict-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -61,7 +61,7 @@
           ];
         };
         "bitqueue-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.QuickCheck)
@@ -70,7 +70,7 @@
           ];
         };
         "set-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -84,7 +84,7 @@
           ];
         };
         "intmap-lazy-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -97,7 +97,7 @@
           ];
         };
         "intmap-strict-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -110,7 +110,7 @@
           ];
         };
         "intset-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -123,7 +123,7 @@
           ];
         };
         "seq-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -135,7 +135,7 @@
           ];
         };
         "tree-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.deepseq)
@@ -147,7 +147,7 @@
           ];
         };
         "map-strictness-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.ChasingBottoms)
@@ -159,7 +159,7 @@
           ];
         };
         "intmap-strictness-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.ChasingBottoms)
@@ -171,7 +171,7 @@
           ];
         };
         "intset-strictness-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.ChasingBottoms)
@@ -183,7 +183,7 @@
           ];
         };
         "listutils-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ChasingBottoms)
             (hsPkgs.deepseq)
@@ -196,7 +196,7 @@
       };
       benchmarks = {
         "intmap-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
@@ -204,7 +204,7 @@
           ];
         };
         "intset-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
@@ -212,7 +212,7 @@
           ];
         };
         "map-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
@@ -221,7 +221,7 @@
           ];
         };
         "sequence-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
@@ -231,7 +231,7 @@
           ];
         };
         "set-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
@@ -239,35 +239,35 @@
           ];
         };
         "set-operations-intmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
           ];
         };
         "set-operations-intset" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
           ];
         };
         "set-operations-map" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
           ];
         };
         "set-operations-set" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
           ];
         };
         "lookupge-intmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
@@ -276,7 +276,7 @@
           ];
         };
         "lookupge-map" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)

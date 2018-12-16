@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -47,21 +47,21 @@
       };
       exes = {
         "gtk2hs-demo-actionMenu" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-buttonBox" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-carsim" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
@@ -70,21 +70,21 @@
           ];
         };
         "gtk2hs-demo-progress" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-progressThreadedRTS" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-fastDraw" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
@@ -93,27 +93,27 @@
           ];
         };
         "gtk2hs-demo-fonts" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
           ];
         };
         "gtk2hs-demo-builder" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-helloworld" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-layout" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
@@ -121,35 +121,35 @@
           ];
         };
         "gtk2hs-demo-menudemo" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-combodemo" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-notebook" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-statusIcon" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)
           ];
         };
         "gtk2hs-demo-arabic" = {
-          depends  = [
+          depends = [
             (hsPkgs.gtk3)
             (hsPkgs.base)
             (hsPkgs.transformers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.leancheck)
           (hsPkgs.cmdargs)
@@ -34,7 +34,7 @@
       };
       tests = {
         "mutate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -42,7 +42,7 @@
           ];
         };
         "showmutable" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -50,7 +50,7 @@
           ];
         };
         "derive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -60,7 +60,7 @@
       };
       benchmarks = {
         "avltrees" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -68,7 +68,7 @@
           ];
         };
         "bools" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -76,7 +76,7 @@
           ];
         };
         "digraphs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -84,7 +84,7 @@
           ];
         };
         "heaps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -92,7 +92,7 @@
           ];
         };
         "id" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -100,7 +100,7 @@
           ];
         };
         "list" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -108,7 +108,7 @@
           ];
         };
         "mergeheaps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -116,7 +116,7 @@
           ];
         };
         "pretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -125,7 +125,7 @@
           ];
         };
         "sets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -133,7 +133,7 @@
           ];
         };
         "setsofsets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -141,7 +141,7 @@
           ];
         };
         "sieve" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -149,7 +149,7 @@
           ];
         };
         "sorting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
@@ -157,7 +157,7 @@
           ];
         };
         "spring" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)

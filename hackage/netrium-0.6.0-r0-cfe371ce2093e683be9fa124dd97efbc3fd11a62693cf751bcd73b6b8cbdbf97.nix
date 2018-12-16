@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.process)
@@ -35,7 +35,7 @@
       };
       exes = {
         "normalise" = {
-          depends  = [
+          depends = [
             (hsPkgs.netrium)
             (hsPkgs.base)
             (hsPkgs.process)
@@ -45,7 +45,7 @@
           ];
         };
         "simulate" = {
-          depends  = [
+          depends = [
             (hsPkgs.netrium)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -56,7 +56,7 @@
           ];
         };
         "visualise" = {
-          depends  = [
+          depends = [
             (hsPkgs.netrium)
             (hsPkgs.base)
             (hsPkgs.directory)

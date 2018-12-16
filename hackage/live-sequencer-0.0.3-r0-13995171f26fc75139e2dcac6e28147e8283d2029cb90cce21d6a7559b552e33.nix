@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.non-negative)
           (hsPkgs.event-list)
           (hsPkgs.base)
@@ -37,7 +37,7 @@
       };
       exes = {
         "live-sequencer" = {
-          depends  = [
+          depends = [
             (hsPkgs.stm-split)
             (hsPkgs.concurrent-split)
             (hsPkgs.transformers)
@@ -60,7 +60,7 @@
           ];
         };
         "live-sequencer-gui" = {
-          depends  = pkgs.lib.optionals (flags.gui) [
+          depends = pkgs.lib.optionals (flags.gui) [
             (hsPkgs.wx)
             (hsPkgs.wxcore)
             (hsPkgs.stm)
@@ -90,7 +90,7 @@
           ];
         };
         "live-mplayer-control" = {
-          depends  = pkgs.lib.optionals (flags.mplayer) [
+          depends = pkgs.lib.optionals (flags.mplayer) [
             (hsPkgs.midi-alsa)
             (hsPkgs.midi)
             (hsPkgs.alsa-seq)

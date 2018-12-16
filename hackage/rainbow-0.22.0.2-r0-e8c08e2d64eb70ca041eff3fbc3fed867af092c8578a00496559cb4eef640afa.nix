@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       exes = {
         "test8color" = {
-          depends  = pkgs.lib.optionals (flags.visual) [
+          depends = pkgs.lib.optionals (flags.visual) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
           ];
         };
         "test256color" = {
-          depends  = pkgs.lib.optionals (flags.visual) [
+          depends = pkgs.lib.optionals (flags.visual) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
           ];
         };
         "colorTest" = {
-          depends  = pkgs.lib.optionals (flags.visual) [
+          depends = pkgs.lib.optionals (flags.visual) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)
@@ -60,7 +60,7 @@
       };
       tests = {
         "rainbow-instances" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.text)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.grid)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       exes = {
         "halma" = {
-          depends  = [
+          depends = [
             (hsPkgs.halma)
             (hsPkgs.base)
             (hsPkgs.diagrams-gtk)
@@ -54,7 +54,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.halma)
             (hsPkgs.grid)
             (hsPkgs.HUnit)

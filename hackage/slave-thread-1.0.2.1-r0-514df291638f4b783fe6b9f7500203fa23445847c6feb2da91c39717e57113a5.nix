@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deferred-folds)
           (hsPkgs.foldl)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)

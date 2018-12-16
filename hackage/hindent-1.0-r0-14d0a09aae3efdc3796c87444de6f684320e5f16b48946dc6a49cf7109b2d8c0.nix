@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default)
           (hsPkgs.haskell-src-exts)
@@ -35,7 +35,7 @@
       };
       exes = {
         "hindent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.text)

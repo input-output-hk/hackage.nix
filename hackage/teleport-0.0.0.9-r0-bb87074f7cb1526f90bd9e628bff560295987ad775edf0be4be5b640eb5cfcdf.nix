@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "warp-haskell-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp-haskell)
             (hsPkgs.turtle)
@@ -45,7 +45,7 @@
       };
       tests = {
         "warp-haskell-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp-haskell)
           ];

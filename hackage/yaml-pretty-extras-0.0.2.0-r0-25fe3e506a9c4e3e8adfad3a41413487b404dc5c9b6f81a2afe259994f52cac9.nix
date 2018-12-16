@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rio)
           (hsPkgs.yaml)
@@ -33,7 +33,7 @@
       };
       tests = {
         "yaml-pretty-extras-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.rio)

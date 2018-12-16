@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cabal-macosx)
           (hsPkgs.reactive-banana)
@@ -37,7 +37,7 @@
       };
       exes = {
         "Animation" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.process)
             (hsPkgs.random)
             (hsPkgs.executable-path)
@@ -49,7 +49,7 @@
           ];
         };
         "Arithmetic" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
@@ -57,7 +57,7 @@
           ];
         };
         "Asteroids" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.random)
             (hsPkgs.executable-path)
             (hsPkgs.filepath)
@@ -68,7 +68,7 @@
           ];
         };
         "BarTab" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
@@ -76,7 +76,7 @@
           ];
         };
         "Counter" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
@@ -84,7 +84,7 @@
           ];
         };
         "CurrencyConverter" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
@@ -92,7 +92,7 @@
           ];
         };
         "CRUD" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.containers)
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
@@ -101,7 +101,7 @@
           ];
         };
         "NetMonitor" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.process)
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
@@ -110,7 +110,7 @@
           ];
         };
         "TicTacToe" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.array)
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
@@ -119,7 +119,7 @@
           ];
         };
         "TwoCounters" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
@@ -127,7 +127,7 @@
           ];
         };
         "Wave" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)
             (hsPkgs.wxcore)

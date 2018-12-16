@@ -26,7 +26,7 @@
     components = {
       exes = {
         "record-preprocessor" = {
-          depends  = [
+          depends = [
             (hsPkgs.record-syntax)
             (hsPkgs.conversion)
             (hsPkgs.conversion-text)
@@ -38,7 +38,7 @@
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.record)
             (hsPkgs.basic-lens)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.Chart)
@@ -45,7 +45,7 @@
       };
       tests = {
         "hip-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hip)
             (hsPkgs.hspec)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "convolution-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

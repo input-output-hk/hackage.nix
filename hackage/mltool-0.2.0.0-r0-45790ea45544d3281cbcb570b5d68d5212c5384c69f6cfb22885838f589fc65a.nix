@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.hmatrix)
@@ -39,7 +39,7 @@
       };
       tests = {
         "mltool-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mltool)
             (hsPkgs.vector)

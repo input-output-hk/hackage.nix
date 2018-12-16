@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.vty)
@@ -38,7 +38,7 @@
       };
       exes = {
         "fcd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fcd)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

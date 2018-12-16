@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.leancheck)
           (hsPkgs.cmdargs)
@@ -34,63 +34,63 @@
       };
       tests = {
         "creason" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "engine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "eval" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "expr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "match" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "misc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "order" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "reason" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
           ];
         };
         "utils" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)
@@ -99,13 +99,13 @@
       };
       benchmarks = {
         "plus-abs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.speculate)
           ];
         };
         "test-stats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.leancheck)
             (hsPkgs.speculate)

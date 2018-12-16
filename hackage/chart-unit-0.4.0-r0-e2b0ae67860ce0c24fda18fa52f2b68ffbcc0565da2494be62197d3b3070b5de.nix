@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.colour)
           (hsPkgs.diagrams-lib)
@@ -41,7 +41,7 @@
       };
       exes = {
         "chart-unit-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.protolude)
@@ -62,7 +62,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.tasty)

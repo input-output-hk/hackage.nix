@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.http-types)
           (hsPkgs.bv)
           (hsPkgs.free)
@@ -40,7 +40,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.workflow-osx)
             (hsPkgs.base)
           ];

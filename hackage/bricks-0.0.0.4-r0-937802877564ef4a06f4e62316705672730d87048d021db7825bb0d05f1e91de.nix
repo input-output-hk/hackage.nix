@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bricks-internal)
           (hsPkgs.bricks-parsec)
@@ -40,7 +40,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bricks-internal)
             (hsPkgs.bricks-parsec)
@@ -55,7 +55,7 @@
           ];
         };
         "evaluation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bricks)
             (hsPkgs.bricks-internal)

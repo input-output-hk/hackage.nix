@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.MonadRandom)
@@ -33,7 +33,7 @@
       };
       tests = {
         "raz-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MonadRandom)
             (hsPkgs.raz)
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "raz-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
@@ -52,7 +52,7 @@
           ];
         };
         "sequence-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.applicative-extras)
           (hsPkgs.base)
           (hsPkgs.bytestring)

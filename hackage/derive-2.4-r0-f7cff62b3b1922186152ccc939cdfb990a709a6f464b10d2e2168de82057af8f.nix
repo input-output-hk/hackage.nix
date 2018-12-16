@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell-src-exts)
           (hsPkgs.filepath)
           (hsPkgs.mtl)
@@ -39,7 +39,7 @@
       };
       exes = {
         "derive" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.transformers)
@@ -33,7 +33,7 @@
       };
       exes = {
         "varying-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.transformers)
@@ -43,7 +43,7 @@
       };
       tests = {
         "varying-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.transformers)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "varying-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.transformers)

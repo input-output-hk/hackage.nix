@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "exp-cache-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.exp-cache)
             (hsPkgs.criterion)
@@ -49,7 +49,7 @@
       };
       tests = {
         "exp-cache-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.exp-cache)
             (hsPkgs.HUnit)

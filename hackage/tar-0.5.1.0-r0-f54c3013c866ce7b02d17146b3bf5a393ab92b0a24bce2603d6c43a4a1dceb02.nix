@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.array)
@@ -53,7 +53,7 @@
       };
       tests = {
         "properties" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.array)
@@ -83,7 +83,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)

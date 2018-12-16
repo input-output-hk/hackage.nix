@@ -26,7 +26,7 @@
     components = {
       exes = {
         "colada" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lda)
             (hsPkgs.containers)

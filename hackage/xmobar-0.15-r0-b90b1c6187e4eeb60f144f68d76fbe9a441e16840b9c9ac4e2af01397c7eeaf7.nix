@@ -38,7 +38,7 @@
     components = {
       exes = {
         "xmobar" = {
-          depends  = ((((((([
+          depends = ((((((([
             (hsPkgs.unix)
             (hsPkgs.time)
             (hsPkgs.filepath)

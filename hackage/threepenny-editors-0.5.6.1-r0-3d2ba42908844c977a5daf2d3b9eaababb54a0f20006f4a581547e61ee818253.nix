@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.casing)
@@ -41,7 +41,7 @@
       };
       exes = {
         "crud" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.casing)
@@ -57,7 +57,7 @@
           ];
         };
         "crud2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.casing)
@@ -73,7 +73,7 @@
           ];
         };
         "parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.casing)
@@ -89,7 +89,7 @@
           ];
         };
         "person" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.casing)
@@ -102,7 +102,7 @@
           ] ++ pkgs.lib.optional (flags.buildexamples) (hsPkgs.threepenny-editors);
         };
         "person2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.casing)

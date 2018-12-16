@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.distributed-process)
           (hsPkgs.distributed-process-async)
           (hsPkgs.distributed-process-client-server)

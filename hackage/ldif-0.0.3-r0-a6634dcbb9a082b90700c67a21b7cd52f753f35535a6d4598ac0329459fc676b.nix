@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc)
           (hsPkgs.base)
           (hsPkgs.filepath)
@@ -37,7 +37,7 @@
       exes = {
         "diffLDIF" = {};
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
           ];

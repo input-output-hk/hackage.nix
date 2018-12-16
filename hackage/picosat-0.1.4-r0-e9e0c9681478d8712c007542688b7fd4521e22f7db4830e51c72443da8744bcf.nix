@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.containers)
@@ -33,13 +33,13 @@
       };
       tests = {
         "Sudoku" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.picosat)
           ];
         };
         "Scoped" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.picosat)
             (hsPkgs.transformers)
@@ -47,7 +47,7 @@
           ];
         };
         "rand-shared-improvement" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.picosat)
             (hsPkgs.transformers)

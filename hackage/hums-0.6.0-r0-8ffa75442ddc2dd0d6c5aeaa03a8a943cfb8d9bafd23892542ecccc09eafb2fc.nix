@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hums" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)

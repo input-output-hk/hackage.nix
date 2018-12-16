@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pastepipe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.network)

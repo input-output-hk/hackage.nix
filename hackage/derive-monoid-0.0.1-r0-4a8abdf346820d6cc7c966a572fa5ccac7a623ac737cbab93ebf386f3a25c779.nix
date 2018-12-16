@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       exes = {
         "example-derive-monoid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.derive-monoid)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.derive-monoid)
             (hsPkgs.semigroups)

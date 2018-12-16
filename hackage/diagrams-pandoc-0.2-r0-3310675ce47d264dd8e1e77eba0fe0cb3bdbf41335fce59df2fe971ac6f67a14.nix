@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc-types)
           (hsPkgs.diagrams-lib)
@@ -38,7 +38,7 @@
       };
       exes = {
         "diagrams-pandoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
             (hsPkgs.diagrams-lib)

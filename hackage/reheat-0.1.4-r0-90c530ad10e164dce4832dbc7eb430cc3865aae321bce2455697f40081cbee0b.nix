@@ -26,7 +26,7 @@
     components = {
       exes = {
         "reheat" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-reheat" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.directory)

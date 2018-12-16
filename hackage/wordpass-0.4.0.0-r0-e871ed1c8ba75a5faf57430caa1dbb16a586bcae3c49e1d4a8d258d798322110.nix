@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wordpass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.containers)

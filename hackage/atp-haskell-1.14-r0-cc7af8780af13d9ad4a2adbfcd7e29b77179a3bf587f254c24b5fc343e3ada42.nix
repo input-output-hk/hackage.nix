@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.applicative-extras)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "atp-haskell-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.atp-haskell)
             (hsPkgs.base)
             (hsPkgs.containers)

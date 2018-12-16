@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.lens)
@@ -38,7 +38,7 @@
       };
       tests = {
         "bv-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bv-sized)
             (hsPkgs.lens)

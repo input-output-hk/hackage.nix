@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.action-permutations)
           (hsPkgs.binary)
@@ -55,13 +55,13 @@
       };
       exes = {
         "penny-test" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.QuickCheck)
             (hsPkgs.random-shuffle)
           ];
         };
         "penny-gibberish" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.QuickCheck)
             (hsPkgs.random-shuffle)
           ];

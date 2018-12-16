@@ -25,13 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [
-          (hsPkgs.filepath)
-        ];
+        depends = [ (hsPkgs.filepath) ];
       };
       exes = {
         "cymake" = {
-          depends  = [
+          depends = [
             (hsPkgs.curry-base)
             (hsPkgs.mtl)
             (hsPkgs.old-time)

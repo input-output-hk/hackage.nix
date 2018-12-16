@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network-uri)
           (hsPkgs.HTTP)
@@ -37,7 +37,7 @@
       };
       exes = {
         "ersaconcat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-uri)
             (hsPkgs.HTTP)
@@ -50,7 +50,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filepath)

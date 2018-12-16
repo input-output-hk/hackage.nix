@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.utility-ht)
           (hsPkgs.base)
         ];
       };
       tests = {
         "tfp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.tfp)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scroll" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.vector)

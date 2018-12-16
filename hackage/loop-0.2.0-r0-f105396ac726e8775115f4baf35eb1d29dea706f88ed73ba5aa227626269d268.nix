@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.loop)
             (hsPkgs.hspec)
@@ -39,7 +39,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.loop)
             (hsPkgs.criterion)
@@ -48,7 +48,7 @@
           ];
         };
         "bench-folds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.loop)
             (hsPkgs.criterion)
@@ -56,7 +56,7 @@
           ];
         };
         "bench-traverse-w32" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.loop)
             (hsPkgs.criterion)
@@ -64,7 +64,7 @@
           ];
         };
         "bench-foldl-and-iorefs-are-slow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.mtl)

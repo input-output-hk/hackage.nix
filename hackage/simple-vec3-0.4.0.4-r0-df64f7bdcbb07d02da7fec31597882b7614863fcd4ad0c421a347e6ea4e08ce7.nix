@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.vector)
@@ -33,14 +33,14 @@
       };
       tests = {
         "simple-vec3-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.doctest-driver-gen)
           ];
         };
         "simple-vec3-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.simple-vec3)
             (hsPkgs.tasty)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "simple-vec3-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.simple-vec3)

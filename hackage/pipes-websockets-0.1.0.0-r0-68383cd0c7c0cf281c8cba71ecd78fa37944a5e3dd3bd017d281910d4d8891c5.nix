@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.websockets)
           (hsPkgs.pipes)
@@ -36,7 +36,7 @@
       };
       exes = {
         "pipes-websockets-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-websockets)
           ];

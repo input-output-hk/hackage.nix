@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cairo)
           (hsPkgs.glib)
@@ -43,7 +43,7 @@
       };
       exes = {
         "sifflet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sifflet)
           ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
@@ -51,7 +51,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cairo)
             (hsPkgs.Cabal)

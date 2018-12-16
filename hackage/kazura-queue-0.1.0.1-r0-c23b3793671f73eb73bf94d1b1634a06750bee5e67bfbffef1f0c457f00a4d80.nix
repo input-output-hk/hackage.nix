@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.primitive)
           (hsPkgs.atomic-primops)
@@ -35,7 +35,7 @@
       };
       tests = {
         "kazura-queue-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kazura-queue)
             (hsPkgs.doctest)
@@ -43,7 +43,7 @@
           ];
         };
         "kazura-queue-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kazura-queue)
             (hsPkgs.HUnit)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "kazura-queue-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kazura-queue)
             (hsPkgs.async)

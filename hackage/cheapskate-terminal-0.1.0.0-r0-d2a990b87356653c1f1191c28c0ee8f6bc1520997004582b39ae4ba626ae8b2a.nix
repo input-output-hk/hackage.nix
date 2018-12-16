@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
           (hsPkgs.cheapskate)
@@ -39,7 +39,7 @@
       };
       exes = {
         "cheapskate-terminal" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.cheapskate)
@@ -55,7 +55,7 @@
       };
       tests = {
         "cheapskate-terminal-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.cheapskate)

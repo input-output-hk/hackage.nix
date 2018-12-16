@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.SDL)
           (hsPkgs.SDL-image)
@@ -45,7 +45,7 @@
       };
       exes = {
         "demo" = {
-          depends  = pkgs.lib.optionals (flags.demo) [
+          depends = pkgs.lib.optionals (flags.demo) [
             (hsPkgs.base)
             (hsPkgs.gridland)
           ];

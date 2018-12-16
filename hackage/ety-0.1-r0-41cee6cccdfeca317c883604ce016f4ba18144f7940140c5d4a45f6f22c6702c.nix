@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.curl)
           (hsPkgs.xml)
@@ -37,7 +37,7 @@
       };
       exes = {
         "ety" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl)
             (hsPkgs.xml)

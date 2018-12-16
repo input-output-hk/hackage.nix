@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       sublibs = {
         "attoparsec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
@@ -47,7 +47,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base-compat)
             (hsPkgs.containers)
             (hsPkgs.transformers)
@@ -63,7 +63,7 @@
           ];
         };
         "fixtures" = {
-          depends  = [
+          depends = [
             (hsPkgs.base-compat)
             (hsPkgs.directory)
             (hsPkgs.filepath)

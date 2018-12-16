@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.pipes)
@@ -33,7 +33,7 @@
       };
       tests = {
         "nullpipe-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nullpipe)
             (hsPkgs.hspec)

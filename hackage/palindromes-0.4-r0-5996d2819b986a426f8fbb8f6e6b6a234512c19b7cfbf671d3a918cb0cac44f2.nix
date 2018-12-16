@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "palindromes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

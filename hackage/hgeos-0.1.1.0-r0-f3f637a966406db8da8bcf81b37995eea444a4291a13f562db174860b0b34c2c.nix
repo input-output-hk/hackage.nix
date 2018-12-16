@@ -25,12 +25,12 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."geos_c") ];
       };
       tests = {
         "hgeos-app" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgeos)
           ];

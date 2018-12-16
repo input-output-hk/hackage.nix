@@ -26,7 +26,7 @@
     components = {
       exes = {
         "servius" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp)
             (hsPkgs.wai-app-static)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "redo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

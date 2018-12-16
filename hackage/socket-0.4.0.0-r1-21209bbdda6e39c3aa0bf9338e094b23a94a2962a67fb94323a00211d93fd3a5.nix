@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "UDP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -45,7 +45,7 @@
           ];
         };
         "TCP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -53,7 +53,7 @@
           ];
         };
         "TCP-sendAndRecvAll" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -61,7 +61,7 @@
           ];
         };
         "PingPong" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -69,14 +69,14 @@
           ];
         };
         "AddrInfo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
           ];
         };
         "NonBlockingIO" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -84,7 +84,7 @@
           ];
         };
         "NonBlockingIO-threaded" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
@@ -92,7 +92,7 @@
           ];
         };
         "IPV6_V6ONLY" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)

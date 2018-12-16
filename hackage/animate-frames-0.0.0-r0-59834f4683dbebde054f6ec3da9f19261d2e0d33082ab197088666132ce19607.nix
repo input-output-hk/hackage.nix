@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.JuicyPixels)
           (hsPkgs.aeson)
           (hsPkgs.animate)
@@ -43,7 +43,7 @@
       };
       exes = {
         "animate-frames" = {
-          depends  = [
+          depends = [
             (hsPkgs.animate-frames)
             (hsPkgs.base)
           ];
@@ -51,7 +51,7 @@
       };
       tests = {
         "animate-frames-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.animate-frames)
             (hsPkgs.base)
             (hsPkgs.tasty)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.parsec)
           (hsPkgs.exceptions)
           (hsPkgs.xhtml)

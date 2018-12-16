@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.api-tools)
           (hsPkgs.asn1-types)
           (hsPkgs.asn1-encoding)
@@ -60,13 +60,13 @@
       };
       exes = {
         "ks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.keystore)
           ];
         };
         "deploy" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

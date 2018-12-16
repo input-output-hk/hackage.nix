@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.greskell-core)
           (hsPkgs.text)
@@ -41,7 +41,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.aeson)
@@ -53,14 +53,14 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.doctest-discover)
           ];
         };
         "hint-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.greskell)
@@ -68,7 +68,7 @@
           ];
         };
         "server-test-suite" = {
-          depends  = pkgs.lib.optionals (flags.server-test) [
+          depends = pkgs.lib.optionals (flags.server-test) [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.hspec)

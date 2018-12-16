@@ -26,26 +26,26 @@
     components = {
       exes = {
         "tovcd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vcd)
           ];
         };
         "cansend" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [ (pkgs."canlib") ];
         };
         "canview" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [ (pkgs."canlib") ];
         };
         "ccp" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [ (pkgs."canlib") ];
         };
         "probe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.digest)
             (hsPkgs.vcd)
@@ -53,17 +53,17 @@
           libs = [ (pkgs."canlib") ];
         };
         "toesb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.digest)
           ];
         };
         "commit" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "git2cc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

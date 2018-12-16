@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhc && compiler.version.ge "7.10.0"
+        depends = if compiler.isGhc && compiler.version.ge "7.10.0"
           then [ (hsPkgs.base) ]
           else [
             (hsPkgs.base)
@@ -34,7 +34,7 @@
       };
       exes = {
         "generic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MemoTrie)
           ];

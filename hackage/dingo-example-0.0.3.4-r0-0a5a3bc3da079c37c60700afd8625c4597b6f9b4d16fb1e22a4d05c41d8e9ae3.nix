@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dingo-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

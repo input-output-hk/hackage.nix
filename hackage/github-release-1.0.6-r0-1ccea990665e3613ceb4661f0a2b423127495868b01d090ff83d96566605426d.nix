@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "github-release" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.github-release)
           ];

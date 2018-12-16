@@ -26,7 +26,7 @@
     components = {
       exes = {
         "nanoAgda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.extra)
           (hsPkgs.sdl2)
@@ -38,7 +38,7 @@
       };
       exes = {
         "piyo-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extra)
             (hsPkgs.piyo)
@@ -53,7 +53,7 @@
       };
       tests = {
         "piyo-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extra)
             (hsPkgs.piyo)

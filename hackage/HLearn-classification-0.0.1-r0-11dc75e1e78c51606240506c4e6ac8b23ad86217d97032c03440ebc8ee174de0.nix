@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HLearn-algebra)
           (hsPkgs.HLearn-distributions)
@@ -50,7 +50,7 @@
       };
       exes = {
         "HLearn-Classification-Demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.HLearn-algebra)
             (hsPkgs.ConstraintKinds)
             (hsPkgs.HLearn-distributions)

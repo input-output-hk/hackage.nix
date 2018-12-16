@@ -26,7 +26,7 @@
     components = {
       exes = {
         "deunicode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.utf8-string)

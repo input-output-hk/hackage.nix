@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.directory)
@@ -41,7 +41,7 @@
       };
       exes = {
         "migrate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.database-migrate)
             (hsPkgs.cmdargs)

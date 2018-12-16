@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cspm" = {
-          depends  = [
+          depends = [
             (hsPkgs.CSPM-Frontend)
             (hsPkgs.CSPM-CoreLanguage)
             (hsPkgs.CSPM-FiringRules)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.conduit)
@@ -44,21 +44,21 @@
       };
       exes = {
         "stackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)
           ];
         };
         "stk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)
           ];
         };
         "stackage-init" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)
@@ -71,7 +71,7 @@
           ];
         };
         "stackage-purge" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)
@@ -83,7 +83,7 @@
           ];
         };
         "stackage-upgrade" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)
@@ -92,7 +92,7 @@
           ];
         };
         "stackage-sandbox" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stackage-cli)

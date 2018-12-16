@@ -26,7 +26,7 @@
     components = {
       exes = {
         "roguestar-engine" = {
-          depends  = [
+          depends = [
             (hsPkgs.hslogger)
             (hsPkgs.priority-sync)
             (hsPkgs.PSQueue)

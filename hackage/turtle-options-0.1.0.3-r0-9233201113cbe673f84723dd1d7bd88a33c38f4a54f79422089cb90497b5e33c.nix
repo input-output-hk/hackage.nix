@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.turtle)
             (hsPkgs.turtle-options)
@@ -44,7 +44,7 @@
       };
       tests = {
         "turtle-options-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.turtle-options)
             (hsPkgs.HUnit)

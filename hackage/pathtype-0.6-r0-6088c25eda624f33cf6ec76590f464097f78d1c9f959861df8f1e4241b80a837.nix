@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.deepseq)
           (hsPkgs.time)
@@ -42,12 +42,12 @@
       };
       exes = {
         "create-pathtype-test" = {
-          depends  = pkgs.lib.optional (flags.buildtools) (hsPkgs.base);
+          depends = pkgs.lib.optional (flags.buildtools) (hsPkgs.base);
         };
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.pathtype)
             (hsPkgs.random)
             (hsPkgs.base)

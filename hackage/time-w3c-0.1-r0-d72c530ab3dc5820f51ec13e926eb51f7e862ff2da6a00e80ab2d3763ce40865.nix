@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.convertible)
           (hsPkgs.parsec)
@@ -36,7 +36,7 @@
       };
       exes = {
         "W3CDateTimeUnitTest" = {
-          depends  = pkgs.lib.optional (flags.build-test-suite) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.build-test-suite) (hsPkgs.HUnit);
         };
       };
     };

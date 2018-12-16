@@ -26,7 +26,7 @@
     components = {
       exes = {
         "zsh-battery" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.filepath)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.diagrams-lib)
@@ -37,7 +37,7 @@
       };
       exes = {
         "test-visualizer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sessiontypes)
           ];
@@ -45,7 +45,7 @@
       };
       tests = {
         "sessiontypes-debug" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sessiontypes)
             (hsPkgs.hspec)
@@ -53,7 +53,7 @@
           ];
         };
         "sessiontypes-normalize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sessiontypes)
             (hsPkgs.hspec)
@@ -61,7 +61,7 @@
           ];
         };
         "sessiontypes-interactive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sessiontypes)
             (hsPkgs.hspec)

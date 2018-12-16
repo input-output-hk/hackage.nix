@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.hslua)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-hslua" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslua)
             (hsPkgs.hslua-module-text)

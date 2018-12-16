@@ -26,7 +26,7 @@
     components = {
       exes = {
         "g4ip-prover" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.directory)

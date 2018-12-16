@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
           (hsPkgs.annotated-wl-pprint)
@@ -122,7 +122,7 @@
       };
       exes = {
         "stack" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.Cabal)
             (hsPkgs.aeson)
             (hsPkgs.annotated-wl-pprint)
@@ -218,7 +218,7 @@
       };
       tests = {
         "stack-integration-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.aeson)
             (hsPkgs.annotated-wl-pprint)
@@ -309,7 +309,7 @@
           build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs);
         };
         "stack-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)

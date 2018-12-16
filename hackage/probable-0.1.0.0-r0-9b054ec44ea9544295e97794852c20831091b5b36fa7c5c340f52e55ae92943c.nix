@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.statistics)
           (hsPkgs.vector)
@@ -37,7 +37,7 @@
       };
       benchmarks = {
         "random" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.criterion)
@@ -47,7 +47,7 @@
           ];
         };
         "distrib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.criterion)

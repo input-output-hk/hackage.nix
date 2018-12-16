@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
@@ -51,7 +51,7 @@
       };
       exes = {
         "s3upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-core)

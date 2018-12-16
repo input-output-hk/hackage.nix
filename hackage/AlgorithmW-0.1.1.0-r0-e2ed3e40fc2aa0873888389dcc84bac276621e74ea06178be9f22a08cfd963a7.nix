@@ -26,7 +26,7 @@
     components = {
       exes = {
         "AlgorithmW" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

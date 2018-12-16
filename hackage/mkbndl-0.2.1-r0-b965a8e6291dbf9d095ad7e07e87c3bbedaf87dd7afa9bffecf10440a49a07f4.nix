@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mkbndl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.filepath)

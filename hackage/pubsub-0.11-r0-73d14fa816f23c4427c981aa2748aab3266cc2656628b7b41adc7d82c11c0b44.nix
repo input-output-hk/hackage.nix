@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.feed)
@@ -39,7 +39,7 @@
       };
       exes = {
         "pubsub.fcgi" = {
-          depends  = [ (hsPkgs.fastcgi) ];
+          depends = [ (hsPkgs.fastcgi) ];
         };
         "feeder" = {};
       };

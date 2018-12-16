@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "inlitpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.inliterate)
             (hsPkgs.text)
@@ -49,14 +49,14 @@
       };
       tests = {
         "test-inliterate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.inliterate)
             (hsPkgs.text)
           ];
         };
         "test-inliterate-pp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.inliterate)
             (hsPkgs.text)

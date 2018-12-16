@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hp2any-manager" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)

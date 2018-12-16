@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((((([
+        depends = ((((((([
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.annotated-wl-pprint)
@@ -69,7 +69,7 @@
       };
       exes = {
         "idris" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)

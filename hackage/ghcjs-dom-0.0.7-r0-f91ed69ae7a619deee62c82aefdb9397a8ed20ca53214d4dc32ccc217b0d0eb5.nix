@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.mtl)
         ] ++ pkgs.lib.optional (flags.ghcjs && flags.jsffi) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optionals (!flags.ghcjs || flags.webkit) ([

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.hledger-lib)
           (hsPkgs.base)
           (hsPkgs.base-compat)
@@ -69,7 +69,7 @@
       };
       exes = {
         "hledger" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.hledger-lib)
             (hsPkgs.hledger)
             (hsPkgs.base)
@@ -108,7 +108,7 @@
       };
       tests = {
         "tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.hledger-lib)
             (hsPkgs.hledger)
             (hsPkgs.base)
@@ -147,7 +147,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.hledger-lib)
             (hsPkgs.hledger)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -59,7 +59,7 @@
       };
       exes = {
         "hsoz-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsoz)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -85,7 +85,7 @@
       };
       tests = {
         "hsoz-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsoz)
             (hsPkgs.QuickCheck)

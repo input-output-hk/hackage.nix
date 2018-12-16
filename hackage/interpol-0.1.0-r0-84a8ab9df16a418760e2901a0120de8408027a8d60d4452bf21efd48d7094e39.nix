@@ -26,7 +26,7 @@
     components = {
       exes = {
         "interpol" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.preprocessor-tools)

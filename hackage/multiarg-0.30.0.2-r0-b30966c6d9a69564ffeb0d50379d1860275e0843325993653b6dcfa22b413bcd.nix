@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "grover" = {
-          depends  = pkgs.lib.optionals (flags.programs) [
+          depends = pkgs.lib.optionals (flags.programs) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickpull)
@@ -37,7 +37,7 @@
           ];
         };
         "telly" = {
-          depends  = pkgs.lib.optionals (flags.programs) [
+          depends = pkgs.lib.optionals (flags.programs) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickpull)
@@ -47,7 +47,7 @@
       };
       tests = {
         "multiarg-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickpull)

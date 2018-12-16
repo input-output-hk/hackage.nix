@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.composition-prelude)
         ];
       };
       tests = {
         "fast-combinatorics-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-combinatorics)
             (hsPkgs.hspec)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "fast-combinatorics-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-combinatorics)
             (hsPkgs.criterion)

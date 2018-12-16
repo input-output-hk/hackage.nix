@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bond)
           (hsPkgs.filepath)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hbc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bond)
@@ -49,7 +49,7 @@
       };
       tests = {
         "bond-haskell-compiler-test" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

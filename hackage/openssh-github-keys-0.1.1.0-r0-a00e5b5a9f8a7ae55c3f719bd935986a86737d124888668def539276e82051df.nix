@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.octohat)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       exes = {
         "openssh-github-keys" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.octohat)
             (hsPkgs.dotenv)
@@ -49,7 +49,7 @@
       };
       tests = {
         "openssh-github-keys-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.octohat)
             (hsPkgs.text)

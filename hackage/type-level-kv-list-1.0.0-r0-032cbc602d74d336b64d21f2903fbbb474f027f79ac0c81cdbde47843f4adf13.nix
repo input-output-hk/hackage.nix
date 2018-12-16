@@ -25,17 +25,17 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "type-level-kv-list-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-level-kv-list)
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foundation)
         ];
       };
       exes = {
         "prime-count" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foundation)
             (hsPkgs.primesieve)
@@ -40,7 +40,7 @@
           libs = [ (pkgs."primesieve") ];
         };
         "prime-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foundation)
             (hsPkgs.primesieve)

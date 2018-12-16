@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mono-traversable)
         ];
       };
       exes = {
         "base91" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base91)
             (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base91)
             (hsPkgs.bytestring)

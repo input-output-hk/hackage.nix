@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.text)
           (hsPkgs.template-haskell)
@@ -39,7 +39,7 @@
       };
       exes = {
         "demo" = {
-          depends  = pkgs.lib.optionals (!(!flags.demo)) [
+          depends = pkgs.lib.optionals (!(!flags.demo)) [
             (hsPkgs.record)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
@@ -48,7 +48,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.doctest)) [
             (hsPkgs.doctest)
             (hsPkgs.directory)
             (hsPkgs.filepath)

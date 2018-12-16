@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "referees" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cond)
             (hsPkgs.containers)

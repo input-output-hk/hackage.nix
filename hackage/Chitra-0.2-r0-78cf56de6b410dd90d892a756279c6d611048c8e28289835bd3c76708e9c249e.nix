@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Chitra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.binary)

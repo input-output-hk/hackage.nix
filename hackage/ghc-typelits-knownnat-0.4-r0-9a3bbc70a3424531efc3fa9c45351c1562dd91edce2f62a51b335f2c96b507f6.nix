@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-tcplugins-extra)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-ghc-typelits-knownnat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-typelits-knownnat)
             (hsPkgs.ghc-typelits-natnormalise)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.random)
@@ -43,7 +43,7 @@
       };
       tests = {
         "statsdi-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.statsdi)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-paths)
           (hsPkgs.mtl)
@@ -63,7 +63,7 @@
       };
       exes = {
         "fay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-paths)
             (hsPkgs.mtl)
@@ -92,7 +92,7 @@
           ];
         };
         "fay-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-paths)
             (hsPkgs.mtl)
@@ -122,7 +122,7 @@
           ];
         };
         "fay-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-paths)
             (hsPkgs.mtl)

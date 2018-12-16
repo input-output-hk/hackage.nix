@@ -26,7 +26,7 @@
     components = {
       exes = {
         "internetmarke" = {
-          depends  = [
+          depends = [
             (hsPkgs.explicit-exception)
             (hsPkgs.mtl)
             (hsPkgs.process)

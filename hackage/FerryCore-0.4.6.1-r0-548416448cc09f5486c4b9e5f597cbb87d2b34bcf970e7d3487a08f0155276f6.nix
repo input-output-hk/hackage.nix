@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.TableAlgebra)
           (hsPkgs.base)
           (hsPkgs.HaXml)

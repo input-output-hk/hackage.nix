@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       exes = {
         "folgerhs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.folgerhs)
             (hsPkgs.xml)

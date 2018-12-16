@@ -32,7 +32,7 @@
     components = {
       exes = {
         "lhc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
           ];
         };
         "lhc-regress" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.extensible-exceptions)
@@ -65,7 +65,7 @@
           ];
         };
         "lhc-pkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

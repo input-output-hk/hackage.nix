@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.applicative-extras)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       tests = {
         "logic-classes-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.applicative-extras)
             (hsPkgs.base)
             (hsPkgs.containers)

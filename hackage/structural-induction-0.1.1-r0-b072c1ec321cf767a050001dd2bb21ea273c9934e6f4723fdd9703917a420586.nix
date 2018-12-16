@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.genifunctors)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       tests = {
         "walk" = {
-          depends  = [
+          depends = [
             (hsPkgs.structural-induction)
             (hsPkgs.base)
             (hsPkgs.pretty)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "tsetchan-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tsetchan)
             (hsPkgs.async)

@@ -40,7 +40,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -89,7 +89,7 @@
       };
       exes = {
         "toysolver" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -102,7 +102,7 @@
           ];
         };
         "toysat" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -125,7 +125,7 @@
           ];
         };
         "toysmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-default-class)
@@ -139,7 +139,7 @@
           ] ++ pkgs.lib.optional (flags.usehaskeline) (hsPkgs.haskeline);
         };
         "toyqbf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-default-class)
@@ -147,7 +147,7 @@
           ];
         };
         "toyfmf" = {
-          depends  = pkgs.lib.optionals (flags.buildtoyfmf) ([
+          depends = pkgs.lib.optionals (flags.buildtoyfmf) ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.intern)
@@ -161,7 +161,7 @@
             ]));
         };
         "toyconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bytestring-builder)
@@ -174,14 +174,14 @@
           ];
         };
         "sudoku" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.toysolver)
           ];
         };
         "nonogram" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -189,14 +189,14 @@
           ];
         };
         "nqueens" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.toysolver)
           ];
         };
         "numberlink" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -208,13 +208,13 @@
           ];
         };
         "knapsack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.toysolver)
           ];
         };
         "assign" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -224,7 +224,7 @@
           ];
         };
         "shortest-path" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -233,14 +233,14 @@
           ];
         };
         "htc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
           ];
         };
         "svm2lp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-default-class)
@@ -251,14 +251,14 @@
           ];
         };
         "survey-propagation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default-class)
             (hsPkgs.toysolver)
           ] ++ pkgs.lib.optional (flags.opencl) (hsPkgs.OpenCL);
         };
         "pigeonhole" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pseudo-boolean)
@@ -266,14 +266,14 @@
           ];
         };
         "maxsatverify" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.toysolver)
           ];
         };
         "pbverify" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.pseudo-boolean)
@@ -283,7 +283,7 @@
       };
       tests = {
         "TestPolynomial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-interval)
@@ -297,7 +297,7 @@
           ];
         };
         "TestSuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -332,7 +332,7 @@
       };
       benchmarks = {
         "BenchmarkSATLIB" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.criterion)
@@ -341,14 +341,14 @@
           ];
         };
         "BenchmarkKnapsack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.toysolver)
           ];
         };
         "BenchmarkSubsetSum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.toysolver)

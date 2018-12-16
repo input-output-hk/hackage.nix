@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.normaldistribution)
         ];
       };
       exes = {
         "HNumeric-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.HNumeric)
             (hsPkgs.base)
             (hsPkgs.normaldistribution)
@@ -41,7 +41,7 @@
       };
       tests = {
         "HNumeric-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HNumeric)
             (hsPkgs.base)
             (hsPkgs.normaldistribution)

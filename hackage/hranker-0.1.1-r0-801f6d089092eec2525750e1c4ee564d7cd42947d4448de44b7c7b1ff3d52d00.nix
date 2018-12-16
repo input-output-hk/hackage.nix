@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hranker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HCL)
             (hsPkgs.HCL)

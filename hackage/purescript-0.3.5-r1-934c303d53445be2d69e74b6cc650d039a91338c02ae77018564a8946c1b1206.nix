@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmdtheline)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "psc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdtheline)
             (hsPkgs.containers)
@@ -56,7 +56,7 @@
           ];
         };
         "psci" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)
@@ -72,7 +72,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

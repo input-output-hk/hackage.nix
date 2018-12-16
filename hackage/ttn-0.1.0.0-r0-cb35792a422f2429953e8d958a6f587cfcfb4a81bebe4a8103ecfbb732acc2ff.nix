@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.timerep)
@@ -36,7 +36,7 @@
       };
       tests = {
         "data-ttn-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ttn)
             (hsPkgs.aeson)

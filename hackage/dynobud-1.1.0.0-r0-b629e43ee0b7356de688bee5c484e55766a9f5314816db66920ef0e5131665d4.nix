@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.casadi-bindings-core)
           (hsPkgs.casadi-bindings)
@@ -54,7 +54,7 @@
       };
       exes = {
         "multiple_shooting" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.casadi-bindings)
@@ -68,7 +68,7 @@
           ];
         };
         "sofa-viz-2000" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.not-gloss)
@@ -82,7 +82,7 @@
           ];
         };
         "sofa-expand-o-matic" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.casadi-bindings-core)
@@ -94,7 +94,7 @@
           ];
         };
         "homotopy" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.casadi-bindings)
@@ -102,14 +102,14 @@
           ];
         };
         "vec" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
           ];
         };
         "ocpDslSpring" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dynobud)
             (hsPkgs.casadi-bindings)
@@ -124,7 +124,7 @@
           ];
         };
         "ocpDslRocket" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dynobud)
             (hsPkgs.casadi-bindings)
@@ -139,7 +139,7 @@
           ];
         };
         "nlpDsl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dynobud)
             (hsPkgs.casadi-bindings)
@@ -152,14 +152,14 @@
           ];
         };
         "basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.base)
           ];
         };
         "basicJ" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.vector)
             (hsPkgs.casadi-bindings)
@@ -167,14 +167,14 @@
           ];
         };
         "daeColl" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.vector)
           ];
         };
         "glider" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -186,7 +186,7 @@
           ];
         };
         "sailboat" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -199,7 +199,7 @@
           ];
         };
         "dynoplot" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -213,7 +213,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.dynobud)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

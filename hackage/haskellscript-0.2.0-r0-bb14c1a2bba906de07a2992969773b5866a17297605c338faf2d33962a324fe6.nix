@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskellscript" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.either)
             (hsPkgs.directory)

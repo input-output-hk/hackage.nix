@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.data-reify)
@@ -54,7 +54,7 @@
         "chalkboard-tests-test1" = {};
         "chalkboard-tests-chalkmark" = {};
         "chalkboard-tests-simple" = {
-          depends  = pkgs.lib.optional (!(flags.all || flags.simple)) (hsPkgs.base);
+          depends = pkgs.lib.optional (!(flags.all || flags.simple)) (hsPkgs.base);
         };
         "chalkboard-tests-cbbe1" = {};
         "chalkboard-examples-example" = {};

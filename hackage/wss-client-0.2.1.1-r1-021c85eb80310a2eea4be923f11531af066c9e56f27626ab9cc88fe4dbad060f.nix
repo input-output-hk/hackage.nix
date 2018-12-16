@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.http-client)
@@ -38,7 +38,7 @@
       };
       exes = {
         "wss-client-sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wss-client)
             (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       tests = {
         "wss-client-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wss-client)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.SVGFonts)
           (hsPkgs.base)
           (hsPkgs.colour)
@@ -50,7 +50,7 @@
       };
       exes = {
         "chart-unit-gallery" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.diagrams-lib)
@@ -70,7 +70,7 @@
           ];
         };
         "chart-unit-main-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.generic-lens-labels)
@@ -81,7 +81,7 @@
           ];
         };
         "chart-unit-source-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.diagrams-lib)
@@ -97,7 +97,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chart-unit)
             (hsPkgs.doctest)

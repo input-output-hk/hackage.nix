@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.async)
@@ -42,7 +42,7 @@
       };
       exes = {
         "odbc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.odbc)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.odbc)
@@ -66,7 +66,7 @@
       };
       benchmarks = {
         "space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.odbc)
             (hsPkgs.weigh)

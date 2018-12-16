@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bifunctors)
@@ -46,7 +46,7 @@
       };
       exes = {
         "login-test" = {
-          depends  = pkgs.lib.optionals (flags.toys) [
+          depends = pkgs.lib.optionals (flags.toys) [
             (hsPkgs.base)
             (hsPkgs.bet)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bet)
             (hsPkgs.lens)

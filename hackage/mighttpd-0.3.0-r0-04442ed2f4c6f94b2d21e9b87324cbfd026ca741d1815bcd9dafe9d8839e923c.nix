@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mighttpd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.c10k)
@@ -43,7 +43,7 @@
           ];
         };
         "mkindex" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

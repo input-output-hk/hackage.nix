@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.parsec)
@@ -34,7 +34,7 @@
       };
       exes = {
         "Eval" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.simple-eval)
             (hsPkgs.text)

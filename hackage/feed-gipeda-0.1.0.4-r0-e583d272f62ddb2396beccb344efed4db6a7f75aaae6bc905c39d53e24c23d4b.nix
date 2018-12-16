@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.fsnotify)
           (hsPkgs.containers)
@@ -58,7 +58,7 @@
       };
       exes = {
         "feed-gipeda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.feed-gipeda)
             (hsPkgs.directory)
@@ -70,7 +70,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

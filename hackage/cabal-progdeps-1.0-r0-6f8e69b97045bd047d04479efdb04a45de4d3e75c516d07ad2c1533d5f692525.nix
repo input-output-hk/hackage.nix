@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-progdeps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.filepath)

@@ -28,7 +28,7 @@
     components = {
       exes = {
         "pandoc-placetable" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

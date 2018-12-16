@@ -35,7 +35,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.containers)
@@ -82,7 +82,7 @@
       };
       exes = {
         "toysolver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -95,7 +95,7 @@
           ];
         };
         "toysat" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.data-default-class)
             (hsPkgs.mwc-random)
@@ -119,7 +119,7 @@
             ])) ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
         };
         "toysmt" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-default-class)
@@ -131,7 +131,7 @@
           ] ++ pkgs.lib.optional (flags.usehaskeline) (hsPkgs.haskeline)) ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
         };
         "toyfmf" = {
-          depends  = pkgs.lib.optionals (flags.buildtoyfmf) ([
+          depends = pkgs.lib.optionals (flags.buildtoyfmf) ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
@@ -139,7 +139,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9" && flags.transformers051) (hsPkgs.logic-TPTP));
         };
         "lpconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.data-default-class)
@@ -149,7 +149,7 @@
           ];
         };
         "pbconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.data-default-class)
@@ -159,14 +159,14 @@
           ];
         };
         "sudoku" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.toysolver)
           ];
         };
         "nonogram" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -174,27 +174,27 @@
           ];
         };
         "nqueens" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.toysolver)
           ];
         };
         "knapsack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.toysolver)
           ];
         };
         "htc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
           ];
         };
         "svm2lp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-default-class)
@@ -203,7 +203,7 @@
           ];
         };
         "pigeonhole" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pseudo-boolean)
@@ -211,14 +211,14 @@
           ];
         };
         "maxsatverify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.toysolver)
           ];
         };
         "pbverify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.pseudo-boolean)
@@ -228,7 +228,7 @@
       };
       tests = {
         "TestPolynomial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
@@ -242,7 +242,7 @@
           ];
         };
         "TestSuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -268,7 +268,7 @@
       };
       benchmarks = {
         "BenchmarkSATLIB" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.data-default-class)
@@ -278,14 +278,14 @@
           ];
         };
         "BenchmarkKnapsack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.toysolver)
             (hsPkgs.criterion)
           ];
         };
         "BenchmarkSubsetSum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.toysolver)

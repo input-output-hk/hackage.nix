@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-locale)
           (hsPkgs.old-time)
@@ -34,7 +34,7 @@
       };
       exes = {
         "cpphs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-locale)
             (hsPkgs.old-time)

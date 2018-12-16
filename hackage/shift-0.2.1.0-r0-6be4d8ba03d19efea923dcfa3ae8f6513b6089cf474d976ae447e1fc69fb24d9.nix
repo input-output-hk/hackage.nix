@@ -26,7 +26,7 @@
     components = {
       exes = {
         "teleport-hask" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.turtle)
             (hsPkgs.optparse-applicative)

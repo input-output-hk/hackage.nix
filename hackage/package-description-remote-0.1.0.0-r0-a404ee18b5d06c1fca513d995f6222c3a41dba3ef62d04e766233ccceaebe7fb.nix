@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "package-description-remote-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.package-description-remote)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.text)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedn)
             (hsPkgs.attoparsec)
@@ -48,7 +48,7 @@
           ];
         };
         "test-encoder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedn)
             (hsPkgs.attoparsec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskell-go-checkers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.gloss)

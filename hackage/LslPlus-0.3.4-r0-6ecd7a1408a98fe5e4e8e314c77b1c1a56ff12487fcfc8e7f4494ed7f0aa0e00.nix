@@ -26,7 +26,7 @@
     components = {
       exes = {
         "LslPlus" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc)
             (hsPkgs.base)
             (hsPkgs.haskell98)

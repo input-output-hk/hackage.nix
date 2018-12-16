@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.alsa-mixer)
           (hsPkgs.ConfigFile)
@@ -90,7 +90,7 @@
       };
       exes = {
         "taffybar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.optparse-applicative)

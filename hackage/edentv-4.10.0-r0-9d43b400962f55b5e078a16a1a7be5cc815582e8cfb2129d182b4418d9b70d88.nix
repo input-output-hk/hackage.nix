@@ -26,7 +26,7 @@
     components = {
       exes = {
         "edentv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

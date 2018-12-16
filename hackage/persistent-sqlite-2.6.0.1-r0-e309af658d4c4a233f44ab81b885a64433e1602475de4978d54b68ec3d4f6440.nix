@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.transformers)
@@ -48,7 +48,7 @@
       };
       exes = {
         "sanity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.persistent-sqlite)
             (hsPkgs.monad-logger)
@@ -57,7 +57,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.persistent)

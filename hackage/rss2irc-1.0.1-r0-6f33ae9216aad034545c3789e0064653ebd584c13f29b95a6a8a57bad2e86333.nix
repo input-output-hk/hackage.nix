@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rss2irc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cabal-file-th)

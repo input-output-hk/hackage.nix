@@ -26,19 +26,19 @@
     components = {
       exes = {
         "hsc3-hash-paren" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-rw)
           ];
         };
         "hsc3-id-rewrite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-rw)
           ];
         };
         "hsc3-id-clear" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3-rw)
           ];

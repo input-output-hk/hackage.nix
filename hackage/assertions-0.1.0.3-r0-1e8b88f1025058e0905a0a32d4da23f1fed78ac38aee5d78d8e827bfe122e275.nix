@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.ansi-terminal)
@@ -33,7 +33,7 @@
       };
       tests = {
         "assert-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.assertions)
             (hsPkgs.interpolate)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)
           (hsPkgs.aeson)
@@ -39,7 +39,7 @@
       };
       exes = {
         "staversion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.staversion)
           ];
@@ -47,7 +47,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.staversion)
             (hsPkgs.text)

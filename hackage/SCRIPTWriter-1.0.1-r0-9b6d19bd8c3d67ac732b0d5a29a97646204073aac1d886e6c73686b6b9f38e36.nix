@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.mtl)
@@ -39,7 +39,7 @@
       };
       exes = {
         "SCRIPTWriter-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SCRIPTWriter)
           ];

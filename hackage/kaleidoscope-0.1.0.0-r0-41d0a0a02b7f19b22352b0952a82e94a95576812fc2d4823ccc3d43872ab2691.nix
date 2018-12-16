@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskeline)
           (hsPkgs.llvm-general)
@@ -36,7 +36,7 @@
       };
       exes = {
         "chapter2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.llvm-general)
@@ -47,7 +47,7 @@
           ];
         };
         "chapter3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.llvm-general)
@@ -59,7 +59,7 @@
           ];
         };
         "chapter4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.llvm-general)
@@ -71,7 +71,7 @@
           ];
         };
         "chapter5" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.llvm-general)
@@ -83,7 +83,7 @@
           ];
         };
         "chapter6" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.llvm-general)
@@ -95,7 +95,7 @@
           ];
         };
         "chapter7" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.llvm-general)

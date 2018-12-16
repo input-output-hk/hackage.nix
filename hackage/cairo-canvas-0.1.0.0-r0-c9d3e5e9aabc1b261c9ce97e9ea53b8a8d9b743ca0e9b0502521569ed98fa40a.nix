@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cairo)
           (hsPkgs.linear)
@@ -36,7 +36,7 @@
       };
       exes = {
         "cairo-canvas-test" = {
-          depends  = pkgs.lib.optionals (flags.builddemo) [
+          depends = pkgs.lib.optionals (flags.builddemo) [
             (hsPkgs.base)
             (hsPkgs.sdl2)
             (hsPkgs.cairo)

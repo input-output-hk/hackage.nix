@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.process)
@@ -36,7 +36,7 @@
       };
       exes = {
         "sagaPipe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.cmdargs)
@@ -49,7 +49,7 @@
           ];
         };
         "sagaTopo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.cmdargs)
@@ -62,7 +62,7 @@
           ];
         };
         "sagaLut" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bindings-saga-cmd)
           ];

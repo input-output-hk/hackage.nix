@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elm-init" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

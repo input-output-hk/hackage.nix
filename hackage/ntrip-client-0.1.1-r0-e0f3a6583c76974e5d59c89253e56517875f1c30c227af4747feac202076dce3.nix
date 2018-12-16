@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       exes = {
         "ntrip-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.bytestring)

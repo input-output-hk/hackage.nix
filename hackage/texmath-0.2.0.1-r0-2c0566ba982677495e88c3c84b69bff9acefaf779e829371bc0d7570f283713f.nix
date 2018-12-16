@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.xml)
           (hsPkgs.parsec)
         ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
@@ -41,7 +41,7 @@
       exes = {
         "testTeXMathML" = {};
         "texmath-cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.cgi)
             (hsPkgs.json)
           ];

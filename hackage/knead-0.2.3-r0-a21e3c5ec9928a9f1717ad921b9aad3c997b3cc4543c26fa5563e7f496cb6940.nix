@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.llvm-extra)
           (hsPkgs.llvm-tf)
           (hsPkgs.tfp)

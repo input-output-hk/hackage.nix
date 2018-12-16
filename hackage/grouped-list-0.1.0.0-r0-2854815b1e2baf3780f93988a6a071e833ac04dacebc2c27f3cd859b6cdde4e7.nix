@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.pointed)
@@ -34,7 +34,7 @@
       };
       benchmarks = {
         "grouped-list-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grouped-list)
             (hsPkgs.criterion)

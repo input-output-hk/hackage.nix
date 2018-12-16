@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tn" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)

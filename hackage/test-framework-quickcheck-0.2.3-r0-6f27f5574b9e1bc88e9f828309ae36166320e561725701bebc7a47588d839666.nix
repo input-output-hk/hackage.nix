@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.test-framework)
           (hsPkgs.QuickCheck)
         ] ++ (if flags.splitbase

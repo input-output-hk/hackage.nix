@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if compiler.isGhcjs && compiler.version.ge "0.1"
+        depends = if compiler.isGhcjs && compiler.version.ge "0.1"
           then [
             (hsPkgs.base)
             (hsPkgs.mtl)

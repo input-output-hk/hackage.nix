@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.freetype2)
           (hsPkgs.OpenGL)
@@ -40,7 +40,7 @@
       };
       exes = {
         "hellobye" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.FreeTypeGL)
             (hsPkgs.GLFW-b)

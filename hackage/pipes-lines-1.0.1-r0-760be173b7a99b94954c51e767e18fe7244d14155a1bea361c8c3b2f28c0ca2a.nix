@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pipes)
           (hsPkgs.pipes-group)
@@ -35,7 +35,7 @@
       };
       tests = {
         "pipes-lines-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-lines)
             (hsPkgs.bytestring)

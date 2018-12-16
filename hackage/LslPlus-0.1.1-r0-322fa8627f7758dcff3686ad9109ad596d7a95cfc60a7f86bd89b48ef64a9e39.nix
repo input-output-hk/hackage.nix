@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc)
           (hsPkgs.base)
           (hsPkgs.haskell98)
@@ -47,7 +47,7 @@
       };
       exes = {
         "LslPlus" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc)
             (hsPkgs.base)
             (hsPkgs.haskell98)

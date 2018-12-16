@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-swf)
@@ -41,21 +41,21 @@
       };
       exes = {
         "loup-actor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.loup)
             (hsPkgs.optparse-generic)
           ];
         };
         "loup-decider" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.loup)
             (hsPkgs.optparse-generic)
           ];
         };
         "shake-loup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakers)
           ];

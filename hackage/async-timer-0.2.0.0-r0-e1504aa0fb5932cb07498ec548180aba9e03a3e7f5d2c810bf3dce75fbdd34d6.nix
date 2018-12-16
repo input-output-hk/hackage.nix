@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.safe-exceptions)
@@ -35,7 +35,7 @@
       };
       tests = {
         "async-timer-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.async-timer)
             (hsPkgs.base)

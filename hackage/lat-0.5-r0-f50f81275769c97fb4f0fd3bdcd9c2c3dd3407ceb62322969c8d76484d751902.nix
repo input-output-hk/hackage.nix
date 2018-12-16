@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.safe)

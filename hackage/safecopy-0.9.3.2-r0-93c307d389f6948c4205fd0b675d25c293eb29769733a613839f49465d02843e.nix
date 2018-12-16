@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.cereal)
@@ -40,7 +40,7 @@
       };
       tests = {
         "instances" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.template-haskell)

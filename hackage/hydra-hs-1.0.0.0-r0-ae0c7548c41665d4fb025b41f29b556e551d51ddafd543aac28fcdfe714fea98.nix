@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
         ];
@@ -36,7 +36,7 @@
       };
       tests = {
         "hydra-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hydra-hs)
           ];

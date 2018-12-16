@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lifted-base)
           (hsPkgs.lifted-async)
@@ -36,7 +36,7 @@
       };
       tests = {
         "async-timer-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lifted-async)
             (hsPkgs.async-timer)

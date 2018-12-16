@@ -26,7 +26,7 @@
     components = {
       exes = {
         "highWaterMark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
           ];

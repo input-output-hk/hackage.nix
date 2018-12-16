@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client-tls)
           (hsPkgs.transformers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hello-bot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.telegram-bot)
             (hsPkgs.text)
@@ -47,7 +47,7 @@
       };
       tests = {
         "telegram-bot-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.telegram-bot)
           ];

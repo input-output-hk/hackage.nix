@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rselect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.containers)

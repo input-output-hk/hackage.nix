@@ -26,7 +26,7 @@
     components = {
       exes = {
         "angel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.mtl)

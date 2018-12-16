@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackport" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -70,7 +70,7 @@
       };
       tests = {
         "test-resolve-category" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -91,7 +91,7 @@
           ];
         };
         "test-print-deps" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -111,7 +111,7 @@
           ];
         };
         "test-normalize-deps" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.binary)

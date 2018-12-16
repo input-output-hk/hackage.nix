@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.ghcjs
+        depends = if flags.ghcjs
           then [
             (hsPkgs.ghcjs-base)
             (hsPkgs.aeson)
@@ -52,7 +52,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hackernews)
             (hsPkgs.hspec)

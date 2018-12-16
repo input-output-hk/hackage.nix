@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -50,7 +50,7 @@
       };
       exes = {
         "rlwe-challenges" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
             (hsPkgs.lol)

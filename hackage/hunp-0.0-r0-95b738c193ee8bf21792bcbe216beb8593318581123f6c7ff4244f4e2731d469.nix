@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hunp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)

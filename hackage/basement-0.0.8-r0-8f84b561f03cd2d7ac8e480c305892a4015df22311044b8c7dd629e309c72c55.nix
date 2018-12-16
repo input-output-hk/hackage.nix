@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.0")) ([
+        depends = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.0")) ([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32));

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "confsolve" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.process)

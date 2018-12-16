@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jarf" = {
-          depends  = [
+          depends = [
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.array)

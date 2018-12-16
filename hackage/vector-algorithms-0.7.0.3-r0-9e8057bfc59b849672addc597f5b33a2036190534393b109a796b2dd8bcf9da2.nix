@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.primitive)
@@ -41,7 +41,7 @@
       };
       exes = {
         "simple-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.vector)
@@ -52,7 +52,7 @@
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.properties)) [
+          depends = pkgs.lib.optionals (!(!flags.properties)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

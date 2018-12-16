@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bimap)
@@ -69,7 +69,7 @@
       };
       exes = {
         "ethereum-analyzer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ethereum-analyzer)
             (hsPkgs.ethereum-analyzer-deps)
@@ -78,7 +78,7 @@
           ];
         };
         "ea-dump-contract" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.ethereum-analyzer)
@@ -92,7 +92,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.ethereum-analyzer)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "himerge" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.unix)

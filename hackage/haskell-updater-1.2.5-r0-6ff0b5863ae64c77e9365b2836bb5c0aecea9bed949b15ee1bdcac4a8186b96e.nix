@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskell-updater" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

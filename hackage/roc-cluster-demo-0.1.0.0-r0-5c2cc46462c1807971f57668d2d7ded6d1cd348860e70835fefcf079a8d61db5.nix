@@ -26,7 +26,7 @@
     components = {
       exes = {
         "roc-cluster-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.gloss)

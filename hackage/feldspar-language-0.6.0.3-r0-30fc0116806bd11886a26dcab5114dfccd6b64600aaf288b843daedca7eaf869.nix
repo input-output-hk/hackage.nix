@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       tests = {
         "range" = {
-          depends  = [
+          depends = [
             (hsPkgs.feldspar-language)
             (hsPkgs.base)
             (hsPkgs.random)
@@ -54,7 +54,7 @@
           ];
         };
         "semantics" = {
-          depends  = [
+          depends = [
             (hsPkgs.feldspar-language)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -64,7 +64,7 @@
           ];
         };
         "decoration" = {
-          depends  = [
+          depends = [
             (hsPkgs.feldspar-language)
             (hsPkgs.base)
             (hsPkgs.bytestring)

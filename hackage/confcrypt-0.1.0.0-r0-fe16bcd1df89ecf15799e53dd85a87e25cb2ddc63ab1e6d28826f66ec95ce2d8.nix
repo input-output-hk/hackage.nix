@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-kms)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       exes = {
         "confcrypt" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-kms)
             (hsPkgs.base)
@@ -74,7 +74,7 @@
       };
       tests = {
         "confcrypt-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.amazonka)

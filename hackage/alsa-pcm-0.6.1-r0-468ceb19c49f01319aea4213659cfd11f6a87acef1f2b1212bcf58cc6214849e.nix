@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.alsa-core)
           (hsPkgs.storable-record)
           (hsPkgs.sample-frame)
@@ -44,7 +44,7 @@
       };
       exes = {
         "alsa-minisynth" = {
-          depends  = pkgs.lib.optionals (flags.buildsynthesizer) [
+          depends = pkgs.lib.optionals (flags.buildsynthesizer) [
             (hsPkgs.alsa-pcm)
             (hsPkgs.alsa-seq)
             (hsPkgs.containers)
@@ -54,32 +54,32 @@
           ];
         };
         "alsa-sine" = {
-          depends  = pkgs.lib.optionals (flags.buildsynthesizer) [
+          depends = pkgs.lib.optionals (flags.buildsynthesizer) [
             (hsPkgs.alsa-pcm)
             (hsPkgs.storablevector)
             (hsPkgs.base)
           ];
         };
         "alsa-duplex" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-pcm)
             (hsPkgs.base)
           ];
         };
         "alsa-play" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-pcm)
             (hsPkgs.base)
           ];
         };
         "alsa-record" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-pcm)
             (hsPkgs.base)
           ];
         };
         "alsa-volume-meter" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.alsa-pcm)
             (hsPkgs.base)
           ];

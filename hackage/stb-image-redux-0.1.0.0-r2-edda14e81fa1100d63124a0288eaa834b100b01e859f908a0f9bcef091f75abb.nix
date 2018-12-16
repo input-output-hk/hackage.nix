@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
       };
       tests = {
         "stb-image-redux-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stb-image-redux)
             (hsPkgs.vector)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-casing)
@@ -56,7 +56,7 @@
       };
       exes = {
         "sandbox" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gdax)
             (hsPkgs.aeson)
@@ -72,7 +72,7 @@
       };
       tests = {
         "test-gdax" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gdax)
             (hsPkgs.aeson)

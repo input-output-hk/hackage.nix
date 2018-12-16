@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql-backend)
           (hsPkgs.template-haskell)
           (hsPkgs.attoparsec)

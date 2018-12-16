@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
         ];
       };
       exes = {
         "lambda-calculator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambda-calculator)
             (hsPkgs.Shellac)
@@ -42,7 +42,7 @@
       };
       tests = {
         "lambda-calculus-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambda-calculator)
             (hsPkgs.hspec)

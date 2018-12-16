@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       exes = {
         "tfp-test" = {
-          depends  = pkgs.lib.optionals (flags.build-test) [
+          depends = pkgs.lib.optionals (flags.build-test) [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.QuickCheck)

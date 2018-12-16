@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "log2json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parsec)

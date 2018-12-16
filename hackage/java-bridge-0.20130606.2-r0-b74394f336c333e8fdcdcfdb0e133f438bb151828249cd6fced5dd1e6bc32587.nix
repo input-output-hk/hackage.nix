@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -52,7 +52,7 @@
       };
       exes = {
         "j2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.java-bridge)
           ] ++ pkgs.lib.optionals (!flags.only_core) (pkgs.lib.optionals (!flags.no_tools) [
@@ -70,7 +70,7 @@
           ]);
         };
         "h2js" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.java-bridge)
           ] ++ pkgs.lib.optionals (!flags.only_core) (pkgs.lib.optionals (!flags.no_tools) [
@@ -88,13 +88,13 @@
           ]);
         };
         "java-calculator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.java-bridge)
           ];
         };
         "java-system-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.java-bridge)
           ];

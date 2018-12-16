@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ideas-math" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)

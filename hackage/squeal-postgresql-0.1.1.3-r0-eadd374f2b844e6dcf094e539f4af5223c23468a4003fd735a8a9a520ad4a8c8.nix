@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       exes = {
         "squeal-postgresql-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.generics-sop)
@@ -61,7 +61,7 @@
       };
       tests = {
         "squeal-postgresql-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generics-sop)
             (hsPkgs.hspec)
@@ -69,7 +69,7 @@
           ];
         };
         "squeal-postgresql-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.goal-core)
           (hsPkgs.goal-geometry)
@@ -40,7 +40,7 @@
       };
       exes = {
         "rk4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -49,7 +49,7 @@
           ];
         };
         "markov-chain" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -60,7 +60,7 @@
           ];
         };
         "ito-process" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -71,7 +71,7 @@
           ];
         };
         "pendulum-vector-field" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -81,7 +81,7 @@
           ];
         };
         "pendulum-simulation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -91,7 +91,7 @@
           ];
         };
         "pendulum-filter-histogram" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -102,7 +102,7 @@
           ];
         };
         "pendulum-filter-simulation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -113,7 +113,7 @@
           ];
         };
         "pendulum-filter-train" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -124,7 +124,7 @@
           ];
         };
         "pendulum-filter-code" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)

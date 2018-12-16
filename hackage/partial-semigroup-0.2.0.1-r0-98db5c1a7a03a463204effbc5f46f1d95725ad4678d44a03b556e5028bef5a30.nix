@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.identity-in-base) (hsPkgs.base)) ++ (if flags.semigroup-in-base
           then [ (hsPkgs.base) ]
@@ -37,7 +37,7 @@
       };
       tests = {
         "examples" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.partial-semigroup)
           ] ++ pkgs.lib.optional (flags.enable-hedgehog) (hsPkgs.hedgehog)) ++ (if flags.semigroup-in-base
@@ -45,7 +45,7 @@
             else [ (hsPkgs.semigroups) ]);
         };
         "properties" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.partial-semigroup)
           ] ++ pkgs.lib.optional (flags.enable-hedgehog) (hsPkgs.hedgehog)) ++ (if flags.semigroup-in-base

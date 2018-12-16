@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskades" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

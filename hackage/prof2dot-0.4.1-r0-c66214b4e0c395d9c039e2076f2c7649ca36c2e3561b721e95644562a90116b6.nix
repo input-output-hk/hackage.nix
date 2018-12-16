@@ -26,7 +26,7 @@
     components = {
       exes = {
         "prof2dot" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.parsec)
             (hsPkgs.filepath)

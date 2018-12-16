@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       exes = {
         "wasm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wasm)
             (hsPkgs.optparse-applicative)
@@ -57,7 +57,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)

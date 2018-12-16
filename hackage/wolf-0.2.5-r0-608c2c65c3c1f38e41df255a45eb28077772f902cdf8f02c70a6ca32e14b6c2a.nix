@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
@@ -60,7 +60,7 @@
       };
       exes = {
         "wolf-register" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
@@ -72,7 +72,7 @@
           ];
         };
         "wolf-execute" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
@@ -84,7 +84,7 @@
           ];
         };
         "wolf-decide" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
@@ -96,7 +96,7 @@
           ];
         };
         "wolf-act" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka-core)
             (hsPkgs.base)
@@ -116,7 +116,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.tasty)

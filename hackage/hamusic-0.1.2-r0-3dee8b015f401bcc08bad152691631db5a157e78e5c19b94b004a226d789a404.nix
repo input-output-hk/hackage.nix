@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.process)
@@ -38,9 +38,7 @@
       };
       exes = {
         "HaMusic" = {
-          depends  = [
-            (hsPkgs.filepath)
-          ];
+          depends = [ (hsPkgs.filepath) ];
         };
         "MusicTranslate" = {};
         "MusicCount" = {};

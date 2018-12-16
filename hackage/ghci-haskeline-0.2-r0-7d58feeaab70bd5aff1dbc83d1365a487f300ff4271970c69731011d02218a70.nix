@@ -29,7 +29,7 @@
     components = {
       exes = {
         "ghci-haskeline" = {
-          depends  = if !flags.ghc-612
+          depends = if !flags.ghc-612
             then ([
               (hsPkgs.base)
               (hsPkgs.array)

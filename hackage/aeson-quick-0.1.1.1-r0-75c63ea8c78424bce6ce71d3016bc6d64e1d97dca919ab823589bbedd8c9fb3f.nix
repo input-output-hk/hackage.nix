@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -37,7 +37,7 @@
       };
       tests = {
         "aeson-quick-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-quick)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-quick)
             (hsPkgs.base)
             (hsPkgs.aeson)

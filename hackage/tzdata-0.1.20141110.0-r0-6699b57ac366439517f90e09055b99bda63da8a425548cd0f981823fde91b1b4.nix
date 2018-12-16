@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-db" = {
-          depends  = [
+          depends = [
             (hsPkgs.tzdata)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
           ];
         };
         "dummy-genZones" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

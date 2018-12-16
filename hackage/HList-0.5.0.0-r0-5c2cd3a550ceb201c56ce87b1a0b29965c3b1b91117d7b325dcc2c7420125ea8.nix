@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.semigroups)
@@ -41,7 +41,7 @@
       };
       tests = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.directory)
@@ -60,14 +60,14 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.9" && (compiler.isGhc && compiler.version.le "7.11")) [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.9" && (compiler.isGhc && compiler.version.le "7.11")) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.process)
           ];
         };
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations)

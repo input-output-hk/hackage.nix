@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HLearn-algebra)
           (hsPkgs.ConstraintKinds)
           (hsPkgs.base)

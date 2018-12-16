@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.generics-sop)
           (hsPkgs.SHA)
@@ -45,7 +45,7 @@
       };
       tests = {
         "binary-tagged-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generics-sop)
             (hsPkgs.SHA)
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "binary-tagged-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generics-sop)
             (hsPkgs.SHA)

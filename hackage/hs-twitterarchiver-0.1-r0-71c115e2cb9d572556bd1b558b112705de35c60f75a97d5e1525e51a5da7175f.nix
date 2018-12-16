@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hs-twitterarchiver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.network)

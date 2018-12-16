@@ -26,7 +26,7 @@
     components = {
       exes = {
         "subtitles" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -54,14 +54,14 @@
       };
       exes = {
         "dbus-introspect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.d-bus)
             (hsPkgs.text)
           ];
         };
         "liferea-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.d-bus)
             (hsPkgs.text)
@@ -70,7 +70,7 @@
       };
       tests = {
         "unittests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary)

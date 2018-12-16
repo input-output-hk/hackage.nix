@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (!flags.only-executable) [
+        depends = pkgs.lib.optionals (!flags.only-executable) [
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       exes = {
         "proto-lens-protoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "ersatz-toysat-regexp-grid" = {
-          depends  = pkgs.lib.optionals (flags.examples) ([
+          depends = pkgs.lib.optionals (flags.examples) ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.ersatz)
@@ -47,7 +47,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) (hsPkgs.ghc-prim));
         };
         "ersatz-toysat-sudoku" = {
-          depends  = pkgs.lib.optionals (flags.examples) ([
+          depends = pkgs.lib.optionals (flags.examples) ([
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.ersatz)

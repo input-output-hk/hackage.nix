@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bits-extra)
           (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       exes = {
         "hw-dsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.bytestring)
@@ -76,7 +76,7 @@
       };
       tests = {
         "hw-dsv-space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.bytestring)
@@ -97,7 +97,7 @@
           ];
         };
         "hw-dsv-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.bytestring)
@@ -123,7 +123,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bits-extra)
             (hsPkgs.bytestring)

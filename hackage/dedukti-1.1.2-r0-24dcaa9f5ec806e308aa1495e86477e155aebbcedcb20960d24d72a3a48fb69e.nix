@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.time)
           (hsPkgs.unix)
         ];
       };
       exes = {
         "dedukti" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)
@@ -50,7 +50,7 @@
           ];
         };
         "dedukti-tests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test)) [
+          depends = pkgs.lib.optionals (!(!flags.test)) [
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.process)

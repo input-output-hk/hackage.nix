@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if system.isWindows
+        depends = if system.isWindows
           then [
             (hsPkgs.base)
             (hsPkgs.Win32)

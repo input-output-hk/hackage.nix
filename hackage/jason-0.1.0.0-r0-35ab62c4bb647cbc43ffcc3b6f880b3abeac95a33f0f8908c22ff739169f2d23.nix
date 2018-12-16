@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.unordered-containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "jason" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jason)
             (hsPkgs.aeson)
@@ -47,7 +47,7 @@
       };
       tests = {
         "jason-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jason)
             (hsPkgs.aeson)

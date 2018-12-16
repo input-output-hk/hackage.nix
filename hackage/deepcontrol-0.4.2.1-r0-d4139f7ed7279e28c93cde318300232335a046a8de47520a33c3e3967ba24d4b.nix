@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.mmorph)
@@ -34,28 +34,28 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
           ];
         };
         "unit_Applicative" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.deepcontrol)
           ];
         };
         "unit_Commutative" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.deepcontrol)
           ];
         };
         "unit_Monad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.deepcontrol)
@@ -64,7 +64,7 @@
           ];
         };
         "unit_Monad-Level1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -73,7 +73,7 @@
           ];
         };
         "unit_Monad-Level2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -82,7 +82,7 @@
           ];
         };
         "unit_Monad-factorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -91,7 +91,7 @@
           ];
         };
         "unit_Monad-factorial2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -100,7 +100,7 @@
           ];
         };
         "unit_MonadTrans-ackermann" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -109,7 +109,7 @@
           ];
         };
         "unit_MonadTrans" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -117,7 +117,7 @@
           ];
         };
         "unit_MonadMorph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)

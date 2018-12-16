@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -74,7 +74,7 @@
       };
       exes = {
         "ffexecutord" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.clock)
@@ -90,7 +90,7 @@
       };
       tests = {
         "test-funflow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.funflow)
             (hsPkgs.filepath)
@@ -103,7 +103,7 @@
           ];
         };
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.containers)

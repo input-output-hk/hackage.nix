@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rpmbuild-order" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ping-parser-attoparsec)
           (hsPkgs.attoparsec)
@@ -37,7 +37,7 @@
       };
       exes = {
         "ping-wrapper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ping-wrapper)
             (hsPkgs.optparse-generic)
@@ -47,7 +47,7 @@
       };
       tests = {
         "ping-wrapper-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ping-wrapper)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.dhall)

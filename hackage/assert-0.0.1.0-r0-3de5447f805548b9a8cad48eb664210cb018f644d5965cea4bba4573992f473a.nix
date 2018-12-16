@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "rewrite" = {
-          depends  = [
+          depends = [
             (hsPkgs."assert")
             (hsPkgs.base)
             (hsPkgs.Cabal)

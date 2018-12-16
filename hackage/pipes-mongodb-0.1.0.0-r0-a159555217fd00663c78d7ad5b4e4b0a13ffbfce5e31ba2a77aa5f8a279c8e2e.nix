@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mongoDB)
           (hsPkgs.monad-control)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-pipes-mongodb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.mongoDB)

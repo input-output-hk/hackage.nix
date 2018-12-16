@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.directory)
@@ -36,13 +36,13 @@
       };
       exes = {
         "powermate-print" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.powermate)
           ];
         };
         "powermate-pulse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.powermate)
           ];

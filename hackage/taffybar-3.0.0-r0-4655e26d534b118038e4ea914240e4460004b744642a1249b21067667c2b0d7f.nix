@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ConfigFile)
           (hsPkgs.HStringTemplate)
@@ -89,7 +89,7 @@
       };
       exes = {
         "taffybar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.optparse-applicative)

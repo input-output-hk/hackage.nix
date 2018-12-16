@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.old-locale)
@@ -34,7 +34,7 @@
       };
       exes = {
         "tv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xml)
             (hsPkgs.bytestring)

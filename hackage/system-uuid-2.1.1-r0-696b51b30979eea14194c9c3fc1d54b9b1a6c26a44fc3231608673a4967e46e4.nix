@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "hooty" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

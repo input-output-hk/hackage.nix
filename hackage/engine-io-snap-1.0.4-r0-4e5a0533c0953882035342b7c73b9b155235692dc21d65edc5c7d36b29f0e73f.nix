@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.io-streams)
           (hsPkgs.base)
           (hsPkgs.bytestring)

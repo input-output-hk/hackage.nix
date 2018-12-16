@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
@@ -39,7 +39,7 @@
       };
       exes = {
         "osdkeys" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.osdkeys)
             (hsPkgs.process)

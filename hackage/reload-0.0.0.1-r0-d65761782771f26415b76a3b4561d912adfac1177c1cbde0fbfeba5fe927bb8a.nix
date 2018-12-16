@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.scotty)
@@ -54,7 +54,7 @@
       };
       exes = {
         "reload-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reload)
           ];
@@ -62,7 +62,7 @@
       };
       tests = {
         "reload-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hspec-wai)

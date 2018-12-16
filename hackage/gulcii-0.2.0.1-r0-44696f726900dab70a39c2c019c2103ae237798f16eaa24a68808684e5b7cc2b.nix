@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gulcii" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sloane" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.optparse-applicative)

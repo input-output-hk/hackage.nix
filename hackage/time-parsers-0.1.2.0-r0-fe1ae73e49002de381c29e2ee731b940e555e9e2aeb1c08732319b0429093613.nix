@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsers)
           (hsPkgs.template-haskell)
@@ -34,7 +34,7 @@
       };
       tests = {
         "date-parsers-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsers)
             (hsPkgs.template-haskell)

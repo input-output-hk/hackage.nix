@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.formatting)
           (hsPkgs.mcmc-types)
@@ -41,7 +41,7 @@
       };
       exes = {
         "bnn-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.flat-mcmc)
             (hsPkgs.vector)
@@ -50,14 +50,14 @@
       };
       tests = {
         "rosenbrock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.flat-mcmc)
             (hsPkgs.vector)
           ];
         };
         "bnn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.flat-mcmc)
             (hsPkgs.vector)

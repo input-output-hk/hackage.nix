@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wrecker-ui" = {
-          depends  = [
+          depends = [
             (hsPkgs.HostAndPort)
             (hsPkgs.aeson)
             (hsPkgs.async)

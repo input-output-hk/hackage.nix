@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.lens)
@@ -40,7 +40,7 @@
       };
       exes = {
         "test-executor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-mesos)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
           ];
         };
         "test-framework" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-mesos)
             (hsPkgs.bytestring)
@@ -65,7 +65,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-mesos)
             (hsPkgs.tasty)

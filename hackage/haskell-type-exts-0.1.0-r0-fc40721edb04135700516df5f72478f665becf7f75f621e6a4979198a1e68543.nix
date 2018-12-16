@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell-src-exts)
           (hsPkgs.pretty)
           (hsPkgs.containers)

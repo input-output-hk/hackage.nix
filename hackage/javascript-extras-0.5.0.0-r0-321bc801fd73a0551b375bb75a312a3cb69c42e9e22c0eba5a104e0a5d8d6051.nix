@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.newtype-generics)
@@ -35,7 +35,7 @@
       };
       exes = {
         "javascript-extras-test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.javascript-extras)
           ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [

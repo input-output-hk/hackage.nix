@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wordsetdiff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)

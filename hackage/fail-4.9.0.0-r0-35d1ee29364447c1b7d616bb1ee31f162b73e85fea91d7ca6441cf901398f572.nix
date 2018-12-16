@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.base);
+        depends = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.base);
       };
     };
   }

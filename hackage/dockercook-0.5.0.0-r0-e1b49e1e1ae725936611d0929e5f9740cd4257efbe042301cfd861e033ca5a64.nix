@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.aeson)
           (hsPkgs.base)
@@ -66,7 +66,7 @@
       };
       exes = {
         "dockercook" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -83,7 +83,7 @@
       };
       tests = {
         "dockercook-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.base)
             (hsPkgs.dockercook)

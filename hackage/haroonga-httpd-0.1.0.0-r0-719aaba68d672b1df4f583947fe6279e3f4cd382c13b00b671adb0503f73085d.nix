@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haroonga-httpd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.time)

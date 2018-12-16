@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "verify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.verify)
           ];
@@ -47,7 +47,7 @@
       };
       tests = {
         "verify-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jwt)
             (hsPkgs.hspec)

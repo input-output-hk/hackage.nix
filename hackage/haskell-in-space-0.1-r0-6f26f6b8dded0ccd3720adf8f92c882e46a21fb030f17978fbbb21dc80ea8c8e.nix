@@ -26,7 +26,7 @@
     components = {
       exes = {
         "asteroids-space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.random)
@@ -34,7 +34,7 @@
           ];
         };
         "asteroids-aufgabe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.random)
@@ -42,7 +42,7 @@
           ];
         };
         "asteroids-basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.random)
@@ -50,7 +50,7 @@
           ];
         };
         "asteroids-haskelly" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.random)

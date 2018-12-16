@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.process)
@@ -43,7 +43,7 @@
       };
       exes = {
         "tempo-git" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tempo)
             (hsPkgs.mtl)
@@ -51,7 +51,7 @@
           ];
         };
         "tempo-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tempo)
             (hsPkgs.time)
@@ -62,7 +62,7 @@
       };
       tests = {
         "tempo-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tempo)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
             (hsPkgs.Cabal)
@@ -44,7 +44,7 @@
           ];
         };
         "yackage-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.http-enumerator)
             (hsPkgs.blaze-builder)
           ];

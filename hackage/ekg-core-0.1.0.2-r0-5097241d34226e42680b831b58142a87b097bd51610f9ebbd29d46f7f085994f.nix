@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ghc-prim)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -35,13 +35,13 @@
       };
       benchmarks = {
         "counter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ekg-core)
           ];
         };
         "distribution" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ekg-core)
           ];

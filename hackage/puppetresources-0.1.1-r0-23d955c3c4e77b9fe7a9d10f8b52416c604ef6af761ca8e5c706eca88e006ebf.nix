@@ -26,7 +26,7 @@
     components = {
       exes = {
         "puppetresources" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-puppet)
             (hsPkgs.hsfacter)

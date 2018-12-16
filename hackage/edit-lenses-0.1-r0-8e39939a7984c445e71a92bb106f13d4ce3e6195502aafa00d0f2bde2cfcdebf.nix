@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.data-default)
@@ -37,7 +37,7 @@
       };
       exes = {
         "lens-editor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.edit-lenses)
             (hsPkgs.gtk)

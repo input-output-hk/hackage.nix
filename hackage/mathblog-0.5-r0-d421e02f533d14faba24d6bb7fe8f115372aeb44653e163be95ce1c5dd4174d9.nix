@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -43,7 +43,7 @@
           ];
         };
         "mb-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

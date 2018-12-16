@@ -26,7 +26,7 @@
     components = {
       exes = {
         "runmany" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.bytestring)

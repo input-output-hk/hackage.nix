@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe-exceptions)
           (hsPkgs.template-haskell)
@@ -33,7 +33,7 @@
       };
       exes = {
         "throwable-exception-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.safe-exceptions)
             (hsPkgs.throwable-exceptions)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.either)

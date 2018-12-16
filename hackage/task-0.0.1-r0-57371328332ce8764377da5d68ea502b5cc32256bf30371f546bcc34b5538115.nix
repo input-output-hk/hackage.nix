@@ -26,7 +26,7 @@
     components = {
       exes = {
         "task" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.containers)

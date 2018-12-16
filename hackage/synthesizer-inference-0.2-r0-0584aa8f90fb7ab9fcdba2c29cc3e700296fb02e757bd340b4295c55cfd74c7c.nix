@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.synthesizer-core)
           (hsPkgs.transformers)
           (hsPkgs.event-list)

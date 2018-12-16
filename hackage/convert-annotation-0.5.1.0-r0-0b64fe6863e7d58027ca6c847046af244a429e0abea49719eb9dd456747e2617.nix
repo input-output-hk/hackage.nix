@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "convert-annotation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.convert-annotation)
             (hsPkgs.optparse-generic)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       exes = {
         "tabl-example-users" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.tabl)
@@ -41,14 +41,14 @@
           ];
         };
         "tabl-example-multiply" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tabl)
             (hsPkgs.text)
           ];
         };
         "tabl-example-tictactoe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.safe)
@@ -58,7 +58,7 @@
           ];
         };
         "tabl-example-constants" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tabl)
             (hsPkgs.text)

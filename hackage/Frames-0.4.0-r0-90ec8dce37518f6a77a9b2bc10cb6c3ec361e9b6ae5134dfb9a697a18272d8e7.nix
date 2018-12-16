@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.primitive)
@@ -49,7 +49,7 @@
       };
       exes = {
         "getdata" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.http-client)
@@ -58,7 +58,7 @@
           ];
         };
         "plot" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.microlens)
@@ -77,7 +77,7 @@
           ];
         };
         "plot2" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.microlens)
@@ -95,7 +95,7 @@
           ];
         };
         "demo" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.list-t)
             (hsPkgs.microlens)
@@ -110,7 +110,7 @@
           ];
         };
         "tutorial" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.microlens)
@@ -123,7 +123,7 @@
           ];
         };
         "benchdemo" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.foldl)
@@ -131,7 +131,7 @@
           ];
         };
         "missing" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.vinyl)
@@ -140,7 +140,7 @@
           ];
         };
         "kata04" = {
-          depends  = pkgs.lib.optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.vinyl)
@@ -151,7 +151,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.hspec)
@@ -169,13 +169,13 @@
           ];
         };
         "overlap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Frames)
           ];
         };
         "mpg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Frames)
           ];
@@ -183,14 +183,14 @@
       };
       benchmarks = {
         "joins" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.criterion)
           ];
         };
         "insurance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.Frames)

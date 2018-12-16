@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.xml-query)
           (hsPkgs.xml-query-xml-types)
           (hsPkgs.xml-types)

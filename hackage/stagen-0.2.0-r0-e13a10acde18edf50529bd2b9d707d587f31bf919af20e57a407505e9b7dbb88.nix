@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base-compat)
@@ -52,7 +52,7 @@
       };
       exes = {
         "stagen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stagen)
           ];

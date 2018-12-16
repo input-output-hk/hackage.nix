@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "jollycloud" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.distributed-process-p2p)

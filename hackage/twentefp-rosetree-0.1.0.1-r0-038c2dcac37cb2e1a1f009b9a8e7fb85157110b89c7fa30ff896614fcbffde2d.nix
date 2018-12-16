@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.twentefp-number)
           (hsPkgs.twentefp-eventloop-graphics)

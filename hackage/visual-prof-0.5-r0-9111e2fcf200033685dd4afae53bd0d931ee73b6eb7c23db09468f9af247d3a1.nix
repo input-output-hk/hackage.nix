@@ -26,7 +26,7 @@
     components = {
       exes = {
         "visual-prof" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.regexpr)

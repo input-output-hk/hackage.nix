@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.json-rpc-server)
           (hsPkgs.aeson)
@@ -38,7 +38,7 @@
       };
       exes = {
         "demo-server" = {
-          depends  = pkgs.lib.optionals (flags.demo) [
+          depends = pkgs.lib.optionals (flags.demo) [
             (hsPkgs.base)
             (hsPkgs.json-rpc-client)
             (hsPkgs.json-rpc-server)
@@ -49,7 +49,7 @@
           ];
         };
         "demo-client" = {
-          depends  = pkgs.lib.optionals (flags.demo) [
+          depends = pkgs.lib.optionals (flags.demo) [
             (hsPkgs.base)
             (hsPkgs.json-rpc-client)
             (hsPkgs.json-rpc-server)
@@ -63,7 +63,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.json-rpc-client)
             (hsPkgs.json-rpc-server)

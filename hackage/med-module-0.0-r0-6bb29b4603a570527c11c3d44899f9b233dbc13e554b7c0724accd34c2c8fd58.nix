@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.storable-endian)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
@@ -35,13 +35,13 @@
       };
       exes = {
         "unmed2" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.med-module)
             (hsPkgs.base)
           ];
         };
         "animed" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.med-module)
             (hsPkgs.hps)
             (hsPkgs.optparse-applicative)

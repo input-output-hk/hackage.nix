@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.composition-tree)
           (hsPkgs.patches-vector)
           (hsPkgs.pandoc)
@@ -64,7 +64,7 @@
       };
       exes = {
         "dixi" = {
-          depends  = [
+          depends = [
             (hsPkgs.dixi)
             (hsPkgs.warp)
             (hsPkgs.servant-server)
@@ -79,7 +79,7 @@
       };
       tests = {
         "api-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.dixi)
             (hsPkgs.servant-docs)
             (hsPkgs.text)

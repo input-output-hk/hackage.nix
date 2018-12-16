@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ottparse-pretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.parsec)

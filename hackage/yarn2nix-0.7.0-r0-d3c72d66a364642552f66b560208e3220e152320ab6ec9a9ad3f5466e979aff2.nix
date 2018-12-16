@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.async-pool)
@@ -50,7 +50,7 @@
       };
       exes = {
         "node-package-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.async-pool)
@@ -77,7 +77,7 @@
           ];
         };
         "yarn2nix" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.async-pool)
@@ -104,7 +104,7 @@
       };
       tests = {
         "yarn2nix-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.async-pool)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-lifted-base" = {
-          depends  = [
+          depends = [
             (hsPkgs.lifted-base)
             (hsPkgs.base)
             (hsPkgs.transformers)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "bench-lifted-base" = {
-          depends  = [
+          depends = [
             (hsPkgs.lifted-base)
             (hsPkgs.base)
             (hsPkgs.transformers)

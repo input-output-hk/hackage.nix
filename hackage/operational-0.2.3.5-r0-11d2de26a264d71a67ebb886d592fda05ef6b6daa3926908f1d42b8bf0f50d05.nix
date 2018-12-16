@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
       };
       exes = {
         "operational-TicTacToe" = {
-          depends  = [
+          depends = [
             (hsPkgs.operational)
             (hsPkgs.base)
             (hsPkgs.mtl)

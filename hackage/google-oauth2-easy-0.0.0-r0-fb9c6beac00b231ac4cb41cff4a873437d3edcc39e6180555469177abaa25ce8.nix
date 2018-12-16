@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.http-api-data)
@@ -40,7 +40,7 @@
       };
       tests = {
         "google-oauth2-easy-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.google-oauth2-easy)
             (hsPkgs.tasty)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "google-oauth2-easy-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.google-oauth2-easy)

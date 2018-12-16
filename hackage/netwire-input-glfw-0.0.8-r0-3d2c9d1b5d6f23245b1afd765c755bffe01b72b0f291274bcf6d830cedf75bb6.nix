@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.netwire-input)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "glfw-input-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.netwire)
             (hsPkgs.netwire-input)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.X11)
           (hsPkgs.transformers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "hherbstclient" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.transformers)

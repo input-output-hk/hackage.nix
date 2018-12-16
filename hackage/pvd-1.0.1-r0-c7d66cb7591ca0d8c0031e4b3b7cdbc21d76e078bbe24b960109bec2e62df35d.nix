@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pvd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.X11)
@@ -43,7 +43,7 @@
           ];
         };
         "pvc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.network)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.allocated-processor)
           (hsPkgs.vector-space)
@@ -36,7 +36,7 @@
       };
       exes = {
         "test-hopencv" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           pkgconfig = [
             (pkgconfPkgs.opencv)
           ];

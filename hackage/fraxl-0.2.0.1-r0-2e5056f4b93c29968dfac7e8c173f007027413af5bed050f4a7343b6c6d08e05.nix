@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.exceptions)
@@ -42,7 +42,7 @@
       };
       exes = {
         "examples" = {
-          depends  = pkgs.lib.optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs.base)
             (hsPkgs.fraxl)
             (hsPkgs.transformers)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "monadbench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fraxl)
             (hsPkgs.time)

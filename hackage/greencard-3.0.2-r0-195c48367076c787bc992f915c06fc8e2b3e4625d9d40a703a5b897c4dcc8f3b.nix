@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "greencard" = {
-          depends  = if flags.old-base
+          depends = if flags.old-base
             then [ (hsPkgs.base) ]
             else [
               (hsPkgs.base)

@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.containers)
@@ -84,7 +84,7 @@
       };
       exes = {
         "scholdoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.scholdoc)
             (hsPkgs.scholdoc-types)
             (hsPkgs.base)
@@ -102,7 +102,7 @@
             else [ (hsPkgs.network) ]);
         };
         "tryscholdoc" = {
-          depends  = pkgs.lib.optionals (flags.tryscholdoc) [
+          depends = pkgs.lib.optionals (flags.tryscholdoc) [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.scholdoc)
@@ -116,7 +116,7 @@
       };
       tests = {
         "test-scholdoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.scholdoc)
@@ -138,7 +138,7 @@
       };
       benchmarks = {
         "benchmark-scholdoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.scholdoc)
             (hsPkgs.base)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       exes = {
         "geni" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GenI)
             (hsPkgs.containers)
@@ -70,7 +70,7 @@
       };
       tests = {
         "geni-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.GenI)
             (hsPkgs.base)
             (hsPkgs.containers)

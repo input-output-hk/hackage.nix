@@ -26,13 +26,13 @@
     components = {
       exes = {
         "DrIFT-cabalized" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
           ];
         };
         "DrIFT-cabalized-ghc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

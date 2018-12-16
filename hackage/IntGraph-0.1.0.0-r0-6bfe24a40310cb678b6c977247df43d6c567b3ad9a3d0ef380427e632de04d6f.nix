@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "IntGraph-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.IntGraph)
             (hsPkgs.base)
             (hsPkgs.containers)

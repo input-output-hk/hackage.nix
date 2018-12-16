@@ -26,7 +26,7 @@
     components = {
       exes = {
         "free-theorems-webui.cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.free-theorems)
             (hsPkgs.csv)

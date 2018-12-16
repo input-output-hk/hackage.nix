@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -40,7 +40,7 @@
       };
       tests = {
         "hatex-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaTeX)
             (hsPkgs.tasty)
@@ -49,7 +49,7 @@
           ];
         };
         "parser-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HaTeX)
             (hsPkgs.text)

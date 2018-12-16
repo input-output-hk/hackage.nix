@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -38,7 +38,7 @@
       };
       exes = {
         "billboard-parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parseargs)
             (hsPkgs.directory)

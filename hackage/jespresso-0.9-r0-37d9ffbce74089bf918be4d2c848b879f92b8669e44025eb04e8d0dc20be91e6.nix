@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt)
           (hsPkgs.hxt-tagsoup)
@@ -41,7 +41,7 @@
       };
       exes = {
         "jespresso" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jespresso)
             (hsPkgs.cmdargs)
@@ -52,7 +52,7 @@
       };
       tests = {
         "unittest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jespresso)
             (hsPkgs.tasty)

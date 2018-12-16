@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.eigen)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       tests = {
         "haskell-eigen-util-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-eigen-util)
           ];

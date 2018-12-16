@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.http-client-tls)
@@ -37,7 +37,7 @@
       };
       tests = {
         "http-dispatch-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-dispatch)
             (hsPkgs.hspec)

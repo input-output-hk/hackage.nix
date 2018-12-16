@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.reactive-banana)
           (hsPkgs.gi-gtk)
@@ -36,7 +36,7 @@
       };
       tests = {
         "reactive-banana-gi-gtk-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reactive-banana-gi-gtk)
           ];

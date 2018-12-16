@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       exes = {
         "ihttp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsgtd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.ansi-terminal)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.llvm-tf)
           (hsPkgs.tfp)
           (hsPkgs.non-empty)
@@ -45,7 +45,7 @@
       };
       exes = {
         "tone-llvm" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
             (hsPkgs.tfp)
@@ -57,7 +57,7 @@
           ];
         };
         "prepare-intrinsics" = {
-          depends  = pkgs.lib.optionals (flags.buildtools) [
+          depends = pkgs.lib.optionals (flags.buildtools) [
             (hsPkgs.parsec)
             (hsPkgs.containers)
             (hsPkgs.transformers)

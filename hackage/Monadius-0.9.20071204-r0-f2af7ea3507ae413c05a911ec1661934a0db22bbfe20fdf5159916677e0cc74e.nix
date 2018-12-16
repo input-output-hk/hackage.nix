@@ -26,7 +26,7 @@
     components = {
       exes = {
         "monadius" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "symengine-hs-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.symengine-hs)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "symengine-hs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.symengine-hs)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -37,7 +37,7 @@
       };
       tests = {
         "fluent-logger-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fluent-logger)
             (hsPkgs.network)
@@ -54,7 +54,7 @@
       };
       benchmarks = {
         "fluent-logger-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fluent-logger)
             (hsPkgs.criterion)

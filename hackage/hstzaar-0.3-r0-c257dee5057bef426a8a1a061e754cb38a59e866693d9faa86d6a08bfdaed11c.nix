@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hstzaar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.gtk)

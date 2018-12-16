@@ -26,7 +26,7 @@
     components = {
       exes = {
         "server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)

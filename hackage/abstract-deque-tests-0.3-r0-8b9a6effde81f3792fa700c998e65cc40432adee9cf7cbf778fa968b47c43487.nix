@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.abstract-deque)
           (hsPkgs.random)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-abstract-deque" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.abstract-deque)
             (hsPkgs.random)

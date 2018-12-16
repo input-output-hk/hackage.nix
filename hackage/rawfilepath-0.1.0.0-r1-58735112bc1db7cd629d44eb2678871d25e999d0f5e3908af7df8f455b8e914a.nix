@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.unix)
           (hsPkgs.base)
@@ -33,7 +33,7 @@
       };
       tests = {
         "RawFilePath-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rawfilepath)
           ];

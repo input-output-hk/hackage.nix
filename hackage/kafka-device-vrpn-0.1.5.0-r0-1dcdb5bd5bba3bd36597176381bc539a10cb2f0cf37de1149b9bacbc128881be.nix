@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.kafka-device)
           (hsPkgs.milena)
@@ -34,7 +34,7 @@
       };
       exes = {
         "kafka-device-vrpn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kafka-device)
             (hsPkgs.milena)

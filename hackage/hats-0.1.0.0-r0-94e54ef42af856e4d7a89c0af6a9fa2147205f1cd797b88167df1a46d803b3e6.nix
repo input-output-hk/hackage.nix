@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -46,7 +46,7 @@
       };
       exes = {
         "hats-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hats)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "hats-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "hats-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.attoparsec)

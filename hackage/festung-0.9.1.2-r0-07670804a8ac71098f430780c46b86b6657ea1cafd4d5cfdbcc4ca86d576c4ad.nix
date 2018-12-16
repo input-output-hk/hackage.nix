@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.argparser)
           (hsPkgs.async)
@@ -54,7 +54,7 @@
       };
       exes = {
         "festung" = {
-          depends  = [
+          depends = [
             (hsPkgs.argparser)
             (hsPkgs.base)
             (hsPkgs.festung)
@@ -64,7 +64,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.aeson)
             (hsPkgs.base)

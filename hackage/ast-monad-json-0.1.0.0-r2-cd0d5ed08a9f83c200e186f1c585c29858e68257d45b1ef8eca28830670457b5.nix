@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.ast-monad)
@@ -33,7 +33,7 @@
       };
       tests = {
         "ast-monad-json-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ast-monad)
             (hsPkgs.ast-monad-json)

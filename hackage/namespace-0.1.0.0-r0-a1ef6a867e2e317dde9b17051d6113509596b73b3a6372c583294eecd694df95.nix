@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "namespace-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.namespace)
           ];

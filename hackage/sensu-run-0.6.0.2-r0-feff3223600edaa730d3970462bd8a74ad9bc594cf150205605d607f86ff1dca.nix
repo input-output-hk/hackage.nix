@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sensu-run" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)

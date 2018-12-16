@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "play-tomland" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tomland)
             (hsPkgs.text)
@@ -53,7 +53,7 @@
       };
       tests = {
         "tomland-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedgehog)
             (hsPkgs.hspec-megaparsec)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "tomland-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.deepseq)

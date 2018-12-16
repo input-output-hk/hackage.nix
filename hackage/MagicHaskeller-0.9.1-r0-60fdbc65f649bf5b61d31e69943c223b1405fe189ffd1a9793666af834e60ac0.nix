@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.old-time)
           (hsPkgs.template-haskell)
           (hsPkgs.base)

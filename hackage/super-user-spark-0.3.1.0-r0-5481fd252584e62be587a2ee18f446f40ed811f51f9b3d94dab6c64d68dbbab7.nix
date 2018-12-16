@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -45,7 +45,7 @@
       };
       exes = {
         "spark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.super-user-spark)
           ];
@@ -53,7 +53,7 @@
       };
       tests = {
         "spark-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.super-user-spark)
             (hsPkgs.hspec)

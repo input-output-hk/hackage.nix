@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.cereal)
@@ -48,7 +48,7 @@
       };
       tests = {
         "integration-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eventstore)
             (hsPkgs.tasty)

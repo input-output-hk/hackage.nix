@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.dbmigrations)
           (hsPkgs.time)
@@ -36,7 +36,7 @@
       };
       exes = {
         "moo-mysql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbmigrations-mysql)
             (hsPkgs.dbmigrations)
@@ -45,7 +45,7 @@
       };
       tests = {
         "dbmigrations-mysql-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dbmigrations)
             (hsPkgs.dbmigrations-mysql)

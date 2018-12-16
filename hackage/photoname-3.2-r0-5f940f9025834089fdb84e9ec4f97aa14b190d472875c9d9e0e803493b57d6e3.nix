@@ -26,7 +26,7 @@
     components = {
       exes = {
         "photoname" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.exif)
@@ -41,7 +41,7 @@
       };
       tests = {
         "photoname-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.exif)

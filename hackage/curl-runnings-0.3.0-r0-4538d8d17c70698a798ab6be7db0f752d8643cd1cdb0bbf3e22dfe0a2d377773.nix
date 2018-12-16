@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.base)
@@ -44,7 +44,7 @@
       };
       exes = {
         "curl-runnings" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.curl-runnings)
@@ -54,7 +54,7 @@
       };
       tests = {
         "curl-runnings-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curl-runnings)
             (hsPkgs.directory)

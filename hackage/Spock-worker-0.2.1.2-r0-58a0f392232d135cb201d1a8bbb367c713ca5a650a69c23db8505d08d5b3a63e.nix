@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Spock)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "SpockWorkerTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTF)
             (hsPkgs.Spock-worker)
             (hsPkgs.base)

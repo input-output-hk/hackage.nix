@@ -26,10 +26,10 @@
     components = {
       exes = {
         "rpokuToAssembler" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "rpokuToLanguage" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.text)
@@ -43,7 +43,7 @@
       };
       exes = {
         "riemann-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.riemann)
             (hsPkgs.network)
@@ -65,7 +65,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -73,7 +73,7 @@
           ];
         };
         "property" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
@@ -82,7 +82,7 @@
           ];
         };
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)

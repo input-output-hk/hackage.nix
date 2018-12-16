@@ -26,7 +26,7 @@
     components = {
       exes = {
         "iyql" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.hoauth)

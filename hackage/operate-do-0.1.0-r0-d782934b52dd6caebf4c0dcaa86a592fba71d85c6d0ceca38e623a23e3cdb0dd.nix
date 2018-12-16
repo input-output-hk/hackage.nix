@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.charset)
           (hsPkgs.haskell-src-meta)
@@ -36,7 +36,7 @@
       };
       tests = {
         "spec-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.operate-do)
             (hsPkgs.QuickCheck)
@@ -44,7 +44,7 @@
           ];
         };
         "doc-test" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctest)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filemanip)

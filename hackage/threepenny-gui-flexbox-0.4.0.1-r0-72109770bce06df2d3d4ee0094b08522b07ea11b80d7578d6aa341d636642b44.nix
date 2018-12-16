@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.clay)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       exes = {
         "threepenny-flexbox-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.threepenny-gui-flexbox)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.servant)
           (hsPkgs.text)
@@ -38,7 +38,7 @@
       };
       tests = {
         "servant-router-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-router)
             (hsPkgs.servant)

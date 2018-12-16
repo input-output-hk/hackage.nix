@@ -25,30 +25,30 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."sipc") ];
       };
       exes = {
         "MQCreator" = {
-          depends  = [
+          depends = [
             (hsPkgs.bindings-sipc)
             (hsPkgs.base)
           ];
         };
         "MQDestroyer" = {
-          depends  = [
+          depends = [
             (hsPkgs.bindings-sipc)
             (hsPkgs.base)
           ];
         };
         "MQReader" = {
-          depends  = [
+          depends = [
             (hsPkgs.bindings-sipc)
             (hsPkgs.base)
           ];
         };
         "MQSender" = {
-          depends  = [
+          depends = [
             (hsPkgs.bindings-sipc)
             (hsPkgs.base)
           ];

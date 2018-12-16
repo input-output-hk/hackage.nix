@@ -26,7 +26,7 @@
     components = {
       exes = {
         "plot-lab" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.colour)
             (hsPkgs.plot)

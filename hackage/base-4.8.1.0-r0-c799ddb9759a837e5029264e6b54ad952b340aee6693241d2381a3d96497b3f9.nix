@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.rts)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (flags.integer-simple) (hsPkgs.integer-simple)) ++ pkgs.lib.optional (flags.integer-gmp) (hsPkgs.integer-gmp)) ++ pkgs.lib.optional (flags.integer-gmp2) (hsPkgs.integer-gmp);

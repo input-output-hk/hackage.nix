@@ -26,7 +26,7 @@
     components = {
       exes = {
         "systemstats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.micrologger)
             (hsPkgs.optparse-applicative)

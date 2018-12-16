@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.generics-sop)
         ];
       };
       tests = {
         "tuple-sop-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generics-sop)
             (hsPkgs.tuple-sop)

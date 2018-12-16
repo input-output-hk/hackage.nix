@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "reduce-equations" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reduce-equations)
             (hsPkgs.aeson)
@@ -50,7 +50,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reduce-equations)
             (hsPkgs.quickspec)

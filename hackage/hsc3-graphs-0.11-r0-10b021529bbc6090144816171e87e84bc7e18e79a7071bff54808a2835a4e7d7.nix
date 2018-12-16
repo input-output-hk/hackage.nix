@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsc3-acid-otophilia" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -34,7 +34,7 @@
           ];
         };
         "hsc3-adso" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -42,7 +42,7 @@
           ];
         };
         "hsc3-after-goeyvaerts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -53,65 +53,65 @@
           ];
         };
         "hsc3-aleatoric-quartet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-alien-froggies" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-alien-meadow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-ambient1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-analog-bubbles" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-arpeggio" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-babbling-brook" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-birds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-bit-reduction" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-black-atlantic-currents" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.primes)
@@ -120,21 +120,21 @@
           ];
         };
         "hsc3-bohlen-pierce-140" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-bottle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-bowed-string" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -142,7 +142,7 @@
           ];
         };
         "hsc3-bs-070705" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hosc)
@@ -150,20 +150,20 @@
           ];
         };
         "hsc3-ccomb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-cds-070701" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hosc)
           ];
         };
         "hsc3-chain-saw" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -171,7 +171,7 @@
           ];
         };
         "hsc3-choip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -179,13 +179,13 @@
           ];
         };
         "hsc3-chrd-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-chrd-t" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -193,14 +193,14 @@
           ];
         };
         "hsc3-clustered-sines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-comb-delay-sweeps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -208,75 +208,75 @@
           ];
         };
         "hsc3-coolant" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-contamination-zone" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-cricket" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-crotale" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-crotale-sine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-cut-outs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-cymbalism" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-cymbalism-accelerando" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-dark-sea-horns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-data-space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-deep-sea" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -284,64 +284,64 @@
           ];
         };
         "hsc3-deep-trip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-default" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-demanding-studies" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-dial-history" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-diffraction" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-discretion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-discretion-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-doppler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hosc)
           ];
         };
         "hsc3-drummer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-early-space-music-lp-side-two" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -350,19 +350,19 @@
           ];
         };
         "hsc3-eggcrate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-eggcrate-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-e-lamell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -370,26 +370,26 @@
           ];
         };
         "hsc3-e-lamell-p" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-ellipse-based-synthesis" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-fbl-fbf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-fb-090531" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hosc)
@@ -397,19 +397,19 @@
           ];
         };
         "hsc3-f-lets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-fm-iter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-fm-kltr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -417,145 +417,145 @@
           ];
         };
         "hsc3-fm-kltr-p" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-forest-sounds" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-fwalk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-half-life" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-hansm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-harmonic-swimming" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-harmonic-swimming-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-harmonic-tumbling" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-h-chatter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-hell-is-busy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-hh-808" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-implosion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-insects" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-jl-1-Z" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-kabelscahden" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-karplus-strong" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-klink" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-k-ppr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-k-ppr-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-lfo-modulation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-lf-pulses" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-lg-timed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-lin-sosc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -563,7 +563,7 @@
           ];
         };
         "hsc3-lso-061101" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -576,19 +576,19 @@
           ];
         };
         "hsc3-lucier" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-microhelix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-mridangam" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -596,27 +596,27 @@
           ];
         };
         "hsc3-modal-space" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-moto-rev" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-mouse-clatter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-nharm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -624,21 +624,21 @@
           ];
         };
         "hsc3-nharm-p" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-noise-burst-sweep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-noise-modulated-sines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -646,7 +646,7 @@
           ];
         };
         "hsc3-non-real-time" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -654,46 +654,46 @@
           ];
         };
         "hsc3-nv-tw-1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-nv-tw-41" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-nv-tw-54" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-one-line" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-oscillator-cluster" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-overlap-add" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-pattern-buffer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -701,126 +701,126 @@
           ];
         };
         "hsc3-pebble-beach" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-plucked-strings" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-police-state" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-pulsing-bottles" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-pulsing-bottles-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-rails" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-rain-thunder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-random-panning-sines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-random-panning-sines-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-random-pulsations" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-random-sine-waves" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-record-scratcher" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-red-frik" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-reset" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-resonant-dust" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-reverberated-sine-percussion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-ring-modulated-klank" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-rzblp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-unsafe)
           ];
         };
         "hsc3-sam-i-am" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -828,46 +828,46 @@
           ];
         };
         "hsc3-sample-and-hold-liquidities" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-saucer-base" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-sawed-cymbals" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-s-chirp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-scratchy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-scratchy-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-scritto" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -875,40 +875,40 @@
           ];
         };
         "hsc3-scritto-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-seqr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-shepard-tones" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-shifting-pulses" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-sidereal-time" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-slow-beating-harmonic-sines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -916,7 +916,7 @@
           ];
         };
         "hsc3-slow-beating-sines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -924,38 +924,38 @@
           ];
         };
         "hsc3-snare-909" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-spe-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-spe-p" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-sprinkler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-sprinkler-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-string-wander-cluster" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
@@ -963,38 +963,38 @@
           ];
         };
         "hsc3-strummable-guitar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-sweepy-noise" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-synthetic-piano" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-tank" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-tank-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-tgb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -1002,14 +1002,14 @@
           ];
         };
         "hsc3-tgrn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-tgr-rpr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -1017,53 +1017,53 @@
           ];
         };
         "hsc3-theremin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-three-cpsw" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.random)
           ];
         };
         "hsc3-thx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.random)
           ];
         };
         "hsc3-tipnso" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-train" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-tremulate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-tremulate-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-trmlo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-unsafe)
@@ -1071,27 +1071,27 @@
           ];
         };
         "hsc3-tr-out" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-tsort" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-uplink" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-voscil" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -1100,7 +1100,7 @@
           ];
         };
         "hsc3-vla-addtn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -1108,7 +1108,7 @@
           ];
         };
         "hsc3-vla-addtn-sharc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
@@ -1117,7 +1117,7 @@
           ];
         };
         "hsc3-waveset" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.hosc)
@@ -1127,38 +1127,38 @@
           ];
         };
         "hsc3-what-was-i-thinking" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-why-supercollider" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-wial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-wind-metals" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-lang)
           ];
         };
         "hsc3-xy-interference" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];
         };
         "hsc3-xy-interference-m" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsc3)
           ];

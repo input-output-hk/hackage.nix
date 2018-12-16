@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tablify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.xhtml)

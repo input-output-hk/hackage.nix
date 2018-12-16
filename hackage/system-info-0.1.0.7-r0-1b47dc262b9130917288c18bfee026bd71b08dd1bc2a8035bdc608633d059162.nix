@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.regex)
@@ -33,7 +33,7 @@
       };
       tests = {
         "system-info-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.system-info)
           ];

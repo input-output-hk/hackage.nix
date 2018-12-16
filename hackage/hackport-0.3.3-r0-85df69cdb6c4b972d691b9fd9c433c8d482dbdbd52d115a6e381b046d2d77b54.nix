@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackport" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.filepath)
@@ -56,7 +56,7 @@
             else [ (hsPkgs.base) ]);
         };
         "hackport-guess-ghc-version" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.parsec)
@@ -83,7 +83,7 @@
       };
       tests = {
         "test-resolve-category" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.bytestring)
@@ -101,7 +101,7 @@
           ];
         };
         "test-merge-deps" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.base)
@@ -36,7 +36,7 @@
       };
       tests = {
         "heatshrink-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
             (hsPkgs.base)

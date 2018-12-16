@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       exes = {
         "ws" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ws)
             (hsPkgs.exceptions)

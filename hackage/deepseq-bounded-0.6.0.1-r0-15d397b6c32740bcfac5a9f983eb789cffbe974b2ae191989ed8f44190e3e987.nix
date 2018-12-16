@@ -51,7 +51,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((((([
+        depends = ((((((([
           (hsPkgs.base)
           (hsPkgs.cpphs)
           (hsPkgs.array)
@@ -71,7 +71,7 @@
       };
       tests = {
         "deepseq-bounded-tests" = {
-          depends  = ((((((([
+          depends = ((((((([
             (hsPkgs.base)
             (hsPkgs.cpphs)
             (hsPkgs.deepseq-bounded)

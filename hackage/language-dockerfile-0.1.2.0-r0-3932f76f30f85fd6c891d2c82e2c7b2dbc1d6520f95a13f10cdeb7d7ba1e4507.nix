@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ShellCheck)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       exes = {
         "dockerfmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.ShellCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -60,7 +60,7 @@
           ];
         };
         "hadolint" = {
-          depends  = [
+          depends = [
             (hsPkgs.ShellCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -78,7 +78,7 @@
       };
       tests = {
         "hadolint-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.ShellCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -96,7 +96,7 @@
           ];
         };
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.ShellCheck)
             (hsPkgs.base)
             (hsPkgs.bytestring)

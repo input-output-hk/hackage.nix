@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.Cabal)
@@ -94,7 +94,7 @@
       };
       exes = {
         "stackage-curator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-curator)
             (hsPkgs.optparse-applicative)
@@ -107,7 +107,7 @@
           ];
         };
         "stackage-build-plan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-curator)
             (hsPkgs.stackage-cli)
@@ -119,7 +119,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stackage-curator)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.pointed)
@@ -34,13 +34,13 @@
       };
       tests = {
         "grouped-list-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grouped-list)
           ];
         };
         "grouped-list-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grouped-list)
             (hsPkgs.QuickCheck)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "grouped-list-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grouped-list)
             (hsPkgs.criterion)

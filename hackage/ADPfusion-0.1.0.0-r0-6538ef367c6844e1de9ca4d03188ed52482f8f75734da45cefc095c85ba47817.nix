@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.primitive)
@@ -35,7 +35,7 @@
       };
       exes = {
         "GAPcriterion" = {
-          depends  = pkgs.lib.optionals (flags.devel) [
+          depends = pkgs.lib.optionals (flags.devel) [
             (hsPkgs.criterion)
             (hsPkgs.QuickCheck)
           ];

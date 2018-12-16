@@ -26,7 +26,7 @@
     components = {
       exes = {
         "marionetta" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)

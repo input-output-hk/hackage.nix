@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.aeson)
@@ -33,7 +33,7 @@
       };
       tests = {
         "end-to-end-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elm-bridge)
             (hsPkgs.aeson)
@@ -43,7 +43,7 @@
           ];
         };
         "derive-elm-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.elm-bridge)

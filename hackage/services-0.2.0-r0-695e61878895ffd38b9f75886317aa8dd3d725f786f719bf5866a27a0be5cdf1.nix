@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.binary)
@@ -39,7 +39,7 @@
       };
       tests = {
         "services-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.services)
             (hsPkgs.tasty)

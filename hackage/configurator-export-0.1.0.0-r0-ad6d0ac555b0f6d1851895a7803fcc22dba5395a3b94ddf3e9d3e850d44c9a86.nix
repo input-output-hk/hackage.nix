@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.configurator)
           (hsPkgs.pretty)
@@ -36,7 +36,7 @@
       };
       tests = {
         "configurator-export-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.configurator-export)
           ];

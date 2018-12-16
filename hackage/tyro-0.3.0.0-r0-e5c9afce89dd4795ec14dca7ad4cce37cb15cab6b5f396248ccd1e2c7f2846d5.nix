@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.aeson)
@@ -38,7 +38,7 @@
       };
       tests = {
         "tyro-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tyro)
             (hsPkgs.protolude)

@@ -25,26 +25,26 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       tests = {
         "Homogeneous" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.homoiconic)
           ];
         };
         "Heterogeneous" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.homoiconic)
           ];
         };
         "Constrained" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.homoiconic)
           ];

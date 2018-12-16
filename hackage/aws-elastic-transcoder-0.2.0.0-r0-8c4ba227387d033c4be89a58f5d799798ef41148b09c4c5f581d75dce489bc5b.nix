@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
           (hsPkgs.aws)
@@ -45,7 +45,7 @@
       };
       exes = {
         "SubmitETS" = {
-          depends  = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.aws-elastic-transcoder)
@@ -57,7 +57,7 @@
       };
       tests = {
         "ets-json" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)

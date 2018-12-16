@@ -25,13 +25,13 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
       };
       tests = {
         "int-cast-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.int-cast)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

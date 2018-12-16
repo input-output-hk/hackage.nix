@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.text)
@@ -45,7 +45,7 @@
       };
       tests = {
         "beam-core-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.beam-core)
             (hsPkgs.text)

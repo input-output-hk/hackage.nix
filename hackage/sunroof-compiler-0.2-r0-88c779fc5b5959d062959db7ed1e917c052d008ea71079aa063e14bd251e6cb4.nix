@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.data-reify)
           (hsPkgs.base)
           (hsPkgs.Boolean)

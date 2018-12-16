@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       exes = {
         "blunt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blunt)
           ];

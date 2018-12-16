@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Monaris" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.array)

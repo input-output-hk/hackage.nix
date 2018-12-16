@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -35,7 +35,7 @@
       };
       exes = {
         "data-files-gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-files-gen)
             (hsPkgs.containers)
@@ -45,7 +45,7 @@
       };
       tests = {
         "data-files-gen-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-files-gen)
             (hsPkgs.hspec)

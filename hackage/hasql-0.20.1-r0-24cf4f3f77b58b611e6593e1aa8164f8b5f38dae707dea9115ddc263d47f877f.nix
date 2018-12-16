@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.stm)
           (hsPkgs.slave-thread)
           (hsPkgs.network)
@@ -63,7 +63,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -77,7 +77,7 @@
           ];
         };
         "profiling" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.foldl)
             (hsPkgs.bug)
@@ -87,7 +87,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.criterion)
             (hsPkgs.foldl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -41,7 +41,7 @@
       };
       exes = {
         "git-vogue" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.git-vogue)
             (hsPkgs.optparse-applicative)
@@ -49,14 +49,14 @@
           ];
         };
         "git-vogue-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.git-vogue)
           ];
         };
         "git-vogue-hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.cpphs)
@@ -68,7 +68,7 @@
           ];
         };
         "git-vogue-stylish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Diff)
             (hsPkgs.git-vogue)
@@ -77,7 +77,7 @@
           ];
         };
         "git-vogue-ghc-mod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-mod)
             (hsPkgs.git-vogue)
@@ -86,7 +86,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "toolshed" = {
-          depends  = [ (hsPkgs.Cabal) ];
+          depends = [ (hsPkgs.Cabal) ];
         };
       };
     };

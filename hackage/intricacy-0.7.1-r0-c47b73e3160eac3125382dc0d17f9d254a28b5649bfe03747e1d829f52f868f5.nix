@@ -32,7 +32,7 @@
     components = {
       exes = {
         "intricacy" = {
-          depends  = pkgs.lib.optionals (flags.game) ((([
+          depends = pkgs.lib.optionals (flags.game) ((([
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -68,7 +68,7 @@
           ] ++ pkgs.lib.optional (flags.sound) (pkgs."SDL_mixer"))));
         };
         "intricacy-server" = {
-          depends  = pkgs.lib.optionals (flags.server) [
+          depends = pkgs.lib.optionals (flags.server) [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.mtl)

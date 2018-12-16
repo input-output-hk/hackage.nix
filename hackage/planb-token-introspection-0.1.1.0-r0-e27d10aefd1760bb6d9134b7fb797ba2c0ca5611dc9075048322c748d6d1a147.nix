@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.http-client-tls)
@@ -43,7 +43,7 @@
       };
       tests = {
         "access-token-provider-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.planb-token-introspection)
             (hsPkgs.aeson)

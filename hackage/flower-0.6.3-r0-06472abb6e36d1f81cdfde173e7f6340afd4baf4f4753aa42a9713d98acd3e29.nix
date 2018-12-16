@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flower" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.array)

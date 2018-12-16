@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.mtl)
           (hsPkgs.unix)
           (hsPkgs.X11)

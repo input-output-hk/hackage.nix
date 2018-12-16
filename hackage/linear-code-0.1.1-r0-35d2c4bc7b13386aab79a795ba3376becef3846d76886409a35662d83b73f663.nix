@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HaskellForMaths)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       tests = {
         "linear-code-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HaskellForMaths)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "postmaster" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)

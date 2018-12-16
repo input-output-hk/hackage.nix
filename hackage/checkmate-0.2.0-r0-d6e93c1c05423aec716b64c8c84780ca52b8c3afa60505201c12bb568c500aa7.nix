@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diff-parse)
           (hsPkgs.directory)
@@ -39,7 +39,7 @@
       };
       exes = {
         "checkmate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diff-parse)
             (hsPkgs.directory)
@@ -55,7 +55,7 @@
       };
       tests = {
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diff-parse)
             (hsPkgs.directory)
@@ -67,7 +67,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diff-parse)
             (hsPkgs.directory)

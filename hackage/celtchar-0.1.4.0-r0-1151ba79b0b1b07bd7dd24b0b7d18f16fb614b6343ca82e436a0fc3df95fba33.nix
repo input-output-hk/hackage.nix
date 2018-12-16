@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.megaparsec)
@@ -40,7 +40,7 @@
       };
       exes = {
         "celtchar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-generic)
             (hsPkgs.text)
@@ -55,7 +55,7 @@
       };
       tests = {
         "celtchar-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.raw-strings-qq)
             (hsPkgs.hspec)

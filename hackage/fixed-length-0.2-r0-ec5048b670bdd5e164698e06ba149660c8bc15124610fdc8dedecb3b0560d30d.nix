@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.tfp)
           (hsPkgs.non-empty)
           (hsPkgs.utility-ht)

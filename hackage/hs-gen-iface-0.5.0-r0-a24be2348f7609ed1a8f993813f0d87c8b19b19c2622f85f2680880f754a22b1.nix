@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hs-gen-iface" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.haskell-src-exts)

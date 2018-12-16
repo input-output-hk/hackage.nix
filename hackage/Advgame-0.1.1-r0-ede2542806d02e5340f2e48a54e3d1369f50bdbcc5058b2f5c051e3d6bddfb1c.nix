@@ -26,7 +26,7 @@
     components = {
       exes = {
         "advgame" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.haskell98)

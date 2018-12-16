@@ -26,7 +26,7 @@
     components = {
       exes = {
         "court" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.stm)
@@ -42,7 +42,7 @@
           ];
         };
         "court-darcs-plugin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

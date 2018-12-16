@@ -26,7 +26,7 @@
     components = {
       exes = {
         "source-code-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.mtl)

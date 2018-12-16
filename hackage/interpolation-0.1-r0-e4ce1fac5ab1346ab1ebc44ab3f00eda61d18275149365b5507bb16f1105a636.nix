@@ -28,14 +28,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.utility-ht)
           (hsPkgs.base)
         ];
       };
       exes = {
         "interpolation-plot" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.interpolation)
             (hsPkgs.gnuplot)
             (hsPkgs.utility-ht)
@@ -43,7 +43,7 @@
           ];
         };
         "interpolation-fit" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples && flags.hmatrix) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.hmatrix) [
             (hsPkgs.interpolation)
             (hsPkgs.hmatrix-banded)
             (hsPkgs.hmatrix)
@@ -56,7 +56,7 @@
       };
       tests = {
         "interpolation-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.interpolation)
             (hsPkgs.QuickCheck)
             (hsPkgs.utility-ht)

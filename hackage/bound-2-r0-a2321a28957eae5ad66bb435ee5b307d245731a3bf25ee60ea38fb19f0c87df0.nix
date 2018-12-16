@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.binary)
@@ -45,7 +45,7 @@
       };
       tests = {
         "Simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bound)
             (hsPkgs.deriving-compat)
@@ -54,7 +54,7 @@
           ];
         };
         "Overkill" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bound)
             (hsPkgs.transformers)
@@ -64,7 +64,7 @@
           ];
         };
         "Deriving" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bound)
             (hsPkgs.transformers)
@@ -72,7 +72,7 @@
           ];
         };
         "Imperative" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bound)
             (hsPkgs.transformers)
@@ -81,7 +81,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.vector)

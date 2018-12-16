@@ -26,13 +26,13 @@
     components = {
       exes = {
         "pandoc-oso2tex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
           ];
         };
         "oso2pdf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.optparse-applicative)

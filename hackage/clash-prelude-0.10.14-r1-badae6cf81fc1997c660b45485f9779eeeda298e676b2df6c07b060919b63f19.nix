@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.data-default)
@@ -46,7 +46,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

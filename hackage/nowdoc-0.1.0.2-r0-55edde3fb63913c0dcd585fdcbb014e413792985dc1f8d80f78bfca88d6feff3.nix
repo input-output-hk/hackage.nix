@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       tests = {
         "nowdoc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nowdoc)
             (hsPkgs.template-haskell)

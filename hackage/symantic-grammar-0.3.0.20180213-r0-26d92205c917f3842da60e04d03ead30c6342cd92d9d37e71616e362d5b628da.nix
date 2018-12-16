@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       tests = {
         "symantic-grammar-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.symantic-grammar)
             (hsPkgs.base)
             (hsPkgs.megaparsec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.supercollider-ht)
           (hsPkgs.hsc3)
           (hsPkgs.hosc)

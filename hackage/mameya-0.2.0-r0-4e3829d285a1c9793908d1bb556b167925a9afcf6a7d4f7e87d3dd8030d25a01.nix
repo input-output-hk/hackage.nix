@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "mameya" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mameya)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "mameya-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mameya)
           ];

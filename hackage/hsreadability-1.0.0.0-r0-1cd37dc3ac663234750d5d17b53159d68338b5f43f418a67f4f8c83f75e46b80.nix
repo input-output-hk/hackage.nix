@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.text)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-hsreadability" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsreadability)
             (hsPkgs.aeson)

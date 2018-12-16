@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rivet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rivet-core)
             (hsPkgs.rivet-simple-deploy)

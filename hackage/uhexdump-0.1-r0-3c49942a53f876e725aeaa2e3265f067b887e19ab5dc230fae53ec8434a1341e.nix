@@ -26,7 +26,7 @@
     components = {
       exes = {
         "uhexdump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.utf8-string)
           ];

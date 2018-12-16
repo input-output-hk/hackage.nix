@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jsonextfilter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

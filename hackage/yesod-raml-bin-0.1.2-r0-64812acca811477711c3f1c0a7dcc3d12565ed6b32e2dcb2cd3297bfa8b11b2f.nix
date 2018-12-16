@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yesod-raml-bin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-raml)
             (hsPkgs.yesod-raml-docs)

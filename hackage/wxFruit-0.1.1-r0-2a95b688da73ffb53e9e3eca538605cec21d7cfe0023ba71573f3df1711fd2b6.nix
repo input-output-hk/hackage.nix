@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.splitbase
+        depends = if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.old-time)
@@ -42,7 +42,7 @@
       };
       exes = {
         "paddle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wx)
             (hsPkgs.wxcore)

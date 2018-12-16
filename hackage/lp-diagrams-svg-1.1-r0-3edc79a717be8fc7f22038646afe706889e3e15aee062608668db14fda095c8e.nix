@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.lp-diagrams)
           (hsPkgs.base)
           (hsPkgs.lucid-svg)
@@ -44,7 +44,7 @@
       };
       exes = {
         "lp-diagrams-svg-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.lp-diagrams-svg)
             (hsPkgs.lp-diagrams)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ficketed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.async)

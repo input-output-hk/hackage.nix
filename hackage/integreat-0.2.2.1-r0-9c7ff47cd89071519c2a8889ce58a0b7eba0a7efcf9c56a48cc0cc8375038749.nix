@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -52,7 +52,7 @@
       };
       exes = {
         "integreat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.integreat)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       exes = {
         "wai-accept-language-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-accept-language)
             (hsPkgs.wai)

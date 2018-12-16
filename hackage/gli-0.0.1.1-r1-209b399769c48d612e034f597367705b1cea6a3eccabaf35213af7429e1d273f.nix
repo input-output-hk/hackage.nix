@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.time)
@@ -45,7 +45,7 @@
       };
       exes = {
         "gli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gli)
           ];
@@ -53,7 +53,7 @@
       };
       tests = {
         "gli-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gli)
           ];

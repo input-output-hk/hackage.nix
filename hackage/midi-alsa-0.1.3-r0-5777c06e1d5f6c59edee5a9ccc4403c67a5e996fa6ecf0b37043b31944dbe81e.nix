@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.midi)
           (hsPkgs.alsa-seq)
           (hsPkgs.data-accessor)

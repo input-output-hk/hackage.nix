@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.foldl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "perf-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.formatting)
             (hsPkgs.numhask)
@@ -53,7 +53,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.perf)

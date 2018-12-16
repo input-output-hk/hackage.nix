@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "pptable-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pptable)
             (hsPkgs.tasty)

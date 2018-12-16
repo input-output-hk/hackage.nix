@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -46,17 +46,17 @@
         "mbox-average-size" = {};
         "mbox-quoting" = {};
         "redact-mbox" = {
-          depends  = [ (hsPkgs.random) ];
+          depends = [ (hsPkgs.random) ];
         };
         "mbox-list" = {};
         "mbox-pick" = {};
         "mbox-partition" = {};
         "mbox-grep" = {
-          depends  = pkgs.lib.optional (flags.use_hutt) (hsPkgs.hutt);
+          depends = pkgs.lib.optional (flags.use_hutt) (hsPkgs.hutt);
         };
         "split-mbox" = {};
         "mbox-iter" = {
-          depends  = [ (hsPkgs.process) ];
+          depends = [ (hsPkgs.process) ];
         };
         "mbox-from-files" = {};
       };

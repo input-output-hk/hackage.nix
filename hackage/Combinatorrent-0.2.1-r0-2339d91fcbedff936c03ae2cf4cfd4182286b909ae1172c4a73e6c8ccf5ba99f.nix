@@ -29,7 +29,7 @@
     components = {
       exes = {
         "Combinatorrent" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.base)

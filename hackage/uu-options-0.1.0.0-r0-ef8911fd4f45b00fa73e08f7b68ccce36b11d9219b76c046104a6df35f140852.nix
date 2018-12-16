@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.uu-parsinglib)
           (hsPkgs.uu-interleaved)
@@ -36,7 +36,7 @@
       };
       exes = {
         "demo-options" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uu-parsinglib)
             (hsPkgs.uu-interleaved)

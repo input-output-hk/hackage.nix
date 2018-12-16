@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.servant)
           (hsPkgs.servant-server)
@@ -49,7 +49,7 @@
       };
       exes = {
         "servant-tracing-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-tracing)
             (hsPkgs.servant)
@@ -70,7 +70,7 @@
       };
       tests = {
         "servant-tracing-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-tracing)
             (hsPkgs.http-api-data)

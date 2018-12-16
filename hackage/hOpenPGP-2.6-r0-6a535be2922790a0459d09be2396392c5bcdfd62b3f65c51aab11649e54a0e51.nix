@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.asn1-encoding)
           (hsPkgs.attoparsec)
@@ -73,7 +73,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hOpenPGP)
             (hsPkgs.aeson)
             (hsPkgs.asn1-encoding)
@@ -124,7 +124,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.hOpenPGP)
             (hsPkgs.aeson)
             (hsPkgs.base)

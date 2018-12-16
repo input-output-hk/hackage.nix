@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.text)
@@ -38,7 +38,7 @@
       };
       tests = {
         "chronos-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chronos)
             (hsPkgs.text)

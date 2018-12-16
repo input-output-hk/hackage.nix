@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ (if flags.splitbase
           then [
@@ -38,7 +38,7 @@
       };
       tests = {
         "foo" = {
-          depends  = [
+          depends = [
             (hsPkgs.STMonadTrans)
             (hsPkgs.base)
             (hsPkgs.mtl)

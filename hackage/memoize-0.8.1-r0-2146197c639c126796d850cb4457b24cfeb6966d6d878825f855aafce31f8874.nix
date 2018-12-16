@@ -25,20 +25,20 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       tests = {
         "memoize-test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.memoize)
           ];
         };
         "memoize-test2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.memoize)
           ];

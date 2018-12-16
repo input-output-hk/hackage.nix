@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.wreq)
@@ -39,7 +39,7 @@
       };
       tests = {
         "sparql-protocol-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sparql-protocol)
           ];

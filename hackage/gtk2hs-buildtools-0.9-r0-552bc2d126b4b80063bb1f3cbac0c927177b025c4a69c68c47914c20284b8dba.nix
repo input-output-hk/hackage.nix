@@ -30,7 +30,7 @@
         "gtk2hsTypeGen" = {};
         "gtk2hsHookGenerator" = {};
         "gtk2hsC2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

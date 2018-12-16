@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt)
           (hsPkgs.aeson)
@@ -46,13 +46,13 @@
       };
       exes = {
         "xml-to-json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xml-to-json)
           ];
         };
         "xml-to-json-fast" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagsoup)
             (hsPkgs.text)

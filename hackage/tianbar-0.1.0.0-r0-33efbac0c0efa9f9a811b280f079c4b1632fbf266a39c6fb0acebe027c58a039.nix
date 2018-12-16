@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tianbar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.MissingH)

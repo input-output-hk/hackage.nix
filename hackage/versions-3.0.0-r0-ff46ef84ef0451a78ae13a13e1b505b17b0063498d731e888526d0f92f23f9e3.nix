@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.megaparsec)
           (hsPkgs.semigroups)
@@ -34,7 +34,7 @@
       };
       tests = {
         "versions-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.either)
             (hsPkgs.microlens)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.byteable)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       exes = {
         "mallard" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mallard)
             (hsPkgs.exceptions)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.constraints)
@@ -43,7 +43,7 @@
       };
       tests = {
         "NumSimpl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.raw-feldspar)
@@ -53,14 +53,14 @@
           ];
         };
         "Compilation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.raw-feldspar)
           ];
         };
         "Semantics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.raw-feldspar)
@@ -70,7 +70,7 @@
           ];
         };
         "Examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.raw-feldspar)

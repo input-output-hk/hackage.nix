@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hledger-diff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hledger-lib)
             (hsPkgs.time)

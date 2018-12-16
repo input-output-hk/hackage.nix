@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.managed)
           (hsPkgs.optparse-applicative-simple)
           (hsPkgs.attoparsec-data)

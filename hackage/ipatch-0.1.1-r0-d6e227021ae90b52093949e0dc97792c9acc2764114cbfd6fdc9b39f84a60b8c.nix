@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ipatch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.bytestring)

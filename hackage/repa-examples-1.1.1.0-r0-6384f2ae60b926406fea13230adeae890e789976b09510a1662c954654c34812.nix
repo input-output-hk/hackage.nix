@@ -26,7 +26,7 @@
     components = {
       exes = {
         "repa-fft2d" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-base)
@@ -36,7 +36,7 @@
           ];
         };
         "repa-fft2d-highpass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-base)
@@ -46,7 +46,7 @@
           ];
         };
         "repa-laplace" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-base)
@@ -55,7 +55,7 @@
           ];
         };
         "repa-mmult" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-base)

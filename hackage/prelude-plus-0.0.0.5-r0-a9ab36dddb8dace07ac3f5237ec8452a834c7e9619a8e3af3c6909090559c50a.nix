@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.utf8-string)
         ];
       };
       exes = {
         "test" = {
-          depends  = pkgs.lib.optionals (!(!flags.test)) [
+          depends = pkgs.lib.optionals (!(!flags.test)) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)

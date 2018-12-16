@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.transformers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "glam" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glambda)
           ];
@@ -47,7 +47,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glambda)
             (hsPkgs.template-haskell)

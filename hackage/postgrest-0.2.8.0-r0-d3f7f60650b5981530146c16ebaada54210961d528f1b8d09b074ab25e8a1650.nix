@@ -26,7 +26,7 @@
     components = {
       exes = {
         "postgrest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasql)
             (hsPkgs.hasql-backend)
@@ -71,7 +71,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

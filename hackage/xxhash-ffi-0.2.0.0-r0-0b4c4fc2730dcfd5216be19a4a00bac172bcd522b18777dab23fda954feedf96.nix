@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       tests = {
         "xxhash-ffi-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xxhash-ffi)
             (hsPkgs.QuickCheck)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "xxhash-ffi-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xxhash-ffi)
             (hsPkgs.bytestring)

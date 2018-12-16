@@ -26,7 +26,7 @@
     components = {
       exes = {
         "crocodile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.heap)

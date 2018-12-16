@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.riff)
           (hsPkgs.binary)
@@ -37,7 +37,7 @@
       };
       exes = {
         "wave-identity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.split)
             (hsPkgs.pretty-show)
@@ -45,14 +45,14 @@
           ];
         };
         "wave-info" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.wavy)
           ];
         };
         "wave-split" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wavy)
             (hsPkgs.split)
@@ -61,7 +61,7 @@
           ];
         };
         "wave-generate-sine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wavy)
             (hsPkgs.vector)

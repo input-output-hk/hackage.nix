@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.binary)
@@ -35,7 +35,7 @@
       };
       exes = {
         "ghc-events" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc-events)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -44,13 +44,13 @@
       };
       tests = {
         "test-versions" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc-events)
             (hsPkgs.base)
           ];
         };
         "write-merge" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc-events)
             (hsPkgs.base)
             (hsPkgs.bytestring)

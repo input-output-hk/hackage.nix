@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.bytestring)
           (hsPkgs.cgi)
@@ -49,7 +49,7 @@
       };
       exes = {
         "polyseq.cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.xhtml)
             (hsPkgs.cgi)
             (hsPkgs.utf8-string)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.pretty)
@@ -42,7 +42,7 @@
       };
       exes = {
         "haskell-xmpp-test" = {
-          depends  = pkgs.lib.optional (flags.examples) (hsPkgs.base);
+          depends = pkgs.lib.optional (flags.examples) (hsPkgs.base);
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.network-transport)
@@ -46,7 +46,7 @@
       };
       tests = {
         "TestCH" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.ansi-terminal)
@@ -57,7 +57,7 @@
           ];
         };
         "TestClosure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.ansi-terminal)

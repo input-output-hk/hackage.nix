@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.safe-exceptions)
@@ -38,7 +38,7 @@
       };
       tests = {
         "teardown-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.safe-exceptions)
@@ -51,7 +51,7 @@
           ];
         };
         "teardown-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.safe-exceptions)
@@ -68,7 +68,7 @@
       };
       benchmarks = {
         "teardown-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.safe-exceptions)

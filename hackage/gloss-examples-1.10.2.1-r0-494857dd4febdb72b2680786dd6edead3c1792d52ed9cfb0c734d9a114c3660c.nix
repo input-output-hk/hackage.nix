@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gloss-bitmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.bmp)
@@ -34,90 +34,90 @@
           ];
         };
         "gloss-boids" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-clock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-color" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.gloss)
           ];
         };
         "gloss-conway" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.gloss)
           ];
         };
         "gloss-draw" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-easy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-eden" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.gloss)
           ];
         };
         "gloss-flake" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-gameevent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-lifespan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.random)
           ];
         };
         "gloss-machina" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-occlusion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.gloss-algorithms)
           ];
         };
         "gloss-styrene" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.containers)
@@ -125,47 +125,47 @@
           ];
         };
         "gloss-tree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-visibility" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.gloss)
           ];
         };
         "gloss-zen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
           ];
         };
         "gloss-crystal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.gloss-raster)
           ];
         };
         "gloss-ray" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.gloss-raster)
           ];
         };
         "gloss-pulse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.gloss-raster)
           ];
         };
         "gloss-wave" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.vector)
@@ -174,7 +174,7 @@
           ];
         };
         "gloss-fluid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.vector)
@@ -185,28 +185,28 @@
           ];
         };
         "gloss-snow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.gloss)
           ];
         };
         "gloss-mandel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.repa)
             (hsPkgs.gloss)
           ];
         };
         "gloss-graph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.gloss)
           ];
         };
         "gloss-render" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.gloss)

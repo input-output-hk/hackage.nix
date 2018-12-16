@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-case-insensitive" = {
-          depends  = [
+          depends = [
             (hsPkgs.case-insensitive)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "bench-case-insensitive" = {
-          depends  = [
+          depends = [
             (hsPkgs.case-insensitive)
             (hsPkgs.base)
             (hsPkgs.bytestring)

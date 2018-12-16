@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "example-basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.polymap)
           ];

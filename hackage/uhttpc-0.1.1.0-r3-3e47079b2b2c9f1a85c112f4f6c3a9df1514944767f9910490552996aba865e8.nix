@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -36,7 +36,7 @@
       };
       exes = {
         "uhttpc-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.uhttpc)
             (hsPkgs.base)
             (hsPkgs.bytestring)

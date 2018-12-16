@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lhs2TeX" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)

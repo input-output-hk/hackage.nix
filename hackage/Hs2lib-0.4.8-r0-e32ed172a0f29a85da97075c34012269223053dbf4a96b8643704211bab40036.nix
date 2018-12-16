@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell-src-exts)
           (hsPkgs.ghc)
           (hsPkgs.base)
@@ -38,7 +38,7 @@
       };
       exes = {
         "Hs2lib" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.directory)
             (hsPkgs.ghc-paths)

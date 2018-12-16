@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hfile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.network)
@@ -37,7 +37,7 @@
           libs = [ (pkgs."ssl") ];
         };
         "hpool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.network)

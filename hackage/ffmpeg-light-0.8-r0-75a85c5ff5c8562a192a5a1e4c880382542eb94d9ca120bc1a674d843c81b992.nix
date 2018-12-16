@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.transformers)
@@ -47,7 +47,7 @@
       };
       exes = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.mtl)
@@ -56,7 +56,7 @@
           ] ++ pkgs.lib.optional (flags.builddemo) (hsPkgs.ffmpeg-light);
         };
         "raster" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.mtl)

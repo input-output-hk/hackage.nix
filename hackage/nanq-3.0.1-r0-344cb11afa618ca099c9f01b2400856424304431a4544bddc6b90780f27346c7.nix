@@ -26,7 +26,7 @@
     components = {
       exes = {
         "nanq" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)

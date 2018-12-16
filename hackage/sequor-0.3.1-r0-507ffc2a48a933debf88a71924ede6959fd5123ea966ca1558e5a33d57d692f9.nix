@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sequor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
           ];
         };
         "augment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)

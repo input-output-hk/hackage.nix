@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.executable-path)
           (hsPkgs.file-embed)
@@ -36,7 +36,7 @@
       };
       exes = {
         "inject-executable-hash" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.executable-hash)
           ];
@@ -44,19 +44,19 @@
       };
       tests = {
         "test-compute" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.executable-hash)
           ];
         };
         "test-inject" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.executable-hash)
           ];
         };
         "test-no-inject" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.executable-hash)
           ];

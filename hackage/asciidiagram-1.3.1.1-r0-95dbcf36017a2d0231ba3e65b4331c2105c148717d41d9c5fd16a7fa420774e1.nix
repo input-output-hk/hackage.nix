@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "asciidiagram" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.bytestring)
@@ -59,7 +59,7 @@
       };
       tests = {
         "docgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.asciidiagram)
             (hsPkgs.text)
@@ -72,7 +72,7 @@
           ];
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.asciidiagram)
             (hsPkgs.text)

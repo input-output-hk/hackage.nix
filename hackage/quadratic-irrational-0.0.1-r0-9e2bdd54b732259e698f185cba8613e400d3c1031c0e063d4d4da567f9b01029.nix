@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.arithmoi)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-quadratic-irrational" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.quadratic-irrational)
             (hsPkgs.numbers)

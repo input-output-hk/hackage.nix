@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.text)
           (hsPkgs.bytestring)
           (hsPkgs.time)
@@ -42,7 +42,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.ptr)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

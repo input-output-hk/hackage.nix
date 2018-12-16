@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
@@ -63,7 +63,7 @@
       };
       exes = {
         "brittany" = {
-          depends  = [
+          depends = [
             (hsPkgs.brittany)
             (hsPkgs.base)
             (hsPkgs.ghc)
@@ -100,7 +100,7 @@
       };
       tests = {
         "unittests" = {
-          depends  = [
+          depends = [
             (hsPkgs.brittany)
             (hsPkgs.base)
             (hsPkgs.ghc)
@@ -135,7 +135,7 @@
           ];
         };
         "littests" = {
-          depends  = [
+          depends = [
             (hsPkgs.brittany)
             (hsPkgs.base)
             (hsPkgs.ghc)
@@ -172,7 +172,7 @@
           ];
         };
         "libinterfacetests" = {
-          depends  = [
+          depends = [
             (hsPkgs.brittany)
             (hsPkgs.base)
             (hsPkgs.text)

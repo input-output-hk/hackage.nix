@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hasktags" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
@@ -35,7 +35,7 @@
           ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
         };
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

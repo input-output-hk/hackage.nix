@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lsmbox" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsemail)
             (hsPkgs.parsec)
             (hsPkgs.old-time)

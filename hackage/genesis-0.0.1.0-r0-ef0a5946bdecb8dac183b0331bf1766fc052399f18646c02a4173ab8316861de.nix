@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.envparse)
@@ -45,7 +45,7 @@
       };
       tests = {
         "genesis-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.genesis)
             (hsPkgs.hspec)

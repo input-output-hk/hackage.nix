@@ -26,7 +26,7 @@
     components = {
       exes = {
         "futun" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.network)

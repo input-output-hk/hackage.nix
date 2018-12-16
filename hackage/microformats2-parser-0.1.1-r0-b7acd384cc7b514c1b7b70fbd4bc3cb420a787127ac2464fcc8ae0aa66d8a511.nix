@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.time)
@@ -43,7 +43,7 @@
       };
       exes = {
         "microformats2-parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.options)
             (hsPkgs.warp)
@@ -62,7 +62,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.hspec)

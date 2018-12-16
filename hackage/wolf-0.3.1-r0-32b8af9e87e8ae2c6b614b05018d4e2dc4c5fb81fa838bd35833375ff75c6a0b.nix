@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
@@ -71,7 +71,7 @@
       };
       exes = {
         "wolf-register" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
@@ -83,7 +83,7 @@
           ];
         };
         "wolf-execute" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
@@ -95,7 +95,7 @@
           ];
         };
         "wolf-decide" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
@@ -107,7 +107,7 @@
           ];
         };
         "wolf-act" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka-core)
             (hsPkgs.base)
@@ -125,7 +125,7 @@
           ];
         };
         "wolf-act2" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka-core)
             (hsPkgs.base)
@@ -143,21 +143,21 @@
           ];
         };
         "wolf-actor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wolf)
             (hsPkgs.optparse-generic)
           ];
         };
         "wolf-decider" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wolf)
             (hsPkgs.optparse-generic)
           ];
         };
         "shake-wolf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.directory)
@@ -167,7 +167,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.tasty)

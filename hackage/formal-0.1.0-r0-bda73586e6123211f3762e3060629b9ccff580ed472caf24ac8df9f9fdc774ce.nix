@@ -26,7 +26,7 @@
     components = {
       exes = {
         "formal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.parsec)

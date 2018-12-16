@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pia-forward" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

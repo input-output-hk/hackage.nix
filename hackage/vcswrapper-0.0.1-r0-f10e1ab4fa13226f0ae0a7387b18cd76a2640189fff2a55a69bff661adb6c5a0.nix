@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.base)
           (hsPkgs.directory)
@@ -40,7 +40,7 @@
       };
       exes = {
         "vcswrapper" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.base)
             (hsPkgs.directory)

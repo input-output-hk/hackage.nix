@@ -26,7 +26,7 @@
     components = {
       exes = {
         "editpipe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.temporary)

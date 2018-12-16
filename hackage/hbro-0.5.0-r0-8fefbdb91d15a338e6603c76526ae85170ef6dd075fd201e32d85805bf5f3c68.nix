@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cmdargs)
@@ -43,7 +43,7 @@
       };
       exes = {
         "hbro" = {
-          depends  = [
+          depends = [
             (hsPkgs.hbro)
             (hsPkgs.base)
             (hsPkgs.glib)

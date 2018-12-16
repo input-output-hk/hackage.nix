@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.process)
@@ -46,7 +46,7 @@
       };
       exes = {
         "graphviz-testparsing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graphviz)
             (hsPkgs.bytestring)
@@ -58,7 +58,7 @@
       };
       tests = {
         "graphviz-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graphviz)
             (hsPkgs.containers)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "graphviz-printparse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.text)

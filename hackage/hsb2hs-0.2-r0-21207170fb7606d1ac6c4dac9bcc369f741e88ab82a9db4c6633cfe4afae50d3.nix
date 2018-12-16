@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsb2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

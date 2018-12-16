@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -43,14 +43,14 @@
       };
       exes = {
         "bff-shell" = {
-          depends  = pkgs.lib.optionals (flags.binaries) [
+          depends = pkgs.lib.optionals (flags.binaries) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.hint)
           ];
         };
         "bff-cgi" = {
-          depends  = pkgs.lib.optionals (flags.binaries) [
+          depends = pkgs.lib.optionals (flags.binaries) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.xhtml)
@@ -60,11 +60,11 @@
           ];
         };
         "bff-stats" = {
-          depends  = pkgs.lib.optional (flags.stats) (hsPkgs.benchpress);
+          depends = pkgs.lib.optional (flags.stats) (hsPkgs.benchpress);
         };
         "bff-stats-print" = {};
         "bff-stats-render" = {
-          depends  = pkgs.lib.optionals (flags.render) [
+          depends = pkgs.lib.optionals (flags.render) [
             (hsPkgs.Chart)
             (hsPkgs.data-accessor)
             (hsPkgs.colour)

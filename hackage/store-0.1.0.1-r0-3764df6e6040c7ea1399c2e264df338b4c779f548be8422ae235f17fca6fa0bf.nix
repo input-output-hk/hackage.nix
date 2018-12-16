@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.base-orphans)
@@ -68,7 +68,7 @@
       };
       tests = {
         "store-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.base-orphans)
@@ -113,7 +113,7 @@
       };
       benchmarks = {
         "store-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.base-orphans)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hourglass)
           (hsPkgs.aeson)
@@ -33,7 +33,7 @@
       };
       tests = {
         "hourglass-orphans-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hourglass-orphans)
             (hsPkgs.hspec)

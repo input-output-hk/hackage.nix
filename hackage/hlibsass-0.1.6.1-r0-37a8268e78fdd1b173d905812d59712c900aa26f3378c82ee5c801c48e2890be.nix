@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."sass")
         ] ++ pkgs.lib.optionals (!flags.externallibsass && !flags.sharedlibsass) (if system.isOsx
@@ -37,7 +37,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hlibsass)

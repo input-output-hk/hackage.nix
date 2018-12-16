@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.snap-server)
           (hsPkgs.snap-core)
@@ -55,42 +55,42 @@
       };
       exes = {
         "threepenny-examples-bartab" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
           ];
         };
         "threepenny-examples-buttons" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
           ];
         };
         "threepenny-examples-currencyconverter" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.safe)
           ];
         };
         "threepenny-examples-dragndropexample" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
           ];
         };
         "threepenny-examples-drummachine" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
           ];
         };
         "threepenny-examples-missing-dollars" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.threepenny-gui)
@@ -98,7 +98,7 @@
           ];
         };
         "threepenny-examples-use-words" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
@@ -106,7 +106,7 @@
           ];
         };
         "threepenny-examples-chat" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.transformers)

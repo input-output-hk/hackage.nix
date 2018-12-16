@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hg-importorig" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -40,7 +40,7 @@
           ];
         };
         "hg-importdsc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -54,7 +54,7 @@
           ];
         };
         "hg-buildpackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -68,7 +68,7 @@
           ];
         };
         "hg-markdeb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)
@@ -82,7 +82,7 @@
           ];
         };
         "hgmerge-debupstream" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.unix)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.concurrent-split)
           (hsPkgs.transformers)
           (hsPkgs.deepseq)
@@ -39,7 +39,7 @@
       };
       exes = {
         "pooled-io-demo" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.pooled-io)
             (hsPkgs.base)
           ];

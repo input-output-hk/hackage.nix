@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.logict)
           (hsPkgs.hspec)
           (hsPkgs.QuickCheck)
@@ -37,7 +37,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.logict)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

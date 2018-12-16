@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.base)
           (hsPkgs.base-compat)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs.tagged)) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
@@ -40,7 +40,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat-batteries)
             (hsPkgs.hspec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "avatar-generator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.JuicyPixels)

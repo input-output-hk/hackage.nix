@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.binary)
@@ -49,7 +49,7 @@
       };
       exes = {
         "morte" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.morte)
             (hsPkgs.optparse-applicative)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.morte)

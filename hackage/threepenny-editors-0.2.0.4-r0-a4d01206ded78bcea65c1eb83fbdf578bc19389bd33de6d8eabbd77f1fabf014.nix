@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.profunctors)
           (hsPkgs.threepenny-gui)
@@ -35,7 +35,7 @@
       };
       exes = {
         "person" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.profunctors)
             (hsPkgs.threepenny-gui)

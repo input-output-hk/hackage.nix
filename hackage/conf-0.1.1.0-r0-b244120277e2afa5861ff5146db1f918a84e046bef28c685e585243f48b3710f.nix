@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src)
         ];
       };
       tests = {
         "unit-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.conf)
             (hsPkgs.base)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.OpenGL)
           (hsPkgs.GLUT)
@@ -35,25 +35,25 @@
       };
       exes = {
         "example1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HGE2D)
           ];
         };
         "example2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HGE2D)
           ];
         };
         "example3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HGE2D)
           ];
         };
         "example4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HGE2D)
           ];
@@ -61,7 +61,7 @@
       };
       tests = {
         "test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HGE2D)
             (hsPkgs.hspec)

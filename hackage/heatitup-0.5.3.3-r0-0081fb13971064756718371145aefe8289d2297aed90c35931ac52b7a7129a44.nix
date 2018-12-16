@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-show)
@@ -48,7 +48,7 @@
       };
       exes = {
         "heatitup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.heatitup)
             (hsPkgs.bytestring)

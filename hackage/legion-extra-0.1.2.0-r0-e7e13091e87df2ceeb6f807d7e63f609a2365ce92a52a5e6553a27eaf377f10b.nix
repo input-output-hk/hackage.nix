@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -48,7 +48,7 @@
       };
       tests = {
         "legion-extra-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.legion-extra)
           ];

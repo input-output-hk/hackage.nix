@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.Earley)
@@ -41,7 +41,7 @@
       };
       exes = {
         "parse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Earley)
             (hsPkgs.lexer-applicative)
@@ -52,7 +52,7 @@
           ];
         };
         "lex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lexer-applicative)
             (hsPkgs.language-lua2)
@@ -62,7 +62,7 @@
       };
       tests = {
         "language-lua2-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lexer-applicative)
             (hsPkgs.language-lua2)

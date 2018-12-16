@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.directory)
@@ -40,7 +40,7 @@
       };
       exes = {
         "squeeze" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.factory)
@@ -54,7 +54,7 @@
       };
       tests = {
         "quickCheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.factory)
             (hsPkgs.QuickCheck)

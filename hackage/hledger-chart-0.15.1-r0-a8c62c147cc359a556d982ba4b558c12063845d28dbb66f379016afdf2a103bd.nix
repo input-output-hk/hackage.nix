@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hledger-chart" = {
-          depends  = [
+          depends = [
             (hsPkgs.hledger)
             (hsPkgs.hledger-lib)
             (hsPkgs.HUnit)

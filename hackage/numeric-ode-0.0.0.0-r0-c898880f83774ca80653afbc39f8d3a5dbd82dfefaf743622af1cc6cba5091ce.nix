@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.parallel)
@@ -48,7 +48,7 @@
       };
       exes = {
         "Kepler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.numeric-ode)
             (hsPkgs.vector)

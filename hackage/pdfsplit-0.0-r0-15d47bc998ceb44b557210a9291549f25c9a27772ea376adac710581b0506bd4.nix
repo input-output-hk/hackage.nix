@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pdfsplit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.pdfinfo)

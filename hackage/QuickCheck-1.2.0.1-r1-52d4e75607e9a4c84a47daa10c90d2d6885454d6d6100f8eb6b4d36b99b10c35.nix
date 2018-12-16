@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.base3
+        depends = if flags.base3
           then [
             (hsPkgs.base)
             (hsPkgs.random)

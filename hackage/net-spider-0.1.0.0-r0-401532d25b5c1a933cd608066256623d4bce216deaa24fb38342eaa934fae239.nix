@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.vector)
@@ -43,7 +43,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.net-spider)
             (hsPkgs.vector)
@@ -51,7 +51,7 @@
           ];
         };
         "server-test-suite" = {
-          depends  = pkgs.lib.optionals (flags.server-test) [
+          depends = pkgs.lib.optionals (flags.server-test) [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.net-spider)

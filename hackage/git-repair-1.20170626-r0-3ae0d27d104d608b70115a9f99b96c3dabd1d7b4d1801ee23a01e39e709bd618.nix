@@ -26,7 +26,7 @@
     components = {
       exes = {
         "git-repair" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.split)
             (hsPkgs.hslogger)
             (hsPkgs.directory)

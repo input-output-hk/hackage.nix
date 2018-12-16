@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jammittools" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.property-list)
             (hsPkgs.directory)

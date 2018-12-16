@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.deepseq)
@@ -36,7 +36,7 @@
       };
       tests = {
         "unittests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pomaps)
@@ -47,7 +47,7 @@
           ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs.lattices);
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "pomaps-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pomaps)
             (hsPkgs.criterion)

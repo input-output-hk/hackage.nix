@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.prettyprinter)
@@ -43,7 +43,7 @@
       };
       exes = {
         "stgi-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stgi)
             (hsPkgs.ansi-terminal)
@@ -54,7 +54,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stgi)
             (hsPkgs.ansi-wl-pprint)
@@ -75,7 +75,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

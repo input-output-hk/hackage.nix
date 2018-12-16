@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.ansi-terminal)
@@ -65,7 +65,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.ansi-terminal)
@@ -104,7 +104,7 @@
             else [ (hsPkgs.time) ]);
         };
         "hunittests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.ansi-terminal)

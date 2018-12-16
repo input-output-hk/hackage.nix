@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."cv")
           (pkgs."highgui")
@@ -33,7 +33,7 @@
       };
       exes = {
         "test-hopencv" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
           libs = [
             (pkgs."cv")
             (pkgs."highgui")

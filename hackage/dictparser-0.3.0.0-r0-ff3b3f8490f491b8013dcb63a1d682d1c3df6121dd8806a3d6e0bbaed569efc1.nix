@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.split)
@@ -33,7 +33,7 @@
       };
       exes = {
         "dictparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dictparser)
             (hsPkgs.parsec)
@@ -42,7 +42,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dictparser)
             (hsPkgs.hspec)

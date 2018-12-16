@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.pretty)
           (hsPkgs.containers)
           (hsPkgs.parsec)
@@ -60,7 +60,7 @@
       };
       exes = {
         "pandoc" = {
-          depends  = pkgs.lib.optional (flags.citeproc) (hsPkgs.citeproc-hs);
+          depends = pkgs.lib.optional (flags.citeproc) (hsPkgs.citeproc-hs);
         };
         "markdown2pdf" = {};
       };

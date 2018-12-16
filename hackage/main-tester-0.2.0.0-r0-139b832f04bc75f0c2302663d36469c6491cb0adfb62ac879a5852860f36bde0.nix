@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -33,13 +33,13 @@
       };
       tests = {
         "main-tester-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "main-tester-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.main-tester)
             (hsPkgs.bytestring)

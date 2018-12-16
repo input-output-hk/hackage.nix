@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghcjs-dom)
           (hsPkgs.ghcjs-prim)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-shine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
             (hsPkgs.shine)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
@@ -35,7 +35,7 @@
       };
       exes = {
         "maam_examples" = {
-          depends  = [ (hsPkgs.maam) ];
+          depends = [ (hsPkgs.maam) ];
         };
       };
     };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-markup)
           (hsPkgs.ListLike)
@@ -52,7 +52,7 @@
       };
       exes = {
         "lykah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-markup)
             (hsPkgs.ListLike)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "hnix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hnix)
             (hsPkgs.containers)
@@ -51,7 +51,7 @@
       };
       tests = {
         "hnix-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)
@@ -65,7 +65,7 @@
       };
       benchmarks = {
         "hnix-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)

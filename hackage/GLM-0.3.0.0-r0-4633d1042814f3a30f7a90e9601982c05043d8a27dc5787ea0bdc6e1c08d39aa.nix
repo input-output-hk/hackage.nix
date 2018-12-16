@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.interpolate)
@@ -42,7 +42,7 @@
       };
       exes = {
         "glm2props" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.lens)
@@ -57,7 +57,7 @@
           ];
         };
         "glm2dot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.lens)
@@ -74,7 +74,7 @@
       };
       tests = {
         "test-glm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.lens)

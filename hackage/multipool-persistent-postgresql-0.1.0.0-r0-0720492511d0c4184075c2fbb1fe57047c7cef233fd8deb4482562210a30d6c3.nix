@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-logger)
           (hsPkgs.mtl)
@@ -40,7 +40,7 @@
       };
       tests = {
         "multipool-persistent-postgresql-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monad-logger)
             (hsPkgs.mtl)

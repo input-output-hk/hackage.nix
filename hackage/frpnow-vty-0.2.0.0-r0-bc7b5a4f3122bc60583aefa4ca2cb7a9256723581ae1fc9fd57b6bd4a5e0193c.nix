@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.frpnow)
           (hsPkgs.vty)
@@ -33,7 +33,7 @@
       };
       exes = {
         "frpnow-vty-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.frpnow-vty)
             (hsPkgs.vty)

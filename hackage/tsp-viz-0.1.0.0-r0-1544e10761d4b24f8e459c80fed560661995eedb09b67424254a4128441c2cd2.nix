@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tsp-viz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm)
             (hsPkgs.vector)

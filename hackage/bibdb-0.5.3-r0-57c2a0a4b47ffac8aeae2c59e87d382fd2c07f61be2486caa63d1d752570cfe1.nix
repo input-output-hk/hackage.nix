@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bibdb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bibtex)
             (hsPkgs.filepath)

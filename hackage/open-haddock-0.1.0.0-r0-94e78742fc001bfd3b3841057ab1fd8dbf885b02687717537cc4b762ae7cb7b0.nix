@@ -26,7 +26,7 @@
     components = {
       exes = {
         "open-haddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.text)

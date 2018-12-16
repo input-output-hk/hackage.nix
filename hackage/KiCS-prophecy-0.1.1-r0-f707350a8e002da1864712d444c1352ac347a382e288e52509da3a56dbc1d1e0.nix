@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.KiCS)
@@ -33,7 +33,7 @@
       };
       exes = {
         "prophecy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.KiCS)
           ];

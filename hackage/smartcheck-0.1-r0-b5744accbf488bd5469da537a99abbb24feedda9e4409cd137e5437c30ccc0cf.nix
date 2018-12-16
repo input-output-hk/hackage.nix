@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.mtl)
@@ -37,7 +37,7 @@
       };
       exes = {
         "sc-regression" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smartcheck)
             (hsPkgs.QuickCheck)

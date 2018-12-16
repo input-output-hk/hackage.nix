@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cmdargs)
@@ -50,7 +50,7 @@
       };
       exes = {
         "imm" = {
-          depends  = [
+          depends = [
             (hsPkgs.imm)
             (hsPkgs.base)
           ];

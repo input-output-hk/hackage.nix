@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "rncryptor-decrypt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cryptonite)
@@ -47,7 +47,7 @@
           ];
         };
         "rncryptor-encrypt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.io-streams)
@@ -58,7 +58,7 @@
       };
       tests = {
         "rncryptor-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.rncryptor)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -76,7 +76,7 @@
       };
       benchmarks = {
         "store-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

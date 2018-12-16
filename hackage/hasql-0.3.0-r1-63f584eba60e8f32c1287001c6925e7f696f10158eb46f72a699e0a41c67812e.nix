@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql-backend)
           (hsPkgs.template-haskell)
           (hsPkgs.attoparsec)
@@ -50,7 +50,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.hasql-backend)
             (hsPkgs.base-prelude)
@@ -59,7 +59,7 @@
           ];
         };
         "postgres-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.hasql-postgres)
             (hsPkgs.scientific)
@@ -73,7 +73,7 @@
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.hasql-postgres)
             (hsPkgs.transformers)

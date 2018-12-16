@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lhs2TeX" = {
-          depends  = if flags.splitbase
+          depends = if flags.splitbase
             then [
               (hsPkgs.base)
               (hsPkgs.regex-compat)

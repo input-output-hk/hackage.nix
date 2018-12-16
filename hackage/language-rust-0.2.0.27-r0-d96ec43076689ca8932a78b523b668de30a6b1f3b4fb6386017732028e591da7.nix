@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.prettyprinter)
           (hsPkgs.transformers)
@@ -45,7 +45,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
@@ -55,7 +55,7 @@
           ];
         };
         "rustc-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.process)
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "timing-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.process)
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
@@ -87,7 +87,7 @@
           ];
         };
         "allocation-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.process)
             (hsPkgs.bytestring)
             (hsPkgs.aeson)

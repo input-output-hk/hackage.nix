@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-netrc" = {
-          depends  = [
+          depends = [
             (hsPkgs.netrc)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deiko-config)
           (hsPkgs.exceptions)
@@ -34,7 +34,7 @@
       };
       tests = {
         "confide-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.confide)
             (hsPkgs.deiko-config)

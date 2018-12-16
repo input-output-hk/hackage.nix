@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "human-readable-duration-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.human-readable-duration)
             (hsPkgs.doctest)
@@ -39,7 +39,7 @@
       };
       benchmarks = {
         "hrd-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.human-readable-duration)

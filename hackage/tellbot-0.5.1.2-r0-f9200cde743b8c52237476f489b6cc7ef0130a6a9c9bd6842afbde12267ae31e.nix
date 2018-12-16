@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tellbot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.errors)

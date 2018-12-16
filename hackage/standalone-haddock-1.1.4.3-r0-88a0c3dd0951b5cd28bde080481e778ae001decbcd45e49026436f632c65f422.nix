@@ -26,7 +26,7 @@
     components = {
       exes = {
         "standalone-haddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.filepath)

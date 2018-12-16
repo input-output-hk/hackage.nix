@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams)
           (hsPkgs.diagrams-lib)
@@ -38,7 +38,7 @@
       };
       exes = {
         "master-plan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.master-plan)
             (hsPkgs.optparse-applicative)
@@ -48,7 +48,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)

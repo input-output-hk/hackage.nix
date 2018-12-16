@@ -28,7 +28,7 @@
     components = {
       exes = {
         "pang-a-lambda-dumbplayer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.SDL-gfx)
@@ -36,7 +36,7 @@
           ];
         };
         "pang-a-lambda-arrowup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.SDL-gfx)
@@ -44,7 +44,7 @@
           ];
         };
         "pang-a-lambda-stickyarrow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.SDL-gfx)
@@ -52,7 +52,7 @@
           ];
         };
         "pang-a-lambda-player" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.SDL-gfx)
@@ -60,7 +60,7 @@
           ];
         };
         "pang-a-lambda-physics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -74,28 +74,28 @@
           ];
         };
         "pang-a-lambda-circlingboxes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.Yampa)
           ];
         };
         "pang-a-lambda-splittingboxes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.Yampa)
           ];
         };
         "pang-a-lambda-split" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.Yampa)
           ];
         };
         "pang-a-lambda-splitballs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -109,7 +109,7 @@
           ];
         };
         "pang-a-lambda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

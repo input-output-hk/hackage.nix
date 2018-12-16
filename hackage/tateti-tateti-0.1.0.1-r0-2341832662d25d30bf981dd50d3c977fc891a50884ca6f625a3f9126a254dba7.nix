@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tateti-tateti" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ncurses)
             (hsPkgs.mtl)

@@ -27,11 +27,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "fast-arithmetic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-arithmetic)
             (hsPkgs.hspec)
@@ -40,7 +40,7 @@
       };
       benchmarks = {
         "fast-arithmetic-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-arithmetic)
             (hsPkgs.criterion)

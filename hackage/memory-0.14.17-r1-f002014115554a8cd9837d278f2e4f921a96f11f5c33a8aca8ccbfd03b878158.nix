@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (((if compiler.isGhc && compiler.version.lt "8.0"
+        depends = (((if compiler.isGhc && compiler.version.lt "8.0"
           then [ (hsPkgs.base) ]
           else [
             (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-memory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.memory)

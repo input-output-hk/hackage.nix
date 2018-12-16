@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "value" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-of-html)
             (hsPkgs.QuickCheck)
@@ -43,18 +43,18 @@
           ];
         };
         "type" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
       benchmarks = {
         "reduction" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-of-html)
           ];
         };
         "alloc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-of-html)
             (hsPkgs.deepseq)
@@ -65,7 +65,7 @@
           ];
         };
         "perf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-of-html)
             (hsPkgs.text)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "servant-py-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.bytestring)
@@ -58,7 +58,7 @@
       };
       tests = {
         "servant-py-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-py)
             (hsPkgs.aeson)

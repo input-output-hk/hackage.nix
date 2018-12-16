@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.postgresql-simple)
           (hsPkgs.optparse-applicative)
@@ -36,7 +36,7 @@
       };
       tests = {
         "postgresql-simple-opts-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.postgresql-simple-opts)
             (hsPkgs.hspec)

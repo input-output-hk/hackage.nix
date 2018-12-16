@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flowsim" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -39,7 +39,7 @@
           ];
         };
         "hplc" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -52,7 +52,7 @@
           ];
         };
         "clonesim" = {
-          depends  = [
+          depends = [
             (hsPkgs.bio)
             (hsPkgs.base)
             (hsPkgs.array)

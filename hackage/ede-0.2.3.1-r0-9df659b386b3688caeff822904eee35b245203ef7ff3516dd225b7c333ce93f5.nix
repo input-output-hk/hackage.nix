@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
@@ -52,7 +52,7 @@
       };
       exes = {
         "ede" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-executable)) [
+          depends = pkgs.lib.optionals (!(!flags.build-executable)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -67,7 +67,7 @@
       };
       tests = {
         "golden" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bifunctors)

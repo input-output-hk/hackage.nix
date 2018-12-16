@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tic-tac-toe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.glade)

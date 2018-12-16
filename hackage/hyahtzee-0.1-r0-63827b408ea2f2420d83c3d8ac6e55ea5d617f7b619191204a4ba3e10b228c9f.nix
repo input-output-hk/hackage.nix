@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hyahtzee" = {
-          depends  = [
+          depends = [
             (hsPkgs.random)
             (hsPkgs.base)
             (hsPkgs.containers)

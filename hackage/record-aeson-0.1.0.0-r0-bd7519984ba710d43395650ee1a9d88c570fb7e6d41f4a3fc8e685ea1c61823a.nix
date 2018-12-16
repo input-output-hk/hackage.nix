@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.template-haskell)
           (hsPkgs.aeson)
           (hsPkgs.record)
@@ -35,7 +35,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.record)
             (hsPkgs.record-aeson)

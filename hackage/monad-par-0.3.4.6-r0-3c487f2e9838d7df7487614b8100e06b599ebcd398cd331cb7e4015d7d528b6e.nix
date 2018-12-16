@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.abstract-par)
           (hsPkgs.abstract-deque)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-monad-par" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.abstract-par)
             (hsPkgs.monad-par-extras)

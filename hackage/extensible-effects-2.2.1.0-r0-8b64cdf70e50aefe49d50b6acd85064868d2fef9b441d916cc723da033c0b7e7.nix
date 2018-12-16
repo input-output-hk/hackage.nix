@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.type-aligned)
           (hsPkgs.transformers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "extensible-effects-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "extensible-effects-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.extensible-effects)

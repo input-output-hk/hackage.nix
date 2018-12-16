@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clean-home" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.HSH)

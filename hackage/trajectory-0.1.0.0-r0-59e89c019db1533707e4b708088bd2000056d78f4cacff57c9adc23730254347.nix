@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -37,7 +37,7 @@
       };
       exes = {
         "inittj" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regexpr)
             (hsPkgs.aeson)
@@ -50,7 +50,7 @@
           ];
         };
         "lsstory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uri)
             (hsPkgs.http-enumerator)

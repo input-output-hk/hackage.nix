@@ -33,14 +33,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       tests = {
         "properties" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.ed25519)
             (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
           ];
         };
         "hunit" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hunit)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hunit)) [
             (hsPkgs.base)
             (hsPkgs.ed25519)
             (hsPkgs.bytestring)
@@ -64,13 +64,13 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -84,7 +84,7 @@
       };
       benchmarks = {
         "bench1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

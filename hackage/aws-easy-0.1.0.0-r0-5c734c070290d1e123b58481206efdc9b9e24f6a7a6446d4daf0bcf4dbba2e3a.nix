@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
           (hsPkgs.base)
@@ -38,7 +38,7 @@
       };
       exes = {
         "aws-easy-app" = {
-          depends  = [
+          depends = [
             (hsPkgs.aws-easy)
             (hsPkgs.base)
           ];

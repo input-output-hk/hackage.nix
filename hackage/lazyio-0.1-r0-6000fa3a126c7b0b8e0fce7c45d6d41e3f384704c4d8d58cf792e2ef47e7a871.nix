@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.unsafe)
           (hsPkgs.transformers)
         ] ++ (if flags.splitbase

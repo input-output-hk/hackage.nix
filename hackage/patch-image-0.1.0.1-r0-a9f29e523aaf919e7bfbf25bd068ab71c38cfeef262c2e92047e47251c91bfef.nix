@@ -26,7 +26,7 @@
     components = {
       exes = {
         "patch-image" = {
-          depends  = [
+          depends = [
             (hsPkgs.accelerate-arithmetic)
             (hsPkgs.accelerate-utility)
             (hsPkgs.accelerate-cuda)
@@ -44,7 +44,7 @@
           ];
         };
         "patch-image-draft" = {
-          depends  = pkgs.lib.optionals (flags.builddraft) [
+          depends = pkgs.lib.optionals (flags.builddraft) [
             (hsPkgs.JuicyPixels)
             (hsPkgs.GeomAlgLib)
             (hsPkgs.utility-ht)

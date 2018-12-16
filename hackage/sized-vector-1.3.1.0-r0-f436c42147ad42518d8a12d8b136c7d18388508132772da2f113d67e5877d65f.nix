@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.singletons)
           (hsPkgs.type-natural)
@@ -38,7 +38,7 @@
       };
       benchmarks = {
         "coercion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.progression)
             (hsPkgs.sized-vector)

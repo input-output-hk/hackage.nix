@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "smoke-test" = {
-          depends  = pkgs.lib.optionals (flags.build-toys) [
+          depends = pkgs.lib.optionals (flags.build-toys) [
             (hsPkgs.base)
             (hsPkgs.caramia)
             (hsPkgs.linear)
@@ -51,21 +51,21 @@
           ];
         };
         "memory-info" = {
-          depends  = pkgs.lib.optionals (flags.build-toys) [
+          depends = pkgs.lib.optionals (flags.build-toys) [
             (hsPkgs.base)
             (hsPkgs.caramia)
             (hsPkgs.sdl2)
           ];
         };
         "gl-info" = {
-          depends  = pkgs.lib.optionals (flags.build-toys) [
+          depends = pkgs.lib.optionals (flags.build-toys) [
             (hsPkgs.base)
             (hsPkgs.sdl2)
             (hsPkgs.OpenGLRaw)
           ];
         };
         "query-objects" = {
-          depends  = pkgs.lib.optionals (flags.build-toys) [
+          depends = pkgs.lib.optionals (flags.build-toys) [
             (hsPkgs.base)
             (hsPkgs.caramia)
             (hsPkgs.sdl2)
@@ -75,7 +75,7 @@
           ];
         };
         "textures" = {
-          depends  = pkgs.lib.optionals (flags.build-toys) [
+          depends = pkgs.lib.optionals (flags.build-toys) [
             (hsPkgs.base)
             (hsPkgs.caramia)
             (hsPkgs.sdl2)

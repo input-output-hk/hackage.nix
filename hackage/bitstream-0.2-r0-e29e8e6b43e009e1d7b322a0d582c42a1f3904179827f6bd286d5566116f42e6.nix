@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test-strict-bitstream" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
@@ -43,7 +43,7 @@
           ];
         };
         "test-lazy-bitstream" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)

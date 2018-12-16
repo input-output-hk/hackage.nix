@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.Cabal)
@@ -44,7 +44,7 @@
       };
       exes = {
         "hindent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.bytestring)
@@ -66,7 +66,7 @@
       };
       tests = {
         "hindent-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.haskell-src-exts)
@@ -85,7 +85,7 @@
       };
       benchmarks = {
         "hindent-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.bytestring)

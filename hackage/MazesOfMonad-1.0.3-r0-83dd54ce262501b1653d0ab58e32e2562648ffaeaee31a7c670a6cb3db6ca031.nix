@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mazesofmonad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.random)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.goal-core)
           (hsPkgs.vector)
@@ -34,14 +34,14 @@
       };
       exes = {
         "coordinates" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
           ];
         };
         "gradient-descent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)

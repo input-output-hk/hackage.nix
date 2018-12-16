@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
         ] ++ (if flags.five
           then [ (hsPkgs.transformers) ]

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "matterhorn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mattermost-api)
             (hsPkgs.base-compat)
@@ -72,7 +72,7 @@
       };
       tests = {
         "test_messages" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.brick)

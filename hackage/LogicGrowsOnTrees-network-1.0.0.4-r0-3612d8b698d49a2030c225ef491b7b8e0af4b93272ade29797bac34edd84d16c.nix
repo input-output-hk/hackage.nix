@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.LogicGrowsOnTrees)
           (hsPkgs.base)
           (hsPkgs.cereal)
@@ -47,7 +47,7 @@
       };
       exes = {
         "count-all-nqueens-solutions" = {
-          depends  = [
+          depends = [
             (hsPkgs.LogicGrowsOnTrees-network)
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)
@@ -55,7 +55,7 @@
           ];
         };
         "count-all-trivial-tree-leaves" = {
-          depends  = [
+          depends = [
             (hsPkgs.LogicGrowsOnTrees-network)
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)
@@ -66,7 +66,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.LogicGrowsOnTrees-network)
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cryptohash)
           (hsPkgs.base64-bytestring)
@@ -50,7 +50,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-th)
@@ -79,7 +79,7 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (flags.doctests) [
+          depends = pkgs.lib.optionals (flags.doctests) [
             (hsPkgs.base)
             (hsPkgs.jwt)
             (hsPkgs.doctest)

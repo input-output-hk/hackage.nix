@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.basement)
           (hsPkgs.deepseq)
@@ -36,7 +36,7 @@
       };
       tests = {
         "sanity" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
           ];
         };
         "verbose" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
           ];
         };
         "quick" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -66,7 +66,7 @@
           ];
         };
         "quick-verbose" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -76,7 +76,7 @@
           ];
         };
         "cleanup" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -90,7 +90,7 @@
       };
       benchmarks = {
         "self" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gauge)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.HUnit)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-abstract-deque" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.IORefCAS)
             (hsPkgs.containers)

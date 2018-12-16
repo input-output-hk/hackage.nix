@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
@@ -33,7 +33,7 @@
       };
       tests = {
         "lzma-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.lzma)
             (hsPkgs.base)
             (hsPkgs.bytestring)

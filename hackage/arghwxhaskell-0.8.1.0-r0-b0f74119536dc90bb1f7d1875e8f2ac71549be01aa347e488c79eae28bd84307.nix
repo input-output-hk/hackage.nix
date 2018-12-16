@@ -26,7 +26,7 @@
     components = {
       exes = {
         "arghwxhaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.wx)

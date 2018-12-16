@@ -26,7 +26,7 @@
     components = {
       exes = {
         "h" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hydrogen-cli-args)
             (hsPkgs.hydrogen-parsing)

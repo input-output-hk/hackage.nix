@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.air)
           (hsPkgs.hack2-handler-snap-server)
@@ -40,7 +40,7 @@
       };
       exes = {
         "geek" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.air)
             (hsPkgs.hack2-handler-snap-server)

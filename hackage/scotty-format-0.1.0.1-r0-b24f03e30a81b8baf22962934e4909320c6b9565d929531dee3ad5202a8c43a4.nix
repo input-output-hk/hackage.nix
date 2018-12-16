@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-media)
           (hsPkgs.http-types)
@@ -35,7 +35,7 @@
       };
       exes = {
         "scotty-format-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.scotty)
@@ -46,7 +46,7 @@
       };
       tests = {
         "scotty-format-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty-format)
           ];

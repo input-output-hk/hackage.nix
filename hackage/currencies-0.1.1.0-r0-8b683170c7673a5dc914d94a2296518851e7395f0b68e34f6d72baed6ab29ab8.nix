@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       tests = {
         "currencies-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.currencies)
             (hsPkgs.hspec)

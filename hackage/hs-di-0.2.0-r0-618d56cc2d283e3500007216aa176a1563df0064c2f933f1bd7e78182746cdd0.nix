@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.compose-ltr)
@@ -33,7 +33,7 @@
       };
       tests = {
         "hs-di-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-di)
             (hsPkgs.hspec)

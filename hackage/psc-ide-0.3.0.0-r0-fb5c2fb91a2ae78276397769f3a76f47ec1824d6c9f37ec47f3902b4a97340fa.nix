@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "psc-ide" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.psc-ide)
             (hsPkgs.mtl)
@@ -54,7 +54,7 @@
           ];
         };
         "psc-ide-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.network)
@@ -67,7 +67,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.psc-ide)
             (hsPkgs.hspec)

@@ -28,25 +28,25 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "concurrent-malloc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-process)
             (hsPkgs.interprocess)
           ];
         };
         "wait-qsem" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-process)
             (hsPkgs.interprocess)
           ];
         };
         "wait-mvar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-process)
             (hsPkgs.interprocess)
@@ -55,7 +55,7 @@
       };
       tests = {
         "StoredMVar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-process)
             (hsPkgs.interprocess)

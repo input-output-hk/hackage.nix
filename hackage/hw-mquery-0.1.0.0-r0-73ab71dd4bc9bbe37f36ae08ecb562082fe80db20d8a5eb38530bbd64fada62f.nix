@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.dlist)
@@ -33,7 +33,7 @@
       };
       exes = {
         "hw-mquery-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hw-mquery)
           ];
@@ -41,7 +41,7 @@
       };
       tests = {
         "hw-mquery-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

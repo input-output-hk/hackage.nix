@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -38,7 +38,7 @@
       };
       exes = {
         "word2vec-model-similarity" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -54,7 +54,7 @@
           ];
         };
         "word2vec-model-word-analogy" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -72,7 +72,7 @@
       };
       tests = {
         "word2vec-model-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

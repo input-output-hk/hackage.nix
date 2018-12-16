@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       exes = {
         "aws-easy-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-dynamodb)
             (hsPkgs.amazonka-s3)

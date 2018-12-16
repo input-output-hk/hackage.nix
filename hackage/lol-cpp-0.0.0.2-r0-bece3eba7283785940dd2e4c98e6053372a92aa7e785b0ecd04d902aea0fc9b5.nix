@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.arithmoi)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -57,7 +57,7 @@
       };
       tests = {
         "test-lol-cpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lol-cpp)
             (hsPkgs.lol-tests)
@@ -66,7 +66,7 @@
       };
       benchmarks = {
         "bench-lol-cpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.DRBG)
             (hsPkgs.lol)

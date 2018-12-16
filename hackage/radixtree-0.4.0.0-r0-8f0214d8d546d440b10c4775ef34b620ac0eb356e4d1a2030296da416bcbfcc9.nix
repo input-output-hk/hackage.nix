@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.vector)
@@ -39,7 +39,7 @@
       };
       tests = {
         "radixtree-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.radixtree)
             (hsPkgs.attoparsec)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "radixtree-parsing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.radixtree)
             (hsPkgs.text)
@@ -64,7 +64,7 @@
           ];
         };
         "radixtree-search" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.radixtree)
             (hsPkgs.text)

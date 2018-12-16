@@ -26,7 +26,7 @@
     components = {
       exes = {
         "friendly" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bifunctors)
             (hsPkgs.lens)

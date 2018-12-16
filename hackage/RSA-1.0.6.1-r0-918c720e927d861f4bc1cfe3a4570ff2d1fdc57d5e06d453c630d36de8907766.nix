@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.bytestring)
           (hsPkgs.random)
         ] ++ [
@@ -42,7 +42,7 @@
       };
       exes = {
         "test_rsa" = {
-          depends  = pkgs.lib.optionals (!flags.skiptests) (([
+          depends = pkgs.lib.optionals (!flags.skiptests) (([
             (hsPkgs.bytestring)
             (hsPkgs.test-framework)
           ] ++ [

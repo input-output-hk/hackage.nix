@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cqrs-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       tests = {
         "cqrs-example-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)

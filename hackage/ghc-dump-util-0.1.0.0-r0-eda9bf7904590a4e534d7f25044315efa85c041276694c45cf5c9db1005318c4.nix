@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-dump-core)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "ghc-dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-dump-core)
             (hsPkgs.ghc-dump-util)

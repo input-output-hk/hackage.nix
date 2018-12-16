@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.split-base
+        depends = if flags.split-base
           then [
             (hsPkgs.base)
             (hsPkgs.random)
@@ -38,7 +38,7 @@
       };
       tests = {
         "Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pqc)
           ];

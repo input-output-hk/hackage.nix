@@ -26,7 +26,7 @@
     components = {
       exes = {
         "topkata" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)
@@ -38,7 +38,7 @@
           ];
         };
         "pdflaby" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)

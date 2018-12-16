@@ -26,7 +26,7 @@
     components = {
       exes = {
         "citeproc-hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

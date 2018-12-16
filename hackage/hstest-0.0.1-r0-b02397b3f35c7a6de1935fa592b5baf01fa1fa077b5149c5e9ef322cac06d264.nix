@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hstest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

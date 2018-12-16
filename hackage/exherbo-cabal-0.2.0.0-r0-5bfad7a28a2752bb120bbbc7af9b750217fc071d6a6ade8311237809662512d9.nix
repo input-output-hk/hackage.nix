@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "exherbo-cabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
@@ -52,7 +52,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

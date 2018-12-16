@@ -26,7 +26,7 @@
     components = {
       exes = {
         "maxsharing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.parsec)

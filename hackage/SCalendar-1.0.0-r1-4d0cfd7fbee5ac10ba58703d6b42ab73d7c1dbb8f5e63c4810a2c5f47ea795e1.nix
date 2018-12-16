@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.time)
@@ -34,7 +34,7 @@
       };
       tests = {
         "scalendar-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SCalendar)
             (hsPkgs.hspec)

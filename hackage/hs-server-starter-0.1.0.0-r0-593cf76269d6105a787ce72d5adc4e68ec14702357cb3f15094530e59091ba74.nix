@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.network)
@@ -33,7 +33,7 @@
       };
       exes = {
         "server-starter-warp-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-server-starter)
             (hsPkgs.http-types)
@@ -45,7 +45,7 @@
       };
       tests = {
         "hs-server-starter-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-server-starter)
             (hsPkgs.network)

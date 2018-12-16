@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.data-accessor)
           (hsPkgs.enumset)
           (hsPkgs.base)

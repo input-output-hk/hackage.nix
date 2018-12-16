@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -55,7 +55,7 @@
       };
       exes = {
         "todo-mvc" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.containers)
@@ -63,14 +63,14 @@
           ];
         };
         "mario" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.miso)
           ];
         };
         "simple" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -78,7 +78,7 @@
           ];
         };
         "tests" = {
-          depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.miso)

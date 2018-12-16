@@ -26,7 +26,7 @@
     components = {
       exes = {
         "printxosd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xosd)
           ];

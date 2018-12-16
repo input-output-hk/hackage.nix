@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.dyre)
@@ -46,7 +46,7 @@
       };
       exes = {
         "imm" = {
-          depends  = [
+          depends = [
             (hsPkgs.imm)
             (hsPkgs.base)
           ];

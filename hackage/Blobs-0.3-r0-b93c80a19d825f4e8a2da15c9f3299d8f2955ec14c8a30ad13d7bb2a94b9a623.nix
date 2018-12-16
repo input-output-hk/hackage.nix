@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wx)
           (hsPkgs.wxcore)
@@ -38,7 +38,7 @@
       };
       exes = {
         "blobs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wx)
             (hsPkgs.wxcore)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ConfigFile)
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)
@@ -58,7 +58,7 @@
       };
       exes = {
         "b9c" = {
-          depends  = [
+          depends = [
             (hsPkgs.b9)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -68,7 +68,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.b9)
             (hsPkgs.hspec)

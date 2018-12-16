@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Sit.bin" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.containers)

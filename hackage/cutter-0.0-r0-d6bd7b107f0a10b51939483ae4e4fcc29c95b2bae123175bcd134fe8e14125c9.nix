@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cutter" = {
-          depends  = [
+          depends = [
             (hsPkgs.spreadsheet)
             (hsPkgs.explicit-exception)
             (hsPkgs.bytestring)

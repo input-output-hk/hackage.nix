@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.random)

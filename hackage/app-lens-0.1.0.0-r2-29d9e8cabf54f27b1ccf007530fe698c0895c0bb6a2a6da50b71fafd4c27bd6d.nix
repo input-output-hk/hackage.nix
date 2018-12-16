@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       benchmarks = {
         "compositions" = {
-          depends  = [
+          depends = [
             (hsPkgs.app-lens)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -47,7 +47,7 @@
           ];
         };
         "eval" = {
-          depends  = [
+          depends = [
             (hsPkgs.app-lens)
             (hsPkgs.base)
             (hsPkgs.mtl)

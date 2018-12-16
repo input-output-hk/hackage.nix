@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.reactive-banana-bunch)
           (hsPkgs.midi)
           (hsPkgs.event-list)

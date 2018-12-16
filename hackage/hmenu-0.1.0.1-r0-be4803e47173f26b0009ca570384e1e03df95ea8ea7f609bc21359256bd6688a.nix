@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hmenu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.MissingH)

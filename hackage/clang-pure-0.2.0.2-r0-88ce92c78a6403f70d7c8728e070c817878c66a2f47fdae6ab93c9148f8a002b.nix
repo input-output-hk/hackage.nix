@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.contravariant)
           (hsPkgs.inline-c)
@@ -45,7 +45,7 @@
       };
       exes = {
         "find-classes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clang-pure)
             (hsPkgs.lens)
@@ -55,7 +55,7 @@
           ];
         };
         "list-fun-types" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clang-pure)
             (hsPkgs.lens)
@@ -63,7 +63,7 @@
           ];
         };
         "list-structs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clang-pure)
             (hsPkgs.lens)

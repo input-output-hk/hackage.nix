@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.yi-core)

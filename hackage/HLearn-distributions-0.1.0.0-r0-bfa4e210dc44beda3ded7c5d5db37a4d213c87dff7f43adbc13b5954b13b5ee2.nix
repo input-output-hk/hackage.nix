@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HLearn-algebra)
           (hsPkgs.ConstraintKinds)
           (hsPkgs.base)
@@ -42,7 +42,7 @@
       };
       exes = {
         "HLearn-Distributions-Criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.HLearn-algebra)
             (hsPkgs.ConstraintKinds)
             (hsPkgs.HLearn-distributions)
@@ -53,7 +53,7 @@
           ];
         };
         "HLearn-Distributions-SpaceTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HLearn-algebra)
             (hsPkgs.ConstraintKinds)
             (hsPkgs.HLearn-distributions)

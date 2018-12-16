@@ -25,21 +25,21 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tagged)
         ];
       };
       exes = {
         "semigroup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagged)
             (hsPkgs.unsafely)
           ];
         };
         "safe-unsafe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagged)
             (hsPkgs.unsafely)

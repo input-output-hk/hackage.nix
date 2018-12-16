@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hlogger)
           (hsPkgs.base)
           (hsPkgs.enumerator)
@@ -48,7 +48,7 @@
       };
       exes = {
         "pontarius-xmpp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hlogger)
             (hsPkgs.base)
             (hsPkgs.enumerator)

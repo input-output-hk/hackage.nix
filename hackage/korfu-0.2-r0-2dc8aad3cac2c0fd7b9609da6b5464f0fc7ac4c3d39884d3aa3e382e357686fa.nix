@@ -26,7 +26,7 @@
     components = {
       exes = {
         "korfu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio)
             (hsPkgs.haskell98)

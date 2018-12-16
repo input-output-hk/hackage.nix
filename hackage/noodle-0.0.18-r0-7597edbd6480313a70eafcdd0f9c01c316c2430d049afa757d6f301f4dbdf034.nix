@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell98)
           (hsPkgs.base)
           (hsPkgs.filepath)
@@ -34,7 +34,7 @@
       };
       exes = {
         "noodle" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -43,7 +43,7 @@
           ];
         };
         "noodle-repl" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -52,7 +52,7 @@
           ];
         };
         "noodle-eval" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.filepath)

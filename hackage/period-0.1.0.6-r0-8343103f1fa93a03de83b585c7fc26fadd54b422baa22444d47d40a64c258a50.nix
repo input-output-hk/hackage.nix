@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.old-locale)
@@ -36,7 +36,7 @@
       };
       exes = {
         "period" = {
-          depends  = [
+          depends = [
             (hsPkgs.period)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.period)
             (hsPkgs.text)

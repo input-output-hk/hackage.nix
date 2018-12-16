@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -39,7 +39,7 @@
       };
       exes = {
         "filter-logger-basic-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filter-logger)
             (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
           ];
         };
         "filter-logger-password-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filter-logger)
             (hsPkgs.aeson)
@@ -58,7 +58,7 @@
       };
       tests = {
         "filter-logger-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filter-logger)
             (hsPkgs.bytestring)

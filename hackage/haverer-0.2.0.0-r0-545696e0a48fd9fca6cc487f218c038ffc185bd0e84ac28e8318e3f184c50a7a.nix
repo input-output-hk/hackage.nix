@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.lens)
@@ -41,7 +41,7 @@
       };
       exes = {
         "haverer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haverer)
             (hsPkgs.basic-prelude)
@@ -51,7 +51,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

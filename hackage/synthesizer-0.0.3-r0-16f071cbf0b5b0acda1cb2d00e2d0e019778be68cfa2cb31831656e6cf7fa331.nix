@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.mtl)
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
@@ -61,7 +61,7 @@
         "fusiontest" = {};
         "speedtest" = {};
         "speedtest-exp" = {
-          depends  = pkgs.lib.optionals (flags.splitbase) [
+          depends = pkgs.lib.optionals (flags.splitbase) [
             (hsPkgs.old-time)
             (hsPkgs.directory)
           ];

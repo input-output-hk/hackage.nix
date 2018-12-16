@@ -26,7 +26,7 @@
     components = {
       exes = {
         "argh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.wx)

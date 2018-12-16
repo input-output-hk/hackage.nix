@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.binary)
@@ -47,7 +47,7 @@
       };
       exes = {
         "BenchmarkBimaps" = {
-          depends  = pkgs.lib.optionals (flags.benchmark) [
+          depends = pkgs.lib.optionals (flags.benchmark) [
             (hsPkgs.base)
             (hsPkgs.bimaps)
             (hsPkgs.criterion)

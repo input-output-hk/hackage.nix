@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.filepath)
@@ -43,7 +43,7 @@
       };
       exes = {
         "hob" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk3)
             (hsPkgs.mtl)
@@ -59,7 +59,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

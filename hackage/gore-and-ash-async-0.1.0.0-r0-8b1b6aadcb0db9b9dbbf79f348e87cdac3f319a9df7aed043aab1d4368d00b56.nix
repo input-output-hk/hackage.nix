@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "gore-and-ash-async-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gore-and-ash)
             (hsPkgs.gore-and-ash-async)

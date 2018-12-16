@@ -26,7 +26,7 @@
     components = {
       exes = {
         "practice-room" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mps)
             (hsPkgs.bytestring)

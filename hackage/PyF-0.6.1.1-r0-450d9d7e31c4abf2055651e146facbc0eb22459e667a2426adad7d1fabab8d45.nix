@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.megaparsec)
@@ -37,7 +37,7 @@
       };
       tests = {
         "pyf-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.PyF)
             (hsPkgs.hspec)

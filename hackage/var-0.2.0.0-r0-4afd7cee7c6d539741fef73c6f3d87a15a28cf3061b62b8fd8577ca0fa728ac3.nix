@@ -29,14 +29,14 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.transformers)
         ] ++ pkgs.lib.optional (flags.safe-st) (hsPkgs.base)) ++ pkgs.lib.optional (flags.ghc-conc-sync) (hsPkgs.base)) ++ pkgs.lib.optional (flags.strict-modifyref) (hsPkgs.base)) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) (hsPkgs.ghc-prim);
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "boxed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.array)
@@ -55,7 +55,7 @@
           ];
         };
         "unboxed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.array)
@@ -63,14 +63,14 @@
           ];
         };
         "mean" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.var)
           ];
         };
         "user" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.array)

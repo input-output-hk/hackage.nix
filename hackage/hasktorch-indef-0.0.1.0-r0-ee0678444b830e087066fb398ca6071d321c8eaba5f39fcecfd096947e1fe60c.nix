@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.backprop)
           (hsPkgs.containers)
@@ -50,7 +50,7 @@
       };
       sublibs = {
         "hasktorch-indef-floating" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-indef)
             (hsPkgs.hasktorch-signatures-partial)
@@ -59,7 +59,7 @@
       };
       tests = {
         "spec-double-th" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.backprop)
             (hsPkgs.base)

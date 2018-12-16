@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fungi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

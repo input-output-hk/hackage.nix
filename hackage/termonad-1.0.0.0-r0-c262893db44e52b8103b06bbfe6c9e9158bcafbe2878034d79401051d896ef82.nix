@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.adjunctions)
           (hsPkgs.classy-prelude)
@@ -61,13 +61,13 @@
       };
       exes = {
         "termonad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.termonad)
           ];
         };
         "termonad-readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.markdown-unlit)
             (hsPkgs.termonad)
@@ -75,7 +75,7 @@
           ];
         };
         "termonad-example-colour-extension" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.termonad)
             (hsPkgs.colour)
@@ -84,7 +84,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
@@ -92,7 +92,7 @@
           ];
         };
         "termonad-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.genvalidity-containers)
             (hsPkgs.genvalidity-hspec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "symon-ansi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.monad-loops)

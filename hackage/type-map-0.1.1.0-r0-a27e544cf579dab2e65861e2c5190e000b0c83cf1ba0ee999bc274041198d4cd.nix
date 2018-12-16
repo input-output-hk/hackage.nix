@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)
           (hsPkgs.base)
@@ -33,13 +33,13 @@
       };
       tests = {
         "type-map-test" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0.1") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0.1") [
             (hsPkgs.base)
             (hsPkgs.type-map)
           ];
         };
         "type-map-static-test" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0.1") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0.1") [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -53,7 +53,7 @@
       };
       exes = {
         "leksah-server" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.binary)

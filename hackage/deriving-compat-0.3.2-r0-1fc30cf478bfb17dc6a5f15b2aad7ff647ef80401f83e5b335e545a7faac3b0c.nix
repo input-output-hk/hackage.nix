@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)
         ] ++ [
@@ -50,7 +50,7 @@
       };
       tests = {
         "spec" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base-compat)
             (hsPkgs.base-orphans)
             (hsPkgs.deriving-compat)

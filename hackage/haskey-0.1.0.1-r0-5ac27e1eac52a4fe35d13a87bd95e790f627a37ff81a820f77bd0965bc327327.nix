@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       exes = {
         "haskey-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskey)
             (hsPkgs.haskey-btree)
@@ -60,7 +60,7 @@
       };
       tests = {
         "haskey-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
@@ -76,7 +76,7 @@
           ];
         };
         "haskey-integration" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

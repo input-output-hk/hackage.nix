@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.wreq)
@@ -47,7 +47,7 @@
       };
       tests = {
         "orchestrate-specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.orchestrate)
             (hsPkgs.QuickCheck)

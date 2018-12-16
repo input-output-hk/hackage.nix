@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.recursion-schemes)
           (hsPkgs.lens)
@@ -38,7 +38,7 @@
       };
       tests = {
         "recursion-schemes-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.recursion-schemes-ext)
             (hsPkgs.hspec)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "recursion-schemes-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.recursion-schemes-ext)
             (hsPkgs.criterion)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.transformers)
         ] ++ pkgs.lib.optional (flags.safe-st) (hsPkgs.base)) ++ pkgs.lib.optional (flags.strict-modifyref) (hsPkgs.base);

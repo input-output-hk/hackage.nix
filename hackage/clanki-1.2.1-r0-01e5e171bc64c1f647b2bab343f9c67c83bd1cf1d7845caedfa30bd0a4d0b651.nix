@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clanki" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.directory)

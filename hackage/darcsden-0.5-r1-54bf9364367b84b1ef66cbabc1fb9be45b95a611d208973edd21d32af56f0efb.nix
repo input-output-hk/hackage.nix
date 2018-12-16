@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcsden" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base64-string)
             (hsPkgs.blaze-html)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "viewprof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.containers)

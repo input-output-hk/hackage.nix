@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ieee754)
           (hsPkgs.bindings-DSL)
@@ -37,7 +37,7 @@
       };
       exes = {
         "yoga-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yoga)
           ];

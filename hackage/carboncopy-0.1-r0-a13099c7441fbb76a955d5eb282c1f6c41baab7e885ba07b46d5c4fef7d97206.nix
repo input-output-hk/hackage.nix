@@ -26,7 +26,7 @@
     components = {
       exes = {
         "carboncopy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.IfElse)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "urlcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.network)

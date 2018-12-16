@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.errors)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "System.Terminfo.Internal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

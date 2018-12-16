@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.amazonka)
           (hsPkgs.amazonka-core)
           (hsPkgs.amazonka-s3)
@@ -49,7 +49,7 @@
       };
       tests = {
         "antiope-s3-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-core)
             (hsPkgs.amazonka-s3)

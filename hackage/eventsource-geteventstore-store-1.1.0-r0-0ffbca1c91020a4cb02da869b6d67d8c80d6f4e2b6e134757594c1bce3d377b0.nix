@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.eventsource-api)
@@ -37,7 +37,7 @@
       };
       tests = {
         "geteventstore-store-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eventsource-api)
             (hsPkgs.eventsource-geteventstore-store)

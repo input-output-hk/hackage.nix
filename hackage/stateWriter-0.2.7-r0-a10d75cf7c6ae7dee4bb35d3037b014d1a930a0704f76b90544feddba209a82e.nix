@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
@@ -33,14 +33,14 @@
       };
       tests = {
         "spaceleak" = {
-          depends  = [
+          depends = [
             (hsPkgs.stateWriter)
             (hsPkgs.base)
             (hsPkgs.mtl)
           ];
         };
         "rwscompare" = {
-          depends  = [
+          depends = [
             (hsPkgs.stateWriter)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.stateWriter)
             (hsPkgs.base)
             (hsPkgs.criterion)

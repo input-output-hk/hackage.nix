@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.IORefCAS)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-lockfree-queue" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.IORefCAS)
             (hsPkgs.abstract-deque)

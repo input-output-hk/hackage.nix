@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.integer-gmp)
         ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.10") [

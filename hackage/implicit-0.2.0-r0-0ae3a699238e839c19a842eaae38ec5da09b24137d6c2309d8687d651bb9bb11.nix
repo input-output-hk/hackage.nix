@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.directory)
@@ -55,7 +55,7 @@
       };
       exes = {
         "extopenscad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.vector-space)
@@ -66,7 +66,7 @@
           ];
         };
         "implicitsnap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector-space)
             (hsPkgs.text)
@@ -92,7 +92,7 @@
           ];
         };
         "Benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.JuicyPixels)
@@ -117,7 +117,7 @@
       };
       tests = {
         "test-implicit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)
@@ -129,7 +129,7 @@
       };
       benchmarks = {
         "parser-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.random)

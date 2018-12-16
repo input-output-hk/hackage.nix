@@ -26,7 +26,7 @@
     components = {
       exes = {
         "raincat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.extensible-exceptions)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.servant-swagger-ui-core)
           (hsPkgs.base)
           (hsPkgs.bytestring)

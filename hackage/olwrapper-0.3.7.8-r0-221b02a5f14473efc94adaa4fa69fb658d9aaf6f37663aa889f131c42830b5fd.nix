@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.lens)
           (hsPkgs.fay-base)
           (hsPkgs.fay-text)
@@ -39,7 +39,7 @@
       };
       exes = {
         "olwrapper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.lens)

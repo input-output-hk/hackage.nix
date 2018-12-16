@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
         ] ++ pkgs.lib.optional (system.isLinux && !flags.portable) (hsPkgs.unix);

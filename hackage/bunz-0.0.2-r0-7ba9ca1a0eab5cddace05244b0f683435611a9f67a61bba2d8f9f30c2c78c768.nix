@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       exes = {
         "bunz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bunz)
             (hsPkgs.unix)
@@ -42,7 +42,7 @@
       };
       tests = {
         "bunz-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bunz)
             (hsPkgs.doctest)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.http-client-tls)
@@ -44,7 +44,7 @@
       };
       tests = {
         "fastly-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fastly)
             (hsPkgs.text)

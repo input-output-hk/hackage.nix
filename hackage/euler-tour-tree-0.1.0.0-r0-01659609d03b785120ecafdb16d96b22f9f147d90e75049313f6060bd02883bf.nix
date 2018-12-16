@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.fingertree)
@@ -39,7 +39,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.euler-tour-tree)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -48,7 +48,7 @@
           ];
         };
         "property-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.euler-tour-tree)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -60,7 +60,7 @@
           ];
         };
         "hlint-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

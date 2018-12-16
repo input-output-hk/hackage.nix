@@ -41,7 +41,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (!(!flags.library)) ((((((([
+        depends = pkgs.lib.optionals (!(!flags.library)) ((((((([
           (hsPkgs.extensible-exceptions)
           (hsPkgs.regex-compat)
           (hsPkgs.mtl)
@@ -79,7 +79,7 @@
       };
       exes = {
         "darcs" = {
-          depends  = (((((([
+          depends = (((((([
             (hsPkgs.extensible-exceptions)
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)
@@ -116,7 +116,7 @@
           libs = pkgs.lib.optional (flags.curl) (pkgs."curl");
         };
         "darcs-test" = {
-          depends  = pkgs.lib.optionals (!(!flags.test)) ((((((([
+          depends = pkgs.lib.optionals (!(!flags.test)) ((((((([
             (hsPkgs.extensible-exceptions)
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)

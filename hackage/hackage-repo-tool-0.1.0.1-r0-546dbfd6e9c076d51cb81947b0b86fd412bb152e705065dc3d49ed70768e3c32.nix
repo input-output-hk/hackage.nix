@@ -28,7 +28,7 @@
     components = {
       exes = {
         "hackage-repo-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.bytestring)

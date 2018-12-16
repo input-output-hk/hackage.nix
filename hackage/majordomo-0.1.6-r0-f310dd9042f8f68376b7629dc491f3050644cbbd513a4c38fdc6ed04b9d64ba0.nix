@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.zeromq-haskell)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "mdp_client" = {
-          depends  = [
+          depends = [
             (hsPkgs.majordomo)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
@@ -44,7 +44,7 @@
           ];
         };
         "echoworker" = {
-          depends  = [
+          depends = [
             (hsPkgs.majordomo)
             (hsPkgs.bytestring)
             (hsPkgs.threads)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt)
           (hsPkgs.pretty)
@@ -38,7 +38,7 @@
       };
       exes = {
         "Compressor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -50,7 +50,7 @@
       };
       tests = {
         "XML" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.pretty)
@@ -61,7 +61,7 @@
           ];
         };
         "TRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.pretty)
@@ -72,7 +72,7 @@
           ];
         };
         "SRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.pretty)

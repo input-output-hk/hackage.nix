@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hspec)
           (hsPkgs.dirstream)
@@ -41,7 +41,7 @@
       };
       tests = {
         "hspec-dirstream-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec-dirstream)
             (hsPkgs.hspec)

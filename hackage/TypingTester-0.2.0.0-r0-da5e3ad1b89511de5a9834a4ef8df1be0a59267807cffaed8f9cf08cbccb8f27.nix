@@ -26,7 +26,7 @@
     components = {
       exes = {
         "typingtester" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.containers)

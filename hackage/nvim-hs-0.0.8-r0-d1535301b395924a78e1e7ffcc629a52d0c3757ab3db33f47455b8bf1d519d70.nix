@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.bytestring)
@@ -64,7 +64,7 @@
       };
       exes = {
         "nvim-hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nvim-hs)
             (hsPkgs.data-default)
@@ -73,7 +73,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nvim-hs)
             (hsPkgs.hspec)

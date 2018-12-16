@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-accessor)
           (hsPkgs.distributed-process)
@@ -48,7 +48,7 @@
       };
       exes = {
         "leaks" = {
-          depends  = pkgs.lib.optionals (flags.perf) [
+          depends = pkgs.lib.optionals (flags.perf) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -66,7 +66,7 @@
       };
       tests = {
         "TimerTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.distributed-process)
@@ -87,7 +87,7 @@
           ];
         };
         "PrimitivesTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.distributed-process)
@@ -108,7 +108,7 @@
           ];
         };
         "AsyncTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.distributed-process)
@@ -128,7 +128,7 @@
           ];
         };
         "ManagedProcessTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -151,7 +151,7 @@
           ];
         };
         "PrioritisedProcessTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -174,7 +174,7 @@
           ];
         };
         "SupervisorTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -203,7 +203,7 @@
           ];
         };
         "RegistryTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -232,7 +232,7 @@
           ];
         };
         "TaskQueueTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -263,7 +263,7 @@
           ];
         };
         "LoggerTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -292,7 +292,7 @@
           ];
         };
         "ExchangeTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -323,7 +323,7 @@
           ];
         };
         "MailboxTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)
@@ -354,7 +354,7 @@
           ];
         };
         "InternalQueueTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.containers)

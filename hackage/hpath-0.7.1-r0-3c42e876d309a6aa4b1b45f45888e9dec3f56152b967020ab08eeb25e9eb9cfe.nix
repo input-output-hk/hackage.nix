@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
@@ -40,7 +40,7 @@
       };
       tests = {
         "doctests-hpath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
@@ -49,7 +49,7 @@
           ];
         };
         "doctests-posix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.unix)
@@ -60,7 +60,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "bench.hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hpath)
             (hsPkgs.bytestring)

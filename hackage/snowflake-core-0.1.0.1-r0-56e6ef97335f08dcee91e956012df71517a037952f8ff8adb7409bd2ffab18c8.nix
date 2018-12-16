@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time-exts)
         ];
       };
       tests = {
         "snowflake-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.snowflake-core)
             (hsPkgs.QuickCheck)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
           (hsPkgs.mtl)

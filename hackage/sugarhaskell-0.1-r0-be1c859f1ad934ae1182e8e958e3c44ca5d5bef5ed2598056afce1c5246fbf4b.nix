@@ -26,13 +26,13 @@
     components = {
       exes = {
         "sugarhaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];
         };
         "sugarj" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

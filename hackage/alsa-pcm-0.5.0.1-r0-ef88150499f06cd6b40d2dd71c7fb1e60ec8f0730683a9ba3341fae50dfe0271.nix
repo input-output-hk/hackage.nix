@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.alsa-core)
           (hsPkgs.sample-frame)
           (hsPkgs.array)
@@ -42,7 +42,7 @@
       };
       exes = {
         "alsa-minisynth" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.storablevector)
@@ -51,28 +51,28 @@
           ];
         };
         "alsa-duplex" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.sample-frame)
             (hsPkgs.base)
           ];
         };
         "alsa-play" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.sample-frame)
             (hsPkgs.base)
           ];
         };
         "alsa-record" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.sample-frame)
             (hsPkgs.base)
           ];
         };
         "alsa-volume-meter" = {
-          depends  = [
+          depends = [
             (hsPkgs.alsa-core)
             (hsPkgs.sample-frame)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.async)
           (hsPkgs.base)
           (hsPkgs.stm)
@@ -35,7 +35,7 @@
       };
       exes = {
         "example" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.random)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test-terminal-progress-bar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.terminal-progress-bar)

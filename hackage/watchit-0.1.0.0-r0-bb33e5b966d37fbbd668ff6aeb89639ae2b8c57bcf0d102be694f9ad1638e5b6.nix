@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.fsnotify)
           (hsPkgs.optparse-applicative)
@@ -38,7 +38,7 @@
       };
       exes = {
         "watchit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fsnotify)
             (hsPkgs.optparse-applicative)
@@ -52,7 +52,7 @@
       };
       tests = {
         "Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.watchit)
             (hsPkgs.base)
             (hsPkgs.bytestring)

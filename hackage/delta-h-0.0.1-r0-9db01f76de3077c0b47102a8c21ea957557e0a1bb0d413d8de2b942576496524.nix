@@ -26,7 +26,7 @@
     components = {
       exes = {
         "delta-h" = {
-          depends  = [
+          depends = [
             (hsPkgs.nlp-scores)
             (hsPkgs.monad-atom)
             (hsPkgs.binary)

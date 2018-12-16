@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc)
           (hsPkgs.containers)
@@ -45,7 +45,7 @@
       };
       exes = {
         "wrd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.directory)
@@ -60,7 +60,7 @@
       };
       tests = {
         "wordchoice-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wordchoice)
           ];
@@ -68,7 +68,7 @@
       };
       benchmarks = {
         "wordchoice-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.text)

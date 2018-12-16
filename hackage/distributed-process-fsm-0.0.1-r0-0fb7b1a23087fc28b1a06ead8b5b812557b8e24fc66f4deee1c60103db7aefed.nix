@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.distributed-process)
           (hsPkgs.distributed-process-extras)
@@ -43,7 +43,7 @@
       };
       tests = {
         "FsmTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.network)

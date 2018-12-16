@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jsontsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

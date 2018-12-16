@@ -26,7 +26,7 @@
     components = {
       exes = {
         "interleavableGen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.hint)

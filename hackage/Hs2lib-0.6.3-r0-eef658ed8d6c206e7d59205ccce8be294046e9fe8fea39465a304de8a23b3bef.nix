@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskell-src-exts)
           (hsPkgs.ghc)
           (hsPkgs.base)
@@ -43,7 +43,7 @@
       };
       exes = {
         "Hs2lib" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.directory)
             (hsPkgs.ghc-paths)
@@ -64,7 +64,7 @@
           ];
         };
         "Hs2lib-debug" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.directory)
             (hsPkgs.ghc-paths)
@@ -85,7 +85,7 @@
           ];
         };
         "Hs2lib-testgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.directory)
             (hsPkgs.ghc-paths)
@@ -108,7 +108,7 @@
       };
       tests = {
         "test-regression" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)
@@ -116,7 +116,7 @@
           ];
         };
         "test-regression-debug" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lushtags" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.text)

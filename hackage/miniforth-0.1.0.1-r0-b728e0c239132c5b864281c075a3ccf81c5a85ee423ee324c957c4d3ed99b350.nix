@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl-compat)
           (hsPkgs.mtl)
@@ -38,7 +38,7 @@
       };
       exes = {
         "miniforth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.lens)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.either)
           (hsPkgs.exceptions)
@@ -37,7 +37,7 @@
       };
       tests = {
         "spec-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cli-builder)
             (hsPkgs.QuickCheck)
@@ -45,7 +45,7 @@
           ];
         };
         "doc-test" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctest)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filemanip)

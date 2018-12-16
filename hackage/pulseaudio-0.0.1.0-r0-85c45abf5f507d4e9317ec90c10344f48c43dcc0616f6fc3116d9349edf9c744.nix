@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.stm)
@@ -34,7 +34,7 @@
       };
       exes = {
         "pulse-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pulseaudio)
           ];

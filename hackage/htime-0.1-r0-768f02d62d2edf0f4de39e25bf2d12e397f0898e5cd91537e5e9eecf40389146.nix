@@ -26,7 +26,7 @@
     components = {
       exes = {
         "htime" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.time)

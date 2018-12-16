@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network-transport)
           (hsPkgs.data-accessor)
@@ -36,7 +36,7 @@
       };
       tests = {
         "TestMulticastInMemory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport-inmemory)
             (hsPkgs.network-transport)
@@ -44,7 +44,7 @@
           ];
         };
         "TestInMemory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-transport-inmemory)
             (hsPkgs.network-transport-tests)

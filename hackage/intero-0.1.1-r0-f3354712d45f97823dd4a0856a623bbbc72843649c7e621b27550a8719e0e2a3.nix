@@ -26,7 +26,7 @@
     components = {
       exes = {
         "intero" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

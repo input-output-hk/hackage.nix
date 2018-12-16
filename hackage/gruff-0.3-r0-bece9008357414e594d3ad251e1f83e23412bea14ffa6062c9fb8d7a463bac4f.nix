@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ruff)
         ];
       };
       exes = {
         "gruff" = {
-          depends  = [
+          depends = [
             (hsPkgs.gruff)
             (hsPkgs.base)
             (hsPkgs.containers)

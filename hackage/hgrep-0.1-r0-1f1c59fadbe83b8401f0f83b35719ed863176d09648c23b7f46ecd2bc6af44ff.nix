@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "hgrep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hgrep)
             (hsPkgs.ansi-terminal)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.vector)
@@ -40,7 +40,7 @@
       };
       exes = {
         "brainheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brainheck)
           ];
@@ -48,7 +48,7 @@
       };
       tests = {
         "brainheck-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brainheck)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.elerea)
           (hsPkgs.GLFW)
@@ -36,7 +36,7 @@
       };
       exes = {
         "spice" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.spice)
             (hsPkgs.data-default)

@@ -26,10 +26,10 @@
     components = {
       exes = {
         "runarm" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "dbgarm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
           ];

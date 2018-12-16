@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wreq)
           (hsPkgs.aeson)
@@ -35,7 +35,7 @@
       };
       tests = {
         "apioiaf-client-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.apioiaf-client)
           ];

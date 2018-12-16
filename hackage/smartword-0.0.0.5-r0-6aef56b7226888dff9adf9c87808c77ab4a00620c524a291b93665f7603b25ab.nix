@@ -26,7 +26,7 @@
     components = {
       exes = {
         "answer.cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)
@@ -35,7 +35,7 @@
         };
         "index.cgi" = {};
         "start.cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)
@@ -43,7 +43,7 @@
           ];
         };
         "sw.cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)

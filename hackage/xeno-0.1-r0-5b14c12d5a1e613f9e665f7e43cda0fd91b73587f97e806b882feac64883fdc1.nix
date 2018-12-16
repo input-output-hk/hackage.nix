@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.vector)
@@ -37,7 +37,7 @@
       };
       tests = {
         "xeno-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xeno)
             (hsPkgs.hexml)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "xeno-speed-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xeno)
             (hsPkgs.hexml)
@@ -61,7 +61,7 @@
           ] ++ pkgs.lib.optional (flags.libxml2) (hsPkgs.libxml);
         };
         "xeno-memory-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.xeno)
             (hsPkgs.weigh)

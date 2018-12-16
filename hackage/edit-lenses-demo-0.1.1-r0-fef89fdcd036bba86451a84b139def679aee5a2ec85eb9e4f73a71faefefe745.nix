@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lens-editor" = {
-          depends  = if flags.gtk
+          depends = if flags.gtk
             then [
               (hsPkgs.base)
               (hsPkgs.containers)

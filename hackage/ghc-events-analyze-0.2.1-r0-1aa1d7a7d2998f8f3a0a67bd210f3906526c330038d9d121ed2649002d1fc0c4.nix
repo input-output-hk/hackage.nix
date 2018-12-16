@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-events-analyze" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-events)
             (hsPkgs.optparse-applicative)

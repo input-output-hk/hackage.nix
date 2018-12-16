@@ -26,7 +26,7 @@
     components = {
       exes = {
         "GLFW-b-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.GLFW-b)
             (hsPkgs.OpenGL)
             (hsPkgs.base)

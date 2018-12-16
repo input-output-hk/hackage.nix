@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cuboid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Yampa)
             (hsPkgs.GLUT)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tar)
           (hsPkgs.split)
@@ -42,7 +42,7 @@
         "packdeps" = {};
         "packdeps-yesod" = {};
         "save-newest" = {
-          depends  = [
+          depends = [
             (hsPkgs.yesod-newsfeed)
             (hsPkgs.yesod)
             (hsPkgs.hamlet)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jsaddle-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
             (hsPkgs.jsaddle)

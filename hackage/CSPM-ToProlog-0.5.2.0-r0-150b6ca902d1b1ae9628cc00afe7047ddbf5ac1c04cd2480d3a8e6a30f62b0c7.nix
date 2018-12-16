@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.CSPM-Frontend)
           (hsPkgs.pretty)
           (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2arch" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.filepath)
             (hsPkgs.pureMD5)

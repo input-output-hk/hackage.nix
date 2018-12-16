@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ADPfusion)
           (hsPkgs.ansi-wl-pprint)
@@ -52,7 +52,7 @@
       };
       exes = {
         "GrammarPP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.cmdargs)
@@ -60,7 +60,7 @@
           ];
         };
         "NussinovFG" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.FormalGrammars)
@@ -70,7 +70,7 @@
           ];
         };
         "NeedlemanWunschFG" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.ADPfusion)
             (hsPkgs.containers)

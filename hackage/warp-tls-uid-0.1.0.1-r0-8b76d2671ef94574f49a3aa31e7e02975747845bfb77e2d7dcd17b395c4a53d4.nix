@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.warp)
@@ -43,7 +43,7 @@
       };
       exes = {
         "testServer" = {
-          depends  = [
+          depends = [
             (hsPkgs.warp-tls-uid)
             (hsPkgs.base)
             (hsPkgs.unix)

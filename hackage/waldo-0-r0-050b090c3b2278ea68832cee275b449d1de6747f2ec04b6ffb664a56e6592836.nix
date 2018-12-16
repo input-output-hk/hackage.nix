@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.directory)
@@ -61,7 +61,7 @@
       };
       exes = {
         "waldo-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.waldo)
             (hsPkgs.wai)
@@ -73,7 +73,7 @@
           ];
         };
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.waldo)
             (hsPkgs.deepseq)

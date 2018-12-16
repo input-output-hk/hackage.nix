@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "zeromq-haskell-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.zeromq-haskell)
             (hsPkgs.base)
             (hsPkgs.containers)

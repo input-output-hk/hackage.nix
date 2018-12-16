@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -44,7 +44,7 @@
       };
       exes = {
         "script-monad-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.script-monad)
           ];
@@ -52,7 +52,7 @@
       };
       tests = {
         "script-monad-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.script-monad)
             (hsPkgs.bytestring)

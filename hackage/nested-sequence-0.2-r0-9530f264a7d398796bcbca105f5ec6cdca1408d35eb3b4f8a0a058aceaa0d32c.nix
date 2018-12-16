@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "nested-sequence-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nested-sequence)
             (hsPkgs.QuickCheck)

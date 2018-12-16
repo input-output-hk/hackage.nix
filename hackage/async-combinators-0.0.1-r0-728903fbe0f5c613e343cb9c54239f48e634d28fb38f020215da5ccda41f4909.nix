@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.safe-exceptions)
@@ -35,7 +35,7 @@
       };
       tests = {
         "async-combinators-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async-combinators)
             (hsPkgs.HUnit)

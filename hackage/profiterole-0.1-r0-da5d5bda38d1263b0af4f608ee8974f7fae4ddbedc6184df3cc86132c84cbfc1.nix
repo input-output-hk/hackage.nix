@@ -26,7 +26,7 @@
     components = {
       exes = {
         "profiterole" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

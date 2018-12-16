@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.base16-bytestring)
@@ -45,7 +45,7 @@
       };
       exes = {
         "sendapn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.push-notify-apn)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
       };
       tests = {
         "apn-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.push-notify-apn)
           ];

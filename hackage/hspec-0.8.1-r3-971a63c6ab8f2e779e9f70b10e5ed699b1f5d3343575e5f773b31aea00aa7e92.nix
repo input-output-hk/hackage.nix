@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex-posix)
             (hsPkgs.plugins)
             (hsPkgs.HUnit)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "historian" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

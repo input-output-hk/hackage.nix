@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hxsel" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.ghc)
@@ -35,7 +35,7 @@
           ];
         };
         "hxput" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.ghc)
@@ -44,7 +44,7 @@
           ];
         };
         "hslock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.ghc)
@@ -54,7 +54,7 @@
           libs = [ (pkgs."crypt") ];
         };
         "hmanage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.ghc)
@@ -63,7 +63,7 @@
           ];
         };
         "hhp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.ghc)

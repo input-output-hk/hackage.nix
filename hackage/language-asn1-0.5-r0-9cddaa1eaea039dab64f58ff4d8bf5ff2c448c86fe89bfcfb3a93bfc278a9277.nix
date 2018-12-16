@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = (if flags.splitbase
+        depends = (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.parsec)
@@ -40,7 +40,7 @@
       };
       exes = {
         "LanguageASN1Testsuite" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -50,7 +50,7 @@
           ];
         };
         "TestASN1Parser" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.syb)

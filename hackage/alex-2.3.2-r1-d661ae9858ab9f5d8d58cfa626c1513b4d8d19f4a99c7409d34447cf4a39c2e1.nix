@@ -26,7 +26,7 @@
     components = {
       exes = {
         "alex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
           ] ++ (if flags.small_base

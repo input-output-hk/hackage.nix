@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clac" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plailude)
             (hsPkgs.safe)

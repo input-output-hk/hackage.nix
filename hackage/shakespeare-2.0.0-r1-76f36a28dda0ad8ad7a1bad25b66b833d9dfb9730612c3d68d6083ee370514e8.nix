@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.time)
           (hsPkgs.system-filepath)
@@ -52,7 +52,7 @@
       };
       exes = {
         "servius" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-app-static)
             (hsPkgs.bytestring)
@@ -67,7 +67,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakespeare)
             (hsPkgs.time)

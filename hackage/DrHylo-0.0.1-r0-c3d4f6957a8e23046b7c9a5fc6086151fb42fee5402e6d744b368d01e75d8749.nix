@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pointless-haskell)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "DrHylo" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
           ] ++ (if flags.splitbase
             then [

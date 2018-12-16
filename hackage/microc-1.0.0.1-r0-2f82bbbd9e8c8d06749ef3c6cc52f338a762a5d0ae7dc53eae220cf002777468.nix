@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
         ];
       };
       exes = {
         "microc-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.microc)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "microc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.microc)
           ];

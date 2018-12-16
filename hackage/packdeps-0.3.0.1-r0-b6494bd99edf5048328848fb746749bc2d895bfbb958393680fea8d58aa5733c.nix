@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tar)
           (hsPkgs.split)
@@ -40,14 +40,14 @@
       };
       exes = {
         "packdeps" = {
-          depends  = pkgs.lib.optionals (!flags.web) [
+          depends = pkgs.lib.optionals (!flags.web) [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.packdeps)
           ];
         };
         "packdeps-yesod" = {
-          depends  = pkgs.lib.optionals (flags.web) [
+          depends = pkgs.lib.optionals (flags.web) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.bytestring)

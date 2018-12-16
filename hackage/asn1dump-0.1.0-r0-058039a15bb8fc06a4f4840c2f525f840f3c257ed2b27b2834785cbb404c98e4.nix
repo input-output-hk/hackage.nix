@@ -26,7 +26,7 @@
     components = {
       exes = {
         "asn1dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.asn1-types)

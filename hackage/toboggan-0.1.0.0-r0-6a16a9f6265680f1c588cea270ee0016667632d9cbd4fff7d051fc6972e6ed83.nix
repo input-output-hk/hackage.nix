@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.madlang)
           (hsPkgs.clit)
@@ -36,7 +36,7 @@
       };
       exes = {
         "toboggan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.toboggan)
           ];

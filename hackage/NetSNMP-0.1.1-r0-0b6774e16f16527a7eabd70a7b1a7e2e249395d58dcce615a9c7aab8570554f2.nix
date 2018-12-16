@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."netsnmp") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.timeless)
         ];
       };
       exes = {
         "Tutorial1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.timeless-tutorials)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.stm-containers)
           (hsPkgs.partial-handler)
           (hsPkgs.list-t)
@@ -37,7 +37,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.slave-thread)
             (hsPkgs.HTF)
             (hsPkgs.quickcheck-instances)

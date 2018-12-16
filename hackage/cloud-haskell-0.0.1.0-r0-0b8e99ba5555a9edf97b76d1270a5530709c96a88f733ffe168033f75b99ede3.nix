@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.rank1dynamic)
           (hsPkgs.distributed-static)
           (hsPkgs.network-transport)

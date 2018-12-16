@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.prisms && flags.binary && flags.cereal
+        depends = if flags.prisms && flags.binary && flags.cereal
           then [
             (hsPkgs.base)
             (hsPkgs.text)
@@ -127,7 +127,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = if flags.prisms
+          depends = if flags.prisms
             then [
               (hsPkgs.base)
               (hsPkgs.libconfig)

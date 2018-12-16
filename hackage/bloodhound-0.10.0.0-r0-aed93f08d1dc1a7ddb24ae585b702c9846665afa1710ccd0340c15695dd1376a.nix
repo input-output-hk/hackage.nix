@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bloodhound)
             (hsPkgs.bytestring)
@@ -71,7 +71,7 @@
           ];
         };
         "doctests" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

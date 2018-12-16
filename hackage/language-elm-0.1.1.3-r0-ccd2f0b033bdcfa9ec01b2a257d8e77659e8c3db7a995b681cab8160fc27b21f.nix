@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       tests = {
         "language-elm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.hspec)

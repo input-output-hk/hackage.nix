@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.messagepack)
             (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
           ];
         };
         "Server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.messagepack)
             (hsPkgs.bytestring)

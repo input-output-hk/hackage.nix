@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xpathdsv" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.hxt-xpath)

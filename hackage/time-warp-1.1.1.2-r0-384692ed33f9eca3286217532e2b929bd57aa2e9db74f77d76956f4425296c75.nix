@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.array)
           (hsPkgs.attoparsec)
@@ -78,7 +78,7 @@
       };
       exes = {
         "ping-pong" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.data-default)
@@ -94,7 +94,7 @@
           ];
         };
         "socket-state" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.data-default)
@@ -113,7 +113,7 @@
           ];
         };
         "net-playground" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -140,7 +140,7 @@
           ];
         };
         "bench-sender" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -168,7 +168,7 @@
           ];
         };
         "bench-receiver" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -191,7 +191,7 @@
           ];
         };
         "bench-log-reader" = {
-          depends  = [
+          depends = [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -221,7 +221,7 @@
       };
       tests = {
         "time-warp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.data-default)

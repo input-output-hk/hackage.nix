@@ -26,7 +26,7 @@
     components = {
       exes = {
         "arcgrid-viewer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "beautifHOL" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.mtl)
             (hsPkgs.array)

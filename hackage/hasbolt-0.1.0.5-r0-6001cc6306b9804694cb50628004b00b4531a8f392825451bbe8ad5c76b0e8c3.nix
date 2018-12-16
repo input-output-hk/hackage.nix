@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -41,7 +41,7 @@
       };
       tests = {
         "hasbolt-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasbolt)
             (hsPkgs.hspec)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.storablevector)
           (hsPkgs.storable-record)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       exes = {
         "sox-split" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
@@ -59,7 +59,7 @@
           ];
         };
         "sox-concat" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
@@ -72,7 +72,7 @@
           ];
         };
         "audacity-concat" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
@@ -85,7 +85,7 @@
           ];
         };
         "audacity-combine" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)

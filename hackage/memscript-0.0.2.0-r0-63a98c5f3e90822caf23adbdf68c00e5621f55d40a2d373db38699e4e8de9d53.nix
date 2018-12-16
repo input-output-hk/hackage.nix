@@ -26,7 +26,7 @@
     components = {
       exes = {
         "memscript" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.readline)
           ];

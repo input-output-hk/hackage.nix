@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "heap-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ];
         };

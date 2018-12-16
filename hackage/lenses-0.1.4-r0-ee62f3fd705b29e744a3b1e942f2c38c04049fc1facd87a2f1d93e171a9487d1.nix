@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
         ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.template-haskell);

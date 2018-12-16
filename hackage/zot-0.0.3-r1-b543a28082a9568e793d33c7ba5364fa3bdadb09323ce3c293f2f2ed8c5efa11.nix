@@ -26,7 +26,7 @@
     components = {
       exes = {
         "zot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monads-tf)
           ];

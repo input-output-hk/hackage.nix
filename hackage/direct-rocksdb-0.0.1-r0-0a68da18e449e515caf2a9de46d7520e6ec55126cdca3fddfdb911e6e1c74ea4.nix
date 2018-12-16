@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."stdc++")
         ] ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
       };
       tests = {
         "direct-rocksdb-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.direct-rocksdb)
           ];

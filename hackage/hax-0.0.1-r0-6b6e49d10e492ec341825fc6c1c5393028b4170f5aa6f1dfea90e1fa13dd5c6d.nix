@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hax" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.aeson)
             (hsPkgs.array)

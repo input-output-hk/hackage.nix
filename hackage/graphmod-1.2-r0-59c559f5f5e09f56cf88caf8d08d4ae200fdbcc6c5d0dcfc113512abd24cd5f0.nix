@@ -26,7 +26,7 @@
     components = {
       exes = {
         "graphmod" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

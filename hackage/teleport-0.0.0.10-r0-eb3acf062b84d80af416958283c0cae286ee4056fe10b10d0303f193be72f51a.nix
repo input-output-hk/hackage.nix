@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "teleport-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.teleport)
             (hsPkgs.turtle)
@@ -45,7 +45,7 @@
       };
       tests = {
         "teleport-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.teleport)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "runmany" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.stm)

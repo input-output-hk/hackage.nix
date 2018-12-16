@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "wai-middleware-json-errors-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

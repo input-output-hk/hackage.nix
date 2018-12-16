@@ -29,7 +29,7 @@
     components = {
       exes = {
         "cabal-dev" = {
-          depends  = pkgs.lib.optionals (!flags.no-cabal-dev) (((([
+          depends = pkgs.lib.optionals (!flags.no-cabal-dev) (((([
             (hsPkgs.bytestring)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -48,13 +48,13 @@
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12") (hsPkgs.containers)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.10") (hsPkgs.containers)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.8") (hsPkgs.containers)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
         };
         "ghc-pkg-6_8-compat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
           ];
         };
         "cabal-dev-test" = {
-          depends  = pkgs.lib.optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
+          depends = pkgs.lib.optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
             (hsPkgs.MonadRandom)
             (hsPkgs.random)
             (hsPkgs.test-framework)
@@ -65,7 +65,7 @@
           ]) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
         };
         "fake-ghc-cabal-dev" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

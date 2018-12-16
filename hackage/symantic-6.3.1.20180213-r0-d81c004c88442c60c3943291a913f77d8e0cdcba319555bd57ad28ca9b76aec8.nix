@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.symantic-grammar)
           (hsPkgs.symantic-document)
           (hsPkgs.base)

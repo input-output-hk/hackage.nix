@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "zerobin" = {
-          depends  = pkgs.lib.optionals (flags.cli) [
+          depends = pkgs.lib.optionals (flags.cli) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.docopt)
@@ -49,7 +49,7 @@
           ];
         };
         "zerobin-nodejs" = {
-          depends  = pkgs.lib.optionals (flags.nodejs) [
+          depends = pkgs.lib.optionals (flags.nodejs) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

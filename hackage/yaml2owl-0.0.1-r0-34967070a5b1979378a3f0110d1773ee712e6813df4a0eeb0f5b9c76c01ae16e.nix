@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yaml2owl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.containers)

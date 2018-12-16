@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe)
           (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       exes = {
         "tests" = {
-          depends  = pkgs.lib.optionals (flags.tests) [
+          depends = pkgs.lib.optionals (flags.tests) [
             (hsPkgs.base)
             (hsPkgs.HTF)
             (hsPkgs.filepath)

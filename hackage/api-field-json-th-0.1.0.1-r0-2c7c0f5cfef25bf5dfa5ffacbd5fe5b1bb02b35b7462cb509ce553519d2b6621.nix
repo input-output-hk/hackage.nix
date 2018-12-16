@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.aeson)
@@ -36,7 +36,7 @@
       };
       tests = {
         "api-field-json-th-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.api-field-json-th)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rainbow)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       tests = {
         "rainbox-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rainbow)
             (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
           ];
         };
         "rainbox-visual" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rainbow)
             (hsPkgs.bytestring)

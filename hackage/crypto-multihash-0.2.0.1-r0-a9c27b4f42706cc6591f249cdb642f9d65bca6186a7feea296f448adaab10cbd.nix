@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base58-bytestring)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "mh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-multihash)
@@ -45,7 +45,7 @@
       };
       tests = {
         "crypto-multihash-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-multihash)

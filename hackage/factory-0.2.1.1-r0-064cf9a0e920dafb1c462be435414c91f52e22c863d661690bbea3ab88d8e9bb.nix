@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.deepseq)
@@ -41,7 +41,7 @@
       };
       exes = {
         "factory" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
           ];

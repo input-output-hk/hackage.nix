@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bed-and-breakfast)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "wright-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bed-and-breakfast)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "compile-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typeable-th)
           ];

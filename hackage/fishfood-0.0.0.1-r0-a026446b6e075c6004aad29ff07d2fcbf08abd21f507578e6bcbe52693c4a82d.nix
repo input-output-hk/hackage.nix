@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fishfood" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

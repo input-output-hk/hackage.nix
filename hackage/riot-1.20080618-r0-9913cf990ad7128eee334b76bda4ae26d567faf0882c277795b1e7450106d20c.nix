@@ -26,7 +26,7 @@
     components = {
       exes = {
         "riot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.directory)

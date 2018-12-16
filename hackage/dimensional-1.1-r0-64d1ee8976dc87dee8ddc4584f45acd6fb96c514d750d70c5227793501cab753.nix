@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.exact-pi)
@@ -37,7 +37,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.dimensional)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
@@ -45,7 +45,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.dimensional)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -57,7 +57,7 @@
       };
       benchmarks = {
         "simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)

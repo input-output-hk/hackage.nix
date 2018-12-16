@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsfcsh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.hdaemonize)
@@ -35,7 +35,7 @@
           ];
         };
         "hsfcsh_do" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.hdaemonize)

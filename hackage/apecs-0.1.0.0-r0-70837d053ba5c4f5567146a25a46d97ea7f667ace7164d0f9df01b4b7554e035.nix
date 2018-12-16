@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -34,13 +34,13 @@
       };
       exes = {
         "simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.apecs)
           ];
         };
         "rts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.apecs)
             (hsPkgs.sdl2)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "apecs-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.apecs)
             (hsPkgs.criterion)

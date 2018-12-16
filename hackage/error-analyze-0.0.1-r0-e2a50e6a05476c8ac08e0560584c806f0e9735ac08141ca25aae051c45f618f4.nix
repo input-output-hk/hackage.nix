@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       tests = {
         "test-error-analyze" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.error-analyze)
             (hsPkgs.tasty)

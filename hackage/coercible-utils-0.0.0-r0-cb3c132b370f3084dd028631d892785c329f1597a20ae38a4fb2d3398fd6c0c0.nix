@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "coercible-utils-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.coercible-utils)
           ];
@@ -37,7 +37,7 @@
       };
       benchmarks = {
         "coercible-utils-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gauge)
             (hsPkgs.coercible-utils)

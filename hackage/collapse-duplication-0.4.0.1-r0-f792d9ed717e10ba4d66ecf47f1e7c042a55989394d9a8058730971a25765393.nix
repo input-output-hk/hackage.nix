@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cassava)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       exes = {
         "collapse-duplication" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.collapse-duplication)
             (hsPkgs.optparse-generic)

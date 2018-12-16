@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.attoparsec)
@@ -41,7 +41,7 @@
       };
       exes = {
         "cab" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cab)
             (hsPkgs.Cabal)

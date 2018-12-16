@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       tests = {
         "rivet-core-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rivet-core)
           ];

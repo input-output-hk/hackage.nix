@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       exes = {
         "blakesum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blakesum)
             (hsPkgs.bytestring)

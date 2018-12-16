@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HTTP)
           (hsPkgs.Cabal)
@@ -46,7 +46,7 @@
       };
       exes = {
         "arch-report" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.Cabal)
@@ -66,7 +66,7 @@
           ];
         };
         "distro-map" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.Cabal)
@@ -86,7 +86,7 @@
           ];
         };
         "get-arch-url" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.Cabal)
@@ -106,7 +106,7 @@
           ];
         };
         "arch-haskell-packages" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.Cabal)
@@ -126,7 +126,7 @@
           ];
         };
         "update-aur-log" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

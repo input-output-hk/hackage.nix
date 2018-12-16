@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.colour)
@@ -43,14 +43,14 @@
       };
       exes = {
         "simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.byline)
             (hsPkgs.text)
           ];
         };
         "menu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.byline)
             (hsPkgs.text)

@@ -28,7 +28,7 @@
     components = {
       exes = {
         "calculator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.haskeline)
@@ -42,7 +42,7 @@
       };
       tests = {
         "model-test-arithmetic" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.containers)

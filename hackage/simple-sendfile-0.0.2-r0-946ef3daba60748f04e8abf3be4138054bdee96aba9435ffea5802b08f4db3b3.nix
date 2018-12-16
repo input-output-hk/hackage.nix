@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network)
         ] ++ (if system.isFreebsd || system.isNetbsd || system.isOpenbsd

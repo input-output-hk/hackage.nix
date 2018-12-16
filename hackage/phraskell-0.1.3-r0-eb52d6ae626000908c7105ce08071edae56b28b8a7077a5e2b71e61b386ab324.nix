@@ -26,7 +26,7 @@
     components = {
       exes = {
         "phraskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.mtl)

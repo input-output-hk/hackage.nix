@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wsedit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.containers)

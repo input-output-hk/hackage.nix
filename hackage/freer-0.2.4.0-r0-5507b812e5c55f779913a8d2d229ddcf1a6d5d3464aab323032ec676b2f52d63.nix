@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "freer-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer)
             (hsPkgs.tasty)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer)
             (hsPkgs.criterion)

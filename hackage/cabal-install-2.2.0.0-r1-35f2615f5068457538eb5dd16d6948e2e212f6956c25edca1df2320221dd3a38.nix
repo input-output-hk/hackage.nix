@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.async)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -72,7 +72,7 @@
       };
       exes = {
         "cabal" = {
-          depends  = (if flags.lib
+          depends = (if flags.lib
             then [
               (hsPkgs.cabal-install)
               (hsPkgs.Cabal)
@@ -146,7 +146,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.async)
@@ -172,7 +172,7 @@
           ];
         };
         "memory-usage-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.Cabal)
@@ -185,7 +185,7 @@
           ];
         };
         "solver-quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.Cabal)
@@ -202,7 +202,7 @@
           ];
         };
         "integration-tests2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.cabal-install)

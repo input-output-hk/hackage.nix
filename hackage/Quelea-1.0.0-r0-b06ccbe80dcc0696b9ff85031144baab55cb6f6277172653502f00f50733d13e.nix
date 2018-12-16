@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cassandra-cql)
           (hsPkgs.base)
           (hsPkgs.bytestring)

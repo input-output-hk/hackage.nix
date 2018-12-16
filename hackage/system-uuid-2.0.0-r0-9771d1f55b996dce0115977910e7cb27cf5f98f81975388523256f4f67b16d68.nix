@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.binary)
           (hsPkgs.template-haskell)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hooty" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.binary)
             (hsPkgs.template-haskell)

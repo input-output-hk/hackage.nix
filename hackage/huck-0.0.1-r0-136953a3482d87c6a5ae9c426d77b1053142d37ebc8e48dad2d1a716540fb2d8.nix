@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.classy-prelude)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-prelude)
             (hsPkgs.unordered-containers)
@@ -49,7 +49,7 @@
           ];
         };
         "test-io" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-prelude)
             (hsPkgs.text)

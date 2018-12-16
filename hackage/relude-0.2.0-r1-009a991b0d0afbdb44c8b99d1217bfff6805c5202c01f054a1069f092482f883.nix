@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       tests = {
         "relude-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.relude)
             (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
           ];
         };
         "relude-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -63,7 +63,7 @@
       };
       benchmarks = {
         "relude-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.relude)
             (hsPkgs.containers)

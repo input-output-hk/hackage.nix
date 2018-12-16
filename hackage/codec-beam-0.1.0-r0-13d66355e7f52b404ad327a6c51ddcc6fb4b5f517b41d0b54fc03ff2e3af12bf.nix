@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "codec-beam-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.codec-beam)
             (hsPkgs.base)
             (hsPkgs.bytestring)

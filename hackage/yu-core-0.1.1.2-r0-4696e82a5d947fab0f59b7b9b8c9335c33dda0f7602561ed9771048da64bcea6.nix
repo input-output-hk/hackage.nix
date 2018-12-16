@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yu-utils)
           (hsPkgs.yu-auth)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-mvc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.yu-utils)

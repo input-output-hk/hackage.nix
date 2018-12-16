@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hbb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.libhbb)
             (hsPkgs.ghc)

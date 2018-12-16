@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.bytestring)
@@ -73,7 +73,7 @@
       };
       exes = {
         "keter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.keter)
             (hsPkgs.system-filepath)
@@ -81,7 +81,7 @@
           ];
         };
         "hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.keter)
             (hsPkgs.warp)

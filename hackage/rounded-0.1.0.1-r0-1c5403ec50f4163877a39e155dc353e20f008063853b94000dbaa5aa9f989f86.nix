@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.reflection)
@@ -43,7 +43,7 @@
       };
       tests = {
         "rounded-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.long-double)
             (hsPkgs.rounded)

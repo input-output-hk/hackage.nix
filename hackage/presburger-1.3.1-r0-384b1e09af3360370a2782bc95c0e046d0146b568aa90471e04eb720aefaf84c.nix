@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.pretty)
@@ -33,7 +33,7 @@
       };
       tests = {
         "pressburger-qc-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.presburger)
             (hsPkgs.QuickCheck)

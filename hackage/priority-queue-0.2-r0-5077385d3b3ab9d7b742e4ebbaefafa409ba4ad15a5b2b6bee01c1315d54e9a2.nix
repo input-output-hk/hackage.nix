@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.reord)
           (hsPkgs.stateref)
           (hsPkgs.queue)

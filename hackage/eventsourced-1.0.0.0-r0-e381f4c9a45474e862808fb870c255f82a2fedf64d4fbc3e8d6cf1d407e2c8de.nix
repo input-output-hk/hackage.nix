@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.blaze-builder)
@@ -35,7 +35,7 @@
       };
       exes = {
         "eventsourced" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp)
             (hsPkgs.eventsourced)
@@ -44,7 +44,7 @@
       };
       tests = {
         "eventsourced-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)

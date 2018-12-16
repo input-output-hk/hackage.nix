@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.monad-par)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       tests = {
         "parsing-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.json-incremental-decoder)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

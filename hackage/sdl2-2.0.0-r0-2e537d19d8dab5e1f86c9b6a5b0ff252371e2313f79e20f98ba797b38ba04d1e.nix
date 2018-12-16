@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.exceptions)
@@ -42,70 +42,70 @@
       };
       exes = {
         "lazyfoo-lesson-01" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-02" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-03" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-04" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-05" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-07" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-08" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-09" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-10" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.linear)
             (hsPkgs.sdl2)
           ];
         };
         "lazyfoo-lesson-11" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -113,7 +113,7 @@
           ];
         };
         "lazyfoo-lesson-12" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -121,7 +121,7 @@
           ];
         };
         "lazyfoo-lesson-13" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -129,7 +129,7 @@
           ];
         };
         "lazyfoo-lesson-14" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -137,7 +137,7 @@
           ];
         };
         "lazyfoo-lesson-15" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -145,7 +145,7 @@
           ];
         };
         "lazyfoo-lesson-17" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -153,7 +153,7 @@
           ];
         };
         "lazyfoo-lesson-18" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -161,7 +161,7 @@
           ];
         };
         "lazyfoo-lesson-19" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -170,7 +170,7 @@
           ];
         };
         "lazyfoo-lesson-20" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -179,7 +179,7 @@
           ];
         };
         "lazyfoo-lesson-43" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -187,7 +187,7 @@
           ];
         };
         "twinklebear-lesson-01" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -195,7 +195,7 @@
           ];
         };
         "twinklebear-lesson-02" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -203,7 +203,7 @@
           ];
         };
         "twinklebear-lesson-04" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -211,7 +211,7 @@
           ];
         };
         "twinklebear-lesson-04a" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -219,7 +219,7 @@
           ];
         };
         "twinklebear-lesson-05" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)
@@ -227,7 +227,7 @@
           ];
         };
         "audio-example" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.linear)

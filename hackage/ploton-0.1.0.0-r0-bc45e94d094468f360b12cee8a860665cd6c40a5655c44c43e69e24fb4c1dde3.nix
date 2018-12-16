@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)
           (hsPkgs.process)
@@ -33,7 +33,7 @@
       };
       exes = {
         "ploton" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ploton)
           ];
@@ -41,7 +41,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ploton)
             (hsPkgs.hspec)

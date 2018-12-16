@@ -31,7 +31,7 @@
       "library" = {};
       exes = {
         "tkyprof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
@@ -59,7 +59,7 @@
           pkgconfig = pkgs.lib.optionals (flags.production) (pkgs.lib.optional (!flags.web) (pkgconfPkgs.QtWebKit));
         };
         "prof2json" = {
-          depends  = [
+          depends = [
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.blaze-builder)

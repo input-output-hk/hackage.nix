@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2doap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.Cabal)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "system-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.system-test)
           ];
@@ -44,7 +44,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.system-test)

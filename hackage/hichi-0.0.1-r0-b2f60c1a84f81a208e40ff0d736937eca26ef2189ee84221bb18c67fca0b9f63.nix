@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hichi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.bytestring)

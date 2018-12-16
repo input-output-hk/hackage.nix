@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -54,7 +54,7 @@
       };
       exes = {
         "ht-daemon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-tools-daemon)
             (hsPkgs.directory)
@@ -65,7 +65,7 @@
       };
       tests = {
         "haskell-tools-daemon-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.ghc)

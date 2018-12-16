@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ADPfusion)
           (hsPkgs.ansi-wl-pprint)
@@ -47,7 +47,7 @@
       };
       exes = {
         "GrammarPP" = {
-          depends  = [ (hsPkgs.cmdargs) ];
+          depends = [ (hsPkgs.cmdargs) ];
         };
       };
     };

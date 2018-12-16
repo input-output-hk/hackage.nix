@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.byteable)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "hkdf-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.byteable)
             (hsPkgs.bytestring)

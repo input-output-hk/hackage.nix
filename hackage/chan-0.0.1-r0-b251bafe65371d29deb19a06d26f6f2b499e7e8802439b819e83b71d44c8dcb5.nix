@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.stm)
@@ -33,7 +33,7 @@
       };
       tests = {
         "chan-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chan)
             (hsPkgs.async)

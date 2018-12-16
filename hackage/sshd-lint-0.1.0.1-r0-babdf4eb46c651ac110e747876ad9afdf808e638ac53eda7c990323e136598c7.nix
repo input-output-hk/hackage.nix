@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sshd-lint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.keyword-args)
@@ -37,7 +37,7 @@
       };
       tests = {
         "sshd-lint-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.keyword-args)

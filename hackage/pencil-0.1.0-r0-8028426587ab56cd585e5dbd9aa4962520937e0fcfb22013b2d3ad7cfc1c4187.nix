@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default)
           (hsPkgs.directory)
@@ -47,7 +47,7 @@
       };
       exes = {
         "pencil-example-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pencil)
           ];
@@ -55,7 +55,7 @@
       };
       tests = {
         "pencil-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pencil)
             (hsPkgs.doctest)

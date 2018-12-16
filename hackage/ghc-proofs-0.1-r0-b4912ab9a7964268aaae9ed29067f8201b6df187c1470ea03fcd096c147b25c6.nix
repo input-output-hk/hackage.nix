@@ -25,20 +25,20 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
         ];
       };
       tests = {
         "successors" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc-proofs)
             (hsPkgs.base)
           ];
         };
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.ghc-proofs)
             (hsPkgs.base)
             (hsPkgs.transformers)

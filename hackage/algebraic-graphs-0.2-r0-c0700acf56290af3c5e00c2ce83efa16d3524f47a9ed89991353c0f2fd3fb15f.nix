@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.base-compat)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-alga" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebraic-graphs)
             (hsPkgs.array)
             (hsPkgs.base)

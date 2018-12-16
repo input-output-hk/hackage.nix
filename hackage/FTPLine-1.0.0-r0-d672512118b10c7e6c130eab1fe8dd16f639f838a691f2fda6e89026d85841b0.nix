@@ -26,7 +26,7 @@
     components = {
       exes = {
         "FTPLine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.MissingH)

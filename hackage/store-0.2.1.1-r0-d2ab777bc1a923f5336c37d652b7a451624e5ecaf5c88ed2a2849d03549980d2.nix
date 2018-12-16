@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.store-core)
           (hsPkgs.th-utilities)
@@ -72,7 +72,7 @@
       };
       tests = {
         "store-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.store-core)
             (hsPkgs.th-utilities)
@@ -116,7 +116,7 @@
           ];
         };
         "store-weigh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.store-core)
             (hsPkgs.th-utilities)
@@ -167,7 +167,7 @@
       };
       benchmarks = {
         "store-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.store-core)
             (hsPkgs.th-utilities)

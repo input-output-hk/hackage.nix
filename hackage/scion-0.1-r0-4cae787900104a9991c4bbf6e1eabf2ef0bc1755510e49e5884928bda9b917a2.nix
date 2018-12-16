@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       exes = {
         "scion-server" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

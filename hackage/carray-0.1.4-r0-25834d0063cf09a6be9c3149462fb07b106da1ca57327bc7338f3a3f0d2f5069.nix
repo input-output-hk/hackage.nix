@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.ix-shapable)
         ] ++ (if flags.bytestringinbase
           then [

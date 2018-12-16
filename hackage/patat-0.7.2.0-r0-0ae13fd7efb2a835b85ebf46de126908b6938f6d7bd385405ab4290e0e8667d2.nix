@@ -28,7 +28,7 @@
     components = {
       exes = {
         "patat" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
             (hsPkgs.ansi-wl-pprint)
@@ -51,7 +51,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
         };
         "patat-make-man" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.pandoc)

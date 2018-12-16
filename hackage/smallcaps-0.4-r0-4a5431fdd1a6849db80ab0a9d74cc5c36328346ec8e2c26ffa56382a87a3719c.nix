@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.attoparsec)
@@ -39,7 +39,7 @@
       };
       exes = {
         "lesscase" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.smallcaps)
@@ -48,7 +48,7 @@
       };
       tests = {
         "texparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)
@@ -56,7 +56,7 @@
           ];
         };
         "texlatexparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.parsec)
@@ -64,7 +64,7 @@
           ];
         };
         "inputfiles" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.containers)
@@ -72,7 +72,7 @@
           ];
         };
         "configparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.data-default)
@@ -80,7 +80,7 @@
           ];
         };
         "printableparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.data-default)
@@ -88,7 +88,7 @@
           ];
         };
         "documentparser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.data-default)

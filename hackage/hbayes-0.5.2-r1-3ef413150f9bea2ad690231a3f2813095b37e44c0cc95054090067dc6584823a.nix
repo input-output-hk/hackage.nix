@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.containers)
@@ -54,7 +54,7 @@
       };
       tests = {
         "hbayes-Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hbayes)
             (hsPkgs.base)

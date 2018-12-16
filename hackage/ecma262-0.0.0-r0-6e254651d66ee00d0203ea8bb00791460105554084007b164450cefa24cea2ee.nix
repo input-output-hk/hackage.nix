@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.data-default)
@@ -37,7 +37,7 @@
       };
       exes = {
         "ecma262" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ecma262)
           ];

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
         ];
       };
       exes = {
         "corecursive-main-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.corecursive-main)
             (hsPkgs.process)
@@ -42,7 +42,7 @@
       };
       tests = {
         "corecursive-main-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.corecursive-main)
             (hsPkgs.process)

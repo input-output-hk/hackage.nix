@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snowtify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.either)

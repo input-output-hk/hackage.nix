@@ -26,7 +26,7 @@
     components = {
       exes = {
         "imj-measure-stdout-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.imj-prelude)
             (hsPkgs.optparse-applicative)

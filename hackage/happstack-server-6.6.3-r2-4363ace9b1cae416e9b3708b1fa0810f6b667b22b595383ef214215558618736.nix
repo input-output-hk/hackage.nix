@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.base64-bytestring)
@@ -67,7 +67,7 @@
       };
       exes = {
         "happstack-server-tests" = {
-          depends  = pkgs.lib.optionals (flags.tests) [
+          depends = pkgs.lib.optionals (flags.tests) [
             (hsPkgs.HUnit)
             (hsPkgs.parsec)
           ];

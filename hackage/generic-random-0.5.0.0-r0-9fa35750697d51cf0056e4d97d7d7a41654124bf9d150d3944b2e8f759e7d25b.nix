@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
         ] ++ pkgs.lib.optional (flags.boltzmann) (hsPkgs.boltzmann-samplers);

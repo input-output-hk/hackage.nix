@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.vector)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-cipher-rc4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cipher-rc4)
             (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "bench-cipher-rc4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cipher-rc4)

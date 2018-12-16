@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
       };
       tests = {
         "search-algorithms-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.search-algorithms)
             (hsPkgs.containers)
@@ -40,7 +40,7 @@
           ];
         };
         "doc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.search-algorithms)
             (hsPkgs.containers)

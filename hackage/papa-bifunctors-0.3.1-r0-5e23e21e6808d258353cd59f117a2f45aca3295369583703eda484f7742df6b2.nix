@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.papa-bifunctors-export)
           (hsPkgs.papa-bifunctors-implement)

@@ -36,7 +36,7 @@
     components = {
       exes = {
         "git-annex" = {
-          depends  = (((((((([
+          depends = (((((((([
             (hsPkgs.MissingH)
             (hsPkgs.hslogger)
             (hsPkgs.directory)
@@ -102,7 +102,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.testpack)
             (hsPkgs.HUnit)
             (hsPkgs.MissingH)

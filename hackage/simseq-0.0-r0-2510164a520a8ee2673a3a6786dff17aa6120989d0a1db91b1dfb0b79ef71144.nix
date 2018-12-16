@@ -26,7 +26,7 @@
     components = {
       exes = {
         "simseq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio)
             (hsPkgs.random)

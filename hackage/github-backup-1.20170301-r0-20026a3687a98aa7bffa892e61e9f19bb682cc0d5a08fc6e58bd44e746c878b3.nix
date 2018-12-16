@@ -26,7 +26,7 @@
     components = {
       exes = {
         "github-backup" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.github)
             (hsPkgs.MissingH)
@@ -63,7 +63,7 @@
             ]);
         };
         "gitriddance" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.github)
             (hsPkgs.text)

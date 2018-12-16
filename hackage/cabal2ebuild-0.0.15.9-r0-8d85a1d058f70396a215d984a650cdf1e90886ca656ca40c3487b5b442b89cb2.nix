@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.Cabal)
@@ -34,14 +34,14 @@
       };
       exes = {
         "cabal2ebuild" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal2ebuild)
             (hsPkgs.directory)
           ];
         };
         "hackage2ebuild" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cabal2ebuild)
             (hsPkgs.curl)

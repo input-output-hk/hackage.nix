@@ -26,7 +26,7 @@
     components = {
       exes = {
         "billeksah-main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.plugins)

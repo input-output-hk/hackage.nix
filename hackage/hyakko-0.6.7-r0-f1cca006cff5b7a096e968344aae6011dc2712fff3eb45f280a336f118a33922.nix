@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hyakko" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.regex-pcre-builtin)

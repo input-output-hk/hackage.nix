@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mudbath" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "labyrinth-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.labyrinth)
             (hsPkgs.mtl)
@@ -59,7 +59,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.labyrinth)
             (hsPkgs.mtl)

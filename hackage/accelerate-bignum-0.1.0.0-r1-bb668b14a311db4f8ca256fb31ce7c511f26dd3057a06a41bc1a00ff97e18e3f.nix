@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.template-haskell)
@@ -45,7 +45,7 @@
       };
       tests = {
         "accelerate-bignum-test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-bignum)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "accelerate-bignum-bench" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-bignum)

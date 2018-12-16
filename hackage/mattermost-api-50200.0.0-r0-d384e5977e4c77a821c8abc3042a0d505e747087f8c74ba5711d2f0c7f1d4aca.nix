@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.websockets)
           (hsPkgs.stm)
@@ -54,7 +54,7 @@
       };
       exes = {
         "mm-get-teams" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mattermost-api)
             (hsPkgs.aeson)
@@ -66,7 +66,7 @@
           ];
         };
         "mm-get-channels" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mattermost-api)
             (hsPkgs.aeson)
@@ -78,7 +78,7 @@
           ];
         };
         "mm-get-posts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mattermost-api)
             (hsPkgs.aeson)
@@ -90,7 +90,7 @@
           ];
         };
         "mm-make-post" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mattermost-api)
             (hsPkgs.aeson)
@@ -102,7 +102,7 @@
           ];
         };
         "mm-get-websocket-connection" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mattermost-api)
             (hsPkgs.aeson)
@@ -114,7 +114,7 @@
           ];
         };
         "mm-show-raw-events" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mattermost-api)
             (hsPkgs.aeson)
@@ -128,7 +128,7 @@
       };
       tests = {
         "test-mm-api" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.stm)

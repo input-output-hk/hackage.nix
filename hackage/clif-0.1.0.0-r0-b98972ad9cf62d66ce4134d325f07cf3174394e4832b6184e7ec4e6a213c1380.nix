@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.clif)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "bench-clifProduct" = {
-          depends  = [
+          depends = [
             (hsPkgs.clif)
             (hsPkgs.base)
             (hsPkgs.time)

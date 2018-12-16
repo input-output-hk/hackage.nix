@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MonadPrompt)
           (hsPkgs.mtl)
         ] ++ (if flags.split-base
@@ -38,7 +38,7 @@
       };
       exes = {
         "hs-pgms" = {
-          depends  = [
+          depends = [
             (hsPkgs.MonadPrompt)
             (hsPkgs.glib)
             (hsPkgs.gtk)

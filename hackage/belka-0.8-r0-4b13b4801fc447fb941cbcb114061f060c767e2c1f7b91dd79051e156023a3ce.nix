@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base64-bytestring)
           (hsPkgs.json-bytes-builder)
           (hsPkgs.potoki)
@@ -55,7 +55,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.belka)
             (hsPkgs.iri)
             (hsPkgs.potoki)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "zoom-cache" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.iteratee)

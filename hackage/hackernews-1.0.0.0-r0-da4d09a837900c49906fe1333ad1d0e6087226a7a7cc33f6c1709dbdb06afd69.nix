@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.servant)
         ] ++ (if compiler.isGhcjs && true
           then [
@@ -50,7 +50,7 @@
       };
       exes = {
         "example" = {
-          depends  = if compiler.isGhcjs && true
+          depends = if compiler.isGhcjs && true
             then [
               (hsPkgs.base)
               (hsPkgs.hackernews)
@@ -64,7 +64,7 @@
             ];
         };
         "ghcjs-tests" = {
-          depends  = pkgs.lib.optionals (compiler.isGhcjs && true) [
+          depends = pkgs.lib.optionals (compiler.isGhcjs && true) [
             (hsPkgs.base)
             (hsPkgs.hackernews)
             (hsPkgs.ghcjs-base)
@@ -80,7 +80,7 @@
       };
       tests = {
         "ghc-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.basic-sop)

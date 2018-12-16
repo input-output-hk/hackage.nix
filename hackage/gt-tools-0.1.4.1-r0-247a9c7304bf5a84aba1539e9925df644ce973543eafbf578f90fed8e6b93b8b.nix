@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gtc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.haskeline)
@@ -39,7 +39,7 @@
           ];
         };
         "gtg" = {
-          depends  = pkgs.lib.optionals (flags.gui) [
+          depends = pkgs.lib.optionals (flags.gui) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HTTP)

@@ -30,7 +30,7 @@
       "library" = {};
       exes = {
         "Yablog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-platform)
             (hsPkgs.yesod)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.base)
           (hsPkgs.zeromq3-haskell)
@@ -33,7 +33,7 @@
       };
       exes = {
         "zmcat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.zmcat)
             (hsPkgs.bytestring)

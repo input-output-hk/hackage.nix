@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.primitive)
@@ -36,7 +36,7 @@
       };
       tests = {
         "hdr-histogram-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hdr-histogram)
             (hsPkgs.hspec)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "hdr-histogram-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hdr-histogram)
             (hsPkgs.deepseq)

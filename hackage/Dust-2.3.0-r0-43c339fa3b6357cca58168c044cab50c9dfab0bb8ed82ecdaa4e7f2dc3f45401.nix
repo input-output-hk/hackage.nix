@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Dust-crypto)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       tests = {
         "crypto" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.HUnit)
@@ -64,7 +64,7 @@
           ];
         };
         "core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.Dust-crypto)

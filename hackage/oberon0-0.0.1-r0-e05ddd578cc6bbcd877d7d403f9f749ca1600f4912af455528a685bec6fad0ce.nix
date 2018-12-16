@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
@@ -52,7 +52,7 @@
       };
       exes = {
         "l1t1" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -64,7 +64,7 @@
           ];
         };
         "l1t2" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -77,7 +77,7 @@
           ];
         };
         "l1t3" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -90,7 +90,7 @@
           ];
         };
         "l1t5" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -104,7 +104,7 @@
           ];
         };
         "l2t1" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -116,7 +116,7 @@
           ];
         };
         "l2t2" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -129,7 +129,7 @@
           ];
         };
         "l2t3" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -142,7 +142,7 @@
           ];
         };
         "l2t5" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -156,7 +156,7 @@
           ];
         };
         "l3t1" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -168,7 +168,7 @@
           ];
         };
         "l3t2" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -181,7 +181,7 @@
           ];
         };
         "l3t3" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -194,7 +194,7 @@
           ];
         };
         "l3t5" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -208,7 +208,7 @@
           ];
         };
         "l4t1" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -220,7 +220,7 @@
           ];
         };
         "l4t2" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -233,7 +233,7 @@
           ];
         };
         "l4t3" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)
@@ -246,7 +246,7 @@
           ];
         };
         "l4t5" = {
-          depends  = [
+          depends = [
             (hsPkgs.oberon0)
             (hsPkgs.base)
             (hsPkgs.base)

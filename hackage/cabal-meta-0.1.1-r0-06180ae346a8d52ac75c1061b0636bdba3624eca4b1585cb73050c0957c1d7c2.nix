@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.shelly)
           (hsPkgs.text)
           (hsPkgs.system-filepath)
@@ -33,7 +33,7 @@
       };
       exes = {
         "cabal-meta" = {
-          depends  = [
+          depends = [
             (hsPkgs.shelly)
             (hsPkgs.text)
             (hsPkgs.system-filepath)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.shelly)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)

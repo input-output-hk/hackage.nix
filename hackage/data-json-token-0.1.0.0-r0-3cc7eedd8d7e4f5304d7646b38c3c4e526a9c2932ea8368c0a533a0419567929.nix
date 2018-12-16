@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "data-json-token-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-json-token)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "data-json-token-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-json-token)
           ];

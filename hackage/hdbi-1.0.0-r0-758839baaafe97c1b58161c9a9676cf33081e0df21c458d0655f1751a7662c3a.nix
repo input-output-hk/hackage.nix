@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Decimal)
           (hsPkgs.attoparsec)
@@ -40,7 +40,7 @@
       };
       tests = {
         "sqlvalues" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
@@ -61,7 +61,7 @@
           ];
         };
         "dummydriver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)

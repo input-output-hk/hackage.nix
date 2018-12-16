@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ADPfusion)
           (hsPkgs.AlignmentAlgorithms)
@@ -59,7 +59,7 @@
       };
       exes = {
         "WordAlign" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ascii-progress)
             (hsPkgs.bytestring)
@@ -80,7 +80,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)

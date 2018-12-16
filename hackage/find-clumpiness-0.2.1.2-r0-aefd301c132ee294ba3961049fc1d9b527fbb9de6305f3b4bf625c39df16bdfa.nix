@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.clumpiness)
           (hsPkgs.tree-fun)
@@ -42,7 +42,7 @@
       };
       exes = {
         "find-clumpiness" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.find-clumpiness)
             (hsPkgs.clumpiness)

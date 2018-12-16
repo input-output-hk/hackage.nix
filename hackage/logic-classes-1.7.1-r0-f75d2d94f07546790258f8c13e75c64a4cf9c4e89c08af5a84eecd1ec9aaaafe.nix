@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.applicative-extras)
           (hsPkgs.atp-haskell)
           (hsPkgs.base)
@@ -46,7 +46,7 @@
       };
       tests = {
         "logic-classes-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.applicative-extras)
             (hsPkgs.atp-haskell)
             (hsPkgs.base)

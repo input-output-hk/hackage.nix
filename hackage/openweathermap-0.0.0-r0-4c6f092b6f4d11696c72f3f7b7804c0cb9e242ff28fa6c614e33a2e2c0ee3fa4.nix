@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.http-client)
@@ -35,7 +35,7 @@
       };
       exes = {
         "openweathermap" = {
-          depends  = pkgs.lib.optionals (flags.cmd) [
+          depends = pkgs.lib.optionals (flags.cmd) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.openweathermap)

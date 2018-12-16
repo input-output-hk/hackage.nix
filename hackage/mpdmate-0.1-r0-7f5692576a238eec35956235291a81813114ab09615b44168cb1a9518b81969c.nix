@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mpdmate" = {
-          depends  = [
+          depends = [
             (hsPkgs.powermate)
             (hsPkgs.base)
             (hsPkgs.unix)

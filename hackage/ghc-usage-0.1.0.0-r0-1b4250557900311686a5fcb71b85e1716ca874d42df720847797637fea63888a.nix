@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       exes = {
         "ghc-usage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-paths)
             (hsPkgs.unix)

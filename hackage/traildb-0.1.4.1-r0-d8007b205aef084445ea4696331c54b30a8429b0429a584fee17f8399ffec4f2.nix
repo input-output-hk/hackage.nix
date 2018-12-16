@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       exes = {
         "traildb-wikipedia-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.traildb)
             (hsPkgs.vector)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "bench-traildb" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)

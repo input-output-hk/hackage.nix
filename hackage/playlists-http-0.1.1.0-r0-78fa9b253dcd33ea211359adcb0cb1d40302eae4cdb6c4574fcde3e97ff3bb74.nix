@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       exes = {
         "example" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-examples)) [
+          depends = pkgs.lib.optionals (!(!flags.build-examples)) [
             (hsPkgs.base)
             (hsPkgs.http-client)
             (hsPkgs.playlists-http)

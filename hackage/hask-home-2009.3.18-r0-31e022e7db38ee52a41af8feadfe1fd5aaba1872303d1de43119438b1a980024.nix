@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hask-home" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.regex-compat)
             (hsPkgs.network)
@@ -40,7 +40,7 @@
           ];
         };
         "hask-home-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

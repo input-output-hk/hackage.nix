@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.directory)
@@ -52,13 +52,13 @@
       };
       exes = {
         "propellor-config" = {
-          depends  = [
+          depends = [
             (hsPkgs.propellor)
             (hsPkgs.base)
           ];
         };
         "propellor" = {
-          depends  = [
+          depends = [
             (hsPkgs.propellor)
             (hsPkgs.base)
           ];

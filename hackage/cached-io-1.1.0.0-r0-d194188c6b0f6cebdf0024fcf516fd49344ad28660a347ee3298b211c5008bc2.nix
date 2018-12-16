@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.transformers)
@@ -34,7 +34,7 @@
       };
       exes = {
         "test-cachedIO" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cached-io)
           ];

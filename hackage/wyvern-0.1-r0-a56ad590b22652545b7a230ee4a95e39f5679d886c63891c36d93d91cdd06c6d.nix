@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wyvern" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.ConfigFile)

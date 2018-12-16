@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test-hslua" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -65,7 +65,7 @@
       };
       benchmarks = {
         "benchmark-hslua" = {
-          depends  = [
+          depends = [
             (hsPkgs.hslua)
             (hsPkgs.base)
             (hsPkgs.bytestring)

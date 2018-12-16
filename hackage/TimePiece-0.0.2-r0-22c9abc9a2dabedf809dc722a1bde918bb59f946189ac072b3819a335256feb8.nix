@@ -26,7 +26,7 @@
     components = {
       exes = {
         "TimePiece" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.SDL-image)

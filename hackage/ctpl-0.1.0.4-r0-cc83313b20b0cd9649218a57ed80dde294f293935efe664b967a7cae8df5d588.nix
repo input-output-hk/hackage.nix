@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.chatty-text)
           (hsPkgs.chatty-utils)
@@ -34,7 +34,7 @@
       };
       exes = {
         "ctpl0debug" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chatty-text)
             (hsPkgs.chatty-utils)
@@ -42,7 +42,7 @@
           ];
         };
         "ctplc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chatty-text)
             (hsPkgs.chatty-utils)

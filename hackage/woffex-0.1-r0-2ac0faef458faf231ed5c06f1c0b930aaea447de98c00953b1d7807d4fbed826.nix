@@ -26,7 +26,7 @@
     components = {
       exes = {
         "woffex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

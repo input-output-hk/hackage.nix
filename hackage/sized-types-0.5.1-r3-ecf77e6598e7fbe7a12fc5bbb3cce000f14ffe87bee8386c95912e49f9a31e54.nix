@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.base-compat)
@@ -35,7 +35,7 @@
       };
       exes = {
         "sized-types-example1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.sized-types)
@@ -44,7 +44,7 @@
       };
       tests = {
         "sized-types-test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.sized-types)

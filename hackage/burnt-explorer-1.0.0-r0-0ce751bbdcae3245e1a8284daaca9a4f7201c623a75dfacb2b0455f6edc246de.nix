@@ -26,7 +26,7 @@
     components = {
       exes = {
         "burnt-explorer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.aeson)

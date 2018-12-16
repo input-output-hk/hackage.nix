@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.ix-shapable)
           (hsPkgs.binary)
@@ -55,7 +55,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.ix-shapable)
             (hsPkgs.carray)
@@ -66,32 +66,32 @@
       };
       benchmarks = {
         "meteor-contest-c" = {
-          depends  = [
+          depends = [
             (hsPkgs.carray)
             (hsPkgs.base)
           ];
         };
         "meteor-contest-u" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "nsieve-bits-c" = {
-          depends  = [
+          depends = [
             (hsPkgs.carray)
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "nsieve-bits-s" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
           ];
         };
         "nsieve-bits-u" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
           ];

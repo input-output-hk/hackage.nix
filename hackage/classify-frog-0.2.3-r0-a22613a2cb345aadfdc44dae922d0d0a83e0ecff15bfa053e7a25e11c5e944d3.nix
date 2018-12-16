@@ -29,7 +29,7 @@
     components = {
       exes = {
         "classify-frog" = {
-          depends  = [
+          depends = [
             (hsPkgs.hmm-hmatrix)
             (hsPkgs.hmatrix)
             (hsPkgs.text)
@@ -72,7 +72,7 @@
           ];
         };
         "spectral-distribution" = {
-          depends  = pkgs.lib.optionals (flags.buildsketch) [
+          depends = pkgs.lib.optionals (flags.buildsketch) [
             (hsPkgs.synthesizer-core)
             (hsPkgs.storablevector)
             (hsPkgs.utility-ht)

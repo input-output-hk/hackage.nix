@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rainbow)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "rainbox-mosaic" = {
-          depends  = pkgs.lib.optionals (flags.mosaic) [
+          depends = pkgs.lib.optionals (flags.mosaic) [
             (hsPkgs.base)
             (hsPkgs.rainbow)
             (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
           ];
         };
         "rainbox-grid" = {
-          depends  = pkgs.lib.optionals (flags.grid) [
+          depends = pkgs.lib.optionals (flags.grid) [
             (hsPkgs.base)
             (hsPkgs.rainbow)
             (hsPkgs.bytestring)
@@ -69,7 +69,7 @@
       };
       tests = {
         "rainbox-visual" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rainbow)
             (hsPkgs.bytestring)
@@ -83,7 +83,7 @@
           ];
         };
         "rainbox-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rainbow)
             (hsPkgs.bytestring)

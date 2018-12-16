@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sdl2)
           (hsPkgs.vector)
@@ -37,7 +37,7 @@
       };
       exes = {
         "dcpu16-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dcpu16)
             (hsPkgs.optparse-applicative)
@@ -47,7 +47,7 @@
       };
       tests = {
         "dcpu16-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dcpu16)
           ];

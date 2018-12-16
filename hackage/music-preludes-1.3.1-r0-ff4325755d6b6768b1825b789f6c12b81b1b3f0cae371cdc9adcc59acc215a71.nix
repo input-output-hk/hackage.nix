@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector-space)
           (hsPkgs.musicxml2)
@@ -42,7 +42,7 @@
       };
       exes = {
         "complex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.lilypond)
@@ -53,7 +53,7 @@
           ];
         };
         "duo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.lilypond)
@@ -64,7 +64,7 @@
           ];
         };
         "triplets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.lilypond)

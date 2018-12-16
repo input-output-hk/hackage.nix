@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.http-client)
@@ -36,7 +36,7 @@
       };
       tests = {
         "aur-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aur)
             (hsPkgs.base)
             (hsPkgs.tasty)

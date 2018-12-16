@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmdargs)
           (hsPkgs.haskell-src-exts)
@@ -41,7 +41,7 @@
       };
       exes = {
         "hsimport" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsimport)
           ];
@@ -49,7 +49,7 @@
       };
       tests = {
         "hsimport-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)

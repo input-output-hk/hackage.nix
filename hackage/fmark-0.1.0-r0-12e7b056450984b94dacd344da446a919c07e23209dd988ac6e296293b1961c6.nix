@@ -26,7 +26,7 @@
     components = {
       exes = {
         "fmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.directory)

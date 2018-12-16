@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -38,7 +38,7 @@
       };
       exes = {
         "tempered" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
@@ -50,7 +50,7 @@
       };
       tests = {
         "tempered-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tempered)
           ];

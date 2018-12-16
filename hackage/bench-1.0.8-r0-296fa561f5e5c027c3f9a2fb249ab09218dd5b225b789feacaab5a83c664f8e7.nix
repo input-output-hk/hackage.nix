@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.optparse-applicative)

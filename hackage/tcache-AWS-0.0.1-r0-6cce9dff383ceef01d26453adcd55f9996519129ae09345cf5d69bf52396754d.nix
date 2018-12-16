@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.TCache)
           (hsPkgs.aws)
           (hsPkgs.base)

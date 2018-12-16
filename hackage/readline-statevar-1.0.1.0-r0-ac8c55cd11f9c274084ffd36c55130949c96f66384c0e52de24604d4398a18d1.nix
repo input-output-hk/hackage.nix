@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.readline)
           (hsPkgs.base)
           (hsPkgs.StateVar)

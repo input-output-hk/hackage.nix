@@ -26,21 +26,21 @@
     components = {
       exes = {
         "PiExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-carbon)
             (hsPkgs.tf-random)
           ];
         };
         "IntegralExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-carbon)
             (hsPkgs.tf-random)
           ];
         };
         "TransportExample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-carbon)
             (hsPkgs.gloss)

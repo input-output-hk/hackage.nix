@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.template-haskell)
           (hsPkgs.base)
         ];
       };
       tests = {
         "example-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.scanf)
             (hsPkgs.base)
           ];

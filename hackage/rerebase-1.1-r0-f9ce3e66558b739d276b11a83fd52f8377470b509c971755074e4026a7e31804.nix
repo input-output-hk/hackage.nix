@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.rebase) ];
+        depends = [ (hsPkgs.rebase) ];
       };
     };
   }

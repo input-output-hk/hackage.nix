@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.storable-record)
           (hsPkgs.QuickCheck)
         ] ++ (if flags.splitbase
@@ -40,7 +40,7 @@
       };
       exes = {
         "speedtest" = {
-          depends  = pkgs.lib.optionals (flags.buildbenchmarks) [
+          depends = pkgs.lib.optionals (flags.buildbenchmarks) [
             (hsPkgs.storablevector)
             (hsPkgs.storable-record)
             (hsPkgs.storable-tuple)

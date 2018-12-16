@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.conduit)
           (hsPkgs.conduit-extra)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "hw-conduit-merges-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.language-lua)
@@ -37,7 +37,7 @@
       };
       tests = {
         "language-lua-qq-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-lua-qq)
           ];

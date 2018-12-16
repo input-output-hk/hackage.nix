@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hmatrix)
           (hsPkgs.transformers)
           (hsPkgs.base)

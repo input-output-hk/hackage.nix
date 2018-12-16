@@ -26,7 +26,7 @@
     components = {
       exes = {
         "amazon-emailer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.resourcet)
             (hsPkgs.lifted-base)

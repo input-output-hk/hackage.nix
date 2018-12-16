@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmdtheline)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "psc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdtheline)
             (hsPkgs.containers)
@@ -58,7 +58,7 @@
           ];
         };
         "psc-make" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdtheline)
             (hsPkgs.containers)
@@ -72,7 +72,7 @@
           ];
         };
         "psci" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -88,7 +88,7 @@
           ];
         };
         "psc-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdtheline)
             (hsPkgs.purescript)
@@ -98,7 +98,7 @@
           ];
         };
         "hierarchy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdtheline)
             (hsPkgs.purescript)
@@ -113,7 +113,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

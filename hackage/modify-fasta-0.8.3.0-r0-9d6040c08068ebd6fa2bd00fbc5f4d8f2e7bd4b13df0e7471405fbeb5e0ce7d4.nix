@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.fasta)
@@ -38,7 +38,7 @@
       };
       exes = {
         "modify-fasta" = {
-          depends  = [
+          depends = [
             (hsPkgs.modify-fasta)
             (hsPkgs.base)
             (hsPkgs.containers)

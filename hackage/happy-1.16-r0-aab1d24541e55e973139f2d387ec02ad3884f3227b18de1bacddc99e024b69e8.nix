@@ -26,7 +26,7 @@
     components = {
       exes = {
         "happy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
           ];

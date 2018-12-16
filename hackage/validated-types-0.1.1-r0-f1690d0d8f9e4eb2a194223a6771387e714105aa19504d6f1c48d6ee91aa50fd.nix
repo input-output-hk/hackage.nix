@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.refined)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       tests = {
         "validated-types-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.validated-types)
           ];

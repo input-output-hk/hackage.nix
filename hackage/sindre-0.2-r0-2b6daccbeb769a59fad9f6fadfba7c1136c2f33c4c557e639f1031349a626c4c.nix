@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.X11)
           (hsPkgs.X11-xshape)
           (hsPkgs.X11-rm)
@@ -51,7 +51,7 @@
       };
       exes = {
         "sindre" = {
-          depends  = [
+          depends = [
             (hsPkgs.X11)
             (hsPkgs.X11-xshape)
             (hsPkgs.X11-rm)

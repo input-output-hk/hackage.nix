@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.http-types)
@@ -47,7 +47,7 @@
       };
       exes = {
         "hastily" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.string-conversions)
             (hsPkgs.directory)
@@ -58,7 +58,7 @@
       };
       tests = {
         "hastily-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hastily)
           ];

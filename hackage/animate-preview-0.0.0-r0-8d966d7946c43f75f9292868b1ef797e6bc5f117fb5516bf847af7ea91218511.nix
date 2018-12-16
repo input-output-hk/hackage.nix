@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.StateVar)
           (hsPkgs.aeson)
           (hsPkgs.animate)
@@ -54,7 +54,7 @@
       };
       exes = {
         "animate-preview" = {
-          depends  = [
+          depends = [
             (hsPkgs.animate-preview)
             (hsPkgs.base)
           ];

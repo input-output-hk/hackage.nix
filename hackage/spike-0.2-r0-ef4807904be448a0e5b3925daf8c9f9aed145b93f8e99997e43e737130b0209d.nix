@@ -26,7 +26,7 @@
     components = {
       exes = {
         "spike" = {
-          depends  = [
+          depends = [
             (hsPkgs.webkit)
             (hsPkgs.containers)
             (hsPkgs.gtk)

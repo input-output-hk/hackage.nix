@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.system-filepath)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       exes = {
         "ReadArgsEx" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.system-filepath)
             (hsPkgs.text)
@@ -42,7 +42,7 @@
       };
       tests = {
         "ReadArgsSpec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.base)
             (hsPkgs.system-filepath)

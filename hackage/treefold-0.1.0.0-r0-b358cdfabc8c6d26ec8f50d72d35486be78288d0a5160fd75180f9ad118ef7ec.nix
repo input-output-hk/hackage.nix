@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parallel)
         ];
       };
       tests = {
         "treefold-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.treefold)
             (hsPkgs.doctest)
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.treefold)
             (hsPkgs.criterion)

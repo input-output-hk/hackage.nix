@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.compdata)
@@ -35,7 +35,7 @@
       };
       tests = {
         "capture" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.compdata)
             (hsPkgs.ho-rewriting)

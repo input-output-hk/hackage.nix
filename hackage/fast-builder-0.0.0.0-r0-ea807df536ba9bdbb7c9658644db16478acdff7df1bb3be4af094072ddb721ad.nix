@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.ghc-prim)
@@ -33,7 +33,7 @@
       };
       tests = {
         "prop" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-builder)
             (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       benchmarks = {
         "aeson" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-builder)
             (hsPkgs.aeson)
@@ -62,7 +62,7 @@
           ];
         };
         "vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fast-builder)
             (hsPkgs.criterion)

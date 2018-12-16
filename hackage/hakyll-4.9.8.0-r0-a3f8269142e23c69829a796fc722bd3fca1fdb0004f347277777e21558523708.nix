@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.blaze-html)
@@ -79,7 +79,7 @@
       };
       exes = {
         "hakyll-init" = {
-          depends  = [
+          depends = [
             (hsPkgs.hakyll)
             (hsPkgs.base)
             (hsPkgs.directory)
@@ -89,7 +89,7 @@
       };
       tests = {
         "hakyll-tests" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.hakyll)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)

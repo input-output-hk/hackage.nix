@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.reactive-banana)
           (hsPkgs.wx)
@@ -34,7 +34,7 @@
       };
       exes = {
         "Counter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reactive-banana)
             (hsPkgs.wx)

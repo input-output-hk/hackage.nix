@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tate-math-to-svg-filter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.system-filepath)
             (hsPkgs.system-fileio)
@@ -40,7 +40,7 @@
           ];
         };
         "math-to-svg-filter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.system-filepath)
             (hsPkgs.system-fileio)
@@ -54,7 +54,7 @@
           ];
         };
         "japanese-filter" = {
-          depends  = [
+          depends = [
             (hsPkgs.HaTeX)
             (hsPkgs.HaTeX-qq)
             (hsPkgs.base)
@@ -67,7 +67,7 @@
           ];
         };
         "env-to-div-filter" = {
-          depends  = [
+          depends = [
             (hsPkgs.HaTeX)
             (hsPkgs.HaTeX-qq)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
@@ -37,7 +37,7 @@
       };
       tests = {
         "fn-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fn)
             (hsPkgs.hspec)

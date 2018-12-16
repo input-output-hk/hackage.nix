@@ -26,7 +26,7 @@
     components = {
       exes = {
         "stats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.statistics)

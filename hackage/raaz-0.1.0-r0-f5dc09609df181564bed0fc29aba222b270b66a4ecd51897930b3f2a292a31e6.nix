@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
@@ -42,7 +42,7 @@
       };
       exes = {
         "raaz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.raaz)
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.transformers);
@@ -50,7 +50,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)
@@ -64,7 +64,7 @@
       };
       benchmarks = {
         "blaze-vs-write" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
@@ -73,7 +73,7 @@
           ];
         };
         "bench-ciphers" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
@@ -82,7 +82,7 @@
           ];
         };
         "primitives" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)

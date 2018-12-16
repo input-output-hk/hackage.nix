@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mwc-random)
@@ -33,7 +33,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.random-bytestring)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -42,7 +42,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats);
         };
         "benchmark-compare" = {
-          depends  = [
+          depends = [
             (hsPkgs.random-bytestring)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -56,7 +56,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats);
         };
         "eventlog-compare" = {
-          depends  = [
+          depends = [
             (hsPkgs.random-bytestring)
             (hsPkgs.async)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hasql-pool)
           (hsPkgs.text)
@@ -55,7 +55,7 @@
       };
       exes = {
         "postgres-websockets" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.hasql)
@@ -80,7 +80,7 @@
       };
       tests = {
         "postgres-websockets-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.postgres-websockets)

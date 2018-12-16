@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Ranka" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.XMPP)
             (hsPkgs.network)

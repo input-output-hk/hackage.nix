@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
       };
       exes = {
         "ethereum-analyzer-webui" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ethereum-analyzer)
             (hsPkgs.ethereum-analyzer-deps)

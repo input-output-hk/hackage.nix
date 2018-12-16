@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackager" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

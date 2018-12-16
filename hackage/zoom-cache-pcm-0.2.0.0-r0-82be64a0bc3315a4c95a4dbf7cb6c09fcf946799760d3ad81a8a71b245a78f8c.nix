@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
           (hsPkgs.containers)

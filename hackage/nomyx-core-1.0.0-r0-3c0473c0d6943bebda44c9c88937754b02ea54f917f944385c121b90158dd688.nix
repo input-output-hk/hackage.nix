@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.nomyx-language)
           (hsPkgs.nomyx-library)
           (hsPkgs.imprevu)
@@ -70,7 +70,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nomyx-core)
             (hsPkgs.Cabal)

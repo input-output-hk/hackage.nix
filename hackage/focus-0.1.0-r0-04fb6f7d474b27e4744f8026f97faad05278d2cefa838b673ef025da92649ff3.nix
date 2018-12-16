@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.loch-th)
           (hsPkgs.placeholders)
           (hsPkgs.base)

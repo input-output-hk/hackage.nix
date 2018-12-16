@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.failure)
           (hsPkgs.transformers)
           (hsPkgs.monadloc)

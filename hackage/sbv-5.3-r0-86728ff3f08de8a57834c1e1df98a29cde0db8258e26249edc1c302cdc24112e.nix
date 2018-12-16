@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.array)
@@ -47,7 +47,7 @@
       };
       exes = {
         "SBVUnitTests" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.directory)
@@ -61,7 +61,7 @@
       };
       tests = {
         "SBVBasicTests" = {
-          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.directory)

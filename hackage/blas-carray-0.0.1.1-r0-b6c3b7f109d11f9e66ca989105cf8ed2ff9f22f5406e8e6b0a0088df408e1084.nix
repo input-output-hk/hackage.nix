@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.blas-ffi)
           (hsPkgs.netlib-carray)
           (hsPkgs.netlib-ffi)

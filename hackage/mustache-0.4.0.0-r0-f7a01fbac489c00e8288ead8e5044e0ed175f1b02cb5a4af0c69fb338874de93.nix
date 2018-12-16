@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.parsec)
@@ -46,7 +46,7 @@
       };
       exes = {
         "haskell-mustache" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mustache)
             (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.text)
@@ -77,7 +77,7 @@
           ];
         };
         "language-specifications" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.text)

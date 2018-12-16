@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.network)
           (hsPkgs.parsec)
           (hsPkgs.base)
@@ -54,7 +54,7 @@
       };
       exes = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.testpack)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)

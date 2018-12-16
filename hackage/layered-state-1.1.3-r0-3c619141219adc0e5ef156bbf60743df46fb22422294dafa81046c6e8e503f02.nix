@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.constraints)
           (hsPkgs.data-default)
@@ -44,7 +44,7 @@
       };
       benchmarks = {
         "layered-state-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.either)

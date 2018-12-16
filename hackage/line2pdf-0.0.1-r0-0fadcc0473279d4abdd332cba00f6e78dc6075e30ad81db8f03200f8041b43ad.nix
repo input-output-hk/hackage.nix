@@ -26,7 +26,7 @@
     components = {
       exes = {
         "line2pdf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

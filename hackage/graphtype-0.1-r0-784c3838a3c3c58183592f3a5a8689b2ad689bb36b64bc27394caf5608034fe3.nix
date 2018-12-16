@@ -26,7 +26,7 @@
     components = {
       exes = {
         "graphtype" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.uniplate)

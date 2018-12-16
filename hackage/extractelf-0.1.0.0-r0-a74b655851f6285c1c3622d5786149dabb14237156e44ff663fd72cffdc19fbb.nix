@@ -26,7 +26,7 @@
     components = {
       exes = {
         "extractelf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.optparse-applicative)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.smtlib2)
           (hsPkgs.base)
           (hsPkgs.text)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-smtlib2-pipe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.smtlib2)
             (hsPkgs.smtlib2-pipe)

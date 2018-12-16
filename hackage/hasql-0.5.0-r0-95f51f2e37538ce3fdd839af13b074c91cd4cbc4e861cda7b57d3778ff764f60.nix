@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql-backend)
           (hsPkgs.template-haskell)
           (hsPkgs.attoparsec)
@@ -48,7 +48,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.hasql-backend)
             (hsPkgs.hspec)
@@ -58,7 +58,7 @@
           ];
         };
         "hspec-postgres" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.hasql-postgres)
             (hsPkgs.slave-thread)
@@ -72,7 +72,7 @@
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.hasql-postgres)
             (hsPkgs.transformers)

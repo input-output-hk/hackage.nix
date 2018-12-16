@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ConfigFile)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -55,7 +55,7 @@
       };
       exes = {
         "LambdaHack" = {
-          depends  = [
+          depends = [
             (hsPkgs.LambdaHack)
             (hsPkgs.template-haskell)
             (hsPkgs.ConfigFile)
@@ -75,7 +75,7 @@
           ];
         };
         "DumbBot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
           ];

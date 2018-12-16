@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghczdecode" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

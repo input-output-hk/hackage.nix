@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -53,27 +53,27 @@
       };
       tests = {
         "test-dsa" = {
-          depends  = [
+          depends = [
             (hsPkgs.HsOpenSSL)
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
         };
         "test-der" = {
-          depends  = [
+          depends = [
             (hsPkgs.HsOpenSSL)
             (hsPkgs.base)
           ];
         };
         "test-evp-base64" = {
-          depends  = [
+          depends = [
             (hsPkgs.HsOpenSSL)
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
         };
         "test-evp-digest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HsOpenSSL)
             (hsPkgs.base)
             (hsPkgs.bytestring)

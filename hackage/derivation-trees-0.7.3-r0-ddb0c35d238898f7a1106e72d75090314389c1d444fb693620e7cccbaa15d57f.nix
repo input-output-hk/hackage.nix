@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.labeled-tree)
           (hsPkgs.base)
           (hsPkgs.mtl)

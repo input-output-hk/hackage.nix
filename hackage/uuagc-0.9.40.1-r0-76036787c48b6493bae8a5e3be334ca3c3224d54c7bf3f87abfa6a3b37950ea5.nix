@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.uuagc-bootstrap)
           (hsPkgs.uuagc-cabal)
           (hsPkgs.base)
@@ -42,7 +42,7 @@
       };
       exes = {
         "uuagc" = {
-          depends  = [
+          depends = [
             (hsPkgs.uuagc)
             (hsPkgs.base)
             (hsPkgs.base)

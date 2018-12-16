@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unix)
           (hsPkgs.directory)
@@ -37,7 +37,7 @@
       };
       exes = {
         "yjftp" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsConfigure)
           ];
         };

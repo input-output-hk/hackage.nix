@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.http-common)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       tests = {
         "check" = {
-          depends  = [
+          depends = [
             (hsPkgs.http-common)
             (hsPkgs.HUnit)
             (hsPkgs.HsOpenSSL)

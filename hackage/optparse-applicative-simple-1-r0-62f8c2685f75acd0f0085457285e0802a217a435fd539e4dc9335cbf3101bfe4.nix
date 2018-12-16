@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.optparse-applicative)
           (hsPkgs.attoparsec)
           (hsPkgs.text)
@@ -34,7 +34,7 @@
       };
       tests = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.optparse-applicative-simple)
             (hsPkgs.attoparsec-data)
             (hsPkgs.rerebase)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.resourcet)
           (hsPkgs.exceptions)
@@ -45,7 +45,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.conduit)
             (hsPkgs.base)
             (hsPkgs.hspec)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "utf8-memory-usage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text-stream-decode)
             (hsPkgs.bytestring)

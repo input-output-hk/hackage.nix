@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod)
           (hsPkgs.yesod-form)
@@ -38,7 +38,7 @@
       };
       exes = {
         "vend-test-user" = {
-          depends  = [
+          depends = [
             (hsPkgs.yesod-vend)
             (hsPkgs.base)
             (hsPkgs.yesod)

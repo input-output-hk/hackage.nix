@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.c2hs-extra)
           (hsPkgs.pretty)
@@ -40,7 +40,7 @@
       };
       tests = {
         "mxnet-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mxnet)
             (hsPkgs.vector)

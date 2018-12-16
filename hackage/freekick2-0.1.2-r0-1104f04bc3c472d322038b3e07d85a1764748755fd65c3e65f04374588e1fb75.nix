@@ -26,7 +26,7 @@
     components = {
       exes = {
         "freekick2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.OpenGL)
@@ -46,7 +46,7 @@
           ];
         };
         "swos2gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.mtl)
@@ -58,7 +58,7 @@
           ];
         };
         "createteam" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.mtl)

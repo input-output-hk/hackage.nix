@@ -29,7 +29,7 @@
     components = {
       exes = {
         "haskanoid" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.mtl)

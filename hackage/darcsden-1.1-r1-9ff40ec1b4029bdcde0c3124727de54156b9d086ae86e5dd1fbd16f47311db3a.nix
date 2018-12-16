@@ -32,7 +32,7 @@
     components = {
       exes = {
         "darcsden" = {
-          depends  = (((([
+          depends = (((([
             (hsPkgs.base)
             (hsPkgs.base64-string)
             (hsPkgs.blaze-builder)
@@ -74,17 +74,17 @@
           ]) ++ pkgs.lib.optional (flags.highlightingkate) (hsPkgs.highlighting-kate)) ++ pkgs.lib.optional (flags.highlighter) (hsPkgs.highlighter)) ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32-services-wrapper);
         };
         "darcsden-ssh" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
           ] ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh);
         };
         "darcsden-post-hook" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
           ] ++ pkgs.lib.optional (flags.closing) (hsPkgs.pcre-light);
         };
         "darcsden-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.CouchDB)
             (hsPkgs.HUnit)

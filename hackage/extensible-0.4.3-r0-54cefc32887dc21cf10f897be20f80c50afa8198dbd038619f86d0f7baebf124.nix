@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.constraints)
@@ -44,7 +44,7 @@
       };
       tests = {
         "effects" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.extensible)
           ];
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "records" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.criterion)
@@ -60,7 +60,7 @@
           ];
         };
         "eff-comparison" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.extensible)

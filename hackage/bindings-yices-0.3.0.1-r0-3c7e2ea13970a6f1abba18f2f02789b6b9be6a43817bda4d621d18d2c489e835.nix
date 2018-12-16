@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."yices")
         ] ++ pkgs.lib.optional (flags.yices-dynamic) (pkgs."gmp");

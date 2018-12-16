@@ -26,7 +26,7 @@
     components = {
       exes = {
         "kit" = {
-          depends  = [
+          depends = [
             (hsPkgs.HTTP)
             (hsPkgs.MissingH)
             (hsPkgs.QuickCheck)

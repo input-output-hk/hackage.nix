@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HDBC)
           (hsPkgs.HDBC-session)
@@ -39,7 +39,7 @@
       };
       exes = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.product-isomorphic)
             (hsPkgs.relational-query)
@@ -49,7 +49,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
         };
         "specialized-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.product-isomorphic)
             (hsPkgs.relational-query)

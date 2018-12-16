@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hedis)
           (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       tests = {
         "basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hedis)
             (hsPkgs.persistent)

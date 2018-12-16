@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.constraints)
@@ -52,7 +52,7 @@
       };
       tests = {
         "Examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.imperative-edsl)
             (hsPkgs.mainland-pretty)
@@ -61,7 +61,7 @@
           ];
         };
         "Semantics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.imperative-edsl)
           ];

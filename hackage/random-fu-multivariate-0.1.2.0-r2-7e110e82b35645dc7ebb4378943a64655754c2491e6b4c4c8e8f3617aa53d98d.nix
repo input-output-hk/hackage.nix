@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random-fu)
           (hsPkgs.hmatrix)
@@ -34,7 +34,7 @@
       };
       tests = {
         "random-fu-multivariate-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random-fu-multivariate)
           ];

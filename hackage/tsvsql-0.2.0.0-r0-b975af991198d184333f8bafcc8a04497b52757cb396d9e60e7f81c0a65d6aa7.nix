@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tsvsql" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.containers)

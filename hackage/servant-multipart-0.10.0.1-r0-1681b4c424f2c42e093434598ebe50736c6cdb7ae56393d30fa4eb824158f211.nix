@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -41,7 +41,7 @@
       };
       exes = {
         "upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-client)
             (hsPkgs.network)

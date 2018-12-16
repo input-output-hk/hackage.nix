@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.synthesizer-core)
           (hsPkgs.haskore)
           (hsPkgs.numeric-prelude)

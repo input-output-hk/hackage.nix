@@ -26,7 +26,7 @@
     components = {
       exes = {
         "persist2er" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.persistent)
             (hsPkgs.text)

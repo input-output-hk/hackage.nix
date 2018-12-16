@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
         ];
       };
       tests = {
         "data-constructors-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-constructors)
             (hsPkgs.QuickCheck)
@@ -41,7 +41,7 @@
       };
       benchmarks = {
         "bench-EqC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-constructors)
             (hsPkgs.QuickCheck)

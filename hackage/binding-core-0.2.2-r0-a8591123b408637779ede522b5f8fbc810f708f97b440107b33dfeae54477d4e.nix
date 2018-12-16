@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
         ];
       };
       tests = {
         "HTF" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binding-core)
             (hsPkgs.random)

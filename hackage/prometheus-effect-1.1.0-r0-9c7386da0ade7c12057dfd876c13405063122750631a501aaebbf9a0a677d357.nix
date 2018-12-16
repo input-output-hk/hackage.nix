@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.clock)
@@ -48,7 +48,7 @@
       };
       exes = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.warp)
             (hsPkgs.prometheus-effect)
@@ -61,7 +61,7 @@
       };
       tests = {
         "weight" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.weigh)
             (hsPkgs.prometheus-effect)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.prometheus-effect)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.sample-frame)
           (hsPkgs.storablevector)
           (hsPkgs.explicit-exception)

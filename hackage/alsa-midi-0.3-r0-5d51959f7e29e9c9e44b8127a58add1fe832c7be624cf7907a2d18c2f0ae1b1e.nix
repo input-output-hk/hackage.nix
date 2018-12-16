@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.midi)
           (hsPkgs.event-list)
@@ -35,7 +35,7 @@
       };
       exes = {
         "playnote" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.midi)
             (hsPkgs.event-list)
@@ -44,7 +44,7 @@
           libs = [ (pkgs."asound") ];
         };
         "playmidi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.midi)
             (hsPkgs.event-list)
@@ -53,7 +53,7 @@
           libs = [ (pkgs."asound") ];
         };
         "mididump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.midi)
             (hsPkgs.event-list)

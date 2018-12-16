@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parallel)
           (hsPkgs.comonad)
@@ -35,31 +35,31 @@
       };
       exes = {
         "oi-cats" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.oi)
           ];
         };
         "oi-cats2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.oi)
           ];
         };
         "oi-echo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.oi)
           ];
         };
         "oi-morec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.oi)
           ];
         };
         "oi-recdircs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -67,7 +67,7 @@
           ];
         };
         "oi-talk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parallel)
             (hsPkgs.oi)

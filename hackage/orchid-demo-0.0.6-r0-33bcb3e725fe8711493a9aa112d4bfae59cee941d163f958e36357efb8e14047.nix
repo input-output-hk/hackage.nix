@@ -26,7 +26,7 @@
     components = {
       exes = {
         "orchid-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.salvia)
             (hsPkgs.salvia-extras)

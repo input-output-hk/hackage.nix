@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.quiver)
         ];
       };
       tests = {
         "interleave-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.quiver-interleave)
             (hsPkgs.base)
             (hsPkgs.quiver)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shapes-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.StateVar)
             (hsPkgs.array)
             (hsPkgs.base)

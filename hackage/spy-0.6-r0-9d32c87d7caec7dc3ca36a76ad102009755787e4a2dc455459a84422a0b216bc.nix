@@ -26,7 +26,7 @@
     components = {
       exes = {
         "spy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fsnotify)
             (hsPkgs.cmdargs)
@@ -42,7 +42,7 @@
       };
       tests = {
         "spy-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)

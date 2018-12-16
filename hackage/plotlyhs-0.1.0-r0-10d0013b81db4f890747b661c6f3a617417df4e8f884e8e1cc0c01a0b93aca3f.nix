@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.lucid)
@@ -39,7 +39,7 @@
       };
       exes = {
         "test-plotly" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.plotlyhs)
             (hsPkgs.lucid)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tabloid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.regex-base)

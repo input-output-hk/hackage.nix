@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hslua)
           (hsPkgs.monad-loops)
@@ -37,7 +37,7 @@
       };
       tests = {
         "simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslua)
             (hsPkgs.luautils)

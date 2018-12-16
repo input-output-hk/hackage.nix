@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if system.isOsx
+        depends = if system.isOsx
           then [
             (hsPkgs.base)
             (hsPkgs.bytestring)

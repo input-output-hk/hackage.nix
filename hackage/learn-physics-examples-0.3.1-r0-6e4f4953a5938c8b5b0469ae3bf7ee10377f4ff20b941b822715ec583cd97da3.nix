@@ -26,7 +26,7 @@
     components = {
       exes = {
         "learn-physics-PlaneWave" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
@@ -34,7 +34,7 @@
           ];
         };
         "learn-physics-eFieldLine3D" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
@@ -42,7 +42,7 @@
           ];
         };
         "learn-physics-LorentzForceSimulation" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
@@ -50,7 +50,7 @@
           ];
         };
         "learn-physics-BCircularLoop" = {
-          depends  = [
+          depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
@@ -58,28 +58,28 @@
           ];
         };
         "learn-physics-sunEarth" = {
-          depends  = [
+          depends = [
             (hsPkgs.gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-eFieldLine2D" = {
-          depends  = [
+          depends = [
             (hsPkgs.gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-ElectricFluxPlot" = {
-          depends  = [
+          depends = [
             (hsPkgs.gnuplot)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-DampedOscillator" = {
-          depends  = [
+          depends = [
             (hsPkgs.gnuplot)
             (hsPkgs.base)
             (hsPkgs.learn-physics)

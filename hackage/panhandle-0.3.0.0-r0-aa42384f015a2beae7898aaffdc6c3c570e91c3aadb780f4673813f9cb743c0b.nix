@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc)
           (hsPkgs.pandoc-types)
@@ -34,7 +34,7 @@
       };
       exes = {
         "panhandle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.panhandle)
           ];
@@ -42,7 +42,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.panhandle)
             (hsPkgs.QuickCheck)

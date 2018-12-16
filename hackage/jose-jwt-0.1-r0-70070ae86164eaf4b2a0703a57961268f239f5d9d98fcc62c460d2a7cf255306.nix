@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.jose-jwt)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -69,7 +69,7 @@
       };
       benchmarks = {
         "bench-jwt" = {
-          depends  = [
+          depends = [
             (hsPkgs.jose-jwt)
             (hsPkgs.base)
             (hsPkgs.bytestring)

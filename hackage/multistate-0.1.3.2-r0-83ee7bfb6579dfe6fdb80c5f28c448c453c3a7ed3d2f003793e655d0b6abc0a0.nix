@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.tfp)
@@ -37,7 +37,7 @@
       };
       exes = {
         "multistate-test" = {
-          depends  = pkgs.lib.optionals (flags.build-test) [
+          depends = pkgs.lib.optionals (flags.build-test) [
             (hsPkgs.multistate)
             (hsPkgs.base)
             (hsPkgs.tfp)
@@ -45,7 +45,7 @@
           ];
         };
         "multistate-example" = {
-          depends  = pkgs.lib.optionals (flags.build-example) [
+          depends = pkgs.lib.optionals (flags.build-example) [
             (hsPkgs.multistate)
             (hsPkgs.base)
             (hsPkgs.mtl)

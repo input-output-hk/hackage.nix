@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-enumerator)
@@ -43,7 +43,7 @@
       };
       exes = {
         "test-couch" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.attoparsec-enumerator)

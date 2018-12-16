@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -42,13 +42,13 @@
       };
       exes = {
         "ht-refact" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-tools-cli)
           ];
         };
         "ht-test-hackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)
@@ -56,7 +56,7 @@
           ];
         };
         "ht-test-stackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.process)
@@ -66,7 +66,7 @@
       };
       tests = {
         "haskell-tools-cli-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
@@ -80,7 +80,7 @@
       };
       benchmarks = {
         "cli-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-tools-cli)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       exes = {
         "certificate" = {
-          depends  = pkgs.lib.optional (flags.executable) (hsPkgs.haskell98);
+          depends = pkgs.lib.optional (flags.executable) (hsPkgs.haskell98);
         };
       };
     };

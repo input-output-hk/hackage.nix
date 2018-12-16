@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.data-accessor)
@@ -48,7 +48,7 @@
       };
       exes = {
         "pandoc-crossref" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-accessor)
@@ -76,7 +76,7 @@
       };
       tests = {
         "test-integrative" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-accessor)
@@ -98,7 +98,7 @@
           ];
         };
         "test-pandoc-crossref" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.data-accessor)

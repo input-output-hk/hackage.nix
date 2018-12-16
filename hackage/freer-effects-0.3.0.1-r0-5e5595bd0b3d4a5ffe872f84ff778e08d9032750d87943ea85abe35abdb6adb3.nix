@@ -28,11 +28,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "freer-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer-effects)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer-effects)
             (hsPkgs.tasty)
@@ -50,7 +50,7 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (flags.test-hlint) [
+          depends = pkgs.lib.optionals (flags.test-hlint) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.free)

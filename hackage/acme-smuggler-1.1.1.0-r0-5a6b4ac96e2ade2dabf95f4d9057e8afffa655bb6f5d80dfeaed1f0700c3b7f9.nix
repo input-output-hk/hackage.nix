@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "acme-smuggler-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.acme-smuggler)
             (hsPkgs.hspec)

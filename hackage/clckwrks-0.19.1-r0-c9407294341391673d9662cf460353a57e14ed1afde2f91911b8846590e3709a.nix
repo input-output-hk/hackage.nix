@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.acid-state)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "htzaar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.SDL)

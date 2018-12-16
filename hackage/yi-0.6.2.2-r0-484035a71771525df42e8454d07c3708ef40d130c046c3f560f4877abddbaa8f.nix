@@ -36,7 +36,7 @@
       "library" = {};
       exes = {
         "yi" = {
-          depends  = (((((((([
+          depends = (((((((([
             (hsPkgs.Cabal)
             (hsPkgs.Diff)
             (hsPkgs.array)

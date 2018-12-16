@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.unix)
@@ -33,7 +33,7 @@
       };
       exes = {
         "pid1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pid1)
           ];

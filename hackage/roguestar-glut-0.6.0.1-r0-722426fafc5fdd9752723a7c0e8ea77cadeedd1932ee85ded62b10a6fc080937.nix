@@ -26,7 +26,7 @@
     components = {
       exes = {
         "roguestar-glut" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.roguestar-gl)
             (hsPkgs.GLUT)

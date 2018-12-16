@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.uu-parsinglib)
           (hsPkgs.ListLike)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-harmtrace-base" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HarmTrace-Base)
             (hsPkgs.base)

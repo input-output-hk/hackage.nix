@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.explicit-exception)
           (hsPkgs.data-accessor)
           (hsPkgs.semigroups)

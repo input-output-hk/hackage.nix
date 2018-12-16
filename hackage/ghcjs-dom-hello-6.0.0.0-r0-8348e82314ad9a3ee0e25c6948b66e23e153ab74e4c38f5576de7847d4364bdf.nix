@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghcjs-dom)
           (hsPkgs.mtl)
@@ -40,7 +40,7 @@
       };
       exes = {
         "ghcjs-dom-hello" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom-hello)
             (hsPkgs.mtl)
@@ -57,7 +57,7 @@
               ]);
         };
         "ghcjs-dom-hello-warp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom)
             (hsPkgs.mtl)
@@ -67,7 +67,7 @@
           ];
         };
         "ghcjs-dom-hello-webkitgtk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom-hello)
             (hsPkgs.mtl)
@@ -80,7 +80,7 @@
             ]);
         };
         "ghcjs-dom-hello-wkwebview" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-dom-hello)
             (hsPkgs.jsaddle-wkwebview)

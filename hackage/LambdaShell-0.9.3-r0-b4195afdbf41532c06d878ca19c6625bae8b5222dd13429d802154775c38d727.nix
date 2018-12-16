@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambdaShell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.parsec)

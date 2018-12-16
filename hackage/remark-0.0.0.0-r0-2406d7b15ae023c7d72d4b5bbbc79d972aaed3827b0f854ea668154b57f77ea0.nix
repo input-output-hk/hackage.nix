@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.GenericPretty)
         ];
       };
       exes = {
         "remark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.remark)
             (hsPkgs.GenericPretty)
@@ -41,7 +41,7 @@
       };
       tests = {
         "remark-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.remark)
             (hsPkgs.GenericPretty)

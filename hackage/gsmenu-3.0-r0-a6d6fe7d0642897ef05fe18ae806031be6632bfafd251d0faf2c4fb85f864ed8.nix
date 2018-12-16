@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gsmenu" = {
-          depends  = [
+          depends = [
             (hsPkgs.X11)
             (hsPkgs.mtl)
             (hsPkgs.base)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hjsonschema)
           (hsPkgs.text)
@@ -44,7 +44,7 @@
       };
       exes = {
         "jsons-to-schema-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jsons-to-schema)
             (hsPkgs.protolude)
@@ -59,7 +59,7 @@
       };
       tests = {
         "jsons-to-schema-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jsons-to-schema)
             (hsPkgs.hspec)

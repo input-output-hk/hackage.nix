@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
@@ -50,7 +50,7 @@
       };
       exes = {
         "hnormalise" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hnormalise)
             (hsPkgs.aeson)
@@ -84,7 +84,7 @@
           ];
         };
         "hnormalise-0mq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hnormalise)
             (hsPkgs.aeson)
@@ -116,7 +116,7 @@
       };
       tests = {
         "hnormalise-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
@@ -135,7 +135,7 @@
       };
       benchmarks = {
         "hnormalise-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)

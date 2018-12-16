@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
@@ -34,7 +34,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.nanomsg-haskell)
@@ -45,7 +45,7 @@
           ];
         };
         "tests-binary" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.nanomsg-haskell)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "send-messages" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.nanomsg-haskell)
@@ -67,7 +67,7 @@
           ];
         };
         "vs-zeromq-bindings" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.nanomsg-haskell)

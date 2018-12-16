@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.hxt-charproperties)
@@ -35,7 +35,7 @@
       };
       tests = {
         "SimpleMatch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hxt-regex-xmlschema)
@@ -44,7 +44,7 @@
           ];
         };
         "Date" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hxt-regex-xmlschema)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "Benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)

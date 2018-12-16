@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mirror-tweet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.twitter-conduit)
             (hsPkgs.authenticate-oauth)

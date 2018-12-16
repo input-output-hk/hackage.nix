@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
           (hsPkgs.genvalidity)
@@ -35,7 +35,7 @@
       };
       tests = {
         "genvalidity-path-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.genvalidity-hspec)
             (hsPkgs.genvalidity-path)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "genvalidity-path-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.lens)
@@ -37,7 +37,7 @@
       };
       exes = {
         "normalize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.normalize)
             (hsPkgs.optparse-generic)

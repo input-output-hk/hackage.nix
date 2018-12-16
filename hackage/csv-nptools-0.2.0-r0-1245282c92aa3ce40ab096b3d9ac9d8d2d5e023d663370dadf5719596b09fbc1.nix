@@ -26,38 +26,38 @@
     components = {
       exes = {
         "csv2json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.txt-sushi)
             (hsPkgs.json)
           ];
         };
         "csv-add-id" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.txt-sushi)
           ];
         };
         "csv-reformat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.txt-sushi)
           ];
         };
         "csv-tr" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.txt-sushi)
           ];
         };
         "csv-transpose" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.txt-sushi)
           ];
         };
         "csv-pad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.txt-sushi)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-auth)
           (hsPkgs.yesod-json)
@@ -44,7 +44,7 @@
       };
       exes = {
         "yesod" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.text)
             (hsPkgs.shakespeare-text)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.vector)
@@ -41,7 +41,7 @@
       };
       exes = {
         "brainheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brainheck)
             (hsPkgs.optparse-applicative)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "brainheck-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.brainheck)

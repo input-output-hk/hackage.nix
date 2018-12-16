@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.doctest)
           (hsPkgs.directory)
@@ -37,7 +37,7 @@
       };
       exes = {
         "doctest-discover" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.directory)
@@ -50,7 +50,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest-discover)
             (hsPkgs.doctest)

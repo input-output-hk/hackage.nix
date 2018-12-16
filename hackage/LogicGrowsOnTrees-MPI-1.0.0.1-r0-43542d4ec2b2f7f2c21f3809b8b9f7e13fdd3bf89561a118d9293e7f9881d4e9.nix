@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -48,7 +48,7 @@
       };
       exes = {
         "count-all-trivial-tree-leavesl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdtheline)
             (hsPkgs.hslogger)
@@ -58,7 +58,7 @@
           libs = [ (pkgs."mpi") ];
         };
         "test-trivial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hslogger)
             (hsPkgs.LogicGrowsOnTrees)
@@ -67,7 +67,7 @@
           libs = [ (pkgs."mpi") ];
         };
         "test-nqueens" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.cmdtheline)

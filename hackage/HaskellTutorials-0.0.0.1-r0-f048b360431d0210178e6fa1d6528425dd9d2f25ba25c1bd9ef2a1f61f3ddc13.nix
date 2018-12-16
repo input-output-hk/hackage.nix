@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Haskell.Tutorials" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.cmdargs)

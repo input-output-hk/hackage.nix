@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Dust-crypto)
           (hsPkgs.Dust)
@@ -46,7 +46,7 @@
       };
       exes = {
         "shaper-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)
@@ -65,7 +65,7 @@
           ];
         };
         "shaper-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)
@@ -84,7 +84,7 @@
           ];
         };
         "replay-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)
@@ -103,7 +103,7 @@
           ];
         };
         "replay-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)
@@ -122,7 +122,7 @@
           ];
         };
         "shaper-export" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)
@@ -142,7 +142,7 @@
           ];
         };
         "shaper-show" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.html-entities)
           (hsPkgs.xml-query)
           (hsPkgs.xml-types)
@@ -38,7 +38,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.xml-query)
             (hsPkgs.xml-query-xml-types)
             (hsPkgs.xml-types)

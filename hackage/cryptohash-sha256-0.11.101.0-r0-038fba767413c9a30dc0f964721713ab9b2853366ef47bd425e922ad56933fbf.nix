@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       exes = {
         "sha256sum" = {
-          depends  = pkgs.lib.optionals (flags.exe) [
+          depends = pkgs.lib.optionals (flags.exe) [
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-sha256" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
       };
       benchmarks = {
         "bench-sha256" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.base)
             (hsPkgs.bytestring)

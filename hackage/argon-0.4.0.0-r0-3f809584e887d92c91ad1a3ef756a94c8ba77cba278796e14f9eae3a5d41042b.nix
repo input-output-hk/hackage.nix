@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)
           (hsPkgs.aeson)
@@ -46,7 +46,7 @@
       };
       exes = {
         "argon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.docopt)
             (hsPkgs.pipes)
@@ -56,7 +56,7 @@
       };
       tests = {
         "argon-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-terminal)
             (hsPkgs.aeson)
@@ -79,7 +79,7 @@
           ];
         };
         "style" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

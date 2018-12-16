@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hashtables)
           (hsPkgs.hashable)
           (hsPkgs.loch-th)

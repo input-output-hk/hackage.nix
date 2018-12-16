@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-pretty)
             (hsPkgs.amazonka-iam-policy)
             (hsPkgs.doctest)
@@ -47,7 +47,7 @@
           ];
         };
         "golden" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.amazonka-iam-policy)
             (hsPkgs.base)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.polyparse)
           (hsPkgs.filepath)
         ] ++ (if flags.splitbase
@@ -56,7 +56,7 @@
         "DtdToHaskell" = {};
         "XsdToHaskell" = {};
         "FpMLToHaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
           ];
         };

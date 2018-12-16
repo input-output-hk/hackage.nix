@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hspec-setup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

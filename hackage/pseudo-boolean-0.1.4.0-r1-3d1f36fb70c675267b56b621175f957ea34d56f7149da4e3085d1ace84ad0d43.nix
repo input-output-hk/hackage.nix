@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.parsec)
@@ -40,7 +40,7 @@
       };
       tests = {
         "TestPBFile" = {
-          depends  = [
+          depends = [
             (hsPkgs.pseudo-boolean)
             (hsPkgs.base)
             (hsPkgs.bytestring)

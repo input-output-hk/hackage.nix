@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       tests = {
         "HMarkov-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HMarkov)
             (hsPkgs.lens)

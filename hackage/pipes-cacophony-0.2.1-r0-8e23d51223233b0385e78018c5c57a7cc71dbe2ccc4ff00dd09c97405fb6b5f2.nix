@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cacophony)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

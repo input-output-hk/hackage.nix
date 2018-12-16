@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.QuickCheck)
@@ -37,19 +37,19 @@
       };
       tests = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HasCacBDD)
           ];
         };
         "basics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HasCacBDD)
           ];
         };
         "tautologies" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HasCacBDD)
             (hsPkgs.QuickCheck)

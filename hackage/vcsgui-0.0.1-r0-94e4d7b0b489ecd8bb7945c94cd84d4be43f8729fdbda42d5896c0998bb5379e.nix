@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.filepath)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       exes = {
         "vcsgui" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.filepath)
             (hsPkgs.base)
@@ -52,7 +52,7 @@
           ];
         };
         "vcsgui-askpass" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.filepath)
             (hsPkgs.base)

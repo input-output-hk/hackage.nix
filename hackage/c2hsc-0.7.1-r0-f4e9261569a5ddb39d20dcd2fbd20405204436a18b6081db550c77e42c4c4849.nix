@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "c2hsc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.c2hsc)
             (hsPkgs.cmdargs)
@@ -65,7 +65,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.c2hsc)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-gi-base)
           (hsPkgs.Cabal)
@@ -52,7 +52,7 @@
       };
       exes = {
         "haskell-gi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.filepath)

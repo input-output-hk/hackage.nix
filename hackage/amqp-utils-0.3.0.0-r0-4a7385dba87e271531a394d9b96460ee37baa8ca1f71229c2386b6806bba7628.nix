@@ -26,7 +26,7 @@
     components = {
       exes = {
         "konsum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)

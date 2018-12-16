@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.bytestring)
@@ -68,7 +68,7 @@
       };
       exes = {
         "atspkg" = {
-          depends  = pkgs.lib.optionals (flags.profile) [
+          depends = pkgs.lib.optionals (flags.profile) [
             (hsPkgs.base)
             (hsPkgs.ats-pkg)
             (hsPkgs.optparse-applicative)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hmp3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.binary)

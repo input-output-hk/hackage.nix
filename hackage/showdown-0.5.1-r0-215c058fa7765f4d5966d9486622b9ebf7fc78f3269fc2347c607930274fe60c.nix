@@ -26,7 +26,7 @@
     components = {
       exes = {
         "showdown" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.glade)

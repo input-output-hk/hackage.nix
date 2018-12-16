@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.ansi-wl-pprint)
@@ -48,7 +48,7 @@
       };
       exes = {
         "gsl-ode" = {
-          depends  = pkgs.lib.optionals (flags.gsl-example) [
+          depends = pkgs.lib.optionals (flags.gsl-example) [
             (hsPkgs.base)
             (hsPkgs.inline-c)
             (hsPkgs.vector)
@@ -64,7 +64,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.containers)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Win32-services)
           (hsPkgs.Win32)
           (hsPkgs.Win32-errors)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "linkcore" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.extcore)
             (hsPkgs.ghc)

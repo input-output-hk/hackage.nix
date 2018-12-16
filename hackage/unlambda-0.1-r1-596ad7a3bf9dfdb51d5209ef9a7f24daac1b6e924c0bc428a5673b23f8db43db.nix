@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       exes = {
         "unlambda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
           ];

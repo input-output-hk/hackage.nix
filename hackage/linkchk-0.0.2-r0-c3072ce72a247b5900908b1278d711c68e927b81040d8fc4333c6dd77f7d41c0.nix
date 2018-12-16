@@ -26,7 +26,7 @@
     components = {
       exes = {
         "linkchk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.regex-compat)

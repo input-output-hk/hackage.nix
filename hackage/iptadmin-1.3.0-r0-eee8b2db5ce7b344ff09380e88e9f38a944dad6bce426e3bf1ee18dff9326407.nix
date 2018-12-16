@@ -26,7 +26,7 @@
     components = {
       exes = {
         "iptadmin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.utf8-string)
             (hsPkgs.bytestring)

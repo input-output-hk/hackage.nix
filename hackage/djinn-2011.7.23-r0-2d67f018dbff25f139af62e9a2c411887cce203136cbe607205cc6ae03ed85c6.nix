@@ -26,7 +26,7 @@
     components = {
       exes = {
         "djinn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.haskeline)

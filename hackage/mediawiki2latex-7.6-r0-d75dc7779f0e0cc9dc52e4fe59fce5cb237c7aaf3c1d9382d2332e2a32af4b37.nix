@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mediawiki2latex" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory-tree)
             (hsPkgs.bytestring)
             (hsPkgs.process)

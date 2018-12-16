@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
         ] ++ (if compiler.isGhc && compiler.version.ge "6.10"

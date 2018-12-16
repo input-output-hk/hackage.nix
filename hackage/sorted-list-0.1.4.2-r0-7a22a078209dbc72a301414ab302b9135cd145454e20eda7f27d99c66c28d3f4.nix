@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ];
       };
       benchmarks = {
         "sorted-list-map-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sorted-list)
             (hsPkgs.criterion)

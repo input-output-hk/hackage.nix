@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.semigroups)
@@ -50,7 +50,7 @@
       };
       exes = {
         "lc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdacube-compiler)
             (hsPkgs.optparse-applicative)
@@ -60,7 +60,7 @@
           ];
         };
         "lambdacube-compiler-unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semigroups)
             (hsPkgs.containers)
@@ -72,7 +72,7 @@
           ];
         };
         "lambdacube-compiler-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -96,7 +96,7 @@
           ];
         };
         "lambdacube-compiler-performance-report" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -105,7 +105,7 @@
           ];
         };
         "lambdacube-backend-test-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semigroups)
             (hsPkgs.containers)
@@ -127,7 +127,7 @@
           ];
         };
         "lambdacube-compiler-coverage-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)

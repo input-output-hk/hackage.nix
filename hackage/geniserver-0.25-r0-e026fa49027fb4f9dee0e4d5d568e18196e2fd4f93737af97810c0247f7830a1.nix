@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cmdargs)
@@ -40,7 +40,7 @@
       };
       exes = {
         "geniserver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.geniserver)
             (hsPkgs.GenI)

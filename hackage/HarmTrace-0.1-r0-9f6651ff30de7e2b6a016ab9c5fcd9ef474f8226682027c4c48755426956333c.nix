@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mir" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.email-validate)
           (hsPkgs.shakespeare)
@@ -36,7 +36,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.email-validate)
             (hsPkgs.shakespeare)
@@ -48,7 +48,7 @@
           ];
         };
         "showcase" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.email-validate)
             (hsPkgs.shakespeare)
@@ -62,7 +62,7 @@
       };
       tests = {
         "yesod-form-bulma-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.email-validate)
             (hsPkgs.shakespeare)

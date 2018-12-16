@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-GLFW)
         ];
       };
       tests = {
         "main" = {
-          depends  = [
+          depends = [
             (hsPkgs.GLFW-b)
             (hsPkgs.HUnit)
             (hsPkgs.base)

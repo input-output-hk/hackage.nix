@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -39,7 +39,7 @@
       };
       exes = {
         "cj-token" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cj-token)
           ];
@@ -47,7 +47,7 @@
       };
       tests = {
         "cj-token-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jwt)
             (hsPkgs.hspec)

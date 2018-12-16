@@ -26,7 +26,7 @@
     components = {
       exes = {
         "persona" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

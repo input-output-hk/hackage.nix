@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gtkrsync" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.gtk)
@@ -38,7 +38,7 @@
           ];
         };
         "gtkrsyncp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.gtk)

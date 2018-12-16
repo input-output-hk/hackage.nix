@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.attoparsec)
@@ -54,7 +54,7 @@
       };
       exes = {
         "zre" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.async)
@@ -65,7 +65,7 @@
           ];
         };
         "mzre" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
@@ -75,7 +75,7 @@
           ];
         };
         "zreworker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.bytestring)
@@ -86,7 +86,7 @@
           ];
         };
         "zgossip_server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.bytestring)
@@ -97,7 +97,7 @@
           ];
         };
         "zrematch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.bytestring)
@@ -108,7 +108,7 @@
           ];
         };
         "zretime" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.time)
@@ -117,7 +117,7 @@
           ];
         };
         "zrecat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.time)
@@ -128,7 +128,7 @@
       };
       tests = {
         "zre-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.zre)
           ];

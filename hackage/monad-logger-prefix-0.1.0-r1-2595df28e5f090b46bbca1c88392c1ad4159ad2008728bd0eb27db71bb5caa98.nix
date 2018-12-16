@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.monad-logger)
           (hsPkgs.transformers)
@@ -38,7 +38,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "monad-logger-prefix-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monad-logger-prefix)
             (hsPkgs.criterion)

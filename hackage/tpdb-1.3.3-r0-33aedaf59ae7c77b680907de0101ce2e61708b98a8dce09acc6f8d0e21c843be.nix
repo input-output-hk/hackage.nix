@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt)
           (hsPkgs.wl-pprint-text)
@@ -42,34 +42,34 @@
       };
       tests = {
         "XML" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "TRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.bytestring)
           ];
         };
         "TRS_02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.bytestring)
           ];
         };
         "SRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.bytestring)
           ];
         };
         "Speed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.HaXml)
@@ -78,7 +78,7 @@
           ];
         };
         "Attributes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.HaXml)
@@ -87,7 +87,7 @@
           ];
         };
         "XML-Theory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];

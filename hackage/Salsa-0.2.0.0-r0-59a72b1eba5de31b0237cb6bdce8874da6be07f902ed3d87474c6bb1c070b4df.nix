@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if !system.isWindows || flags.use_mono
+        depends = if !system.isWindows || flags.use_mono
           then [
             (hsPkgs.base)
             (hsPkgs.bytestring)

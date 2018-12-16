@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       exes = {
         "GrammarPP" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.cmdargs)
@@ -60,7 +60,7 @@
           ];
         };
         "NussinovFG" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.template-haskell)
             (hsPkgs.vector)
@@ -70,7 +70,7 @@
           ];
         };
         "NeedlemanWunschFG" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.template-haskell)
@@ -81,7 +81,7 @@
           ];
         };
         "TriNeedleFG" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.template-haskell)
@@ -94,7 +94,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.smallcheck)

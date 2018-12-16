@@ -26,7 +26,7 @@
     components = {
       exes = {
         "kics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.mtl)
@@ -38,7 +38,7 @@
           ];
         };
         "kicsi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.old-time)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "pre-process-casa-abbreviations-and-acronyms" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wreq)
             (hsPkgs.lens)
@@ -50,7 +50,7 @@
           ];
         };
         "casa-abbreviations-and-acronyms" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.fuzzy)

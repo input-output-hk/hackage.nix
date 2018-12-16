@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.transformers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "combinatorial-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)
             (hsPkgs.array)

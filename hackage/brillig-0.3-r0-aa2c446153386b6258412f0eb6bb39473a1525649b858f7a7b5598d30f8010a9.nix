@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "brillig" = {
-          depends  = [
+          depends = [
             (hsPkgs.brillig)
             (hsPkgs.base)
             (hsPkgs.binary)

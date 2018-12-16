@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
@@ -40,7 +40,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)

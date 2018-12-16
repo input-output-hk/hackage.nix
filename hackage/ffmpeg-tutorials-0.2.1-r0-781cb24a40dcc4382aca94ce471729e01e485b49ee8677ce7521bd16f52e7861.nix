@@ -26,14 +26,14 @@
     components = {
       exes = {
         "tutorial01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.hs-ffmpeg)
           ];
         };
         "tutorial02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.SDL)

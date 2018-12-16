@@ -26,7 +26,7 @@
     components = {
       exes = {
         "heyefi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm)
             (hsPkgs.unix)
@@ -62,7 +62,7 @@
       };
       tests = {
         "test-heyefi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm)
             (hsPkgs.unix)

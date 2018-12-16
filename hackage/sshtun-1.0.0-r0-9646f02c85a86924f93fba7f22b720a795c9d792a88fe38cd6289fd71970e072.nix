@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sshtun" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.curl)

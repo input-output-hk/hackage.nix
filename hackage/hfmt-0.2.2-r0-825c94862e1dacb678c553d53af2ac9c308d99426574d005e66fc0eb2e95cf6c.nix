@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.Cabal)
@@ -50,7 +50,7 @@
       };
       exes = {
         "hfmt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.conduit-combinators)
@@ -63,7 +63,7 @@
       };
       tests = {
         "self-formatting-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hfmt)
             (hsPkgs.HUnit)
@@ -72,7 +72,7 @@
           ];
         };
         "pure-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hfmt)
             (hsPkgs.HUnit)

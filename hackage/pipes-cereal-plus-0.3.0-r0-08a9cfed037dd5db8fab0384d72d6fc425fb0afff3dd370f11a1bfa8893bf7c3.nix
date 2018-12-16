@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cereal-plus)
           (hsPkgs.pipes-bytestring)
           (hsPkgs.pipes)

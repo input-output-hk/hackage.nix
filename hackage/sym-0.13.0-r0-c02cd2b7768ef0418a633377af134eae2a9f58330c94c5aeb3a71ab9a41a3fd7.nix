@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.hashable)
@@ -34,7 +34,7 @@
       };
       tests = {
         "Props" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sym)
             (hsPkgs.hashable)

@@ -31,7 +31,7 @@
     components = {
       exes = {
         "darcsden" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.base)
             (hsPkgs.base64-string)
             (hsPkgs.blaze-builder)
@@ -72,12 +72,12 @@
           ]) ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh);
         };
         "darcsden-ssh" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
           ] ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh);
         };
         "darcsden-post-hook" = {
-          depends  = [
+          depends = [
             (hsPkgs.darcs)
           ] ++ pkgs.lib.optional (flags.closing) (hsPkgs.pcre-light);
         };

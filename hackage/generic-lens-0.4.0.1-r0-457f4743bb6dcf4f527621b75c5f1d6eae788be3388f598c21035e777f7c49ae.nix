@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.profunctors)
         ];
       };
       tests = {
         "generic-lens-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generic-lens)
             (hsPkgs.ghc-proofs)
@@ -41,7 +41,7 @@
       };
       benchmarks = {
         "generic-lens-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.generic-lens)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

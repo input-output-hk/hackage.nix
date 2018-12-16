@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.PSQueue)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -58,7 +58,7 @@
       };
       exes = {
         "httpbin" = {
-          depends  = pkgs.lib.optionals (!(!flags.httpbin)) [
+          depends = pkgs.lib.optionals (!(!flags.httpbin)) [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -77,7 +77,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
@@ -108,7 +108,7 @@
           ];
         };
         "doctest" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!(!flags.doctest)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)

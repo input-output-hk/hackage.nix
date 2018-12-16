@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ldapply" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.docopt)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "radix" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
           ];

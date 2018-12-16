@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.network-simple)
           (hsPkgs.transformers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "skeleton-experiment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-simple)
             (hsPkgs.transformers)
@@ -51,7 +51,7 @@
           ];
         };
         "skeleton-environment" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-simple)
             (hsPkgs.transformers)
@@ -63,7 +63,7 @@
           ];
         };
         "skeleton-agent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network-simple)
             (hsPkgs.transformers)

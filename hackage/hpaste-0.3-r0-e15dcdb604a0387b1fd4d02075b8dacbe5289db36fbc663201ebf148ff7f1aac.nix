@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpaste" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HAppS)
             (hsPkgs.xhtml)

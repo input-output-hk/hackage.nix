@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.profunctors)
           (hsPkgs.tagged)
@@ -33,7 +33,7 @@
       };
       tests = {
         "generic-lens-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generic-lens)
             (hsPkgs.lens)
@@ -42,7 +42,7 @@
           ];
         };
         "generic-lens-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generic-lens)
             (hsPkgs.lens)
@@ -52,7 +52,7 @@
           ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs.dump-core);
         };
         "generic-lens-bifunctor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generic-lens)
             (hsPkgs.lens)
@@ -60,7 +60,7 @@
           ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs.dump-core);
         };
         "generic-lens-syb-tree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generic-lens)
             (hsPkgs.lens)
@@ -69,13 +69,13 @@
           ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs.dump-core);
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "examples-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
@@ -83,7 +83,7 @@
       };
       benchmarks = {
         "generic-lens-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.generic-lens)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)

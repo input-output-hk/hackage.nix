@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cblrepo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.filepath)
@@ -44,7 +44,7 @@
           ];
         };
         "tests" = {
-          depends  = pkgs.lib.optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs.base)
             (hsPkgs.test-framework-th)
             (hsPkgs.HUnit)

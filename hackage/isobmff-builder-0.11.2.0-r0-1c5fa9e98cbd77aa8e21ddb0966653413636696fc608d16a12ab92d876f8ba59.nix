@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.type-list)
@@ -47,7 +47,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
@@ -64,7 +64,7 @@
       };
       benchmarks = {
         "bit-records" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.isobmff-builder)
             (hsPkgs.binary)

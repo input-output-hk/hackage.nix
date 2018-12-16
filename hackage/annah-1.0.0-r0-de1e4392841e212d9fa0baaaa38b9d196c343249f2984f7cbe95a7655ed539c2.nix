@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.Earley)
@@ -43,7 +43,7 @@
       };
       exes = {
         "annah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.annah)
             (hsPkgs.morte)

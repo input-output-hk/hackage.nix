@@ -26,7 +26,7 @@
     components = {
       exes = {
         "calc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.harpy)
             (hsPkgs.array)

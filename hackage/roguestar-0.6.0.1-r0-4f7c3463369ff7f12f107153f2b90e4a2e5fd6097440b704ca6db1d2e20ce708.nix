@@ -26,7 +26,7 @@
     components = {
       exes = {
         "roguestar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.old-time)

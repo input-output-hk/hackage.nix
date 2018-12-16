@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hums" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.network)

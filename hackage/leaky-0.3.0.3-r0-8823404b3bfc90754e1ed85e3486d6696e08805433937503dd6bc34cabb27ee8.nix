@@ -40,7 +40,7 @@
     components = {
       exes = {
         "leaky" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.deepseq-bounded)

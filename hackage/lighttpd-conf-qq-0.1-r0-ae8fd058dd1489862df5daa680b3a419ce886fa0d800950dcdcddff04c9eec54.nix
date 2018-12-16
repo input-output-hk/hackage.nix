@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.lighttpd-conf)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.template-haskell)

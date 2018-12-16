@@ -26,7 +26,7 @@
     components = {
       exes = {
         "vty-interactive-terminal-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
           ];
         };
         "vty-event-echo" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -62,7 +62,7 @@
           ];
         };
         "vty-rogue" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -79,7 +79,7 @@
           ];
         };
         "vty-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.vty)
             (hsPkgs.base)
             (hsPkgs.bytestring)

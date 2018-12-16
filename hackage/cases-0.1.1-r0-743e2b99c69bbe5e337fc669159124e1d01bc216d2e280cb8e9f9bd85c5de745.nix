@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.text)
           (hsPkgs.loch-th)
@@ -34,7 +34,7 @@
       };
       tests = {
         "api-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.cases)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
@@ -48,7 +48,7 @@
       };
       benchmarks = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.cases)
             (hsPkgs.mwc-random)
             (hsPkgs.criterion-plus)

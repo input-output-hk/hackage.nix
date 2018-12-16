@@ -30,7 +30,7 @@
       "library" = {};
       exes = {
         "hledger-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.hledger)
             (hsPkgs.hledger-lib)
             (hsPkgs.HUnit)

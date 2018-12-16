@@ -26,7 +26,7 @@
     components = {
       exes = {
         "scat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scrypt)
             (hsPkgs.bytestring)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.binary)
@@ -48,49 +48,49 @@
       };
       exes = {
         "BuiltInMapTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "GraphPartitionTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "GraphTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "NTTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "N3ParserTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "N3FormatterTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "RDFDatatypeXsdIntegerTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "RDFGraphTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "RDFProofContextTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "RDFProofTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "RDFQueryTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "RDFRulesetTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "VarBindingTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "LookupMapTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "QNameTest" = {
-          depends  = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
         };
         "Swish" = {};
       };

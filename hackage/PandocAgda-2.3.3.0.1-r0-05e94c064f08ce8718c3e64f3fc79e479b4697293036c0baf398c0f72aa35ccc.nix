@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.Agda)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -48,7 +48,7 @@
       };
       exes = {
         "agdapandoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.PandocAgda)
             (hsPkgs.base)
           ];

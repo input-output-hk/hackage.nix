@@ -26,7 +26,7 @@
     components = {
       exes = {
         "imbib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.parsec)
@@ -47,7 +47,7 @@
           ];
         };
         "imbibatch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.parsec)

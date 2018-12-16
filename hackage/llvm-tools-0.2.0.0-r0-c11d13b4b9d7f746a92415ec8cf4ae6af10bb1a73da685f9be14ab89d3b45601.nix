@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.filemanip)
@@ -42,13 +42,13 @@
       };
       exes = {
         "DumpLLVMModule" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.llvm-data-interop)
           ];
         };
         "FindValue" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.llvm-analysis)
             (hsPkgs.llvm-data-interop)
@@ -56,7 +56,7 @@
           ];
         };
         "ViewIRGraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.llvm-analysis)
@@ -66,7 +66,7 @@
           ];
         };
         "TypeUnificationCheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.llvm-analysis)
             (hsPkgs.llvm-data-interop)

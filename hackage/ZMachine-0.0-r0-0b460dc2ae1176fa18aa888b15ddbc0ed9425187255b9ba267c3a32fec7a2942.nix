@@ -26,7 +26,7 @@
     components = {
       exes = {
         "zmachine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.gtk)

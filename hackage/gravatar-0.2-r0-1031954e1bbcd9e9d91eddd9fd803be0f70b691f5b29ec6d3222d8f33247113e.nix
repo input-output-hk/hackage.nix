@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.nano-md5)
           (hsPkgs.network)
         ] ++ (if flags.small_base

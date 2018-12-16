@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ddci-core" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.haskeline)

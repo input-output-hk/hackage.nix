@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.HTTP)
@@ -45,7 +45,7 @@
       };
       exes = {
         "handsomesoup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HandsomeSoup)
             (hsPkgs.hxt)
@@ -54,7 +54,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.HandsomeSoup)

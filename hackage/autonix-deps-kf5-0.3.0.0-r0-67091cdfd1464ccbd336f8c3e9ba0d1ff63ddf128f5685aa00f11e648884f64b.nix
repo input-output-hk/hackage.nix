@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.autonix-deps)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       exes = {
         "kf5-deps" = {
-          depends  = [
+          depends = [
             (hsPkgs.autonix-deps)
             (hsPkgs.autonix-deps-kf5)
             (hsPkgs.base)

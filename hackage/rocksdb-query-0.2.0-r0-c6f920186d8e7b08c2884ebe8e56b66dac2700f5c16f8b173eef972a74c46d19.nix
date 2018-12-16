@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -37,7 +37,7 @@
       };
       tests = {
         "rocksdb-query-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.data-default)

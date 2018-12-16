@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.memory)
           (hsPkgs.deepseq)
@@ -38,7 +38,7 @@
       };
       exes = {
         "pvss-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.memory)
@@ -50,7 +50,7 @@
       };
       tests = {
         "pvss-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cryptonite)
             (hsPkgs.pvss)

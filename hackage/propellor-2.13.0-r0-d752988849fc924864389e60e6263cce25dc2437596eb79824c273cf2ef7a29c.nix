@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -51,7 +51,7 @@
       };
       exes = {
         "propellor" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.directory)
             (hsPkgs.filepath)
@@ -76,7 +76,7 @@
           ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
         };
         "propellor-config" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.directory)
             (hsPkgs.filepath)

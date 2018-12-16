@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dixi" = {
-          depends  = [
+          depends = [
             (hsPkgs.composition-tree)
             (hsPkgs.patches-vector)
             (hsPkgs.pandoc)

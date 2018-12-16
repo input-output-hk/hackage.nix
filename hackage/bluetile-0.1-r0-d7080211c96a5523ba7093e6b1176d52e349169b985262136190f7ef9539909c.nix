@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bluetile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.containers)

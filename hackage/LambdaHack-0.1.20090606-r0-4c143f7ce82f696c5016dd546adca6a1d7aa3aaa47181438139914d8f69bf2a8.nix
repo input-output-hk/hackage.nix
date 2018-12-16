@@ -29,7 +29,7 @@
     components = {
       exes = {
         "LambdaHack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.binary)

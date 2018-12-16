@@ -31,7 +31,7 @@
     components = {
       exes = {
         "yi" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.microlens-platform)
             (hsPkgs.mtl)

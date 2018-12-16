@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)
           (hsPkgs.semigroups)
@@ -40,7 +40,7 @@
       };
       exes = {
         "pandoc-emphasize-code" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
             (hsPkgs.pandoc-emphasize-code)
@@ -49,7 +49,7 @@
       };
       tests = {
         "filter-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.pandoc-types)

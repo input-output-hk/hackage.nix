@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "termcolor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.termcolor)
             (hsPkgs.cli)

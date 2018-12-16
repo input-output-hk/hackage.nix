@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.template-haskell)
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
@@ -36,7 +36,7 @@
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.newtype-deriving)
             (hsPkgs.either)
             (hsPkgs.monad-control)

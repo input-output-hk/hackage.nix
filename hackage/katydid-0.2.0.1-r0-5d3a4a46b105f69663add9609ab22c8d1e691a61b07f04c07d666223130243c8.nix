@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.json)
@@ -38,7 +38,7 @@
       };
       exes = {
         "katydid-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.katydid)
             (hsPkgs.mtl)
@@ -47,7 +47,7 @@
       };
       tests = {
         "katydid-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.katydid)
             (hsPkgs.directory)
@@ -65,7 +65,7 @@
       };
       benchmarks = {
         "criterion-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.katydid)
             (hsPkgs.criterion)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "lci" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambda-calculus-interpreter)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "lambda-calculus-interpreter-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambda-calculus-interpreter)
             (hsPkgs.tasty)

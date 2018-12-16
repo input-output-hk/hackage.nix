@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.mtl)
@@ -52,7 +52,7 @@
       };
       exes = {
         "diagrams-builder-cairo" = {
-          depends  = pkgs.lib.optionals (flags.cairo) [
+          depends = pkgs.lib.optionals (flags.cairo) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -64,7 +64,7 @@
           ];
         };
         "diagrams-builder-svg" = {
-          depends  = pkgs.lib.optionals (flags.svg) [
+          depends = pkgs.lib.optionals (flags.svg) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -77,7 +77,7 @@
           ];
         };
         "diagrams-builder-ps" = {
-          depends  = pkgs.lib.optionals (flags.ps || flags.postscript) [
+          depends = pkgs.lib.optionals (flags.ps || flags.postscript) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -89,7 +89,7 @@
           ];
         };
         "diagrams-builder-rasterific" = {
-          depends  = pkgs.lib.optionals (flags.rasterific) [
+          depends = pkgs.lib.optionals (flags.rasterific) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
@@ -102,7 +102,7 @@
           ];
         };
         "diagrams-builder-pgf" = {
-          depends  = pkgs.lib.optionals (flags.pgf) [
+          depends = pkgs.lib.optionals (flags.pgf) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)

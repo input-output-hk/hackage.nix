@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.Cabal)
@@ -38,7 +38,7 @@
       };
       exes = {
         "jenga" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.jenga)
             (hsPkgs.text)

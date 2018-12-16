@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.non-negative)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.non-negative)
             (hsPkgs.base)
             (hsPkgs.mtl)

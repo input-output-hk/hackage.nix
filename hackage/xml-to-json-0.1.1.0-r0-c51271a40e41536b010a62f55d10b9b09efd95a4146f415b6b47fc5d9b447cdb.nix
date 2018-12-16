@@ -26,7 +26,7 @@
     components = {
       exes = {
         "xml-to-json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt)
             (hsPkgs.hxt-curl)

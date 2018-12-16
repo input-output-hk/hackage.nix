@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.old-locale)
           (hsPkgs.process)
           (hsPkgs.base)

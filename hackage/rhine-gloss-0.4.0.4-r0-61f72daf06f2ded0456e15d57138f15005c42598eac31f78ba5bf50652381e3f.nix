@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rhine)
           (hsPkgs.dunai)
@@ -34,7 +34,7 @@
       };
       exes = {
         "rhine-gloss-gears" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rhine-gloss)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "explore" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.array)

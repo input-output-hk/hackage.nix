@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       tests = {
         "test-md5" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-md5)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "bench-md5" = {
-          depends  = [
+          depends = [
             (hsPkgs.cryptohash-md5)
             (hsPkgs.base)
             (hsPkgs.bytestring)

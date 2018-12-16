@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deferred-folds)
           (hsPkgs.focus)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.deferred-folds)
             (hsPkgs.focus)
             (hsPkgs.QuickCheck)
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "concurrent-insertion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.criterion)
             (hsPkgs.focus)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hscd" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

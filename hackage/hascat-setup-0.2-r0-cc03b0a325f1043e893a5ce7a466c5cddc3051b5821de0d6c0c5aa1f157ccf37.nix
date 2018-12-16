@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hascat-lib)
           (hsPkgs.hascat-system)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hascat-setup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hascat-lib)
             (hsPkgs.hascat-system)

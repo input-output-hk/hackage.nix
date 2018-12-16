@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -59,7 +59,7 @@
       };
       exes = {
         "monitorService" = {
-          depends  = if !(compiler.isGhcjs && compiler.version.ge "0.1")
+          depends = if !(compiler.isGhcjs && compiler.version.ge "0.1")
             then [
               (hsPkgs.base)
               (hsPkgs.transient)

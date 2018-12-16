@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
           (hsPkgs.hmatrix-gsl)
@@ -40,7 +40,7 @@
       };
       foreignlibs = {
         "HABQT" = {
-          depends  = [
+          depends = [
             (hsPkgs.HABQT)
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -53,7 +53,7 @@
       };
       exes = {
         "HABQT-simulation" = {
-          depends  = [
+          depends = [
             (hsPkgs.HABQT)
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
@@ -63,7 +63,7 @@
       };
       tests = {
         "HABQT-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HABQT)
             (hsPkgs.base)

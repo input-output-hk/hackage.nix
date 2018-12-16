@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.mmorph)
@@ -34,28 +34,28 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
           ];
         };
         "UnitTest_Applicative" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.deepcontrol)
           ];
         };
         "UnitTest_Commutative" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.deepcontrol)
           ];
         };
         "UnitTest_Monad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.deepcontrol)
@@ -64,7 +64,7 @@
           ];
         };
         "UnitTest_Monad-Level1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -73,7 +73,7 @@
           ];
         };
         "UnitTest_Monad-Level2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -82,7 +82,7 @@
           ];
         };
         "UnitTest_Monad-Level2-2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -91,7 +91,7 @@
           ];
         };
         "UnitTest_MonadMorph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)
@@ -99,7 +99,7 @@
           ];
         };
         "UnitTest_MonadMorph-Level1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.mtl)

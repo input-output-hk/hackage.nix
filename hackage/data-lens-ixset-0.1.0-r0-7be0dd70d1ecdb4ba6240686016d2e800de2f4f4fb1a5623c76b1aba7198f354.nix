@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-lens)
           (hsPkgs.ixset)
@@ -33,7 +33,7 @@
       };
       exes = {
         "test-data-lens-ixset" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ];
         };

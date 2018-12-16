@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ad)
           (hsPkgs.ansi-wl-pprint)
@@ -49,7 +49,7 @@
       };
       exes = {
         "ipopt-hs_Tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.ipopt-hs)

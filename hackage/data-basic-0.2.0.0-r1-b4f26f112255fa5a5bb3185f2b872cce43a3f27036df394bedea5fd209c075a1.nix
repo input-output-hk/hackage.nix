@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.simple-effects)
           (hsPkgs.lens)
@@ -47,7 +47,7 @@
       };
       tests = {
         "basic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basic)
             (hsPkgs.postgresql-simple)

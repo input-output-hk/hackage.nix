@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.kansas-lava)
           (hsPkgs.sized-types)
@@ -43,7 +43,7 @@
       };
       exes = {
         "spartan3e-demo" = {
-          depends  = if flags.spartan3e || flags.all
+          depends = if flags.spartan3e || flags.all
             then [
               (hsPkgs.base)
               (hsPkgs.kansas-lava)
@@ -60,7 +60,7 @@
             else [ (hsPkgs.base) ];
         };
         "kansas-lava-cores-tests" = {
-          depends  = if flags.unit || flags.all
+          depends = if flags.unit || flags.all
             then [
               (hsPkgs.base)
               (hsPkgs.kansas-lava)

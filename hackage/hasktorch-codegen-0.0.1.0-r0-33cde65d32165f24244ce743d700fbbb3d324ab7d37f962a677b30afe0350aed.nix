@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.directory)
@@ -38,7 +38,7 @@
       };
       exes = {
         "ht-codegen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-codegen)
             (hsPkgs.pretty-show)
@@ -48,7 +48,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.containers)

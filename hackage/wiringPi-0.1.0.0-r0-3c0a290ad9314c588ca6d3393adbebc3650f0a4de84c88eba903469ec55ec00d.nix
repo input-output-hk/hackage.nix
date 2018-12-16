@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."wiringPi") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
@@ -33,43 +33,43 @@
       };
       exes = {
         "pwm-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wiringPi)
           ];
         };
         "output-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wiringPi)
           ];
         };
         "write-byte-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wiringPi)
           ];
         };
         "info-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wiringPi)
           ];
         };
         "broadcom-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wiringPi)
           ];
         };
         "turn-off" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wiringPi)
           ];
         };
         "wiringPi-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wiringPi)
           ];

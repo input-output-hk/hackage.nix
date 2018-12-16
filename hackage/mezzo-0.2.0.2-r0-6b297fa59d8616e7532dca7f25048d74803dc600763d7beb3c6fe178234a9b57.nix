@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-typelits-natnormalise)
           (hsPkgs.template-haskell)
@@ -35,7 +35,7 @@
       };
       tests = {
         "mezzo-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mezzo)
             (hsPkgs.hspec)

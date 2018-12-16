@@ -26,7 +26,7 @@
     components = {
       exes = {
         "simgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parsec)

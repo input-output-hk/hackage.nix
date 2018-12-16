@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-types)
           (hsPkgs.network)
@@ -36,7 +36,7 @@
       };
       tests = {
         "reqcatcher-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-client)
             (hsPkgs.http-types)

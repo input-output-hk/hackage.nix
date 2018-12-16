@@ -26,7 +26,7 @@
     components = {
       exes = {
         "homplexity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.directory)

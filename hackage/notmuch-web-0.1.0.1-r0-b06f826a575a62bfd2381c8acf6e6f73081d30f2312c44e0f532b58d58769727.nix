@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.yesod-platform)
           (hsPkgs.aeson)
@@ -80,7 +80,7 @@
       };
       exes = {
         "notmuch-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.notmuch-web)
             (hsPkgs.pwstore-fast)
@@ -91,7 +91,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.notmuch-web)
             (hsPkgs.yesod-test)

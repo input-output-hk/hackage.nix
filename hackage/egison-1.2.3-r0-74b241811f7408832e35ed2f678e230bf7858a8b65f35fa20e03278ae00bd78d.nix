@@ -26,7 +26,7 @@
     components = {
       exes = {
         "egison" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.parsec)

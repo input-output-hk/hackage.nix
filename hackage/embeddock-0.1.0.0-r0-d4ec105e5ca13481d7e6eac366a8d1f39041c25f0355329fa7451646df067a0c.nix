@@ -26,7 +26,7 @@
     components = {
       exes = {
         "embeddock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.her-lexer)

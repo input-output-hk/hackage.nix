@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.HTTP)
@@ -55,7 +55,7 @@
       };
       tests = {
         "test-search-baidu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.webdriver)
             (hsPkgs.text)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.diagrams-lib)
           (hsPkgs.parsec)
@@ -46,7 +46,7 @@
       };
       exes = {
         "drawpuzzle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.puzzle-draw)
             (hsPkgs.diagrams-lib)
@@ -58,7 +58,7 @@
           ];
         };
         "checkpuzzle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.puzzle-draw)
             (hsPkgs.yaml)
@@ -71,7 +71,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)

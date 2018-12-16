@@ -26,7 +26,7 @@
     components = {
       exes = {
         "netwire-vinylglfw-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.vinyl)

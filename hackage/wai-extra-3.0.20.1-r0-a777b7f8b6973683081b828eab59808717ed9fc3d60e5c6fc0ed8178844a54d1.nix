@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.wai)
@@ -63,7 +63,7 @@
       };
       exes = {
         "example" = {
-          depends  = pkgs.lib.optionals (flags.build-example) [
+          depends = pkgs.lib.optionals (flags.build-example) [
             (hsPkgs.base)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
@@ -76,7 +76,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai-extra)
             (hsPkgs.wai)

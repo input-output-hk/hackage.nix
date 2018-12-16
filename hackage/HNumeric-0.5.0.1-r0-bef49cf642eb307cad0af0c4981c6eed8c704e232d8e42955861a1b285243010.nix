@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.math-functions)
           (hsPkgs.parallel)
@@ -35,7 +35,7 @@
       };
       tests = {
         "HNumeric-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HNumeric)
             (hsPkgs.base)
             (hsPkgs.math-functions)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bluetile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -38,7 +38,7 @@
           ];
         };
         "bluetiledock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.unix)
@@ -48,14 +48,14 @@
           ];
         };
         "bluetilemockwin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.gtk)
           ];
         };
         "bluetilegreet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.directory)

@@ -28,14 +28,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foreign-var)
         ];
       };
       exes = {
         "record-lock" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foreign-var)
             (hsPkgs.unix)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HUnit)
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
@@ -50,7 +50,7 @@
       };
       exes = {
         "htfpp" = {
-          depends  = [
+          depends = [
             (hsPkgs.cpphs)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.old-time)
@@ -63,7 +63,7 @@
       };
       tests = {
         "TestHTF" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
@@ -79,7 +79,7 @@
           ];
         };
         "TestThreadPools" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mtl)
@@ -87,7 +87,7 @@
           ];
         };
         "Tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTF)
           ];

@@ -33,13 +33,13 @@
     components = {
       exes = {
         "penny" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.penny-lib)
           ];
         };
         "penny-selloff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.penny-lib)
             (hsPkgs.explicit-exception)
@@ -52,7 +52,7 @@
           ];
         };
         "penny-diff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.penny-lib)
             (hsPkgs.text)
@@ -61,7 +61,7 @@
           ];
         };
         "penny-reprint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.penny-lib)
             (hsPkgs.pretty-show)
@@ -69,7 +69,7 @@
           ];
         };
         "penny-reconcile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.penny-lib)
             (hsPkgs.text)

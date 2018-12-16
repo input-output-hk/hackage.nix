@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.pipes-core)
@@ -34,7 +34,7 @@
       };
       exes = {
         "telnet" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-extra)
@@ -43,7 +43,7 @@
           ];
         };
         "compress" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-extra)
@@ -51,7 +51,7 @@
           ];
         };
         "decompress" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-extra)
@@ -61,7 +61,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)
@@ -76,7 +76,7 @@
       };
       benchmarks = {
         "bench-general" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.bytestring)
@@ -86,7 +86,7 @@
           ];
         };
         "bench-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.transformers)
@@ -94,7 +94,7 @@
           ];
         };
         "bench-zlib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-zlib)

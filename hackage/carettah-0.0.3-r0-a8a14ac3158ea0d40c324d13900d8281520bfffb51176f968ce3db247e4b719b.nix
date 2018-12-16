@@ -26,7 +26,7 @@
     components = {
       exes = {
         "carettah" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.time)

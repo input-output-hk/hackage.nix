@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rank2classes)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "arithmetic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.rank2classes)
@@ -47,7 +47,7 @@
       };
       tests = {
         "quicktests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.monoid-subclasses)
             (hsPkgs.parsers)
@@ -61,7 +61,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rank2classes)
             (hsPkgs.doctest)
@@ -70,7 +70,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rank2classes)
             (hsPkgs.grammatical-parsers)

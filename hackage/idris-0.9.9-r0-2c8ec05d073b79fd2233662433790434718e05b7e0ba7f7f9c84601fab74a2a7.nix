@@ -29,7 +29,7 @@
     components = {
       exes = {
         "idris" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.mtl)

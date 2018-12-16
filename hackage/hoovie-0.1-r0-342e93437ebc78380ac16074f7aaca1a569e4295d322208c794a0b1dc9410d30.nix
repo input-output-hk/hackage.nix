@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoovie" = {
-          depends  = [
+          depends = [
             (hsPkgs.network-multicast)
             (hsPkgs.time)
             (hsPkgs.old-locale)

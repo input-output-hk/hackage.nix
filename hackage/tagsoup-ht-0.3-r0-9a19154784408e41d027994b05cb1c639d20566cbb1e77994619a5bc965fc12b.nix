@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.xml-basic)
           (hsPkgs.transformers)
           (hsPkgs.explicit-exception)
@@ -39,7 +39,7 @@
       };
       exes = {
         "tagsouptest" = {
-          depends  = [
+          depends = [
             (hsPkgs.xml-basic)
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)
@@ -52,7 +52,7 @@
           ];
         };
         "tagsoupspeed" = {
-          depends  = [
+          depends = [
             (hsPkgs.xml-basic)
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)
@@ -66,7 +66,7 @@
           ];
         };
         "validate-tagsoup" = {
-          depends  = [
+          depends = [
             (hsPkgs.xml-basic)
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)

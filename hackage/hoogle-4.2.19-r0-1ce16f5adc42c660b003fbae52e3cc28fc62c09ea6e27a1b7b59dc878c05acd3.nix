@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -51,7 +51,7 @@
       };
       exes = {
         "hoogle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hoogle)
             (hsPkgs.bytestring)
@@ -87,7 +87,7 @@
       };
       tests = {
         "hoogle-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hoogle)
             (hsPkgs.conduit)

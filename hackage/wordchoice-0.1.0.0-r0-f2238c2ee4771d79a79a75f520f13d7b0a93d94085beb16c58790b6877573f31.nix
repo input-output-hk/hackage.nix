@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pandoc)
           (hsPkgs.containers)
@@ -40,7 +40,7 @@
       };
       exes = {
         "wordchoice" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wordchoice)
           ];
@@ -48,7 +48,7 @@
       };
       tests = {
         "wordchoice-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wordchoice)
           ];

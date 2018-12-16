@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") ([
+        depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") ([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10") (hsPkgs.ghc-prim));
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.criterion)

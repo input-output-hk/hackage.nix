@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buffer-builder)
             (hsPkgs.text)
@@ -53,7 +53,7 @@
           ];
         };
         "tinyjson" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buffer-builder)
             (hsPkgs.aeson)
@@ -64,7 +64,7 @@
           ];
         };
         "tinyjson2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buffer-builder)
             (hsPkgs.aeson)
@@ -77,7 +77,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.buffer-builder)
@@ -85,7 +85,7 @@
           ];
         };
         "json-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buffer-builder)
             (hsPkgs.aeson)
@@ -99,7 +99,7 @@
           ];
         };
         "url" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.buffer-builder)
             (hsPkgs.bytestring)

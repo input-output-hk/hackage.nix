@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((((([
+        depends = (((((((([
           (hsPkgs.containers)
         ] ++ [
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.QuickCheck)

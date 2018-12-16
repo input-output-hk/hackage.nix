@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mkcabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.mtl)
             (hsPkgs.regex-base)
             (hsPkgs.regex-compat)

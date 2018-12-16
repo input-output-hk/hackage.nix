@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackage2hwn" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagsoup)
             (hsPkgs.feed)

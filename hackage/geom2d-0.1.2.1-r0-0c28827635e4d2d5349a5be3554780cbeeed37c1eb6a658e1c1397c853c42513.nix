@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.ieee754)
@@ -33,42 +33,42 @@
       };
       tests = {
         "point" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee754)
             (hsPkgs.QuickCheck)
           ];
         };
         "line" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee754)
             (hsPkgs.QuickCheck)
           ];
         };
         "intersect" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee754)
             (hsPkgs.QuickCheck)
           ];
         };
         "distance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee754)
             (hsPkgs.QuickCheck)
           ];
         };
         "translate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee754)
             (hsPkgs.QuickCheck)
           ];
         };
         "shape" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee754)
             (hsPkgs.QuickCheck)

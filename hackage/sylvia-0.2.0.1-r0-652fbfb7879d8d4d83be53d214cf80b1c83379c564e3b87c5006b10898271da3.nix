@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sylvia" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-default)
             (hsPkgs.parsec)
@@ -39,7 +39,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.void)
             (hsPkgs.parsec)

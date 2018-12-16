@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
@@ -41,7 +41,7 @@
       };
       exes = {
         "mkReadme" = {
-          depends  = [
+          depends = [
             (hsPkgs.hastache)
             (hsPkgs.process)
             (hsPkgs.base)
@@ -60,7 +60,7 @@
       };
       tests = {
         "test-hastache" = {
-          depends  = [
+          depends = [
             (hsPkgs.hastache)
             (hsPkgs.base)
             (hsPkgs.directory)

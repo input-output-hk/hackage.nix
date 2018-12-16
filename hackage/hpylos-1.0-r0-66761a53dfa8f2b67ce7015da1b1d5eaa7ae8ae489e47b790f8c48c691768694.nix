@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpylos" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)

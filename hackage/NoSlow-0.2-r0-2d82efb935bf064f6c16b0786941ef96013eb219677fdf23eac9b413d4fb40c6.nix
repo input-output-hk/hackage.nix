@@ -31,7 +31,7 @@
     components = {
       exes = {
         "noslow" = {
-          depends  = ((([
+          depends = ((([
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.template-haskell)
@@ -42,7 +42,7 @@
           ]) ++ pkgs.lib.optional (flags.vector) (hsPkgs.vector)) ++ pkgs.lib.optional (flags.uvector) (hsPkgs.uvector)) ++ pkgs.lib.optional (flags.storablevector) (hsPkgs.storablevector);
         };
         "noslow-table" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)

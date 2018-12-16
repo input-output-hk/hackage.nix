@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       tests = {
         "zeromq-haskell-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.zeromq3-haskell)
             (hsPkgs.base)
             (hsPkgs.async)

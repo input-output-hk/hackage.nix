@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = pkgs.lib.optional (!system.isOsx) (pkgs."SDL");
         frameworks = [
           (pkgs."AppKit")

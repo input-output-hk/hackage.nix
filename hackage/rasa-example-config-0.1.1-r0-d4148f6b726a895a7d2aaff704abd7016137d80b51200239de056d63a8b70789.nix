@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rasa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rasa)
             (hsPkgs.rasa-ext-bufs)

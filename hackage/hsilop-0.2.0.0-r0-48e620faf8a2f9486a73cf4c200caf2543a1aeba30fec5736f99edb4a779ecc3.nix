@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsilop" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.directory)

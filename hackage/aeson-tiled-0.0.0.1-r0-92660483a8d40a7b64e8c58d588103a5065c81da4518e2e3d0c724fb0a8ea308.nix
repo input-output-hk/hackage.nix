@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
@@ -36,7 +36,7 @@
       };
       exes = {
         "aeson-tiled-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson-tiled)
           ];
@@ -44,7 +44,7 @@
       };
       tests = {
         "aeson-tiled-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-tiled)

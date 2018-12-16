@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "TransformeR-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.TransformeR)
           ];
@@ -42,7 +42,7 @@
       };
       tests = {
         "TransformeR-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.TransformeR)
             (hsPkgs.QuickCheck)

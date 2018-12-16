@@ -46,7 +46,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((([
+        depends = ((((([
           (hsPkgs.accelerate)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
@@ -75,7 +75,7 @@
       };
       exes = {
         "accelerate-nofib" = {
-          depends  = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.nofib)) [
+          depends = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.nofib)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-fft)
@@ -94,7 +94,7 @@
           libs = [ (pkgs."stdc++") ];
         };
         "accelerate-smvm" = {
-          depends  = pkgs.lib.optionals (!(!flags.smvm)) [
+          depends = pkgs.lib.optionals (!(!flags.smvm)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -109,7 +109,7 @@
           ];
         };
         "accelerate-crystal" = {
-          depends  = pkgs.lib.optionals (!(!flags.crystal)) [
+          depends = pkgs.lib.optionals (!(!flags.crystal)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -118,7 +118,7 @@
           ];
         };
         "accelerate-canny" = {
-          depends  = pkgs.lib.optionals (!(!flags.canny)) [
+          depends = pkgs.lib.optionals (!(!flags.canny)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -130,7 +130,7 @@
           ];
         };
         "accelerate-mandelbrot" = {
-          depends  = pkgs.lib.optionals (!(!flags.mandelbrot)) [
+          depends = pkgs.lib.optionals (!(!flags.mandelbrot)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -141,7 +141,7 @@
           ];
         };
         "accelerate-fluid" = {
-          depends  = pkgs.lib.optionals (!(!flags.fluid)) [
+          depends = pkgs.lib.optionals (!(!flags.fluid)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -153,7 +153,7 @@
           ];
         };
         "accelerate-nbody" = {
-          depends  = pkgs.lib.optionals (!(!flags.nbody)) [
+          depends = pkgs.lib.optionals (!(!flags.nbody)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -163,7 +163,7 @@
           ];
         };
         "accelerate-smoothlife" = {
-          depends  = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.smoothlife)) [
+          depends = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.smoothlife)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-fft)
@@ -176,7 +176,7 @@
           ];
         };
         "accelerate-hashcat" = {
-          depends  = pkgs.lib.optionals (!(!flags.hashcat)) [
+          depends = pkgs.lib.optionals (!(!flags.hashcat)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -189,7 +189,7 @@
           ];
         };
         "accelerate-fft" = {
-          depends  = pkgs.lib.optionals (!(!flags.fft)) [
+          depends = pkgs.lib.optionals (!(!flags.fft)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-fft)
@@ -200,7 +200,7 @@
           ];
         };
         "accelerate-pagerank" = {
-          depends  = pkgs.lib.optionals (!(!flags.pagerank)) [
+          depends = pkgs.lib.optionals (!(!flags.pagerank)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -214,7 +214,7 @@
           ];
         };
         "accelerate-ray" = {
-          depends  = pkgs.lib.optionals (!(!flags.ray)) [
+          depends = pkgs.lib.optionals (!(!flags.ray)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -225,7 +225,7 @@
           ];
         };
         "accelerate-kmeans" = {
-          depends  = pkgs.lib.optionals (!(!flags.kmeans)) [
+          depends = pkgs.lib.optionals (!(!flags.kmeans)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)

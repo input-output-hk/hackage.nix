@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.semigroups)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "7.4") (hsPkgs.ghc-prim);

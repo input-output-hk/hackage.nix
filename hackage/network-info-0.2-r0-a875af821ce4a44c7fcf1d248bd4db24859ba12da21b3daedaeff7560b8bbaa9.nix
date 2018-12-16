@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = pkgs.lib.optionals (!(system.isLinux || system.isOsx)) (pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi"));
       };
     };

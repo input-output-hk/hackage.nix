@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -49,7 +49,7 @@
       };
       exes = {
         "geni" = {
-          depends  = [
+          depends = [
             (hsPkgs.directory)
             (hsPkgs.filepath)
           ] ++ pkgs.lib.optional (flags.gui) (hsPkgs.wx);

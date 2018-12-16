@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.pcre-light)
           (hsPkgs.xhtml)
@@ -41,7 +41,7 @@
       };
       exes = {
         "Highlight" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.xhtml)

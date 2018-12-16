@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       exes = {
         "hoogle" = {
-          depends  = [
+          depends = [
             (hsPkgs.time)
             (hsPkgs.old-time)
             (hsPkgs.old-locale)

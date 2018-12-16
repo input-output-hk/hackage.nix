@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tempus" = {
-          depends  = [
+          depends = [
             (hsPkgs.mtl)
             (hsPkgs.uniplate)
             (hsPkgs.array)

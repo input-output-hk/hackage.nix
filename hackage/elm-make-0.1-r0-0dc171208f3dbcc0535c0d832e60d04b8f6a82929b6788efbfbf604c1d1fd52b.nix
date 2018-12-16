@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elm-make" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.binary)

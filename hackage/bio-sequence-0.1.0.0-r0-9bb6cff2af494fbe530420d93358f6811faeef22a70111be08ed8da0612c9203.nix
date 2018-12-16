@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.array)
@@ -36,7 +36,7 @@
       };
       tests = {
         "sequence-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio-sequence)
             (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
           ];
         };
         "similarity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio-sequence)
             (hsPkgs.bytestring)

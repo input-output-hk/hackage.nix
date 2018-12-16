@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.scientific)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -36,7 +36,7 @@
       };
       benchmarks = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.json-bytes-builder)
             (hsPkgs.text)
             (hsPkgs.bytestring)

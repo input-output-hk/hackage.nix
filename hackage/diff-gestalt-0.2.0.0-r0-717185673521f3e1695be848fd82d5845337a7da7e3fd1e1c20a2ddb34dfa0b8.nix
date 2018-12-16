@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Diff)
           (hsPkgs.string-similarity)
@@ -35,7 +35,7 @@
       };
       tests = {
         "diff-gestalt-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Diff)
             (hsPkgs.diff-gestalt)

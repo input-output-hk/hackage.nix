@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.servant)
@@ -35,7 +35,7 @@
       };
       exes = {
         "servant-pagination-simple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.servant)
@@ -45,7 +45,7 @@
           ];
         };
         "servant-pagination-complex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.servant)
@@ -57,7 +57,7 @@
       };
       tests = {
         "servant-pagination-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

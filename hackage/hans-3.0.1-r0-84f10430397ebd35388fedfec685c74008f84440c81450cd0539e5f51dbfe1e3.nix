@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.heaps)
@@ -48,7 +48,7 @@
       };
       exes = {
         "echo-server" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hans)
@@ -57,7 +57,7 @@
       };
       tests = {
         "hans-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tasty)

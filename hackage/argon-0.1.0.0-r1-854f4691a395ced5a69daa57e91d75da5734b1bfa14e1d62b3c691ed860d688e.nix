@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.cpphs)
@@ -38,7 +38,7 @@
       };
       exes = {
         "argon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.cpphs)
@@ -53,7 +53,7 @@
       };
       tests = {
         "argon-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.argon)
             (hsPkgs.hspec)
@@ -67,7 +67,7 @@
           ];
         };
         "style" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

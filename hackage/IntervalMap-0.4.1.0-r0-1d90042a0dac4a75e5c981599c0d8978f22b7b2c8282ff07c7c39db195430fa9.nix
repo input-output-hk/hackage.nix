@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
@@ -33,7 +33,7 @@
       };
       tests = {
         "TestInterval" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -42,7 +42,7 @@
           ];
         };
         "TestGenericInterval" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -51,7 +51,7 @@
           ];
         };
         "TestIntervalMap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -60,7 +60,7 @@
           ];
         };
         "TestIntervalSet" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -71,7 +71,7 @@
       };
       benchmarks = {
         "bench-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)
@@ -80,7 +80,7 @@
           ];
         };
         "bench-generic-lazy-strict" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)
@@ -89,7 +89,7 @@
           ];
         };
         "bench-compare-types" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)
@@ -100,7 +100,7 @@
           ];
         };
         "bench-rb-impl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.random)

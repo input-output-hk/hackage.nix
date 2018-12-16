@@ -26,7 +26,7 @@
     components = {
       exes = {
         "swearjure" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.containers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hledger-interest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hledger-lib)
             (hsPkgs.time)

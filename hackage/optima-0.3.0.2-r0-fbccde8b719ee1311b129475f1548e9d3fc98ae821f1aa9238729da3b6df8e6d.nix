@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-data)
           (hsPkgs.base)
@@ -36,7 +36,7 @@
       };
       tests = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.optima)
             (hsPkgs.attoparsec-data)
             (hsPkgs.rerebase)

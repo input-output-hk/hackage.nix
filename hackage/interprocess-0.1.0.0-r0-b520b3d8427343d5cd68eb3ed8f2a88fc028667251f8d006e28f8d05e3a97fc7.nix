@@ -28,18 +28,18 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "interprocess-concurrent-malloc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-process)
             (hsPkgs.interprocess)
           ];
         };
         "interprocess-wait-qsem" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.typed-process)
             (hsPkgs.interprocess)

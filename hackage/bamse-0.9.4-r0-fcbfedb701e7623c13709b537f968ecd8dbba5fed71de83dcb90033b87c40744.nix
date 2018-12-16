@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.com)
           (hsPkgs.process)
           (hsPkgs.directory)
@@ -44,7 +44,7 @@
         "hsDotnetGen" = {};
         "bamseGen" = {};
         "runTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
           ];

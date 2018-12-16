@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.stm-chans)
@@ -33,7 +33,7 @@
       };
       exes = {
         "example" = {
-          depends  = pkgs.lib.optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.terminal-progress-bar)
           ];
@@ -41,7 +41,7 @@
       };
       tests = {
         "test-terminal-progress-bar" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.terminal-progress-bar)

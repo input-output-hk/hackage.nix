@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
@@ -33,7 +33,7 @@
       };
       exes = {
         "midi-dump" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.midi-simple)
             (hsPkgs.pipes)
@@ -42,7 +42,7 @@
           ];
         };
         "re-encode" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.midi-simple)
             (hsPkgs.pipes)
@@ -53,7 +53,7 @@
       };
       tests = {
         "midi-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.midi-simple)
             (hsPkgs.tasty)
@@ -70,7 +70,7 @@
       };
       benchmarks = {
         "midi-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.midi-simple)
             (hsPkgs.criterion)

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "tempus" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tempus-fugit)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "tempus-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tempus-fugit)
           ];

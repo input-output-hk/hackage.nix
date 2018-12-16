@@ -26,7 +26,7 @@
     components = {
       exes = {
         "jort" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.gtk)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HDBC)
           (hsPkgs.time)
@@ -44,7 +44,7 @@
       };
       exes = {
         "dbmigrations-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.HDBC-postgresql)
             (hsPkgs.HDBC-sqlite3)
             (hsPkgs.HUnit)
@@ -52,7 +52,7 @@
           ];
         };
         "moo" = {
-          depends  = [
+          depends = [
             (hsPkgs.HDBC-postgresql)
             (hsPkgs.HDBC-sqlite3)
           ];

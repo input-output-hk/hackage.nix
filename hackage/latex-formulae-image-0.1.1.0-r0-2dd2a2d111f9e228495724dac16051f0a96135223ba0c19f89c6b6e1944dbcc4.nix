@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.JuicyPixels)
           (hsPkgs.errors)
           (hsPkgs.temporary)

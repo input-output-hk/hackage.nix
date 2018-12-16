@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.numeric-prelude)
           (hsPkgs.permutation)
@@ -47,7 +47,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clifford)
             (hsPkgs.hspec)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "basic-ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.clifford)
             (hsPkgs.criterion)

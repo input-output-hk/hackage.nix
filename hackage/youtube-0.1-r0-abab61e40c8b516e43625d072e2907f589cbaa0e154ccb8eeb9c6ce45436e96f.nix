@@ -26,7 +26,7 @@
     components = {
       exes = {
         "youtube-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.process)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cymake" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.old-time)

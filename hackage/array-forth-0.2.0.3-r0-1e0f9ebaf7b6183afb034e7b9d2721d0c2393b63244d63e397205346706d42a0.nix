@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mcmc-synthesis)
           (hsPkgs.MonadRandom)
@@ -36,7 +36,7 @@
       };
       exes = {
         "mcmc-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mcmc-synthesis)
             (hsPkgs.array-forth)
@@ -45,7 +45,7 @@
           ];
         };
         "array-forth" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.split)

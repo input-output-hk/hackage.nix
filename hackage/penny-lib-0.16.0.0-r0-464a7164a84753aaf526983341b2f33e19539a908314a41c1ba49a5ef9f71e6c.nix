@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.action-permutations)
           (hsPkgs.binary)
@@ -55,7 +55,7 @@
       };
       exes = {
         "penny-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.action-permutations)
             (hsPkgs.binary)
@@ -85,7 +85,7 @@
           ];
         };
         "penny-gibberish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.action-permutations)
             (hsPkgs.binary)

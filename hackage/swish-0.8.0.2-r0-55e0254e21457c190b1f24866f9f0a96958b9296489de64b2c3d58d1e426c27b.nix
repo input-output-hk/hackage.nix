@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "Swish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.swish)
           ];
@@ -50,7 +50,7 @@
       };
       tests = {
         "test-builtinmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -58,7 +58,7 @@
           ];
         };
         "test-graphpartition" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -67,7 +67,7 @@
           ];
         };
         "test-graph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -75,7 +75,7 @@
           ];
         };
         "test-nt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -84,7 +84,7 @@
           ];
         };
         "test-n3parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -94,7 +94,7 @@
           ];
         };
         "test-n3formatter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -104,7 +104,7 @@
           ];
         };
         "test-rdfdatatypexsdinteger" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -114,7 +114,7 @@
           ];
         };
         "test-rdfgraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -126,7 +126,7 @@
           ];
         };
         "test-rdfproofcontext" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -136,7 +136,7 @@
           ];
         };
         "test-rdfproof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -146,7 +146,7 @@
           ];
         };
         "test-rdfquery" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -156,7 +156,7 @@
           ];
         };
         "test-rdfruleset" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -166,7 +166,7 @@
           ];
         };
         "test-varbinding" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -174,7 +174,7 @@
           ];
         };
         "test-qname" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)

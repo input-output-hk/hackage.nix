@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.cabal-plan)
@@ -41,7 +41,7 @@
       };
       exes = {
         "cabal-helper-wrapper" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.bytestring)
@@ -60,7 +60,7 @@
           ];
         };
         "cabal-helper-main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)
@@ -73,7 +73,7 @@
       };
       tests = {
         "compile-test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.bytestring)
@@ -92,7 +92,7 @@
           ];
         };
         "ghc-session" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)

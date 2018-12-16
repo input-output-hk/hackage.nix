@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "mandrill-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.mandrill)
             (hsPkgs.base)
             (hsPkgs.aeson)

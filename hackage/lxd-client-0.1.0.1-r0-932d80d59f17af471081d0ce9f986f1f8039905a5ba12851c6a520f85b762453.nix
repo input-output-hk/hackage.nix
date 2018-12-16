@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -60,7 +60,7 @@
       };
       exes = {
         "lxd-client-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lxd-client)
           ];
@@ -68,7 +68,7 @@
       };
       tests = {
         "lxd-client-integration" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lxd-client)
             (hsPkgs.exceptions)

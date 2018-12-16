@@ -26,7 +26,7 @@
     components = {
       exes = {
         "replay-convert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust-crypto)
             (hsPkgs.Dust)
@@ -48,7 +48,7 @@
           ];
         };
         "shaper-update" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Dust)
             (hsPkgs.bytestring)

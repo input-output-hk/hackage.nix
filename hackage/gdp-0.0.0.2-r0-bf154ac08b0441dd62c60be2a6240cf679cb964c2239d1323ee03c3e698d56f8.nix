@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lawful)
         ];
       };
       exes = {
         "gdp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gdp)
           ];

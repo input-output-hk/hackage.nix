@@ -26,7 +26,7 @@
     components = {
       exes = {
         "texbuilder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.unix)

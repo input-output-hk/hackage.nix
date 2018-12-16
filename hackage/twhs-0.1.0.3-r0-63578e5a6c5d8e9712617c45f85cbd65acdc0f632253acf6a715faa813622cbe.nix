@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.twitter-conduit)
           (hsPkgs.authenticate-oauth)
@@ -48,7 +48,7 @@
       };
       exes = {
         "twhs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.twitter-conduit)
             (hsPkgs.authenticate-oauth)
@@ -72,7 +72,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)

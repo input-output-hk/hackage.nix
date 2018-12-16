@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

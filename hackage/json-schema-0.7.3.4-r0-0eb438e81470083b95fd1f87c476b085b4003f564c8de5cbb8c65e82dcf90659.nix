@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       tests = {
         "json-schema-generic-aeson-tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.aeson-utils)

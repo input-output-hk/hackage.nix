@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "amqp-builder" = {
-          depends  = [ (hsPkgs.xml) ];
+          depends = [ (hsPkgs.xml) ];
         };
       };
     };

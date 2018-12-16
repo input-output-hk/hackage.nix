@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.utf8-string)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "hs_sqlite3_test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.utf8-string)
             (hsPkgs.mtl)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "unit-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.tasty)
@@ -56,7 +56,7 @@
           ];
         };
         "package-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.tagged)

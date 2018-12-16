@@ -26,7 +26,7 @@
     components = {
       exes = {
         "alex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
           ] ++ (if flags.small_base

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "collapse" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

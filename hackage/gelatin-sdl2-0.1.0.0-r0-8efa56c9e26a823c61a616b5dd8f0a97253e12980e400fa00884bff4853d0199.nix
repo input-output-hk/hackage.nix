@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sdl2)
           (hsPkgs.gelatin-gl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "gelatin-sdl2-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gelatin-sdl2)
             (hsPkgs.sdl2)

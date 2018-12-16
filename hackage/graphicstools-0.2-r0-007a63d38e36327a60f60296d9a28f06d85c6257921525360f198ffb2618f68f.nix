@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
           (hsPkgs.CV)
@@ -35,7 +35,7 @@
       };
       exes = {
         "cvexample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wxcore)
             (hsPkgs.wx)

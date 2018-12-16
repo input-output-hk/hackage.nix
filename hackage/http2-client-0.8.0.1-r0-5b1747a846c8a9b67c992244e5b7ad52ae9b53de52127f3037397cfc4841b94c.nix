@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.bytestring)
@@ -40,7 +40,7 @@
       };
       tests = {
         "http2-client-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http2-client)
           ];

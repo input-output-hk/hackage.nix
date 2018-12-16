@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.xml)
           (hsPkgs.parsec)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       exes = {
         "testTeXMathML" = {};
         "texmath-cgi" = {
-          depends  = [
+          depends = [
             (hsPkgs.cgi)
             (hsPkgs.json)
           ];

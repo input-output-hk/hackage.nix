@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -64,7 +64,7 @@
       };
       exes = {
         "happstack-state-tests" = {
-          depends  = [ (hsPkgs.HUnit) ];
+          depends = [ (hsPkgs.HUnit) ];
         };
       };
     };

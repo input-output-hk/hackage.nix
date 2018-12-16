@@ -27,18 +27,18 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       tests = {
         "oddword-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.OddWord)
           ];
         };
         "oddword-tests-typelits" = {
-          depends  = pkgs.lib.optionals (flags.typelitssupport && (compiler.isGhc && compiler.version.ge "7.8")) [
+          depends = pkgs.lib.optionals (flags.typelitssupport && (compiler.isGhc && compiler.version.ge "7.8")) [
             (hsPkgs.base)
             (hsPkgs.OddWord)
           ];

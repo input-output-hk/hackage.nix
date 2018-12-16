@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
       };
       tests = {
         "binary-tree-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.ChasingBottoms)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
@@ -44,7 +44,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary-tree)
@@ -54,7 +54,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary-tree)
             (hsPkgs.criterion)

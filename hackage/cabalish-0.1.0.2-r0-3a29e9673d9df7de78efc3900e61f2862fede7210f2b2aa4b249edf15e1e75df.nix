@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabalish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.classy-prelude)

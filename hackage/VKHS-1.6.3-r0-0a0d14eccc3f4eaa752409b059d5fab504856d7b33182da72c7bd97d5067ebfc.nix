@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -54,7 +54,7 @@
       };
       exes = {
         "vkq" = {
-          depends  = [
+          depends = [
             (hsPkgs.regexpr)
             (hsPkgs.text)
           ];

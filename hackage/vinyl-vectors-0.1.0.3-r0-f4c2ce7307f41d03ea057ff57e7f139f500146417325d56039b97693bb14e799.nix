@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vinyl)
           (hsPkgs.vector)
@@ -36,7 +36,7 @@
       };
       exes = {
         "sorting" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.vinyl-vectors)
             (hsPkgs.base)
             (hsPkgs.vector-algorithms)

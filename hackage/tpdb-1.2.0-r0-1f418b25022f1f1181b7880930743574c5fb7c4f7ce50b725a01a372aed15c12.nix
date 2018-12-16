@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt)
           (hsPkgs.wl-pprint-text)
@@ -41,31 +41,31 @@
       };
       tests = {
         "XML" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "TRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "TRS_02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "SRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "Speed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.HaXml)

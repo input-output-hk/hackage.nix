@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-ip)
@@ -40,7 +40,7 @@
       };
       tests = {
         "attoparsec-uri-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.attoparsec)
             (hsPkgs.attoparsec-ip)

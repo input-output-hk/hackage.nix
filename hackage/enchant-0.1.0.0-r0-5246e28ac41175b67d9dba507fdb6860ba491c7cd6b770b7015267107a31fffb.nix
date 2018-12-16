@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         pkgconfig = [
           (pkgconfPkgs.enchant)
         ];
@@ -37,7 +37,7 @@
       };
       exes = {
         "enchant-examples-spell-check" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.enchant)
           ];
@@ -45,7 +45,7 @@
       };
       tests = {
         "enchant-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enchant)
           ];

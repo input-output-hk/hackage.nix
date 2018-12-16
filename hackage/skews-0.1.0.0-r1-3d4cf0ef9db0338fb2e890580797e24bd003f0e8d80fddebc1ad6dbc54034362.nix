@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.deque)
@@ -34,7 +34,7 @@
       };
       tests = {
         "mock-ws-server-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.skews)
             (hsPkgs.async)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hoq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.filepath)

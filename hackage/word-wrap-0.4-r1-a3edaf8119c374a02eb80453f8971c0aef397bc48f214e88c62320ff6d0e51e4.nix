@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       tests = {
         "word-wrap-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.word-wrap)
             (hsPkgs.hspec)
@@ -41,7 +41,7 @@
       };
       benchmarks = {
         "word-wrap-benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.word-wrap)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-lsp)
           (hsPkgs.text)
@@ -38,7 +38,7 @@
       };
       exes = {
         "example-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-lsp)
             (hsPkgs.text)

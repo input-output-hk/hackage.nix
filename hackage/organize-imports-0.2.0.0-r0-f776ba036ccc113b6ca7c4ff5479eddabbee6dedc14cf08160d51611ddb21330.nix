@@ -26,7 +26,7 @@
     components = {
       exes = {
         "organize-imports" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.text)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "marmalade-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.transformers)

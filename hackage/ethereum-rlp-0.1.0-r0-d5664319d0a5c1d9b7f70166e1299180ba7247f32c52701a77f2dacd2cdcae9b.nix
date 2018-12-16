@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.base16-bytestring)
           (hsPkgs.ansi-wl-pprint)
@@ -34,7 +34,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.ethereum-rlp)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)

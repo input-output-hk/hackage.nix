@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gensmspdu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.haskell98)

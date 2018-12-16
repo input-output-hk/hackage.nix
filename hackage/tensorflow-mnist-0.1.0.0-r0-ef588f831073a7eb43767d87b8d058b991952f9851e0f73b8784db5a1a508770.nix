@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.proto-lens)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -44,7 +44,7 @@
       };
       exes = {
         "Main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
@@ -63,7 +63,7 @@
       };
       tests = {
         "ParseTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)

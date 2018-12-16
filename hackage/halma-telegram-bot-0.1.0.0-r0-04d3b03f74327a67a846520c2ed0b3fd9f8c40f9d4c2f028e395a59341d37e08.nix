@@ -26,7 +26,7 @@
     components = {
       exes = {
         "halma-telegram-bot" = {
-          depends  = [
+          depends = [
             (hsPkgs.halma)
             (hsPkgs.base)
             (hsPkgs.telegram-api)

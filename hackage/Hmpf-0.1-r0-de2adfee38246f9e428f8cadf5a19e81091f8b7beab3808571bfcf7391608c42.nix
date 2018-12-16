@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hmpf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Crypto)
             (hsPkgs.time)

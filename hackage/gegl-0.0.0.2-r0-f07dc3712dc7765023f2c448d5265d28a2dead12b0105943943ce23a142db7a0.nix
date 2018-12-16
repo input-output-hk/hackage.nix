@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.inline-c)
           (hsPkgs.containers)
@@ -43,13 +43,13 @@
       };
       exes = {
         "example00" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.gegl)
           ];
         };
         "example01" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.gegl)
@@ -59,7 +59,7 @@
           ];
         };
         "example02" = {
-          depends  = pkgs.lib.optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.sdl2)
             (hsPkgs.gegl)

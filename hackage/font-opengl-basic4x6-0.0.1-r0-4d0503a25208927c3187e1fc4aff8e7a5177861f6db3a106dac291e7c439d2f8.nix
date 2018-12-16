@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.OpenGL)
           (hsPkgs.base)
         ];
       };
       exes = {
         "show-font-basic4x6" = {
-          depends  = [
+          depends = [
             (hsPkgs.GLFW-b)
             (hsPkgs.OpenGL)
             (hsPkgs.base)

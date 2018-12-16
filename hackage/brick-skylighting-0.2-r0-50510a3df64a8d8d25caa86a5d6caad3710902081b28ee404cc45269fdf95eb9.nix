@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.brick)
           (hsPkgs.vty)
@@ -36,7 +36,7 @@
       };
       exes = {
         "brick-skylighting-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.brick-skylighting)

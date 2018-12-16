@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.byteable)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-cipher-aes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cipher-aes)
             (hsPkgs.crypto-cipher-types)
@@ -52,7 +52,7 @@
       };
       benchmarks = {
         "bench-cipher-aes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cipher-aes)

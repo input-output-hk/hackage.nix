@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cubical" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.mtl)

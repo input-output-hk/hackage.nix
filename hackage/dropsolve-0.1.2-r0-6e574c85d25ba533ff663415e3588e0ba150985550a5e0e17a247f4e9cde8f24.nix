@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dropsolve" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regex-posix)
             (hsPkgs.time)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabalgraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.filepath)
           ] ++ (if flags.small_base

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.array)
@@ -33,7 +33,7 @@
       };
       tests = {
         "bitwise-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.bitwise)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -42,7 +42,7 @@
       };
       benchmarks = {
         "bitwise-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.bitwise)
             (hsPkgs.base)
             (hsPkgs.array)

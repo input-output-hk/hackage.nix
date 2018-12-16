@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       exes = {
         "all-todos" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.text)
@@ -45,7 +45,7 @@
           ];
         };
         "diff-todo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.text)
@@ -55,7 +55,7 @@
           ];
         };
         "git-todo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.text)
@@ -69,7 +69,7 @@
       };
       tests = {
         "fixme-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.text)

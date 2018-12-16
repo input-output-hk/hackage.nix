@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.freer-simple)
           (hsPkgs.time)
@@ -33,7 +33,7 @@
       };
       tests = {
         "freer-simple-time-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.freer-simple)
             (hsPkgs.freer-simple-time)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "skeletons" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.containers)

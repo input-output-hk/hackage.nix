@@ -26,7 +26,7 @@
     components = {
       exes = {
         "slice-cpp-gen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)

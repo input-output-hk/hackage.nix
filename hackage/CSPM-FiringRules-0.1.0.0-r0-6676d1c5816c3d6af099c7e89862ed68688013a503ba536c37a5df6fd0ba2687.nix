@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.CSPM-CoreLanguage)
           (hsPkgs.base)
           (hsPkgs.containers)

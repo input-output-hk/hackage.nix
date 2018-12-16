@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "bitwise-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.bitwise)
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "bitwise-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.bitwise)
             (hsPkgs.base)
             (hsPkgs.array)

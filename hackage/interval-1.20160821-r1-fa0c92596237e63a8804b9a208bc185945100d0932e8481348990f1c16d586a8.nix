@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.fingertree)
@@ -38,7 +38,7 @@
       };
       tests = {
         "interval-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.interval)
             (hsPkgs.tasty)

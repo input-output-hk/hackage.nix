@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.utility-ht)
           (hsPkgs.transformers)
           (hsPkgs.explicit-exception)
@@ -36,7 +36,7 @@
       };
       exes = {
         "csvreplace" = {
-          depends  = pkgs.lib.optional (flags.buildexamples) (hsPkgs.bytestring);
+          depends = pkgs.lib.optional (flags.buildexamples) (hsPkgs.bytestring);
         };
       };
     };

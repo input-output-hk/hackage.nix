@@ -26,7 +26,7 @@
     components = {
       exes = {
         "eros-http" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.blaze-html)

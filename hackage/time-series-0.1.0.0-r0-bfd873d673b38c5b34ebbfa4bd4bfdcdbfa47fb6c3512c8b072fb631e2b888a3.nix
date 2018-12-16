@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -34,7 +34,7 @@
       };
       exes = {
         "time-series" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time-series)
           ];

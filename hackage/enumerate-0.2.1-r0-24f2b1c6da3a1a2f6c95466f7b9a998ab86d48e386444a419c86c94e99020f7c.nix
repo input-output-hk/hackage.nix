@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.array)
@@ -37,7 +37,7 @@
       };
       exes = {
         "enumerate-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enumerate)
           ];
@@ -45,7 +45,7 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.enumerate)
             (hsPkgs.doctest)

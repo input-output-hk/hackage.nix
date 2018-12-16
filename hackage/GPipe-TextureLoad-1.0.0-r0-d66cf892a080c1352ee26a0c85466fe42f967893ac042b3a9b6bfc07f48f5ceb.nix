@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.GPipe)
           (hsPkgs.base)
           (hsPkgs.stb-image)

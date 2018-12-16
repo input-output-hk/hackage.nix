@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base-prelude)
           (hsPkgs.base)
         ];
       };
       exes = {
         "demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.compound-types)
             (hsPkgs.rebase)
           ];

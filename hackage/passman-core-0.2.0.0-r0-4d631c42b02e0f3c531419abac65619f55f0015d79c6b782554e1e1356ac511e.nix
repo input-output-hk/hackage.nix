@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.passman-core-internal)
           (hsPkgs.base)
           (hsPkgs.aeson)
@@ -49,7 +49,7 @@
       };
       sublibs = {
         "passman-core-internal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.int-cast)
@@ -58,7 +58,7 @@
       };
       tests = {
         "precomputed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.passman-core)
             (hsPkgs.conduit)
@@ -67,7 +67,7 @@
           ];
         };
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.passman-core)
             (hsPkgs.passman-core-internal)

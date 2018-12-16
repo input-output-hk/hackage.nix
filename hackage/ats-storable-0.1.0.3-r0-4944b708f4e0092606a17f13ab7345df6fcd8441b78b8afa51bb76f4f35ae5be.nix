@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.composition-prelude)
         ];
       };
       tests = {
         "ats-generic-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-storable)
             (hsPkgs.hspec)

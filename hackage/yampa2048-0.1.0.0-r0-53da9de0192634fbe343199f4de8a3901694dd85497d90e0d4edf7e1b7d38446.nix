@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yampa2048" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.gloss)

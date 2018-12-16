@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cmdargs-browser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.filepath)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.midi)
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
@@ -48,13 +48,13 @@
       };
       exes = {
         "jack-amplify" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.base)
           ];
         };
         "jack-capture" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.explicit-exception)
             (hsPkgs.transformers)
@@ -63,7 +63,7 @@
           ];
         };
         "jack-impulse-train" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.explicit-exception)
             (hsPkgs.transformers)
@@ -72,14 +72,14 @@
           ];
         };
         "jack-midimon" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.midi)
             (hsPkgs.base)
           ];
         };
         "jack-melody" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.midi)
             (hsPkgs.event-list)
@@ -90,7 +90,7 @@
           ];
         };
         "jack-synth" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.jack)
             (hsPkgs.midi)
             (hsPkgs.event-list)

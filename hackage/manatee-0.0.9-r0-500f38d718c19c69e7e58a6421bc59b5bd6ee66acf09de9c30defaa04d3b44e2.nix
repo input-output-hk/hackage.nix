@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "manatee" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.manatee-core)
             (hsPkgs.containers)

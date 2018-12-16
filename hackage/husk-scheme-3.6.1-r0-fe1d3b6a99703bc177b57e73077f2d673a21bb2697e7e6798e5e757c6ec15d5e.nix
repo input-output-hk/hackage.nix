@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "huski" = {
-          depends  = [
+          depends = [
             (hsPkgs.husk-scheme)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -60,7 +60,7 @@
           ];
         };
         "huskc" = {
-          depends  = [
+          depends = [
             (hsPkgs.husk-scheme)
             (hsPkgs.base)
             (hsPkgs.array)

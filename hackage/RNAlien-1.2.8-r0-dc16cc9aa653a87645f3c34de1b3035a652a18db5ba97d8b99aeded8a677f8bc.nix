@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmdargs)
           (hsPkgs.ViennaRNAParser)
@@ -62,7 +62,7 @@
       };
       exes = {
         "RNAlien" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.directory)
@@ -77,7 +77,7 @@
           ];
         };
         "RNAlienStatistics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.cassava)
@@ -95,7 +95,7 @@
           ];
         };
         "SelectSequences" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.either-unwrap)
@@ -103,7 +103,7 @@
           ];
         };
         "cmsearchToBed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.either-unwrap)
@@ -113,7 +113,7 @@
           ];
         };
         "RNAcentralHTTPRequest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.either-unwrap)

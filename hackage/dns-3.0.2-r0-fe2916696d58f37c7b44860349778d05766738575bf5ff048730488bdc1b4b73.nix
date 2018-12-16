@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.auto-update)
@@ -48,7 +48,7 @@
       };
       tests = {
         "network" = {
-          depends  = [
+          depends = [
             (hsPkgs.dns)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.dns)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
@@ -67,7 +67,7 @@
           ];
         };
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

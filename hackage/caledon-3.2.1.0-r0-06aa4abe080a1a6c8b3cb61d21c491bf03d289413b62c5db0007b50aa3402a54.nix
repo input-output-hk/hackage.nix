@@ -26,7 +26,7 @@
     components = {
       exes = {
         "caledon" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.parsec)

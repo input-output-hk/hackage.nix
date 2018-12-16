@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.filepath)
           (hsPkgs.directory)
@@ -36,7 +36,7 @@
       };
       exes = {
         "neil" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.cmdargs)
           ] ++ pkgs.lib.optionals (!flags.small) [

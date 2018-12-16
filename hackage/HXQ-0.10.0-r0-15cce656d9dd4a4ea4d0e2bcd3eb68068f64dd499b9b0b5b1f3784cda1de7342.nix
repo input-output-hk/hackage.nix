@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.array)
@@ -46,7 +46,7 @@
       };
       exes = {
         "xquery" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.array)

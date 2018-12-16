@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.binary)
@@ -43,7 +43,7 @@
       };
       exes = {
         "sslocal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shadowsocks)
             (hsPkgs.async)
@@ -53,7 +53,7 @@
           ];
         };
         "ssserver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shadowsocks)
             (hsPkgs.async)
@@ -67,7 +67,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

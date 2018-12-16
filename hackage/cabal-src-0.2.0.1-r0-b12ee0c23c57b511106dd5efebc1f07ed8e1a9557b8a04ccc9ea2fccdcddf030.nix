@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-src-install" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.tar)

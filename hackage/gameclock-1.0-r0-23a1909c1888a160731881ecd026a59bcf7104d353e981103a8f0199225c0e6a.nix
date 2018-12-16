@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsclock" = {
-          depends  = [
+          depends = [
             (hsPkgs.cairo)
             (hsPkgs.gtk)
             (hsPkgs.glib)

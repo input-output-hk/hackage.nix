@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-better-errors)
           (hsPkgs.base)
@@ -50,7 +50,7 @@
       };
       tests = {
         "composite-aeson-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.aeson-better-errors)

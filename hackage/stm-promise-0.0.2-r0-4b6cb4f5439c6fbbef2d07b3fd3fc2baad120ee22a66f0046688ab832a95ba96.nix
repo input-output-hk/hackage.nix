@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       tests = {
         "trees" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stm-promise)
             (hsPkgs.stm)

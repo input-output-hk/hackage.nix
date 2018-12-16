@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.generic-lens)
           (hsPkgs.lens)
           (hsPkgs.network)
@@ -47,7 +47,7 @@
       };
       tests = {
         "datadog-api-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.generic-lens)
             (hsPkgs.lens)
             (hsPkgs.network)

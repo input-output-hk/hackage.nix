@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.groom)
           (hsPkgs.process)
@@ -35,7 +35,7 @@
       };
       exes = {
         "Makefilerize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.groom)
@@ -44,7 +44,7 @@
           ];
         };
         "CabalLint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.groom)
@@ -55,7 +55,7 @@
           ];
         };
         "ShowPackages" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.groom)

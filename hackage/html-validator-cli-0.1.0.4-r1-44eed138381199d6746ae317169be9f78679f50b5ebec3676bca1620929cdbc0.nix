@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       exes = {
         "validatehtml" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
@@ -59,7 +59,7 @@
       };
       tests = {
         "html-validator-cli-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)
@@ -75,7 +75,7 @@
           ];
         };
         "html-validator-cli-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.ansi-terminal)
             (hsPkgs.base)

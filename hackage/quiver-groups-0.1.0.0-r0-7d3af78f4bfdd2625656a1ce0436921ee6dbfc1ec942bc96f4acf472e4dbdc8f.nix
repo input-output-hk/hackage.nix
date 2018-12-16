@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.quiver)
           (hsPkgs.dlist)
@@ -33,7 +33,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.quiver-groups)
             (hsPkgs.base)
             (hsPkgs.quiver)

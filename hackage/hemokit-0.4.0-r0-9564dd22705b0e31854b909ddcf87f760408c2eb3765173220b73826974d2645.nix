@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cipher-aes)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hemokit-mouse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hemokit)
             (hsPkgs.pretty-show)
@@ -47,7 +47,7 @@
           ];
         };
         "hemokit-dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hemokit)
             (hsPkgs.aeson)
@@ -61,7 +61,7 @@
           ];
         };
         "hemokit-fft" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hemokit)
             (hsPkgs.conduit)
@@ -72,7 +72,7 @@
           ];
         };
         "hemokit-headmap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hemokit)
             (hsPkgs.cairo)
@@ -86,7 +86,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hemokit)
             (hsPkgs.bytestring)
@@ -97,7 +97,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hemokit)
             (hsPkgs.criterion)

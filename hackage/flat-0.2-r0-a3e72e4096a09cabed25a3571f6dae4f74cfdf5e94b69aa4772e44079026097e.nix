@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -44,7 +44,7 @@
       };
       tests = {
         "flat-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cpu)
             (hsPkgs.ghc-prim)

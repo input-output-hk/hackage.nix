@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Workflow)
           (hsPkgs.transformers)
           (hsPkgs.mtl)

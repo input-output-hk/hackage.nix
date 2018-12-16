@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.vect)
         ] ++ [ (hsPkgs.base) ]) ++ [
           (hsPkgs.OpenGL)

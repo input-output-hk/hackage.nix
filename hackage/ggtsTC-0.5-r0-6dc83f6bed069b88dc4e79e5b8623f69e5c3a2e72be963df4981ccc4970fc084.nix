@@ -26,7 +26,7 @@
     components = {
       exes = {
         "TC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)

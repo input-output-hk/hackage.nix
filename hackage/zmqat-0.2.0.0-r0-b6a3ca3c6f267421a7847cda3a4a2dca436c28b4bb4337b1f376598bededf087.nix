@@ -26,7 +26,7 @@
     components = {
       exes = {
         "zmqat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.classy-prelude)
             (hsPkgs.optparse-applicative)

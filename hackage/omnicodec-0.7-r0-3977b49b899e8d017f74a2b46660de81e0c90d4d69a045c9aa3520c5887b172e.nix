@@ -26,7 +26,7 @@
     components = {
       exes = {
         "odec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.conduit)
@@ -36,7 +36,7 @@
           ];
         };
         "oenc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.conduit)

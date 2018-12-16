@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -37,7 +37,7 @@
       };
       exes = {
         "native" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.native)
             (hsPkgs.optparse-applicative)
@@ -46,7 +46,7 @@
       };
       tests = {
         "native-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.native)
           ];

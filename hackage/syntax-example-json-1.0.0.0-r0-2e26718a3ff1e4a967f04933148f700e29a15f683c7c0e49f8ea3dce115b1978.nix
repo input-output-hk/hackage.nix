@@ -26,7 +26,7 @@
     components = {
       exes = {
         "syntax-example-json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.semi-iso)
             (hsPkgs.syntax)

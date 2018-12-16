@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
         ];
       };
       exes = {
         "Example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sequent-core)
           ];

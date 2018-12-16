@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.split)
@@ -36,7 +36,7 @@
       };
       exes = {
         "nn-xor-logistic-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.split)
@@ -46,7 +46,7 @@
           ];
         };
         "nn-xor-tanh-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.split)

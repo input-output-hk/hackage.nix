@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskintex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.text)

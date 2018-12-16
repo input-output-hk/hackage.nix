@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.auto-update)
           (hsPkgs.base)
           (hsPkgs.bytestring)

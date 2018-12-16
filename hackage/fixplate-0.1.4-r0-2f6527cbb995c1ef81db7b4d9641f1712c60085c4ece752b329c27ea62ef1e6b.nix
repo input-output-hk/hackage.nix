@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.withhashing) (hsPkgs.containers)) ++ pkgs.lib.optional (flags.withquickcheck) (hsPkgs.QuickCheck);
       };

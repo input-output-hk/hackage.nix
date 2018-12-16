@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.distributed-process)
           (hsPkgs.distributed-process-monad-control)
@@ -40,7 +40,7 @@
       };
       tests = {
         "testlifted" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.network)

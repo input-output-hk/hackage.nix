@@ -30,7 +30,7 @@
     components = {
       exes = {
         "etamoo" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)

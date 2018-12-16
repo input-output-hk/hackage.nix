@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "dhall-lex-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall-lex)
             (hsPkgs.hspec)
@@ -50,7 +50,7 @@
       };
       benchmarks = {
         "dhall-lex-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall-lex)
             (hsPkgs.criterion)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -57,7 +57,7 @@
       };
       exes = {
         "SubOptDistance" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.BiobaseXNA)
             (hsPkgs.cmdargs)
@@ -66,7 +66,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)

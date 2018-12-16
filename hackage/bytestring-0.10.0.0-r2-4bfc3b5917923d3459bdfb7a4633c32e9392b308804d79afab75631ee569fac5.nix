@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
         ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-builder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.deepseq)
@@ -49,7 +49,7 @@
       };
       benchmarks = {
         "bench-builder-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.ghc-prim)
@@ -57,7 +57,7 @@
           ];
         };
         "bench-builder-boundscheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.ghc-prim)

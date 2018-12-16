@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rosmsg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.rospkg)
@@ -34,7 +34,7 @@
           ];
         };
         "genhs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.stack)

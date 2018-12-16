@@ -26,7 +26,7 @@
     components = {
       exes = {
         "music-only" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.call)
             (hsPkgs.objective)
@@ -37,7 +37,7 @@
           ];
         };
         "tutorial-passive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.call)
             (hsPkgs.objective)
@@ -48,7 +48,7 @@
           ];
         };
         "tutorial-active" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.call)
             (hsPkgs.objective)
@@ -59,7 +59,7 @@
           ];
         };
         "tutorial-extended" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.call)
             (hsPkgs.objective)

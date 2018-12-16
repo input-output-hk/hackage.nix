@@ -26,7 +26,7 @@
     components = {
       exes = {
         "randomgen" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mersenne-random-pure64)
             (hsPkgs.bytestring)

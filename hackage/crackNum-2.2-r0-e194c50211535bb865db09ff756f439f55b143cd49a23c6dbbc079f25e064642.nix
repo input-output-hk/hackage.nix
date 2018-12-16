@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ieee754)
           (hsPkgs.reinterpret-cast)
@@ -34,7 +34,7 @@
       };
       exes = {
         "crackNum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ieee754)
             (hsPkgs.reinterpret-cast)

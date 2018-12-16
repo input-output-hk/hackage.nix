@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
@@ -41,7 +41,7 @@
       };
       exes = {
         "HFitUI-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HFitUI)
           ];
@@ -49,7 +49,7 @@
       };
       tests = {
         "HFitUI-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HFitUI)
           ];

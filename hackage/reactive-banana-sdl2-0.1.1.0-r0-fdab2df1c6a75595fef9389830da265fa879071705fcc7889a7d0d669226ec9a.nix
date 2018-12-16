@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.reactive-banana)
           (hsPkgs.sdl2)
@@ -33,7 +33,7 @@
       };
       tests = {
         "reactive-banana-sdl2-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.reactive-banana-sdl2)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.process)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grakn)
             (hsPkgs.containers)
@@ -63,7 +63,7 @@
           ];
         };
         "accept" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.grakn)
             (hsPkgs.containers)

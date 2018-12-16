@@ -26,7 +26,7 @@
     components = {
       exes = {
         "toilet" = {
-          depends  = [
+          depends = [
             (hsPkgs.utility-ht)
             (hsPkgs.strict)
             (hsPkgs.time)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hashtables)
           (hsPkgs.hashable)
           (hsPkgs.loch-th)
@@ -35,7 +35,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.hashtables-plus)
             (hsPkgs.criterion-plus)
             (hsPkgs.hashtables)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.text)
@@ -36,7 +36,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parsec)
@@ -47,7 +47,7 @@
       };
       tests = {
         "s-cargot-qc" = {
-          depends  = [
+          depends = [
             (hsPkgs.s-cargot)
             (hsPkgs.base)
             (hsPkgs.parsec)
@@ -56,7 +56,7 @@
           ];
         };
         "s-cargot-printparse" = {
-          depends  = [
+          depends = [
             (hsPkgs.s-cargot)
             (hsPkgs.base)
             (hsPkgs.parsec)

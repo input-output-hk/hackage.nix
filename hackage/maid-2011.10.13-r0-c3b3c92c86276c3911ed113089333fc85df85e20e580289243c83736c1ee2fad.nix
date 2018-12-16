@@ -26,7 +26,7 @@
     components = {
       exes = {
         "maid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.air)
             (hsPkgs.air-extra)

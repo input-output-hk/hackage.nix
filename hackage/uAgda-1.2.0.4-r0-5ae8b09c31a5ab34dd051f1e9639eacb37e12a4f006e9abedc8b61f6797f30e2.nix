@@ -26,7 +26,7 @@
     components = {
       exes = {
         "uAgda" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.cmdargs)

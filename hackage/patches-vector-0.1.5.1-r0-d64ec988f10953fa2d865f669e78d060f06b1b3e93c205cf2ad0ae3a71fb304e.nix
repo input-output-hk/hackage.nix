@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.edit-distance-vector)
           (hsPkgs.vector)
@@ -34,7 +34,7 @@
       };
       tests = {
         "doctest-patches-vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.patches-vector)
@@ -42,7 +42,7 @@
           ];
         };
         "benchmarks-patches-vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.patches-vector)
@@ -51,7 +51,7 @@
           ];
         };
         "spec-patches-vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.patches-vector)

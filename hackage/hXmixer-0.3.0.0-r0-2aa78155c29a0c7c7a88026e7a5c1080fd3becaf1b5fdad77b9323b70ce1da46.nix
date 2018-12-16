@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hxmixer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk3)
             (hsPkgs.split)

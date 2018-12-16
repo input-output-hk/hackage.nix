@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.fast-logger)
@@ -37,7 +37,7 @@
       };
       exes = {
         "logger-thread-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.logger-thread)
             (hsPkgs.protolude)

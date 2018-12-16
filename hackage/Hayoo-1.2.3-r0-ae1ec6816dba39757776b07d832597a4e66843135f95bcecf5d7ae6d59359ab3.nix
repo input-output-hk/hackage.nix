@@ -29,7 +29,7 @@
     components = {
       exes = {
         "hayooIndexer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
           ];
         };
         "hayooSnap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.Holumbus-Searchengine)

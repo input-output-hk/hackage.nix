@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.mtl)
@@ -36,13 +36,13 @@
       };
       exes = {
         "report_par" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
           ];
         };
         "implement" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.feldspar-language)
           (hsPkgs.base)
           (hsPkgs.containers)

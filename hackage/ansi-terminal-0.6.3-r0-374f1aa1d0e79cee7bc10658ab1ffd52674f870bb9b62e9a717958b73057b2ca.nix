@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (system.isWindows) [
           (hsPkgs.base-compat)
@@ -35,7 +35,7 @@
       };
       exes = {
         "ansi-terminal-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
           ] ++ pkgs.lib.optionals (system.isWindows) [
             (hsPkgs.base-compat)

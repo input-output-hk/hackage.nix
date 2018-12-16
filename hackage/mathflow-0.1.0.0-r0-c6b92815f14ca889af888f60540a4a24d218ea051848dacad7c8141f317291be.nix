@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.singletons)
           (hsPkgs.process)
@@ -34,7 +34,7 @@
       };
       tests = {
         "mathflow-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mathflow)
             (hsPkgs.singletons)
@@ -47,7 +47,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];

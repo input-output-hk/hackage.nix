@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
       };
       exes = {
         "ninja-lex" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-ninja)
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -63,7 +63,7 @@
           ];
         };
         "ninja-parse" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-ninja)
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -77,7 +77,7 @@
           ];
         };
         "ninja-compile" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-ninja)
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -93,7 +93,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.language-ninja)
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -125,7 +125,7 @@
           ];
         };
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)

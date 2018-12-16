@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.asn1-encoding)
           (hsPkgs.asn1-types)
           (hsPkgs.base)
@@ -51,7 +51,7 @@
       };
       tests = {
         "ssh-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)

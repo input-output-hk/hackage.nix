@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.http-client)
           (hsPkgs.bytestring)
           (hsPkgs.either)

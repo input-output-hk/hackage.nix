@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.alex-tools)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "blocksWorld" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.huff)
           ];

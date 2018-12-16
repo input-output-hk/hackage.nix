@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.filepath)
         ] ++ pkgs.lib.optional (flags.base4) (hsPkgs.base)) ++ pkgs.lib.optional (flags.base3) (hsPkgs.base)) ++ pkgs.lib.optional (!flags.base3 && !flags.base4) (hsPkgs.base)) ++ pkgs.lib.optionals (flags.base3 || flags.base4) [
           (hsPkgs.directory)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "SourceGraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.multiset)

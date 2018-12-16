@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.haskore)
           (hsPkgs.midi)
           (hsPkgs.bytestring)

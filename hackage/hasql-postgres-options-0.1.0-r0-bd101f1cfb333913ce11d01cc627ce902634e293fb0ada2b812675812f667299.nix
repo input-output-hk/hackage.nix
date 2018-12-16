@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hasql-postgres)
           (hsPkgs.optparse-applicative)
           (hsPkgs.bytestring)

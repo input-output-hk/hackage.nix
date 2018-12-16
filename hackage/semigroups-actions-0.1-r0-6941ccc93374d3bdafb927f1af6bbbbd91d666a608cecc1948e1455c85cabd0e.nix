@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.base2
+        depends = if flags.base2
           then [
             (hsPkgs.base)
             (hsPkgs.semigroups)

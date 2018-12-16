@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = pkgs.lib.optional (system.isWindows) (hsPkgs.base);
+        depends = pkgs.lib.optional (system.isWindows) (hsPkgs.base);
       };
     };
   }

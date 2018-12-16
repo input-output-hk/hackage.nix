@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.dlist)
         ] ++ (if flags.small_base
           then [

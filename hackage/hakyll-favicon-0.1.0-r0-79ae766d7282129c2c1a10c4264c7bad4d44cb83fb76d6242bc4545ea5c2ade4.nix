@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hakyll)
           (hsPkgs.filepath)
@@ -33,7 +33,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hakyll-favicon)
             (hsPkgs.hakyll)
@@ -42,7 +42,7 @@
       };
       tests = {
         "hakyll-favicon-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hakyll-favicon)
           ];

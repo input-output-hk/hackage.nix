@@ -26,7 +26,7 @@
     components = {
       exes = {
         "left4deadrl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.random-shuffle)

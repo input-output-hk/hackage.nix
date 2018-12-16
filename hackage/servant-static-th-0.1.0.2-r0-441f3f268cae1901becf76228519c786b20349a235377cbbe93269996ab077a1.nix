@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-html)
           (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       exes = {
         "servant-static-th-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-server)
             (hsPkgs.servant-static-th)
@@ -56,14 +56,14 @@
       };
       tests = {
         "servant-static-th-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
           ];
         };
         "servant-static-th-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blaze-html)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -45,7 +45,7 @@
       };
       exes = {
         "servant-ede-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ede)
             (hsPkgs.servant-server)

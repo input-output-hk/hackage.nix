@@ -31,7 +31,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
@@ -53,7 +53,7 @@
       };
       exes = {
         "test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
@@ -68,7 +68,7 @@
           ];
         };
         "web-server" = {
-          depends  = pkgs.lib.optionals (!system.isHalvm) (pkgs.lib.optionals (flags.web-server) [
+          depends = pkgs.lib.optionals (!system.isHalvm) (pkgs.lib.optionals (flags.web-server) [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
@@ -83,7 +83,7 @@
           ]);
         };
         "tcp-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
@@ -98,7 +98,7 @@
           ];
         };
         "echo-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
@@ -113,14 +113,14 @@
           ];
         };
         "tcp-test-client" = {
-          depends  = pkgs.lib.optionals (!system.isHalvm) [
+          depends = pkgs.lib.optionals (!system.isHalvm) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.network)
           ];
         };
         "test-suite" = {
-          depends  = pkgs.lib.optionals (flags.enable-tests) [
+          depends = pkgs.lib.optionals (flags.enable-tests) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

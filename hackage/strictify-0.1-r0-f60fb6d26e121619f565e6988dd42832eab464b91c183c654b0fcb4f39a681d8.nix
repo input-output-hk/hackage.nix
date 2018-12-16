@@ -26,7 +26,7 @@
     components = {
       exes = {
         "strictify" = {
-          depends  = if flags.small-base
+          depends = if flags.small-base
             then [
               (hsPkgs.base)
               (hsPkgs.process)

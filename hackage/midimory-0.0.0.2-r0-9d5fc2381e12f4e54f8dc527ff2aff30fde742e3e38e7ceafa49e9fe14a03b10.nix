@@ -26,7 +26,7 @@
     components = {
       exes = {
         "midimory" = {
-          depends  = [
+          depends = [
             (hsPkgs.wx)
             (hsPkgs.wxcore)
             (hsPkgs.alsa-seq)

@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -43,7 +43,7 @@
       };
       exes = {
         "ert" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.ert)
             (hsPkgs.attoparsec)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.array)
@@ -59,7 +59,7 @@
       };
       tests = {
         "tests" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.hledger-lib)
             (hsPkgs.base)
             (hsPkgs.base-compat)

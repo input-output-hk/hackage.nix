@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
       };
       tests = {
         "graphite-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graphite)
             (hsPkgs.hspec)
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "graphite-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graphite)
             (hsPkgs.deepseq)

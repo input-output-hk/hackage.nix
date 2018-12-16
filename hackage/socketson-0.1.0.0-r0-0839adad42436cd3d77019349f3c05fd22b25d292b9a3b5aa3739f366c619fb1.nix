@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -51,7 +51,7 @@
       };
       exes = {
         "socketson-sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.socketson)
@@ -59,7 +59,7 @@
           ];
         };
         "socketson-sample-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.socketson)
             (hsPkgs.network)

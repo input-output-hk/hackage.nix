@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.parsec)
@@ -33,7 +33,7 @@
       };
       exes = {
         "lambda-calculator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambda-calculator)
             (hsPkgs.optparse-applicative)
@@ -44,7 +44,7 @@
       };
       tests = {
         "lambda-calculus-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambda-calculator)
             (hsPkgs.containers)
@@ -53,7 +53,7 @@
           ];
         };
         "lambda-calculus-lint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

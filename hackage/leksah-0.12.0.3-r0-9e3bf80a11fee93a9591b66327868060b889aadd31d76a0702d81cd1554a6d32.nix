@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.Cabal)
           (hsPkgs.base)
           (hsPkgs.binary)
@@ -71,7 +71,7 @@
       };
       exes = {
         "leksah" = {
-          depends  = ((((if system.isWindows
+          depends = ((((if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)

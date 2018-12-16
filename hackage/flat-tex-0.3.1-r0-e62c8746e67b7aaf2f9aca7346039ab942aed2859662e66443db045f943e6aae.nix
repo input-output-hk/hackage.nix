@@ -26,7 +26,7 @@
     components = {
       exes = {
         "flat-tex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.directory)

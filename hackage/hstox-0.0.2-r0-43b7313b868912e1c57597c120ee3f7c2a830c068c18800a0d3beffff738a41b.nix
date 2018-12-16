@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.base16-bytestring)
@@ -56,13 +56,13 @@
       };
       exes = {
         "tox-refsut" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hstox)
           ];
         };
         "tox-spectest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hstox)
             (hsPkgs.process)
@@ -71,7 +71,7 @@
       };
       tests = {
         "testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.hstox)

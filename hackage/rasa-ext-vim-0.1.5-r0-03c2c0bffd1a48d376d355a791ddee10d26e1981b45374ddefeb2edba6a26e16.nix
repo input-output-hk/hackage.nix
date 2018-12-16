@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.rasa)
           (hsPkgs.rasa-ext-files)
@@ -42,7 +42,7 @@
       };
       tests = {
         "rasa-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rasa-ext-vim)
             (hsPkgs.hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
@@ -40,7 +40,7 @@
       };
       exes = {
         "nm-demo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nm)
           ];

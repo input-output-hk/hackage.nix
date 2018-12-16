@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
@@ -52,14 +52,14 @@
       };
       exes = {
         "hyperion-micro-benchmark-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hyperion)
             (hsPkgs.process)
           ];
         };
         "hyperion-end-to-end-benchmark-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hyperion)
             (hsPkgs.process)
@@ -68,7 +68,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hyperion)

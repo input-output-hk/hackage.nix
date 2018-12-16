@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cryptonite)
@@ -43,7 +43,7 @@
       };
       exes = {
         "noise-repl" = {
-          depends  = pkgs.lib.optionals (flags.build-tools) [
+          depends = pkgs.lib.optionals (flags.build-tools) [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
@@ -58,13 +58,13 @@
       };
       tests = {
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];
         };
         "vectors" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -78,7 +78,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)

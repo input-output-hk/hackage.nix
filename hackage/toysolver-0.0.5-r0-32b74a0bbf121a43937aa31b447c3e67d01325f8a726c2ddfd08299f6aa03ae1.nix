@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -55,7 +55,7 @@
       };
       exes = {
         "toysolver" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -67,7 +67,7 @@
           ];
         };
         "toysat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -83,7 +83,7 @@
           ] ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
         };
         "toyfmf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
@@ -91,7 +91,7 @@
           ];
         };
         "lpconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)
@@ -100,7 +100,7 @@
           ];
         };
         "pbconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)
@@ -111,7 +111,7 @@
       };
       tests = {
         "TestSAT" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -123,7 +123,7 @@
           ];
         };
         "TestSimplex2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.vector-space)
@@ -135,7 +135,7 @@
           ];
         };
         "TestMIPSolver2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.vector-space)
@@ -149,7 +149,7 @@
           ];
         };
         "TestPolynomial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
@@ -165,7 +165,7 @@
           ];
         };
         "TestAReal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
@@ -179,7 +179,7 @@
           ];
         };
         "TestQE" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.vector-space)
@@ -194,7 +194,7 @@
           ];
         };
         "TestContiTraverso" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.vector-space)
@@ -209,7 +209,7 @@
           ];
         };
         "TestLPFile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
@@ -222,7 +222,7 @@
           ];
         };
         "TestMPSFile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
@@ -235,7 +235,7 @@
           ];
         };
         "TestPBFile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.toysolver)
             (hsPkgs.test-framework)
@@ -247,7 +247,7 @@
           ];
         };
         "TestUtil" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.toysolver)
             (hsPkgs.test-framework)
@@ -261,7 +261,7 @@
       };
       benchmarks = {
         "BenchmarkSATLIB" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)

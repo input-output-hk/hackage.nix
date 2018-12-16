@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.ansi-terminal)
           (hsPkgs.async)
@@ -36,7 +36,7 @@
       };
       exes = {
         "example" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)
@@ -48,7 +48,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.ansi-terminal)
             (hsPkgs.async)

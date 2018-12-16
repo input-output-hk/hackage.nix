@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -42,7 +42,7 @@
       };
       exes = {
         "propellor" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.directory)
             (hsPkgs.filepath)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.aeson-better-errors)
@@ -77,7 +77,7 @@
       };
       exes = {
         "psc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.aeson)
@@ -98,7 +98,7 @@
           ];
         };
         "psci" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.base-compat)
@@ -127,7 +127,7 @@
           ];
         };
         "psc-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.ansi-wl-pprint)
@@ -143,7 +143,7 @@
           ];
         };
         "psc-publish" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.aeson)
@@ -152,7 +152,7 @@
           ];
         };
         "psc-hierarchy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.directory)
@@ -165,7 +165,7 @@
           ];
         };
         "psc-bundle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.directory)
@@ -178,7 +178,7 @@
           ];
         };
         "psc-ide-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -198,7 +198,7 @@
           ];
         };
         "psc-ide-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.bytestring)
@@ -211,7 +211,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.purescript)
             (hsPkgs.aeson)

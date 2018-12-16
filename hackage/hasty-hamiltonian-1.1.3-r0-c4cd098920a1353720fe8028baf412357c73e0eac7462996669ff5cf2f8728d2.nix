@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mcmc-types)
           (hsPkgs.mwc-probability)
@@ -37,7 +37,7 @@
       };
       tests = {
         "booth" = {
-          depends  = [
+          depends = [
             (hsPkgs.ad)
             (hsPkgs.base)
             (hsPkgs.mwc-probability)

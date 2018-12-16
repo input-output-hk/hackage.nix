@@ -26,7 +26,7 @@
     components = {
       exes = {
         "kif-parser" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.twine)

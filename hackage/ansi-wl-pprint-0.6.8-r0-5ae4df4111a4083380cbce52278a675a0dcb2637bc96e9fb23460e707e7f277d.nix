@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.ansi-terminal)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ [
           (hsPkgs.base)
@@ -36,7 +36,7 @@
       };
       exes = {
         "ansi-wl-pprint-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-terminal)
           ] ++ [ (hsPkgs.base) ];
         };

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -39,7 +39,7 @@
       };
       exes = {
         "protobuf-native-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.protobuf-native)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       tests = {
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.protobuf-native)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
           ];
         };
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.protobuf-native)
             (hsPkgs.base)
             (hsPkgs.bytestring)

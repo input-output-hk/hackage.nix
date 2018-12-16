@@ -26,7 +26,7 @@
     components = {
       exes = {
         "zampolit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.cmdargs)

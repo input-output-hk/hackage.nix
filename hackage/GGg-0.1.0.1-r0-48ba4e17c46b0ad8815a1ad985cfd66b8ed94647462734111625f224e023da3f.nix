@@ -26,7 +26,7 @@
     components = {
       exes = {
         "GGg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bimap)
           ];

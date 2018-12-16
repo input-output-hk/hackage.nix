@@ -26,7 +26,7 @@
     components = {
       exes = {
         "archnews" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagsoup)
             (hsPkgs.download-curl)

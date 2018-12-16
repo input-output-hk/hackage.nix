@@ -26,7 +26,7 @@
     components = {
       exes = {
         "youtube-auth" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.process)
             (hsPkgs.utility-ht)
@@ -34,7 +34,7 @@
           ];
         };
         "youtube-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.process)
             (hsPkgs.base)

@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "cymake" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.curry-base)
             (hsPkgs.mtl)

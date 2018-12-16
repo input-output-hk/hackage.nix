@@ -26,7 +26,7 @@
     components = {
       exes = {
         "clone-all" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.system-filepath)

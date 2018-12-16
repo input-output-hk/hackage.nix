@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.atomic-primops)
           (hsPkgs.base)
           (hsPkgs.parallel)
@@ -39,7 +39,7 @@
       };
       exes = {
         "MoveStringSTM" = {
-          depends  = pkgs.lib.optionals (!(!flags.unstable)) [
+          depends = pkgs.lib.optionals (!(!flags.unstable)) [
             (hsPkgs.base)
             (hsPkgs.rcu)
             (hsPkgs.stm)
@@ -47,7 +47,7 @@
           ];
         };
         "MoveStringQSBR" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rcu)
             (hsPkgs.stm)
@@ -57,7 +57,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -66,7 +66,7 @@
           ];
         };
         "hlint" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
           ];

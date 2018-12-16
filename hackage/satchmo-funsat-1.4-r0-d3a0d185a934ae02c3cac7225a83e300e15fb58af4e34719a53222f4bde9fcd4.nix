@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.satchmo)
           (hsPkgs.funsat)
           (hsPkgs.parse-dimacs)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -45,7 +45,7 @@
       };
       tests = {
         "check" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.HsOpenSSL)
             (hsPkgs.MonadCatchIO-transformers)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "diffcabal" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.pretty)

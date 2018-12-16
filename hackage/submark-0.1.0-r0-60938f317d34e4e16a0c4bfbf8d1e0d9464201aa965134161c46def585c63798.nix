@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cmark)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       exes = {
         "submark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmark)
             (hsPkgs.text)
@@ -44,7 +44,7 @@
       };
       tests = {
         "hlint" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmark)
             (hsPkgs.text)
@@ -52,7 +52,7 @@
           ];
         };
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmark)
             (hsPkgs.text)

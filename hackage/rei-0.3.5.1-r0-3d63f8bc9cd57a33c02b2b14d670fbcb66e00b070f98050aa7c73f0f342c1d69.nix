@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rei" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.regex-tdfa)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HTTP)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -40,7 +40,7 @@
       };
       tests = {
         "TestHSmarty" = {
-          depends  = [
+          depends = [
             (hsPkgs.HSmarty)
             (hsPkgs.HTF)
             (hsPkgs.aeson)

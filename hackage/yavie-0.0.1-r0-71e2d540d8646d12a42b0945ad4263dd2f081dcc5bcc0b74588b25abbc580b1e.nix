@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.event-driven)
           (hsPkgs.filepath)
@@ -35,7 +35,7 @@
       };
       exes = {
         "yavie" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.Cabal)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.bzlib)
@@ -71,7 +71,7 @@
       };
       exes = {
         "fakechanges" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.debian)
             (hsPkgs.directory)
@@ -79,7 +79,7 @@
           ];
         };
         "debian-report" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.debian)
             (hsPkgs.HaXml)
@@ -88,7 +88,7 @@
           ];
         };
         "apt-get-build-depends" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.debian)
             (hsPkgs.process)
@@ -97,7 +97,7 @@
       };
       tests = {
         "debian-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.debian)

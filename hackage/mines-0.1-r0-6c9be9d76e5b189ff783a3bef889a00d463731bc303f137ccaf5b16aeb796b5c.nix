@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.mtl)

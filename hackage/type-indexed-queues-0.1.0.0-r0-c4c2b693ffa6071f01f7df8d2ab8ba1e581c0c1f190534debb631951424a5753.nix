@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-typelits-natnormalise)
           (hsPkgs.deepseq)
@@ -34,7 +34,7 @@
       };
       tests = {
         "type-indexed-queues-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-indexed-queues)
             (hsPkgs.QuickCheck)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.type-indexed-queues)
             (hsPkgs.criterion)

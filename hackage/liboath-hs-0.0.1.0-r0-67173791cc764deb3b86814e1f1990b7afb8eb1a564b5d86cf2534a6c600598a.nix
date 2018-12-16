@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.inline-c)
           (hsPkgs.safe-exceptions)
@@ -39,7 +39,7 @@
       };
       exes = {
         "oathtool-hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.liboath-hs)
             (hsPkgs.time)
@@ -49,7 +49,7 @@
       };
       tests = {
         "liboath-hs-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.liboath-hs)
           ];

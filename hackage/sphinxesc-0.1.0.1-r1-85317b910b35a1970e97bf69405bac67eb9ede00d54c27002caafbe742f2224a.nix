@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.split)
@@ -34,7 +34,7 @@
       };
       exes = {
         "sphinxesc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sphinxesc)
             (hsPkgs.optparse-applicative)

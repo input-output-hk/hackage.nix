@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sphinx-cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sphinx)
           ];

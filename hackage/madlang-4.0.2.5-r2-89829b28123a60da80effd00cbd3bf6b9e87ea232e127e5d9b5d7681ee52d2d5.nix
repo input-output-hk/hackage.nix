@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.megaparsec)
           (hsPkgs.text)
@@ -54,7 +54,7 @@
       };
       exes = {
         "madlang" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.madlang)
             (hsPkgs.optparse-applicative)
@@ -66,7 +66,7 @@
       };
       tests = {
         "madlang-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.madlang)
             (hsPkgs.hspec)
@@ -77,7 +77,7 @@
       };
       benchmarks = {
         "madlang-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.madlang)

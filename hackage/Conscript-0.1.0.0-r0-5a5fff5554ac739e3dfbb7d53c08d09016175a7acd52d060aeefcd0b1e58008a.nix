@@ -26,7 +26,7 @@
     components = {
       exes = {
         "conscript" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
           ];

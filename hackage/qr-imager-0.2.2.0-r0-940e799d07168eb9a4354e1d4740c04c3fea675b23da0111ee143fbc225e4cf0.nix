@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.JuicyPixels)
@@ -46,7 +46,7 @@
       };
       exes = {
         "qrpipe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.qr-imager)
           ];
@@ -54,7 +54,7 @@
       };
       tests = {
         "test-lib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.qr-imager)
             (hsPkgs.hspec)

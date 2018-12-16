@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
@@ -38,7 +38,7 @@
       };
       exes = {
         "hs-ssh-client" = {
-          depends  = pkgs.lib.optionals (flags.example-client) [
+          depends = pkgs.lib.optionals (flags.example-client) [
             (hsPkgs.base)
             (hsPkgs.libssh2)
             (hsPkgs.stm)

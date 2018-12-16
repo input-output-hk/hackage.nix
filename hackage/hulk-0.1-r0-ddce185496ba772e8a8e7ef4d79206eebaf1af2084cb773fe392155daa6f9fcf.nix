@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hulk" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.network)
@@ -42,7 +42,7 @@
           ];
         };
         "hulk-generate-pass" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.network)

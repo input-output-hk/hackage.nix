@@ -26,7 +26,7 @@
     components = {
       exes = {
         "boomange" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

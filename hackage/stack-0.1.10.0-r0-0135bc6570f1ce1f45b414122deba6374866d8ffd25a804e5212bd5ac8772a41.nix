@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)
@@ -112,7 +112,7 @@
       };
       exes = {
         "stack" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.Cabal)
@@ -148,7 +148,7 @@
       };
       tests = {
         "stack-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.containers)
@@ -174,7 +174,7 @@
           ];
         };
         "stack-integration-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.temporary)
             (hsPkgs.hspec)

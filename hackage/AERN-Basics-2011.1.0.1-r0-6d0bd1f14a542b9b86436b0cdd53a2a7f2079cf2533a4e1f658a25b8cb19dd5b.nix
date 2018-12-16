@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.QuickCheck)
@@ -38,7 +38,7 @@
       };
       exes = {
         "toolAERN-bench-csv-to-gnuplot" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.containers)

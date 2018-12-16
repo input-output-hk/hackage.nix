@@ -25,17 +25,17 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "semigroup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unsafely)
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.tagged);
         };
         "safe-unsafe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unsafely)
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.tagged);

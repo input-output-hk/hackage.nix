@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpdfp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.permutation)
           (hsPkgs.containers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "general-games-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.general-games)
             (hsPkgs.containers)

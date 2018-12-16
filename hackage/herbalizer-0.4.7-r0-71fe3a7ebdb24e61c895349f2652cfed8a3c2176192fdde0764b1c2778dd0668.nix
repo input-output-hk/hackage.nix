@@ -26,7 +26,7 @@
     components = {
       exes = {
         "herbalizer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.parsec)

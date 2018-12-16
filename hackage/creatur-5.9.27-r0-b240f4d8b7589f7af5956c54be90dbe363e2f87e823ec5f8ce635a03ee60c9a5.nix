@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MonadRandom)
           (hsPkgs.array)
           (hsPkgs.base)
@@ -49,7 +49,7 @@
       };
       tests = {
         "creatur-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)

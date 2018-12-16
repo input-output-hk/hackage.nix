@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc)
           (hsPkgs.ghc-tcplugins-extra)
@@ -36,7 +36,7 @@
       };
       tests = {
         "test-uom-plugin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uom-plugin)
             (hsPkgs.tasty)

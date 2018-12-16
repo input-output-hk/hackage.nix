@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (((((([
+        depends = (((((([
           (hsPkgs.base)
           (hsPkgs.annotated-wl-pprint)
           (hsPkgs.ansi-terminal)
@@ -72,7 +72,7 @@
       };
       exes = {
         "idris" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -82,7 +82,7 @@
           ];
         };
         "idris-c" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -91,7 +91,7 @@
           ];
         };
         "idris-javascript" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -100,7 +100,7 @@
           ];
         };
         "idris-node" = {
-          depends  = [
+          depends = [
             (hsPkgs.idris)
             (hsPkgs.base)
             (hsPkgs.filepath)

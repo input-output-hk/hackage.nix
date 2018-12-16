@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.temporary)
           (hsPkgs.process)
@@ -36,7 +36,7 @@
       };
       tests = {
         "tmp-postgres-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tmp-postgres)
             (hsPkgs.hspec)

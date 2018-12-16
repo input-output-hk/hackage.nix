@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.mtl)
@@ -33,7 +33,7 @@
       };
       exes = {
         "fststudio" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.mtl)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test-fst" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fst)
             (hsPkgs.QuickCheck)

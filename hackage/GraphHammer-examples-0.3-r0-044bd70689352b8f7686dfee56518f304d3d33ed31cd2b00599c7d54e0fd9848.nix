@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "TriangleCountTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)
@@ -37,7 +37,7 @@
           ];
         };
         "ClusteringCoefficientTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mtl)

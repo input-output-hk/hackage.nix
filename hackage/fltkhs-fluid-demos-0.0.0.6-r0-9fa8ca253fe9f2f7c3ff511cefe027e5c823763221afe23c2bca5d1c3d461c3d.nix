@@ -26,42 +26,42 @@
     components = {
       exes = {
         "fltkhs-fluid-radio" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.fltkhs)
           ];
         };
         "fltkhs-fluid-tabs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.fltkhs)
           ];
         };
         "fltkhs-fluid-valuators" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.fltkhs)
           ];
         };
         "fltkhs-fluid-inactive" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.fltkhs)
           ];
         };
         "fltkhs-fluid-fast-slow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.fltkhs)
           ];
         };
         "fltkhs-fluid-tree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.fltkhs)

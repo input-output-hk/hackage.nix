@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
@@ -41,7 +41,7 @@
       };
       tests = {
         "chronos-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chronos)
             (hsPkgs.text)

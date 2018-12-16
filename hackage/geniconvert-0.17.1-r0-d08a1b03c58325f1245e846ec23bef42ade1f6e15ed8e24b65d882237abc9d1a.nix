@@ -26,7 +26,7 @@
     components = {
       exes = {
         "geniconvert" = {
-          depends  = [
+          depends = [
             (hsPkgs.GenI)
             (hsPkgs.base)
             (hsPkgs.binary)

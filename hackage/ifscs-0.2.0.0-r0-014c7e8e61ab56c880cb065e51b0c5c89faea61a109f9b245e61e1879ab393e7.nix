@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.failure)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       tests = {
         "ConstraintTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.ifscs)
             (hsPkgs.base)
             (hsPkgs.test-framework)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.algebraic-graphs)
           (hsPkgs.attoparsec)
@@ -39,7 +39,7 @@
       };
       tests = {
         "pangraph-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.bytestring)

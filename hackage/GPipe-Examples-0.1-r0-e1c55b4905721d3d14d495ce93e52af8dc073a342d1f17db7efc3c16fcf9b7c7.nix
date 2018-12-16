@@ -26,7 +26,7 @@
     components = {
       exes = {
         "01_green_triangle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.Vec)
@@ -37,7 +37,7 @@
           ];
         };
         "02_triangle_texture" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.Vec)
@@ -48,7 +48,7 @@
           ];
         };
         "03_green_sphere" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.Vec)
@@ -59,7 +59,7 @@
           ];
         };
         "04_brass_sphere" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.Vec)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.network)
           (hsPkgs.mtl)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.small_base
@@ -47,7 +47,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
           ];

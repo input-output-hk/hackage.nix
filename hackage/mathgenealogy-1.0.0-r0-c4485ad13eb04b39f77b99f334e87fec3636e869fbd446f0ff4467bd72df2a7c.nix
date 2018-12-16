@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mathgenealogy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.directory)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.non-negative)
           (hsPkgs.utility-ht)
           (hsPkgs.transformers)
@@ -52,7 +52,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.storablevector)
             (hsPkgs.bytestring)
             (hsPkgs.utility-ht)
@@ -67,7 +67,7 @@
       };
       benchmarks = {
         "speedtest" = {
-          depends  = [
+          depends = [
             (hsPkgs.storablevector)
             (hsPkgs.utility-ht)
             (hsPkgs.sample-frame)
@@ -76,7 +76,7 @@
           ] ++ [ (hsPkgs.base) ];
         };
         "speedpointer" = {
-          depends  = [
+          depends = [
             (hsPkgs.storablevector)
             (hsPkgs.utility-ht)
           ] ++ [ (hsPkgs.base) ];

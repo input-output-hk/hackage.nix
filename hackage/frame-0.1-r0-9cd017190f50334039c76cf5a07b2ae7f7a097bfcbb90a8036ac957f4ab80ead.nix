@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.ghc-binary)
@@ -48,7 +48,7 @@
       };
       exes = {
         "frame-shell" = {
-          depends  = [ (hsPkgs.pretty) ];
+          depends = [ (hsPkgs.pretty) ];
         };
       };
     };

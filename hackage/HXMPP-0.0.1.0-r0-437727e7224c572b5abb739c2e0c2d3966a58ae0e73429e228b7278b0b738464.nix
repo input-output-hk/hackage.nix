@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HLogger)
           (hsPkgs.base)
           (hsPkgs.enumerator)
@@ -46,7 +46,7 @@
       };
       exes = {
         "hxmpp-0.0.1.0-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HLogger)
             (hsPkgs.base)
             (hsPkgs.enumerator)

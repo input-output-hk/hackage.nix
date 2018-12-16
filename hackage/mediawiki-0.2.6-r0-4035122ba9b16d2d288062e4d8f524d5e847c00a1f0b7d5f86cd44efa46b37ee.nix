@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
           (hsPkgs.HTTP)
@@ -36,7 +36,7 @@
       };
       exes = {
         "main" = {
-          depends  = [
+          depends = [
             (hsPkgs.mediawiki)
             (hsPkgs.base)
             (hsPkgs.xml)
@@ -47,7 +47,7 @@
           ];
         };
         "listCat" = {
-          depends  = [
+          depends = [
             (hsPkgs.mediawiki)
             (hsPkgs.base)
             (hsPkgs.xml)
@@ -59,7 +59,7 @@
           ];
         };
         "linksTo" = {
-          depends  = [
+          depends = [
             (hsPkgs.mediawiki)
             (hsPkgs.base)
             (hsPkgs.xml)

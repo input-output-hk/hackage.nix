@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.DebugTraceHelpers)
           (hsPkgs.Boolean)
           (hsPkgs.base)

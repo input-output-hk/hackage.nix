@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dow" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elerea)
             (hsPkgs.OpenGL)

@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.comonad)
@@ -49,7 +49,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -57,13 +57,13 @@
           ];
         };
         "templates" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
           ];
         };
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.QuickCheck)
@@ -71,7 +71,7 @@
           ];
         };
         "hunit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -85,7 +85,7 @@
       };
       benchmarks = {
         "plated" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.comonad)
             (hsPkgs.criterion)

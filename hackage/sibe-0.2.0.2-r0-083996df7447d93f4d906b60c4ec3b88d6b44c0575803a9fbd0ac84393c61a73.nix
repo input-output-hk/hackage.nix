@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
           (hsPkgs.random)
@@ -46,7 +46,7 @@
       };
       exes = {
         "example-xor" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)
@@ -54,7 +54,7 @@
           ];
         };
         "example-word2vec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)
@@ -66,7 +66,7 @@
           ];
         };
         "example-424" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)
@@ -74,7 +74,7 @@
           ];
         };
         "example-notmnist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)
@@ -89,7 +89,7 @@
           ];
         };
         "example-naivebayes-doc-classifier" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)
@@ -100,7 +100,7 @@
       };
       tests = {
         "sibe-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "packunused" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.cmdargs)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dhall-to-text" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dhall)
             (hsPkgs.optparse-applicative)

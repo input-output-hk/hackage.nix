@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.mtl)
@@ -36,7 +36,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.binary-parser)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

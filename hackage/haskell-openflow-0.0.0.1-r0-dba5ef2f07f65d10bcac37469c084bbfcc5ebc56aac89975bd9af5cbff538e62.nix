@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-main" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-openflow)
           ];

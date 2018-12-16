@@ -26,7 +26,7 @@
     components = {
       exes = {
         "delay" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parseargs)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.OpenGL)
           (hsPkgs.StateVar)
           (hsPkgs.Tensor)

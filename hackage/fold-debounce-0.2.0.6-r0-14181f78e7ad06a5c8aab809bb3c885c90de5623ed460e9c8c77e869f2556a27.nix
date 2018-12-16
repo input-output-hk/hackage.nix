@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.stm)
@@ -35,7 +35,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fold-debounce)
             (hsPkgs.hspec)
@@ -44,7 +44,7 @@
           ];
         };
         "spec-threaded" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fold-debounce)
             (hsPkgs.hspec)

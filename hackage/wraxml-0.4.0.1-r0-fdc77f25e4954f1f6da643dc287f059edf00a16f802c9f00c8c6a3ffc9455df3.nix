@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.polyparse)
           (hsPkgs.tagsoup)
           (hsPkgs.tagchup)

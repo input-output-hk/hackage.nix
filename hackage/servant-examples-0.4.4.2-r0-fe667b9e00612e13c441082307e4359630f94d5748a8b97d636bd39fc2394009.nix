@@ -26,7 +26,7 @@
     components = {
       exes = {
         "tutorial" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
           ];
         };
         "t8-main" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.either)
@@ -60,7 +60,7 @@
           ];
         };
         "hackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.either)
@@ -71,7 +71,7 @@
           ];
         };
         "wai-middleware" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.servant)
@@ -83,7 +83,7 @@
           ];
         };
         "auth-combinator" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

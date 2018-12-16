@@ -26,7 +26,7 @@
     components = {
       exes = {
         "potato-tool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.split)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.word24)
           (hsPkgs.bytestring)
@@ -48,7 +48,7 @@
       };
       tests = {
         "stm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.peyotls)
             (hsPkgs.handle-like)
             (hsPkgs.base)
@@ -61,7 +61,7 @@
           ];
         };
         "debug-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.peyotls)
             (hsPkgs.handle-like)
             (hsPkgs.base)
@@ -75,7 +75,7 @@
           ];
         };
         "reneg-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.peyotls)
             (hsPkgs.handle-like)
             (hsPkgs.base)
@@ -89,7 +89,7 @@
           ];
         };
         "ci-reneg-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.peyotls)
             (hsPkgs.handle-like)
             (hsPkgs.base)

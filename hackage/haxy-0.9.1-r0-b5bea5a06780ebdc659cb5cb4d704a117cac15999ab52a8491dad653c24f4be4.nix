@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.http-server)
           (hsPkgs.HTTP)
           (hsPkgs.base)
@@ -37,7 +37,7 @@
       };
       exes = {
         "simple-proxy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.data-default-class)

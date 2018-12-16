@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Glome" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.monad-par)

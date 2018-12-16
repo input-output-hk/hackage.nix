@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.data-ordlist)
@@ -46,7 +46,7 @@
       };
       exes = {
         "typerbole-diagrams" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-lib)
             (hsPkgs.diagrams-svg)
@@ -56,7 +56,7 @@
       };
       tests = {
         "typerbole-testing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)

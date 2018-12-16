@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.api-field-json-th)
@@ -48,7 +48,7 @@
       };
       exes = {
         "yesod-job-queue-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
             (hsPkgs.yesod-core)
@@ -63,7 +63,7 @@
       };
       tests = {
         "yesod-job-queue-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-job-queue)
           ];

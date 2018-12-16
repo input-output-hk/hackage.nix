@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.heap)
@@ -34,7 +34,7 @@
       };
       tests = {
         "StaticTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kdt)
             (hsPkgs.QuickCheck)
@@ -43,7 +43,7 @@
           ];
         };
         "DynamicTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kdt)
             (hsPkgs.QuickCheck)
@@ -54,7 +54,7 @@
       };
       benchmarks = {
         "KDTBenchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kdt)
             (hsPkgs.MonadRandom)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "randsolid" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.X11)
             (hsPkgs.random)

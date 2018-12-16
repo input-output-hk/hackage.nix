@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hp2pretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)

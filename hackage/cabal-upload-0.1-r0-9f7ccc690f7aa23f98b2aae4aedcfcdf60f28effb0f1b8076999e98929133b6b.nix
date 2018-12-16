@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.HTTP)

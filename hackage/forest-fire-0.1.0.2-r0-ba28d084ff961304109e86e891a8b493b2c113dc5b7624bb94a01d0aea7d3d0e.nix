@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       exes = {
         "forest-fire" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cli)
             (hsPkgs.forest-fire)
@@ -46,7 +46,7 @@
       };
       tests = {
         "forest-fire-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.forest-fire)
           ];

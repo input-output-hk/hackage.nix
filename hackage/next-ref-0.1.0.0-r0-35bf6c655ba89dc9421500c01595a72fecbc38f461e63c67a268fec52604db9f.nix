@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.stm)
         ];
       };
       tests = {
         "next-ref-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.next-ref)
             (hsPkgs.hspec)

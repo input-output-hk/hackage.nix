@@ -32,7 +32,7 @@
     };
     components = {
       "library" = {
-        depends  = (((([
+        depends = (((([
           (hsPkgs.base)
           (hsPkgs.base-orphans)
           (hsPkgs.bifunctors)
@@ -43,7 +43,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.doctests)) [
+          depends = pkgs.lib.optionals (!(!flags.doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.directory)

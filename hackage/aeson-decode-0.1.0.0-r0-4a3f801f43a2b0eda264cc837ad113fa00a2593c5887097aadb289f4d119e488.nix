@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hedgehog" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-decode)
             (hsPkgs.aeson-qq)
             (hsPkgs.base)

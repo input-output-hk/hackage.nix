@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.exceptions)
@@ -42,7 +42,7 @@
       };
       tests = {
         "sorting-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.quiver-sort)
             (hsPkgs.base)
             (hsPkgs.binary)

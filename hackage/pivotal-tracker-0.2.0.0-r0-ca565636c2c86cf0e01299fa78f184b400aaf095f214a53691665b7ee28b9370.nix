@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.servant)
           (hsPkgs.servant-client)
@@ -41,7 +41,7 @@
       };
       exes = {
         "tracker" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pivotal-tracker)
             (hsPkgs.servant)
@@ -53,7 +53,7 @@
       };
       tests = {
         "tracker-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.pivotal-tracker)

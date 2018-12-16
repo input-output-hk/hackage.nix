@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "pi-hoole-cfg" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -53,7 +53,7 @@
           ];
         };
         "pi-hoole-shell" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -66,7 +66,7 @@
           ];
         };
         "pi-hoole-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.base58-bytestring)
@@ -88,7 +88,7 @@
       };
       tests = {
         "pi-hoole-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pi-hoole)
           ];

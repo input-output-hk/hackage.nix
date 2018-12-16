@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cfipu" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.containers)

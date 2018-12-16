@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HTTP)
           (hsPkgs.network)
@@ -40,7 +40,7 @@
         "showPublic" = {};
         "searchPics" = {};
         "gallery" = {
-          depends  = [ (hsPkgs.xhtml) ];
+          depends = [ (hsPkgs.xhtml) ];
         };
         "uploader" = {};
       };

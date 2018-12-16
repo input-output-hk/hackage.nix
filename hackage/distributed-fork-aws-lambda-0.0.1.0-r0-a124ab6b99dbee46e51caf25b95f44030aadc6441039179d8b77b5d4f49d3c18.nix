@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.distributed-fork)
           (hsPkgs.SHA)
@@ -55,7 +55,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-fork)
             (hsPkgs.distributed-fork-aws-lambda)

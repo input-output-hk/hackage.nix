@@ -26,7 +26,7 @@
     components = {
       exes = {
         "equal-files" = {
-          depends  = [
+          depends = [
             (hsPkgs.filemanip)
             (hsPkgs.explicit-exception)
             (hsPkgs.transformers)

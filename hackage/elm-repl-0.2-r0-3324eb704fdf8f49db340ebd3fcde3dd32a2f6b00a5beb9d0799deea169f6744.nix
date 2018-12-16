@@ -26,7 +26,7 @@
     components = {
       exes = {
         "elm-repl" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)

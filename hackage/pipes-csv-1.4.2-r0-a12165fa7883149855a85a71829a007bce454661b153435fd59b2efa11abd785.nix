@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "hunit" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-hunit)) [
+          depends = pkgs.lib.optionals (!(!flags.test-hunit)) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.pipes)

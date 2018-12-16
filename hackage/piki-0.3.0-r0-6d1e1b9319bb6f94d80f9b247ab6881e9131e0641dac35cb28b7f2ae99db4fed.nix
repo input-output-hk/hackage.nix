@@ -26,7 +26,7 @@
     components = {
       exes = {
         "piki" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.utf8-string)

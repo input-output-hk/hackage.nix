@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.validity)
           (hsPkgs.genvalidity)
@@ -35,7 +35,7 @@
       };
       tests = {
         "genvalidity-hspec-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.genvalidity-hspec)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.workflow-types)
           (hsPkgs.transformers)
@@ -38,7 +38,7 @@
       };
       exes = {
         "example-workflow-extra" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-extra)
           ];
@@ -46,14 +46,14 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-extra)
             (hsPkgs.doctest)
           ];
         };
         "unittest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-extra)
             (hsPkgs.hspec)
@@ -63,7 +63,7 @@
       };
       benchmarks = {
         "command" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-extra)
             (hsPkgs.criterion)

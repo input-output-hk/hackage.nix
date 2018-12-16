@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.async)
@@ -45,7 +45,7 @@
       };
       exes = {
         "dustme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.dustme)
           ];
@@ -53,7 +53,7 @@
       };
       tests = {
         "dustme-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.dustme)

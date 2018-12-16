@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
       };
       tests = {
         "basen-bytestring-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.basen-bytestring)
             (hsPkgs.bytestring)

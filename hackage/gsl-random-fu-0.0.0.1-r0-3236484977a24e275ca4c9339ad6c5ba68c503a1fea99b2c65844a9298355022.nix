@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.gsl-random)
           (hsPkgs.random-fu)
           (hsPkgs.base)

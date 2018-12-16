@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.choose)
           (hsPkgs.optparse-applicative)
@@ -34,7 +34,7 @@
       };
       exes = {
         "choose" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.choose)
             (hsPkgs.optparse-applicative)

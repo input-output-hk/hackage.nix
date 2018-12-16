@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
           (hsPkgs.async)
@@ -62,7 +62,7 @@
       };
       exes = {
         "test-pileup" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.biohazard)
@@ -75,7 +75,7 @@
           ];
         };
         "redeye-dar" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson-pretty)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -90,7 +90,7 @@
           ];
         };
         "redeye-single" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -107,7 +107,7 @@
           ];
         };
         "redeye-flow" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -123,7 +123,7 @@
           ];
         };
         "afroengineer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -134,7 +134,7 @@
           ];
         };
         "bam-fixpair" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.base)
             (hsPkgs.binary)
@@ -148,7 +148,7 @@
           ];
         };
         "bam-meld" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -156,7 +156,7 @@
           ];
         };
         "bam-resample" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -164,7 +164,7 @@
           ];
         };
         "bam-rewrap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -172,7 +172,7 @@
           ];
         };
         "bam-rmdup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -182,14 +182,14 @@
           ];
         };
         "bam-trim" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
           ];
         };
         "fastq2bam" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
@@ -198,7 +198,7 @@
           ];
         };
         "jivebunny" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.biohazard)
@@ -215,7 +215,7 @@
           ];
         };
         "mt-anno" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.biohazard)
@@ -223,7 +223,7 @@
           ];
         };
         "mt-ccheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.biohazard)

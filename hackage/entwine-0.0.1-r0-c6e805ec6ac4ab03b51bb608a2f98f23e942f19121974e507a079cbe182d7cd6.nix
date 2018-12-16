@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.entwine)
             (hsPkgs.async)
@@ -57,7 +57,7 @@
           ];
         };
         "test-io" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.entwine)
             (hsPkgs.async)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.entwine)
             (hsPkgs.criterion)

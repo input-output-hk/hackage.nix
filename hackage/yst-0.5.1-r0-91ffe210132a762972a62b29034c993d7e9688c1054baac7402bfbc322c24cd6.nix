@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yst" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.HStringTemplate)

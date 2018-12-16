@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.pretty)
@@ -41,7 +41,7 @@
       };
       exes = {
         "ntha" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ntha)
             (hsPkgs.containers)
@@ -53,7 +53,7 @@
       };
       tests = {
         "ntha-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ntha)
             (hsPkgs.hspec)

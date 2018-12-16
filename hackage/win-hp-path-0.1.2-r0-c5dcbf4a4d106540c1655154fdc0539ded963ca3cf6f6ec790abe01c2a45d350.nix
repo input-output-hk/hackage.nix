@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.split)
         ];
       };
       exes = {
         "use-hppath" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.win-hp-path)
             (hsPkgs.process)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambdacube-bullet-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdacube-engine)
             (hsPkgs.elerea)

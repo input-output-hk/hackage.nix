@@ -26,31 +26,31 @@
     components = {
       exes = {
         "test1" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];
         };
         "test2" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];
         };
         "test3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];
         };
         "test4" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];
         };
         "test5" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alsa)
           ];

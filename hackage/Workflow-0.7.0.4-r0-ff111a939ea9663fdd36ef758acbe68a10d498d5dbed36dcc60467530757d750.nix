@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MonadCatchIO-mtl)
           (hsPkgs.RefSerialize)
           (hsPkgs.TCache)

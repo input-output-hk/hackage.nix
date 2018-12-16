@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base)
         ];
@@ -36,12 +36,12 @@
       };
       exes = {
         "runtests" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
       tests = {
         "test-ldap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.LDAP)
             (hsPkgs.HUnit)

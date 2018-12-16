@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pappy" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

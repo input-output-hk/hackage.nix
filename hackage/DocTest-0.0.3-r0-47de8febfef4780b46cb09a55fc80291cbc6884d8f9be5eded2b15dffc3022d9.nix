@@ -26,7 +26,7 @@
     components = {
       exes = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.parsec)

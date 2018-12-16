@@ -26,7 +26,7 @@
     components = {
       exes = {
         "brain-bleep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.parsec)

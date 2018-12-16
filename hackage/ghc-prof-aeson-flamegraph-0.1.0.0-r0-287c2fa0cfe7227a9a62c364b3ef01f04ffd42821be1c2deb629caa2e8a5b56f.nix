@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghc-prof-aeson-flamegraph" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)

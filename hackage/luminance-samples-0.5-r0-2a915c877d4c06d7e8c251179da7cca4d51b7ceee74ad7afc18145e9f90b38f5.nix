@@ -26,7 +26,7 @@
     components = {
       exes = {
         "HelloWorld" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.luminance)
             (hsPkgs.GLFW-b)
@@ -36,7 +36,7 @@
           ];
         };
         "HelloWorldUniform" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.luminance)
             (hsPkgs.GLFW-b)
@@ -46,7 +46,7 @@
           ];
         };
         "DepthTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.contravariant)
             (hsPkgs.luminance)
@@ -57,7 +57,7 @@
           ];
         };
         "Blending" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.contravariant)
             (hsPkgs.luminance)
@@ -68,7 +68,7 @@
           ];
         };
         "Texture" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.contravariant)
             (hsPkgs.JuicyPixels)
@@ -80,7 +80,7 @@
           ];
         };
         "Blit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.contravariant)
             (hsPkgs.luminance)

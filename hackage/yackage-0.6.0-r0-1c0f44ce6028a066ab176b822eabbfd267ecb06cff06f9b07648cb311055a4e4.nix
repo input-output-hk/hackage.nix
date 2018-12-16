@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yackage" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod-core)
             (hsPkgs.warp)
@@ -51,7 +51,7 @@
           ];
         };
         "yackage-upload" = {
-          depends  = pkgs.lib.optionals (flags.upload) [
+          depends = pkgs.lib.optionals (flags.upload) [
             (hsPkgs.base)
             (hsPkgs.http-conduit)
             (hsPkgs.blaze-builder)

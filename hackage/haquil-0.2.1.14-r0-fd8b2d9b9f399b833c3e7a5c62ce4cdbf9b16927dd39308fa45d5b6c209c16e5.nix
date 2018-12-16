@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bv)
           (hsPkgs.data-binary-ieee754)
@@ -38,7 +38,7 @@
       };
       tests = {
         "haquil-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bv)
             (hsPkgs.data-binary-ieee754)

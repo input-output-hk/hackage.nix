@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.vector)
@@ -37,7 +37,7 @@
       };
       exes = {
         "search-demo" = {
-          depends  = pkgs.lib.optionals (!(!flags.build-search-demo)) [
+          depends = pkgs.lib.optionals (!(!flags.build-search-demo)) [
             (hsPkgs.full-text-search)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -63,7 +63,7 @@
       };
       tests = {
         "qc-props" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.vector)

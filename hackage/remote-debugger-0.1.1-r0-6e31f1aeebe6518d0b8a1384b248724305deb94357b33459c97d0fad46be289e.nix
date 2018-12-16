@@ -26,7 +26,7 @@
     components = {
       exes = {
         "remote-debugger" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)

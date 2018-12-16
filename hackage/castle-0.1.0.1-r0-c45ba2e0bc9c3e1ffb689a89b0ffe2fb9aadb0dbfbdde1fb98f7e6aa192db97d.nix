@@ -26,7 +26,7 @@
     components = {
       exes = {
         "castle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shelly)
             (hsPkgs.system-filepath)

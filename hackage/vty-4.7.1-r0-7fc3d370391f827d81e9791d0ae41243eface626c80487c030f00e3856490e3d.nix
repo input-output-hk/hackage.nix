@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -42,7 +42,7 @@
       };
       exes = {
         "vty-interactive-terminal-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -64,7 +64,7 @@
       };
       tests = {
         "verify-attribute-ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -83,7 +83,7 @@
           ];
         };
         "verify-using-mock-terminal" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -102,7 +102,7 @@
           ];
         };
         "verify-display-attributes" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -121,7 +121,7 @@
           ];
         };
         "verify-empty-image-props" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -140,7 +140,7 @@
           ];
         };
         "verify-eval-terminfo-caps" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -159,7 +159,7 @@
           ];
         };
         "verify-image-ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -178,7 +178,7 @@
           ];
         };
         "verify-image-trans" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -197,7 +197,7 @@
           ];
         };
         "verify-inline" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -216,7 +216,7 @@
           ];
         };
         "verify-parse-terminfo-caps" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -235,7 +235,7 @@
           ];
         };
         "verify-picture-ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -254,7 +254,7 @@
           ];
         };
         "verify-picture-to-span" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -273,7 +273,7 @@
           ];
         };
         "verify-span-ops" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
@@ -292,7 +292,7 @@
           ];
         };
         "verify-utf8-width" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)

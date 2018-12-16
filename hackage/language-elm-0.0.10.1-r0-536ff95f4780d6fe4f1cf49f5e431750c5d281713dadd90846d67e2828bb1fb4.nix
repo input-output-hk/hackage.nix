@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.pretty)
           (hsPkgs.MissingH)
@@ -33,7 +33,7 @@
       };
       tests = {
         "language-elm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-elm)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "rocksdb-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.rocksdb-haskell)
             (hsPkgs.hspec)

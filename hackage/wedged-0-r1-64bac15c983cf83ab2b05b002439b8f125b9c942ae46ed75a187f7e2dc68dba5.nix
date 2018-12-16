@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wedged" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MonadRandom)
             (hsPkgs.array)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.wl-pprint-text)
@@ -46,12 +46,12 @@
       };
       exes = {
         "jmacro" = {
-          depends  = [
+          depends = [
             (hsPkgs.parseargs)
           ];
         };
         "jmacro-bench" = {
-          depends  = pkgs.lib.optional (flags.benchmarks) (hsPkgs.criterion);
+          depends = pkgs.lib.optional (flags.benchmarks) (hsPkgs.criterion);
         };
       };
     };

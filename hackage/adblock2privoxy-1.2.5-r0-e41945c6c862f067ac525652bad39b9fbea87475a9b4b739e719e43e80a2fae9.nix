@@ -26,7 +26,7 @@
     components = {
       exes = {
         "adblock2privoxy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.mtl)
@@ -44,7 +44,7 @@
           ];
         };
         "adblock2privoxy-distrib" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc)
             (hsPkgs.Cabal)

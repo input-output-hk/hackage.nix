@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
@@ -56,7 +56,7 @@
       };
       exes = {
         "skylighting-extract" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.skylighting-core)
             (hsPkgs.filepath)
@@ -82,7 +82,7 @@
       };
       tests = {
         "test-skylighting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.tasty)
@@ -105,7 +105,7 @@
       };
       benchmarks = {
         "benchmark-skylighting" = {
-          depends  = [
+          depends = [
             (hsPkgs.skylighting-core)
             (hsPkgs.base)
             (hsPkgs.filepath)

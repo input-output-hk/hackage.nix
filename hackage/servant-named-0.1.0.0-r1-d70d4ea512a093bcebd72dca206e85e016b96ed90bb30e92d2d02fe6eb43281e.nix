@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.servant)
         ];
       };
       tests = {
         "servant-named-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-named)
             (hsPkgs.servant)

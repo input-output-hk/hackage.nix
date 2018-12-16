@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.async)
           (hsPkgs.base)
@@ -51,7 +51,7 @@
       };
       exes = {
         "doi" = {
-          depends  = [
+          depends = [
             (hsPkgs.MissingH)
             (hsPkgs.async)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pandoc-citeproc-preamble" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc-types)
             (hsPkgs.process)

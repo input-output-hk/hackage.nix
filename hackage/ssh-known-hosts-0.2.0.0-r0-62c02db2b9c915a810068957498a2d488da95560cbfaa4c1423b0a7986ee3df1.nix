@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.iproute)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       exes = {
         "readknownhosts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ssh-known-hosts)
           ];
@@ -43,7 +43,7 @@
       };
       tests = {
         "test_parsing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)

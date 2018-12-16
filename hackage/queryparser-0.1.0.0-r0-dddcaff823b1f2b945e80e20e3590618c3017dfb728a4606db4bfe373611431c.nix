@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
       };
       benchmarks = {
         "queryparser-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.queryparser)
             (hsPkgs.criterion)

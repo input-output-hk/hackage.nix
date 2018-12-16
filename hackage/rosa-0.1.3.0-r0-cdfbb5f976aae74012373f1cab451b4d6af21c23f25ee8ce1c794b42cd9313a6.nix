@@ -26,7 +26,7 @@
     components = {
       exes = {
         "rosa" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.text)

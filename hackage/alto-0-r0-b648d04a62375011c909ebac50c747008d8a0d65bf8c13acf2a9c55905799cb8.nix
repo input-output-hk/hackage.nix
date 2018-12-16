@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.text)
@@ -48,7 +48,7 @@
       };
       exes = {
         "alto" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.alto)
             (hsPkgs.warp)

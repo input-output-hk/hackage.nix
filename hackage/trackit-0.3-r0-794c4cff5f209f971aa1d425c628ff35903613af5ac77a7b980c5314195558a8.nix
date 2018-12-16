@@ -26,7 +26,7 @@
     components = {
       exes = {
         "trackit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.brick)
             (hsPkgs.fsnotify)

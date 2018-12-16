@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.hashable)
@@ -58,7 +58,7 @@
       };
       benchmarks = {
         "distributed-process-throughput" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -67,7 +67,7 @@
           ];
         };
         "distributed-process-latency" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -76,7 +76,7 @@
           ];
         };
         "distributed-process-channels" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -85,7 +85,7 @@
           ];
         };
         "distributed-process-spawns" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)
@@ -94,7 +94,7 @@
           ];
         };
         "distributed-process-ring" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.distributed-process)
             (hsPkgs.network-transport-tcp)

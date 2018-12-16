@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.base)
@@ -67,7 +67,7 @@
       };
       exes = {
         "criterion-report" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat-batteries)
             (hsPkgs.criterion)
@@ -78,7 +78,7 @@
       };
       tests = {
         "sanity" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -89,7 +89,7 @@
           ];
         };
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.base-compat-batteries)
@@ -104,7 +104,7 @@
           ];
         };
         "cleanup" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.base)
             (hsPkgs.base-compat)

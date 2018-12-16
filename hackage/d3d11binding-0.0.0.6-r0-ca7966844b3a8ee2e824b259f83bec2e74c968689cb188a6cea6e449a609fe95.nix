@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Win32)
           (hsPkgs.c-storable-deriving)
@@ -42,14 +42,14 @@
       };
       exes = {
         "D3D11Binding-Triangle" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Win32)
             (hsPkgs.d3d11binding)
           ];
         };
         "D3D11Binding-Cube" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Win32)
             (hsPkgs.d3d11binding)
@@ -58,7 +58,7 @@
           ];
         };
         "D3D11Binding-RevolveCube" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Win32)
             (hsPkgs.d3d11binding)
@@ -67,7 +67,7 @@
           ];
         };
         "D3D11Binding-Lighting" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Win32)
             (hsPkgs.d3d11binding)

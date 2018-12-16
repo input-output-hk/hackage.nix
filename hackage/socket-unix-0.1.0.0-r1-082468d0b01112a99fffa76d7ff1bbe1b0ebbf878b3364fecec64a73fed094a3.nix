@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.socket)
           (hsPkgs.bytestring)
@@ -33,7 +33,7 @@
       };
       tests = {
         "default" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.socket)
             (hsPkgs.socket-unix)
@@ -45,7 +45,7 @@
           ];
         };
         "threaded" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.socket)
             (hsPkgs.socket-unix)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
@@ -48,7 +48,7 @@
       };
       exes = {
         "axel-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.axel)
             (hsPkgs.base)
             (hsPkgs.freer-simple)
@@ -58,7 +58,7 @@
       };
       tests = {
         "axel-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.axel)
             (hsPkgs.base)
             (hsPkgs.bytestring)

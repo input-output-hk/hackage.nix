@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.random)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -37,7 +37,7 @@
       };
       tests = {
         "benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.uuid)
             (hsPkgs.random)
@@ -49,7 +49,7 @@
           ];
         };
         "testuuid" = {
-          depends  = [
+          depends = [
             (hsPkgs.random)
             (hsPkgs.bytestring)
             (hsPkgs.base)

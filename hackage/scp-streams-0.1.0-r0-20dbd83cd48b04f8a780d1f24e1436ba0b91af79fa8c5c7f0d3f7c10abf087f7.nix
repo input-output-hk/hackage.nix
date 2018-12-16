@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       exes = {
         "scp-streams" = {
-          depends  = [
+          depends = [
             (hsPkgs.cmdargs)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -47,7 +47,7 @@
           ];
         };
         "scp-broken-upload" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.io-streams)
@@ -57,7 +57,7 @@
       };
       tests = {
         "run-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.io-streams)

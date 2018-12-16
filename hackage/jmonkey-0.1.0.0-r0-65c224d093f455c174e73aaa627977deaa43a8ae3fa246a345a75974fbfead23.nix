@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.casing)
           (hsPkgs.free)
@@ -34,7 +34,7 @@
       };
       exes = {
         "jmonkey-example-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.casing)
             (hsPkgs.clay)
@@ -51,7 +51,7 @@
       };
       tests = {
         "jmonkey-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.casing)
             (hsPkgs.free)

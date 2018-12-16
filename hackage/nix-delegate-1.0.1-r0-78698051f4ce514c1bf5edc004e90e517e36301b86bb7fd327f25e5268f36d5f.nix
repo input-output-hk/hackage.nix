@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.neat-interpolation)
@@ -38,7 +38,7 @@
       };
       exes = {
         "nix-delegate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nix-delegate)
           ];

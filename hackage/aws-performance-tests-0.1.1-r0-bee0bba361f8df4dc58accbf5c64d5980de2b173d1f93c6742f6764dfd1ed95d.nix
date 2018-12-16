@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.aws)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       exes = {
         "dynamodb-performance" = {
-          depends  = [
+          depends = [
             (hsPkgs.async)
             (hsPkgs.aws)
             (hsPkgs.aws-performance-tests)

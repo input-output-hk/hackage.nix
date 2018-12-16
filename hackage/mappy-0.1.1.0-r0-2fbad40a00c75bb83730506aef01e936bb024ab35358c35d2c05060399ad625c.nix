@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.containers)
@@ -33,7 +33,7 @@
       };
       exes = {
         "mappy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mappy)
             (hsPkgs.parsec)
@@ -42,7 +42,7 @@
       };
       tests = {
         "mappy-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.containers)

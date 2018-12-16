@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.mtl)
         ] ++ pkgs.lib.optional (flags.blaze) (hsPkgs.blaze-html)) ++ pkgs.lib.optional (flags.hsx) (hsPkgs.hsx);

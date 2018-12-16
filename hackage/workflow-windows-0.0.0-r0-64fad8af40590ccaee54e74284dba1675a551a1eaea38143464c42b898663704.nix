@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.workflow-types)
@@ -36,7 +36,7 @@
       };
       exes = {
         "workflow-windows-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-windows)
           ];
@@ -44,14 +44,14 @@
       };
       tests = {
         "doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-windows)
             (hsPkgs.doctest)
           ];
         };
         "unittest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.workflow-windows)
             (hsPkgs.hspec)

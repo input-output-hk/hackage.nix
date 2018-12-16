@@ -26,7 +26,7 @@
     components = {
       exes = {
         "inspection-proxy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-network)
             (hsPkgs.pipes)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-audit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.directory)

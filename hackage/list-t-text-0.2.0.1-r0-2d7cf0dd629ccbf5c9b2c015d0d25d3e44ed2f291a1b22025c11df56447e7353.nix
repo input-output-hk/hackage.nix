@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.list-t)
@@ -35,7 +35,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)

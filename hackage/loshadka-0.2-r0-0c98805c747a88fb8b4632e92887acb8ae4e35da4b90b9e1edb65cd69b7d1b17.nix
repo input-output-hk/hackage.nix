@@ -26,7 +26,7 @@
     components = {
       exes = {
         "loshadka" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.bytestring)

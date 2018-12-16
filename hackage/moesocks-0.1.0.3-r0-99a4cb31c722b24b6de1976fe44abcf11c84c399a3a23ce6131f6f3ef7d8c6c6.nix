@@ -26,7 +26,7 @@
     components = {
       exes = {
         "moesocks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.network)

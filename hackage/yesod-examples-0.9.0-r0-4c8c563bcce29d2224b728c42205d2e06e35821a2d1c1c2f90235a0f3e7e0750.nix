@@ -26,26 +26,26 @@
     components = {
       exes = {
         "yesod-blog" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
           ];
         };
         "yesod-ajax" = {
-          depends  = [
+          depends = [
             (hsPkgs.yesod-static)
             (hsPkgs.blaze-html)
             (hsPkgs.yesod)
           ];
         };
         "yesod-file-echo" = {
-          depends  = [
+          depends = [
             (hsPkgs.text)
             (hsPkgs.yesod)
           ];
         };
         "yesod-pretty-yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.data-object-yaml)
             (hsPkgs.data-object)
             (hsPkgs.bytestring)
@@ -56,7 +56,7 @@
         "yesod-session" = {};
         "yesod-form" = {};
         "yesod-persistent-synopsis" = {
-          depends  = [
+          depends = [
             (hsPkgs.transformers)
             (hsPkgs.persistent-sqlite)
             (hsPkgs.persistent-template)
@@ -64,13 +64,13 @@
           libs = [ (pkgs."sqlite3") ];
         };
         "yesod-hamlet-synopsis" = {
-          depends  = [
+          depends = [
             (hsPkgs.hamlet)
             (hsPkgs.yesod-core)
           ];
         };
         "yesod-chat" = {
-          depends  = [ (hsPkgs.stm) ];
+          depends = [ (hsPkgs.stm) ];
         };
       };
     };

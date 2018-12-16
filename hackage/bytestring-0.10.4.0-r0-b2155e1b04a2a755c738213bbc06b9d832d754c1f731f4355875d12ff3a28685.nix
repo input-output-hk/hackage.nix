@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.deepseq)
@@ -35,7 +35,7 @@
       };
       tests = {
         "prop-compiled" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.deepseq)
@@ -45,7 +45,7 @@
           ];
         };
         "test-builder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-prim)
             (hsPkgs.deepseq)

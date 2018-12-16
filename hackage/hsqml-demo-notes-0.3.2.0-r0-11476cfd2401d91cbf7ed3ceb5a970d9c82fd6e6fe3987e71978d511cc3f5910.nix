@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsqml-notes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.sqlite-simple)

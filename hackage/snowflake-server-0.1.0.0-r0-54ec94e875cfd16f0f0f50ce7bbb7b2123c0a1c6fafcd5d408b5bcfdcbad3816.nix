@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snowflake-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)

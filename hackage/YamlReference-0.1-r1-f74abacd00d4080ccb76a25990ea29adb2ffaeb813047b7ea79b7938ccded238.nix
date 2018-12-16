@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.HUnit)
           (hsPkgs.regex-compat)
@@ -34,7 +34,7 @@
       };
       exes = {
         "yaml2yeast" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.regex-compat)
@@ -42,7 +42,7 @@
           ];
         };
         "yaml2yeast-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.regex-compat)

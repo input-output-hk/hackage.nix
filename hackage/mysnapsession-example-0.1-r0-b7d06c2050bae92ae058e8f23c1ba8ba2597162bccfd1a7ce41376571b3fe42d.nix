@@ -26,7 +26,7 @@
     components = {
       exes = {
         "testsnap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.heist)

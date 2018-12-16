@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
           (hsPkgs.random-fu)
@@ -35,7 +35,7 @@
       };
       tests = {
         "kalman-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kalman)
             (hsPkgs.hmatrix)

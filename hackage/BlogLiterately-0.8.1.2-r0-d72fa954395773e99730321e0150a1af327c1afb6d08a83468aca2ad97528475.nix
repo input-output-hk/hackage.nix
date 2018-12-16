@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.filepath)
@@ -54,7 +54,7 @@
       };
       exes = {
         "BlogLiterately" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.BlogLiterately)
             (hsPkgs.cmdargs)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.pretty)
@@ -34,7 +34,7 @@
       };
       exes = {
         "Canonicalise" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)
@@ -42,7 +42,7 @@
           ];
         };
         "Xtract" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)
@@ -50,7 +50,7 @@
           ];
         };
         "Validate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)
@@ -58,7 +58,7 @@
           ];
         };
         "MkOneOf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)
@@ -66,7 +66,7 @@
           ];
         };
         "DtdToHaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.pretty)

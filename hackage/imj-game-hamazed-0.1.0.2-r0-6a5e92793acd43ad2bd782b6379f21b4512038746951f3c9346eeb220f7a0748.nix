@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.matrix)
@@ -41,7 +41,7 @@
       };
       exes = {
         "imj-game-hamazed-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.imj-game-hamazed)
             (hsPkgs.imj-prelude)
@@ -50,7 +50,7 @@
       };
       tests = {
         "imj-game-hamazed-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.imj-base)
             (hsPkgs.imj-game-hamazed)

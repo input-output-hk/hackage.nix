@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."sndfile") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

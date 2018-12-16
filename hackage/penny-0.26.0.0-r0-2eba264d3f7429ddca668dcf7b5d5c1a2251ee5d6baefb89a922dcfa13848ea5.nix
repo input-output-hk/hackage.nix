@@ -34,7 +34,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.action-permutations)
           (hsPkgs.binary)
@@ -59,13 +59,13 @@
       };
       exes = {
         "penny" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
           ];
         };
         "penny-selloff" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
             (hsPkgs.explicit-exception)
@@ -78,7 +78,7 @@
           ];
         };
         "penny-diff" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -87,7 +87,7 @@
           ];
         };
         "penny-reprint" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
             (hsPkgs.multiarg)
@@ -96,7 +96,7 @@
           ];
         };
         "penny-reconcile" = {
-          depends  = [
+          depends = [
             (hsPkgs.penny)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -105,7 +105,7 @@
           ];
         };
         "penny-test" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.penny)
             (hsPkgs.QuickCheck)
             (hsPkgs.random-shuffle)
@@ -120,7 +120,7 @@
           ];
         };
         "penny-gibberish" = {
-          depends  = pkgs.lib.optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs.penny)
             (hsPkgs.QuickCheck)
             (hsPkgs.random-shuffle)

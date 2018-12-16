@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-auth)
           (hsPkgs.wai)

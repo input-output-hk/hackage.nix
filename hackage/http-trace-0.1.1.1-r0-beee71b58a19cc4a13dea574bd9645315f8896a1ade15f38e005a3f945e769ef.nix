@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.curl)
           (hsPkgs.pcre-heavy)
@@ -38,7 +38,7 @@
       };
       exes = {
         "http-trace" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-trace)
           ];

@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
         ];
       };
       tests = {
         "Tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-invariant)
             (hsPkgs.QuickCheck)
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "Criterion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-invariant)
             (hsPkgs.criterion)

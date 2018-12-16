@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hexmino" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gloss)
             (hsPkgs.containers)

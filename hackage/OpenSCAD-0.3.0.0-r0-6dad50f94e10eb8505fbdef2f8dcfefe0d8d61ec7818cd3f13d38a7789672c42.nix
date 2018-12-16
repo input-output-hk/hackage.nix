@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.colour)
           (hsPkgs.filepath)
@@ -35,7 +35,7 @@
       };
       tests = {
         "Units" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.colour)
             (hsPkgs.filepath)

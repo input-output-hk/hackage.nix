@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.microlens)
           (hsPkgs.microlens-th)
@@ -37,7 +37,7 @@
       };
       tests = {
         "pasta-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pasta)
             (hsPkgs.hspec)

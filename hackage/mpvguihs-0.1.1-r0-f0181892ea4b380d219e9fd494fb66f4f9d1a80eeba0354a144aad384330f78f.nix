@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mpvguihs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gtk)
             (hsPkgs.template-haskell)

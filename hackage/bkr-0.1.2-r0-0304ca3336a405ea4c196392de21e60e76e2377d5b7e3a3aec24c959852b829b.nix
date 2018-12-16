@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.HDBC-sqlite3)
           (hsPkgs.hslogger)
@@ -59,7 +59,7 @@
       };
       exes = {
         "bkr" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.HDBC-sqlite3)
             (hsPkgs.hslogger)

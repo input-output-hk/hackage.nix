@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = ((((([
+        depends = ((((([
           (hsPkgs.base)
           (hsPkgs.transformers)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.gt "7.10")) (hsPkgs.transformers-compat)) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) (hsPkgs.void)) ++ pkgs.lib.optional (flags.tagged && !(compiler.isGhc && compiler.version.ge "7.7")) (hsPkgs.tagged)) ++ pkgs.lib.optional (flags.semigroups && !(compiler.isGhc && compiler.version.ge "7.11")) (hsPkgs.semigroups)) ++ pkgs.lib.optional (flags.statevar) (hsPkgs.StateVar)) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) (hsPkgs.ghc-prim);

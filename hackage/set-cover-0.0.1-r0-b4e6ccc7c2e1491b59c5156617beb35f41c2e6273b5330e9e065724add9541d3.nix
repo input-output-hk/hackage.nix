@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
@@ -35,7 +35,7 @@
       };
       exes = {
         "tetris-cube" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.set-cover)
             (hsPkgs.containers)
             (hsPkgs.utility-ht)
@@ -43,7 +43,7 @@
           ];
         };
         "soma-cube" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.set-cover)
             (hsPkgs.containers)
             (hsPkgs.utility-ht)
@@ -51,7 +51,7 @@
           ];
         };
         "queen8" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.set-cover)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -60,7 +60,7 @@
           ];
         };
         "sudoku-setcover" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.set-cover)
             (hsPkgs.containers)
             (hsPkgs.array)
@@ -69,7 +69,7 @@
           ];
         };
         "lcube" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.set-cover)
             (hsPkgs.containers)
             (hsPkgs.utility-ht)

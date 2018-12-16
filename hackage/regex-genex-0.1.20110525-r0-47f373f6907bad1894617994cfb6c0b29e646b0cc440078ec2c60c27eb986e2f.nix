@@ -26,7 +26,7 @@
     components = {
       exes = {
         "genex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.mtl)

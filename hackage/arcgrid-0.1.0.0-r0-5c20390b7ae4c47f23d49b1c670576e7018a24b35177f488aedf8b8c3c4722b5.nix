@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.parsec-numeric)
@@ -33,7 +33,7 @@
       };
       exes = {
         "arcgrid-dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.arcgrid)
           ];

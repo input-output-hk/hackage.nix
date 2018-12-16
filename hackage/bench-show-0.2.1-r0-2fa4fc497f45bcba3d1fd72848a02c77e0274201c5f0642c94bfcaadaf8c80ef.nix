@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Chart)
           (hsPkgs.Chart-diagrams)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.bench-show)
             (hsPkgs.base)
             (hsPkgs.split)
@@ -50,7 +50,7 @@
           ];
         };
         "doc" = {
-          depends  = [
+          depends = [
             (hsPkgs.bench-show)
             (hsPkgs.base)
             (hsPkgs.split)

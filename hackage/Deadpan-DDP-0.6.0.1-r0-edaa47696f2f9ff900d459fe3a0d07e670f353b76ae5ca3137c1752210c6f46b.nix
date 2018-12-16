@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.websockets)
           (hsPkgs.network)
@@ -50,7 +50,7 @@
       };
       exes = {
         "deadpan" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.websockets)
             (hsPkgs.network)
@@ -77,13 +77,13 @@
       };
       tests = {
         "doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
         };
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.process)

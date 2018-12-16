@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
           (hsPkgs.transformers)
@@ -64,7 +64,7 @@
       };
       tests = {
         "CallGraphTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.filepath)
@@ -75,7 +75,7 @@
           ];
         };
         "BlockReturnTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.HUnit)
@@ -85,7 +85,7 @@
           ];
         };
         "ReturnTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.containers)
@@ -97,7 +97,7 @@
           ];
         };
         "AccessPathTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)
@@ -107,7 +107,7 @@
           ];
         };
         "ClassHierarchyTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)
@@ -119,7 +119,7 @@
           ];
         };
         "AndersenTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)

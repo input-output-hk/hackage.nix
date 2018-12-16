@@ -26,7 +26,7 @@
     components = {
       exes = {
         "make-package" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.bytestring)

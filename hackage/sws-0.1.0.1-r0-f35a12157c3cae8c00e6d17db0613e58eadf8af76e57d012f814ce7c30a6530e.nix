@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sws" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

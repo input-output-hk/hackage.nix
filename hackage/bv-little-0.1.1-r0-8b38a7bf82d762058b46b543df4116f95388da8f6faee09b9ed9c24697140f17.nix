@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
@@ -37,7 +37,7 @@
       };
       tests = {
         "test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bv-little)
             (hsPkgs.deepseq)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "benchmark-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bv-little)
             (hsPkgs.criterion)

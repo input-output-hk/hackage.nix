@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       exes = {
         "readme-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.case-insensitive-match)
             (hsPkgs.bytestring)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-basics" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.case-insensitive-match)
             (hsPkgs.QuickCheck)
@@ -54,7 +54,7 @@
       };
       benchmarks = {
         "bench-others" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)
@@ -65,7 +65,7 @@
           ];
         };
         "bench-tagsoup" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.case-insensitive)

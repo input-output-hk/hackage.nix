@@ -26,7 +26,7 @@
     components = {
       exes = {
         "stack-run" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.terminal-size)
             (hsPkgs.vty)

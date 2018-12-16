@@ -26,7 +26,7 @@
     components = {
       exes = {
         "devil" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hinotify)
             (hsPkgs.directory)

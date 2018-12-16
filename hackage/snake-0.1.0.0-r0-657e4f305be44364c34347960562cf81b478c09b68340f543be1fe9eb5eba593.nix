@@ -26,7 +26,7 @@
     components = {
       exes = {
         "snake" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.terminal-size)
             (hsPkgs.split)

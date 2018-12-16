@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -38,7 +38,7 @@
       };
       exes = {
         "sajson-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sajson)
             (hsPkgs.criterion)
@@ -49,7 +49,7 @@
       };
       tests = {
         "sajson-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sajson)
             (hsPkgs.QuickCheck)

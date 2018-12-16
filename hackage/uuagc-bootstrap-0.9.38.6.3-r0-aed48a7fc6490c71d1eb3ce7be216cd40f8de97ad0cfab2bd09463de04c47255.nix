@@ -26,7 +26,7 @@
     components = {
       exes = {
         "uuagc-bootstrap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.ghc-prim)

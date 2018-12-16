@@ -30,7 +30,7 @@
     components = {
       exes = {
         "xmobar" = {
-          depends  = (([
+          depends = (([
             (hsPkgs.X11)
             (hsPkgs.mtl)
             (hsPkgs.unix)

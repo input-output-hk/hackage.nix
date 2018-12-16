@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ircbouncer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.regex-compat)
             (hsPkgs.mtl)

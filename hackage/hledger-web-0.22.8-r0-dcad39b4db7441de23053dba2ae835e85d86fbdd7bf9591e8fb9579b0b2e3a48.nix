@@ -30,7 +30,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.hledger)
           (hsPkgs.hledger-lib)
           (hsPkgs.base)
@@ -75,7 +75,7 @@
       };
       exes = {
         "hledger-web" = {
-          depends  = [
+          depends = [
             (hsPkgs.hledger)
             (hsPkgs.hledger-lib)
             (hsPkgs.base)
@@ -121,7 +121,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hledger-web)
             (hsPkgs.base)
             (hsPkgs.hspec)

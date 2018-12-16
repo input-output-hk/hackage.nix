@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.attoparsec)
@@ -76,7 +76,7 @@
       };
       exes = {
         "puppetresources" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.aeson)
@@ -99,7 +99,7 @@
           ];
         };
         "yera" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-puppet)
             (hsPkgs.optparse-applicative)
@@ -110,7 +110,7 @@
           ];
         };
         "pdbquery" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -130,7 +130,7 @@
       };
       tests = {
         "spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.hslogger)

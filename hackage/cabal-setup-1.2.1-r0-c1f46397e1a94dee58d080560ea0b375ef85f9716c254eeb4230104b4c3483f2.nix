@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal-setup" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
           ];

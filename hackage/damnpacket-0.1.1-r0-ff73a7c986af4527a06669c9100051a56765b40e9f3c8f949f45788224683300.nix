@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "render" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.damnpacket)
             (hsPkgs.containers)
@@ -46,7 +46,7 @@
       };
       benchmarks = {
         "parse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.damnpacket)
             (hsPkgs.containers)

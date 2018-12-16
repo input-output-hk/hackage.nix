@@ -26,7 +26,7 @@
     components = {
       exes = {
         "trimpolya" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bio)
             (hsPkgs.simpleargs)

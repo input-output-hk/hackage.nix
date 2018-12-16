@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)
           (hsPkgs.template-haskell)
@@ -43,7 +43,7 @@
       };
       tests = {
         "web3-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.memory)
             (hsPkgs.text)

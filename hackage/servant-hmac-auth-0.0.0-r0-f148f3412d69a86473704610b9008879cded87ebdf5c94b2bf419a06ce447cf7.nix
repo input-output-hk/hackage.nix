@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
           (hsPkgs.binary)
@@ -47,7 +47,7 @@
       };
       exes = {
         "readme" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.http-client)
@@ -64,7 +64,7 @@
       };
       tests = {
         "servant-hmac-auth-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-hmac-auth)
           ];

@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "tuplepp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec2)
             (hsPkgs.haskell-src-exts)

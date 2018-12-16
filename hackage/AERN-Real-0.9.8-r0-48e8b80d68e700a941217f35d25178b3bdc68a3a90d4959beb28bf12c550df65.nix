@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = if flags.containers-in-base
+        depends = if flags.containers-in-base
           then if flags.use-hmpfr
             then [
               (hsPkgs.base)

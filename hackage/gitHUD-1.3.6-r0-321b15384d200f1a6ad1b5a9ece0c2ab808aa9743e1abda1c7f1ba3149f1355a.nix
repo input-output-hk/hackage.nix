@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.parsec)
@@ -36,7 +36,7 @@
       };
       exes = {
         "gitHUD" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.gitHUD)
           ];
@@ -44,7 +44,7 @@
       };
       tests = {
         "gitHUD-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)

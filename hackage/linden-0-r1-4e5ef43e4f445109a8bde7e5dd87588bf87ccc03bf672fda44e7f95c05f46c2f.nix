@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)
           (hsPkgs.deepseq)
@@ -57,7 +57,7 @@
       };
       exes = {
         "linden-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.linden)
             (hsPkgs.containers)

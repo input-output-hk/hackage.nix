@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -46,7 +46,7 @@
       };
       exes = {
         "axel-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.axel)
             (hsPkgs.base)
             (hsPkgs.directory)

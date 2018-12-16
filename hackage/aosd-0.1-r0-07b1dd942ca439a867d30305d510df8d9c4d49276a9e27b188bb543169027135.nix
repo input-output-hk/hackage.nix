@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.colour)
           (hsPkgs.transformers)
           (hsPkgs.X11)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test-aosd" = {
-          depends  = [
+          depends = [
             (hsPkgs.colour)
             (hsPkgs.base)
             (hsPkgs.aosd)

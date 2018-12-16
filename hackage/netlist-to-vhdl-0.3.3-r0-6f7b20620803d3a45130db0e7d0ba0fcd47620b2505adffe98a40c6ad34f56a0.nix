@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.netlist)
           (hsPkgs.pretty)
         ] ++ [ (hsPkgs.base) ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "blakesum" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blakesum)
             (hsPkgs.bytestring)

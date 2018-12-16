@@ -26,7 +26,7 @@
     components = {
       exes = {
         "multiplicity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.fez-conf)

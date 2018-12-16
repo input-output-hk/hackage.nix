@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.filepath)
@@ -34,19 +34,19 @@
       };
       tests = {
         "basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pathwalk)
           ];
         };
         "stoprecursing" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pathwalk)
           ];
         };
         "lazy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pathwalk)
           ];

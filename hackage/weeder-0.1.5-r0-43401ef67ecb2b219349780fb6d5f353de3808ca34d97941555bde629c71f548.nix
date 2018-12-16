@@ -26,7 +26,7 @@
     components = {
       exes = {
         "weeder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)

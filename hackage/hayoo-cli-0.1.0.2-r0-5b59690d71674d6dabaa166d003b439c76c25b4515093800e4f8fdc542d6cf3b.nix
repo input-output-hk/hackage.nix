@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hayoo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc)
             (hsPkgs.aeson)

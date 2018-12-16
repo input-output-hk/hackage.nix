@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lambdacube-basic" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdacube-engine)
             (hsPkgs.elerea)
@@ -37,7 +37,7 @@
           ];
         };
         "lambdacube-cameratrack" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lambdacube-engine)
             (hsPkgs.elerea)

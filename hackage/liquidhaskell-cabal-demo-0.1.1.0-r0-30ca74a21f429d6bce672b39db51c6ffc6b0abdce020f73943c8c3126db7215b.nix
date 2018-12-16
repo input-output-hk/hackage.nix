@@ -27,14 +27,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.liquidhaskell-cabal)
         ];
       };
       exes = {
         "ffi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.liquidhaskell-cabal)
           ];

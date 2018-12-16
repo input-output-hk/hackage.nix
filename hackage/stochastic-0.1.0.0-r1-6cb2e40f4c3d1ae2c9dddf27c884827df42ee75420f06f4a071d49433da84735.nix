@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.random)
@@ -35,35 +35,35 @@
       };
       tests = {
         "shadyGambler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.containers)
           ];
         };
         "monadLaws" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.random)
           ];
         };
         "normal3" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.random)
           ];
         };
         "normal10" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.random)
           ];
         };
         "chart" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.random)
@@ -74,7 +74,7 @@
           ];
         };
         "coolCharts" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.random)
@@ -85,7 +85,7 @@
           ];
         };
         "swindler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.containers)
@@ -93,7 +93,7 @@
           ];
         };
         "montyHall" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.containers)
@@ -101,7 +101,7 @@
           ];
         };
         "contrivedGambler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.stochastic)
             (hsPkgs.random)

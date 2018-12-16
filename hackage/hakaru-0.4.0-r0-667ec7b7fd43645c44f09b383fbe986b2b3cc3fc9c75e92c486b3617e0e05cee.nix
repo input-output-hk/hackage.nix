@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.ghc-prim)
@@ -57,7 +57,7 @@
       };
       exes = {
         "hakaru" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -68,7 +68,7 @@
           ];
         };
         "compile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -79,7 +79,7 @@
           ];
         };
         "summary" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -90,7 +90,7 @@
           ];
         };
         "hk-maple" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -101,7 +101,7 @@
           ];
         };
         "density" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -110,7 +110,7 @@
           ];
         };
         "disintegrate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -120,7 +120,7 @@
           ];
         };
         "pretty" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.pretty)
@@ -128,14 +128,14 @@
           ];
         };
         "momiji" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.hakaru)
           ];
         };
         "normalize" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -145,7 +145,7 @@
           ];
         };
         "hkc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.text)
@@ -158,7 +158,7 @@
           ];
         };
         "mh" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
@@ -170,7 +170,7 @@
       };
       tests = {
         "system-testsuite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.ghc-prim)

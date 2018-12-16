@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
       };
       exes = {
         "event-transformer-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.event-transformer)
           ];
@@ -40,7 +40,7 @@
       };
       tests = {
         "event-transformer-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.event-transformer)
           ];

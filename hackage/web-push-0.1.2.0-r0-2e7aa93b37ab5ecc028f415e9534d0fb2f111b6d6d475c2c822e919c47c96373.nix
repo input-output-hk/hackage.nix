@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.time)
@@ -47,7 +47,7 @@
       };
       tests = {
         "web-push-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.web-push)
             (hsPkgs.hspec)

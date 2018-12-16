@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.language-css)
           (hsPkgs.language-css-attoparsec)
@@ -39,7 +39,7 @@
       };
       tests = {
         "test-lss" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-css)
             (hsPkgs.language-css-attoparsec)

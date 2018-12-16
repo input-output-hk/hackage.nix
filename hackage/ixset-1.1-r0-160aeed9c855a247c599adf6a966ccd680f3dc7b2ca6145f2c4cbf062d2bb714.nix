@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = (([
+        depends = (([
           (hsPkgs.containers)
           (hsPkgs.safecopy)
           (hsPkgs.template-haskell)
@@ -42,7 +42,7 @@
       };
       tests = {
         "test-ixset" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.containers)

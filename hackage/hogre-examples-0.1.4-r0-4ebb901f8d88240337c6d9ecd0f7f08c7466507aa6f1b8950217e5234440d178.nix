@@ -26,7 +26,7 @@
     components = {
       exes = {
         "example_01" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hogre)
           ];
@@ -36,7 +36,7 @@
           ];
         };
         "example_02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hogre)
           ];

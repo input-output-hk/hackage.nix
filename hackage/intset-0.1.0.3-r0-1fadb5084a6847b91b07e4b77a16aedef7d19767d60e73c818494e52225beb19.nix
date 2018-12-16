@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bits-extras)
           (hsPkgs.bytestring)
@@ -34,7 +34,7 @@
       };
       tests = {
         "properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
@@ -43,7 +43,7 @@
           ];
         };
         "fusion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.intset)
           ];
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)

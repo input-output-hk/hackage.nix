@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.accelerate)
         ] ++ pkgs.lib.optionals (flags.llvm-cpu) [
@@ -52,7 +52,7 @@
       };
       tests = {
         "accelerate-blas-test" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-blas)
@@ -62,7 +62,7 @@
       };
       benchmarks = {
         "accelerate-blas-bench" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-blas)

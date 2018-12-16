@@ -26,7 +26,7 @@
     components = {
       exes = {
         "download-media-content" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagsoup)
             (hsPkgs.text)

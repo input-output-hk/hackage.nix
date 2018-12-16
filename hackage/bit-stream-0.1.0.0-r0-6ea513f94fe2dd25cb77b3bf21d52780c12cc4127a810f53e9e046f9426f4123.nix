@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
       };
       exes = {
         "find-foo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bit-stream)
             (hsPkgs.vector)
@@ -41,7 +41,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bit-stream)
             (hsPkgs.QuickCheck)
@@ -55,7 +55,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bit-stream)
             (hsPkgs.criterion)

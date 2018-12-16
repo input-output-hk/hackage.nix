@@ -26,14 +26,14 @@
     components = {
       exes = {
         "json-concat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
           ];
         };
         "json-deep-select-key" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
@@ -41,7 +41,7 @@
           ];
         };
         "json-select" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
           ];
         };
         "json-iter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
@@ -57,41 +57,41 @@
           ];
         };
         "json-lines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
           ];
         };
         "json-strings" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
           ];
         };
         "json-unlines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
         };
         "json-wrap" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
           ];
         };
         "json-xargs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.AttoJson)
             (hsPkgs.bytestring)
           ];
         };
         "tar2json" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.convertible-text)

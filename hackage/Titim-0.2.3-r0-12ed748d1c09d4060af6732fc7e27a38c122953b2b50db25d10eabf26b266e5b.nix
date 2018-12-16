@@ -26,7 +26,7 @@
     components = {
       exes = {
         "titim" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.matrix)

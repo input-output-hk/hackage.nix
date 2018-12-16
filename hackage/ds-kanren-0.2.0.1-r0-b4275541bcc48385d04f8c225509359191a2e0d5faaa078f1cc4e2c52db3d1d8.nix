@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.logict)
@@ -33,7 +33,7 @@
       };
       tests = {
         "test-unify:" = {
-          depends  = [
+          depends = [
             (hsPkgs.ds-kanren)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -42,7 +42,7 @@
           ];
         };
         "test-list-ops:" = {
-          depends  = [
+          depends = [
             (hsPkgs.ds-kanren)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)

@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-portaudio)
           (hsPkgs.boundingboxes)
@@ -61,7 +61,7 @@
       };
       exes = {
         "hello-world" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.call)
             (hsPkgs.lens)

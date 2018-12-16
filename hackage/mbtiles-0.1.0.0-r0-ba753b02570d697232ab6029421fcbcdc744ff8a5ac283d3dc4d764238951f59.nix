@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.sqlite-simple)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "mbtiles-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mbtiles)
             (hsPkgs.HUnit)

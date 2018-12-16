@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.free-vl)
           ];
@@ -37,7 +37,7 @@
       };
       tests = {
         "free-vl-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.free-vl)
             (hsPkgs.tasty)

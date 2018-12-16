@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.broadcast-chan)
           (hsPkgs.pipes)
@@ -34,7 +34,7 @@
       };
       tests = {
         "pipes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan-pipes)
             (hsPkgs.broadcast-chan-tests)

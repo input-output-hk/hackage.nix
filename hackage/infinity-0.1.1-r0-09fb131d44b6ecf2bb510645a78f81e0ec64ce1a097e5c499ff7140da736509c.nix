@@ -26,7 +26,7 @@
     components = {
       exes = {
         "infinity" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.network)

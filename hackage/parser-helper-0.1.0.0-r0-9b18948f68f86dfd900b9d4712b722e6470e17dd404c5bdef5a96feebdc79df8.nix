@@ -26,7 +26,7 @@
     components = {
       exes = {
         "parser-helper" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.haskell-src-exts)

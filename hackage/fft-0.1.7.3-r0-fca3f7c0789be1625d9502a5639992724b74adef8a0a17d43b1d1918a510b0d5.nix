@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.carray)
           (hsPkgs.storable-complex)
           (hsPkgs.ix-shapable)
@@ -51,7 +51,7 @@
       };
       tests = {
         "test-fft" = {
-          depends  = [
+          depends = [
             (hsPkgs.fft)
             (hsPkgs.carray)
             (hsPkgs.storable-complex)

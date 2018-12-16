@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.Crypto)
           (hsPkgs.bytestring)
@@ -50,22 +50,22 @@
       };
       exes = {
         "hell-insert" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "hell-get" = {
-          depends  = [
+          depends = [
             (hsPkgs.regex-posix)
           ];
         };
         "hell-meta" = {};
         "hell-nodes" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "hell-fsck" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
         "hell-serve" = {
-          depends  = [
+          depends = [
             (hsPkgs.Lucu)
             (hsPkgs.network)
             (hsPkgs.mtl)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -39,7 +39,7 @@
       };
       exes = {
         "epub-metadata-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.epub-metadata)
             (hsPkgs.mtl)
@@ -48,7 +48,7 @@
       };
       tests = {
         "test-epub-metadata" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

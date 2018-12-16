@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vty)
           (hsPkgs.containers)
@@ -34,12 +34,12 @@
       };
       exes = {
         "vty-ui-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
           ];
         };
         "vty-ui-demo" = {
-          depends  = [ (hsPkgs.mtl) ];
+          depends = [ (hsPkgs.mtl) ];
         };
       };
     };

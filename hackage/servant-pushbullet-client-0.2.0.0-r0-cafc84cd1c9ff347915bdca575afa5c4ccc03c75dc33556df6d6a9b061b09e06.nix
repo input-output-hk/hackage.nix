@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.pushbullet-types)
           (hsPkgs.aeson)
           (hsPkgs.base)

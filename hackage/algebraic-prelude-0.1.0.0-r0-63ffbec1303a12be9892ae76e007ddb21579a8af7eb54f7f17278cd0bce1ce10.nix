@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.algebra)
           (hsPkgs.basic-prelude)
@@ -35,7 +35,7 @@
       };
       exes = {
         "sandpit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.algebraic-prelude)
           ];

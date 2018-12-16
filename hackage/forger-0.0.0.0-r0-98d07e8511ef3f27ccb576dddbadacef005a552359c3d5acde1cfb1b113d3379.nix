@@ -25,11 +25,11 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
       };
       exes = {
         "forger" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.forger)
           ];

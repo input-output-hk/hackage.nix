@@ -26,7 +26,7 @@
     components = {
       exes = {
         "robin" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.directory)

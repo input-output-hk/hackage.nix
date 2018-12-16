@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.exceptions)
           (hsPkgs.transformers)
           (hsPkgs.mmorph)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "pushme" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

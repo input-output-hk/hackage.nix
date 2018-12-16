@@ -29,7 +29,7 @@
     components = {
       exes = {
         "PortFusion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vector)

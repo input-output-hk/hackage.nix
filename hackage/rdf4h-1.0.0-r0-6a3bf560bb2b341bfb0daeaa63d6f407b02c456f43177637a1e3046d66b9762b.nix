@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.parsec)
           (hsPkgs.network)
           (hsPkgs.HTTP)
@@ -47,7 +47,7 @@
       };
       exes = {
         "rdf4h" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.network)
             (hsPkgs.HTTP)
@@ -65,7 +65,7 @@
       };
       tests = {
         "test-rdf4h" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.test-framework)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ide-backend-server" = {
-          depends  = (((([
+          depends = (((([
             (hsPkgs.base)
             (hsPkgs.ghc)
             (hsPkgs.containers)

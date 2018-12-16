@@ -26,7 +26,7 @@
     components = {
       exes = {
         "blip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bliplib)
             (hsPkgs.filepath)

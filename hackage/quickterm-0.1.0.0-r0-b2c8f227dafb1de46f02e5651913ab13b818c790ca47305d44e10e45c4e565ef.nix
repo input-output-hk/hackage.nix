@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.edit-distance)
           (hsPkgs.hashmap)
           (hsPkgs.base)

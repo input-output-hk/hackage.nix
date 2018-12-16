@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.modern-uri)
           (hsPkgs.req)
@@ -33,7 +33,7 @@
       };
       exes = {
         "sample" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.data-default-class)
@@ -46,7 +46,7 @@
       };
       tests = {
         "req-url-extra-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.modern-uri)

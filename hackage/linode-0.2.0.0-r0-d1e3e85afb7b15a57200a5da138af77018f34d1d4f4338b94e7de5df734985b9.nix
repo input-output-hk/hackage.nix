@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.async)
@@ -44,7 +44,7 @@
       };
       tests = {
         "linode-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.linode)
             (hsPkgs.aeson)

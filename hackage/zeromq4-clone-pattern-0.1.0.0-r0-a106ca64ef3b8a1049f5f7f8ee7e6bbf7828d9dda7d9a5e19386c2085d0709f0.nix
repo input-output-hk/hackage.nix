@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
           (hsPkgs.binary)
@@ -38,7 +38,7 @@
       };
       exes = {
         "zeromq4-clone-pattern-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.zeromq4-clone-pattern)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "zeromq4-clone-pattern-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.zeromq4-clone-pattern)
             (hsPkgs.QuickCheck)

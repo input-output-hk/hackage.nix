@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aig)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       exes = {
         "find-segfault" = {
-          depends  = pkgs.lib.optionals (!(!flags.enable-extra-tests)) [
+          depends = pkgs.lib.optionals (!(!flags.enable-extra-tests)) [
             (hsPkgs.base)
             (hsPkgs.abcBridge)
             (hsPkgs.aig)
@@ -60,7 +60,7 @@
           ];
         };
         "long-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.abcBridge)
           ];
@@ -68,7 +68,7 @@
       };
       tests = {
         "abc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.abcBridge)
             (hsPkgs.aig)

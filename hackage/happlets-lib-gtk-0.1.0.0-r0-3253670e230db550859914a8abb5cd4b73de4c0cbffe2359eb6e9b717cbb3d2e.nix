@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.cairo)
           (hsPkgs.diagrams-cairo)
           (hsPkgs.diagrams-core)
@@ -45,7 +45,7 @@
       };
       tests = {
         "happlets-lib-gtk-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.cairo)
             (hsPkgs.diagrams-cairo)
             (hsPkgs.diagrams-core)

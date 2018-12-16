@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ghci-ng" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.base)
             (hsPkgs.bytestring)

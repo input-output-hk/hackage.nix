@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.exceptions)
@@ -40,7 +40,7 @@
       };
       tests = {
         "test-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.base)
@@ -51,7 +51,7 @@
           ];
         };
         "test-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.natural-transformation)
@@ -62,7 +62,7 @@
           ];
         };
         "front-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.natural-transformation)
@@ -71,7 +71,7 @@
           ];
         };
         "remote-json-properties" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)

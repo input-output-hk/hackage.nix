@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.ListLike)
@@ -39,7 +39,7 @@
       };
       exes = {
         "peggy-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.peggy)
           ];

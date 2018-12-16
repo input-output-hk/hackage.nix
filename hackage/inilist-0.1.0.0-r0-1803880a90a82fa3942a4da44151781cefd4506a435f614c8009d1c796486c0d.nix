@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.safe)
           (hsPkgs.trifecta)
@@ -35,7 +35,7 @@
       };
       tests = {
         "inilist-unittest" = {
-          depends  = [
+          depends = [
             (hsPkgs.tasty)
             (hsPkgs.testpack)
             (hsPkgs.base)

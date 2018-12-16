@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.HTTP)
           (hsPkgs.network)
           (hsPkgs.network-uri)
@@ -49,7 +49,7 @@
       exes = {
         "hws" = {};
         "hws-dyn" = {
-          depends  = pkgs.lib.optional (flags.dynamic) (hsPkgs.ghc);
+          depends = pkgs.lib.optional (flags.dynamic) (hsPkgs.ghc);
         };
       };
     };

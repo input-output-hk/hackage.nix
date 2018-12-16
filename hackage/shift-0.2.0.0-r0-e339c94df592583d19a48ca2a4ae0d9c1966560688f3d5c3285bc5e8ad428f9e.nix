@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.turtle)
           (hsPkgs.optparse-applicative)
@@ -42,7 +42,7 @@
       };
       exes = {
         "teleport-hask" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shift)
           ];

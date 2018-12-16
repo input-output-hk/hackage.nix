@@ -26,7 +26,7 @@
     components = {
       exes = {
         "shelltestrunner" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.process)

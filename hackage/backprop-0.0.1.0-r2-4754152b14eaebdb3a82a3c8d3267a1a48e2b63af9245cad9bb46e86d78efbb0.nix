@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ad)
           (hsPkgs.generics-sop)
@@ -42,13 +42,13 @@
       };
       exes = {
         "backprop-monotest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.backprop)
           ];
         };
         "backprop-neuraltest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ad)
             (hsPkgs.backprop)
@@ -61,7 +61,7 @@
           ];
         };
         "backprop-mnist" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.backprop)
             (hsPkgs.bifunctors)

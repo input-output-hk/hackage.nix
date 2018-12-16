@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.elm-export)
           (hsPkgs.lens)
@@ -37,7 +37,7 @@
       };
       exes = {
         "books-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elm-export)
             (hsPkgs.servant)
@@ -45,7 +45,7 @@
           ];
         };
         "e2e-tests-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elm-export)
             (hsPkgs.servant)
@@ -53,7 +53,7 @@
           ];
         };
         "giphy-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elm-export)
             (hsPkgs.servant)
@@ -62,7 +62,7 @@
           ];
         };
         "readme-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.elm-export)
             (hsPkgs.servant)
@@ -72,7 +72,7 @@
       };
       tests = {
         "servant-elm-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Diff)
             (hsPkgs.HUnit)
             (hsPkgs.aeson)

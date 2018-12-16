@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hsmodtree" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -34,7 +34,7 @@
           ];
         };
         "hscodelines" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -35,7 +35,7 @@
       };
       tests = {
         "vivid-osc-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vivid-osc)
             (hsPkgs.bytestring)

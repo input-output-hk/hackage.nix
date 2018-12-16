@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -37,19 +37,19 @@
       };
       exes = {
         "dump_nl80211" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.netlink)
           ];
         };
         "genlinfo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.netlink)
           ];
         };
         "dump_rtnetlink" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.netlink)
           ];

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yabi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.word8)
           ];

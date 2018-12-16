@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackport" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.parsec)
@@ -53,7 +53,7 @@
             else [ (hsPkgs.base) ]);
         };
         "hackport-guess-ghc-version" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.parsec)

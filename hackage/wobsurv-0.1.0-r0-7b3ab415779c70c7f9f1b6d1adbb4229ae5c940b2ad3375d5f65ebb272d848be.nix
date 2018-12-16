@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.system-filepath)
           (hsPkgs.system-fileio)
           (hsPkgs.network)
@@ -53,7 +53,7 @@
       };
       exes = {
         "wobsurv" = {
-          depends  = [
+          depends = [
             (hsPkgs.wobsurv)
             (hsPkgs.system-filepath)
             (hsPkgs.system-fileio)
@@ -70,7 +70,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.wobsurv)
             (hsPkgs.HTF)
             (hsPkgs.quickcheck-instances)

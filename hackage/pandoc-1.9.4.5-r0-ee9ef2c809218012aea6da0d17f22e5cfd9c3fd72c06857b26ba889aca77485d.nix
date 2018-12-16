@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.containers)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
@@ -71,7 +71,7 @@
       };
       exes = {
         "pandoc" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.containers)
             (hsPkgs.parsec)
             (hsPkgs.mtl)
@@ -112,7 +112,7 @@
             else [ (hsPkgs.base) ]);
         };
         "make-pandoc-man-pages" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pandoc)
             (hsPkgs.directory)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mathexpr)
           (hsPkgs.data-default-class)
@@ -33,7 +33,7 @@
       };
       exes = {
         "slope-field" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.slope-field)
             (hsPkgs.Chart)

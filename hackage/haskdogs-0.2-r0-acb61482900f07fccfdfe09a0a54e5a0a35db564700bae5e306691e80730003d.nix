@@ -26,7 +26,7 @@
     components = {
       exes = {
         "haskdogs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.HSH)

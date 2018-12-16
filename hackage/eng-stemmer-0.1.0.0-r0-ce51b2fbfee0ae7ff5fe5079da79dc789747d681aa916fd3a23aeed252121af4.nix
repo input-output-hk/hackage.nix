@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.mtl)
@@ -34,7 +34,7 @@
       };
       exes = {
         "eng-stemmer-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eng-stemmer)
             (hsPkgs.text)
@@ -44,7 +44,7 @@
       };
       tests = {
         "eng-stemmer-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.eng-stemmer)
             (hsPkgs.containers)

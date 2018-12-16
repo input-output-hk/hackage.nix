@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optionals (flags.with-conduit) [
@@ -37,7 +37,7 @@
       };
       tests = {
         "sandi-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.sandi)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       benchmarks = {
         "sandi-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.sandi)
             (hsPkgs.base)
             (hsPkgs.bytestring)

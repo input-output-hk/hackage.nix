@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)
         ];
@@ -39,7 +39,7 @@
       };
       tests = {
         "hmatrix-morpheus-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix-morpheus)
             (hsPkgs.hmatrix)
@@ -53,7 +53,7 @@
       };
       benchmarks = {
         "hmatrix-morpheus-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hmatrix-morpheus)
             (hsPkgs.hmatrix)

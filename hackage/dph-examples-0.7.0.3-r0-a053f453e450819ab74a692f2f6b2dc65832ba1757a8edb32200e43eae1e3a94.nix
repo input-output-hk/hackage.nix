@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dph-smoke-bool" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -39,7 +39,7 @@
           ];
         };
         "dph-smoke-concat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -52,7 +52,7 @@
           ];
         };
         "dph-smoke-sumsq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -65,7 +65,7 @@
           ];
         };
         "dph-smoke-evens" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -78,7 +78,7 @@
           ];
         };
         "dph-smoke-indices" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -91,7 +91,7 @@
           ];
         };
         "dph-smoke-rank" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -104,7 +104,7 @@
           ];
         };
         "dph-smoke-reverse" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -117,7 +117,7 @@
           ];
         };
         "dph-imaginary-words" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -130,7 +130,7 @@
           ];
         };
         "dph-spectral-dotp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -143,7 +143,7 @@
           ];
         };
         "dph-spectral-smvm" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -156,7 +156,7 @@
           ];
         };
         "dph-spectral-quickhull" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -169,7 +169,7 @@
           ];
         };
         "dph-spectral-quickhull-vector" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -182,7 +182,7 @@
           ];
         };
         "dph-spectral-quicksort" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)
@@ -195,7 +195,7 @@
           ];
         };
         "dph-real-nbody" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.random)

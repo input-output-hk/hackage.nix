@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.cabal-macosx)
           (hsPkgs.reactive-banana)
@@ -36,7 +36,7 @@
       exes = {
         "Arithmetic" = {};
         "Asteroids" = {
-          depends  = [
+          depends = [
             (hsPkgs.random)
             (hsPkgs.executable-path)
             (hsPkgs.filepath)
@@ -45,15 +45,15 @@
         "Counter" = {};
         "CurrencyConverter" = {};
         "CRUD" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
           ];
         };
         "NetMonitor" = {
-          depends  = [ (hsPkgs.process) ];
+          depends = [ (hsPkgs.process) ];
         };
         "TicTacToe" = {
-          depends  = [ (hsPkgs.array) ];
+          depends = [ (hsPkgs.array) ];
         };
         "TwoCounters" = {};
         "Wave" = {};

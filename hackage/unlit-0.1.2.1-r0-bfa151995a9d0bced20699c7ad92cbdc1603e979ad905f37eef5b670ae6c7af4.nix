@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text)
         ];
       };
       exes = {
         "unlit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
           ];

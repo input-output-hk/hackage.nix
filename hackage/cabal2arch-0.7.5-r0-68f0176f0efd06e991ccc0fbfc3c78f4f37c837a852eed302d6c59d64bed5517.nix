@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cabal2arch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.process)
@@ -39,7 +39,7 @@
           ];
         };
         "manycabal2arch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

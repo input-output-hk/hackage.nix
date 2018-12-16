@@ -26,7 +26,7 @@
     components = {
       exes = {
         "htab" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.mtl)

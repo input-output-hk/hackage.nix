@@ -26,7 +26,7 @@
     components = {
       exes = {
         "todos" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.utf8-string)

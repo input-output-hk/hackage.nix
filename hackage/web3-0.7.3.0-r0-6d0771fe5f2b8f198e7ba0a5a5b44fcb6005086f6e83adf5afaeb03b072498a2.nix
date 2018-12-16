@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.data-default)
@@ -49,7 +49,7 @@
       };
       tests = {
         "unit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec-expectations)
             (hsPkgs.hspec-discover)
@@ -68,7 +68,7 @@
           ];
         };
         "live" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec-expectations)
             (hsPkgs.hspec-discover)

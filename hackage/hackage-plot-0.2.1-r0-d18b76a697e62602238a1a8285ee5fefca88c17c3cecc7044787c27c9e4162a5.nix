@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackage-plot" = {
-          depends  = [
+          depends = [
             (hsPkgs.gnuplot)
             (hsPkgs.download-curl)
             (hsPkgs.parsedate)

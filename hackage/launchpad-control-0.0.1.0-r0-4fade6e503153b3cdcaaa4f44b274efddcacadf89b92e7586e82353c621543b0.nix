@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.containers)
           (hsPkgs.transformers)
@@ -35,7 +35,7 @@
       };
       exes = {
         "launchpad-control-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.launchpad-control)
           ];

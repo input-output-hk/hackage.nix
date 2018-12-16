@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       tests = {
         "test-roundtrip" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hruby)
             (hsPkgs.aeson)

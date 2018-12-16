@@ -26,7 +26,7 @@
     components = {
       exes = {
         "imapget" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)

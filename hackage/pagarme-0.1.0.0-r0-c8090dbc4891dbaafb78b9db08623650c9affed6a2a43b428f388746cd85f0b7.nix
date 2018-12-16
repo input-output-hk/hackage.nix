@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wreq)
           (hsPkgs.text)
@@ -37,7 +37,7 @@
       };
       exes = {
         "testbin" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pagarme)
             (hsPkgs.wreq)

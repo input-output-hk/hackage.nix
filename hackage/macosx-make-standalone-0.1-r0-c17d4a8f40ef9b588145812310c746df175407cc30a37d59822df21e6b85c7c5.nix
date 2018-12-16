@@ -26,7 +26,7 @@
     components = {
       exes = {
         "macosx-make-standalone" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.data-lens)
             (hsPkgs.data-lens-template)

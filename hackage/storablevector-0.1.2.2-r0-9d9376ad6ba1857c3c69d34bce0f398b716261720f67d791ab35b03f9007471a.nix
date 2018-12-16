@@ -28,13 +28,13 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.mtl) ] ++ [
+        depends = [ (hsPkgs.mtl) ] ++ [
           (hsPkgs.base)
         ];
       };
       exes = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
           ] ++ (if flags.splitbase
@@ -45,7 +45,7 @@
             else [ (hsPkgs.base) ]);
         };
         "speedtest" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

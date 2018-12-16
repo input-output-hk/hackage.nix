@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai)
           (hsPkgs.http-types)
@@ -39,7 +39,7 @@
       };
       exes = {
         "wai-middleware-brotli-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-types)
             (hsPkgs.warp)
@@ -52,7 +52,7 @@
       };
       tests = {
         "wai-middleware-brotli-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hs-brotli)
             (hsPkgs.bytestring)

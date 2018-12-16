@@ -26,7 +26,7 @@
     components = {
       exes = {
         "batch_rename" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.filepath)

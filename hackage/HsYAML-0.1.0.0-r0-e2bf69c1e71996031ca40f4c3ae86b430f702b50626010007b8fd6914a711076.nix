@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.dlist)
@@ -37,7 +37,7 @@
       };
       exes = {
         "yaml-test" = {
-          depends  = pkgs.lib.optionals (flags.exe) [
+          depends = pkgs.lib.optionals (flags.exe) [
             (hsPkgs.HsYAML)
             (hsPkgs.bytestring)
             (hsPkgs.base)

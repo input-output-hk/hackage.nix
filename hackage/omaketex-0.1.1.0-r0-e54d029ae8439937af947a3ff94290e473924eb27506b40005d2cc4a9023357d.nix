@@ -26,7 +26,7 @@
     components = {
       exes = {
         "omaketex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.shakespeare-text)
             (hsPkgs.optparse-applicative)

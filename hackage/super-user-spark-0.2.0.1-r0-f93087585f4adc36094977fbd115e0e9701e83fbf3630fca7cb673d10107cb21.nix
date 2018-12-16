@@ -26,7 +26,7 @@
     components = {
       exes = {
         "spark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTF)
             (hsPkgs.aeson)
@@ -49,7 +49,7 @@
       };
       tests = {
         "spark-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.HTF)
             (hsPkgs.HUnit)

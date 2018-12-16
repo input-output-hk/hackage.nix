@@ -26,7 +26,7 @@
     components = {
       exes = {
         "car-pool" = {
-          depends  = [
+          depends = [
             (hsPkgs.spreadsheet)
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)

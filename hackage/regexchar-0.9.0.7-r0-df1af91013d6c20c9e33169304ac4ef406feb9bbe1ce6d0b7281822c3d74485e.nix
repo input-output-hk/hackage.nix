@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.haskell98)
@@ -39,7 +39,7 @@
       };
       exes = {
         "grecce" = {
-          depends  = [
+          depends = [
             (hsPkgs.array)
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)

@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.extensible-exceptions)
           (hsPkgs.containers)
@@ -37,7 +37,7 @@
       };
       exes = {
         "benchmark" = {
-          depends  = pkgs.lib.optionals (!(!flags.benchmark)) [
+          depends = pkgs.lib.optionals (!(!flags.benchmark)) [
             (hsPkgs.base)
             (hsPkgs.extensible-exceptions)
             (hsPkgs.containers)
@@ -46,7 +46,7 @@
           ];
         };
         "tests" = {
-          depends  = pkgs.lib.optionals (!(!flags.tests)) [
+          depends = pkgs.lib.optionals (!(!flags.tests)) [
             (hsPkgs.base)
             (hsPkgs.extensible-exceptions)
             (hsPkgs.containers)

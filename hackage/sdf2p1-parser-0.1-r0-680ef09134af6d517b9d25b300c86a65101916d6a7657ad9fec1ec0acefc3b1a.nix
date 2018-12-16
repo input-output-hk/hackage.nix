@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.transformers)
@@ -34,7 +34,7 @@
       };
       tests = {
         "SDFParserTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sdf2p1-parser)
             (hsPkgs.HUnit)
@@ -47,7 +47,7 @@
           ];
         };
         "SDFQueryTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.sdf2p1-parser)
             (hsPkgs.HUnit)

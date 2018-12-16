@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
@@ -40,7 +40,7 @@
       };
       exes = {
         "cheapskate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cheapskate)
             (hsPkgs.bytestring)
@@ -49,7 +49,7 @@
           ];
         };
         "cheapskate-dingus" = {
-          depends  = pkgs.lib.optionals (flags.dingus) [
+          depends = pkgs.lib.optionals (flags.dingus) [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.cheapskate)

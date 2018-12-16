@@ -26,7 +26,7 @@
     components = {
       exes = {
         "extemp" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.smartGroup)

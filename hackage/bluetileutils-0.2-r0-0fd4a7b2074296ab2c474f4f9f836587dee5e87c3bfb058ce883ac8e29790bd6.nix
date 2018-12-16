@@ -26,7 +26,7 @@
     components = {
       exes = {
         "bluetilemockwin-obsolete" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.gtk)

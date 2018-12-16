@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.vector-space)
           (hsPkgs.hmatrix)
@@ -35,21 +35,21 @@
       };
       exes = {
         "learn-physics-sunEarth" = {
-          depends  = [
+          depends = [
             (hsPkgs.gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-eFieldLine2D" = {
-          depends  = [
+          depends = [
             (hsPkgs.gloss)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
           ];
         };
         "learn-physics-Projectile" = {
-          depends  = [
+          depends = [
             (hsPkgs.gnuplot)
             (hsPkgs.base)
             (hsPkgs.learn-physics)

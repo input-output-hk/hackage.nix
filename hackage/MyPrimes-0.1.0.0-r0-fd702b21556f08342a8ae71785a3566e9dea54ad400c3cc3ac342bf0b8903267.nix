@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.containers)
           (hsPkgs.base)
         ];
       };
       exes = {
         "PrimesList" = {
-          depends  = [
+          depends = [
             (hsPkgs.containers)
             (hsPkgs.MyPrimes)
             (hsPkgs.base)
@@ -41,7 +41,7 @@
       };
       benchmarks = {
         "bench-foo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.time)
           ];

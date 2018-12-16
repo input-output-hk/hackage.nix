@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.aeson)
           (hsPkgs.vector)
@@ -45,7 +45,7 @@
       };
       exes = {
         "generate-aeson-schema" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson-schema)
             (hsPkgs.cmdargs)
@@ -60,7 +60,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.text)

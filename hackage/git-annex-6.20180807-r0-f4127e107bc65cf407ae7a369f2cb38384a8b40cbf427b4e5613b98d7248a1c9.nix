@@ -40,7 +40,7 @@
     components = {
       exes = {
         "git-annex" = {
-          depends  = (((((((((((([
+          depends = (((((((((((([
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.network-uri)

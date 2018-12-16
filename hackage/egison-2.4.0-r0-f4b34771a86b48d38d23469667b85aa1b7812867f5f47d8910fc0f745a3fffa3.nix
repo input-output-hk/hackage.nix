@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.containers)
@@ -41,7 +41,7 @@
       };
       exes = {
         "egison" = {
-          depends  = [
+          depends = [
             (hsPkgs.egison)
             (hsPkgs.base)
             (hsPkgs.array)
@@ -58,7 +58,7 @@
           ];
         };
         "egisonc" = {
-          depends  = [
+          depends = [
             (hsPkgs.egison)
             (hsPkgs.base)
             (hsPkgs.array)

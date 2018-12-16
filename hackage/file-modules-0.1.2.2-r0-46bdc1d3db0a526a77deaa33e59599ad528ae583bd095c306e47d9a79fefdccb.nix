@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.MissingH)
           (hsPkgs.directory)
           (hsPkgs.async)
@@ -36,7 +36,7 @@
       };
       exes = {
         "file-modules" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MissingH)
             (hsPkgs.directory)

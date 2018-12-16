@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-types)
           (hsPkgs.lens)
@@ -42,7 +42,7 @@
       };
       exes = {
         "metar-http" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.metar-http)
           ];
@@ -50,7 +50,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.checkers)

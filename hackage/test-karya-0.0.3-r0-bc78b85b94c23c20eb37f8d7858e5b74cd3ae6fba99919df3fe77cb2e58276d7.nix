@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Diff)
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
@@ -48,7 +48,7 @@
       };
       exes = {
         "test-karya-generate" = {
-          depends  = [
+          depends = [
             (hsPkgs.test-karya)
             (hsPkgs.base)
             (hsPkgs.bytestring)

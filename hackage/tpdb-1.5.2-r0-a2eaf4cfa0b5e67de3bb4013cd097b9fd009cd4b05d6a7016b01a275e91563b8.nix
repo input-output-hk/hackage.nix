@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt)
           (hsPkgs.prettyprinter)
@@ -45,7 +45,7 @@
       };
       exes = {
         "plain2xtc" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.bytestring)
@@ -54,34 +54,34 @@
       };
       tests = {
         "XML" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "TRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.bytestring)
           ];
         };
         "TRS_02" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.bytestring)
           ];
         };
         "SRS" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.bytestring)
           ];
         };
         "Speed" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.HaXml)
@@ -90,7 +90,7 @@
           ];
         };
         "Attributes" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
             (hsPkgs.HaXml)
@@ -99,31 +99,31 @@
           ];
         };
         "XML-Theory" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "CPF-AC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "Parse-AC" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "read-cpf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];
         };
         "read-complex" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tpdb)
           ];

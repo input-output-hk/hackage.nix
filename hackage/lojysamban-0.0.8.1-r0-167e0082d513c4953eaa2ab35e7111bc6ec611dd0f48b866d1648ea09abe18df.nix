@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lojysamban" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lojbanParser)
             (hsPkgs.yjtools)

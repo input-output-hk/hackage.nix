@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.foldl)
           (hsPkgs.numhask-prelude)
@@ -37,7 +37,7 @@
       };
       exes = {
         "online-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.foldl)
             (hsPkgs.formatting)
@@ -54,7 +54,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.protolude)

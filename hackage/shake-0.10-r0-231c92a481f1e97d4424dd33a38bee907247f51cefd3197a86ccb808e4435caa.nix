@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.old-time)
           (hsPkgs.directory)
@@ -46,7 +46,7 @@
       };
       exes = {
         "shake" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-time)
             (hsPkgs.directory)
@@ -63,7 +63,7 @@
           ] ++ pkgs.lib.optionals (!flags.portable) (pkgs.lib.optional (!system.isWindows) (hsPkgs.unix));
         };
         "shake-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.old-time)
             (hsPkgs.directory)

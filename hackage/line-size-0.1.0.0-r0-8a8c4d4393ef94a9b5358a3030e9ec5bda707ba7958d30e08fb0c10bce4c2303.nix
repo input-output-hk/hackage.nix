@@ -26,7 +26,7 @@
     components = {
       exes = {
         "line-size" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

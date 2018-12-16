@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hackagesparks" = {
-          depends  = [
+          depends = [
             (hsPkgs.hsparklines)
             (hsPkgs.tagsoup)
             (hsPkgs.parsedate)

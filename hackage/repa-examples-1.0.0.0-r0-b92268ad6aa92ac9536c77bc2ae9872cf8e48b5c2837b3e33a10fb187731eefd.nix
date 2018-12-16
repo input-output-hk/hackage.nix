@@ -26,7 +26,7 @@
     components = {
       exes = {
         "repa-laplace" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.dph-prim-par)
@@ -34,7 +34,7 @@
           ];
         };
         "repa-mmult" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.dph-prim-par)
@@ -42,7 +42,7 @@
           ];
         };
         "repa-fft" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.dph-prim-par)

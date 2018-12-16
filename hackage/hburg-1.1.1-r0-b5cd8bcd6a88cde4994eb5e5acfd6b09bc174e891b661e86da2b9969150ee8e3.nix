@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hburg" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.filepath)
             (hsPkgs.mtl)

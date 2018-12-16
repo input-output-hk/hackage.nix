@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
@@ -47,7 +47,7 @@
       };
       exes = {
         "servant-rawm-example-client" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.http-client)
@@ -60,7 +60,7 @@
           ];
         };
         "servant-rawm-example-docs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant)
             (hsPkgs.servant-rawm)
@@ -69,7 +69,7 @@
           ];
         };
         "servant-rawm-example-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant)
             (hsPkgs.servant-rawm)

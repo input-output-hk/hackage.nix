@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.parsec)
@@ -33,7 +33,7 @@
       };
       exes = {
         "secdi" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskeline)
             (hsPkgs.secd)
@@ -42,7 +42,7 @@
       };
       tests = {
         "secd-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.secd)
           ];

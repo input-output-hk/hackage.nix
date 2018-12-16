@@ -26,7 +26,7 @@
     components = {
       exes = {
         "animate-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.animate)
             (hsPkgs.sdl2)

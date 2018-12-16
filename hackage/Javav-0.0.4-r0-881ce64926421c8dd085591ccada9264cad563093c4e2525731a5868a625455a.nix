@@ -26,7 +26,7 @@
     components = {
       exes = {
         "javav" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

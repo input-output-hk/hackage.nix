@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.random)
           (hsPkgs.vty)
@@ -33,7 +33,7 @@
       };
       exes = {
         "set-game" = {
-          depends  = [
+          depends = [
             (hsPkgs.setgame)
             (hsPkgs.base)
           ];

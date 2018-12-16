@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.async)
         ];
       };
       tests = {
         "chan-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.chan)
             (hsPkgs.async)

@@ -29,7 +29,7 @@
     components = {
       exes = {
         "tttool" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.containers)

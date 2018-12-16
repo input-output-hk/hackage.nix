@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "backdropper_consol" = {
-          depends  = [
+          depends = [
             (hsPkgs.old-time)
             (hsPkgs.base)
             (hsPkgs.process)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "matsuri" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.vty)
             (hsPkgs.vty-ui)

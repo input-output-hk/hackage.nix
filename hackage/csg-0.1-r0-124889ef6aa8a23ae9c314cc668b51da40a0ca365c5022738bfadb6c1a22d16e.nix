@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.QuickCheck)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -38,7 +38,7 @@
       };
       exes = {
         "csg-raycaster" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.csg)
@@ -53,7 +53,7 @@
       };
       tests = {
         "csg-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.doctest-discover)
@@ -61,7 +61,7 @@
           ];
         };
         "csg-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.csg)
@@ -74,7 +74,7 @@
       };
       benchmarks = {
         "csg-benchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.csg)

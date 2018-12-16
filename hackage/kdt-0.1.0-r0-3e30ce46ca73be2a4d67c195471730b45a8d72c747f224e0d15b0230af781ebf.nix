@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.QuickCheck)
@@ -35,7 +35,7 @@
       };
       tests = {
         "KdTreeTest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kdt)
           ];
@@ -43,7 +43,7 @@
       };
       benchmarks = {
         "KDTBenchmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.kdt)
             (hsPkgs.MonadRandom)

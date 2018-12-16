@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.servant)
           (hsPkgs.servant-foreign)
@@ -34,7 +34,7 @@
       };
       tests = {
         "lackey-test-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.lackey)
             (hsPkgs.servant)

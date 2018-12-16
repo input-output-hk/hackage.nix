@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hasktags" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.bytestring)

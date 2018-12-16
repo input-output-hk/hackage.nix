@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wxhnotepad" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.wxcore)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.wai)
           (hsPkgs.wai-app-static)
@@ -47,7 +47,7 @@
       };
       exes = {
         "herringbone-test-server" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.herringbone)
             (hsPkgs.text)
@@ -57,7 +57,7 @@
       };
       tests = {
         "herringbone-tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.wai)
             (hsPkgs.wai-app-static)

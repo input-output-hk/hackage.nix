@@ -26,7 +26,7 @@
     components = {
       exes = {
         "qtah-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binary)
             (hsPkgs.bytestring)

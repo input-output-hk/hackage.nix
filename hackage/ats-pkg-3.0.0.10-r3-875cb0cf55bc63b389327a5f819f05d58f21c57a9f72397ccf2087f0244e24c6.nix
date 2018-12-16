@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.http-client)
           (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
       };
       sublibs = {
         "quaalude" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
@@ -85,7 +85,7 @@
       };
       exes = {
         "atspkg" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ats-pkg)
             (hsPkgs.optparse-applicative)

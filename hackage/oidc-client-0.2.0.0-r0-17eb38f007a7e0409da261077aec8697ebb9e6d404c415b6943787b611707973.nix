@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.text)
@@ -47,7 +47,7 @@
       };
       exes = {
         "scotty-example" = {
-          depends  = pkgs.lib.optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs.base)
             (hsPkgs.oidc-client)
             (hsPkgs.bytestring)
@@ -70,7 +70,7 @@
       };
       tests = {
         "oidc-client-spec" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.oidc-client)

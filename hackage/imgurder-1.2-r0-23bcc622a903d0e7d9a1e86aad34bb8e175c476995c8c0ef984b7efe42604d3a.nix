@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hxt-xpath)
           (hsPkgs.hxt)
@@ -37,7 +37,7 @@
       };
       exes = {
         "imgurder" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hxt-xpath)
             (hsPkgs.hxt)

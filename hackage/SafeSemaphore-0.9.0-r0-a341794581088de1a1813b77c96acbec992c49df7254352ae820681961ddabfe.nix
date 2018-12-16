@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.stm)
@@ -33,7 +33,7 @@
       };
       tests = {
         "TestSafeSemaphore" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SafeSemaphore)
             (hsPkgs.HUnit)

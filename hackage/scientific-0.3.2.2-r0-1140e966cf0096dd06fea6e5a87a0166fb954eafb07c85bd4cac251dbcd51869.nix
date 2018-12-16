@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.deepseq)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-scientific" = {
-          depends  = [
+          depends = [
             (hsPkgs.scientific)
             (hsPkgs.base)
             (hsPkgs.tasty)
@@ -59,7 +59,7 @@
       };
       benchmarks = {
         "bench-scientific" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.ghc-prim)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ruler" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.uulib)

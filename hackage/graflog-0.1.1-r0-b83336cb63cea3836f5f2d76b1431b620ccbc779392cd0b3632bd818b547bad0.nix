@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.text-conversions)
           (hsPkgs.text)
@@ -35,7 +35,7 @@
       };
       tests = {
         "graflog-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.graflog)
             (hsPkgs.test-fixture)

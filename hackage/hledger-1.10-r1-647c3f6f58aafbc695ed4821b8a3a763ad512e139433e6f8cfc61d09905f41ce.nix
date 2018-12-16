@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Decimal)
           (hsPkgs.Diff)
           (hsPkgs.HUnit)
@@ -72,7 +72,7 @@
       };
       exes = {
         "hledger" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
             (hsPkgs.ansi-terminal)
@@ -115,7 +115,7 @@
       };
       tests = {
         "test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
             (hsPkgs.ansi-terminal)
@@ -160,7 +160,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
             (hsPkgs.ansi-terminal)

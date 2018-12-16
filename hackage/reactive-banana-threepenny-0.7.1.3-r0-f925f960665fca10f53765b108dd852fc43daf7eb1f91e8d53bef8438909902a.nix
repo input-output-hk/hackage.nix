@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.reactive-banana)
           (hsPkgs.threepenny-gui)
@@ -35,7 +35,7 @@
       };
       exes = {
         "reactiva-banana-threepenny-Animation" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.process)
             (hsPkgs.random)
             (hsPkgs.filepath)
@@ -45,14 +45,14 @@
           ];
         };
         "reactiva-banana-threepenny-Arithmetic" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
           ];
         };
         "reactiva-banana-threepenny-Asteroids" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.random)
             (hsPkgs.filepath)
             (hsPkgs.reactive-banana)
@@ -61,28 +61,28 @@
           ];
         };
         "reactiva-banana-threepenny-BarTab" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
             (hsPkgs.base)
           ];
         };
         "reactiva-banana-threepenny-Counter" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
             (hsPkgs.base)
           ];
         };
         "reactiva-banana-threepenny-CurrencyConverter" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
             (hsPkgs.base)
           ];
         };
         "reactiva-banana-threepenny-CRUD" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.containers)
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
@@ -90,7 +90,7 @@
           ];
         };
         "reactiva-banana-threepenny-NetMonitor" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.process)
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
@@ -98,7 +98,7 @@
           ];
         };
         "reactiva-banana-threepenny-TicTacToe" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.array)
             (hsPkgs.filepath)
             (hsPkgs.reactive-banana)
@@ -107,14 +107,14 @@
           ];
         };
         "reactiva-banana-threepenny-TwoCounters" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
             (hsPkgs.base)
           ];
         };
         "reactiva-banana-threepenny-Wave" = {
-          depends  = pkgs.lib.optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs.reactive-banana)
             (hsPkgs.threepenny-gui)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "blubber" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.blubber-server)
             (hsPkgs.bytestring)

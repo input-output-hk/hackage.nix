@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)
@@ -67,7 +67,7 @@
       };
       tests = {
         "url-example-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
@@ -88,7 +88,7 @@
           ];
         };
         "trivial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.configuration-tools)

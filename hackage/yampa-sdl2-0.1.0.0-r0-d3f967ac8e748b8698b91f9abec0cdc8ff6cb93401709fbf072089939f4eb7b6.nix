@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.StateVar)
           (hsPkgs.Yampa)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       tests = {
         "YampaSDL2-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.StateVar)
             (hsPkgs.Yampa)
             (hsPkgs.base)

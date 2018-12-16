@@ -26,7 +26,7 @@
     components = {
       exes = {
         "unusablepkg" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

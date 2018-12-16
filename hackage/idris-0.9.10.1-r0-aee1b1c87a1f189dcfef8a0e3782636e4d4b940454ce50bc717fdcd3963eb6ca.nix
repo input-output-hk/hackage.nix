@@ -30,7 +30,7 @@
     components = {
       exes = {
         "idris" = {
-          depends  = (((((([
+          depends = (((((([
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.ansi-terminal)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)
@@ -65,7 +65,7 @@
       };
       exes = {
         "ihaskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.ihaskell)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -84,7 +84,7 @@
       };
       tests = {
         "hspec" = {
-          depends  = [
+          depends = [
             (hsPkgs.ihaskell)
             (hsPkgs.aeson)
             (hsPkgs.base)

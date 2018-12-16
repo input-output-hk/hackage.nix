@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
           (hsPkgs.mtl)
@@ -35,7 +35,7 @@
       };
       exes = {
         "pipes-category-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes)
             (hsPkgs.pipes-category)
@@ -45,7 +45,7 @@
       };
       tests = {
         "pipes-category-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-category)
           ];

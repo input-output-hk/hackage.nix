@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-compat)
           (hsPkgs.ansi-terminal)
@@ -54,13 +54,13 @@
       };
       exes = {
         "highlight" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.highlight)
           ];
         };
         "hrep" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.highlight)
           ];
@@ -68,14 +68,14 @@
       };
       tests = {
         "highlight-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
           ];
         };
         "highlight-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.bytestring)
@@ -95,7 +95,7 @@
       };
       benchmarks = {
         "highlight-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.highlight)

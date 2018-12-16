@@ -27,7 +27,7 @@
       "library" = {};
       exes = {
         "Perf" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.old-time)

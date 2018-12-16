@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.postgresql-binary)
           (hsPkgs.postgresql-libpq)
@@ -52,7 +52,7 @@
       };
       tests = {
         "tasty" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
@@ -64,13 +64,13 @@
           ];
         };
         "threads-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.rebase)
           ];
         };
         "profiling" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.bug)
             (hsPkgs.rerebase)
@@ -79,7 +79,7 @@
       };
       benchmarks = {
         "benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.hasql)
             (hsPkgs.criterion)
             (hsPkgs.bug)

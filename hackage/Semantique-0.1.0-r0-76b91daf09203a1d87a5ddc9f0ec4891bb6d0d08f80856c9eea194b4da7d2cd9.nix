@@ -26,7 +26,7 @@
     components = {
       exes = {
         "semantique" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagsoup)
             (hsPkgs.bytestring)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.explicit-exception)
           (hsPkgs.transformers)
           (hsPkgs.containers)
@@ -35,7 +35,7 @@
       };
       tests = {
         "test-unique-logic" = {
-          depends  = [
+          depends = [
             (hsPkgs.unique-logic-tf)
             (hsPkgs.QuickCheck)
             (hsPkgs.non-empty)

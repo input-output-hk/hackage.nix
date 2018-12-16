@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.tasty)
           (hsPkgs.smallcheck)
           (hsPkgs.base)

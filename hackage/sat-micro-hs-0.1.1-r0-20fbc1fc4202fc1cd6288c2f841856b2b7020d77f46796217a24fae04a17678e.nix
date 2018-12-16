@@ -26,7 +26,7 @@
     components = {
       exes = {
         "sat-micro" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pretty)

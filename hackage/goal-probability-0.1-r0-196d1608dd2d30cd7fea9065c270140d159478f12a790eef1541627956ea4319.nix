@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.mwc-random)
           (hsPkgs.mwc-random-monad)
@@ -39,7 +39,7 @@
       };
       exes = {
         "cross-entropy-descent" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -47,7 +47,7 @@
           ];
         };
         "poisson-binomial" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -55,7 +55,7 @@
           ];
         };
         "univariate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -63,7 +63,7 @@
           ];
         };
         "multivariate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -72,7 +72,7 @@
           ];
         };
         "transducer" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -80,7 +80,7 @@
           ];
         };
         "transducer-field" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -88,7 +88,7 @@
           ];
         };
         "divergence" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)
@@ -96,7 +96,7 @@
           ];
         };
         "backpropagation" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.goal-core)
             (hsPkgs.goal-geometry)

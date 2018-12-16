@@ -25,14 +25,14 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.lens)
         ];
       };
       tests = {
         "simple-zipper-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.simple-zipper)
             (hsPkgs.hspec)

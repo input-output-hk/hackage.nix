@@ -26,7 +26,7 @@
     components = {
       exes = {
         "HipmunkPlayground" = {
-          depends  = [
+          depends = [
             (hsPkgs.Hipmunk)
             (hsPkgs.transformers)
             (hsPkgs.OpenGL)

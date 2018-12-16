@@ -26,7 +26,7 @@
     components = {
       exes = {
         "gdo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)

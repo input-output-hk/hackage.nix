@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.StateVar)
@@ -41,50 +41,50 @@
       };
       exes = {
         "Basic-HelloWorld" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ALUT)
           ];
         };
         "Basic-OpenALInfo" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.ALUT)
           ];
         };
         "Basic-PlayFile" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ALUT)
           ];
         };
         "TestSuite-TestErrorStuff" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ALUT)
           ];
         };
         "TestSuite-TestFileLoader" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ALUT)
           ];
         };
         "TestSuite-TestMemoryLoader" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ALUT)
           ];
         };
         "TestSuite-TestVersion" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ALUT)
           ];
         };
         "TestSuite-TestWaveforms" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ALUT)
           ];

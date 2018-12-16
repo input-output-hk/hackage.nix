@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.ghc-prim)
@@ -33,7 +33,7 @@
       };
       tests = {
         "generic-sop-examples" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.generics-sop)
           ];

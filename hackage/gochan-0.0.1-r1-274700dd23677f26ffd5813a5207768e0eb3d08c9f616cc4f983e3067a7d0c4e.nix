@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.random)
@@ -37,7 +37,7 @@
       };
       exes = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.gochan)
@@ -45,7 +45,7 @@
           ];
         };
         "weight" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.weigh)
             (hsPkgs.gochan)
@@ -54,7 +54,7 @@
       };
       tests = {
         "fuzz" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hspec-core)

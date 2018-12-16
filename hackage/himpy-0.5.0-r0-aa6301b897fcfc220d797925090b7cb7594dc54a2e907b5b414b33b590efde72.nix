@@ -26,7 +26,7 @@
     components = {
       exes = {
         "himpy" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.NetSNMP)
             (hsPkgs.bytestring)

@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.ghc-prim)
@@ -43,7 +43,7 @@
       };
       tests = {
         "test-scientific" = {
-          depends  = [
+          depends = [
             (hsPkgs.scientific)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -61,7 +61,7 @@
       };
       benchmarks = {
         "bench-scientific" = {
-          depends  = [
+          depends = [
             (hsPkgs.scientific)
             (hsPkgs.base)
             (hsPkgs.criterion)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "c2hs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.language-c)
             (hsPkgs.filepath)
@@ -44,7 +44,7 @@
       };
       tests = {
         "test-bugs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.test-framework)
@@ -58,7 +58,7 @@
           ];
         };
         "test-system" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
@@ -71,7 +71,7 @@
           ];
         };
         "regression-suite" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.shelly)

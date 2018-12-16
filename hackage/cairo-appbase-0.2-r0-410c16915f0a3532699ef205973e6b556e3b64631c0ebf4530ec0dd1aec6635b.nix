@@ -26,7 +26,7 @@
     components = {
       exes = {
         "cairo-appbase" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.glib)
             (hsPkgs.gtk)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.async)
           (hsPkgs.attoparsec)
@@ -57,7 +57,7 @@
       };
       exes = {
         "psGenerator" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.servant-subscriber)
             (hsPkgs.purescript-bridge)
@@ -66,7 +66,7 @@
       };
       tests = {
         "servant-subscriber-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.aeson-compat)
             (hsPkgs.attoparsec)

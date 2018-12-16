@@ -26,7 +26,7 @@
     components = {
       exes = {
         "afp2line2pdf" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.line2pdf)
@@ -34,7 +34,7 @@
           ];
         };
         "afp-olndump" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -43,7 +43,7 @@
           ];
         };
         "afp-tledump" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -52,7 +52,7 @@
           ];
         };
         "afp-dump" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -63,51 +63,51 @@
           ];
         };
         "afp-page" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
           ];
         };
         "afp-replace" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
           ];
         };
         "afp-scanudc" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.directory)
           ];
         };
         "afp-split" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
           ];
         };
         "afp-split-scb" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
           ];
         };
         "afp-split-tcb" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.filepath)
           ];
         };
         "afp-type" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
           ];
         };
         "afp-udcfix" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.regex-base)
@@ -116,13 +116,13 @@
           ];
         };
         "afp-validate" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
           ];
         };
         "afp2line" = {
-          depends  = [
+          depends = [
             (hsPkgs.OpenAFP)
             (hsPkgs.base)
             (hsPkgs.containers)

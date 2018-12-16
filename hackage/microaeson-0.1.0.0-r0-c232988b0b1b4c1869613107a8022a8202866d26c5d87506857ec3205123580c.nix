@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.array)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -39,7 +39,7 @@
       };
       tests = {
         "microaeson" = {
-          depends  = [
+          depends = [
             (hsPkgs.microaeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

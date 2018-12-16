@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           (hsPkgs.ghcjs-ffiqq)
@@ -40,7 +40,7 @@
       };
       exes = {
         "ghcjs-vdom-example-table" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-ffiqq)
             (hsPkgs.ghcjs-vdom)
@@ -49,7 +49,7 @@
           ];
         };
         "ghcjs-vdom-example-components" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-ffiqq)
             (hsPkgs.ghcjs-vdom)
@@ -58,7 +58,7 @@
           ];
         };
         "ghcjs-vdom-example-render" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ghcjs-ffiqq)
             (hsPkgs.ghcjs-vdom)

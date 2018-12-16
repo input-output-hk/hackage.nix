@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hpodder" = {
-          depends  = [
+          depends = [
             (hsPkgs.network)
             (hsPkgs.unix)
             (hsPkgs.parsec)

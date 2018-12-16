@@ -26,7 +26,7 @@
     components = {
       exes = {
         "dash-haskell" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.base)
             (hsPkgs.containers)

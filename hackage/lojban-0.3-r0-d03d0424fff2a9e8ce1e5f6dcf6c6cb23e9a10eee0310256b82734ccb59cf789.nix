@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.xml)
           (hsPkgs.strict)
@@ -44,7 +44,7 @@
       };
       exes = {
         "jbovlastegendb" = {
-          depends  = [
+          depends = [
             (hsPkgs.haskell98)
           ];
         };

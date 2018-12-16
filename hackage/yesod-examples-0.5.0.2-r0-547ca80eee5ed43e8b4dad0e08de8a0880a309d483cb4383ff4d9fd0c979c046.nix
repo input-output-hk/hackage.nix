@@ -26,7 +26,7 @@
     components = {
       exes = {
         "helloworld" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yesod)
           ];
@@ -35,7 +35,7 @@
         "ajax" = {};
         "file-echo" = {};
         "pretty-yaml" = {
-          depends  = [
+          depends = [
             (hsPkgs.data-object-yaml)
             (hsPkgs.data-object)
             (hsPkgs.bytestring)
@@ -46,19 +46,19 @@
         "widgets" = {};
         "form" = {};
         "mkToForm" = {
-          depends  = [
+          depends = [
             (hsPkgs.time)
             (hsPkgs.persistent)
           ];
         };
         "persistent-synopsis" = {
-          depends  = [
+          depends = [
             (hsPkgs.transformers)
             (hsPkgs.persistent-sqlite)
           ];
         };
         "hamlet-synopsis" = {
-          depends  = [ (hsPkgs.hamlet) ];
+          depends = [ (hsPkgs.hamlet) ];
         };
       };
     };

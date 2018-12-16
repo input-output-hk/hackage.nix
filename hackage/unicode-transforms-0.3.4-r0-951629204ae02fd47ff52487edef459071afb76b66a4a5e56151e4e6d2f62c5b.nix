@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bitarray)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       tests = {
         "extras" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -47,7 +47,7 @@
           ];
         };
         "quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.deepseq)
@@ -56,7 +56,7 @@
           ] ++ pkgs.lib.optional (flags.has-icu) (hsPkgs.text-icu);
         };
         "ucd" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.getopt-generics)
             (hsPkgs.split)
@@ -67,7 +67,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.deepseq)
             (hsPkgs.filepath)

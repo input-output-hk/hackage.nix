@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hprotoc" = {
-          depends  = [
+          depends = [
             (hsPkgs.protocol-buffers)
             (hsPkgs.protocol-buffers-descriptor)
             (hsPkgs.array)

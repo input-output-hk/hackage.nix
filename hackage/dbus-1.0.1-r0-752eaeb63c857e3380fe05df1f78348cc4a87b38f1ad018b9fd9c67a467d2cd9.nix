@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
@@ -49,7 +49,7 @@
       };
       tests = {
         "dbus_tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.dbus)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -78,7 +78,7 @@
       };
       benchmarks = {
         "dbus_benchmarks" = {
-          depends  = [
+          depends = [
             (hsPkgs.dbus)
             (hsPkgs.base)
             (hsPkgs.criterion)

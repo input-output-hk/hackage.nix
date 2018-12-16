@@ -26,7 +26,7 @@
     components = {
       exes = {
         "wrecker-ui" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.scotty)
             (hsPkgs.text)

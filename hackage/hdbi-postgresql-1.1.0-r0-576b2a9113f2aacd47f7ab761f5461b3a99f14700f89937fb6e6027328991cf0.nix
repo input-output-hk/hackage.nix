@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.blaze-builder)
@@ -43,7 +43,7 @@
       };
       tests = {
         "runtests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)
@@ -71,7 +71,7 @@
           ];
         };
         "puretests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.Decimal)
             (hsPkgs.HUnit)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.awesomium-raw)
           (hsPkgs.base)
           (hsPkgs.vector)

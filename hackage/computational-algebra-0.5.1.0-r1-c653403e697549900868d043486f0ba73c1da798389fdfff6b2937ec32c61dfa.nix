@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ListLike)
           (hsPkgs.MonadRandom)
           (hsPkgs.algebra)
@@ -76,14 +76,14 @@
       };
       exes = {
         "groebner-prof" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
             (hsPkgs.deepseq)
           ];
         };
         "solve" = {
-          depends  = [
+          depends = [
             (hsPkgs.MonadRandom)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -101,14 +101,14 @@
           ];
         };
         "algebraic" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebraic-prelude)
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
           ];
         };
         "ipsolve" = {
-          depends  = [
+          depends = [
             (hsPkgs.MonadRandom)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -130,7 +130,7 @@
           ];
         };
         "hensel-prof" = {
-          depends  = [
+          depends = [
             (hsPkgs.MonadRandom)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -150,7 +150,7 @@
           ];
         };
         "sandpit-poly" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebra)
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
@@ -161,7 +161,7 @@
           ];
         };
         "quotient" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebra)
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
@@ -175,7 +175,7 @@
       };
       tests = {
         "test-multi-table" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.algebra)
@@ -200,7 +200,7 @@
           ];
         };
         "singular-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -229,7 +229,7 @@
           ];
         };
         "monomial-order-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -249,7 +249,7 @@
           ];
         };
         "linear-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -276,7 +276,7 @@
           ];
         };
         "matrix-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -303,7 +303,7 @@
           ];
         };
         "specs" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -334,7 +334,7 @@
           ];
         };
         "new-div-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -362,7 +362,7 @@
       };
       benchmarks = {
         "unipol-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebra)
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
@@ -380,7 +380,7 @@
           ];
         };
         "normal-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebra)
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
@@ -398,7 +398,7 @@
           ];
         };
         "elimination-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.algebra)
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
@@ -416,7 +416,7 @@
           ];
         };
         "quotient-bench-randomized" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -443,7 +443,7 @@
           ];
         };
         "monomial-order-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.algebra)
             (hsPkgs.base)
@@ -470,7 +470,7 @@
           ];
         };
         "linear-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -500,7 +500,7 @@
           ];
         };
         "division-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -530,7 +530,7 @@
           ];
         };
         "sugar-paper-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -561,7 +561,7 @@
           ];
         };
         "solve-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -592,7 +592,7 @@
           ];
         };
         "coercion-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.MonadRandom)
             (hsPkgs.QuickCheck)
@@ -623,7 +623,7 @@
           ];
         };
         "unipol-mult-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.algebra)
@@ -653,7 +653,7 @@
           ];
         };
         "unipol-div-bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.algebra)

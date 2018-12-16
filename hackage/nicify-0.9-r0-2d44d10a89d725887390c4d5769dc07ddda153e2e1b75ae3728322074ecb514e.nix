@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.transformers)
@@ -33,7 +33,7 @@
       };
       exes = {
         "nicify" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.nicify)
             (hsPkgs.parsec)

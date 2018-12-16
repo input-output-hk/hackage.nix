@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = (if flags.splitbase
+        depends = (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.array)
@@ -54,7 +54,7 @@
       };
       exes = {
         "test-fft" = {
-          depends  = pkgs.lib.optional (flags.buildtests) (hsPkgs.QuickCheck);
+          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs.QuickCheck);
           pkgconfig = [
             (pkgconfPkgs.fftw3)
           ];

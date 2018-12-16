@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.split)
           (hsPkgs.text)
@@ -33,7 +33,7 @@
       };
       benchmarks = {
         "bench" = {
-          depends  = [
+          depends = [
             (hsPkgs.tokenize)
             (hsPkgs.criterion)
             (hsPkgs.filepath)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "lit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.regex-compat)

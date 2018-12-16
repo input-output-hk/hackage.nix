@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ndarray" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.mxnet)
           ];

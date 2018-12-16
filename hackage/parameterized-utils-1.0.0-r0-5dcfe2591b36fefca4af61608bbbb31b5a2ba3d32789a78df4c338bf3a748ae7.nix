@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.th-abstraction)
           (hsPkgs.containers)
@@ -44,7 +44,7 @@
       };
       tests = {
         "parameterizedTests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hashable)
             (hsPkgs.hashtables)

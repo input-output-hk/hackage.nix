@@ -26,7 +26,7 @@
     components = {
       exes = {
         "yu-launch" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.yu-utils)
             (hsPkgs.yu-auth)

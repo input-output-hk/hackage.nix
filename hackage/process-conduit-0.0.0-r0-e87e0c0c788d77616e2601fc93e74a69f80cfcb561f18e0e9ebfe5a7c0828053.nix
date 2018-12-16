@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.mtl)
@@ -38,14 +38,14 @@
       };
       exes = {
         "process-conduit" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.process-conduit)
           ];
         };
         "process-qq" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process-conduit)
           ];

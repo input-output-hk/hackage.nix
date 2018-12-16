@@ -26,7 +26,7 @@
     components = {
       exes = {
         "BlogLiterately" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.parsec)

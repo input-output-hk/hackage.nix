@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.haskell98)
           (hsPkgs.array)
           (hsPkgs.regex-base)

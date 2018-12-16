@@ -26,7 +26,7 @@
     components = {
       exes = {
         "juicy-gcode" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.svg-tree)
             (hsPkgs.matrix)

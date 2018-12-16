@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)
           (hsPkgs.containers)
@@ -36,7 +36,7 @@
       };
       exes = {
         "hstrrand" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.string-random)
@@ -46,7 +46,7 @@
       };
       tests = {
         "string-random-quickcheck" = {
-          depends  = [
+          depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.pcre-heavy)
@@ -57,7 +57,7 @@
           ];
         };
         "string-random-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.pcre-heavy)

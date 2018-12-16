@@ -26,7 +26,7 @@
     components = {
       exes = {
         "txtblk" = {
-          depends  = [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.base) ];
         };
       };
     };

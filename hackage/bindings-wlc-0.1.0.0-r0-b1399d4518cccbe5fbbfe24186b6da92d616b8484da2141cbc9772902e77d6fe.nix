@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
@@ -33,7 +33,7 @@
       };
       tests = {
         "bindings-wlc-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bindings-wlc)
           ];

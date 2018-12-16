@@ -29,7 +29,7 @@
     };
     components = {
       "library" = {
-        depends  = ((([
+        depends = ((([
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.containers)
@@ -87,13 +87,13 @@
       };
       exes = {
         "pandoc" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.pandoc)
             (hsPkgs.base)
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat);
         };
         "trypandoc" = {
-          depends  = (pkgs.lib.optionals (flags.trypandoc) [
+          depends = (pkgs.lib.optionals (flags.trypandoc) [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.pandoc)
@@ -106,7 +106,7 @@
       };
       tests = {
         "test-pandoc" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.base)
             (hsPkgs.pandoc)
             (hsPkgs.pandoc-types)
@@ -135,7 +135,7 @@
       };
       benchmarks = {
         "weigh-pandoc" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.pandoc)
             (hsPkgs.base)
             (hsPkgs.text)
@@ -144,7 +144,7 @@
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat);
         };
         "benchmark-pandoc" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.pandoc)
             (hsPkgs.time)
             (hsPkgs.bytestring)

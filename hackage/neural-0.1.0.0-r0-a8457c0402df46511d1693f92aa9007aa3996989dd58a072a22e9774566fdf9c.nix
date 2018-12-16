@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.ad)
           (hsPkgs.array)
@@ -49,7 +49,7 @@
       };
       exes = {
         "iris" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.attoparsec)
             (hsPkgs.neural)
@@ -57,7 +57,7 @@
           ];
         };
         "sqrt" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.MonadRandom)
             (hsPkgs.neural)
@@ -66,7 +66,7 @@
       };
       tests = {
         "neural-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.MonadRandom)
@@ -74,7 +74,7 @@
           ];
         };
         "neural-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.neural)

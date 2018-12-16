@@ -26,7 +26,7 @@
     components = {
       exes = {
         "mmark" = {
-          depends  = [
+          depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.bytestring)

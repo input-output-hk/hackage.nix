@@ -26,7 +26,7 @@
     components = {
       exes = {
         "docusign-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.docusign-base)

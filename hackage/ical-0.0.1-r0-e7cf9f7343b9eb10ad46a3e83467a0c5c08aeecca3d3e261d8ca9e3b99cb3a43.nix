@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.base)
@@ -39,7 +39,7 @@
       };
       exes = {
         "ical-org" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ical)
             (hsPkgs.time)
@@ -48,7 +48,7 @@
       };
       tests = {
         "ical-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ical)
           ];

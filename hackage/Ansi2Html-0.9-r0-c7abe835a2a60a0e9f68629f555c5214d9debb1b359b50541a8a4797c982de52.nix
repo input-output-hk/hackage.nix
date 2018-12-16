@@ -26,7 +26,7 @@
     components = {
       exes = {
         "ansi2html" = {
-          depends  = [
+          depends = [
             (hsPkgs.parsec)
             (hsPkgs.mtl)
             (hsPkgs.base)

@@ -26,7 +26,7 @@
     components = {
       exes = {
         "hask-home" = {
-          depends  = [
+          depends = [
             (hsPkgs.Cabal)
             (hsPkgs.regex-compat)
             (hsPkgs.network)
@@ -41,7 +41,7 @@
             else [ (hsPkgs.base) ]);
         };
         "hask-home-upload" = {
-          depends  = if flags.split-base
+          depends = if flags.split-base
             then [
               (hsPkgs.base)
               (hsPkgs.process)

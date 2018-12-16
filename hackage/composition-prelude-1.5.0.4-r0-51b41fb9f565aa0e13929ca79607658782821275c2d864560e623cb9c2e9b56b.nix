@@ -28,7 +28,7 @@
     };
     components = {
       "library" = {
-        depends  = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) ];
         build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.cpphs);
       };
     };

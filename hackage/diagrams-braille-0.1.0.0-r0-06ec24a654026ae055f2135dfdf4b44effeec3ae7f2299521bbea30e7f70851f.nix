@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.JuicyPixels)
           (hsPkgs.Rasterific)
           (hsPkgs.base)
@@ -43,7 +43,7 @@
       };
       exes = {
         "brlclock" = {
-          depends  = [
+          depends = [
             (hsPkgs.JuicyPixels)
             (hsPkgs.Rasterific)
             (hsPkgs.base)
@@ -61,7 +61,7 @@
           ];
         };
         "brldia" = {
-          depends  = [
+          depends = [
             (hsPkgs.JuicyPixels)
             (hsPkgs.Rasterific)
             (hsPkgs.base)

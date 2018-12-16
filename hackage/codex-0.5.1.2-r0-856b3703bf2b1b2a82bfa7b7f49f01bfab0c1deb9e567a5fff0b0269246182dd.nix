@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.ascii-progress)
           (hsPkgs.base)
           (hsPkgs.bytestring)
@@ -51,7 +51,7 @@
       };
       exes = {
         "codex" = {
-          depends  = [
+          depends = [
             (hsPkgs.ascii-progress)
             (hsPkgs.base)
             (hsPkgs.Cabal)

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.bytestring)
@@ -38,7 +38,7 @@
       };
       exes = {
         "update-repos" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.update-repos)
             (hsPkgs.directory)
@@ -50,7 +50,7 @@
       };
       tests = {
         "update-repos-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.update-repos)
             (hsPkgs.hspec)

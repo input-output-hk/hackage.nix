@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = ([
+        depends = ([
           (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.derive)
@@ -60,7 +60,7 @@
       };
       exes = {
         "scion-browser" = {
-          depends  = ([
+          depends = ([
             (hsPkgs.haskeline)
             (hsPkgs.attoparsec)
             (hsPkgs.base)

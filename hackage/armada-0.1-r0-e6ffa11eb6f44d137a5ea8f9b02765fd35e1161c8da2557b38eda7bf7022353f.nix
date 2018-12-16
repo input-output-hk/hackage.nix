@@ -26,7 +26,7 @@
     components = {
       exes = {
         "armada" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)

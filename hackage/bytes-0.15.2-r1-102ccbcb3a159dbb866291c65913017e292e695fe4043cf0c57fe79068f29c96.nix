@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
@@ -46,7 +46,7 @@
       };
       tests = {
         "doctests" = {
-          depends  = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
             (hsPkgs.base)
             (hsPkgs.bytes)
             (hsPkgs.directory)

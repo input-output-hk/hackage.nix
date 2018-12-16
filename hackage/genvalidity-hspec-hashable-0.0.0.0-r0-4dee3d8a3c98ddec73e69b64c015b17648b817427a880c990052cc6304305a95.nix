@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.validity)
           (hsPkgs.genvalidity-hspec)
@@ -38,7 +38,7 @@
       };
       tests = {
         "genvalidity-hspec-hashable-doctests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.hashable)
@@ -47,7 +47,7 @@
           ];
         };
         "genvalidity-hspec-hashable-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.genvalidity)
             (hsPkgs.genvalidity-hspec)

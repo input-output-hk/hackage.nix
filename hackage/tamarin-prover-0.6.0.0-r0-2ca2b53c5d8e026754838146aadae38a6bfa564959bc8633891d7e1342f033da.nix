@@ -31,7 +31,7 @@
     components = {
       exes = {
         "tamarin-prover" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)

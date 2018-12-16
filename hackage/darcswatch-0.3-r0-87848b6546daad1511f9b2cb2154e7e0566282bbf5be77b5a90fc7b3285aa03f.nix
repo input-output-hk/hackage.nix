@@ -26,7 +26,7 @@
     components = {
       exes = {
         "darcswatch-generate" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.network)
             (hsPkgs.HTTP)

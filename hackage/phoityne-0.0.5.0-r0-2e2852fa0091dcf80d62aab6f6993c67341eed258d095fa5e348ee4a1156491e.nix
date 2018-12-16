@@ -26,7 +26,7 @@
     components = {
       exes = {
         "phoityne" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.cmdargs)
             (hsPkgs.hslogger)
@@ -53,7 +53,7 @@
       };
       tests = {
         "phoityne-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
           ];

@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.data-default)
@@ -38,7 +38,7 @@
       };
       exes = {
         "fuzzyset-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.fuzzyset)
           ];
@@ -46,7 +46,7 @@
       };
       tests = {
         "fuzzyset-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.hspec)

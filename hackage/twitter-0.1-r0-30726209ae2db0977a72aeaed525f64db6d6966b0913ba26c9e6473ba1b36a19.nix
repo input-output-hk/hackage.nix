@@ -26,7 +26,7 @@
     components = {
       exes = {
         "twitter" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.curl)

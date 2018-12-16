@@ -26,7 +26,7 @@
     components = {
       exes = {
         "Level0" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.SDL)
             (hsPkgs.SDL-ttf)

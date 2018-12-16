@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.temporary)
@@ -36,7 +36,7 @@
       };
       exes = {
         "gifcurry_gui" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-gi)
             (hsPkgs.haskell-gi-base)
@@ -58,7 +58,7 @@
           ];
         };
         "gifcurry_cli" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.temporary)

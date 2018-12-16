@@ -26,7 +26,7 @@
     components = {
       exes = {
         "binembed-example" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.binembed)
             (hsPkgs.bytestring)

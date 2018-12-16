@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.protolude)
           (hsPkgs.directory)
@@ -39,7 +39,7 @@
       };
       exes = {
         "pomohoro-exe" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.pomohoro)
@@ -52,7 +52,7 @@
       };
       tests = {
         "pomohoro-test" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.pomohoro)
             (hsPkgs.protolude)

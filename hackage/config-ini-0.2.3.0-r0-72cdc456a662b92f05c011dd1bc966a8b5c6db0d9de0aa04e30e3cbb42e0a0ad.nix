@@ -27,7 +27,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.text)
@@ -38,7 +38,7 @@
       };
       tests = {
         "test-ini-compat" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.ini)
             (hsPkgs.config-ini)
@@ -49,7 +49,7 @@
           ];
         };
         "test-prewritten" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.config-ini)
             (hsPkgs.containers)
@@ -59,7 +59,7 @@
           ];
         };
         "test-doctest" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.microlens)

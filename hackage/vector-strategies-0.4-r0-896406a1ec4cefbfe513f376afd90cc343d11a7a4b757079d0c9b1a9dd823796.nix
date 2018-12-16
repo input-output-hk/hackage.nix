@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.deepseq)
           (hsPkgs.parallel)
           (hsPkgs.base)

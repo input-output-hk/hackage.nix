@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.hsndfile)
           (hsPkgs.repa)
@@ -36,7 +36,7 @@
       };
       exes = {
         "rw" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsndfile)
             (hsPkgs.hsndfile-vector)
@@ -46,7 +46,7 @@
           ];
         };
         "gensine" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.hsndfile)
             (hsPkgs.hsndfile-vector)
@@ -58,7 +58,7 @@
       };
       tests = {
         "tests" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)

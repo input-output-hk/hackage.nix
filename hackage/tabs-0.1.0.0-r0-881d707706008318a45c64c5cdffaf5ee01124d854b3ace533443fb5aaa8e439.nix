@@ -25,7 +25,7 @@
     };
     components = {
       "library" = {
-        depends  = [
+        depends = [
           (hsPkgs.base)
           (hsPkgs.tagged)
           (hsPkgs.filepath)
@@ -35,7 +35,7 @@
       };
       exes = {
         "tabs" = {
-          depends  = [
+          depends = [
             (hsPkgs.base)
             (hsPkgs.tagged)
             (hsPkgs.filepath)
